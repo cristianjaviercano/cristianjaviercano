@@ -17,16 +17,74 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-from google.colab import drive
-drive.mount('/content/drive')
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def eoq(costo_producto, costo_orden, costo_almacenamiento, demanda_anual):
+    q = np.sqrt((2 * costo_orden * demanda_anual) / costo_almacenamiento)
+    tiempo_entre_pedidos = q / demanda_anual
+    costo_total = (costo_producto * demanda_anual) + (costo_orden * demanda_anual / q) + (costo_almacenamiento * q / 2)
+    return q, tiempo_entre_pedidos, costo_total
+
+# Pedir al usuario que ingrese los valores de los parámetros del inventario
+costo_producto = float(input("Ingrese el costo del producto por unidad: "))
+costo_orden = float(input("Ingrese el costo por orden: "))
+costo_almacenamiento = float(input("Ingrese el costo de almacenamiento por unidad por año: "))
+demanda_anual = np.arange(10, 1000, 10)
+
+# Calcular el EOQ para cada valor de la demanda anual
+q_values = [eoq(costo_producto, costo_orden, costo_almacenamiento, d)[0] for d in demanda_anual]
+costo_total_values = [eoq(costo_producto, costo_orden, costo_almacenamiento, d)[2] for d in demanda_anual]
+
+# Graficar el costo total como una función de la demanda anual
+fig, ax1 = plt.subplots()
+
+color = 'tab:red'
+ax1.set_xlabel('Demanda anual')
+ax1.set_ylabel('Cantidad óptima de inventario', color=color)
+ax1.plot(demanda_anual, q_values, color=color)
+ax1.tick_params(axis='y', labelcolor=color)
+
+ax2 = ax1.twinx()
+
+color = 'tab:blue'
+ax2.set_ylabel('Costo total de inventario', color=color)
+ax2.plot(demanda_anual, costo_total_values, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+
+fig.tight_layout()
+plt.show()
+
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mgoogle[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcolab[39;00m [38;5;28;01mimport[39;00m drive
-[1;32m      2[0m drive[38;5;241m.[39mmount([38;5;124m'[39m[38;5;124m/content/drive[39m[38;5;124m'[39m)
+[0;31mStdinNotImplementedError[0m                  Traceback (most recent call last)
+Cell [0;32mIn[14], line 12[0m
+[1;32m      9[0m     [38;5;28;01mreturn[39;00m q, tiempo_entre_pedidos, costo_total
+[1;32m     11[0m [38;5;66;03m# Pedir al usuario que ingrese los valores de los parámetros del inventario[39;00m
+[0;32m---> 12[0m costo_producto [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28;43minput[39;49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mIngrese el costo del producto por unidad: [39;49m[38;5;124;43m"[39;49m[43m)[49m)
+[1;32m     13[0m costo_orden [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m([38;5;124m"[39m[38;5;124mIngrese el costo por orden: [39m[38;5;124m"[39m))
+[1;32m     14[0m costo_almacenamiento [38;5;241m=[39m [38;5;28mfloat[39m([38;5;28minput[39m([38;5;124m"[39m[38;5;124mIngrese el costo de almacenamiento por unidad por año: [39m[38;5;124m"[39m))
 
-[0;31mModuleNotFoundError[0m: No module named 'google'
-ModuleNotFoundError: No module named 'google'
+File [0;32m~/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py:1172[0m, in [0;36mKernel.raw_input[0;34m(self, prompt)[0m
+[1;32m   1165[0m [38;5;250m[39m[38;5;124;03m"""Forward raw_input to frontends[39;00m
+[1;32m   1166[0m 
+[1;32m   1167[0m [38;5;124;03mRaises[39;00m
+[1;32m   1168[0m [38;5;124;03m------[39;00m
+[1;32m   1169[0m [38;5;124;03mStdinNotImplementedError if active frontend doesn't support stdin.[39;00m
+[1;32m   1170[0m [38;5;124;03m"""[39;00m
+[1;32m   1171[0m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_allow_stdin:
+[0;32m-> 1172[0m     [38;5;28;01mraise[39;00m StdinNotImplementedError(
+[1;32m   1173[0m         [38;5;124m"[39m[38;5;124mraw_input was called, but this frontend does not support input requests.[39m[38;5;124m"[39m
+[1;32m   1174[0m     )
+[1;32m   1175[0m [38;5;28;01mreturn[39;00m [38;5;28mself[39m[38;5;241m.[39m_input_request(
+[1;32m   1176[0m     [38;5;28mstr[39m(prompt),
+[1;32m   1177[0m     [38;5;28mself[39m[38;5;241m.[39m_parent_ident[[38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m],
+[1;32m   1178[0m     [38;5;28mself[39m[38;5;241m.[39mget_parent([38;5;124m"[39m[38;5;124mshell[39m[38;5;124m"[39m),
+[1;32m   1179[0m     password[38;5;241m=[39m[38;5;28;01mFalse[39;00m,
+[1;32m   1180[0m )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
 
