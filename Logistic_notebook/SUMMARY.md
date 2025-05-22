@@ -5,7 +5,7 @@
 ## Libros de Ingenieria
 
 * [Notas sobre logistica](libros-de-ingenieria/notas-sobre-logistica/README.md)
-  * [My Jupyter Book](libros-de-ingenieria/notas-sobre-logistica/my-jupyter-book.md)
+  * [Logistic Notebook](libros-de-ingenieria/notas-sobre-logistica/logistic-notebook.md)
 
 ***
 
@@ -20,3 +20,4 @@
     * [Que es Jupyter Notebook](sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/que-es-jupyter-notebook.md)
     * [La Naturaleza de los Datos](sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/la-naturaleza-de-los-datos.md)
     * [Usando JN](sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/usando-jn.md)
+    * [Entendiendo a python en JN](sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/entendiendo-a-python-en-jn.md)
