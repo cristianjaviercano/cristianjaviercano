@@ -1,3 +1,7 @@
+---
+icon: file-code
+---
+
 # SQL en Python para Ingenieros Industriales
 
 ### Aprende a Usar SQL en Python y Domina Datos como un Experto

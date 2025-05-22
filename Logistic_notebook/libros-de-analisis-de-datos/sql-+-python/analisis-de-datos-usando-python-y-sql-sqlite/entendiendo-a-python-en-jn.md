@@ -37,7 +37,7 @@ A diferencia de Ms Excel este no es visual es decir no podras ver el contenido d
 los programas o aplicaciones que trabajan junto a JN, son llamadas _Librerias_, estas son los que procesan o realizan los trabajos, algunas de estas se encuentran precargadas en el ambiente de Jupiter otras por el contrario hay que instalarlas o llamarlas para que generen valor en el documento, cada una de ellas tiene su propia sintaxis.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/1. librerias.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/1. librerias.png" alt=""><figcaption></figcaption></figure>
 
 **Librerias para manejo de Datos en Python y jupyter Notebook**[**¶**](broken-reference)
 
