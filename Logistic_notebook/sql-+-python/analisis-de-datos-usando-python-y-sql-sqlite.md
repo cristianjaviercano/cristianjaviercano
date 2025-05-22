@@ -133,11 +133,14 @@ Para crear un libro de Jupyter Notebook, utilizaremos Google Colab, ya que es f�
 
 Python ofrece una variedad de tipos de datos para representar información de manera eficiente. A continuación, te presento un cuadro comparativo:
 
-<table data-view="cards"><thead><tr><th>-</th><th>-</th><th>-</th></tr></thead><tbody><tr><td>int</td><td>Números enteros</td><td>42, -10, 0</td></tr><tr><td>float</td><td>Números de punto flotante</td><td>3.14, -2.5, 1.0e-8</td></tr><tr><td>str</td><td>Cadenas de texto</td><td>"Hola mundo", 'Python'</td></tr><tr><td>bool</td><td>Valores booleanos</td><td>True, False</td></tr><tr><td>list</td><td>Colecciones ordenadas y mutables</td><td>[1, 2, 3], ["manzana", "banana"]</td></tr><tr><td>tuple</td><td>Colecciones ordenadas e inmutables</td><td>(1, 2, 3), ("manzana", "banana")</td></tr><tr><td>set</td><td>Colecciones no ordenadas de elementos únicos</td><td>{1, 2, 3}, {"manzana", "banana"}</td></tr><tr><td>dict</td><td>Colecciones de pares clave-valor</td><td>{"nombre": "Juan", "edad": 30}</td></tr></tbody></table>
+<table data-view="cards"><thead><tr><th>-</th><th>-</th><th>-</th></tr></thead><tbody><tr><td>Int</td><td>Números enteros</td><td>42, -10, 0</td></tr><tr><td>float</td><td>Números de punto flotante</td><td>3.14, -2.5, 1.0e-8</td></tr><tr><td>str</td><td>Cadenas de texto</td><td>"Hola mundo", 'Python'</td></tr><tr><td>bool</td><td>Valores booleanos</td><td>True, False</td></tr><tr><td>list</td><td>Colecciones ordenadas y mutables</td><td>[1, 2, 3], ["manzana", "banana"]</td></tr><tr><td>tuple</td><td>Colecciones ordenadas e inmutables</td><td>(1, 2, 3), ("manzana", "banana")</td></tr><tr><td>set</td><td>Colecciones no ordenadas de elementos únicos</td><td>{1, 2, 3}, {"manzana", "banana"}</td></tr><tr><td>dict</td><td>Colecciones de pares clave-valor</td><td>{"nombre": "Juan", "edad": 30}</td></tr></tbody></table>
 
-* Obteniendo el tipo de datos
+> Obteniendo el tipo de datos: Puede obtener el tipo de datos de cualquier objeto usando la función \*\*type():
 
-Puede obtener el tipo de datos de cualquier objeto usando la función \*\*type():
+```python
+y = 10
+print(type(y))
+```
 
 #### ¿Qué es PIP?[¶](broken-reference) <a href="#c2-bfqu-c3-a9-es-pip" id="c2-bfqu-c3-a9-es-pip"></a>
 
