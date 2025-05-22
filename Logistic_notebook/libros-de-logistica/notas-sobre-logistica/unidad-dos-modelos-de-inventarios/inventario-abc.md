@@ -1,3 +1,7 @@
+---
+icon: store
+---
+
 # Inventario ABC
 
 El inventario ABC es un método de categorización que clasifica los productos en tres grupos distintos (A, B y C) según su valor e importancia para la empresa. El objetivo es identificar los artículos que requieren mayor atención y gestión. Los productos de categoría "A" son los más valiosos, representando una alta proporción del valor total del inventario con un número menor de artículos, y por lo tanto merecen un seguimiento más detallado. Los artículos "B" son de importancia moderada, mientras que los artículos "C" tienen menor valor y pueden ser gestionados con un enfoque más generalizado. Este sistema ayuda a optimizar los niveles de inventario y maximizar la eficiencia operativa.

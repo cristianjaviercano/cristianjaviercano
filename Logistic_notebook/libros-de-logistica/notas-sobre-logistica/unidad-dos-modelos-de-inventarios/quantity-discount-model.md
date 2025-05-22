@@ -1,3 +1,7 @@
+---
+icon: sack-dollar
+---
+
 # Quantity discount Model
 
 ### Modelo de Descuento por Cantidad en EOQ
@@ -14,17 +18,19 @@ El modelo de descuento por cantidad aplicado al EOQ (Economic Order Quantity) in
 
 Para aplicar el modelo de descuento, primero se calcula el EOQ para cada nivel de precios por cantidad. Luego se evalúan los costos totales para cada escenario y se selecciona el más bajo.
 
-*   **EOQ Básico:**
+```
+EOQ Básico:
+```
 
-    \[\
-    EOQ = \sqrt{\frac{2DS}{H\}}\
-    ]
+```latex
+[EOQ = \sqrt{\frac{2DS}{H}}]
+```
 
-    Donde:
+Donde:
 
-    * ( D ) = Demanda anual.
-    * ( S ) = Costo por pedido.
-    * ( H ) = Costo de mantener el inventario por unidad al año.
+* ( D ) = Demanda anual.
+* ( S ) = Costo por pedido.
+* ( H ) = Costo de mantener el inventario por unidad al año.
 *   **Cálculo Ajustado:**
 
     1. Calcular el EOQ para cada posible precio de descuento.
@@ -46,16 +52,15 @@ Para aplicar el modelo de descuento, primero se calcula el EOQ para cada nivel d
 
         **Paso 1:** Calcular el EOQ sin descuentos.
 
-        \[\
-        EOQ = \sqrt{\frac{2 \times 1000 \times 50}{2\}} = 100\
-        ]
+```latex
+EOQ = \sqrt{\frac{2 \times 1000 \times 50}{2}} = 100
+```
 
-        **Paso 2:** Evaluar cada nivel de descuento.
+* **Paso 2:** Evaluar cada nivel de descuento.
+  * **100-199 unidades: ($95 x unidad):**
+    * Verificar si el EOQ cae en este rango. Calculamos costos totales para varias cantidades e identificamos el mínimo.
+  *   **200+ unidades: ($90 x unidad):**
 
-        * **100-199 unidades: ($95 x unidad):**
-          * Verificar si el EOQ cae en este rango. Calculamos costos totales para varias cantidades e identificamos el mínimo.
-        *   **200+ unidades: ($90 x unidad):**
+      * Recalcular EOQ aplicable y estimar costos totales.
 
-            * Recalcular EOQ aplicable y estimar costos totales.
-
-            Finalmente, se selecciona la cantidad de pedido que resulta en el costo total más bajo, considerando precios con descuento.
+      Finalmente, se selecciona la cantidad de pedido que resulta en el costo total más bajo, considerando precios con descuento.

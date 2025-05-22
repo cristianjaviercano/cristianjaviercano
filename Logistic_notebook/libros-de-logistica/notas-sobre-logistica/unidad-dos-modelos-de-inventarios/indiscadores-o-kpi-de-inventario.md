@@ -1,3 +1,7 @@
+---
+icon: sign-post
+---
+
 # Indiscadores o KPI de Inventario
 
 ## KPI's de Inventario

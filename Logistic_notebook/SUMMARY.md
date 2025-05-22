@@ -13,6 +13,10 @@
     * [Indiscadores o KPI de Inventario](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
 
+***
+
+* [Page](page.md)
+
 ## Libros de Analisis de Datos
 
 * [SQL + PYTHON](libros-de-analisis-de-datos/sql-+-python/README.md)
