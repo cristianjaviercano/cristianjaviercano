@@ -1,0 +1,1005 @@
+# Analisis de Datos usando Python y SQL (SqLite)
+
+## Explicación del entorno de Jupyter Notebook[¶](broken-reference) <a href="#explicaci-c3-b3n-del-entorno-de-jupyter-notebook" id="explicaci-c3-b3n-del-entorno-de-jupyter-notebook"></a>
+
+### ¿Qué es Jupyter Notebook? <a href="#c2-bfqu-c3-a9-es-jupyter-notebook" id="c2-bfqu-c3-a9-es-jupyter-notebook"></a>
+
+{% hint style="info" %}
+En este módulo, aprenderás a utilizar Jupyter Notebook, una herramienta fundamental para el análisis de datos y la programación en Python. A continuación, se describen los aspectos clave que debes conocer para comenzar a trabajar en este entorno.
+{% endhint %}
+
+<details>
+
+<summary>La importancia de Jupyter Notebook en el desarrollo de la ingeniería industrial y el manejo de datos</summary>
+
+Jupyter Notebook es una herramienta esencial en el ámbito de la ingeniería industrial debido a su capacidad para combinar texto, código y visualizaciones en un solo documento. Esto facilita la documentación y presentación de análisis complejos de datos. Los ingenieros industriales pueden usar Jupyter para:
+
+* Prototipar y validar rápidamente modelos de optimización.
+* Visualizar datos de manera interactiva, lo cual es crucial para la identificación de patrones y tendencias.
+* Colaborar de manera eficiente gracias a la facilidad de compartir notebooks con colegas.
+* Integrar fácilmente diferentes lenguajes de programación, como Python y R, que son comúnmente utilizados en el análisis de datos.
+
+El uso de Jupyter Notebook ayuda a mejorar tanto la eficiencia como la claridad en la comunicación de resultados analíticos.
+
+</details>
+
+<details>
+
+<summary>Que es Jupyter Notebook</summary>
+
+Jupyter Notebook es un entorno de desarrollo interactivo que permite crear y compartir documentos que contienen código en vivo, ecuaciones, visualizaciones y texto narrativo. Es ampliamente utilizado en ciencia de datos, aprendizaje automático y educación.
+
+</details>
+
+<details>
+
+<summary>Otro Concepto:</summary>
+
+Jupyter Notebook es una herramienta de código abierto que te permite crear y compartir documentos que contienen código ejecutable, visualizaciones y texto enriquecido. Es ideal para:
+
+1. Análisis de datos: Permite explorar, limpiar y visualizar datos de manera interactiva.
+
+2) Aprendizaje: Es una excelente herramienta para aprender a programar y experimentar con diferentes conceptos.
+
+3. Documentación: Puedes crear informes y tutoriales que combinen código, texto y resultados.
+
+</details>
+
+#### **concepto tres:**
+
+> Los cuadernos Jupyter Notebooks son una aplicación web de código abierto que facilita un entorno computacional interactivo, lo que permite a los usuarios crear y compartir documentos que integran código en vivo, visualizaciones y texto narrativo sin problemas. Estos cuadernos, particularmente populares en la ciencia de datos, admiten más de 40 lenguajes de programación, principalmente Python, Julia y R, lo que los convierte en herramientas versátiles para el análisis de datos y con fines educativos. Su formato único promueve una combinación de exploración y documentación, lo que permite a los usuarios realizar análisis, visualizar resultados y mejorar la comunicación con partes interesadas no técnicas, lo que eleva el aspecto colaborativo de los proyectos basados **en datos**.
+
+{% tabs %}
+{% tab title="Fuente1" %}
+[https://storm.genie.stanford.edu/article/data-analysis-jupyter-notebook-and--sql-172832](https://storm.genie.stanford.edu/article/data-analysis-jupyter-notebook-and--sql-172832)
+{% endtab %}
+
+{% tab title="Fuente 2" %}
+[https://www.bmc.com/blogs/instalación-de-jupyter-para-big-data-y-analíticas/](https://www.bmc.com/blogs/instalaci%C3%B3n-de-jupyter-para-big-data-y-anal%C3%ADticas/)
+{% endtab %}
+
+{% tab title="Fuente 3" %}
+[https://careerfoundry.com/es/blog/data-analytics/jupyter-notebook-tutorial/](https://careerfoundry.com/es/blog/data-analytics/jupyter-notebook-tutorial/)
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Estructura de un Notebook" %}
+Un notebook está compuesto por celdas. Cada celda puede contener:
+
+* Código: Aquí escribes el código que quieres ejecutar (Python, R, etc.).
+* Markdown: Puedes escribir texto formateado, como títulos, listas y ecuaciones, en este caso se utiliza el lenguaje de escritura Latex.
+{% endtab %}
+
+{% tab title="Características clave de Jupyter Notebook" %}
+* Interactivo: Puedes ejecutar código línea por línea y ver los resultados inmediatamente.
+* Visual: Puedes crear visualizaciones directamente en el notebook utilizando bibliotecas como Matplotlib y Seaborn.
+* Extensible: Jupyter Notebook se puede personalizar con una gran variedad de extensiones.
+* Colaborativo: Puedes compartir tus notebooks con otros y colaborar en tiempo real.
+{% endtab %}
+
+{% tab title="Interfaz de Jupyter Notebook" %}
+* La interfaz de Jupyter es intuitiva y está dividida en varias secciones:
+* Celdas: Las celdas son bloques donde puedes escribir código o texto. Puedes alternar entre celdas de código y celdas de texto (Markdown).
+* Menú superior: Aquí encontrarás opciones para guardar, abrir, crear nuevos notebooks y más.
+* Barra lateral: Muestra los archivos y notebooks disponibles en el directorio actual.
+{% endtab %}
+
+{% tab title="Uso de Celdas" %}
+* Celdas de Código: Escribe código Python aquí y ejecútalo presionando Shift + Enter.
+* Celdas de Texto (Markdown): Puedes documentar tu trabajo usando Markdown para formatear texto, incluir imágenes y enlaces.
+{% endtab %}
+{% endtabs %}
+
+### **Ejercicio Practico:**
+
+Para crear un libro de Jupyter Notebook, utilizaremos Google Colab, ya que es fácil y gratuito. Si prefieres hacerlo en tu PC local, también es posible, pero nos centraremos en el trabajo en la nube por ahora.
+
+1. Abre tue cuenta de Google.
+2. Accede a tu Google Drive y crea una carpeta para
+3. Para crear un archivo nuevo en un programa llamado "Google Collaboratory", sigue estos pasos:
+   1. Abre la carpeta donde deseas crear el archivo.
+   2. Si no encuentras "Google Collaboratory", abre tu navegador web.
+   3. Busca "Google Colab" y accede al sitio oficial.
+   4. Vincula tu cuenta de Google con el "Notebook" de Google Colab.
+   5. Crea un nuevo archivo y comienza a trabajar
+
+### Naturaleza de los Datos[¶](broken-reference) <a href="#naturaleza-de-los-datos" id="naturaleza-de-los-datos"></a>
+
+***
+
+> los datos se enmarcan en el fenomeno del cual son detectados para esto, lo primero es definir el tipo de fenomeno que se esta observando, y el tipo de herramienta de medicion que se debera utilizar para la captura de los mismos.
+
+> el fenomeno de la naturaleza encierra infinidades de datos que pueden ser leidos, la limitacion se ecnuentra en la forma y el tipo de mediciones asi como la capacidad de procesamiento del sistema en funcion de estos datos, es por esto que los fenomenos observados son modelados para relaizar, imitaciones del mismo, tan sencillos o complejos como el investigador considere y sea pertinenre para el estudio.
+
+### tipos de datos en la naturaleza.[¶](broken-reference) <a href="#tipos-de-datos-en-la-naturaleza" id="tipos-de-datos-en-la-naturaleza"></a>
+
+> Los datos son la materia prima de la información. Son observaciones o mediciones de fenómenos del mundo real, que pueden ser cuantificados o cualificados.
+
+***
+
+## **Tipos de Datos en la Naturaleza**[**¶**](broken-reference)
+
+***
+
+* **Continuos:** Pueden tomar cualquier valor dentro de un rango. Ejemplos: altura, peso, temperatura.
+* **Discretos:** Valores enteros que representan conteos. Ejemplos: número de hijos, cantidad de carros.
+* **Datos Cuantitativos:** Expresan cantidades o magnitudes, medibles numéricamente.
+* **Ordinales:** Tienen un orden natural, pero las diferencias entre categorías no son uniformes. Ejemplos: nivel de educación (primaria, secundaria, universitaria), escala de Likert (muy de acuerdo, de acuerdo, neutral, en desacuerdo, muy en desacuerdo).
+* **Nominales:** No poseen un orden intrínseco. Ejemplos: color de ojos, género, tipo de sangre.
+* **Datos Cualitativos:** Describen cualidades o características y no se miden numéricamente.
+
+### **Manejo de Datos en Python: Tipologías de Datos**
+
+Python ofrece una variedad de tipos de datos para representar información de manera eficiente. A continuación, te presento un cuadro comparativo:
+
+<table data-view="cards"><thead><tr><th>-</th><th>-</th><th>-</th></tr></thead><tbody><tr><td>int</td><td>Números enteros</td><td>42, -10, 0</td></tr><tr><td>float</td><td>Números de punto flotante</td><td>3.14, -2.5, 1.0e-8</td></tr><tr><td>str</td><td>Cadenas de texto</td><td>"Hola mundo", 'Python'</td></tr><tr><td>bool</td><td>Valores booleanos</td><td>True, False</td></tr><tr><td>list</td><td>Colecciones ordenadas y mutables</td><td>[1, 2, 3], ["manzana", "banana"]</td></tr><tr><td>tuple</td><td>Colecciones ordenadas e inmutables</td><td>(1, 2, 3), ("manzana", "banana")</td></tr><tr><td>set</td><td>Colecciones no ordenadas de elementos únicos</td><td>{1, 2, 3}, {"manzana", "banana"}</td></tr><tr><td>dict</td><td>Colecciones de pares clave-valor</td><td>{"nombre": "Juan", "edad": 30}</td></tr></tbody></table>
+
+* Obteniendo el tipo de datos
+
+Puede obtener el tipo de datos de cualquier objeto usando la función \*\*type():
+
+#### ¿Qué es PIP?[¶](broken-reference) <a href="#c2-bfqu-c3-a9-es-pip" id="c2-bfqu-c3-a9-es-pip"></a>
+
+PIP es un administrador de paquetes para paquetes Python, o módulos si lo desea.
+
+* ¿Qué es un paquete? Un paquete contiene todos los archivos que necesita para un **módulo**. Los _módulos_ son bibliotecas de código Python que puedes incluir en tu proyecto.
+
+***
+
+Encontrar paquetes Encuentre más paquetes en [https://pypi.org/](https://pypi.org/).
+
+***
+
+#### Manejo de Archivos:[¶](broken-reference) <a href="#manejo-de-archivos" id="manejo-de-archivos"></a>
+
+La función clave para trabajar con archivos en Python es la función **open().**
+
+* The open() function takes two parameters; filename, and mode.
+* Hay cuatro métodos (modos) diferentes para abrir un archivo: ||| |:-|:-| |**"r"**| Leer - Valor predeterminado. Abre un archivo para su lectura, error si el archivo no existe| |**"a"**| Apundar - Abre un archivo para añadirlo, crea el archivo si no existe| |**"w"**| Escribir - Abre un archivo para escribir, crea el archivo si no existe| |**"x"**| Crear - Crea el archivo especificado, devuelve un error si el archivo existe| |**"t"**| Texto - Valor predeterminado. Modo de texto| |**"b"**| Binario - Modo binario (por ejemplo, imágenes)|
+
+***
+
+sintaxis
+
+***
+
+f = open("Crcfile.txt") --> para abrir un archivo f = open("Crcfile.txt", "rt") --> abre el archivo y se especifica la naturaleza del mismo, los codigos son iguales en este caso no es necesario especificar ya que es el "default" del sistema.
+
+#### Herramientas de manejos de datos en Jupyter Notebook[¶](broken-reference) <a href="#herramientas-de-manejos-de-datos-en-jupyter-notebook" id="herramientas-de-manejos-de-datos-en-jupyter-notebook"></a>
+
+dentro del entorno de JN tenemos muchas herramientas de analisis que nos permitiran la manipulacion de datos en tiempo real asi como el analisis de los mismos con un par de lienas de codigo.
+
+A diferencia de Ms Excel este no es visual es decir no podras ver el contenido de cada celda ano ser que sea llamda para visualoizarse, estos conceptos los veremos mas adelante duarante el desarrollo del curso.
+
+los programas o aplicaciones que trabajan junto a JN, son llamadas _Librerias_, estas son los que procesan o realizan los trabajos, algunas de estas se encuentran precargadas en el ambiente de Jupiter otras por el contrario hay que instalarlas o llamarlas para que generen valor en el documento, cada una de ellas tiene su propia sintaxis.
+
+**Librerias para manejo de Datos en Python y jupyter Notebook**[**¶**](broken-reference)
+
+***
+
+* NumPy:
+
+***
+
+Es la librería fundamental para computación numérica en Python. Proporciona objetos de arreglos multidimensionales, diversas funciones matemáticas y herramientas para trabajar con estos arreglos.
+
+***
+
+* Pandas:
+
+***
+
+Construido sobre NumPy, Pandas ofrece estructuras de datos de alto nivel como Series y DataFrames, que facilitan el análisis y manipulación de datos. Permite cargar datos desde diversos formatos (CSV, Excel, bases de datos), realizar limpieza, transformación, y análisis exploratorio de datos.
+
+***
+
+**librerias para Visualización:**[**¶**](broken-reference)
+
+***
+
+* Matplotlib:
+
+***
+
+Es la biblioteca de visualización más utilizada en Python. Ofrece una amplia variedad de gráficos y personalizaciones para visualizar datos de manera efectiva.
+
+***
+
+* Seaborn:
+
+***
+
+Construido sobre Matplotlib, Seaborn proporciona una interfaz de alto nivel para crear gráficos estadísticos atractivos y informativos.
+
+***
+
+* Plotly:
+
+***
+
+Crea gráficos interactivos que se pueden exportar a diferentes formatos y compartir en línea.
+
+***
+
+* Otras Herramientas Útiles:
+
+***
+
+* SQLAlchemy: Permite conectar Jupyter Notebook a diversas bases de datos relacionales y ejecutar consultas SQL.
+* Xarray: Extensión de Pandas para trabajar con datos multidimensionales, como datos climáticos o imágenes.
+* NetworkX: Para el análisis de redes.
+
+***
+
+#### Python desde jupyter notebook y MySQL[¶](broken-reference) <a href="#python-desde-jupyter-notebook-y-mysql" id="python-desde-jupyter-notebook-y-mysql"></a>
+
+**Instalacion de los paquetes de MySQL**[**¶**](broken-reference)
+
+Para ejecutar SQL directamente en un cuaderno de Jupyter, necesitaremos dos cosas:
+
+1. Un conector o controlador para interactuar con la base de datos (como sqlite3, psycopg2, etc.).
+2. Una extensión de Jupyter que nos permita ejecutar SQL en las celdas.
+
+***
+
+* Paquetes necesarios:
+
+***
+
+1. ipython-sql: Extensión para ejecutar SQL en Jupyter.
+
+Un controlador para la base de datos que estés utilizando.
+
+Si, por ejemplo, usas **SQLite**, el paquete sqlite3 ya está integrado en Python.
+
+Si usas PostgreSQL, necesitarás psycopg2.
+
+**diferencia entre SQLite y SQLAlchemy**[**¶**](broken-reference)
+
+1. SQLite:
+
+**Motor de base de datos:** SQLite es un sistema de gestión de bases de datos relacional (SGBDR) ligero y embebido. Esto significa que es una base de datos completa en sí misma, almacenada en un único archivo.
+
+**Funcionalidad:** Permite crear, modificar y consultar bases de datos, pero su interfaz es a nivel de SQL. Es decir, interactúas directamente con la base de datos a través de comandos SQL.
+
+**Uso común:** Ideal para proyectos pequeños, aplicaciones de escritorio, prototipos y cualquier situación en la que necesites una base de datos simple y ligera. Limitaciones: Al ser embebido, tiene ciertas limitaciones en términos de concurrencia y escalabilidad comparado con otros SGBDR.
+
+2. SQLAlchemy:
+
+_SQLAlchemy es una poderosa biblioteca de Python para trabajar con bases de datos relacionales utilizando SQL. Ofrece una abstracción de alto nivel llamada ORM (Object Relational Mapping) que permite interactuar con las bases de datos usando objetos Python. También puedes utilizarlo a nivel de SQL puro sin el ORM, lo que lo convierte en una opción flexible para trabajar con bases de datos_
+
+**ORM (Object-Relational Mapper):** SQLAlchemy es una biblioteca de Python que actúa como un puente entre tu código Python y la base de datos. Te permite interactuar con la base de datos utilizando objetos de Python, lo que simplifica la programación.
+
+**Abstracción:** SQLAlchemy te abstrae de los detalles específicos de la base de datos subyacente. Esto significa que puedes cambiar de SQLite a PostgreSQL o MySQL sin modificar mucho tu código.
+
+**Funcionalidad:** Además de ejecutar consultas SQL, SQLAlchemy ofrece características avanzadas como mapeo objeto-relacional, migraciones, y optimización de consultas.
+
+**Uso común:** Ideal para proyectos de mayor envergadura donde necesitas una mayor flexibilidad y control sobre la interacción con la base de datos.
+
+**Instalar el Administrador de Mysql**[**¶**](broken-reference)
+
+para efectos de conocer el entorno de Mysql debemos buscar e instalar Mysql workbench
+
+**Workbennch:** Es una herramienta gráfica que facilita la interacción con bases de datos SQL.
+
+[https://www.mysql.com/products/workbench/](https://www.mysql.com/products/workbench/)
+
+donde debemos seleccionar la version que se acomode a nuestro sistema operativo, en este caso, este curso fue realizado con una Mac M1, asique la version que se utilizara para explicacion sera orientada a Mac, no obstante pueden existir algunas variaciones minimas, pero no sera el problema.
+
+MySQL es un sistema de gestión de bases de datos relacionales (SGBDR) muy popular, conocido por su rendimiento, flexibilidad y comunidad activa. Workbench es una herramienta gráfica que facilita la interacción con bases de datos MySQL, permitiendo crear bases de datos, tablas, ejecutar consultas y visualizar los resultados de forma intuitiva.
+
+**Conceptos Básicos de SQL**
+
+SELECT: Se utiliza para seleccionar datos de una o más tablas. FROM: Especifica la tabla de la que se extraerán los datos. WHERE: Filtra los resultados según una condición. INSERT INTO: Inserta nuevos registros en una tabla. UPDATE: Actualiza los valores de registros existentes. DELETE: Elimina registros de una tabla.
+
+**Tarea del modulo 0:**[**¶**](broken-reference)
+
+1. instala el server y el workbench de MYSQL en tu maquina.
+2. anota con cautela la contraseña de tu Server.
+3. instala el ambiente de workbench y crea una base de datos
+
+puedes apoyarte con IA para esta tarea.
+
+**Pasos para instalacion de MySQL, Workbench y mi primetra tabla**[**¶**](broken-reference)
+
+***
+
+1. Descarga de MySQL y Workbench
+
+***
+
+Visita la página oficial de MySQL: [https://www.mysql.com](https://www.mysql.com/) Selecciona tu sistema operativo: Haz clic en el botón correspondiente a tu sistema operativo (Windows, macOS o Linux). Descarga los instaladores: Descarga tanto el instalador de MySQL Server como el de MySQL Workbench.
+
+***
+
+2. Instalación de MySQL Server
+
+***
+
+Ejecuta el instalador: Haz doble clic en el archivo descargado. Sigue las instrucciones: Sigue las instrucciones del asistente de instalación, aceptando los términos y condiciones y seleccionando las opciones por defecto en la mayoría de los casos. Establece una contraseña: Durante la instalación, se te pedirá que establezcas una contraseña para el usuario root de MySQL. Anota esta contraseña ya que la necesitarás para conectarte a la base de datos.
+
+***
+
+3. Instalación de MySQL Workbench
+
+***
+
+Ejecuta el instalador: Haz doble clic en el archivo descargado. Sigue las instrucciones: Al igual que con MySQL Server, sigue las instrucciones del asistente de instalación.
+
+***
+
+4. Conexión a MySQL Workbench
+
+***
+
+* Inicia Workbench: Una vez instalada, abre la aplicación MySQL Workbench.
+* Crea una nueva conexión: Haz clic en el icono "+" en la sección "MySQL Connections".
+* Configura la conexión:
+* Name: Asigna un nombre a tu conexión (por ejemplo, "MiPrimeraBaseDeDatos").
+* Host: Normalmente es "localhost".
+* User: "root" (el usuario por defecto).
+* Password: Introduce la contraseña que estableciste durante la instalación de MySQL Server.
+* Port: Por lo general, es "3306".
+* Prueba la conexión: Haz clic en "Test Connection". Si todo está correcto, se establecerá la conexión.
+
+***
+
+5. Creación de una Base de Datos
+
+***
+
+* Expanda la conexión: Haz clic en el signo "+" junto al nombre de tu conexión para expandirla.
+* Crea una nueva base de datos: Haz clic derecho en el nombre de tu conexión y selecciona "Create Database".
+* Asigna un nombre: Escribe un nombre para tu base de datos (por ejemplo, "mydb").
+* Ejecuta la creación: Haz clic en "OK".
+
+***
+
+6. Creación de una Tabla
+
+***
+
+Selecciona la base de datos: Haz clic en el nombre de la base de datos que acabas de crear. Crea una nueva tabla: Haz clic derecho y selecciona "Create Table".
+
+* Define los campos:
+
+1. Nombre del campo: Escribe un nombre descriptivo (por ejemplo, "id", "nombre", "edad").
+2. Tipo de dato: Selecciona el tipo de dato adecuado (int, varchar, etc.).
+3. Longitud: Especifica la longitud máxima para los campos de tipo texto.
+
+* Clave primaria: Indica cuál es la clave primaria de la tabla (un campo único que identifica cada registro).
+
+Ejecuta la creación: Haz clic en "OK".
+
+***
+
+7. Insertar Datos
+
+***
+
+Escribe una consulta SQL: En la pestaña "SQL", escribe una consulta como esta para insertar datos:
+
+"INSERT INTO mi\_tabla (id, nombre, edad) VALUES (1, 'Juan', 30);" (sin comillas)
+
+8. Ejecuta la Consulta: en el signo de rayo (:9)
+
+### Introduccion a SQL y a las Bases de Datos:[¶](broken-reference) <a href="#introduccion-a-sql-y-a-las-bases-de-datos" id="introduccion-a-sql-y-a-las-bases-de-datos"></a>
+
+***
+
+**SQL (Structured Query Language):**
+
+***
+
+Es un lenguaje estándar para gestionar y manipular bases de datos relacionales. SQL permite realizar tareas como consultar datos, actualizar registros, insertar nuevos datos y eliminar datos existentes.Bases de Datos Relacionales: Son colecciones organizadas de datos que se estructuran en tablas. Cada tabla tiene filas (registros) y columnas (campos).
+
+Las bases de datos relacionales utilizan claves primarias y foráneas para establecer relaciones entre tablas.
+
+Ejemplo de una base de datos simple:
+
+1. Tabla Clientes:
+
+* ID (Clave primaria)
+* Nombre
+* Email
+
+2. Tabla Pedidos:
+
+* PedidoID (Clave primaria)
+* ClienteID (Clave foránea que referencia a Clientes.ID)
+* Fecha
+
+***
+
+**Características de SQL**
+
+1. Declarativo: SQL es un lenguaje declarativo, lo que significa que describe qué hacer, no cómo hacerlo.
+2. Portabilidad: SQL es compatible con la mayoría de los sistemas de gestión de bases de datos (DBMS) como MySQL, PostgreSQL, Oracle, SQL Server, etc.
+3. Estandarización: SQL es un estándar internacional, lo que asegura su consistencia y compatibilidad en diferentes plataformas.
+
+**Usos Comunes de SQL**
+
+1. Consultas de Datos: Recuperar información específica de grandes conjuntos de datos.
+2. Gestión de Datos: Insertar, actualizar y eliminar datos de manera eficiente.
+3. Análisis de Datos: Realizar cálculos y agregaciones para obtener insights.
+4. Seguridad de Datos: Controlar el acceso a los datos mediante permisos y roles.
+
+***
+
+para efectos de este curso utlizameros "Workbench" como plataforma de manipulacion de datos.
+
+**MySQL Workbench**
+
+* es una herramienta visual de diseño y administración de bases de datos para MySQL . Es ampliamente utilizada por desarrolladores y administradores de bases de datos para interactuar con bases de datos MySQL de manera más eficiente.
+
+1. Interfaz Gráfica de Usuario (GUI): Proporciona una interfaz amigable para realizar tareas comunes de administración de bases de datos sin necesidad de usar la línea de comandos.
+2. Modelado de Datos: Permite crear modelos de datos visuales, lo que facilita el diseño y la comprensión de la estructura de la base de datos.
+3. Desarrollo de SQL: Incluye un editor SQL que permite escribir, ejecutar y depurar consultas SQL . También ofrece resaltado de sintaxis y autocompletado para facilitar la escritura de código.
+4. Administración de Servidores: Ofrece herramientas para gestionar usuarios, permisos, y realizar tareas de mantenimiento como copias de seguridad y restauración de bases de datos.
+5. Migración de Datos: Facilita la migración de bases de datos desde otros sistemas de gestión de bases de datos a MySQL.
+6. Monitoreo de Rendimiento: Proporciona herramientas para monitorear el rendimiento del servidor MySQL y optimizar consultas.
+7. Compatibilidad Multiplataforma: Está disponible para Windows, macOS y Linux, lo que permite su uso en diferentes entornos.
+
+### Teoria de Bases de Datos[¶](broken-reference) <a href="#teoria-de-bases-de-datos" id="teoria-de-bases-de-datos"></a>
+
+#### Concepto de base de datos[¶](broken-reference) <a href="#concepto-de-base-de-datos" id="concepto-de-base-de-datos"></a>
+
+***
+
+Concepto uno:
+
+***
+
+Una base de datos es una colección organizada de datos que pueden ser fácilmente accesibles, gestionados y actualizados. Estos datos están estructurados de tal manera que permiten realizar consultas rápidas y precisas sobre grandes volúmenes de información. (crc)
+
+Una base de datos es como una biblioteca organizada y digital. Imaginemos una biblioteca donde cada libro contiene información específica y todos los libros están ordenados de manera que puedas encontrar fácilmente el que buscas. Una base de datos funciona de manera similar, pero en lugar de libros, almacena información digital.
+
+* ¿Para qué sirven las bases de datos?
+
+1. **Almacenar grandes cantidades de información:** Desde datos personales hasta registros de ventas, todo puede ser guardado en una base de datos.
+2. **Organizar la información:** Las bases de datos estructuran los datos de manera lógica, lo que facilita encontrar la información que necesitas.
+3. **Buscar información rápidamente:** Con una base de datos, puedes encontrar información específica en cuestión de segundos.
+4. **Compartir información:** Puedes compartir la información almacenada en una base de datos con otras personas o aplicaciones.
+
+#### ¿Cómo funciona una base de datos?[¶](broken-reference) <a href="#c2-bfc-c3-b3mo-funciona-una-base-de-datos" id="c2-bfc-c3-b3mo-funciona-una-base-de-datos"></a>
+
+* Una base de datos se compone de:
+
+1. **Tablas:** Son como hojas de cálculo donde se almacenan los datos. Cada tabla tiene filas (registros) y columnas (campos).
+2. **Registros:** Cada fila representa un elemento de datos, como un cliente o un producto.
+3. **Campos:** Cada columna representa un atributo de un elemento de datos, como el nombre, la dirección o el precio.
+4. **Relaciones:** Las tablas pueden estar relacionadas entre sí, lo que permite establecer conexiones entre los datos.
+
+#### ¿Cuáles son los tipos de bases de datos?[¶](broken-reference) <a href="#c2-bfcu-c3-a1les-son-los-tipos-de-bases-de-datos" id="c2-bfcu-c3-a1les-son-los-tipos-de-bases-de-datos"></a>
+
+Existen diferentes tipos de bases de datos, cada uno con sus características y usos:
+
+1. **Relacionales:** Las bases de datos relacionales son las más comunes. Se basan en un modelo de datos tabular, donde la información se organiza en tablas (filas y columnas). Las tablas pueden estar relacionadas entre sí mediante _claves primarias y claves foráneas_
+2. **No relacionales (NoSQL):** Diseñadas para manejar grandes volúmenes de datos no estructurados o semiestructurados, como texto o datos de redes sociales.
+3. **En memoria:** Almacenan los datos en la memoria RAM del servidor, lo que permite un acceso muy rápido.
+4. **Distribuidas:** Reparten los datos en múltiples servidores para mejorar el rendimiento y la escalabilidad.
+
+***
+
+definicion:
+
+1. **Clave primaria:** es un campo o conjunto de campos en una tabla que identifica de manera única cada registro dentro de esa tabla. Esto significa que no puede haber dos filas en la misma tabla que tengan el mismo valor para la clave primaria. Las características de una clave primaria son:
+
+* Unicidad: Cada valor de la clave primaria debe ser único para cada registro.
+* No nula: No se permite que los valores de la clave primaria sean nulos; cada registro debe tener un valor asignado.
+* Inalterabilidad: Idealmente, los valores de la clave primaria no deberían cambiar a lo largo del tiempo, ya que esto podría afectar las relaciones con otras tablas
+
+2. **Clave foranea:** es un campo (o conjunto de campos) en una tabla que se utiliza para crear una relación con otra tabla. Una clave foránea apunta a la clave primaria en otra tabla, estableciendo así una conexión entre los registros de ambas tablas. Las características de una clave foránea son:
+
+* Referencia: La clave foránea debe coincidir con un valor existente en la clave primaria de la tabla relacionada.
+* Integridad referencial: Asegura que las relaciones entre las tablas sean coherentes; es decir, no se pueden insertar valores en la clave foránea que no existan como claves primarias en la otra tabla.
+* Puede ser nula: A diferencia de la clave primaria, los campos definidos como claves foráneas pueden aceptar valores nulos si no es necesario establecer una relación 45.
+
+***
+
+#### Como Diseñar una Base de Datos.[¶](broken-reference) <a href="#como-dise-c3-b1ar-una-base-de-datos" id="como-dise-c3-b1ar-una-base-de-datos"></a>
+
+1. **analizar el sistema:** se debe analizar el sistema observado para encontrar los elementos claves y los campos que se deben gestionar al interior de la base de datos.
+
+no todos los datos pertenecen a la misma tabla, es posible almacenar diferentes tablas con diferentes tipos de datos y estos se relacionarian entre si, con el fin de hacer l conexion y generar informacion de Valor.
+
+2. **Realizar el esquema de relacion de la base de datos:** las bases de datos relacionadas entre ellas deberan ser graficadas a parte con el fin de manejar una relacion directa, sobre todo, las relaciones funcionales entre los datos. para esto podemos usar herramientas como powerquery de excel o de forma manual papel y lapiz.
+3. **Diseñar los campos de las bases de datos**: temar base de datos por base de datos y diseñar los campos de cada una de las bases de datos, para poder ingresar los datos.
+4. **Diseñar la base de datos en SQL e ingresar datos**:
+
+en este caso vamos. ahacer uso de la libreria _Pandas_ desde python para importar datos a las tablas, no obstante tenemos otras formas de hacerlo las cuales listamos:
+
+**1. Usar SQL Directamente desde Python**[**¶**](broken-reference)
+
+* _Conectar a la Base de Datos:_
+
+Asegúrate de tener una conexión establecida con tu base de datos usando una librería como pymysql o sqlite3 .
+
+import pymysql
+
+connection = pymysql.connect( host='localhost', --> el nombre del host de tu SQL user='tu\_usuario', --> tu suario password='tu\_contraseña', --> la contraseña de la BD SQL database='nombre\_de\_tu\_base\_de\_datos' --> cnombre de la BD )
+
+* Crear un Cursor:
+
+Utiliza un cursor para ejecutar comandos SQL.
+
+cursor = connection.cursor()
+
+* Insertar Datos:
+
+Usa una sentencia SQL INSERT INTO para agregar datos.
+
+sql = "INSERT INTO Productos (nombre, descripcion, precio, cantidad\_en\_stock, categoria\_id, proveedor\_id) VALUES (%s, %s, %s, %s, %s, %s)" val = ("Producto1", "Descripción del producto", 10.99, 100, 1, 1) cursor.execute(sql, val)
+
+* Confirmar Cambios: Asegúrate de confirmar los cambios para que se guarden en la base de datos.
+
+connection.commit()
+
+* Cerrar Conexión:
+
+Siempre cierra la conexión después de completar las operaciones.
+
+connection.close()
+
+NOTA: esta forma no es tan agil de ingresar datos al sistema, pero es valida.
+
+**2. Usar Pandas para Cargar Datos desde un DataFrame**[**¶**](broken-reference)
+
+1. Importar Librerías:
+
+Asegúrate de tener pandas y SQLAlchemy instalados.
+
+2. Crear un DataFrame:
+
+Crea un DataFrame con los datos que deseas cargar.
+
+data = { 'nombre': \['Producto1', 'Producto2'], 'descripcion': \['Descripción1', 'Descripción2'], 'precio': \[10.99, 20.99], 'cantidad\_en\_stock': \[100, 200], 'categoria\_id': \[1, 2], 'proveedor\_id': \[1, 2] } df = pd.DataFrame(data)
+
+3. Conectar a la Base de Datos:
+
+Usa SQLAlchemy para crear una conexión.
+
+engine = create\_engine('mysql+pymysql://tu\_usuario:tu\_contraseña@localhost/nombre\_de\_tu\_base\_de\_datos')
+
+4. Cargar el DataFrame a la Base de Datos:
+
+Usa el método **to\_sql** de pandas.
+
+'df.to\_sql('Productos', con=engine, if\_exists='append', index=False'
+
+Debemos limpiar la base de datos, por ejemplo los valores de las columnas
+
+* Parental\_Involvement object
+* Access\_to\_Resources object
+* Extracurricular\_Activities object
+
+son de tipo String, hay que pasarlas a Int o a Bollean para que sea computables con el reto.
+
+para esto haremos una lista de las columnas que deseamos cambiar y definimos los valores para cada uno de los datos
+
+Parental\_Involvement object a Low = 1 Medium =2 High = 3 Access\_to\_Resources object a Low = 1 Medium =2 High = 3 Extracurricular\_Activities object a Yes = 1 No = 0 Motivation\_Level object a Low = 1 Medium =2 High = 3 Internet\_Access object a Yes = 1 No = 0 Family\_Income object a Low = 1 Medium =2 High = 3 Teacher\_Quality object a Low = 1 Medium =2 High = 3 School\_Type object a Public = 1 Private = 2 Peer\_Influence object a Positive = 1 Negative = 2 Neutral = 3 Learning\_Disabilities object a yes = 1 no = 0 Parental\_Education\_Level object a High School = 1 College = 2 Postgraduate = 3 Distance\_from\_Home object a Near = 1 Moderate =2 Far = 3 Gender object a Male = 1 Female = 0
+
+In \[38]:
+
+```
+#(EDA)
+df.describe()
+# Correlasion
+corr_matrix = df.corr()
+print(corr_matrix)
+
+# Visualizacion
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.heatmap(corr_matrix, annot=True)
+plt.show()
+
+
+from sklearn.ensemble import RandomForestRegressor
+
+X = df.drop('Exam_Score', axis=1)
+y = df['Exam_Score']
+
+model = RandomForestRegressor()
+model.fit(X, y)
+
+feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+feature_importances.sort_values(ascending=False).plot(kind='barh')
+plt.show()
+```
+
+```
+/var/folders/c5/v7gmryxx5clfs98nnyc30ys00000gn/T/ipykernel_34364/18802199.py:4: FutureWarning: The default value of numeric_only in DataFrame.corr is deprecated. In a future version, it will default to False. Select only valid columns or specify the value of numeric_only to silence this warning.
+  corr_matrix = df.corr()
+```
+
+```
+                   Hours_Studied  Attendance  Sleep_Hours  Previous_Scores  \
+Hours_Studied           1.000000   -0.009908     0.010977         0.024846   
+Attendance             -0.009908    1.000000    -0.015918        -0.020186   
+Sleep_Hours             0.010977   -0.015918     1.000000        -0.021750   
+Previous_Scores         0.024846   -0.020186    -0.021750         1.000000   
+Tutoring_Sessions      -0.014282    0.014324    -0.012216        -0.013122   
+Physical_Activity       0.004624   -0.022435    -0.000378        -0.011274   
+Exam_Score              0.445455    0.581072    -0.017022         0.175079   
+
+                   Tutoring_Sessions  Physical_Activity  Exam_Score  
+Hours_Studied              -0.014282           0.004624    0.445455  
+Attendance                  0.014324          -0.022435    0.581072  
+Sleep_Hours                -0.012216          -0.000378   -0.017022  
+Previous_Scores            -0.013122          -0.011274    0.175079  
+Tutoring_Sessions           1.000000           0.017733    0.156525  
+Physical_Activity           0.017733           1.000000    0.027824  
+Exam_Score                  0.156525           0.027824    1.000000  
+```
+
+```
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+Cell In[38], line 21
+     18 y = df['Exam_Score']
+     20 model = RandomForestRegressor()
+---> 21 model.fit(X, y)
+     23 feature_importances = pd.Series(model.feature_importances_, index=X.columns)
+     24 feature_importances.sort_values(ascending=False).plot(kind='barh')
+
+File ~/anaconda3/lib/python3.10/site-packages/sklearn/ensemble/_forest.py:345, in BaseForest.fit(self, X, y, sample_weight)
+    343 if issparse(y):
+    344     raise ValueError("sparse multilabel-indicator for y is not supported.")
+--> 345 X, y = self._validate_data(
+    346     X, y, multi_output=True, accept_sparse="csc", dtype=DTYPE
+    347 )
+    348 if sample_weight is not None:
+    349     sample_weight = _check_sample_weight(sample_weight, X)
+
+File ~/anaconda3/lib/python3.10/site-packages/sklearn/base.py:565, in BaseEstimator._validate_data(self, X, y, reset, validate_separately, **check_params)
+    563         y = check_array(y, input_name="y", **check_y_params)
+    564     else:
+--> 565         X, y = check_X_y(X, y, **check_params)
+    566     out = X, y
+    568 if not no_val_X and check_params.get("ensure_2d", True):
+
+File ~/anaconda3/lib/python3.10/site-packages/sklearn/utils/validation.py:1106, in check_X_y(X, y, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, multi_output, ensure_min_samples, ensure_min_features, y_numeric, estimator)
+   1101         estimator_name = _check_estimator_name(estimator)
+   1102     raise ValueError(
+   1103         f"{estimator_name} requires y to be passed, but the target y is None"
+   1104     )
+-> 1106 X = check_array(
+   1107     X,
+   1108     accept_sparse=accept_sparse,
+   1109     accept_large_sparse=accept_large_sparse,
+   1110     dtype=dtype,
+   1111     order=order,
+   1112     copy=copy,
+   1113     force_all_finite=force_all_finite,
+   1114     ensure_2d=ensure_2d,
+   1115     allow_nd=allow_nd,
+   1116     ensure_min_samples=ensure_min_samples,
+   1117     ensure_min_features=ensure_min_features,
+   1118     estimator=estimator,
+   1119     input_name="X",
+   1120 )
+   1122 y = _check_y(y, multi_output=multi_output, y_numeric=y_numeric, estimator=estimator)
+   1124 check_consistent_length(X, y)
+
+File ~/anaconda3/lib/python3.10/site-packages/sklearn/utils/validation.py:879, in check_array(array, accept_sparse, accept_large_sparse, dtype, order, copy, force_all_finite, ensure_2d, allow_nd, ensure_min_samples, ensure_min_features, estimator, input_name)
+    877         array = xp.astype(array, dtype, copy=False)
+    878     else:
+--> 879         array = _asarray_with_order(array, order=order, dtype=dtype, xp=xp)
+    880 except ComplexWarning as complex_warning:
+    881     raise ValueError(
+    882         "Complex data not supported\n{}\n".format(array)
+    883     ) from complex_warning
+
+File ~/anaconda3/lib/python3.10/site-packages/sklearn/utils/_array_api.py:185, in _asarray_with_order(array, dtype, order, copy, xp)
+    182     xp, _ = get_namespace(array)
+    183 if xp.__name__ in {"numpy", "numpy.array_api"}:
+    184     # Use NumPy API to support order
+--> 185     array = numpy.asarray(array, order=order, dtype=dtype)
+    186     return xp.asarray(array, copy=copy)
+    187 else:
+
+File ~/anaconda3/lib/python3.10/site-packages/pandas/core/generic.py:2070, in NDFrame.__array__(self, dtype)
+   2069 def __array__(self, dtype: npt.DTypeLike | None = None) -> np.ndarray:
+-> 2070     return np.asarray(self._values, dtype=dtype)
+
+ValueError: could not convert string to float: 'Low'
+```
+
+### Pasos basicos[¶](broken-reference) <a href="#pasos-basicos" id="pasos-basicos"></a>
+
+leer una tabla en python que tengamos en CSV
+
+import pandas as pd
+
+df = pd.read\_csv('url del archivo y el nomnbre')
+
+print(df.to\_string())
+
+### que es PANDAS:[¶](broken-reference) <a href="#que-es-pandas" id="que-es-pandas"></a>
+
+Pandas es una biblioteca de Python utilizada para trabajar con conjuntos de datos.
+
+Tiene funciones para analizar, limpiar, explorar y manipular datos.
+
+El nombre "Pandas" tiene una referencia tanto a "Panel Data" como a "Python Data Analysis" y fue creado por Wes McKinney en 2008.
+
+### ¿Por qué usar pandas?[¶](broken-reference) <a href="#c2-bfpor-qu-c3-a9-usar-pandas" id="c2-bfpor-qu-c3-a9-usar-pandas"></a>
+
+Pandas nos permite analizar macrodatos y sacar conclusiones basadas en teorías estadísticas.
+
+Los pandas pueden limpiar conjuntos de datos desordenados y hacerlos legibles y relevantes.
+
+Los datos relevantes son muy importantes en la ciencia de datos.
+
+### ¿Qué podemos hacer los pandas?[¶](broken-reference) <a href="#c2-bfqu-c3-a9-podemos-hacer-los-pandas" id="c2-bfqu-c3-a9-podemos-hacer-los-pandas"></a>
+
+Pandas te da respuestas sobre los datos. Como:
+
+¿Hay una correlación entre dos o más columnas? ¿Cuál es el valor promedio? ¿Valor máximo? ¿Valor mínimo? Los pandas también pueden eliminar filas que no son relevantes o que contienen valores incorrectos, como valores vacíos o NULL. Esto se llama limpieza de los datos.
+
+### Analisis estadistico basico para python usando Bases de datos[¶](broken-reference) <a href="#analisis-estadistico-basico-para-python-usando-bases-de-datos" id="analisis-estadistico-basico-para-python-usando-bases-de-datos"></a>
+
+Ahora que podemos importar y leer datos en en eltorno de python vamos a realizar algunas consultas y analisis basicos que nos permitan generar valor, en este caso como trabajaremos con con las bases de datos.
+
+1. haremos un EDA (exploratoru Data Analysis) analisis exploratorio de datos.
+
+El primer paso en cualquier analisis de datos debe ser el EDA, ya que es el que nos muestra el comportamiento y naturaleza de los datos que a los que nos enfrentamos.
+
+este EDA hace parte de la estadistica clasica la cual se ocupa casi que exclusivamente de la inferencia de datos en un conjunto de procedimientos a veces complejo, que nos permite sacar conclusiones de grandes grupos de datos, ya sea analizando el total de los datos observados del fenomeno o a partir de una muestra. de este ejercicio _jhon W turkey_ en su libro "the future of data analisys" \[turkey 1962] propuso por primera vez una nueva discliplina a la que llamo "Data Analisys" o analisis de Datos, donde se centraria mas en el comportamiento de inforacion almacenada en grandes bloques de "bits"
+
+#### Elementos de los datos estructurados:[¶](broken-reference) <a href="#elementos-de-los-datos-estructurados" id="elementos-de-los-datos-estructurados"></a>
+
+si bien ya conocemos que los datos provienen de miuchas fuentes,sensores, eventos, texto, imagenes vieos etc, estos son "vomitados" literalmente al mundo de una manera brusca y constante, gran parte de estos datos no estan estructurados, como por ejemplo las imagenes que son un gran cumulo de pixeles, y cada pixel tiene un elemento RGB, etc.
+
+el gran desafio de la ciencia de datos es la conversion de esos datos no estructurados o grandes volumenes de datos desde un fenomeno observado en informacion valiosa
+
+existen dos tipos de datos estructurados:
+
+* numericos
+* categoricos
+
+continuando con la seccion naturaleza de los datos explicamos:
+
+los datos de tipo numerico se presentan en dos modalidades sencillas
+
+* continuos
+* discretos
+
+los datos de tipo categoricos, son aquellos que adoptan un conjunto fijo de valores. como por ejemplo: tipos de pantallas = (plasma LCD, led, etc) nombres de estados de USA = (alabama, alaska etc)
+
+por otra parte tenemos los datos **Binarios** los que toiman valores de 0/1 o falso y verdadero.
+
+datos Ordianles: (1,2,3,4,5)
+
+la importancia de reconocer la tipologia de los datos en un analisis de datos se centra en que debemos renconocer la naturlaeza del fenomeno y el tipo de dato que este nos esta arrojando con el find de poder hacer el mejor sistema de procesamiento de datos que podamos. para asi finalmente decidir la forma de vizualizacion de los mismos, para finalmente generar valor.
+
+#### Datos Rectangulares (tablas de datos)[¶](broken-reference) <a href="#datos-rectangulares-tablas-de-datos" id="datos-rectangulares-tablas-de-datos"></a>
+
+El marco de referencia tipica para el analisis de datos en analisis de datos son las tablas estructuradas de forma matricial, como por ejemplo una hoja de calculo o una tabla adscrita a una base de datos.
+
+el termino "rectangular data" es el termino asociado a una matriz bidimensional con \*\*filas que indican los registros y columnas que indican las catacteristicas.
+
+|           |        |          |          |              |
+| --------- | ------ | -------- | -------- | ------------ |
+| Categoría | Divisa | Vendedor | Duracion | Calificacion |
+| musica    | Dólar  | 3249     | 5        | 2,5          |
+| musica    | Dólar  | 3250     | 4        | 4,1          |
+
+dentro del entorno de python los llamaremos. "DATA FRAME"
+
+**Marcos de Datos e indices**[**¶**](broken-reference)
+
+las tablas de bases de datos tradicionales tienen una o mas columnas designadas como indices, escencialmente es un numero de filas, con el fin de mejorar sustancialemnte las consultas a las tablas, o bases de datos, en python este trabajo es especializado a la libreria "pandas" donde el objeto central es el DataFrame por defecto. comun mente citado como "df"
+
+#### Estructura de datos NO rectangulares[¶](broken-reference) <a href="#estructura-de-datos-no-rectangulares" id="estructura-de-datos-no-rectangulares"></a>
+
+existen otras estructuras denominadas "no rectangulares" en la ciencia de Datos.
+
+1. los datos de series de tiempo registran condiciones sucesivas de la misma variable. es la materia prima de los metodos de pronosticos estadisticos y analisis de comportamiento se series de tiempo, asi como el continuo registro de una vriable por un sensor en funcion del tiempo.
+
+### Estimacion de la localizacion[¶](broken-reference) <a href="#estimacion-de-la-localizacion" id="estimacion-de-la-localizacion"></a>
+
+los datos rectangulares o estructurados en tablas piueden tener un sin fin de variaciones en su comportamiento es por esto que nos centramos en el EDA en encontrar un Valor tipico para cada caracteristica es decir su tendencia central
+
+1. Media
+2. Media ponderada
+3. Mediana
+4. Percentil
+5. Mediana ponderada
+6. Media Recortada
+7. Robusto o Resistente
+8. Atipico
+
+en la medida de lo posible se recomienta empezar por las medias y medianas, no siendo estas la unica opcion, o la mejor, pero si la mas facíl de usar e interpretar, a sabiendas que nos enfrentamos a una serie de datos de la cual desconocemos su naturaleza.
+
+### Estimacion de la Variabilidad[¶](broken-reference) <a href="#estimacion-de-la-variabilidad" id="estimacion-de-la-variabilidad"></a>
+
+una segunda dimension a extraer en un conjunto de datos se denomina la variablidad, tambien conocida como la dispersion, esta mide el grado de agrupacion o dispersion de los valores de los datos, dentro del corazon de las estadistica se encuentra la variablidad, la cual hay que medirla, reducirla, identificar las fuentes de la variabilidad y tomar desiciones con respecto a ellas.
+
+1. Desviaciones
+2. Varianza
+3. Desviacion estandar
+4. desviacion media Absoluta
+5. Desviacion Absoluta mediana de la mediana
+6. Rango
+7. Estadisticos Ordinales
+8. Percentil
+9. Rango intercuartil
+
+### Exploracion de la distribucion de Datos.[¶](broken-reference) <a href="#exploracion-de-la-distribucion-de-datos" id="exploracion-de-la-distribucion-de-datos"></a>
+
+Se vuelve importante explora como se distribuyen los datos en general:
+
+1. Diagrama de Caja y Bigotes.
+
+Es una representación gráfica que resume la distribución de un conjunto de datos. Muestra de manera visual cinco números clave:
+
+* Mínimo: El valor más pequeño del conjunto de datos.
+* Primer cuartil (Q1): Separa el 25% inferior de los datos.
+* Mediana (Q2): El valor central de los datos, que divide el conjunto en dos partes iguales.
+* Tercer cuartil (Q3): Separa el 75% inferior de los datos.
+* Máximo: El valor más grande del conjunto de datos.
+
+La "caja" representa el rango intercuartílico (IQR), es decir, la diferencia entre el tercer y el primer cuartil. Los "bigotes" se extienden desde la caja hasta los valores mínimo y máximo, a menos que haya valores atípicos (outliers), en cuyo caso los bigotes se extienden hasta un valor máximo definido (generalmente 1.5 veces el IQR por encima de Q3 o por debajo de Q1).
+
+* ¿Para qué sirve?
+* Visualizar la distribución de los datos: Identificar si los datos están sesgados, si hay valores atípicos, etc.
+* Comparar distribuciones: Comparar la distribución de diferentes grupos de datos.
+* Detectar valores atípicos: Identificar valores que se encuentran muy alejados del resto de los datos.
+
+#### Exploracion de Datos Binarios y Categoricos[¶](broken-reference) <a href="#exploracion-de-datos-binarios-y-categoricos" id="exploracion-de-datos-binarios-y-categoricos"></a>
+
+en el caso de los datos bianarios y categoricos podemos usar proporciones simples para identificar el comportamiento de los mismos
+
+1. Moda
+2. Valor esperado
+3. Graficos de Barras
+4. Graficos de torta
+5. Analisis porcentuales
+
+#### Analisis de correlaciones[¶](broken-reference) <a href="#analisis-de-correlaciones" id="analisis-de-correlaciones"></a>
+
+los analisis de correlacion son analisis que se realizan en tre variables, intentado identificar patrones de pertinencia o dependencia, ya sea ente variables predictorias, o varoibales predictorias y varibale objetivo, partiendo de la premisa de que cada par de datos X y Y estan relacionados de alguna manera ya sea positivamente o negativamente.
+
+1. coeficiente de correlacion
+2. Matriz de correlacion
+3. Diagrama de dispersion
+
+La correlación es una medida estadística que indica la fuerza y dirección de la relación lineal entre dos variables numéricas. En otras palabras, nos dice si al aumentar una variable, la otra tiende a aumentar (correlación positiva), disminuir (correlación negativa) o si no existe una relación lineal aparente (correlación cercana a cero).
+
+**Elementos clave en el análisis de correlación:**[**¶**](broken-reference)
+
+1. Coeficiente de correlación: Un valor numérico entre -1 y 1 que cuantifica la fuerza y dirección de la relación lineal.
+
+* Cerca de 1: Correlación positiva fuerte.
+* Cerca de -1: Correlación negativa fuerte.
+* Cerca de 0: No hay correlación lineal.
+
+2. Matriz de correlación: Una tabla que muestra los coeficientes de correlación entre todas las variables numéricas de un conjunto de datos.
+3. Diagrama de dispersión: Una gráfica que muestra los puntos de datos para dos variables numéricas, permitiendo visualizar la relación entre ellas.
+
+### Conectividad Google Colab online y CSV.[¶](broken-reference) <a href="#conectividad-google-colab-online-y-csv" id="conectividad-google-colab-online-y-csv"></a>
+
+Si estas trabajando con jupyter notebook de forma offline, es posible la conexion local del servicio MySql - workbench con jupyter notebook pero para aquellas personas que prefieren trabajar en la nube de google drive, es preferible el manejo de datos desde archivos .CSV y Sheets o en su defecti sistemas de BD que permitan esta interfaz como el mismo sistema de google cloud.
+
+ahora explicaremos el paso a paso que se debe llevar para poder generar valor con los datos idependiente del sistema de analisis que se este ejecutando, sumando un componente de machine learning o entrenamiento del proceso para generacion de informacion.
+
+#### Proceso Sistemático de Análisis de Datos y Machine Learning con Python[¶](broken-reference) <a href="#proceso-sistem-c3-a1tico-de-an-c3-a1lisis-de-datos-y-machine-learning-con-python" id="proceso-sistem-c3-a1tico-de-an-c3-a1lisis-de-datos-y-machine-learning-con-python"></a>
+
+A través de este enfoque, se busca proporcionar una guía clara y concisa para aquellos interesados en aplicar técnicas de análisis y aprendizaje automático en sus proyectos.
+
+### Subconsultas y Consultas Multitablas[¶](broken-reference) <a href="#subconsultas-y-consultas-multitablas" id="subconsultas-y-consultas-multitablas"></a>
+
+**¿Qué son las subconsultas y las consultas multitabla?**
+
+1. Subconsultas: Son consultas anidadas dentro de otra consulta. Se utilizan para obtener un conjunto de resultados que luego se utilizan como un valor en la consulta externa.
+2. Consultas multitabla: Combinan datos de dos o más tablas en una sola consulta, utilizando diferentes tipos de uniones (JOIN).
+
+***
+
+**Tipos de uniones en consultas multitabla**
+
+1. INNER JOIN: Devuelve los registros que tienen valores coincidentes en las columnas especificadas de ambas tablas.
+2. LEFT JOIN: Devuelve todos los registros de la tabla izquierda y los registros coincidentes de la tabla derecha. Si no hay coincidencia, los valores de la tabla derecha serán NULL. &#x20;
+3. RIGHT JOIN: Lo contrario de LEFT JOIN. Devuelve todos los registros de la tabla derecha y los registros coincidentes de la tabla izquierda.
+4. FULL OUTER JOIN: Devuelve todos los registros cuando hay una coincidencia en alguna de las tablas. &#x20;
+
+Fuente: 1. www.studocu.com 2. www.thedataschools.com
+
+definicion 2: Una subconsulta es una consulta dentro de otra consulta. Se utiliza para realizar operaciones que dependen de los resultados de otra consulta. Aquí tienes un ejemplo básico:
+
+ejemplo:
+
+### Funciones y operadores en SQL[¶](broken-reference) <a href="#funciones-y-operadores-en-sql" id="funciones-y-operadores-en-sql"></a>
+
+Imagina que MySQL es un idioma para hablar con tu base de datos. Al igual que en cualquier idioma, necesitas palabras (operadores) y frases (funciones) para expresar ideas y realizar acciones.
+
+**Operadores:** Son símbolos que realizan operaciones específicas sobre los datos, como sumar, restar, comparar, etc.
+
+**Funciones:** Son como mini-programas predefinidos que realizan tareas más complejas, como calcular la longitud de una cadena, encontrar el valor máximo de una columna, etc.
+
+* Tipos de Operadores
+
+MySQL ofrece una amplia gama de operadores para manipular datos:
+
+1. Aritméticos: +, -, \*, /, % (módulo). Se utilizan para realizar cálculos numéricos.
+2. Comparación: =, !=, <, >, <=, >=. Se utilizan para comparar valores.
+3. Lógicos: AND, OR, NOT. Se utilizan para combinar condiciones.
+4. De conjunto: IN, NOT IN, BETWEEN, LIKE. Se utilizan para comparar valores con conjuntos o patrones.
+5. De bits: &, |, ^, \~. Se utilizan para realizar operaciones a nivel de bits.
+
+**Funciones de Agrupamiento y Ventanas**[**¶**](broken-reference)
+
+Funciones de agrupamiento **(GROUP BY):**
+
+Te permiten agrupar filas de una tabla según uno o más valores de columna. Combinadas con funciones de agregación (COUNT, SUM, AVG, etc.), se puede calcular estadísticas para cada grupo.
+
+* Ejemplo:
+
+Obtener el número de pedidos por cliente:
+
+### Conceptos Basicos de Process Mining[¶](broken-reference) <a href="#conceptos-basicos-de-process-mining" id="conceptos-basicos-de-process-mining"></a>
+
+El Process Mining, o minería de procesos, es una técnica que utiliza algoritmos especializados para analizar los datos de registro de eventos y descubrir patrones, tendencias y detalles de cómo se desarrolla un proceso. En otras palabras, es como una "radiografía" de tus procesos de negocio, que te permite ver cómo funcionan realmente y dónde hay oportunidades de mejora.
+
+**Pasos básicos para realizar Process Mining en MySQL Workbench:**[**¶**](broken-reference)
+
+1. Preparación de los datos:
+
+* Estructura de la tabla: Asegúrate de que tus datos de eventos estén almacenados en una tabla con campos como:
+* event\_id: Identificador único de cada evento.
+* case\_id: Identificador del caso al que pertenece el evento.
+* activity: Nombre de la actividad.
+* timestamp: Fecha y hora en que ocurrió el evento.
+* Otros campos relevantes para tu proceso (usuario, sistema, etc.).
+* Limpieza de datos: Verifica que los datos estén completos, consistentes y libres de errores.
+
+2. Consultas SQL:
+3. Secuencias de eventos:
+
+Ejemplo: SELECT case\_id, GROUP\_CONCAT(activity ORDER BY timestamp) AS secuencia FROM tabla\_eventos GROUP BY case\_id;
+
+2. Tiempos de ciclo:
+
+Ejemplo: SELECT case\_id, TIMEDIFF(MAX(timestamp), MIN(timestamp)) AS tiempo\_ciclo FROM tabla\_eventos GROUP BY case\_id;
+
+3. Cuellos de botella:
+
+Ejemplo: SELECT activity, COUNT(\*) AS cantidad\_de\_eventos, AVG(TIMEDIFF(end\_timestamp, start\_timestamp)) AS tiempo\_promedio FROM tabla\_eventos GROUP BY activity ORDER BY tiempo\_promedio DESC;
+
+3. Visualización:
+4. Exportar resultados: Exporta los resultados de tus consultas a un archivo CSV o una hoja de cálculo. Herramientas de visualización: Utiliza herramientas como Excel, Google Sheets o Power BI para crear gráficos y diagramas que representen tus datos.
+
+### 1. Introduccion A Los Dasboard:[¶](broken-reference) <a href="#id-1.-introduccion-a-los-dasboard" id="id-1.-introduccion-a-los-dasboard"></a>
+
+* Que Es Un Dashboard?
+
+***
+
+es una herramienta visual que permite monitorear, analizar y presentar información clave de manera centralizada, facilitando la toma de decisiones informada. En un contexto de negocios o industrial, un tablero muestra métricas importantes, KPIs (Key Performance Indicators) y otros datos relevantes en tiempo real, organizados en gráficos, tablas, y otros elementos visuales que simplifican la comprensión de la información
+
+***
+
+**Jupyter Notebook:** Esta herramienta es ideal para científicos de datos y analistas debido a su naturaleza interactiva. Permite combinar código (Python), visualizaciones y texto explicativo en un mismo documento. Esto facilita la exploración de datos, el desarrollo de modelos y la creación de prototipos de dashboards.
+
+#### Dashboard en la Gestion de Inventario:[¶](broken-reference) <a href="#dashboard-en-la-gestion-de-inventario" id="dashboard-en-la-gestion-de-inventario"></a>
+
+**Beneficios de los dashboards en la gestión de inventario**
+
+1. Toma de decisiones más rápida: Al tener una visión clara del estado de tu inventario, podrás identificar rápidamente problemas como faltantes de stock, productos obsoletos o sobreproducción.
+2. Mejora de la eficiencia: Un dashboard te permite monitorear el rendimiento de tu inventario en tiempo real, lo que te ayudará a optimizar los procesos y reducir costos.
+3. Mayor precisión en los pronósticos: Al analizar datos históricos y tendencias, podrás realizar pronósticos más precisos sobre la demanda futura.
+4. Mejor colaboración: Un dashboard puede ser compartido con diferentes equipos (compras, ventas, producción) para facilitar la comunicación y la colaboración.
+
+### 2. Construccion de un Dashboard.[¶](broken-reference) <a href="#id-2.-construccion-de-un-dashboard" id="id-2.-construccion-de-un-dashboard"></a>
+
+empezaremos por la instalacion de los elementos necesarios para poder crear el dashboard:
+
+1. instalación de librerías
+
+Si aún no tienes instalado Plotly Dash, podemos comenzar por ahí. Necesitaremos las siguientes librerías:
+
+Dash: La librería principal para crear aplicaciones web interactivas. Plotly: Para generar los gráficos. Dash Core Components: Proporciona componentes HTML para la interfaz de usuario. Dash HTML Components: Define los componentes HTML básicos. Pandas: Para manipular los datos.
