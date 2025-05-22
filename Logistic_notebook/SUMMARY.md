@@ -8,7 +8,10 @@
   * [Logistic Notebook](libros-de-logistica/notas-sobre-logistica/logistic-notebook.md)
   * [Unidad Cero: Componentes tipicos de la Logistica](libros-de-logistica/notas-sobre-logistica/unidad-cero-componentes-tipicos-de-la-logistica.md)
   * [Unidad Uno: Servicio Al Cliente](libros-de-logistica/notas-sobre-logistica/unidad-uno-servicio-al-cliente.md)
-  * [Unidad Dos: Modelos de inventarios](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios.md)
+  * [Unidad Dos: Modelos de inventarios](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/README.md)
+    * [Inventario ABC](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/inventario-abc.md)
+    * [Indiscadores o KPI de Inventario](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
+    * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
 
 ## Libros de Analisis de Datos
 

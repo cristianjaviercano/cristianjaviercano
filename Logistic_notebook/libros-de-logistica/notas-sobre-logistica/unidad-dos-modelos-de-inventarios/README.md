@@ -113,13 +113,13 @@ no obstante existen otras variaciones del Modelo que implican una espera en el t
 
 ### Modelo de EOQ en python[#](broken-reference)
 
-```
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
-```
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -160,38 +160,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-```
----------------------------------------------------------------------------
-StdinNotImplementedError                  Traceback (most recent call last)
-Cell In[14], line 12
-      9     return q, tiempo_entre_pedidos, costo_total
-     11 # Pedir al usuario que ingrese los valores de los parámetros del inventario
----> 12 costo_producto = float(input("Ingrese el costo del producto por unidad: "))
-     13 costo_orden = float(input("Ingrese el costo por orden: "))
-     14 costo_almacenamiento = float(input("Ingrese el costo de almacenamiento por unidad por año: "))
-
-File ~/anaconda3/lib/python3.10/site-packages/ipykernel/kernelbase.py:1172, in Kernel.raw_input(self, prompt)
-   1165 """Forward raw_input to frontends
-   1166 
-   1167 Raises
-   1168 ------
-   1169 StdinNotImplementedError if active frontend doesn't support stdin.
-   1170 """
-   1171 if not self._allow_stdin:
--> 1172     raise StdinNotImplementedError(
-   1173         "raw_input was called, but this frontend does not support input requests."
-   1174     )
-   1175 return self._input_request(
-   1176     str(prompt),
-   1177     self._parent_ident["shell"],
-   1178     self.get_parent("shell"),
-   1179     password=False,
-   1180 )
-
-StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
-```
-
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -247,7 +216,7 @@ La empresa IND sas tiene una demanda diaria de 100 unidades, y el costo en que s
 * \\(h=0.02\\). unidades por día
 * \\(L= 12\ dias\\)
 
-```
+```python
 import math
 
 def eoq(demand, ordering_cost, holding_cost):
@@ -276,19 +245,21 @@ print("EOQ: ", eoq_value)
 print("Costo total de inventario: ", total_cost)
 ```
 
-#### Intentemos graficar el comportamiento de un Articulo de Inventario en el tiempo usando colab[#](broken-reference)
+{% hint style="info" %}
+#### Intentemos graficar el comportamiento de un Articulo de Inventario en el tiempo usando colab
+{% endhint %}
 
 En el siguiente ejercicio se pretende generar el comportamiento del inventario a lo largo del periodo \\(t\_0\\), para posteriormente graficarlo.
 
 se podran variar cantidades de productos
 
-```
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-```
+```python
 def calcular_q(demanda, holding_cost, costo_pedido):
 
     q = np.sqrt((2 * demanda * costo_pedido) / holding_cost)
@@ -327,14 +298,20 @@ plt.title("Comportamiento del inventario")
 plt.show()
 ```
 
-### Ejercicios de Practica del modelo de inventario[#](broken-reference)
+{% hint style="info" %}
+### Ejercicios de Practica del modelo de inventario
+
+
 
 Vamos a poner en practica la teoria descrita en el cuaderno anterior
 
 * debera realizar los siguientes ejercicios a mano en una hoja limpia con su calculadora
 * Realizara los siguientes ejercicios usando google colab como se describe en el documento.
+{% endhint %}
 
-### Ejercicios EOQ[#](broken-reference)
+
+
+### Ejercicios EOQ
 
 #### Ejercicio Numero 1[#](broken-reference)
 
@@ -443,7 +420,7 @@ Calcule los ROL y ROQ de cada uno de los productos, con base en su Bill of mater
 
 **Agreguemos el costo total del inventario y grafiquemoslo**[**#**](broken-reference)
 
-```
+```python
 # Datos para la prueba de escritorio
 D = 100000
 h = 30000
@@ -529,9 +506,10 @@ plt.show()
 
 The economic production quantity (EPQ) model (also known as the economic lot size (ELS) model) is used in manufacturing situations where inventory increases at a finite rate and depends on the production rate and the usage rate of the item under consideration. In addition to the variables (D, S, H, Q, and C) defined earlier, we define two more variables: p = production rate per day (daily production rate) and d = demand rate per day (daily demand rate). The values of p and d must be in the same time unit. For example, these values could be weekly rates instead of daily rates. However, daily rates are most common. Q in this case is the production quantity (rather than order quantity) to be made in one lot and S is the cost of setting up the machine to produce that one lot. Therefore, S is called the setup cost per set up (rather than order cost per order).
 
-\\\[ Q\_{epq}=\sqrt{\left(\frac{2DS}{h\left(1-\frac{d}{q}\right)}\right)} \\]
+<pre class="language-latex"><code class="lang-latex"><strong>$$\[ Q_{epq}=\sqrt{\left(\frac{2DS}{h\left(1-\frac{d}{q}\right)}\right)} \]$$
+</strong></code></pre>
 
-#### Ejemplo EPQ[#](broken-reference)
+#### Ejemplo EPQ
 
 hallemos:
 
@@ -558,11 +536,3 @@ tambien podemos calcular el nivel de inventario maximo (\\(I\_{max})\\)
 Reemplazando:
 
 \\\[ I\_{max}=912.87\*\left(1-\frac{200}{500}\right) = 547.72 un \\]
-
-#### gestion de inventarios y abastecimiento:[#](broken-reference)
-
-investigar:
-
-1. Inventario ABC
-2. Mterial Criticaly
-3. Quantity Duiscount Model
