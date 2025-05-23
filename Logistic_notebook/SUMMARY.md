@@ -14,7 +14,8 @@
     * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
   * [Unidad tres: Modelos de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/README.md)
     * [Ejercicios de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/ejercicios-de-transporte.md)
-  * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python.md)
+  * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python/README.md)
+    * [Ejercicios de Rutas](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python/ejercicios-de-rutas.md)
   * [Page](libros-de-logistica/notas-sobre-logistica/page.md)
 
 ## Libros de Analisis de Datos

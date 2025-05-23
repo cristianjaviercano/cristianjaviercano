@@ -197,8 +197,7 @@ TABLA 2
 
 **Resolviendo con Python y la libreria PuLp:**[**#**](broken-reference)
 
-```
-# Importar la biblioteca PuLP
+```python
 import pulp
 
 # Crear un problema de minimización
@@ -233,7 +232,7 @@ for variable in problem.variables():
     print(variable.name, "=", variable.varValue)
 ```
 
-#### Ejemplo 2:[#](broken-reference)
+#### Ejemplo 2:
 
 En este modelo, tenemos tres orígenes (\\(O\_1\\), \\(O\_2\\) y \\(O\_3\\)) y cuatro destinos (\\(D\_1\\), \\(D\_2\\), \\(D\_3\\) y \\(D\_4\\)), y la tabla muestra los costos de transporte desde cada origen a cada destino. El objetivo es determinar la asignación óptima de los productos a los destinos, minimizando el costo total de transporte.
 
@@ -251,9 +250,11 @@ La función objetivo de este modelo se expresa como:
 
 Donde:
 
-* \\(Z\\): representa el costo total de transporte.
-* \\(c\_{ij}\\): es el costo de transportar una unidad del origen \\(i\\) al destino \\(j\\).
-* \\(x\_{ij}\\): es la cantidad de unidades transportadas del origen \\(i\\) al destino \\(j\\).
+\\(Z\\): representa el costo total de transporte.
+
+\\(c\_{ij}\\): es el costo de transportar una unidad del origen \\(i\\) al destino \\(j\\).
+
+\\(x\_{ij}\\): es la cantidad de unidades transportadas del origen \\(i\\) al destino \\(j\\).
 
 Las restricciones de capacidad se expresan como:
 
