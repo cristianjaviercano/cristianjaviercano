@@ -9,3 +9,7 @@ Te invito a adentrarte en este espacio, diseñado especialmente para ofrecerte u
 Este espacio no solo se trata de la transmisión de información, sino también de inspirar un diálogo continuo sobre las soluciones creativas y las ideas innovadoras que pueden transformar nuestro enfoque hacia los retos del futuro. Espero que el contenido que encuentres aquí no solo sea de gran utilidad para tus iniciativas actuales, sino que también despierte tu curiosidad, te motive a cuestionar lo establecido, y te impulse a desarrollar nuevas estrategias en tu propio campo profesional.
 
 Gracias por tomarte el tiempo para explorar este espacio. Espero que lo encuentres tan enriquecedor como inspirador y que pronto puedas aplicar algunas de estas ideas y conocimientos a tus propias experiencias profesionales. ¡Bienvenido(a) al viaje!
+
+Te espero en mi página de Instagram para compartir información. Puedes seguirme [aquí](https://www.instagram.com/tu_usuario).
+
+<figure><img src=".gitbook/assets/CRclogo2.png" alt="" width="188"><figcaption><p>Msc Cristian J cano M</p></figcaption></figure>
