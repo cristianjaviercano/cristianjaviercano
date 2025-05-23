@@ -218,7 +218,7 @@ Al evaluar las opciones de transporte, es fundamental considerar las siguientes 
 * Capacidad: Hace referencia a la cantidad de carga que puede transportar el medio elegido.
 * Fiabilidad: Se refiere a la probabilidad de que la carga llegue a destino a tiempo y en las condiciones acordadas.
 
-### Representacion grafica de los modelos de transporte en Progranacion lineal[#](broken-reference)
+### Representacion grafica de los modelos de transporte en Progranacion lineal
 
 Un modelo de transporte se puede representar gráficamente mediante una red de nodos y arcos, similar a un diagrama de flujo.
 
@@ -237,7 +237,7 @@ en python tenemos librerias para modelar estos diagramas, por ejemplo
 
 se puede ampliar info en [https://graphviz.org](https://graphviz.org/)
 
-### Principio de nivelacion:[#](broken-reference)
+### Principio de nivelacion:
 
 En los modelos de logística de programación lineal, el principio de nivelación se refiere a la necesidad de equilibrar la oferta y la demanda en el modelo. Esto significa que la cantidad total de bienes o productos que se envían desde los orígenes debe ser igual a la cantidad total de bienes o productos que se reciben en los destinos.
 

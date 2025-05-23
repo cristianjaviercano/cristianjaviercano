@@ -257,9 +257,11 @@ Donde:
 
 Las restricciones de capacidad se expresan como:
 
-\begin{align\*} \sum\_{j=1}^{4} x\_{1j} &\leq 60\
-\sum\_{j=1}^{4} x\_{2j} &\leq 70\
-\sum\_{j=1}^{4} x\_{3j} &\leq 80 \end{align\*}
+```markdown
+\begin{align*} \sum_{j=1}^{4} x_{1j} &\leq 60
+\sum_{j=1}^{4} x_{2j} &\leq 70
+\sum_{j=1}^{4} x_{3j} &\leq 80 \end{align*}
+```
 
 **Donde:**
 
@@ -274,11 +276,11 @@ La restricción \\(\sum\_{j=1}^{4} x\_{ij} \leq C\_i\\) indica que la cantidad t
 
 * La restricción \\(\sum\_{i=1}^{3} x\_{ij} \geq D\_j\\) indica que la cantidad total de productos que se envían al destino \\(j\\) debe ser al menos igual a su demanda \\(D\_j\\)
 
-```
+```python
 import pulp
 ```
 
-```
+```python
 # Define el problema
 problem = pulp.LpProblem("Transportation Problem", pulp.LpMinimize)
 
