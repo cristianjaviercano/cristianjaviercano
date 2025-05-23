@@ -32,3 +32,7 @@
     * [La Naturaleza de los Datos](libros-de-analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/la-naturaleza-de-los-datos.md)
     * [Usando JN](libros-de-analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/usando-jn.md)
     * [Entendiendo a python en JN](libros-de-analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/entendiendo-a-python-en-jn.md)
+
+***
+
+* [Variedades](variedades.md)
