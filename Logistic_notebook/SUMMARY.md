@@ -12,10 +12,8 @@
     * [Inventario ABC](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/inventario-abc.md)
     * [Indiscadores o KPI de Inventario](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
-
-***
-
-* [Page](page.md)
+  * [Unidad tres: Modelos de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte.md)
+  * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python.md)
 
 ## Libros de Analisis de Datos
 

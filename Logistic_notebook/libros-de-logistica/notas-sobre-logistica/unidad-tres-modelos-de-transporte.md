@@ -1,8 +1,86 @@
-# Page
+# Unidad tres: Modelos de Transporte
 
-### Unidad tres: Modelos de Transporte[#](broken-reference)
+### Instrucciones para el Uso de la Librería PuLP
 
-### Instrucciones para el uso de la libreria Pulp:[#](broken-reference)
+La librería PuLP es una herramienta poderosa para la programación lineal en Python. Aquí te proporcionamos un guía paso a paso para usar esta librería de manera efectiva.
+
+#### Instalación de PuLP
+
+Antes de comenzar a usar PuLP, primero necesitas instalarla. Puedes hacerlo fácilmente utilizando pip. Abre una terminal y escribe el siguiente comando:
+
+```bash
+pip install pulp
+```
+
+#### Creación de un Problema
+
+Para definir un problema de programación lineal, debes comenzar por importar la librería y crear un objeto `LpProblem`. Este objeto es la representación de tu problema.
+
+```python
+from pulp import LpProblem, LpMaximize
+
+# Crear un problema de maximización
+problem = LpProblem("Mi_Problema", LpMaximize)
+```
+
+#### Declaración de Variables
+
+Luego, define las variables de decisión que serán usadas en tu modelo. PuLP proporciona la clase `LpVariable` para este propósito.
+
+```python
+from pulp import LpVariable
+
+# Crear una variable continua de decisión
+x = LpVariable('x', lowBound=0)
+y = LpVariable('y', lowBound=0)
+```
+
+#### Definición de la Función Objetivo
+
+La función objetivo es la función matemática que necesitas maximizar o minimizar. Puedes definirla utilizando las variables creadas.
+
+```python
+# Definir la función objetivo
+problem += 3*x + 2*y, "Función_Objetivo"
+```
+
+#### Agregar Restricciones
+
+Las restricciones del problema se añaden utilizando operadores matemáticos habituales. Estas limitan los valores posibles de las variables.
+
+```python
+# Añadir restricciones
+problem += (2*x + y <= 20), "Restricción_1"
+problem += (4*x - 5*y >= -10), "Restricción_2"
+```
+
+#### Resolución del Problema
+
+Con la función objetivo y las restricciones definidas, el siguiente paso es resolver el problema. PuLP puede utilizar diferentes solucionadores, pero el solver predeterminado suele ser suficiente para la mayoría de los casos.
+
+```python
+problem.solve()
+```
+
+#### Imprimir Resultados
+
+Una vez que el problema es resuelto, puedes acceder a los resultados, como el valor óptimo de la función objetivo y las variables de decisión.
+
+```python
+# Mostrar estatus del problema
+print("Status:", LpStatus[problem.status])
+
+# Mostrar el valor óptimo de las variables
+for variable in problem.variables():
+    print(f"{variable.name} = {variable.varValue}")
+
+# Valor óptimo de la función objetivo
+print("Valor óptimo: ", value(problem.objective))
+```
+
+{% hint style="info" %}
+La librería PuLP es una herramienta versátil para resolver problemas de programación lineal en Python. Permite una rápida implementación y simplifica la complejidad de modelar problemas de optimización. Con los pasos descritos anteriormente, puedes comenzar a explorar sus capacidades y aplicar programación lineal a tus proyectos.
+{% endhint %}
 
 esta libreria sera usada en la resolucion de problemas de transporte.
 
@@ -320,4 +398,3 @@ plt.show()
 * hay que instalarla ya que no viene preinstalada en COlab
 * [https://www.youtube.com/watch?v=Dq59G8Uf-\_o](https://www.youtube.com/watch?v=Dq59G8Uf-_o)
 * [https://pypi.org/project/PuLP/](https://pypi.org/project/PuLP/)
-*
