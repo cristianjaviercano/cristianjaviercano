@@ -13,10 +13,13 @@
     * [Indiscadores o KPI de Inventario](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
   * [Unidad tres: Modelos de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/README.md)
-    * [Ejercicios de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/ejercicios-de-transporte.md)
-  * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python/README.md)
-    * [Ejercicios 2](libros-de-logistica/notas-sobre-logistica/diseno-de-rutas-con-python/ejercicios-2.md)
-  * [Page](libros-de-logistica/notas-sobre-logistica/page.md)
+    * [Ejercicios 1](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/ejercicios-1.md)
+    * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
+      * [Ejercicios 2](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
+      * [Modelo de Transbordo](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
+    * [Almacenamiento en Bodegas o CEDIS](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
+    * [Modelo de redes](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
+  * [Unidad Cuatro: Modelos de Localizacion](libros-de-logistica/notas-sobre-logistica/unidad-cuatro-modelos-de-localizacion.md)
 
 ## Libros de Analisis de Datos
 

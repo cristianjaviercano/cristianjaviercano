@@ -268,10 +268,12 @@ Las restricciones de capacidad se expresan como:
 
 La restricción \\(\sum\_{j=1}^{4} x\_{ij} \leq C\_i\\) indica que la cantidad total de productos que se envían desde el origen \\(i\\) no puede superar su capacidad máxima \\(C\_i\\). Las restricciones de demanda se expresan como:
 
-\begin{align\*} \sum\_{i=1}^{3} x\_{i1} &\geq 50\
-\sum\_{i=1}^{3} x\_{i2} &\geq 70\
-\sum\_{i=1}^{3} x\_{i3} &\geq 80\
-\sum\_{i=1}^{3} x\_{i4} &\geq 30 \end{align\*}
+```markdown
+\begin{align*} \sum_{i=1}^{3} x_{i1} &\geq 50
+\sum_{i=1}^{3} x_{i2} &\geq 70
+\sum_{i=1}^{3} x_{i3} &\geq 80
+\sum_{i=1}^{3} x_{i4} &\geq 30 \end{align*}
+```
 
 **Donde:**
 
