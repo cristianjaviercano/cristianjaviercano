@@ -1,4 +1,11 @@
+---
+cover: .gitbook/assets/imgena1.png
+coverY: 0
+---
+
 # Cristian´s Bookshell
+
+<figure><img src=".gitbook/assets/Imagen base para animar.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Bienvenida
 
