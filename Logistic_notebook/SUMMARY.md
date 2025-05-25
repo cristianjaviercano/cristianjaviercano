@@ -4,22 +4,22 @@
 
 ## Libros de Logistica
 
-* [Notas sobre logistica](libros-de-logistica/notas-sobre-logistica/README.md)
-  * [Logistic Notebook](libros-de-logistica/notas-sobre-logistica/logistic-notebook.md)
-  * [Unidad Cero: Componentes tipicos de la Logistica](libros-de-logistica/notas-sobre-logistica/unidad-cero-componentes-tipicos-de-la-logistica.md)
-  * [Unidad Uno: Servicio Al Cliente](libros-de-logistica/notas-sobre-logistica/unidad-uno-servicio-al-cliente.md)
-  * [Unidad Dos: Modelos de inventarios](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/README.md)
-    * [Inventario ABC](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/inventario-abc.md)
-    * [Indiscadores o KPI de Inventario](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
-    * [Quantity discount Model](libros-de-logistica/notas-sobre-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
-  * [Unidad tres: Modelos de Transporte](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/README.md)
-    * [Ejercicios 1](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/ejercicios-1.md)
-    * [Diseño de Rutas con Python](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
-      * [Ejercicios 2](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
-      * [Modelo de Transbordo](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
-    * [Almacenamiento en Bodegas o CEDIS](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
-    * [Modelo de redes](libros-de-logistica/notas-sobre-logistica/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
-  * [Unidad Cuatro: Modelos de Localizacion](libros-de-logistica/notas-sobre-logistica/unidad-cuatro-modelos-de-localizacion.md)
+* [¡Hablemos de Logistica!](libros-de-logistica/hablemos-de-logistica/README.md)
+  * [Logistic Notebook](libros-de-logistica/hablemos-de-logistica/logistic-notebook.md)
+  * [Unidad Cero: Componentes tipicos de la Logistica](libros-de-logistica/hablemos-de-logistica/unidad-cero-componentes-tipicos-de-la-logistica.md)
+  * [Unidad Uno: Servicio Al Cliente](libros-de-logistica/hablemos-de-logistica/unidad-uno-servicio-al-cliente.md)
+  * [Unidad Dos: Modelos de inventarios](libros-de-logistica/hablemos-de-logistica/unidad-dos-modelos-de-inventarios/README.md)
+    * [Inventario ABC](libros-de-logistica/hablemos-de-logistica/unidad-dos-modelos-de-inventarios/inventario-abc.md)
+    * [Indiscadores o KPI de Inventario](libros-de-logistica/hablemos-de-logistica/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
+    * [Quantity discount Model](libros-de-logistica/hablemos-de-logistica/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
+  * [Unidad tres: Modelos de Transporte](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/README.md)
+    * [Ejercicios 1](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/ejercicios-1.md)
+    * [Diseño de Rutas con Python](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
+      * [Ejercicios 2](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
+      * [Modelo de Transbordo](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
+    * [Almacenamiento en Bodegas o CEDIS](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
+    * [Modelo de redes](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
+  * [Unidad Cuatro: Modelos de Localizacion](libros-de-logistica/hablemos-de-logistica/unidad-cuatro-modelos-de-localizacion.md)
 
 ## Libros de Analisis de Datos
 

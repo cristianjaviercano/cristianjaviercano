@@ -5,7 +5,11 @@ cover: >-
 coverY: 0
 ---
 
-# Notas sobre logistica
+# ¡Hablemos de Logistica!
+
+### ![](../../.gitbook/assets/CRCwh.png)
+
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="la logistica es el ADN del ingniero" class="gitbook-drawing">
 
 ### Descripción del Contenido
 
