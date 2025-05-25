@@ -35,54 +35,83 @@ para trabajar con los modelos de inventarios lo que debemos hacer es
 
 Las grandes pregiuntas que pretende suplir el modelo de inventario es ¿Cuando pedir?¿cuanto pedir?, esto nos lleva a evaluar todos los aspectos del inventario y segun los autores encontramos la siguiente ecuacion que encierra el modelo general de inventario:
 
-```latex
 $$
 [\text{Costo Total de Inventario} = \text{Costo de Compra} + \text{Costo de Preparación} + \text{Costo de Almacenamiento} + \text{Costo de Faltante}]
 $$
-```
 
-```markdown
+Para representar la ecuación matemática del costo total de inventario en el contexto del modelo EOQ, utilizamos la fórmula:
+
 $$
-\[\left(\genfrac{}{}{0pt}{}{costo\ total}{de\ inventario}\right) =\left(\genfrac{}{}{0pt}{}{costo\ de}{compra}\right)+\left(\genfrac{}{}{0pt}{}{costo\ de}{preparacion}\right)+\left(\genfrac{}{}{0pt}{}{costo\ de}{almacenamiento}\right)+\left(\genfrac{}{}{0pt}{}{costo\ de}{faltante}\right)\]
+CT = \frac{D}{Q} \cdot S + \frac{Q}{2} \cdot H + D \cdot C
 $$
-```
 
-1. \\(costo\ de\ compra\\): es el precio por unidad del articulo
-2. \\(costo\ de\ preparacion\\): es el costo fijo incurrido en el momento de colocar un pedido, es independiente del costo del articulo y la cantidad pedida
-3. \\(costo\ de\ almacenamiento\\): tambien conocido como mantenimiento o holding cost en ingles, son los costos asociados al manejo y mantenimiento en bodega del articulo, corresponde al interes por el capital o valor del articulo.
-4. \\(costo\ de\ faltante\\): es la penalizacion que se incurre cuando se terminan las existencias del inventario, es la perdida potencial de ingresos producto de la no venta, y un costo subjetivo asociado es la perdida de la confianza o del cliente mismo.
+Donde:
 
-### empezaremos por el modelo EOQ tambien llamado modelos estaticos.[#](broken-reference)
+* (CT) es el costo total.
+* (D) es la demanda anual.
+* (Q) es la cantidad a ordenar (tamaño del lote).
+* (S) es el costo por pedido.
+* (H) es el costo de almacenamiento por unidad.
+* (C) es el costo de compra por unidad.
+
+### empezaremos por el modelo EOQ tambien llamado modelos estaticos.
 
 * **el modelo eoq o cantidad optima de pedido:** (EOQ clasico)
 
 es uno de los modelos mas comunes y mayor utilizados ya qu eeste modelo tiene encuenta los costos por pedido y amacenamiento del mismo. es decir que cuanto mas se compre mayor es el descuento pero mayor sera el costo de mantener, el objetivo principal de este modelo es encontrar el punto de equilibrio donde los costos se manejen de la mejor forma posible segun los requeirmientos de la demanda.
 
-\\\[EOQ = \sqrt{\frac{2\*costo\ de\ ordenar\*Demanda}{costo\ de\ almacenamiento\}}\\]
+$$
+EOQ = \sqrt{\frac{2*costo\ de\ ordenar*Demanda}{costo\ de\ almacenamiento}}\
+$$
+
+$$
+Q= \sqrt{\frac{2(K)(D)}{h}}\
+$$
 
 *   **EOQ con demanda Desconocida:**
 
     se considera la demanda del producto como incierta o desconocida y se utliza un enfoque de nivel de servicio para mantener el nivel optimo de inventario, siendo el nivel de servicio pa probahbilidad de que el inventario este disponible cuando sea requerido, el objetivo principal es encontrar la cantidad optima de inventario que maximice el nivel de servicio mientras se minimizan los costos totales de inventario.
 
+$$
+EOQ = \sqrt{\frac{2KD}{h} + \left(\frac{Z \sigma_d \sqrt{L}}{h}\right)^2}
+$$
+
+Donde:
+
+* Z es el valor de la distribución normal que corresponde al nivel de servicio deseado.
+* $$\sigma_d\$$ es la desviación estándar de la demanda durante el tiempo de entrega.
+* L es el tiempo de entrega (Lead Time).
+
 #### Palabras y nomeclaturas[#](broken-reference)
 
-* \\(D= Demanda\\)
-* \\(t\_0=Duracion\ del\ ciclo\ de\ pedido\\)
-* \\(ROQ = Reorder\ Quantity\\)
-* \\(ROL = Reorder\ Level\\)
-* \\(Q = cantidad\ optima\ de\ pedido\\)
-* \\(t\_0 = \frac{Q}{D}\ unidades\ de\ tiempo\\)
-* \\(K = costo\ de\ Preparacion\ (costo\ de\ un\ pedido)\\)
-* \\(h = costo\ de\ Almacenamiento\\)
-* \\(L= lead\ Time\\)
+* &#x20;D = Demanda
+* $$t_0$$ = Duracion del ciclo de pedido
+* ROQ = Reorder  Quantity&#x20;
+* ROL = Reorder Level
+* Q = cantidad optima de pedido
+* $$t_0 = \frac{Q}{D}$$ unidades de tiempo o cilcos de abastecimiento
+* K = costo de Preparacion de un  pedido
+* h = costo de Almacenamiento
+* L = lead Time
 
-en general:
+{% hint style="info" %}
+en general este conjnto de ecuaciones e inicitivas nos permiten definir en una operacion de almacenmaiento lo que se conoe como la **politica de inventario**
+{% endhint %}
 
-\\\[Q= \sqrt{\frac{2(K)(D)}{h\}}\\]
+### Definición de la Política de Inventarios
 
-\\(Entonces:\ la\ politica\ de\ inventario\ teoricamente\ sería\ las\ cantidades\ Q\ en\ cada\ "y"\\)
+La política de inventarios en un sistema de gestión se define considerando varios elementos clave como EOQ (Economic Order Quantity), ROL (Reorder Level), ROQ (Reorder Quantity), y la demanda aleatoria:
 
-### tiempo de entrega:[#](broken-reference)
+* **EOQ (Cantidad Óptima de Pedido):** Es la cantidad que minimiza los costos totales de inventario, incluyendo los costos de preparación del pedido y los costos de almacenamiento. Se utiliza para determinar el tamaño óptimo de pedido.
+* **ROL (Nivel de Reorden):** Es el punto en el que se debe generar un nuevo pedido para evitar faltantes de inventario, calculado con base en el lead time y la demanda esperada durante ese período.
+* **ROQ (Cantidad de Reorden):** Es la cantidad a ordenar cada vez que se llegue al ROL. Esta cantidad se puede ajustar según la variabilidad de la demanda y el tiempo de entrega.
+* **Demanda Aleatoria:** Requiere ajustes dinámicos en ROL y ROQ, ya que es importante tener en cuenta las variaciones en la demanda para evitar escasez o exceso de inventario.
+
+{% hint style="info" %}
+Una política de inventarios eficaz debe ser flexible y adaptarse a las variaciones de demanda, tiempos de entrega y otros factores que puedan afectar el inventario. La evaluación continua y el ajuste de las variables EOQ, ROL, y ROQ permiten mantener un equilibrio óptimo entre costos y disponibilidad.
+{% endhint %}
+
+### tiempo de entrega:
 
 cuando existe un pedido con un tiempo de entrega estipulado positivo se llamara “L” (lead time), en estos casos debemos tener en cuenta las relaciones del ROL y ROQ correspondientes ya que estos variaran el comportamiento del inventario segun su naturaleza de abastecimiento o lead time. se debera evidenciar las duraciones del lead time vs el tiempo de ciclo del inventario, ya que el lead time generalmente debera ser menor que el tiempo de ciclo de lo contrario habra que tomar otras medidas para controlar el inventario.
 
@@ -90,7 +119,9 @@ ejemplo:
 
 se define el tiempo efectivo de la siguiente forma:
 
-\\\[L\_e = L - nt\_0\\]
+$$
+L_e = L - nt_0\
+$$
 
 ### ROL/ROQ , Lead time y Safety stock en los modelos de inventarios Deterministicos.[#](broken-reference)
 

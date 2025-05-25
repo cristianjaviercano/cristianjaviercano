@@ -78,6 +78,19 @@ Al crear encuestas, es fundamental asegurarse de que las preguntas sean válidas
 
 Utilizar estas herramientas garantiza que una encuesta recopila datos significativos y representativos, consecuentemente mejorando la efectividad del análisis de satisfacción del cliente.
 
+Para explicar matemáticamente el **alfa de Cronbach**, consideremos un conjunto de preguntas diseñadas para medir un único constructo. Esta métrica evalúa la consistencia interna y se calcula con la siguiente fórmula:
+
+\
+$$[ \alpha = \frac{N \cdot \bar{c}}{\bar{v} + (N - 1) \cdot \bar{c}} ]$$
+
+Donde:
+
+* $$N$$ es el número de elementos (preguntas) en la escala.
+* $$\bar{c}$$ es la media de las covarianzas entre los elementos.
+* $$\bar{v}$$ es la media de las varianzas de los elementos individuales.
+
+El valor de alfa varía de 0 a 1, donde un valor más alto indica una mayor consistencia interna.
+
 ### Regresión Lineal Múltiple
 
 La regresión lineal múltiple es una técnica de análisis estadístico que se utiliza para modelar la relación entre una variable dependiente (por ejemplo, la satisfacción del cliente) y múltiples variables independientes (por ejemplo, la calidad del servicio, la conveniencia de horarios, etc.). Los detalles del uso de la regresión incluyen:
@@ -88,6 +101,20 @@ La regresión lineal múltiple es una técnica de análisis estadístico que se 
 4. **Predicción:** Basándose en el modelo construido, la empresa puede hacer predicciones precisas y tomar decisiones informadas para mejorar su oferta.
 
 La combinación de encuestas bien diseñadas y análisis de regresión lineal múltiple proporciona una base sólida para comprender y mejorar la satisfacción del cliente en cualquier empresa.
+
+La fórmula para una regresión lineal múltiple es:
+
+$$
+[ Y = \beta_0 + \beta_1X_1 + \beta_2X_2 + \cdots + \beta_nX_n + \varepsilon ]
+$$
+
+Donde:
+
+* $$Y$$ es la variable dependiente.
+* $$( \beta_0 )$$ es el intercepto del modelo.
+* $$( \beta_1, \beta_2, \ldots, \beta_n )$$ son los coeficientes de regresión.
+* $$( X_1, X_2, \ldots, X_n )$$ son las variables independientes.
+* $$( \varepsilon )$$ es el término de error.
 
 ### Veamos un ejemplo.
 
