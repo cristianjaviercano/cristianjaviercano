@@ -10,12 +10,7 @@ Imagina la cadena de suministro como un río que desde la fuente (proveedores de
 
 
 
-<table data-view="cards"><thead><tr><th></th></tr></thead><tbody><tr><td>Toma de Deciciones, con base en la informacion recopilada a lo largo dela SP podemos toimar decisiones acertadas que beneficien el sistema, y mantener en la visual los kpi e indicadores claves del proceso.</td></tr><tr><td>Optimización de costos, Al identificar ineficiencias en la cadena de suministro, podemos reducir costos y aumentar la rentabilidad</td></tr><tr><td>Mejora de la eficiencia: Los modelos nos permiten simular diferentes procesos y encontrar la forma más eficiente de operar</td></tr><tr><td>Gestión de riesgos: Podemos evaluar el impacto de posibles perturbaciones, como desastres naturales o cambios en la demanda, y desarrollar planes de contingencia.</td></tr></tbody></table>
-
-1. .
-2. : .
-3. .
-4.
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Toma de Deciciones, con base en la informacion recopilada a lo largo dela SP podemos toimar decisiones acertadas que beneficien el sistema, y mantener en la visual los kpi e indicadores claves del proceso.</td><td><a href="../../.gitbook/assets/Imagen base para animar.png">Imagen base para animar.png</a></td></tr><tr><td>Optimización de costos, Al identificar ineficiencias en la cadena de suministro, podemos reducir costos y aumentar la rentabilidad</td><td><a href="../../.gitbook/assets/en el pc1.png">en el pc1.png</a></td></tr><tr><td>Mejora de la eficiencia: Los modelos nos permiten simular diferentes procesos y encontrar la forma más eficiente de operar</td><td><a href="../../.gitbook/assets/CRCwh.png">CRCwh.png</a></td></tr><tr><td>Gestión de riesgos: Podemos evaluar el impacto de posibles perturbaciones, como desastres naturales o cambios en la demanda, y desarrollar planes de contingencia.</td><td><a href="../../.gitbook/assets/ACO imagen.png">ACO imagen.png</a></td></tr></tbody></table>
 
 #### Tipos de modelos de cadena de suministro:[#](broken-reference)
 
