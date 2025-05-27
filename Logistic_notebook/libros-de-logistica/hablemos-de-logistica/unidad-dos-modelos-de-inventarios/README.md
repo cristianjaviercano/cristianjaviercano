@@ -242,10 +242,10 @@ graficar_eoq(demanda_anual, costo_mantener, costo_pedido)
 
 La empresa IND sas tiene una demanda diaria de 100 unidades, y el costo en que se incurren dichos pedidos es de 100 Cop se estima que el almacenqamiento de cada uno de los elementos es de $0.01 Cop Diarios los pedidos se demoran 12 dias en ser entregados, debemos determinar la politica optima de invenario que nos permita mantener el mejor invetario posible. entonces:
 
-* \\(D= 100\ nunidades\ diarias\\)
-* \\(K= 100\\)$ por pedido
-* \\(h=0.02\\). unidades por día
-* \\(L= 12\ dias\\)
+* D= 100 nunidades diarias
+* K= 100 por pedido
+* h=0.02. unidades por día
+* L= 12 dias
 
 ```python
 import math
@@ -389,10 +389,13 @@ Cantidad ec.onómica de pedido La demanda de computadoras Deskpro en Best Buy es
 
 #### Ejercicio Numero 6[#](broken-reference)
 
-Abc company have two item \\(X\_1\\) and \\(X\_2\\) for stockin into theirs warehouse, the Demand for each one of the items is:
+Abc company have two item X\_1 and X\_2 for stockin into theirs warehouse, the Demand for each one of the items is:
 
-* \\(D\_1 = 10000u/y\\) and \\(D\_2=12000u/y\\).
-* the holdig cost for each one of them is \\(13%\\) and the costo is \\(C\_1=5000cop\\) And \\(C\_2=7000Cop\\)
+D\_1 = 10000u&#x20;
+
+D\_2 = 12000u
+
+The holdig cost for each one of them is 13% and the costo is C\_1 = 5000cop And C\_2 = 7000Cop
 
 the two items have the same supplier so they sahre the operation costing \\(6000cop\\) by S
 
@@ -411,24 +414,24 @@ Continuing with the information about the Central Park reservoir given in Proble
 
 #### Ejercicio de inventario con modelamiento matematico en python[#](broken-reference)
 
-la empresa **XYZ** posee Tres clientes y cuatro proveedores, la empresa manufactura dos productos \\(X\_1\\) y \\(X\_2\\) donde para el producto \\(X\_1\\) es necesario dos unidades de \\(MP\_1\\) y una unidad de \\(MP\_2\\); mientras que es Producto \\(X\_2\\) necesita una unidad de \\(MP\_1\\) y tres unidades de \\(MP\_2\\), el costo de almacenamiento del producto terminado de \\(X\_1\\) y \\(X\_2\\) es de 0,5 COP/Un y 0,8 COP/Un Respectivamente; el costo de pedir \\(X\_1\\) y \\(X\_2\\) es de 1,2 Cop/un y 0,8Cop/Un Respectivamente, cabe mencionar que al pedir un producto se responde desde los proveedores con los componentes respectivos de cada uno \\(MP\_i\\)
+la empresa **XYZ** posee Tres clientes y cuatro proveedores, la empresa manufactura dos productos X\_1 y X\_2 donde para el producto X\_1 es necesario dos unidades de MP\_1 y una unidad de MP\_2; mientras que es Producto X\_2 necesita una unidad de MP\_1 y tres unidades de MP\_2, el costo de almacenamiento del producto terminado de X\_1 y X\_2 es de 0,5 COP/Un y 0,8 COP/Un Respectivamente; el costo de pedir X\_1 y X\_2 es de 1,2 Cop/un y 0,8Cop/Un Respectivamente, cabe mencionar que al pedir un producto se responde desde los proveedores con los componentes respectivos de cada uno MP\_i
 
-la tabla de **costos** de \\(MP\_i\\) esta dada de la siguiente forma:
+La tabla de **costos** de MP\_i esta dada de la siguiente forma:
 
-| Proveedor  | \\(Rm\_1\\) | \\(Rm\_2\\) |
-| ---------- | ----------- | ----------- |
-| \\(S\_1\\) | 90          | 75          |
-| \\(S\_2\\) | 50          | 65          |
-| \\(S\_3\\) | 65          | 25          |
-| \\(S\_4\\) | 70          | 50          |
+| Proveedor | Rm\_1 | Rm\_2 |
+| --------- | ----- | ----- |
+| S\_1      | 90    | 75    |
+| S\_2      | 50    | 65    |
+| S\_3      | 65    | 25    |
+| S\_4      | 70    | 50    |
 
 * La Demanda del sistema esta dada de la siguiente forma:
 
-| Cliente    | \\(X\_1\\) | \\(X\_2\\) |
-| ---------- | ---------- | ---------- |
-| \\(C\_1\\) | 500        | 250        |
-| \\(C\_2\\) | 450        | 300        |
-| \\(C\_3\\) | 250        | 300        |
+| Cliente | X\_1 | X\_2 |
+| ------- | ---- | ---- |
+| C\_1    | 500  | 250  |
+| C\_2    | 450  | 300  |
+| C\_3    | 250  | 300  |
 
 * se asume que el sistema esta balanceado y que los proveedores pueden suplir la demanda en la totalidad de lo que se requiera.
 
@@ -438,16 +441,16 @@ encuentre:
 2. los costos asociados al sistema segun el modelo POQ
 3. si los proveedores tienen un lead time de:
 
-| PROVEEDOR  | LEAD TIME |
-| ---------- | --------- |
-| \\(S\_1\\) | 2         |
-| \\(S\_2\\) | 4         |
-| \\(S\_3\\) | 2         |
-| \\(S\_4\\) | 5         |
+| PROVEEDOR | LEAD TIME |
+| --------- | --------- |
+| S\_1      | 2         |
+| S\_2      | 4         |
+| S\_3      | 2         |
+| S\_4      | 5         |
 
 Calcule los ROL y ROQ de cada uno de los productos, con base en su Bill of material.
 
-4. calcule la tasa de demanda (descuento) \\(d\\) y teniendo en cuenta, una tasa de produccion de \\(x\_1 = 80 un/dia\\) y \\(x\_2 = 60 un/dia\\) calcule el lote economico optimo. y el tamaño de la bodega que deberia tener la empresa.
+4. calcule la tasa de demanda (descuento) \\(d\\) y teniendo en cuenta, una tasa de produccion de x\_1 = 80 un/dia y x\_2 = 60 un/dia calcule el lote economico optimo. y el tamaño de la bodega que deberia tener la empresa.
 
 **Agreguemos el costo total del inventario y grafiquemoslo**[**#**](broken-reference)
 
@@ -537,8 +540,9 @@ plt.show()
 
 The economic production quantity (EPQ) model (also known as the economic lot size (ELS) model) is used in manufacturing situations where inventory increases at a finite rate and depends on the production rate and the usage rate of the item under consideration. In addition to the variables (D, S, H, Q, and C) defined earlier, we define two more variables: p = production rate per day (daily production rate) and d = demand rate per day (daily demand rate). The values of p and d must be in the same time unit. For example, these values could be weekly rates instead of daily rates. However, daily rates are most common. Q in this case is the production quantity (rather than order quantity) to be made in one lot and S is the cost of setting up the machine to produce that one lot. Therefore, S is called the setup cost per set up (rather than order cost per order).
 
-<pre class="language-latex"><code class="lang-latex"><strong>$$\[ Q_{epq}=\sqrt{\left(\frac{2DS}{h\left(1-\frac{d}{q}\right)}\right)} \]$$
-</strong></code></pre>
+$$
+Q_{epq}=\sqrt{\left(\frac{2DS}{h\left(1-\frac{d}{q}\right)}\right)}
+$$
 
 #### Ejemplo EPQ
 
@@ -554,16 +558,24 @@ entonces resolvemos:
 
 desconocemos _d_, pero esta puede ser calculada por medio de los dias laborales y demanda anual.
 
-\\\[ d = \frac{50.000}{250} = 200 un \\]
+$$
+d = \frac{50.000}{250} = 200 un
+$$
 
 Usando la formula de _EPQ_ obtenemos:
 
-\\\[ Q\_{epq} = \sqrt{\frac{2\*50,000\*25}{5\*(1-\frac{200}{250})\}} = 912.87 \\]
+$$
+Q_{epq} = \sqrt{\frac{2*50,000*25}{5*(1-\frac{200}{250})}} = 912.87
+$$
 
 tambien podemos calcular el nivel de inventario maximo (\\(I\_{max})\\)
 
-\\\[ I\_{max}=Q \* \left(1-\frac{d}{p}\right) \\]
+$$
+I_{max}=Q * \left(1-\frac{d}{p}\right)
+$$
 
 Reemplazando:
 
-\\\[ I\_{max}=912.87\*\left(1-\frac{200}{500}\right) = 547.72 un \\]
+$$
+I_{max}=912.87*\left(1-\frac{200}{500}\right) = 547.72 un
+$$

@@ -22,9 +22,9 @@ Para aplicar el modelo de descuento, primero se calcula el EOQ para cada nivel d
 EOQ Básico:
 ```
 
-```latex
-[EOQ = \sqrt{\frac{2DS}{H}}]
-```
+$$
+EOQ = \sqrt{\frac{2DS}{H}}
+$$
 
 Donde:
 
@@ -52,9 +52,9 @@ Donde:
 
         **Paso 1:** Calcular el EOQ sin descuentos.
 
-```latex
+$$
 EOQ = \sqrt{\frac{2 \times 1000 \times 50}{2}} = 100
-```
+$$
 
 * **Paso 2:** Evaluar cada nivel de descuento.
   * **100-199 unidades: ($95 x unidad):**

@@ -254,7 +254,7 @@ Imagina un problema de transporte con dos orígenes (O1 y O2) y tres destinos (D
 
 En este caso, la oferta total (250 unidades) es mayor que la demanda total (250 unidades). Para nivelar el modelo, se introduce un destino ficticio (DF) con una demanda de 0 unidades. Los costos de transporte desde O1 y O2 a DF se establecen en cero.
 
-```
+```python
 import pulp
 
 # Crear el problema

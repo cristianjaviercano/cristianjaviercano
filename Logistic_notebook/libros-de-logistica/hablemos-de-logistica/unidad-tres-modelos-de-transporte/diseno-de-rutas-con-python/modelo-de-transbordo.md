@@ -14,7 +14,7 @@ En el modelo de transbordo o Cross docking se inicia con el supuesto que el hech
 
 Ejemplo:
 
-donde fabricas de producto X \\(P\_1\ y\ P\_2\\) en asocian con tres agencias \\(D\_1, D\_2\ y\ D\_3\\) a travez de dos centros de distribicion \\(T\_1\ y\ T\_2\\)
+donde fabricas de producto X  P\_1 y P\_2 en asocian con tres agencias D\_1, D\_2 y D\_3 a travez de dos centros de distribicion T\_1  y T\_2
 
 1. genere el modelo de red de este apartado a mano y en colab. usando Graphviz
 
@@ -26,11 +26,16 @@ Image(filename='/content/drive/MyDrive/Libros academicos en colab/1. Logistica/I
 La oferta de las plantas son como se muestran en la&#x20;
 
 ```latex
-Demanda\ en\ los\ P_n \ P_1 = 1000\ Un \ P_2 = 1200\ Un \ \
+Demanda en los P_n
+- P_1 = 1000 Un  
+- P_2 = 1200 Un 
 ```
 
 ```latex
-Demanda\ en\ los\ D_n \ D_1= 800 \ D_2=900 \ D_3= 500 \ $
+Demanda en los D_n 
+- D_1 = 800
+- D_2 = 900  
+- D_3 = 500
 ```
 
 Note que los nodos \\(t\_n\ y\ D\_n\\) funcionan como entrada y salida. a estos se les denomina **Nodos de Transbordo**

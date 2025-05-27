@@ -1,4 +1,4 @@
-# Ejercicios de Rutas
+# Ejercicios 2
 
 ### Ejercicio sobre Ruteo utilizando TSP (Problema del Viajero)
 
@@ -239,11 +239,11 @@ Este diseño proporciona un marco robusto para que el estudiante aplique concept
 
 7. Tres ciudades se abastecen de electricidad de tres centrales eléctricas con capacidades de 25, 40 y 30 megawatts (MW). Las demandas máximas en las tres ciudades se estiman en 30, 35 y 25 MW. El precio por MW en las tres ciudades se muestra en la tabla
 
-| Plantas\Ciudad | \\(C\_1\\) | \\(C\_2\\) | \\(C\_3\\) |
-| -------------- | ---------- | ---------- | ---------- |
-| \\(P\_1\\)     | 600        | 700        | 400        |
-| \\(P\_2\\)     | 320        | 300        | 350        |
-| \\(P\_3\\)     | 500        | 480        | 450        |
+| Plantas\Ciudad | C\_1 | C\_2 | C\_3 |
+| -------------- | ---- | ---- | ---- |
+| P\_1           | 600  | 700  | 400  |
+| P\_2           | 320  | 300  | 350  |
+| P\_3           | 500  | 480  | 450  |
 
 Durante el mes de agosto hay un aumento de 20% en la demanda de cada ciudad, que se puede satisfacer comprando electricidad a otra red, a una tasa elevada de $1000 por MW. Sin embargo, la red no está conectada con la ciudad 3. La empresa eléctrica desea determinar el plan más económico para distribuir y comprar la energía adicional.
 
@@ -288,58 +288,58 @@ Tom quiere saber cuánto debe comprar a cada uno para minimizar su costo y a la 
     3. realice este ejercicio en el entorno de google colab en latex y codigo \\
 12. La empresa XYZ produce 2 productos \\(X\_1\\) y \\(X\_2\\) en dos plantas diferentes \\(Pl\_1\\) y \\(Pl\_2\\) cada uno de los productos necesita de diferentes Materias primas para ser elaborado segun la siguiente tabla:
 
-|            | Mp1 | Mp2 | Mp3 | Tiempo de Prod       |
-| ---------- | --- | --- | --- | -------------------- |
-| \\(X\_1\\) | 2   | 3   | 1   | \\(4\frac{min}{u}\\) |
-| \\(X\_2\\) | 3   | 1   | 0   | \\(3\frac{min}{u}\\) |
+|      | Mp1 | Mp2 | Mp3 | Tiempo de Prod     |
+| ---- | --- | --- | --- | ------------------ |
+| X\_1 | 2   | 3   | 1   | $$4\frac{min}{u}$$ |
+| X\_2 | 3   | 1   | 0   | $$3\frac{min}{u}$$ |
 
 La empresa cuenta son 5 proveedores
 
-|            | \\(Mp\_1\\) | \\(Mp\_2\\) | \\(Mp\_3\\) |
-| ---------- | ----------- | ----------- | ----------- |
-| \\(S\_1\\) | 1000        | 800         | 1000        |
-| \\(S\_2\\) | 4000        | 2000        | -           |
-| \\(S\_3\\) | -           | 9000        | 2000        |
-| \\(S\_4\\) | 5000        | 3000        | 900         |
-| \\(S\_5\\) | 2000        | 4000        | 1000        |
+|      | Mp\_1 | Mp\_2 | Mp\_3 |
+| ---- | ----- | ----- | ----- |
+| S\_1 | 1000  | 800   | 1000  |
+| S\_2 | 4000  | 2000  | -     |
+| S\_3 | -     | 9000  | 2000  |
+| S\_4 | 5000  | 3000  | 900   |
+| S\_5 | 2000  | 4000  | 1000  |
 
 costos por ser enviadas las unidades (u/usd)
 
-|            | \\(CtMp\_1\\) | \\(CtMp\_2\\) | \\(CtMp\_3\\) |
-| ---------- | ------------- | ------------- | ------------- |
-| \\(S\_1\\) | 2             | 2             | 3             |
-| \\(S\_2\\) | 2             | 2,5           | -             |
-| \\(S\_3\\) | -             | 3             | 1             |
-| \\(S\_4\\) | 4             | 2             | 4             |
-| \\(S\_5\\) | 2             | 2,2           | 2             |
+|      | CtMp\_1 | CtMp\_2 | CtMp\_3 |
+| ---- | ------- | ------- | ------- |
+| S\_1 | 2       | 2       | 3       |
+| S\_2 | 2       | 2,5     | -       |
+| S\_3 | -       | 3       | 1       |
+| S\_4 | 4       | 2       | 4       |
+| S\_5 | 2       | 2,2     | 2       |
 
 Costo fijo por proveedor:
 
-|            | Costo fijo |
-| ---------- | ---------- |
-| \\(S\_1\\) | 90 usd     |
-| \\(S\_2\\) | 110 usd    |
-| \\(S\_3\\) | 85 usd     |
-| \\(S\_4\\) | 97 usd     |
-| \\(S\_5\\) | 60 usd     |
+|      | Costo fijo |
+| ---- | ---------- |
+| S\_1 | 90 usd     |
+| S\_2 | 110 usd    |
+| S\_3 | 85 usd     |
+| S\_4 | 97 usd     |
+| S\_5 | 60 usd     |
 
-|            | Costo variable |
-| ---------- | -------------- |
-| \\(S\_1\\) | 0,5 usd        |
-| \\(S\_2\\) | 0,8 usd        |
-| \\(S\_3\\) | 0,7 usd        |
-| \\(S\_4\\) | 0,2 usd        |
-| \\(S\_5\\) | 0,6 usd        |
+|      | Costo variable |
+| ---- | -------------- |
+| S\_1 | 0,5 usd        |
+| S\_2 | 0,8 usd        |
+| S\_3 | 0,7 usd        |
+| S\_4 | 0,2 usd        |
+| S\_5 | 0,6 usd        |
 
 Distancia de las plantas a los prioveedores
 
-|            | \\(Plp\_1\\) | \\(Plp\_2\\) |
-| ---------- | ------------ | ------------ |
-| \\(S\_1\\) | 70           | 92           |
-| \\(S\_2\\) | 67           | 92           |
-| \\(S\_3\\) | 85           | 83           |
-| \\(S\_4\\) | 70           | 72           |
-| \\(S\_5\\) | 90           | 94           |
+|      | Plp\_1 | Plp\_2 |
+| ---- | ------ | ------ |
+| S\_1 | 70     | 92     |
+| S\_2 | 67     | 92     |
+| S\_3 | 85     | 83     |
+| S\_4 | 70     | 72     |
+| S\_5 | 90     | 94     |
 
 1. encuentre el modelo optimo para reducir lso costos y suplir con la demanda
 2. debe nivelar el sistema por medio del hallazgo de las unidades de demanda de acuerdo con las capacidades del sistema
@@ -351,11 +351,11 @@ Distancia de las plantas a los prioveedores
 3. realice este ejercicio en google colab
 ```
 
-### Ejercicio numero 6 del libro hamndy taha - investigacion de operaciones capituo 5[#](broken-reference)
+### Ejercicio numero 6 del libro hamndy taha - investigacion de operaciones capituo 5
 
 Tres ciudades abastecen de electricidad de ytres centrales electricas con capacidades de 25, 40 y 30 megawatts. las demandas maximas en las tres ciudades se estiman en 30, 35 y 25 megawatts, el precio por megawatts en las tres ciudades se muestra en la siguiente tabla.
 
-* Tabla uno.
+Tabla uno.
 
 |        |     | Ciudad |     |
 | ------ | --- | ------ | --- |

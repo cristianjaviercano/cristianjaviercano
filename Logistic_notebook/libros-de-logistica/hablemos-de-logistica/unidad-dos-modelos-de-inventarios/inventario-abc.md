@@ -45,5 +45,5 @@ El inventario ABC es un método de categorización de inventarios que ayuda a id
 * **Evaluación Continua**: Mantén la flexibilidad para ajustar el enfoque al manejar inventarios conforme a la evolución de las necesidades y estrategias de la empresa.
 
 {% hint style="info" %}
-OJO, no te pierdas que, iguiendo estos pasos, podrás implementar un sistema de inventario ABC que te permita optimizar la gestión de tus recursos, mejorar la eficiencia operativa y reducir costos.
+OJO, no te pierdas que, siguiendo estos pasos, podrás implementar un sistema de inventario ABC que te permita optimizar la gestión de tus recursos, mejorar la eficiencia operativa y reducir costos.
 {% endhint %}

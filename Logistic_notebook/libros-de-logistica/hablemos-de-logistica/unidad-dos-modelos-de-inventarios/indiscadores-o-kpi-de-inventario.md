@@ -14,31 +14,25 @@ La rotación de inventario es un indicador clave en la gestión empresarial que 
 
 Esto también puede reducir los costos asociados con el almacenamiento y el mantenimiento del inventario, al mismo tiempo que mejora el flujo de efectivo. Por lo tanto, una alta rotación de inventario es un signo positivo de las operaciones eficientes de una empresa, asegurando que los artículos no queden obsoletos, sino que estén alineados con la demanda del mercado.
 
-{% code overflow="wrap" %}
-```
-$$ [ \text{Rotación de Inventario} = \frac{\text{Costo de los Bienes Vendidos}}{\text{Inventario Promedio}} ]$$
-```
-{% endcode %}
+$$
+\text{Rotación de Inventario} = \frac{\text{Costo de los Bienes Vendidos}}{\text{Inventario Promedio}}
+$$
 
 ### 2. Días de Inventario en Mano (DIH)
 
 Este KPI, conocido como "Días de Inventario en Mano" (DIH), mide el tiempo promedio que un inventario permanece en almacén antes de ser vendido. Este indicador es fundamental para evaluar la eficiencia de la gestión del inventario y la rotación de productos dentro de la empresa. Un DIH más bajo es deseable ya que sugiere que los productos se venden rápidamente, lo que puede ser indicativo de una buena gestión del inventario, una alta demanda del producto o una combinación de ambas. Por el contrario, un DIH más alto puede señalar problemas, como un exceso de stock, falta de demanda o ineficiencias en los procesos de venta o distribución. Monitorear estrechamente este KPI permite a las empresas optimizar sus operaciones, reducir costos de almacenamiento y mejorar el flujo de efectivo.
 
-{% code overflow="wrap" %}
-```
-$$[ \text{DIH} = \frac{\text{Inventario Promedio} \times 365}{\text{Costo de los Bienes Vendidos}} ]$$
-```
-{% endcode %}
+$$
+\text{DIH} = \frac{\text{Inventario Promedio} \times 365}{\text{Costo de los Bienes Vendidos}}
+$$
 
 ### 3. Precisión de Inventario
 
 El presente indicador evalúa la precisión de los registros de inventario al compararlos con el inventario físico existente. Esto se logra identificando discrepancias entre los datos documentados y lo que realmente está disponible en el almacén. La exactitud se calcula al expresarse como un porcentaje, reflejando qué tan bien los registros coinciden con la realidad. Un nivel alto de precisión es indicativo de un sistema de gestión de inventario eficiente, donde los errores y omisiones son mínimos. Al realizar auditorías periódicas, se puede mantener un control riguroso y asegurar que cualquier desajuste se corrija a tiempo, optimizando así la eficiencia operativa y reduciendo pérdidas innecesarias debido a errores en el inventario.
 
-{% code overflow="wrap" %}
-```latex
-$$[ \text{Precisión de Inventario} = \left(\frac{\text{Cantidad Correcta}}{\text{Cantidad Registrada}}\right) \times 100 % ]$$
-```
-{% endcode %}
+$$
+\text{Precisión de Inventario} = \left(\frac{\text{Cantidad Correcta}}{\text{Cantidad Registrada}}\right) \times 100 %
+$$
 
 ### 4. Nivel de Servicio
 
