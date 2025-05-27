@@ -5,7 +5,7 @@
 ## Libros de Logistica
 
 * [¡Hablemos de Logistica!](libros-de-logistica/hablemos-de-logistica/README.md)
-  * [Logistic Notebook](libros-de-logistica/hablemos-de-logistica/logistic-notebook.md)
+  * [El cuaderno de logistica](libros-de-logistica/hablemos-de-logistica/el-cuaderno-de-logistica.md)
   * [Unidad Cero: Componentes tipicos de la Logistica](libros-de-logistica/hablemos-de-logistica/unidad-cero-componentes-tipicos-de-la-logistica.md)
   * [Unidad Uno: Servicio Al Cliente](libros-de-logistica/hablemos-de-logistica/unidad-uno-servicio-al-cliente.md)
   * [Unidad Dos: Modelos de inventarios](libros-de-logistica/hablemos-de-logistica/unidad-dos-modelos-de-inventarios/README.md)
