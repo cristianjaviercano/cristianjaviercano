@@ -6,13 +6,9 @@
 
 Definicion de redes: las redes son una serie de nodos localizados y enlazados con arcos la notacion para la descripcion de la red es
 
-\\
-
-{% code overflow="wrap" %}
-```markdown
-\[\begin{split} (N,A); \\ donde: \\ N = Conjunto\ de\ Nodos \\ A = Conjunto\ de\ Arcos \end{split}\]
-```
-{% endcode %}
+$$
+\begin{split} (N,A); \\ donde: \\ N = Conjunto\ de\ Nodos \\ A = Conjunto\ de\ Arcos \end{split}\
+$$
 
 Por ejmplo:
 
@@ -50,13 +46,17 @@ Ejercicios:
 
 ***
 
-1. grafique a mano y en colab el siguiente modelo \\
+1. grafique a mano y en colab el siguiente modelo
 
-\\( 1.1). \\\ N=\\{1,2,3,4,5\\} \\\ A=\\{(1,2),(2,5),(1,3),(3,4),(3,5),(5,1),(4,2)\\} \\)
+$$
+N=\{1,2,3,4,5\} \\ A=\{(1,2),(2,5),(1,3),(3,4),(3,5),(5,1),(4,2)\}
+$$
 
-\\
+$$
+N=\{1,2,3,4\} \\ A=\{(1,3),(1,2),(2,3),(2,4),(3,4)\}
+$$
 
-\\( 1.2). \\\ N=\\{1,2,3,4\\} \\\ A=\\{(1,3),(1,2),(2,3),(2,4),(3,4)\\} \\\ \\)
+
 
 ```
   1. determine:
@@ -68,8 +68,13 @@ Ejercicios:
 ```
 
 2. Determine los conjuntos Conjuntos \\(N\\) y \\(A\\) en las redes
-3. Trace la Red definida por \\( N=\\{1,2,3,4,5\\} \\\ A=\\{(1,2),(1,5),(2,3)(2,4),(3,5),(3,4),(4,3),(4,6),(5,2),(5,6)\\} \\)
-4. se debe transportar en un vehiculo tres productos desde la tienda ABC hasta la cada de doña pepita, para hacer el domicilio que esta solicito a la tienda, pero el domiciliario y su vehiculo no puede trasportar mas de dos elementos a la vez, el domiciliario puede pedir ayuda de sus compañeros, ya que por el tamaño del producto no puede caragar mas de uno a la vez, el maximo de personas incluido el domicialiario es de tres personas, no es recomendable que tengan mas productos que personas en el carro.
+3. Trace la Red definida por&#x20;
+
+$$
+N=\{1,2,3,4,5\} \\ A=\{(1,2),(1,5),(2,3)(2,4),(3,5),(3,4),(4,3),(4,6),(5,2),(5,6)\}
+$$
+
+2. se debe transportar en un vehiculo tres productos desde la tienda ABC hasta la cada de doña pepita, para hacer el domicilio que esta solicito a la tienda, pero el domiciliario y su vehiculo no puede trasportar mas de dos elementos a la vez, el domiciliario puede pedir ayuda de sus compañeros, ya que por el tamaño del producto no puede caragar mas de uno a la vez, el maximo de personas incluido el domicialiario es de tres personas, no es recomendable que tengan mas productos que personas en el carro.
 
 * formule el modelo de red para diseñar los viajes del vehiculo de modo que se asegure el domicilo a la casa de doña pepita.
 
@@ -87,20 +92,26 @@ _otra definicion:_ Un árbol de expansión mínimo es un tipo especial de árbol
 
 procedimiento:
 
-\\( Sea\ N=\\{1,2,...n\\}, en\ conjunto\ de \ nodos\ en\ la\ Red. \\\ C\_k=Conjunto\ de\ nodos\ que\ se\ han\ Conectado\ en \ forma\ permanente\ en\ la\ iteracion\ K \\\ \bar{C\_k} = Conjunto\ de\ nodos\ que\ faltan\ por\ conectar. \\)
+Sea $$N=\{1,2,...n\}$$, en conjunto de  nodos en la Red.
 
-**Paso Cero:** El conjunto: $\\( C\_0=𝛳\ y \\\ \bar{C\_0} =N \\)$
+$$
+C_k=Conjunto\ de\ nodos\ que\ se\ han\ Conectado\ en \ forma\ permanente\ en\ la\ iteracion\ K \\ \bar{C_k} = Conjunto\ de\ nodos\ que\ faltan\ por\ conectar.
+$$
 
-1. Comenzar con cualquier nodo en el conjunto \\(\bar{C\_0}\\) no conectado e igualas a \\(C\_1=\\{i\\}\\), con lo qie \\(\bar{C\_1}=N-\\{i\\}\\), igualar a \\(K=2\\)
-2. **paso general \\(K\ \\)** selecciona un nodo \\(j\\) en el conjunto no conectado \\(\bar{C\_{k-1\}}\\) que produzca el arco mas corto a un nodo, en el conjunto conectado a \\(C\_{k-1}\\) enlazando \\(j\\) en forma permanente con \\(C\_{k-1}\\) y sacarlo de \\(\bar{C\_{k-1\\)\}}$
+**Paso Cero:** El conjunto:
 
-\\
+$$
+C_0=𝛳\ y \\ \bar{C_0} =N
+$$
 
-\\\[ C\_k=C\_{k-1}+\\{j\\}, C\_k = \bar{C\_{k-1\}}-\\{j\\} \\]
+1. Comenzar con cualquier nodo en el conjunto $$\bar{C_0}$$ no conectado e igualas a $$C_1=\{i\}$$, con lo que $$\bar{C_1}=N-\{i\}$$, igualar a K=2
+2. **paso general K,** selecciona un nodo j en el conjunto no conectado $$\bar{C_{k-1}}$$ que produzca el arco mas corto a un nodo, en el conjunto conectado a $$C_{k-1}$$ enlazando j en forma permanente con $$C_{k-1}$$ y sacarlo de $$\bar{C_{k-1}}$$
 
-\\
+$$
+C_k=C_{k-1}+\{j\}, C_k = \bar{C_{k-1}}-\{j\}
+$$
 
-* donde los \\(\bar{C\_{k\}}\\) es igual a 0 o vacío, detenerse, o por el contrario igualar \\(K=k+1\\) y repertir el proceso.
+* donde los $$\bar{C_{k}}$$ es igual a 0 o vacío, detenerse, o por el contrario igualar $$K=k+1$$ y repertir el proceso.
 
 ***
 

@@ -20,6 +20,7 @@
     * [Almacenamiento en Bodegas o CEDIS](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
     * [Modelo de redes](libros-de-logistica/hablemos-de-logistica/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
   * [Unidad Cuatro: Modelos de Localizacion](libros-de-logistica/hablemos-de-logistica/unidad-cuatro-modelos-de-localizacion.md)
+  * [Unidad Cinco: supply chain models and methods](libros-de-logistica/hablemos-de-logistica/unidad-cinco-supply-chain-models-and-methods.md)
 
 ## Libros de Analisis de Datos
 

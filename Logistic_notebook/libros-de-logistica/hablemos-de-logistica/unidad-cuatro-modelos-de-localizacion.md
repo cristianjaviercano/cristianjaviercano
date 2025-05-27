@@ -105,9 +105,9 @@ El método gráfico de localización de plantas es una técnica utilizada para s
 4. Análisis de las ubicaciones potenciales: Se identifican las posibles ubicaciones para la nueva planta o instalación y se evalúan en función de los factores críticos y sus respectivos pesos. Se pueden utilizar diferentes métodos para hacer esto, como análisis multicriterio o análisis de distancia.
 5. Selección de la ubicación óptima: Finalmente, se selecciona la ubicación óptima en función de los resultados del análisis y se procede a la planificación y construcción de la planta.
 
-#### Ejercicios propuestos:[#](broken-reference)
+#### Ejercicios propuestos:
 
-**Grapich model**[**#**](broken-reference)
+**Grapich model**
 
 | Ciudad     | Costos fijos (M) | Costos Variables |
 | ---------- | ---------------- | ---------------- |
