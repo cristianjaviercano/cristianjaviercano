@@ -154,41 +154,43 @@ la empresa cano.ltda es una empresa en expansion y en su opercion acaba de firma
 
 las distancias correspondientes entre cada uno de los actores se da en la siguiente tabla de distancias:
 
-|            | \\(P\_1\\) | \\(P\_2\\) | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| \\(P\_1\\) | 0          | -          | 3          | 4          | -          | -          | -          |
-| \\(P\_2\\) | -          | 0          | 2          | 5          | -          | -          | -          |
-| \\(T\_1\\) | -          | -          | 0          | 7          | 8          | 6          | -          |
-| \\(T\_2\\) | -          | -          | -          | 0          | -          | 4          | 9          |
-| \\(D\_1\\) | -          | -          | -          | -          | 0          | 5          | -          |
-| \\(D\_2\\) | -          | -          | -          | -          | -          | 0          | 3          |
-| \\(D\_3\\) | -          | -          | -          | -          | -          | -          | 0          |
+|      | P\_1 | P\_2 | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| P\_1 | 0    | -    | 3    | 4    | -    | -    | -    |
+| P\_2 | -    | 0    | 2    | 5    | -    | -    | -    |
+| T\_1 | -    | -    | 0    | 7    | 8    | 6    | -    |
+| T\_2 | -    | -    | -    | 0    | -    | 4    | 9    |
+| D\_1 | -    | -    | -    | -    | 0    | 5    | -    |
+| D\_2 | -    | -    | -    | -    | -    | 0    | 3    |
+| D\_3 | -    | -    | -    | -    | -    | -    | 0    |
 
-| Oferta     | qty     |
-| ---------- | ------- |
-| \\(P\_1\\) | 1000 Un |
-| \\(P\_2\\) | 1200 Un |
+| Oferta | qty     |
+| ------ | ------- |
+| P\_1   | 1000 Un |
+| P\_2   | 1200 Un |
 
-| Demanda    | qty    |
-| ---------- | ------ |
-| \\(D\_1\\) | 800 Un |
-| \\(D\_2\\) | 900 Un |
-| \\(D\_3\\) | 500 Un |
+| Demanda | qty    |
+| ------- | ------ |
+| D\_1    | 800 Un |
+| D\_2    | 900 Un |
+| D\_3    | 500 Un |
 
-1. Definimos los nodos de Transbordo $\\( T\_1 \ y\ T\_2 \\)$
-2. Definimos en “Buffer” del sistema \\(B\_n\\) debe ser lo suficientemente grande para suplir el proceso
+1. Definimos los nodos de Transbordo T\_1  y  T\_2
+2. Definimos en “Buffer” del sistema B\_n debe ser lo suficientemente grande para suplir el proceso
 
-\\(B\_n = Oferta - Demanda\\)
+$$
+B_n = Oferta - Demanda
+$$
 
 3. procedemos a hacer la matriz de transbordo
 
-|            | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) | Demanda |   |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ------- | - |
-| \\(P\_1\\) | 3          | 4          | M          | M          | M          | 1000    |   |
-| \\(P\_2\\) | 2          | 5          | M          | M          | M          | 1200    |   |
-| \\(T\_1\\) | 0          | 7          | 8          | 6          | M          | B       |   |
-| \\(T\_2\\) | M          | 0          | M          | 4          | 9          | B       |   |
-| \\(D\_1\\) | M          | M          | 0          | 5          | M          | B       |   |
-| \\(D\_2\\) | M          | M          | M          | 0          | 3          | B       |   |
-| Oferta     | B          | B          | 800 + B    | 900 + B    | 500        | -       |   |
+|        | T\_1 | T\_2 | D\_1    | D\_2    | D\_3 | Demanda |
+| ------ | ---- | ---- | ------- | ------- | ---- | ------- |
+| P\_1   | 3    | 4    | M       | M       | M    | 1000    |
+| P\_2   | 2    | 5    | M       | M       | M    | 1200    |
+| T\_1   | 0    | 7    | 8       | 6       | M    | B       |
+| T\_2   | M    | 0    | M       | 4       | 9    | B       |
+| D\_1   | M    | M    | 0       | 5       | M    | B       |
+| D\_2   | M    | M    | M       | 0       | 3    | B       |
+| Oferta | B    | B    | 800 + B | 900 + B | 500  | -       |
 
