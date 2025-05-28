@@ -22,6 +22,11 @@
   * [Unidad Cuatro: Modelos de Localizacion](libros-de-logistica/hablemos-de-logistica/unidad-cuatro-modelos-de-localizacion.md)
   * [Unidad Cinco: supply chain models and methods](libros-de-logistica/hablemos-de-logistica/unidad-cinco-supply-chain-models-and-methods.md)
 
+***
+
+* [Python para logistica](python-para-logistica/README.md)
+  * [Usando FOLIUM](python-para-logistica/usando-folium.md)
+
 ## Libros de Analisis de Datos
 
 * [SQL + PYTHON](libros-de-analisis-de-datos/sql-+-python/README.md)
@@ -39,4 +44,6 @@
 
 ***
 
-* [Variedades](variedades.md)
+* [Simulacion](simulacion/README.md)
+  * [Capitulo cero: introduccion a los conceptos de simulacion](simulacion/capitulo-cero-introduccion-a-los-conceptos-de-simulacion.md)
+  * [Capitulo uno: Introducción a la Simulación en Ingeniería Industrial](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial.md)
