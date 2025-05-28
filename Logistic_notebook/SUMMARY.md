@@ -46,4 +46,5 @@
 
 * [Simulacion](simulacion/README.md)
   * [Capitulo cero: introduccion a los conceptos de simulacion](simulacion/capitulo-cero-introduccion-a-los-conceptos-de-simulacion.md)
-  * [Capitulo uno: Introducción a la Simulación en Ingeniería Industrial](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial.md)
+  * [Capitulo uno: Introducción a la Simulación en Ingeniería Industrial](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/README.md)
+    * [Simulacion de eventos Discretos](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos.md)

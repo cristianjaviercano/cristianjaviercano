@@ -4,7 +4,7 @@ description: se define la simulación y su contexto en la ingeniería industrial
 
 # Capitulo uno: Introducción a la Simulación en Ingeniería Industrial
 
-<img src="../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
 
 ### Objetivos del capitulo
 
@@ -44,7 +44,7 @@ Reconocer aplicaciones relevantes de la simulación en los campos de la ingenier
 Para comprender la simulación, es esencial primero definir los conceptos fundamentales sobre los que se construye
 {% endhint %}
 
-<img src="../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
 {% tab title="Sistema" %}
@@ -152,4 +152,130 @@ La habilidad para realizar abstracciones y simplificaciones adecuadas, sin perde
 
 Los modelos pueden clasificarse de diversas maneras, lo que ayuda a entender su naturaleza y las herramientas adecuadas para su análisis
 
-<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><p><strong>Modelos Fisicos</strong></p><p>Son representaciones tangibles o a escala del sistema real. Ejemplos clásicos incluyen maquetas de edificios utilizadas por arquitectos o modelos de aviones en túneles de viento. Aunque útiles en ciertos campos, en el contexto de la simulación de sistemas de ingeniería industrial, el enfoque se centra predominantemente en los modelos matemáticos</p></td><td></td><td></td></tr><tr><td><strong>Modelos Matemáticos:</strong> Utilizan el lenguaje y los símbolos matemáticos (ecuaciones, algoritmos) para describir las relaciones entre los componentes y las variables de un sistema. Estos son los modelos que se implementan y analizan mediante simulación por computado</td><td><p><strong>Modelos Analíticos,</strong> Son aquellos modelos matemáticos que pueden resolverse mediante técnicas matemáticas directas para obtener soluciones exactas o en forma cerrada </p><p>por ejemplo, la solución de un sistema de ecuaciones diferenciales lineales o la fórmula para el tiempo de espera promedio en una cola M/M/1 </p></td><td><strong>Modelos de Simulación,</strong> Cuando un modelo matemático es demasiado complejo para una solución analítica, se recurre a la simulación. Esta implica la evaluación numérica del modelo a través de la experimentación computarizada para estimar su comportamiento</td></tr><tr><td><strong>Modelos Estáticos:</strong> El tiempo no es una variable explícita o significativa en el modelo. Representan el sistema en un único punto en el tiempo o bajo condiciones de equilibrio. La simulación de Montecarlo, por ejemplo, a menudo se aplica a modelos estáticos para evaluar el impacto de la incertidumbre en las entradas sobre una salida de interés</td><td><strong>Modelos Dinámicos:</strong> El estado del sistema evoluciona con el tiempo. Las variables del sistema cambian como resultado de actividades o eventos que ocurren a lo largo del tiempo. La simulación de eventos discretos se ocupa fundamentalmente de modelos dinámicos</td><td></td></tr></tbody></table>
+<details>
+
+<summary><strong>Modelos Fisicos</strong></summary>
+
+Son representaciones tangibles o a escala del sistema real. Ejemplos clásicos incluyen maquetas de edificios utilizadas por arquitectos o modelos de aviones en túneles de viento. Aunque útiles en ciertos campos, en el contexto de la simulación de sistemas de ingeniería industrial, el enfoque se centra predominantemente en los modelos matemáticos
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Matemáticos</strong></summary>
+
+Utilizan el lenguaje y los símbolos matemáticos (ecuaciones, algoritmos) para describir las relaciones entre los componentes y las variables de un sistema. Estos son los modelos que se implementan y analizan mediante simulación por computado
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Analíticos</strong></summary>
+
+Son aquellos modelos matemáticos que pueden resolverse mediante técnicas matemáticas directas para obtener soluciones exactas o en forma cerrada&#x20;
+
+por ejemplo, la solución de un sistema de ecuaciones diferenciales lineales o la fórmula para el tiempo de espera promedio en una cola M/M/1&#x20;
+
+</details>
+
+<details>
+
+<summary><strong>Modelos de Simulación</strong></summary>
+
+Cuando un modelo matemático es demasiado complejo para una solución analítica, se recurre a la simulación. Esta implica la evaluación numérica del modelo a través de la experimentación computarizada para estimar su comportamiento
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Estáticos</strong></summary>
+
+El tiempo no es una variable explícita o significativa en el modelo. Representan el sistema en un único punto en el tiempo o bajo condiciones de equilibrio. La simulación de Montecarlo, por ejemplo, a menudo se aplica a modelos estáticos para evaluar el impacto de la incertidumbre en las entradas sobre una salida de interés
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Dinámicos</strong></summary>
+
+El estado del sistema evoluciona con el tiempo. Las variables del sistema cambian como resultado de actividades o eventos que ocurren a lo largo del tiempo. La simulación de eventos discretos se ocupa fundamentalmente de modelos dinámicos
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Deterministas</strong></summary>
+
+No contienen componentes aleatorios. Dada una entrada y un estado inicial, la trayectoria futura del sistema está completamente determinada.
+
+</details>
+
+<details>
+
+<summary><strong>Modelos Estocásticos (o Probabilísticos)</strong></summary>
+
+Contienen al menos un componente aleatorio. Las variables de entrada o los parámetros del modelo se describen mediante distribuciones de probabilidad. Como resultado, la salida del modelo también es aleatoria y debe analizarse estadísticamente. La mayoría de los sistemas de ingeniería industrial reales exhiben comportamiento estocástico (tiempos de proceso variables, llegadas aleatorias de clientes, fallas de máquinas, etc.), por lo que los modelos de simulación suelen ser estocásticos.
+
+</details>
+
+<details>
+
+<summary><strong>Modelos de Variables Continuas / Tiempo Continuo</strong></summary>
+
+Las variables de estado pueden cambiar continuamente a lo largo del tiempo. A menudo se describen mediante ecuaciones diferenciales (como en la dinámica de fluidos o el movimiento de un proyectil). La simulación de estos sistemas implica la discretización del tiempo para su solución numérica
+
+</details>
+
+<details>
+
+<summary><strong>Modelos de Variables Discretas / Tiempo Discreto:</strong></summary>
+
+Las variables de estado cambian solo en instantes específicos y contables de tiempo. Si estos instantes están espaciados uniformemente, se habla de modelos de tiempo discreto (descritos por ecuaciones en diferencias)
+
+</details>
+
+<details>
+
+<summary><strong>Modelos de Eventos Discretos (MED)</strong></summary>
+
+Son un tipo particular de modelo dinámico y generalmente estocástico, donde las variables de estado cambian instantáneamente en puntos discretos e irregularmente espaciados en el tiempo, como resultado de la ocurrencia de "eventos" (ej. llegada de un cliente, finalización de un servicio). Este es el enfoque principal de este curso
+
+</details>
+
+<details>
+
+<summary></summary>
+
+
+
+</details>
+
+<details>
+
+<summary></summary>
+
+
+
+</details>
+
+
+
+
+
+{% hint style="success" %}
+La correcta clasificación de un problema y el tipo de modelo necesario es un paso crucial, ya que guía la selección de la metodología de simulación más apropiada (Montecarlo, eventos discretos, dinámica de sistemas, etc.)
+{% endhint %}
+
+Resumiendo a informacion anterior podemos definir que los modelos de simulacion si bien se pueden clasificar en un sin numero de tipos, lo importante es reconocerlos con sus especificacione para poder seleccionar la metodologia de interpretacion correcta.
+
+| Característica del Modelo | Tiempo       | Aleatoriedad | Cambio de Estado | Ejemplo en IE                                              | Enfoque de Simulación Común              |
+| ------------------------- | ------------ | ------------ | ---------------- | ---------------------------------------------------------- | ---------------------------------------- |
+| Estático                  | No relevante | Determinista | No relevante     | Cálculo de costo fijo de un producto                       | (No requiere simulación)                 |
+| Estático                  | No relevante | Estocástico  | No relevante     | Análisis de riesgo de inversión (VPN con flujos inciertos) | Montecarlo                               |
+| Dinámico                  | Relevante    | Determinista | Continuo         | Modelo de decaimiento de un fármaco (ODE)                  | Simulación de tiempo continuo (numérica) |
+| Dinámico                  | Relevante    | Estocástico  | Continuo         | Modelo de precios de acciones (ecu. dif. estoc.)           | Simulación de tiempo continuo (avanzada) |
+| Dinámico                  | Relevante    | Determinista | Discreto         | Plan de producción fijo con llegadas programadas           | (Puede ser analítico o SED simple)       |
+| Dinámico                  | Relevante    | Estocástico  | Discreto         | Sistema de colas, línea de producción con fallas           | Simulación de Eventos Discretos (SED)    |
+
+####
+
