@@ -3,7 +3,6 @@ description: >-
   Este curso, y el libro que aspira a ser, tiene como objetivo principal equipar
   al estudiante de ingeniería industrial con los conocimientos teóricos y las
   habilidades prácticas necesarias.
-hidden: true
 icon: waves-sine
 ---
 

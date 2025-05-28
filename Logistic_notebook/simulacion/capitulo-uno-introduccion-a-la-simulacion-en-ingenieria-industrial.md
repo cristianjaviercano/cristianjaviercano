@@ -93,3 +93,63 @@ Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Educa
 {% hint style="warning" %}
 El proceso de simulación no es simplemente "ejecutar un programa". Comienza con una comprensión profunda del sistema real y una definición clara de los objetivos del estudio.
 {% endhint %}
+
+#### El proceso de modelado, Abstracción y simplificación
+
+El desarrollo de un modelo de simulación es tanto un arte como una ciencia. Implica tomar decisiones cruciales sobre qué incluir y qué omitir, un proceso guiado por los objetivos del estudio y la naturaleza del sistema.
+
+<details>
+
+<summary>La Abstraccion de un Fenomeno Observado</summary>
+
+La abstracción consiste en _**identificar y capturar la esencia de un sistema**_, _ignorando los detalles que se consideran irrelevantes para el propósito del estudio._&#x20;
+
+{% hint style="info" %}
+Es el proceso de "elevarse" por encima de los detalles minuciosos para obtener una visión más general y manejable.&#x20;
+{% endhint %}
+
+En el contexto del modelado, la abstracción permite **"usar cada parte del modelo sin conocer sus detalles internos"**. Los modelos de simulación pueden operar en diferentes niveles de abstracción.&#x20;
+
+Por ejemplo, a un nivel _estratégico alto_, se pueden modelar flujos agregados en una cadena de suministro sin detallar cada camión o producto individual.&#x20;
+
+A un nivel _operativo bajo_, se podría modelar el movimiento preciso de un vehículo guiado automáticamente (AGV) en un almacén, incluyendo sus aceleraciones y desaceleraciones.&#x20;
+
+{% hint style="warning" %}
+La elección del nivel de abstracción correcto es **crítica**,&#x20;
+
+* Un modelo demasiado abstracto puede no capturar los fenómenos importantes, mientras que uno innecesariamente detallado puede volverse intratable o consumir demasiados recursos computacionales&#x20;
+
+-CRC-
+{% endhint %}
+
+</details>
+
+<details>
+
+<summary>La Simplificación Del Modelo Observado.</summary>
+
+La simplificación va de la mano con la abstracción. Dado que los sistemas reales son inherentemente complejos, cualquier modelo será una simplificación de esa realidad.&#x20;
+
+El objetivo es lograr una _"simplificación válida"_ , es decir, un modelo que sea lo suficientemente simple para ser comprendido, construido y analizado, pero lo suficientemente detallado para representar adecuadamente aquellos aspectos del sistema que son cruciales para los objetivos del estudio.&#x20;
+
+Como lo expresa la máxima citada en , un modelo debe ser "_**tan simple como sea posible, pero nunca más simple"**_. Esto implica un delicado equilibrio.&#x20;
+
+Omitir características importantes puede invalidar el modelo, mientras que incluir detalles superfluos puede oscurecer los resultados, aumentar el tiempo de desarrollo y ejecución, y dificultar la validación del mismo.
+
+{% hint style="success" %}
+Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.)
+{% endhint %}
+
+</details>
+
+{% hint style="info" %}
+El proceso de modelado a menudo es iterativo. Se puede comenzar con un modelo relativamente simple y, a medida que se gana comprensión del sistema y de la sensibilidad del modelo a diferentes factores, se pueden añadir gradualmente más detalles o complejidad donde sea necesario.
+{% endhint %}
+
+La habilidad para realizar abstracciones y simplificaciones adecuadas, sin perder la fidelidad esencial del modelo respecto al sistema y los objetivos del estudio, es una de las competencias más importantes de un **buen modelador.**
+
+#### Tipos de Modelos de Simulacion que buscan imitar la Reaidad.
+
+Los modelos pueden clasificarse de diversas maneras, lo que ayuda a entender su naturaleza y las herramientas adecuadas para su análisis
+
+<table data-view="cards"><thead><tr><th></th><th></th><th></th></tr></thead><tbody><tr><td><p><strong>Modelos Fisicos</strong></p><p>Son representaciones tangibles o a escala del sistema real. Ejemplos clásicos incluyen maquetas de edificios utilizadas por arquitectos o modelos de aviones en túneles de viento. Aunque útiles en ciertos campos, en el contexto de la simulación de sistemas de ingeniería industrial, el enfoque se centra predominantemente en los modelos matemáticos</p></td><td></td><td></td></tr><tr><td><strong>Modelos Matemáticos:</strong> Utilizan el lenguaje y los símbolos matemáticos (ecuaciones, algoritmos) para describir las relaciones entre los componentes y las variables de un sistema. Estos son los modelos que se implementan y analizan mediante simulación por computado</td><td><p><strong>Modelos Analíticos,</strong> Son aquellos modelos matemáticos que pueden resolverse mediante técnicas matemáticas directas para obtener soluciones exactas o en forma cerrada </p><p>por ejemplo, la solución de un sistema de ecuaciones diferenciales lineales o la fórmula para el tiempo de espera promedio en una cola M/M/1 </p></td><td><strong>Modelos de Simulación,</strong> Cuando un modelo matemático es demasiado complejo para una solución analítica, se recurre a la simulación. Esta implica la evaluación numérica del modelo a través de la experimentación computarizada para estimar su comportamiento</td></tr><tr><td><strong>Modelos Estáticos:</strong> El tiempo no es una variable explícita o significativa en el modelo. Representan el sistema en un único punto en el tiempo o bajo condiciones de equilibrio. La simulación de Montecarlo, por ejemplo, a menudo se aplica a modelos estáticos para evaluar el impacto de la incertidumbre en las entradas sobre una salida de interés</td><td><strong>Modelos Dinámicos:</strong> El estado del sistema evoluciona con el tiempo. Las variables del sistema cambian como resultado de actividades o eventos que ocurren a lo largo del tiempo. La simulación de eventos discretos se ocupa fundamentalmente de modelos dinámicos</td><td></td></tr></tbody></table>
