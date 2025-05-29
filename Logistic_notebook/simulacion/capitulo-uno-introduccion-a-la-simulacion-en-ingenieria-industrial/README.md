@@ -277,5 +277,23 @@ Resumiendo a informacion anterior podemos definir que los modelos de simulacion 
 | Dinámico                  | Relevante    | Determinista | Discreto         | Plan de producción fijo con llegadas programadas           | (Puede ser analítico o SED simple)       |
 | Dinámico                  | Relevante    | Estocástico  | Discreto         | Sistema de colas, línea de producción con fallas           | Simulación de Eventos Discretos (SED)    |
 
-####
+#### Simulacion en los estudios de Investigacion de Operaciones
 
+la simulacion tiene el mismo papel en muchos estudios que la IO, pero cuando la IO busca la optimizacion o el hallazgo de una solucion, la simulacion busca el describir el entorno o el sistema con el fin de conocer el comportamiento y predecir o encontrar estas fallas o elementos que dan valor a las decisiones a tiempo.
+
+la IO se dedica a diseñar un diseño o procedimiento para algún sistema estocastico, que pued eoperar de forma probabilistica a travez del tiempo,
+
+Cuando es necesario usar la Simulacion como parte del estudio de IO, es muy comun que contenga los mismos pasos, el **Modelo de Simulacion** detallado es necesario para formular y descrinbir la operacion y como debe simularse.
+
+1. Definir el _Estado del sistema, como el número de clientes en un sistema de colas_
+2. _identificar los estados posibles_
+3. _identificar los eventos posibles_
+4. contar con un Reloj de Simulacion, que registre el tiempo
+5. Metodo para  generar **eventos de manera aleatoria**
+6. Una formula para identificar las _Transiciones de los estados_ que generen los eventos aleatorios
+
+### Simulacion de Eventos Discretos (SED) Vs. Eventos Continuo (SEC)
+
+Las Dos grandes categorias de la simulacion son de eventos de **tipo discreto y de tipo continuo.**
+
+La SED,&#x20;
