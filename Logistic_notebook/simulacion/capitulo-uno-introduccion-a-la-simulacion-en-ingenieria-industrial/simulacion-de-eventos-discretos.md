@@ -135,3 +135,32 @@ Un sistema M/M/1 es un modelo básico de teoría de colas utilizado para represe
    * **Servicio**: Los tiempos de servicio también son aleatorios y siguen una distribución exponencial con una tasa de servicio $$(\mu)$$. Hay un único servidor disponible para atender a los clientes.
    * **Cola Única**: El sistema tiene una sola cola, donde los clientes esperan su turno para ser atendidos. Una vez atendidos, los clientes salen del sistema.
 
+este modelo hace referencia a los modelos de "nacimiento y muerte" de la **teoria de colas** explicado de forma general por el modelo **M/M/s**, este supone que los tiempos de llegadas son independientes y distribuidos deacuerdo con una distribucion exponencial, proceso de entrada de poisson , se le conoce como modelo de nacimiento y muerte cuando la tas ade llegada nedia y la tasa de servicio media son constantes e independientes del estado del sistema.
+
+en nuestro caso tenemos un solo servidor. s =1 , por que lo que es facil expresarla, lo que no seria si s > 1.&#x20;
+
+la **tasa de servicio del sistema** $$\mu_n$$ Representa la tasa media de los servicios terminados de todo el sistema de colas cuando existen n clientes en él; caso diferente cuando tenemos multiples servidores (s > 1) en tonces $$\mu_n$$ no es lo mismo que $$\mu$$,&#x20;
+
+$$\mu = n\mu\ \text{cuando n es} \le s,$$ &#x20;
+
+&#x20;$$\mu = s\mu\ \text{cuando n es} \ge s,$$
+
+usando estas formulas procedemos a calcular los factores $$C_n$$ del proceso de nacimiento y muerte
+
+
+
+$$
+C_n = \left(\frac{\lambda}{\mu}\right)^n =\rho^n, \ \text{para}\  n=0,1,2,...
+$$
+
+por lo tanto,
+
+$$
+P_n = \rho^nP_0, \ para\ n=0,1,2,...
+$$
+
+Donde
+
+$$
+P_0 =\lef
+$$
