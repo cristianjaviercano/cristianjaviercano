@@ -44,7 +44,9 @@
 
 ***
 
-* [Simulacion](simulacion/README.md)
-  * [Capitulo cero: introduccion a los conceptos de simulacion](simulacion/capitulo-cero-introduccion-a-los-conceptos-de-simulacion.md)
-  * [Capitulo uno: Introducción a la Simulación en Ingeniería Industrial](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/README.md)
-    * [Simulacion de eventos Discretos](simulacion/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos.md)
+* [Simulación Discreta para Ingeniería Industrial: Un Enfoque Práctico](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/README.md)
+  * [Capitulo cero: introduccion a los conceptos de simulacion](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-cero-introduccion-a-los-conceptos-de-simulacion.md)
+  * [Capitulo uno: Introducción a la Simulación en Ingeniería Industrial](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/README.md)
+    * [Aleatoriedad](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/aleatoriedad.md)
+    * [Simulacion de eventos Discretos](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/README.md)
+      * [Anylogic Model 1 M/M/1](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/anylogic-model-1-m-m-1.md)

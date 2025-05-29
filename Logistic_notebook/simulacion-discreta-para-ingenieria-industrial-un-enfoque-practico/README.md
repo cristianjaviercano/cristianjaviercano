@@ -6,9 +6,9 @@ description: >-
 icon: waves-sine
 ---
 
-# Simulacion
+# Simulación Discreta para Ingeniería Industrial: Un Enfoque Práctico
 
-<figure><img src="../.gitbook/assets/CRC_Simulacion.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/CRC_Simulacion.png" alt="" width="375"><figcaption></figcaption></figure>
 
 ## Bienvenida al Curso de Simulación para Ingenieros Industriales
 

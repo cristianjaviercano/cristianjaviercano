@@ -162,5 +162,177 @@ $$
 Donde
 
 $$
-P_0 =\lef
+P_0 = \left( \sum_{n=0}^{\infty} \rho^n \right)^{-1}
 $$
+
+$$
+=1 - \rho.
+$$
+
+$$
+P_n = (1 - \rho) \rho^n \quad \forall n \in \{0, 1, 2, \ldots\}
+$$
+
+#### Hgamos un ejemplo de este sistema
+
+Considérese una sucursal bancaria pequeña que cuenta con un único cajero. Los clientes llegan a esta sucursal para ser atendidos por el cajero. Se asume que este sistema puede ser modelado como una cola [M/M/1,](https://en.wikipedia.org/wiki/M/M/1_queue)
+
+**Llegadas (M):** Las llegadas de clientes siguen un proceso de Poisson con una tasa media de λ clientes por unidad de tiempo. Esto significa que los tiempos entre llegadas sucesivas son variables aleatorias independientes e idénticamente distribuidas (i.i.d.) según una distribución exponencial con media $$\frac{1}{\lambda}$$
+
+**Servicio (M):** Los tiempos de servicio del cajero siguen una distribución exponencial con una tasa media de servicio de μ clientes por unidad de tiempo (si el cajero está ocupado). Esto significa que la duración del servicio es una variable aleatoria con media 1/μ.
+
+**Servidor (1):** Hay un único servidor (el cajero).
+
+**Capacidad del sistema:** Se asume una capacidad infinita para la cola (los clientes siempre esperan si el cajero está ocupado).
+
+**Disciplina de la cola:** Los clientes son atendidos en orden de llegada (FCFS - First Come, First Served).
+
+Para este ejemplo, se utilizaremos los siguientes parámetros:
+
+* Tasa media de llegada de clientes (λ): 20 clientes por hora.
+* Tasa media de servicio del cajero (μ): 25 clientes por hora.
+
+{% hint style="warning" %}
+Es fundamental que λ<μ para que el sistema sea estable y no crezca indefinidamente. En este caso, 20<25, por lo que el sistema es estable.
+{% endhint %}
+
+Solucionando, Las principales medidas de desempeño para un sistema M/M/1 en estado estacionario se calculan con las siguientes fórmulas (Gross, Shortle, Thompson, & Harris, 2008)
+
+**Factor de utilización del servidor (ρ)**: Es la proporción de tiempo que el servidor está ocupado.&#x20;
+
+$$
+ρ=\frac{μ}{λ}
+$$
+
+**Probabilidad de que el sistema esté vacío (P0​)**: Probabilidad de que no haya clientes en el sistema (el cajero está ocioso).&#x20;
+
+$$
+P_0​=(1−ρ)
+$$
+
+**Probabilidad de que haya n clientes en el sistema (Pn​)**:
+
+$$
+P_n=(1−ρ)ρ^n=P_0ρ^n
+$$
+
+**Número promedio de clientes en el sistema (L)**: Incluye los que están en cola y el que está siendo atendido.
+
+$$
+L = \frac{ρ}{1−ρ} = \frac{λ}{μ−λ}
+$$
+
+**Número promedio de clientes en la cola (Lq​)**:
+
+$$
+L = \frac{ρ^2}{1−ρ} = \frac{λ^2}{μ(μ−λ)}
+$$
+
+**Tiempo promedio que un cliente pasa en el sistema (W)**: Tiempo total desde la llegada hasta la salida (espera + servicio).
+
+$$
+W = \frac{L}{\lambda} = \frac{1}{\mu - \lambda}
+$$
+
+**Tiempo promedio que un cliente pasa esperando en la cola (Wq​)**:
+
+$$
+W_q= \frac{\lambda}{\mu(\mu - \lambda)}
+$$
+
+También se puede calcular como $$W_q = W - \frac{1}{\mu}$$
+
+{% hint style="info" %}
+MINI TAREA: Calciula cada uno de los indices y saca tus conclusiones.
+{% endhint %}
+
+#### Apliquemos un poco de python al asunto...
+
+```
+ Calcula las medidas de desempeño para un sistema de colas M/M/1.
+
+    Argumentos:
+        lambda_val (float): Tasa media de llegada de clientes (clientes/unidad de tiempo).
+        mu_val (float): Tasa media de servicio (clientes/unidad de tiempo por servidor ocupado).
+        n_val (int, optional): Número específico de clientes en el sistema para calcular P_n.
+                               Si es None, P_n no se calcula específicamente para un n dado.
+
+    Returns:
+        dict: Un diccionario con las medidas de desempeño si el sistema es estable (rho < 1).
+              Retorna None si el sistema es inestable (rho >= 1).
+
+```
+
+```python
+/def analizar_sistema_MM1(lambda_val, mu_val, n_val=None):
+  
+    if lambda_val <= 0 or mu_val <= 0:
+        print("Error: Las tasas de llegada y servicio deben ser positivas.")
+        return None
+        
+    if lambda_val >= mu_val:
+        print(f"Error: El sistema es inestable o está críticamente cargado (lambda >= mu). Rho = {lambda_val/mu_val:.2f}")
+        rho = lambda_val / mu_val
+        resultados = {
+            "lambda": lambda_val,
+            "mu": mu_val,
+            "rho": rho,
+            "estable": False,
+            "mensaje": "Sistema inestable o críticamente cargado."
+        }
+        return resultados
+
+    rho = lambda_val / mu_val
+    P0 = 1 - rho
+    
+    L = rho / (1 - rho)
+    Lq = (rho**2) / (1 - rho)
+    # Alternativamente: Lq = L - rho
+    
+    W = L / lambda_val 
+    # Alternativamente: W = 1 / (mu_val - lambda_val)
+    Wq = Lq / lambda_val
+    # Alternativamente: Wq = rho / (mu_val - lambda_val)
+
+    resultados = {
+        "lambda": lambda_val,
+        "mu": mu_val,
+        "rho": rho,
+        "P0": P0,
+        "L (clientes en sistema)": L,
+        "Lq (clientes en cola)": Lq,
+        "W (tiempo en sistema)": W,
+        "Wq (tiempo en cola)": Wq,
+        "estable": True
+    }
+
+    if n_val is not None and isinstance(n_val, int) and n_val >= 0:
+        Pn = P0 * (rho**n_val)
+        resultados[f"P{n_val} (probabilidad de {n_val} clientes)"] = Pn
+        
+    return resultados
+
+# Aplicación del ejemplo que estamos trabajando
+lambda_banco = 20  # clientes por hora
+mu_banco = 25    # clientes por hora
+
+# Calcular para n=3 específicamente también
+metricas_banco = analizar_sistema_MM1(lambda_banco, mu_banco, n_val=3)
+
+if metricas_banco:
+    print("\n--- Resultados del Sistema M/M/1 (Cajero Bancario) ---")
+    for medida, valor in metricas_banco.items():
+        if isinstance(valor, float):
+            print(f"{medida}: {valor:.4f}")
+        else:
+            print(f"{medida}: {valor}")
+    
+    # Convertir tiempos a minutos para mejor interpretación
+    if metricas_banco["estable"]:
+        print(f"\nW (tiempo en sistema en minutos): {metricas_banco['W (tiempo en sistema)'] * 60:.2f} min")
+        print(f"Wq (tiempo en cola en minutos): {metricas_banco['Wq (tiempo en cola)'] * 60:.2f} min")
+```
+
+{% hint style="info" %}
+Mini tarea, abre tu hoja de google colab o VScode e intenta
+{% endhint %}

@@ -242,26 +242,6 @@ Son un tipo particular de modelo dinámico y generalmente estocástico, donde la
 
 </details>
 
-<details>
-
-<summary></summary>
-
-
-
-</details>
-
-<details>
-
-<summary></summary>
-
-
-
-</details>
-
-
-
-
-
 {% hint style="success" %}
 La correcta clasificación de un problema y el tipo de modelo necesario es un paso crucial, ya que guía la selección de la metodología de simulación más apropiada (Montecarlo, eventos discretos, dinámica de sistemas, etc.)
 {% endhint %}
@@ -296,4 +276,76 @@ Cuando es necesario usar la Simulacion como parte del estudio de IO, es muy comu
 
 Las Dos grandes categorias de la simulacion son de eventos de **tipo discreto y de tipo continuo.**
 
-La SED,&#x20;
+La (SED) es una metodología poderosa para modelar sistemas cuyo estado cambia en puntos discretos en el tiempo como resultado de la ocurrencia de ciertos sucesos o eventos. Entre un evento y el siguiente, se asume que el estado del sistema permanece constante; es decir, _"nada significativo sucede entre eventos"_. Para construir y comprender los modelos SED, es crucial familiarizarse con sus componentes fundamentales.
+
+<details>
+
+<summary>Entidades</summary>
+
+Son los objetos dinámicos que _"fluyen"_ a través del sistema, solicitan servicios, ocupan recursos y desencadenan eventos. En contextos de ingeniería industrial, las entidades pueden ser clientes en un banco, piezas en una línea de producción, pedidos en un sistema logístico, camiones en una red de transporte, o incluso paquetes de datos en una red de comunicación
+
+</details>
+
+<details>
+
+<summary>Atributos</summary>
+
+Son las propiedades o características individuales de las entidades. Los atributos permiten diferenciar entre entidades del mismo tipo y pueden influir en su procesamiento dentro del sistema. Por ejemplo, un cliente (entidad) puede tener atributos como "tipo de transacción requerida" o "tiempo de llegada". Una pieza (entidad) puede tener atributos como "tipo de producto", "ruta de procesamiento" o "prioridad"
+
+</details>
+
+<details>
+
+<summary>Actividades (o Retrasos - Delays)</summary>
+
+Representan operaciones o procesos que consumen tiempo dentro del sistema. Una entidad puede experimentar una actividad, como ser atendida por un servidor, ser procesada por una máquina, o viajar de un punto a otro. La duración de una actividad puede ser determinista (fija) o, más comúnmente en SED, estocástica (aleatoria), modelada por una distribución de probabilidad
+
+</details>
+
+<details>
+
+<summary>Eventos</summary>
+
+Son sucesos instantáneos que pueden cambiar el estado del sistema. Los eventos marcan el inicio o el fin de una actividad, o cualquier otro cambio significativo. Ejemplos típicos incluyen la llegada de una entidad al sistema (evento de llegada), la finalización del servicio de una entidad (evento de fin de servicio), o la falla de una máquina (evento de falla)
+
+</details>
+
+<details>
+
+<summary>Estado del Sistema</summary>
+
+Es un conjunto de variables que contienen toda la información necesaria para describir el sistema en un instante particular. El estado del sistema debe ser suficiente para reanudar la simulación desde ese punto si se detuviera. Ejemplos de variables de estado incluyen el número de clientes esperando en una cola, el estado de un servidor (ocupado, libre, en reparación), o el nivel de inventario de un producto
+
+</details>
+
+<details>
+
+<summary>Reloj de Simulación (Simulation Clock)</summary>
+
+Es una variable que mantiene el valor actual del tiempo simulado. A diferencia del tiempo real, el reloj de simulación no avanza continuamente, sino que salta de un instante de evento al siguiente. Este mecanismo se conoce como "avance del próximo evento" (next-event time advance) y es fundamental para la eficiencia de la SED
+
+</details>
+
+<details>
+
+<summary>Lista de Eventos (Event List o Event Calendar)</summary>
+
+Es una estructura de datos esencial que almacena todos los eventos futuros que han sido programados para ocurrir. Los eventos en esta lista están típicamente ordenados cronológicamente, es decir, por su tiempo de ocurrencia programado. El reloj de simulación avanza al tiempo del evento más inminente en esta lista
+
+</details>
+
+<details>
+
+<summary>Recursos</summary>
+
+Son los componentes del sistema que proporcionan servicio o son utilizados por las entidades. Los recursos suelen tener una capacidad limitada (por ejemplo, un número finito de cajeros, máquinas, operarios, o muelles de carga). Las entidades a menudo compiten por el uso de estos recursos
+
+</details>
+
+<details>
+
+<summary>Colas (Queues)</summary>
+
+Son lugares dentro del sistema donde las entidades esperan cuando no pueden acceder inmediatamente a un recurso o servicio porque este está ocupado o no disponible. Las colas son una consecuencia natural de la contención de recursos en sistemas con llegadas y/o servicios aleatorios
+
+</details>
