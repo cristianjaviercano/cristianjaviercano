@@ -129,3 +129,16 @@ La FMP de una V.A. discreta X, denotada como $$p(x) o P(X=x)$$, especifica la pr
   1. $$0≤p(x)≤1$$ para todo x.
   2. $$∑_{todo x}​p(x)=1$$ (la suma de las probabilidades de todos los posibles valores es 1).
 * **Ejemplo:** Si X es el resultado de lanzar un dado equilibrado, $$p(x)=1/6$$ para $$x∈{1,2,3,4,5,6},\ y\ p(x)=0$$ para cualquier otro x.
+
+#### Para Variables Aleatorias Continuas: Función de Densidad de Probabilidad (FDP o PDF, por sus siglas en inglés)
+
+Para una VA. continua X, la FDP, denotada como $$f(x)$$, no da la probabilidad de que X sea igual a un valor específico _**"esta probabilidad es siempre cero para VA. continuas"**_. En cambio, el área bajo la curva de  $$f(x)$$ sobre un intervalo \[a,b] representa la probabilidad de que X caiga en ese intervalo:&#x20;
+
+$$
+P(a≤X≤b)=∫_a^bf(x)dx.
+$$
+
+**Propiedades:**
+
+1. $$f(x)≥0$$ para todo x.
+2. $$∫_{−∞}^∞​f(x)dx=1$$ (el área total bajo la curva de densidad es 1).
