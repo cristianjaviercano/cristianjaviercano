@@ -114,3 +114,18 @@ Ejemplos en Ingeniería Industrial:
 * Tiempo hasta la falla de un equipo.
 {% endtab %}
 {% endtabs %}
+
+***
+
+**Funciones de probabilidad, densidad y distribución acumulada.**
+
+Una vez que hemos identificado una variable aleatoria, necesitamos una forma de describir la probabilidad de que tome diferentes valores o rangos de valores. Esto se logra mediante funciones específicas.
+
+#### Para Variables Aleatorias Discretas, Función de Masa de Probabilidad (FMP o PMF, por sus siglas en inglés)
+
+La FMP de una V.A. discreta X, denotada como $$p(x) o P(X=x)$$, especifica la probabilidad de que X tome exactamente el valor x
+
+* **Propiedades:**
+  1. $$0≤p(x)≤1$$ para todo x.
+  2. $$∑_{todo x}​p(x)=1$$ (la suma de las probabilidades de todos los posibles valores es 1).
+* **Ejemplo:** Si X es el resultado de lanzar un dado equilibrado, $$p(x)=1/6$$ para $$x∈{1,2,3,4,5,6},\ y\ p(x)=0$$ para cualquier otro x.
