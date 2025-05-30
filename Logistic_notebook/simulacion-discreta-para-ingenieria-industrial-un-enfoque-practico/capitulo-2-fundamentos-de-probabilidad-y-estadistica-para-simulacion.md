@@ -142,3 +142,25 @@ $$
 
 1. $$f(x)≥0$$ para todo x.
 2. $$∫_{−∞}^∞​f(x)dx=1$$ (el área total bajo la curva de densidad es 1).
+
+#### Función de Distribución Acumulada (FDA o CDF, por sus siglas en inglés)
+
+La FDA, denotada como $$f(x)$$, es aplicable tanto a V.A. discretas como continuas. Define la probabilidad de que la variable aleatoria X tome un valor menor o igual a x, $$F(x)=P(X≤x)$$.
+
+* **Para V.A. Discretas:** $$F(x)=∑_{k≤x}​p(k).$$
+* **Para V.A. Continuas:** $$F(x)=∫_{−∞}^x​f(t)dt.$$
+* **Propiedades Generales:**
+  1. $$0≤F(x)≤1.$$
+  2. F(x) es una función no decreciente (es decir, si $$a<b$$, entonces $$F(a)≤F(b)$$).
+  3. $$lim_{x→−∞}​F(x)=0\ y\ lim_{x→∞​}F(x)=1.$$
+* **Utilidad:** La FDA es muy útil para calcular probabilidades de intervalos $$P(a<X≤b)=F(b)−F(a)$$
+
+{% hint style="info" %}
+La FDA juega un papel particularmente importante en la simulación, ya que es la base del método de la transformada inversa, una técnica fundamental para generar observaciones aleatorias de una distribución de probabilidad específica a partir de números aleatorios uniformes
+{% endhint %}
+
+Si U es un número aleatorio generado de una distribución Uniforme (0,1), entonces $$X=F−1(U)$$ (donde F−1 es la función inversa de la FDA) será una observación de la variable aleatoria X con FDA F(x).&#x20;
+
+{% hint style="danger" %}
+Este concepto, que se explorará en detalle en el Capítulo 3, subraya la importancia de comprender la FDA
+{% endhint %}
