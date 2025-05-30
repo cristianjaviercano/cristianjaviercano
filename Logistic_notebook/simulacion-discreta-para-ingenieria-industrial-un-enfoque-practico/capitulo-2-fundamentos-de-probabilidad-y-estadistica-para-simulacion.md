@@ -282,5 +282,74 @@ n
 ​
 $$
 
-se aproxima a una distribución normal
+se aproxima a una distribución normal. Más formalmente, la variable estandarizada
 
+$$Z_n=\frac{(S_n−nμ)}{(σ\sqrt n)} = \left(\frac{\overline{X_n}−μ}{\frac{σ}{\sqrt n}} \right)$$, converge en distribución a una variable aleatoria Normal estándar N(0,1) a medida que $$n→∞$$.  &#x20;
+
+### Importancia del TLC en la simulacion
+
+{% tabs %}
+{% tab title="Justificación del Uso de la Distribución Normal" %}
+Muchos fenómenos en ingeniería industrial, como el tiempo total para completar un producto que pasa por múltiples etapas de proceso, pueden considerarse como la suma de duraciones de actividades individuales. Incluso si las duraciones de las actividades individuales no siguen una distribución normal, su suma (si hay suficientes actividades y son aproximadamente independientes) tenderá a ser normalmente distribuida gracias al TLC. Esto justifica el uso de la distribución normal como modelo para muchas cantidades agregadas en los sistemas.
+{% endtab %}
+
+{% tab title="Análisis de Salidas de Simulación" %}
+En la simulación, a menudo se está interesado en estimar la media de una métrica de desempeño (ej. el tiempo promedio de espera de un cliente). Esto se hace ejecutando la simulación múltiples veces (réplicas) y calculando el promedio de la métrica obtenida en cada réplica. Si el número de réplicas es suficientemente grande, el TLC implica que la distribución de esta media muestral será aproximadamente normal. Esta propiedad es fundamental para construir intervalos de confianza para la media verdadera de la métrica de desempeño, lo cual es esencial para cuantificar la precisión de las estimaciones obtenidas por simulación
+{% endtab %}
+{% endtabs %}
+
+{% hint style="warning" %}
+El TLC es poderoso porque se aplica independientemente de la forma de la distribución original de las X\_i (_siempre que tengan media y varianza finitas)_. Es el puente que conecta las distribuciones individuales de los componentes aleatorios de un sistema con el comportamiento agregado o promedio del sistema, que es frecuentemente el foco del análisis en un estudio de simulación
+{% endhint %}
+
+### Estimación de parámetros y pruebas de bondad de ajuste
+
+#### Qué es la Prueba de Bondad de Ajuste
+
+La prueba de bondad de ajuste es una herramienta estadística utilizada para determinar qué tan bien un conjunto de datos se ajusta a una distribución teórica esperada. Se evalúa cuán probable es que una muestra observada haya sido generada a partir de una población que se ajusta a una distribución específica.
+
+#### Para qué Sirve
+
+La prueba de bondad de ajuste se utiliza principalmente para:
+
+1. **Validar Modelos Estadísticos**: Ayuda a verificar si el modelo estadístico elegido es adecuado para los datos.
+2. **Comparar Distribuciones**: Permite comparar la distribución teórica con la distribución observada.
+3. **Toma de Decisiones**: Facilita decisiones en campos como la calidad de procesos, ya que entender la distribución de los datos puede llevar a mejores ajustes y soluciones.
+
+#### Cómo se Usa
+
+1. **Seleccionar la Distribución Teórica**: Elegir la distribución que mejor describe los datos (ej. Normal, Binomial, Poisson, etc.).
+2. **Realizar la Prueba Estadística**: Usar pruebas como Chi-cuadrado, Kolmogorov-Smirnov o Anderson-Darling.
+3. **Interpretar los Resultados**: Analizar el valor p de la prueba para afirmar si se rechaza o no la hipótesis nula de que los datos siguen la distribución teórica seleccionada.
+
+{% hint style="warning" %}
+Este análisis es crucial en estudios de simulación, ya que garantiza que los resultados obtenidos sean realmente representativos del comportamiento esperado bajo el modelo teórico asumido -crc-
+{% endhint %}
+
+#### Estimación de Parámetros
+
+Una vez que se ha seleccionado una familia de distribuciones candidata (basada en el conocimiento del sistema y/o un análisis preliminar de los datos, como histogramas), el siguiente paso es estimar los parámetros de esa distribución utilizando los datos muestrales disponibles&#x20;
+
+(ej. tiempos de servicio observados, demandas históricas).&#x20;
+
+Los métodos más comunes incluyen (...)
+
+{% tabs %}
+{% tab title="Método de los Momentos" %}
+_Iguala los momentos muestrales_ (ej. media muestral, varianza muestral) con los momentos teóricos de la distribución (que son funciones de los parámetros) y resuelve el sistema de ecuaciones resultante para los parámetros.&#x20;
+
+Es conceptualmente simple pero no siempre el más eficiente.
+{% endtab %}
+
+{% tab title="Método de Máxima Verosimilitud (Maximum Likelihood Estimation - MLE)" %}
+Encuentra los valores de los parámetros que maximizan la probabilidad (o "verosimilitud") de haber observado la muestra de datos dada. Los estimadores MLE suelen tener buenas propiedades estadísticas (consistencia, eficiencia asintótica, normalidad asintótica) y son ampliamente utilizados.&#x20;
+
+Para muchas distribuciones comunes, existen fórmulas cerradas para los estimadores MLE; para otras, se requieren métodos numéricos.
+{% endtab %}
+{% endtabs %}
+
+#### Pruebas de Bondad de Ajuste (Goodness-of-Fit Tests)
+
+Después de seleccionar una distribución y estimar sus parámetros, [_**es crucial evaluar formalmente qué tan bien esa distribución teórica (ajustada) concuerda con los datos empíricos observados**_](#user-content-fn-1)[^1]. Las pruebas de bondad de ajuste cuantifican esta concordancia.
+
+[^1]: ojo, importante!!
