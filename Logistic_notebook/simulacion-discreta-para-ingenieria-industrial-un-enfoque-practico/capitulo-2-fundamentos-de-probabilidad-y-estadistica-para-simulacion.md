@@ -164,3 +164,47 @@ Si U es un número aleatorio generado de una distribución Uniforme (0,1), enton
 {% hint style="danger" %}
 Este concepto, que se explorará en detalle en el Capítulo 3, subraya la importancia de comprender la FDA
 {% endhint %}
+
+***
+
+### Valor esperado, varianza y otras medidas
+
+Para resumir las características de una distribución de probabilidad y de la variable aleatoria que sigue, se utilizan diversas medidas numéricas.&#x20;
+
+Las más importantes son el _valor esperado y la varianza_.
+
+{% tabs %}
+{% tab title="Valor esperado" %}
+
+
+El valor esperado de una variable aleatoria X, denotado como $$E[X]$$ o $$μX​$$, representa el valor promedio que tomaría X si el experimento aleatorio se repitiera un número muy grande de veces. Es una medida de la tendencia central de la distribución.1
+
+* Para VA Discreta X con FMP $$p(x): E[X]=∑_{todo x}​x⋅p(x)$$.
+* Para VA Continua X con FDP $$f(x): E[X]=∫_{−∞}^∞​x⋅f(x)dx$$
+
+Propiedades del Valor Esperado: Si a y b son constantes:
+
+* $$E[a]=a$$
+* $$E[aX]=aE[X]$$
+* $$E[aX+b]=aE[X]+b$$
+* $$E[X+Y]=E[X]+E[Y] \text{(para cualesquiera V.A. X e Y)}$$
+* $$E[g(X)]=∑_x​g(x)p(x)\ o\ E[g(X)]=∫_{−∞}^∞​g(x)f(x)dx.$$
+{% endtab %}
+
+{% tab title="Varianza" %}
+La varianza de una variable aleatoria X, denotada como $$Var(X)\ o\ σ_2^x$$, mide la dispersión o variabilidad de los valores de X alrededor de su media $$E[X]$$. Una varianza pequeña indica que los valores de X tienden a estar cerca de la media, mientras que una varianza grande indica que los valores están más dispersos.
+
+$$
+Var(X)=E[(X−E[X]) ^2 ]=E[X ^2 ]−(E[X]) ^2
+$$
+
+**Propiedades de la Varianza:** Si a y b son constantes
+
+* $$Var(a)=0$$
+* $$Var(aX)=a^2Var(X)$$
+* $$Var(aX+b)=a^2Var(X)$$
+* Si X e Y son independientes: $$Var(X+Y)=Var(X)+Var(Y)$$.
+{% endtab %}
+{% endtabs %}
+
+\
