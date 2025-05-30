@@ -50,3 +50,4 @@
     * [Bloque de ejercicios Unidad uno](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/bloque-de-ejercicios-unidad-uno.md)
     * [Simulacion de eventos Discretos](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/README.md)
       * [Anylogic Model 1 M/M/1](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/anylogic-model-1-m-m-1.md)
+  * [Capítulo 2: Fundamentos de Probabilidad y Estadística para Simulación](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-2-fundamentos-de-probabilidad-y-estadistica-para-simulacion.md)

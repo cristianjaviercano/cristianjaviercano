@@ -21,4 +21,6 @@ La metodología de aprendizaje propuesta combina la exposición teórica riguros
 
 > los sistemas industriales y logísticos modernos son intrínsecamente complejos, dinámicos y estocásticos.
 
+{% hint style="success" %}
 la simulación no es simplemente una técnica más; es una forma de pensar, una metodología para la experimentación virtual y un pilar para la mejora continua en la ingeniería industrial
+{% endhint %}
