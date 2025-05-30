@@ -205,6 +205,50 @@ $$
 * $$Var(aX+b)=a^2Var(X)$$
 * Si X e Y son independientes: $$Var(X+Y)=Var(X)+Var(Y)$$.
 {% endtab %}
+
+{% tab title="Desviación Estándar" %}
+La desviación estándar, denotada como  $$σ_x ​$$ o $$DE(X)$$, es la raíz cuadrada positiva de la varianza $$σ_x = \sqrt{Var(X)}$$, Se expresa en las mismas unidades que la variable aleatoria X, lo que facilita su interpretación como una medida de dispersión típica alrededor de la media.
+
+#### Otros Momentos y Medidas ​**Momentos:**
+
+$$E[K^x]$$ es el k-ésimo momento de X alrededor del origen.&#x20;
+
+$$E[(X−μ)^k]$$ es el k-ésimo momento central.&#x20;
+
+La media es el primer momento alrededor del origen, y la varianza es el segundo momento central.
+
+#### Coeficiente de Variación (CV).
+
+Es una medida relativa de dispersión, definida como&#x20;
+
+$$CV(X)=\frac{σ_x}{∣E[X]∣},\ para\ E[X]\ne0$$&#x20;
+
+Es útil para comparar la variabilidad de variables aleatorias con diferentes medias
+{% endtab %}
 {% endtabs %}
 
-\
+Estas medidas descriptivas son fundamentales en simulación por **dos razones principales**
+
+<details>
+
+<summary> 1. Modelado de Entradas</summary>
+
+Al seleccionar distribuciones de probabilidad para las variables de entrada de un modelo (ej. tiempos de servicio, demanda), sus parámetros a menudo se relacionan directamente con la media, la varianza u otras medidas (ej. la distribución exponencial se define por su media, la normal por su media y desviación estándar).
+
+</details>
+
+<details>
+
+<summary>  2. Análisis de Salidas</summary>
+
+Las métricas de desempeño que se estiman a partir de las corridas de simulación suelen ser valores esperados (ej. tiempo promedio en cola, utilización promedio de un recurso) y medidas de su variabilidad (ej. varianza del tiempo de ciclo, desviación estándar de la ganancia).
+
+</details>
+
+***
+
+### Distribuciones de probabilidad comunes y su aplicación en IInd
+
+La elección de una distribución de probabilidad adecuada para representar un fenómeno aleatorio es un paso crítico en la construcción de un modelo de simulación válido. A continuación, se presentan algunas de las distribuciones más utilizadas en ingeniería industrial, logística y producción, junto con sus características y aplicaciones típicas
+
+<table><thead><tr><th>Distribución</th><th>Tipo</th><th>Parámetros Clave</th><th>Media</th><th width="182.99609375">Varianza</th><th>Aplicaciones Comunes en IE (Logística/Producción)</th></tr></thead><tbody><tr><td><strong>Bernoulli</strong></td><td>Discreta</td><td><span class="math">p (prob. \ éxito)</span></td><td>p</td><td><span class="math">p(1-p)</span></td><td>Pieza defectuosa/no defectuosa, máquina operativa/fallada.</td></tr><tr><td><strong>Binomial</strong></td><td>Discreta</td><td>$n$ (ensayos), $p$</td><td>$np$</td><td>$np(1-p)$</td><td>N° de defectuosos en lote, N° de clientes que compran un producto.</td></tr><tr><td><strong>Poisson</strong></td><td>Discreta</td><td>$\lambda$ (tasa media)</td><td>$\lambda$</td><td>$\lambda$</td><td>N° de llegadas/hora, N° de fallas/día, N° de defectos/unidad.</td></tr><tr><td><strong>Geométrica</strong></td><td>Discreta</td><td>$p$ (prob. éxito)</td><td>$1/p$</td><td>$(1-p)/p^2$</td><td>N° de inspecciones hasta primer defecto.</td></tr><tr><td><strong>Uniforme Disc.</strong></td><td>Discreta</td><td>$a, b$ (min, max) o $N$ valores</td><td>$(a+b)/2$</td><td>$((b-a+1)^2-1)/12$</td><td>Selección aleatoria entre N opciones equiprobables.</td></tr><tr><td><strong>Uniforme Cont.</strong></td><td>Continua</td><td>$a, b$ (min, max)</td><td>$(a+b)/2$</td><td>$(b-a)^2/12$</td><td>Incertidumbre con solo límites conocidos, tiempos de proceso si no hay más info.</td></tr><tr><td><strong>Exponencial</strong></td><td>Continua</td><td>$\lambda$ (tasa) o $\mu=1/\lambda$ (media)</td><td>$1/\lambda$</td><td>$1/\lambda^2$</td><td>Tiempos entre llegadas (Poisson), tiempos de servicio, vida de componentes sin desgaste.</td></tr><tr><td><strong>Normal</strong></td><td>Continua</td><td>$\mu$ (media), $\sigma$ (desv. est.)</td><td>$\mu$</td><td>$\sigma^2$</td><td>Dimensiones de piezas, errores, sumas de V.A. (TLC), tiempos de tareas.</td></tr><tr><td><strong>Triangular</strong></td><td>Continua</td><td>$a$ (min), $b$ (max), $c$ (moda)</td><td>$(a+b+c)/3$</td><td>$\frac{a^2+b^2+c^2-ab-ac-bc}{18}$</td><td>Duración de actividades (PERT), tiempos de proceso con datos limitados.</td></tr><tr><td><strong>Erlang</strong></td><td>Continua</td><td>$k$ (forma), $\lambda$ (tasa)</td><td>$k/\lambda$</td><td>$k/\lambda^2$</td><td>Suma de k exponenciales, tiempos de reparación en fases.</td></tr><tr><td><strong>Weibull</strong></td><td>Continua</td><td>$\alpha$ (escala), $\beta$ (forma)</td><td>$\alpha\Gamma(1+1/\beta)$</td><td>$\alpha^2[\Gamma(1+2/\beta)-(\Gamma(1+1/\beta))^2]$</td><td>Tiempos de falla (desgaste, mortalidad infantil, constante).</td></tr><tr><td><strong>Lognormal</strong></td><td>Continua</td><td>$\mu_{\ln}$ (media de $\ln X$), $\sigma_{\ln}$ (desv. est. de $\ln X$)</td><td>$e^{\mu_{\ln} + \sigma_{\ln}^2/2}$</td><td>$e^{2\mu_{\ln} + \sigma_{\ln}^2}(e^{\sigma_{\ln}^2} - 1)$</td><td>Tiempos de reparación, algunos procesos multiplicativos.</td></tr></tbody></table>
