@@ -352,4 +352,23 @@ Para muchas distribuciones comunes, existen fórmulas cerradas para los estimado
 
 Después de seleccionar una distribución y estimar sus parámetros, [_**es crucial evaluar formalmente qué tan bien esa distribución teórica (ajustada) concuerda con los datos empíricos observados**_](#user-content-fn-1)[^1]. Las pruebas de bondad de ajuste cuantifican esta concordancia.
 
+**Hipótesis:**
+
+* Hipótesis Nula $$(H_0​)$$: Los datos observados provienen de la distribución teórica especificada.
+* Hipótesis Alternativa $$(H_1​)$$: Los datos observados no provienen de la distribución teórica especificada.
+
+**Prueba Chi-cuadrado (χ2):**
+
+* Aplicable tanto a datos discretos como continuos&#x20;
+
+{% hint style="warning" %}
+estos últimos deben ser agrupados en intervalos o "bins".
+{% endhint %}
+
+* Compara las frecuencias observadas $$(O_i​)$$ en cada categoría o intervalo con las frecuencias esperadas $$(E_i​)$$ bajo la hipótesis nula.
+* El estadístico de prueba es $$χ^2=∑(O_i​−E_i​)^2/E_i​.$$
+* Si el valor del estadístico es grande (superando un valor crítico de la distribución _Chi-cuadrado_ con ciertos grados de libertad, o si el p-value es pequeño), se rechaza $$H_0​$$, concluyendo que la distribución teórica no es un buen ajuste.  &#x20;
+
+
+
 [^1]: ojo, importante!!
