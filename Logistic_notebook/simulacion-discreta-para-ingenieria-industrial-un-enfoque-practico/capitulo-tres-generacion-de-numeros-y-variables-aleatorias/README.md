@@ -488,3 +488,58 @@ $$
 Z_2=\sqrt(−2lnU_1 ). sen(2πU_2)
 $$
 
+Para generar una variable $$X∼N(μ,σ2)$$, se genera primero $$Z_1\ o\ Z_2$$ y luego se transforma: $$X=μ+σZ_1$$.
+
+**Variante Polar (Marsaglia-Bray):** Existe una modificación que evita el uso directo de funciones trigonométricas, utilizando un método de aceptación-rechazo para generar puntos dentro de un círculo unitario, lo que puede ser computacionalmente más eficiente en algunas arquitecturas.
+
+#### Generación para Distribuciones Empíricas
+
+Cuando se dispone de un conjunto de datos observados $$x_1,…,x_N$$. de un sistema real, y no se encuentra una distribución teórica que se ajuste bien a ellos (o no se desea asumir una), se puede utilizar la distribución empírica
+
+1. **Para Datos Discretos:** Si hay k valores distintos v1​,…,vk​ con frecuencias relativas p1​,…,pk​, se aplica el MTI para discretas.
+2. **Para Datos Continuos:** Se puede construir una FDA empírica escalonada (si se usan los datos directamente) o una FDA lineal por tramos (si los datos se agrupan en un histograma y se interpola). Luego se aplica el MTI
+
+### Técnicas Especiales
+
+{% tabs %}
+{% tab title="Composicion" %}
+se utiliza para generar variables aleatorias cuando una distribución compleja puede ser expresada como una combinación ponderada de varias distribuciones más simples. Básicamente, si se conoce que una variable aleatoria ( X ) tiene una función de distribución que es una mezcla de ( k ) distribuciones diferentes con probabilidades asociadas ( $$p_1, p_2, \ldots, p_k$$) (donde ( $$\sum_{i=1}^k p_i = 1 )$$), la técnica de composición permite su simulación de la siguiente manera:
+
+1. Se elige ( i ) con probabilidad ( p\_i ).
+2. Se genera una variable aleatoria ( X\_i ) de la ( i )-ésima distribución.
+
+La variable generada ( $$X = X_i$$ ) entonces sigue la distribución deseada, combinando las características de las diferentes distribuciones participantes de acuerdo con los pesos especificados.
+{% endtab %}
+
+{% tab title="Convulsion" %}
+La técnica de convolución se utiliza para generar variables aleatorias que son la suma de otras variables aleatorias independientes. Es particularmente útil cuando se conoce que una variable aleatoria ( $$Z$$ ) es la suma de otras $$( X_1, X_2, \ldots, X_n )$$ que siguen distribuciones conocidas. /
+
+Para simular ( Z ) usando convolución:
+
+1. Generar ( n ) variables aleatorias independientes $$X_1, X_2, \ldots, X_n$$ siguiendo sus respectivas distribuciones.
+2. Calcular ( $$Z = X_1 + X_2 + \ldots + X_n$$ ).
+
+El resultado es que ( Z ) sigue la distribución resultante de la suma de las distribuciones de ( $$X_1, X_2, \ldots, X_n$$ ).
+
+
+
+La técnica de rechazo se usa para generar una variable aleatoria de una distribución compleja cuando es difícil de muestrear directamente. Se requiere una función de densidad ( $$g(x)$$) que sea mayor o igual a la función deseada $$f(x)$$ para todos los valores posibles de ( X ). El procedimiento es:
+
+1. Elegir ( $$X$$ ) tal que siga la distribución de ( $$g(x)$$ ).
+2. Generar un número aleatorio ( $$U$$ ) uniforme entre 0 y 1.
+3. Aceptar ( $$X$$ ) si ( $$U \leq \frac{f(X)}{cg(X)}$$ ), donde ( $$c$$ ) es una constante tal que ( $$cg(x) \geq f(x)$$ ) para todos ( $$x$$ ).
+
+Repetir el proceso hasta aceptar un ( $$X$$ ), garantizando que sigue la distribución ( $$f(x)$$ ).\
+
+{% endtab %}
+{% endtabs %}
+
+***
+
+* **Bibliografía Recomendada:**
+  1. Law, A. M. (2015). _Simulation Modeling and Analysis_ (5th ed.). McGraw-Hill Education. (Capítulos sobre generación de números aleatorios y variables aleatorias).
+  2. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). _Discrete-Event System Simulation_ (5th ed.). Prentice Hall. (Capítulos sobre números aleatorios y generación de variables aleatorias).
+  3. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Capítulos 2, 6, 7).&#x20;
+  4. Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de Operaciones_ (9th ed.). McGraw-Hill. (Capítulo 20 sobre Simulación, secciones 20.3, 20.4).&#x20;
+  5. Cassandras, C. G., & Lafortune, S. (2008). _Introduction to Discrete Event Systems_ (2nd ed.). Springer. (Sección 10.5 sobre Generación de Variables Aleatorias).&#x20;
+

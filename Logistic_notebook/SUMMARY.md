@@ -52,4 +52,5 @@
       * [Anylogic Model 1 M/M/1](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/anylogic-model-1-m-m-1.md)
   * [Capítulo Dos: Fundamentos de Probabilidad y Estadística para Simulación](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-dos-fundamentos-de-probabilidad-y-estadistica-para-simulacion/README.md)
     * [Bloques de Ejercicios Capitulo Dos](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-dos-fundamentos-de-probabilidad-y-estadistica-para-simulacion/bloques-de-ejercicios-capitulo-dos.md)
-  * [Capitulo Tres: Generación de Números y Variables Aleatorias](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-tres-generacion-de-numeros-y-variables-aleatorias.md)
+  * [Capitulo Tres: Generación de Números y Variables Aleatorias](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-tres-generacion-de-numeros-y-variables-aleatorias/README.md)
+    * [Bloque de ejercicios Capitulo Tres](simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-tres-generacion-de-numeros-y-variables-aleatorias/bloque-de-ejercicios-capitulo-tres.md)
