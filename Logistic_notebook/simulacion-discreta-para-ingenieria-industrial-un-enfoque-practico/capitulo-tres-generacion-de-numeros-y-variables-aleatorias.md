@@ -388,7 +388,7 @@ La prueba es sensible a desviaciones en el centro, las colas y la forma de la di
 {% endtab %}
 {% endtabs %}
 
-
+***
 
 
 
