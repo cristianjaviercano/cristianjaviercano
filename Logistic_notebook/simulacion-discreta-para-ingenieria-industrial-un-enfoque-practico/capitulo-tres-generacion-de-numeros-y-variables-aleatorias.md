@@ -481,6 +481,10 @@ El número esperado de iteraciones para generar una observación es c
 Este es un método específico y elegante para generar _pares_ de variables aleatorias Normales estándar $$Z1​,Z2​∼N(0,1)$$ independientes, a partir de dos números aleatorios $$U1​,U2​∼U(0,1)$$ independientes.
 
 $$
-Z_1=\s−2lnU1cos(2πU2)Z2= −2lnU1sin(2πU 2)
+Z_1=\sqrt(−2lnU_1 ). cos(2πU_2)
+$$
+
+$$
+Z_2=\sqrt(−2lnU_1 ). sen(2πU_2)
 $$
 
