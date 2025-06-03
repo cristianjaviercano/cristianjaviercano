@@ -290,7 +290,101 @@ Esto significa que no tenemos suficiente evidencia estadística para concluir qu
 {% endtab %}
 
 {% tab title="Ejemplo de la Prueba K-S" %}
+## Prueba de Normalidad de Kolmogorov-Smirnov (KS)
 
+***
+
+#### Hipótesis
+
+* $$H_0$$: Los datos siguen una distribución normal.
+* $$H_1$$: Los datos no siguen una distribución normal.
+
+***
+
+#### Estadístico de Prueba (D)
+
+El estadístico de prueba de Kolmogorov-Smirnov, D, es la máxima diferencia absoluta entre la ECDF de la muestra $$S_n(x)$$ y la CDF teórica de la distribución normal F(x):
+
+$$
+D = \sup_x |S_n(x) - F(x)|
+$$
+
+Para el cálculo práctico con una muestra ordenada $$x_{(1)}, x_{(2)}, \ldots, x_{(n)}$$:\
+Primero se calculan $$D^+\ y\ D^-$$:
+
+$$D^+ = \max_{1 \le i \le n} \left( \frac{i}{n} - F(x_{(i)}) \right)$$
+
+$$
+D^- = \max_{1 \le i \le n} \left( F(x_{(i)}) - \frac{i-1}{n} \right)
+$$
+
+Entonces, el estadístico D es el máximo de estos dos valores:
+
+$$
+D = \max(D^+, D^-)
+$$
+
+Donde:
+
+* n es el tamaño de la muestra.
+* $$x_{(i)}$$ es el i-ésimo valor más pequeño en la muestra (datos ordenados).
+* $$S_n(x_{(i)}) = i/n$$ es el valor de la ECDF en $$x_{(i)}$$
+* $$F(x_{(i)})$$ es el valor de la CDF teórica de la distribución normal evaluada en $$x_{(i)}$$, utilizando la media $$(\mu)$$ y desviación estándar $$(\sigma)$$ especificadas (o estimadas de la muestra para la prueba de Lilliefors).
+
+***
+
+#### Ejemplo Paso a Paso
+
+Supongamos que tenemos una muestra pequeña de n=5 observaciones: $$X = {10, 12, 15, 16, 20}$$. Queremos probar si provienen de una distribución normal.
+
+**Pasos:**
+
+1. **Ordenar los Datos:**\
+   Los datos ya están ordenados: $$x_{(1)}=10, x_{(2)}=12, x_{(3)}=15, x_{(4)}=16, x_{(5)}=20$$.
+2. **Estimar Parámetros de la Distribución Normal (para prueba de Lilliefors):**\
+   Calculamos la media muestral $$(\bar{x})$$ y la desviación estándar muestral (s).
+   * $$\bar{x} = (10+12+15+16+20)/5 = 73/5 = 14.6$$
+   * $$s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}} = \sqrt{\frac{(10-14.6)^2 + (12-14.6)^2 + (15-14.6)^2 + (16-14.6)^2 + (20-14.6)^2}{4}}$$
+   * $$s = \sqrt{\frac{(-4.6)^2 + (-2.6)^2 + (0.4)^2 + (1.4)^2 + (5.4)^2}{4}} = \sqrt{\frac{21.16 + 6.76 + 0.16 + 1.96 + 29.16}{4}} = \sqrt{\frac{59.2}{4}} = \sqrt{14.8} \approx 3.847$$
+3.  **Calcular** $$F(x_{(i)}), S_n(x_{(i)})$$ **y las diferencias:**\
+    Para cada $$x_{(i)}$$, calculamos $$F(x_{(i)})$$ usando la CDF de una normal con $$\mu=14.6$$ y $$\sigma=3.847$$. Esto implica estandarizar cada $$x_{(i)}$$ a $$z_{(i)} = (x_{(i)} - \bar{x})/s$$ y luego encontrar $$P(Z \le z_{(i)})$$
+
+    |  i  | x\_(i) |    z\_(i) = x\_(i)-14.6)/3.847$    | $F(x\_{(i)}) = P(Z \le z\_{(i)})$ | S\_n(x\_(i)) = i/n | $\frac{i-1}{n}$ | $D\_i^+ = \frac{i}{n} - F(x\_{(i)})$ | $D\_i^- = F(x\_{(i)}) - \frac{i-1}{n}$ |
+    | :-: | :----: | :--------------------------------: | :-------------------------------: | :----------------: | :-------------: | :----------------------------------: | :------------------------------------: |
+    |  1  |   10   | $$(10-14.6)/3.847 \approx -1.196$$ |         $$\approx 0.1159$$        |      1/5 = 0.2     |    0/5 = 0.0    |         0.2 - 0.1159 = 0.0841        |          0.1159 - 0.0 = 0.1159         |
+    |  2  |   12   | $$(12-14.6)/3.847 \approx -0.676$$ |         $$\approx 0.2495$$        |      2/5 = 0.4     |    1/5 = 0.2    |         0.4 - 0.2495 = 0.1505        |          0.2495 - 0.2 = 0.0495         |
+    |  3  |   15   |  $$(15-14.6)/3.847 \approx 0.104$$ |         $$\approx 0.5414$$        |      3/5 = 0.6     |    2/5 = 0.4    |         0.6 - 0.5414 = 0.0586        |          0.5414 - 0.4 = 0.1414         |
+    |  4  |   16   |  $$(16-14.6)/3.847 \approx 0.364$$ |         $$\approx 0.6420$$        |      4/5 = 0.8     |    3/5 = 0.6    |         0.8 - 0.6420 = 0.1580        |          0.6420 - 0.6 = 0.0420         |
+    |  5  |   20   |  $$(20-14.6)/3.847 \approx 1.404$$ |         $$\approx 0.9198$$        |      5/5 = 1.0     |    4/5 = 0.8    |         1.0 - 0.9198 = 0.0802        |          0.9198 - 0.8 = 0.1198         |
+
+
+4.  **Calcular el Estadístico D:**\
+    $$D^+ = \max(0.0841, 0.1505, 0.0586, 0.1580, 0.0802) = 0.1580$$\
+    $$D^- = \max(0.1159, 0.0495, 0.1414, 0.0420, 0.1198) = 0.1414$$
+
+    $$D = \max(D^+, D^-) = \max(0.1580, 0.1414) = 0.1580$$
+5. **Tomar una Decisión Estadística:**
+   * Se elige un nivel de significancia $$\alpha$$ (ej., $$\alpha = 0.05$$).
+   * El valor $$D_{calculado} = 0.1580$$ se compara con un valor crítico $$D_{critico}$$. Para la prueba de Lilliefors,  ya que $$\mu\ y\ \sigma$$ fueron estimados, los valores críticos son diferentes de la prueba KS estándar y dependen de n.
+   * Por ejemplo, para n=5 y $$\alpha=0.05$$, el valor crítico de Lilliefors es aproximadamente 0.337.
+   * **Regla de decisión:** Si $$D_{calculado} > D_{critico}$$, se rechaza H\_0. De lo contrario, no se rechaza H\_0.
+   * En nuestro ejemplo: 0.1580 < 0.337.
+6. **Conclusión:**\
+   Como $$D_{calculado}$$ (0.1580) es menor que el valor crítico de Lilliefors (0.337) para $$\alpha=0.05$$, no rechazamos la hipótesis nula (H\_0). Concluimos que no hay evidencia suficiente para afirmar que los datos no siguen una distribución normal.
+
+***
+
+#### Consideraciones Adicionales
+
+{% hint style="info" %}
+La prueba de Kolmogorov-Smirnov es generalmente más potente que la prueba $$\chi^2$$ para probar la normalidad de datos continuos, especialmente con muestras pequeñas.
+
+Cuando los parámetros de la distribución normal (media y/o desviación estándar) se estiman a partir de la muestra, es crucial utilizar los valores críticos de la **prueba de Lilliefors**, no los de la prueba KS estándar, ya que estos últimos serían demasiado conservadores, llevarían a no rechazar H\_0 con demasiada frecuencia.
+
+La prueba es sensible a desviaciones en el centro, las colas y la forma de la distribución.
+{% endhint %}
+
+***
 {% endtab %}
 {% endtabs %}
 
