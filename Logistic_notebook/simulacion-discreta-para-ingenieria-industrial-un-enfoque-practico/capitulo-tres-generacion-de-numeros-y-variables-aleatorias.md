@@ -451,3 +451,36 @@ La función $$F−1(u)$$ no siempre tiene una expresión analítica simple o de 
 
 </details>
 
+***
+
+### Método de Aceptación-Rechazo (A-R).
+
+Este es un método general que se puede utilizar cuando el MTI es difícil o ineficiente de aplicar
+
+Supongamos que queremos generar una V.A. X con FDP $$f(x)$$. Se elige otra FDP "mayorante" $$g(x)$$ (de la cual sea fácil generar variables, por ejemplo, usando MTI) y una constante $$c≥1$$ tal que $$f(x)≤c⋅g(x)$$ para todo x donde $$f(x)>0$$. La idea es generar un candidato Y a partir de $$g(y)$$, y luego "aceptarlo" como una realización de X con una probabilidad $$f(Y)/(c⋅g(Y))$$.
+
+#### Algoritmo General.
+
+1. Generar un candidato Y a partir de la distribución con FDP $$g(y)$$.
+2. Generar un número $$U∼U(0,1)$$ (independiente de Y).
+3. Si $$U≤c⋅g(Y)f(Y)$$​, entonces aceptar $$X=Y$$.
+4. Si no, rechazar Y y volver al paso 1.
+
+**Eficiencia.**
+
+La probabilidad de aceptación en cada iteración es 1/c. Por lo tanto, se desea que c sea lo más cercano a 1 posible, lo que significa que la función "envolvente" $$c⋅g(x)$$ debe ser lo más ajustada posible a f(x).&#x20;
+
+El número esperado de iteraciones para generar una observación es c
+
+**Usos**
+
+Útil para distribuciones como la Normal, usando una FDP Normal como mayorante para una parte, y exponenciales para las colas, como en el algoritmo Ziggurat, Gamma y Beta, donde el MTI no es directo.
+
+### Método de Box-Muller para la Distribución Normal
+
+Este es un método específico y elegante para generar _pares_ de variables aleatorias Normales estándar $$Z1​,Z2​∼N(0,1)$$ independientes, a partir de dos números aleatorios $$U1​,U2​∼U(0,1)$$ independientes.
+
+$$
+Z_1=\s−2lnU1cos(2πU2)Z2= −2lnU1sin(2πU 2)
+$$
+
