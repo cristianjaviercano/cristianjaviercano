@@ -237,7 +237,7 @@ Para cada intervalo, determinamos la probabilidad de que un valor de una distrib
 _Las probabilidades_ $$P(\text{Intervalo})$$ _se obtienen de una tabla de distribución normal estándar (tabla Z) o usando software estadístico._
 {% endhint %}
 
-#### 4. Calcular el Estadístico $\chi^2$
+#### 4. Calcular el Estadístico $$\chi^2$$
 
 Utilizamos las frecuencias observadas (O\_i) y esperadas (E\_i) para calcular el estadístico $$\chi^2$$
 
@@ -289,7 +289,7 @@ Esto significa que no tenemos suficiente evidencia estadística para concluir qu
 ***
 {% endtab %}
 
-{% tab title="Tab 2" %}
+{% tab title="Ejemplo de la Prueba K-S" %}
 
 {% endtab %}
 {% endtabs %}
