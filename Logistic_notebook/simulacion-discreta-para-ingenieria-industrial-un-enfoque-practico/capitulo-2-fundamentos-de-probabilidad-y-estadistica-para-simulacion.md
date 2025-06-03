@@ -359,15 +359,30 @@ Después de seleccionar una distribución y estimar sus parámetros, [_**es cruc
 
 **Prueba Chi-cuadrado (χ2):**
 
-* Aplicable tanto a datos discretos como continuos&#x20;
+1. Aplicable tanto a datos discretos como continuos&#x20;
 
 {% hint style="warning" %}
 estos últimos deben ser agrupados en intervalos o "bins".
 {% endhint %}
 
-* Compara las frecuencias observadas $$(O_i​)$$ en cada categoría o intervalo con las frecuencias esperadas $$(E_i​)$$ bajo la hipótesis nula.
-* El estadístico de prueba es $$χ^2=∑(O_i​−E_i​)^2/E_i​.$$
-* Si el valor del estadístico es grande (superando un valor crítico de la distribución _Chi-cuadrado_ con ciertos grados de libertad, o si el p-value es pequeño), se rechaza $$H_0​$$, concluyendo que la distribución teórica no es un buen ajuste.  &#x20;
+2. Compara las frecuencias observadas $$(O_i​)$$ en cada categoría o intervalo con las frecuencias esperadas $$(E_i​)$$ bajo la hipótesis nula.
+3. El estadístico de prueba es $$χ^2=∑(O_i​−E_i​)^2/E_i​.$$
+4. Si el valor del estadístico es grande (superando un valor crítico de la distribución _Chi-cuadrado_ con ciertos grados de libertad, o si el p-value es pequeño), se rechaza $$H_0​$$, concluyendo que la distribución teórica no es un buen ajuste.  &#x20;
+
+**Prueba de Kolmogorov-Smirnov (K-S):**
+
+1. Principalmente para _**datos continuos**_ (aunque existen adaptaciones para discretos).
+2. Compara la Función de Distribución Acumulada empírica $$(F_e​(x))$$, construida a partir de los datos, con la FDA teórica $$(F_t​(x))$$ de la distribución hipotética.
+3. El estadístico de prueba es $$D=max_x​∣F_e​(x)−F_t​(x)∣$$, la máxima diferencia vertical absoluta entre las dos CDFs.
+4. Si D es grande (superando un valor crítico, o si el p-value es pequeño), se rechaza $$H_0$$​. Es más sensible a diferencias en la forma, mediana o dispersión que la prueba Chi-cuadrado.  &#x20;
+
+**Interpretación del p-value.**&#x20;
+
+Un p-value pequeño (típicamente < 0.05 o < 0.10) indica que hay suficiente evidencia para rechazar la hipótesis nula, sugiriendo que la distribución elegida no se ajusta bien a los datos. Un p-value grande no "prueba" que $$H_0$$​ sea verdadera, solo que _**no hay suficiente evidencia para rechazarla.**_
+
+{% hint style="warning" %}
+El modelado de entrada _es un paso iterativo_. Si una distribución no pasa las pruebas de bondad de ajuste, se debe considerar otra familia de distribuciones, o quizás utilizar directamente la distribución empírica derivada de los datos si el tamaño muestral es suficientemente grande. La precisión del modelo de simulación global depende en gran medida de la precisión de sus modelos de entrada; de ahí el dicho **"basura entra, basura sale" (GIGO) - crc-**
+{% endhint %}
 
 
 
