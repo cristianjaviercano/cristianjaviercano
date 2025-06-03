@@ -157,12 +157,144 @@ Las dos propiedades fundamentales que se desean evaluar son la **uniformidad** y
 #### Pruebas de Uniformidad
 
 {% tabs %}
-{% tab title="Prueba de Chi Cuadrado" %}
+{% tab title="Prueba Chi-cuadrado (χ2)" %}
+Es una herramienta estadística utilizada para evaluar la uniformidad en una secuencia de números pseudoaleatorios. Consiste en comparar la frecuencia observada de números en diferentes intervalos con las frecuencias esperadas, lo que permite determinar si los números están distribuidos de manera uniforme.
 
+1. Se divide el intervalo (0,1) en k subintervalos de igual longitud (1/k).
+2. Se genera una muestra de N números aleatorios $$U_i$$​.
+3. Se cuenta el número de observaciones $$(O_j​)$$ que caen en cada subintervalo j.
+4. Bajo la hipótesis nula de uniformidad, la frecuencia esperada $$(E_j​)$$ para cada subintervalo es $$N/k.$$
+5. Se calcula el estadístico de prueba: $$X_0^2​=∑_{j=1}^k \frac{​(Oj​−Ej​)^2}{Ej}​.$$
+6. Este estadístico se compara con un valor crítico de la distribución Chi-cuadrado con k−1 grados de libertad y un nivel de significancia α (ej. 0.05). Si $$χ_0^2$$​ es mayor que el valor crítico (o si el p-value es menor que α), se rechaza la hipótesis de uniformidad.
+
+***
 {% endtab %}
 
 {% tab title="Prueba de Kolmogorov-Smirnov (K-S)" %}
+1. Se ordenan los N números generados $$U(1)​≤U(2)​≤…≤U(N)$$​.
+2. Se calcula la función de distribución acumulada empírica (FDAe) $$F_e​(x)=(número\ de\ U_i​≤x)/N$$.
+3. Para una distribución U(0,1), la FDA teórica es $$F_t​(x)=x\ para\ 0≤x≤1$$.
+4. El estadístico de prueba K-S es la máxima diferencia vertical absoluta entre $$F_e​(x)\ y\ F_t​(x): D_N​=max_{0≤x≤1}​∣F_e​(x)−F_t​(x)∣$$. En la práctica, se calcula como&#x20;
+
+$$
+D_N = \max\left\{ \max_{1 \le j \le N} \left( \frac{j}{N} - U_{(j)} \right), \max_{1 \le j \le N} \left( U_{(j)} - \frac{j-1}{N} \right) \right\}
+$$
+
+1. $$D_N​$$ se compara con un valor crítico de la distribución de Kolmogorov-Smirnov para el tamaño de muestra N y nivel de significancia α. _**Si**_ $$D_N$$_**​ es mayor que el valor crítico, se rechaza la hipótesis de uniformidad.**_
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Ejemplo de chi cuadrado" %}
+Imaginemos que hemos recolectado $$n=100$$ observaciones de una variable continua y queremos verificar si estos datos pueden ser modelados por una distribución normal.
+
+#### 1. Estimar Parámetros y Definir Intervalos
+
+Primero, necesitamos la media y la desviación estándar de nuestra muestra. Supongamos que para nuestros datos:
+
+* Media muestral $$(\bar{x}) = 50$$
+* Desviación estándar muestral $$(s) = 10$$
+
+A continuación, dividimos el rango de los datos en k intervalos. Es crucial que la frecuencia esperada para cada intervalo $$(E_i)$$ sea suficientemente grande, generalmente, $$E_i \ge 5$$. Para este ejemplo, seleccionaremos k=5 intervalos.
+
+Los límites de los intervalos se definen y luego se estandarizan (convierten a puntuaciones Z) usando $$\bar{x} \ y\  s$$:clap:
+
+| Intervalo (Datos Originales) | Límites Z (Estandarizados)         |
+| ---------------------------- | ---------------------------------- |
+| X < 40                       | $$Z < (40-50)/10 = -1.0$$          |
+| $$40 \le X < 45$$            | $$-1.0 \le Z < (45-50)/10 = -0.5$$ |
+| $$45 \le X < 55$$            | $$-0.5 \le Z < (55-50)/10 = 0.5$$  |
+| $$55 \le X < 60$$            | $$0.5 \le Z < (60-50)/10 = 1.0$$   |
+| $$X \ge 60$$                 | $$Z \ge 1.0$$                      |
+
+#### 2. Calcular Frecuencias Observadas (O\_i)
+
+Contamos el número de datos de nuestra muestra que caen dentro de cada uno de los intervalos definidos:
+
+| Intervalo         | Frecuencia Observada (O\_i) |
+| ----------------- | --------------------------- |
+| X < 40            | 18                          |
+| $$40 \le X < 45$$ | 15                          |
+| $$45 \le X < 55$$ | 36                          |
+| $$55 \le X < 60$$ | 13                          |
+| $$X \ge 60$$      | 18                          |
+| **Total**         | **100**                     |
+
+#### 3. Calcular Frecuencias Esperadas (E\_i)
+
+Para cada intervalo, determinamos la probabilidad de que un valor de una distribución normal estándar caiga dentro de sus límites Z. Luego, multiplicamos esta probabilidad por el tamaño total de la muestra (n=100) para obtener E\_i.
+
+| Intervalo         | Límites Z             | P(Intervalo) (Prob. Normal Estándar)    | E\_i = n . P(Intervalo})     |
+| ----------------- | --------------------- | --------------------------------------- | ---------------------------- |
+| X < 40            | $$Z < -1.0$$          | $$P(Z < -1.0) \approx 0.1587$$          | $$100 \cdot 0.1587 = 15.87$$ |
+| $$40 \le X < 45$$ | $$-1.0 \le Z < -0.5$$ | $$P(-1.0 \le Z < -0.5) \approx 0.1498$$ | $$100 \cdot 0.1498 = 14.98$$ |
+| $$45 \le X < 55$$ | $$-0.5 \le Z < 0.5$$  | $$P(-0.5 \le Z < 0.5) \approx 0.3829$$  | $$100 \cdot 0.3829 = 38.29$$ |
+| $$55 \le X < 60$$ | $$0.5 \le Z < 1.0$$   | $$P(0.5 \le Z < 1.0) \approx 0.1498$$   | $$100 \cdot 0.1498 = 14.98$$ |
+| $$X \ge 60$$      | $$Z \ge 1.0$$         | $$P(Z \ge 1.0) \approx 0.1587$$         | $$100 \cdot 0.1587 = 15.87$$ |
+| **Total**         |                       | $$\approx 1.0$$                         | $$\approx 100$$              |
+
+{% hint style="warning" %}
+_Las probabilidades_ $$P(\text{Intervalo})$$ _se obtienen de una tabla de distribución normal estándar (tabla Z) o usando software estadístico._
+{% endhint %}
+
+#### 4. Calcular el Estadístico $\chi^2$
+
+Utilizamos las frecuencias observadas (O\_i) y esperadas (E\_i) para calcular el estadístico $$\chi^2$$
+
+| Intervalo         | O\_i | E\_i  | O\_i - E\_i | (O\_i - E\_i)^2 | (O\_i - E\_i)^2 / E\_i    |
+| ----------------- | ---- | ----- | ----------- | --------------- | ------------------------- |
+| $$X < 40$$        | 18   | 15.87 | 2.13        | 4.5369          | $$\approx 0.2859$$        |
+| $$40 \le X < 45$$ | 15   | 14.98 | 0.02        | 0.0004          | $$\approx 0.00002$$       |
+| $$45 \le X < 55$$ | 36   | 38.29 | -2.29       | 5.2441          | $$\approx 0.1369$$        |
+| $$55 \le X < 60$$ | 13   | 14.98 | -1.98       | 3.9204          | $$\approx 0.2617$$        |
+| $$X \ge 60$$      | 18   | 15.87 | 2.13        | 4.5369          | $$\approx 0.2859$$        |
+| **Total**         |      |       |             |                 | $$\chi^2 \approx 0.9704$$ |
+
+El valor calculado del estadístico es $$\chi^2_{calculado} \approx 0.9704$$.
+
+#### 5. Determinar Grados de Libertad (gl)
+
+Los grados de libertad para esta prueba se calculan como:
+
+$$
+gl = k - 1 - m
+$$
+
+Donde:
+
+* k = número de intervalos (5 en nuestro ejemplo).
+* m = número de parámetros de la distribución que fueron estimados a partir de la muestra. Para una distribución normal, estimamos la media y la desviación estándar, por lo que m=2.
+
+Entonces, $$gl = 5 - 1 - 2 = 2$$
+
+#### 6. Tomar una Decisión Estadística
+
+Elegimos un nivel de significancia, comúnmente $\alpha = 0.05$.\
+Buscamos el valor crítico de $\chi^2$ en una tabla de distribución Chi-cuadrado (o usando software) para $gl=2$ y $\alpha=0.05$.\
+El valor $\chi^2\_{critico}(2, 0.05)$ es aproximadamente $5.991$.
+
+**Regla de decisión:**
+
+* Si $\chi^2\_{calculado} > \chi^2\_{critico}$, rechazamos $H\_0$.
+* Si $\chi^2\_{calculado} \le \chi^2\_{critico}$, no rechazamos $H\_0$.
+
+En nuestro ejemplo: $0.9704 \le 5.991$.
+
+#### 7. Conclusión
+
+Dado que el valor calculado de $\chi^2$ (0.9704) es menor que el valor crítico (5.991) para un nivel de significancia de 0.05, no rechazamos la hipótesis nula ($H\_0$). Esto significa que no tenemos suficiente evidencia estadística para concluir que los datos de la muestra no siguen una distribución normal.
+
+***
+{% endtab %}
+
+{% tab title="Tab 2" %}
 
 {% endtab %}
 {% endtabs %}
+
+
+
+
+
+
 
