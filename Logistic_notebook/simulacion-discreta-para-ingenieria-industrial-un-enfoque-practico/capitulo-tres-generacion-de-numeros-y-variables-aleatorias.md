@@ -390,7 +390,64 @@ La prueba es sensible a desviaciones en el centro, las colas y la forma de la di
 
 ***
 
+### **Pruebas de Independencia**&#x20;
+
+Estas pruebas verifican si los números generados son independientes entre sí (es decir, si el valor de un número no influye en el valor de los siguientes).
+
+1. **Prueba de Rachas (Runs Test):** Una "racha" es una subsecuencia de observaciones con una propiedad común.&#x20;
+   1. Por ejemplo, una racha ascendente es una secuencia de números donde cada uno es mayor que el anterior. Se analiza el número total de rachas en la secuencia. Si hay demasiadas o muy pocas rachas en comparación con lo que se esperaría de una secuencia verdaderamente independiente, se rechaza la hipótesis de independencia.  &#x20;
+2. **Prueba de Autocorrelación:** Mide la correlación lineal entre números separados por un cierto "retraso" (lag) $$k$$ en la secuencia. La autocorrelación de lag k, $$ρ_k$$​, estima la correlación entre $$U_i$$​ y $$U_i+k$$​. Para una secuencia independiente, se espera que todas las autocorrelaciones (para $$k≥1$$) sean cercanas a cero. Se construye un estadístico de prueba (basado en la aproximación Normal para $$ρ^​k$$​ cuando N es grande) para verificar si $$ρ_k$$​ es significativamente diferente de cero.
+
+{% hint style="warning" %}
+Es importante destacar que un generador debe pasar un conjunto diverso y riguroso de estas pruebas estadísticas antes de ser considerado aceptable para su uso en estudios de simulación serios. El hecho de que una secuencia pase una prueba no garantiza que sea "perfecta", solo que no se ha encontrado evidencia en contra de la hipótesis de uniformidad o independencia bajo esa prueba particular.
+{% endhint %}
+
+***
+
+### Métodos de generación de variables aleatorias.
+
+Una vez que se dispone de una fuente fiable de números pseudoaleatorios $$U_i∼U(0,1)$$, el siguiente paso es transformar estos números uniformes en realizaciones de variables aleatorias que sigan las distribuciones de probabilidad específicas (Exponencial, Normal, Poisson, etc.) que se han identificado como modelos para los componentes inciertos del sistema bajo estudio.&#x20;
+
+Existen varios métodos para realizar esta transformación.
+
+#### **Método de la Transformada Inversa (MTI)**&#x20;
+
+Este es el método más fundamental y, cuando es aplicable, a menudo el más eficiente y directo
+
+1. **Principio** Se basa en el hecho de que si X es una variable aleatoria con función de distribución acumulada (FDA) continua y estrictamente creciente $$F(x)$$, y U es una variable aleatoria $$U(0,1)$$, entonces la variable aleatoria $$Y=F−1(U)$$ tiene la misma distribución que X. Aquí, $$F−1(u)$$ es la función inversa de la FDA, definida como el valor y tal que $$F(y)=u$$.
+   1.  **Algoritmo para V.A. Continuas:**
+
+       Generar un número $$u∼U(0,1)$$.
+
+       1. Calcular $$x=F−1(u)$$. Este x es la observación deseada de la V.A. X.
+   2.  **Aplicación a V.A. Discretas:**&#x20;
+
+       Si X es discreta con $$FMP\ p(xj​)$$ y $$FDA F(xj​)=P(X≤xj​)$$, se genera $$u∼U(0,1)$$ y se busca el valor _xj​_ tal que $$F(xj−1​)<u≤F(xj​)\ (donde\ F(x0​)=0)$$. Entonces _x&#x6A;_&#x200B; es la observación generada. Esto se puede implementar mediante una búsqueda secuencial o más eficiente.
+
+*   **Ejemplos de Aplicación Directa, donde F−1(u) tiene forma cerrada:**
+
+    * **Uniforme Continua U(a,b):** $$F(x)=(x−a)/(b−a)$$. Invirtiendo, $$x=a+(b−a)u$$.  &#x20;
+    * **Exponencial (media** $$μ=1/λ$$**):** $$F(x)=1−e−λx$$. Invirtiendo, $$x=−(1/λ)ln(1−u)$$. Dado que si $$u∼U(0,1)$$, entonces $$1−u∼U(0,1)$$, se puede usar $$x=−(1/λ)ln(u)$$ de forma equivalente.  &#x20;
+    * **Triangular:** La FDA es lineal por tramos, y su inversa también se puede encontrar analíticamente por tramos.  &#x20;
+    * **Weibull:** $$F(x)=1−e−(x/α)β$$. Invirtiendo, $$x=α(−ln(1−u))1/β$$.  &#x20;
 
 
 
+<details>
+
+<summary><strong>Ventajas:</strong> </summary>
+
+Es exacto si $$F−1(u)$$ se puede calcular con precisión. Es intuitivo. Preserva la monotonicidad (si $$u1​<u2$$​, entonces $$F−1(u1​)≤F−1(u2​)$$), lo cual es útil para algunas técnicas de reducción de varianza.
+
+</details>
+
+<details>
+
+<summary><strong>Desventajas:</strong> </summary>
+
+La función $$F−1(u)$$ no siempre tiene una expresión analítica simple o de forma cerrada&#x20;
+
+(ej. para las distribuciones Normal, Gamma, Beta, Binomial, Poisson con parámetros grandes). En estos casos, se requieren aproximaciones numéricas o métodos alternativos.  &#x20;
+
+</details>
 
