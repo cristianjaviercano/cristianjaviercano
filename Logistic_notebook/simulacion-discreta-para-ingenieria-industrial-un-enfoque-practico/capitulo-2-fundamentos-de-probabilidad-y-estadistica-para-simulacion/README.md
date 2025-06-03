@@ -384,6 +384,14 @@ Un p-value pequeño (típicamente < 0.05 o < 0.10) indica que hay suficiente evi
 El modelado de entrada _es un paso iterativo_. Si una distribución no pasa las pruebas de bondad de ajuste, se debe considerar otra familia de distribuciones, o quizás utilizar directamente la distribución empírica derivada de los datos si el tamaño muestral es suficientemente grande. La precisión del modelo de simulación global depende en gran medida de la precisión de sus modelos de entrada; de ahí el dicho **"basura entra, basura sale" (GIGO) - crc-**
 {% endhint %}
 
+### Bibliografia
 
+*
+  1. Montgomery, D. C., & Runger, G. C. (2018). _Applied Statistics and Probability for Engineers_ (7th ed.). Wiley.
+  2. Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. E. (2017). _Probabilidad y Estadística para Ingeniería y Ciencias_ (9th ed.). Pearson Educación.
+  3. Ross, S. M. (2014). _Introduction to Probability Models_ (11th ed.). Academic Press.
+  4. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Capítulos 6, 7 y 9)
+  5. Winston, W. L. (2005). _Investigación de Operaciones: Aplicaciones y Algoritmos_. (Capítulo 12)
+  6. Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de Operaciones_. (Capítulos de probabilidad y estadística)
 
 [^1]: ojo, importante!!
