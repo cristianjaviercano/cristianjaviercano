@@ -1,4 +1,4 @@
-# Capitulo 3: Generación de Números y Variables Aleatorias
+# Capitulo Tres: Generación de Números y Variables Aleatorias
 
 ### **Objetivos del Capítulo:**
 
@@ -95,4 +95,74 @@ La secuencia puede generarse así:
 3. $$( X_3 = (5 \times 1 + 3) \mod 16 = 8 \mod 16 = 8 )$$
 
 Repetimos este proceso para generar más números. Este método es simple y eficiente, pero la elección de ( a ), ( c ), y ( m ) es crucial para obtener una buena calidad de aleatoriedad y un largo período.
+
+#### Método de Lehmer (Generador Congruencial Multiplicativo)
+
+#### Método de Lehmer
+
+El Método de Lehmer, también conocido como Generador Congruencial Multiplicativo, es un algoritmo para generar números pseudoaleatorios a través de una relación recursiva de la forma:
+
+$$
+[ X_{n+1} = (a \times X_n) \mod m ]
+$$
+
+donde:
+
+* a es el multiplicador,
+* m es el módulo,
+* $$X_0$$ es la semilla inicial del generador.
+
+Este método es una variante del generador congruencial lineal, pero no incluye el término constante de incremento ( c ). El valor de ( a ) y ( m ) son elegidos cuidadosamente para maximizar la longitud del período y la calidad de la aleatoriedad.
+
+#### Ejemplo
+
+Supongamos que ( a = 7 ), ( m = 31 ), y la semilla inicial ( $$X_0 = 3$$ ).
+
+1. Calculamos el primer número en la secuencia:\
+   $$[ X_1 = (7 \times 3) \mod 31 = 21 ]$$
+2. Calculamos el segundo número:\
+   $$[X_2 = (7 \times 21) \mod 31 = 23 ]$$
+3. Calculamos el tercer número:\
+   $$[ X_3 = (7 \times 23) \mod 31 = 6 ]$$
+
+Podemos continuar este proceso para generar más números en la secuencia.&#x20;
+
+_**Elección de Parámetros:**_&#x20;
+
+La calidad del generador de Lehmer depende críticamente de la elección de $$m, a, y X_0​.$$
+
+1. **Módulo m:** Debe ser un número primo grande. Una elección común, especialmente en máquinas de 32 bits, es $$m = 2^{31} − 1$$, que es un número primo de Mersenne.  &#x20;
+2. **Multiplicador a:** Debe elegirse cuidadosamente para asegurar un período completo (o casi completo) y buenas propiedades estadísticas. Un período completo para un generador multiplicativo con módulo primo m es $$m−1$$, lo que significa que la secuencia $$X_1​,X_2​,…,X_{m−1}$$​ contiene todos los enteros desde 1 hasta m−1 exactamente una vez, en algún orden.&#x20;
+   1. Se han realizado extensas investigaciones para encontrar _"buenos"_ multiplicadores. Por ejemplo, para $$m=2^{31}−1$$, un multiplicador comúnmente citado es $$a=7^5=16807$$, aunque otros como $$a=48271$$ también se han propuesto por sus buenas propiedades y eficiencia de implementación.  &#x20;
+
+* **Semilla** $$X_0$$**​:** Debe ser un entero entre 1 y m−1. Diferentes semillas producirán diferentes secuencias (aunque relacionadas).
+* **Implementación:** Un desafío en la implementación es calcular $$aX_i$$​ sin que ocurra un desbordamiento (overflow) si el producto excede la capacidad máxima de representación de enteros de la computadora, antes de tomar el módulo m.
+
+La generación de números $$U(0,1)$$ es el primer paso fundamental. La calidad de estos números impacta directamente la validez de todo el estudio de simulación.&#x20;
+
+{% hint style="danger" %}
+Si el generador base es defectuoso (ej. no es uniforme, o los números no son independientes), entonces las variables aleatorias generadas a partir de él también serán defectuosas, y los resultados de la simulación no serán fiables, sin importar cuán sofisticado sea el resto del modelo
+{% endhint %}
+
+### Pruebas de aleatoriedad e independencia
+
+Dado que los generadores de números pseudoaleatorios son algoritmos deterministas, es crucial someter sus secuencias de salida a rigurosas pruebas estadísticas para evaluar si se comportan de manera suficientemente similar a secuencias verdaderamente aleatorias e independientes de una distribución. U(1,0)
+
+{% hint style="warning" %}
+Ningún generador es perfecto, y ninguna prueba puede "probar" que un generador es bueno; más bien, las pruebas pueden revelar si un generador es "malo" al no pasar ciertos criterios estadísticos
+{% endhint %}
+
+Las dos propiedades fundamentales que se desean evaluar son la **uniformidad** y la **independencia**.
+
+#### Pruebas de Uniformidad
+
+{% tabs %}
+{% tab title="Prueba de Chi Cuadrado" %}
+
+{% endtab %}
+
+{% tab title="Prueba de Kolmogorov-Smirnov (K-S)" %}
+
+{% endtab %}
+{% endtabs %}
 
