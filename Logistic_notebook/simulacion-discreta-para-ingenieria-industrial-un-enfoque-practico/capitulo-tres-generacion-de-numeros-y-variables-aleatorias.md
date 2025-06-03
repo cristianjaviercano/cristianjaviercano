@@ -269,20 +269,22 @@ Entonces, $$gl = 5 - 1 - 2 = 2$$
 
 #### 6. Tomar una Decisión Estadística
 
-Elegimos un nivel de significancia, comúnmente $\alpha = 0.05$.\
-Buscamos el valor crítico de $\chi^2$ en una tabla de distribución Chi-cuadrado (o usando software) para $gl=2$ y $\alpha=0.05$.\
-El valor $\chi^2\_{critico}(2, 0.05)$ es aproximadamente $5.991$.
+1. Elegimos un nivel de significancia, comúnmente $$\alpha = 0.05$$.
+2. Buscamos el valor crítico de $$\chi^2$$ en una tabla de distribución Chi-cuadrado (o usando software) para $$gl=2\ y\ \alpha=0.05$$.\
+   El valor $$\chi^2_{critico}(2, 0.05)$$ es aproximadamente 5.991.
 
 **Regla de decisión:**
 
-* Si $\chi^2\_{calculado} > \chi^2\_{critico}$, rechazamos $H\_0$.
-* Si $\chi^2\_{calculado} \le \chi^2\_{critico}$, no rechazamos $H\_0$.
+* Si $$\chi^2_{calculado} > \chi^2_{critico}$$, rechazamos H\_0.
+* Si $$\chi^2_{calculado} \le \chi^2_{critico}$$, no rechazamos H\_0.
 
-En nuestro ejemplo: $0.9704 \le 5.991$.
+En nuestro ejemplo: $$0.9704 \le 5.991.$$
 
 #### 7. Conclusión
 
-Dado que el valor calculado de $\chi^2$ (0.9704) es menor que el valor crítico (5.991) para un nivel de significancia de 0.05, no rechazamos la hipótesis nula ($H\_0$). Esto significa que no tenemos suficiente evidencia estadística para concluir que los datos de la muestra no siguen una distribución normal.
+Dado que el valor calculado de $$\chi^2 (0.9704)$$ es menor que el valor crítico (5.991) para un nivel de significancia de 0.05, no rechazamos la hipótesis nula (H\_0).&#x20;
+
+Esto significa que no tenemos suficiente evidencia estadística para concluir que los datos de la muestra no siguen una distribución normal.
 
 ***
 {% endtab %}
