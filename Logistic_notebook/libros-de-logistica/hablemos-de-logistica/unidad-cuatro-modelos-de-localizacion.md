@@ -1,6 +1,6 @@
 # Unidad Cuatro: Modelos de Localizacion
 
-### Definicion de modelos de localizacion[#](broken-reference)
+### Definicion de modelos de localizacion
 
 ### **Modelo de Localización de Planta**
 
@@ -65,7 +65,7 @@ El modelo tiene en cuenta múltiples factores críticos que afectan la eficienci
 
 Al emplear este modelo, las empresas pueden mejorar significativamente su cadena de suministro, garantizando una entrega más ágil y económica, lo que a su vez se traduce en una mejora de la satisfacción del cliente y en una ventaja competitiva en el mercado. Este enfoque integral no solo reduce gastos innecesarios sino que también refuerza el compromiso de la empresa con la sostenibilidad y la eficiencia operativa.
 
-### localización de planta[#](broken-reference)
+### localización de planta
 
 Según la siguiente tabla de distancias debemos ubicar nuestro CDA (centro de Distribución), mayorista, las demás locaciones son posibles ubicaciones para distribuidores menores también propios.
 
@@ -95,7 +95,7 @@ Según la siguiente tabla de distancias debemos ubicar nuestro CDA (centro de Di
 | F | 380                   | 1,8      |
 | G | 150                   | 1,1      |
 
-### Metodo grafico de localizacion[#](broken-reference)
+### Metodo grafico de localizacion
 
 El método gráfico de localización de plantas es una técnica utilizada para seleccionar la ubicación óptima de una nueva planta o instalación. El proceso implica el uso de un mapa de la zona para identificar los factores críticos que influyen en la selección de la ubicación, como la disponibilidad de materias primas, la proximidad al mercado, la disponibilidad de mano de obra y la infraestructura existente.
 

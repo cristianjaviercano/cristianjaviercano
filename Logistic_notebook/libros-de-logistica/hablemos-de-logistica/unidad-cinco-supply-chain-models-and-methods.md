@@ -2,7 +2,7 @@
 
 Esta unidad cubre diversos modelos y métodos para gestionar cadenas de suministro, con un enfoque en maximizar la eficiencia, reducir costos y mitigar riesgos. Aprenderemos cómo estas herramientas permiten a las empresas tomar decisiones informadas en un entorno de negocios dinámico.
 
-### Concepto fubdamental
+### Concepto fundamental
 
 {% hint style="info" %}
 Imagina la cadena de suministro como un río que desde la fuente (proveedores de materias primas) hasta el mar (cliente final), el producto fluye a través de diversos canales. Un modelo de cadena de suministro es una representación simplificada de este flujo, que nos permite analizar y optimizar su funcionamiento, donde podemos gestionar aspecto basicos y complejos del sistema.&#x20;
@@ -12,7 +12,7 @@ Imagina la cadena de suministro como un río que desde la fuente (proveedores de
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>Toma de Deciciones, con base en la informacion recopilada a lo largo dela SP podemos toimar decisiones acertadas que beneficien el sistema, y mantener en la visual los kpi e indicadores claves del proceso.</td><td><a href="../../.gitbook/assets/Imagen base para animar.png">Imagen base para animar.png</a></td></tr><tr><td>Optimización de costos, Al identificar ineficiencias en la cadena de suministro, podemos reducir costos y aumentar la rentabilidad</td><td><a href="../../.gitbook/assets/en el pc1.png">en el pc1.png</a></td></tr><tr><td>Mejora de la eficiencia: Los modelos nos permiten simular diferentes procesos y encontrar la forma más eficiente de operar</td><td><a href="../../.gitbook/assets/CRCwh.png">CRCwh.png</a></td></tr><tr><td>Gestión de riesgos: Podemos evaluar el impacto de posibles perturbaciones, como desastres naturales o cambios en la demanda, y desarrollar planes de contingencia.</td><td><a href="../../.gitbook/assets/ACO imagen.png">ACO imagen.png</a></td></tr></tbody></table>
 
-#### Tipos de modelos de cadena de suministro:[#](broken-reference)
+#### Tipos de modelos de cadena de suministro:
 
 Existen diversos tipos de modelos, cada uno con sus propias características y aplicaciones:
 
@@ -21,14 +21,14 @@ Existen diversos tipos de modelos, cada uno con sus propias características y a
 3. Modelos rápidos: Priorizan la velocidad de entrega y la respuesta a las necesidades del cliente.
 4. Modelos configurados a medida: Se diseñan específicamente para una empresa o industria en particular.
 
-#### Herraientas para contruccion de cadenas logisticas:[#](broken-reference)
+#### Herramientas para contruccion de cadenas logisticas
 
 1. Software de simulación: - AnyLogic: Ofrece una gran flexibilidad para modelar sistemas complejos, incluyendo cadenas de suministro. Permite crear modelos 3D y realizar simulaciones detalladas. - Simio: Es otra opción popular, con una interfaz intuitiva y una amplia biblioteca de componentes. - Arena: Destaca por su capacidad para modelar sistemas discretos y continuos, lo que lo hace adecuado para una variedad de aplicaciones. - Flexym: sofhware de simulacion destacado por su interfaz grafica y sencillez de implementacion , solo para windows.
 2. Hojas de cálculo: - Excel: Aunque más básico, puede ser útil para construir modelos sencillos y realizar análisis de sensibilidad.
 3. Lenguajes de programación: - Python: Con bibliotecas como Pyomo y SimPy, permite crear modelos personalizados y complejos.
 4. Software de optimización: - CPLEX: Se utiliza para resolver problemas de optimización matemática, como la minimización de costos o la maximización de beneficios.
 
-**Pasos para construir un modelo de cadena de suministro:**[**#**](broken-reference)
+**Pasos para construir un modelo de cadena de suministro:**
 
 1. Definición del problema:
 
@@ -62,11 +62,11 @@ Existen diversos tipos de modelos, cada uno con sus propias características y a
 * Comunicar los resultados del modelo a los tomadores de decisiones.
 * Desarrollar un plan de implementación para los cambios recomendados.
 
-### Construccion de una cadena usando python:[#](broken-reference)
+### Construccion de una cadena usando python
 
 Vamos a usar python como plataforma de medicion de una cadena de abastecimiento por medio del uso de la libreria _simpy_
 
-### Unidad Seis: Diseño y medicion de la cadena logistica[#](broken-reference)
+### Unidad Seis: Diseño y medicion de la cadena logistica
 
 `Supply Chain Optimization Design and Management_ Advances and Intelligent Methods Premier Reference Source`
 
@@ -90,7 +90,7 @@ Para arrojar algo de luz sobre los conceptos básicos de la gestión de la caden
 2. **Sistema de abastecimiento:** consiste en una red de diferentes proveedores o fabricantes, cada uno de los cuales se ocupa de producir el componente de producto solicitado para el sistema logístico. En este caso, la minimización del tiempo total de tardanza, como se define arriba, puede considerarse como la función objetivo. El problema de la oferta puede pensarse como un problema de optimización de la programación.
 3. **Sistema de distribución:** entrega los productos completos a los clientes correspondientes. Los clientes pueden ser descritos por su ubicación geográfica. Un modelo simple y realista del problema de la distribución es el problema de las rutas de los vehículos (o, a veces, el problema del viajante de comercio). Este es un problema de minimización que considera el costo de transporte de la flota de vehículos disponibles. Para este tipo de problema, una restricción común es que cada cliente es visitado por un vehículo y todos los clientes deben estar satisfechos.
 
-### aproximacion de la medicion de la cadena de suministro con la Planificación de producción agregada[#](broken-reference)
+### aproximacion de la medicion de la cadena de suministro con la Planificación de producción agregada
 
 * La literatura sobre planificación y control de la producción está llena de modelos y algoritmos para encontrar planes eficientes para la mayoría de los tipos de industrias. En este capítulo, presentamos algunos de los enfoques más exitosos del problema general.
 
@@ -104,7 +104,7 @@ Estos planes de producción son particularmente útiles para las decisiones de p
 
 Comenzamos nuestra discusión sobre la planificación de la producción agregada con el ejemplo más simple posible.
 
-1. Considere un pronóstico de demanda mensual \\(d\_i i=1 . . . N\\) para N períodos, para una compañía imaginaria que produce un solo producto, y considere el problema de construir inventarios de productos terminados durante cada período para que se pueda satisfacer la demanda mensual, manteniendo niveles mínimos de inventarios, evitando así la acumulación de costos:
+1. Considere un pronóstico de demanda mensual $$d_i\  i=1 . . . N$$ para N períodos, para una compañía imaginaria que produce un solo producto, y considere el problema de construir inventarios de productos terminados durante cada período para que se pueda satisfacer la demanda mensual, manteniendo niveles mínimos de inventarios, evitando así la acumulación de costos:
 
 * de mantenimiento
 * de inventario
@@ -115,20 +115,22 @@ Comenzamos nuestra discusión sobre la planificación de la producción agregada
 
 Si no se toman en cuenta las limitaciones de capacidad, entonces la política óptima es producir todo a tiempo, en un tiempo just in time (JIT), ya que hay suficiente capacidad para satisfacer cualquier nivel de demanda en cualquier período. Sin embargo, cuando la capacidad no es suficiente para satisfacer la demanda durante las temporadas altas, como suele ser el caso, los inventarios deben construirse con anticipación, obviamente lo más tarde posible, para evitar la acumulación de costos de inventario. El siguiente programa lineal (LP) determina la solución óptima para nuestro primer problema de planificación de la producción.
 
-\\\[\begin{split} \text{min} \sum\_{i=1}^{N}h\_i \\\ \ restricciones: h\_i=h\_{i-1}+x\_i-d\_i,\ i=1,...,N\\\ 0 \leq x\_i\leq c,\ i=1,...,N\\\ 0 \leq h\_i,\ i=1,...,N\\\ h\_0 = I\_0 \end{split}\\]
+$$
+\begin{split} \text{min} \sum_{i=1}^{N}h_i \\ \text{restricciones:} \\ h_i=h_{i-1}+x_i-d_i,\ i=1,...,N\\ 0 \leq x_i\leq c,\ i=1,...,N\\ 0 \leq h_i,\ i=1,...,N\\ h_0 = I_0 \end{split}
+$$
 
 Las variables de decisión x representan la producción de cada período, mientras que las variables h representan el inventario al final de cada período. Al principio, asumimos una acumulación de inventario existente de \\(I\_o\\) unidades.
 
-### Modelos especiales[#](broken-reference)
+### Modelos especiales
 
-#### Modelo Interactivo EOQ[#](broken-reference)
+#### Modelo Interactivo EOQ
 
-```
+```python
 !pip install ipywidgets
 !pip install matplotlib
 ```
 
-```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 import ipywidgets as widgets
@@ -190,7 +192,7 @@ los modelos interactivos nos ayudan a entender la logica de las cosas, intenta m
 
 * el siguiente codigo toma los valores de Demanda, h y S, y realiza la adicion de una unidad a la variable s 10 veces, con el fin de verificar el comportamiento de Q en este cambio. de esta manera podemos verificar la afectacion de \\(S\\) a \\(Q\\)
 
-```
+```python
 import math
 
 def eoq(demand, order_cost, holding_cost, s_value):
@@ -225,7 +227,7 @@ Para S = 12.0, EOQ: 2.581988897471611
 
 #### modelo interactivo POQ - python[#](broken-reference)
 
-```
+```python
 import ipywidgets as widgets
 from IPython.display import display
 import matplotlib.pyplot as plt
@@ -270,7 +272,7 @@ widgets.interact(actualizar_grafico,
 
 #### Modelo de asignacion de rutas aleatorias[#](broken-reference)
 
-```
+```python
 import random
 import numpy as np
 import pandas as pd

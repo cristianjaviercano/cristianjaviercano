@@ -1,10 +1,10 @@
 # Unidad tres: Modelos de Transporte
 
-### Instrucciones para el Uso de la Librería PuLP
+## Instrucciones para el Uso de la Librería PuLP
 
 La librería PuLP es una herramienta poderosa para la programación lineal en Python. Aquí te proporcionamos un guía paso a paso para usar esta librería de manera efectiva.
 
-#### Instalación de PuLP
+### Instalación de PuLP
 
 Antes de comenzar a usar PuLP, primero necesitas instalarla. Puedes hacerlo fácilmente utilizando pip. Abre una terminal y escribe el siguiente comando:
 
@@ -12,7 +12,7 @@ Antes de comenzar a usar PuLP, primero necesitas instalarla. Puedes hacerlo fác
 pip install pulp
 ```
 
-#### Creación de un Problema
+### Creación de un Problema
 
 Para definir un problema de programación lineal, debes comenzar por importar la librería y crear un objeto `LpProblem`. Este objeto es la representación de tu problema.
 
@@ -23,7 +23,7 @@ from pulp import LpProblem, LpMaximize
 problem = LpProblem("Mi_Problema", LpMaximize)
 ```
 
-#### Declaración de Variables
+### Declaración de Variables
 
 Luego, define las variables de decisión que serán usadas en tu modelo. PuLP proporciona la clase `LpVariable` para este propósito.
 
@@ -35,7 +35,7 @@ x = LpVariable('x', lowBound=0)
 y = LpVariable('y', lowBound=0)
 ```
 
-#### Definición de la Función Objetivo
+### Definición de la Función Objetivo
 
 La función objetivo es la función matemática que necesitas maximizar o minimizar. Puedes definirla utilizando las variables creadas.
 
@@ -88,7 +88,7 @@ para mayor informacion sobre esta libreroa podemos visitar: [https://pypi.org/pr
 
 1. Instalacion de la libreria: _“pip install pulp”_
 
-importamos:
+#### Importamos:
 
 * import pulp
 
@@ -96,7 +96,7 @@ importamos:
 
 con la sintaxis: **prob = pulp.LpProblem(“Asignacion de Tareas”, pulp.LpMinimize)**
 
-2. Creacion de las Variables del modelo:
+#### Creacion de las Variables del modelo:
 
 las variables son la base de los problemas de optimización, y dependiendo del tipo de problema que estés resolviendo, pueden adoptar diferentes categorías (tipologías), como variables continuas, enteras o binarias.
 
@@ -106,9 +106,9 @@ x = LpVariable(‘x’)
 
 las variables pueden contener datos espcificos del modelo o solo estar vacias para ser usadas por el modelo.
 
-‘#definir las variables
+#### Definir las variables
 
-* Ejemplos de variables
+Ejemplos de variables
 
 1. costos = \[\[10, 2, 20], \[12, 7, 15], \[8, 12, 5]]
 2. trabajadores = range(3)
@@ -118,9 +118,9 @@ las variables pueden contener datos espcificos del modelo o solo estar vacias pa
 
 Estas son variables que pueden tomar cualquier valor dentro de un rango, ya sea positivo, negativo o sin límites. Esta es la categoría predeterminada cuando no se especifica el tipo.
 
-\\(x\ =\ LpVariable('x')\\)
+_**x= LpVariable('x')**_
 
-2. Con límites
+#### Con límites
 
 Se puede restringir el valor de una variable continua a un intervalo dado (por ejemplo, entre un valor mínimo y máximo).
 
@@ -132,7 +132,7 @@ lowBound y upBound son los atributos que definen los limites de las variables, e
 * x = LpVariable(‘x’, lowBound=0)
 * \\\[X\_{i,j}\ge0\\]
 
-b) Variables Enteras
+#### Variables Enteras
 
 Las variables enteras solo pueden tomar valores numéricos enteros dentro de un rango específico.
 
@@ -140,7 +140,7 @@ Las variables enteras solo pueden tomar valores numéricos enteros dentro de un 
 
 en este caso se especifica el tipo de variable con el atributo “cat” donde se especifica la toipologoia en este caso “integer” de Entero.
 
-c) Variables Binarias
+#### &#x20;Variables Binarias
 
 Las variables _binarias_ son un caso especial de las variables enteras, ya que solo pueden tomar los valores 0 o 1. Este tipo de variable es útil cuando modelamos decisiones binarias (sí/no, verdadero/falso) en problemas como la selección de proyectos o la asignación de recursos, muy comunes en metodos de trasnporte y programacion avanzada.
 
@@ -159,31 +159,37 @@ cuando se modela este tipo de variables hay que tener en cuenta las desicion que
 
 ***
 
-3. Definir la funcion objetivo:
+### Definir la funcion objetivo:
 
 Se recomienda antes de proceder con la programacion en python de que el ejercicio o el sistema este definido de esta forma se hace mas facil el desarrollo del mismo, es decir. cuando se pretenda ingresar la F.O del sistema esta ya debe estar definida y conocida segun la naturaleza del sistema investigado, en este caso usaremos la siguiente funcion:
 
-\\\[3x\_1+2x\_2+x\_3\\]
+$$
+3x_1+2x_2+x_3
+$$
 
-* problema += 3 \* x1 + 2 \* x2 + x3, “Función Objetivo”
+* `problema += 3 * x1 + 2 * x2 + x3,` “Función Objetivo”
 
 notese el nombre de la variable que encierra el problema “problema”
 
-4. Procedmos a agregar las restricciones del sistema:
+#### Procedmos a agregar las restricciones del sistema:
 
-problema += x1 + x2 + x3 <= 2, “Restricción 1” problema += x1 + x2 >= 1, “Restricción 2”
+`problema += x1 + x2 + x3 <= 2,`&#x20;
 
-en este caso las restricciones van precedidas por los signos \\(\le\\) y \\(\ge\\)
+“Restricción 1” `problema += x1 + x2 >= 1`,&#x20;
+
+“Restricción 2”
+
+en este caso las restricciones van precedidas por los signos $$\(\le\) y \(\ge\)$$
 
 notese que no definimos la restriccion de “no negatividad” ya que las variables al ser definidas y acotadas incluyen los valores donde estas pueden operar.
 
-5. Resilvemos:
+#### Resolvemos:
 
 Utiliza el método solve() para resolver el problema de optimización. PuLP usa un solver incorporado por defecto, pero puedes especificar uno si prefieres.
 
 * problema.solve()
 
-6. MOstrar el resultado:
+#### Mostrar el resultado:
 
 por ultimo debemos especificarle a la maquina que deseamos ver los resultados estos pueden ser mostrados como valore splanos o podemos usar otras librerias como pandas mathplotlib, etc, para mostrar estos resultados, pero para estos habria que definir las variables y almacenar los datos segun cada una lo requiera.
 
