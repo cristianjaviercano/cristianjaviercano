@@ -76,5 +76,7 @@ El método de la transformada inversa (MTI) es una técnica fundamental para gen
              * Reemplace `media` y `desv_est` con los valores deseados.&#x20;
 
 
-2. Triangular (mínimo a, moda c, máximo b).
-   1. La FDA es $$F(x)$$ = $${  (b−a)(c−a) (x−a)  2   ​   1−  (b−a)(b−c) (b−x)  2   ​   ​    si a≤x≤c si c<x≤b ​$$
+2.  Triangular (mínimo a, moda c, máximo b).
+
+    a. La FDA es $$F(x)$$ = $$\left\{ \begin{matrix} \frac{(x-a)^2}{(b-a)(c-a)}\  si\ a \le x\le c\\ 1- \frac{(b-x)^2}{(b-a)(b-c)}\  si\ c \le x\le b\end{matrix} \right\}$$
+
