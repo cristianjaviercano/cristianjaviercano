@@ -57,3 +57,4 @@
   * [Capitulo Cuatro: Simulación de Montecarlo con Excel](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-cuatro-simulacion-de-montecarlo-con-excel.md)
 * [Software de Simulacion: Anylogic](simulacion-discreta/software-de-simulacion-anylogic/README.md)
   * [Retos de simulacion](https://cristianjaviercano.github.io/Retos/)
+  * [Mini juegos](https://cristianjaviercano.github.io/minijuegos/)
