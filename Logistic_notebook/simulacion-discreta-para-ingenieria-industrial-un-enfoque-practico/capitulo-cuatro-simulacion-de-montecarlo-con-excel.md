@@ -76,7 +76,41 @@ El método de la transformada inversa (MTI) es una técnica fundamental para gen
              * Reemplace `media` y `desv_est` con los valores deseados.&#x20;
 
 
-2.  Triangular (mínimo a, moda c, máximo b).
+2. Triangular (mínimo a, moda c, máximo b).
 
-    a. La FDA es $$F(x)$$ = $$\left\{ \begin{matrix} \frac{(x-a)^2}{(b-a)(c-a)}\  si\ a \le x\le c\\ 1- \frac{(b-x)^2}{(b-a)(b-c)}\  si\ c \le x\le b\end{matrix} \right\}$$
+La FDA es $$F(x)$$ = $$\left\{ \begin{matrix} \frac{(x-a)^2}{(b-a)(c-a)}\  si\ a \le x\le c\\ 1- \frac{(b-x)^2}{(b-a)(b-c)}\  si\ c \le x\le b\end{matrix} \right\}$$
+
+La inversa $$F^−1(u)$$ se define por tramos:&#x20;
+
+$$Si\ u≤F(c)=(c−a)/(b−a)$$, entonces $$x=a+\sqrt {u(b−a)(c−a)}$$.&#x20;
+
+$$Si\ u>F(c)$$, entonces $$x=b−\sqrt{(1−u)(b−a)(b−c)}$$
+
+
+
+**Fórmula en Excel:**&#x20;
+
+{% hint style="info" %}
+**Asumiendo que a,c,b están en las celdas A1, B1, C1 respectivamente**
+{% endhint %}
+
+`=SI(ALEATORIO()<=(B1-A1)/(C1-A1), A1+RAIZ(ALEATORIO()*(C1-A1)*(B1-A1)), C1-RAIZ((1-ALEATORIO())*(C1-A1)*(C1-B1)))`&#x20;
+
+_Esta fórmula usa `ALEATORIO()` dos veces, lo que genera dos números aleatorios diferentes. Para usar el mismo número aleatorio U para la condición y el cálculo, U debería generarse en una celda separada y referenciarse._&#x20;
+
+Una mejor implementación sería: Celda D1: `=ALEATORIO()` Celda E1: `=SI(D1<=(B1-A1)/(C1-A1), A1+RAIZ(D1*(C1-A1)*(B1-A1)), C1-RAIZ((1-D1)*(C1-A1)*(C1-B1)))`&#x20;
+
+#### **Bernoulli (probabilidad de éxito p):**
+
+* La V.A. toma valor 1 (éxito) con probabilidad p, y 0 (fracaso) con probabilidad 1−p.
+* La FDA es $$F(0)=1−p, F(1)=1.$$
+* Si u\<p, X=1. Si u≥p, X=0. (O, más comúnmente, si u\<p, X=1, sino X=0).
+* **Fórmula en Excel:** `=SI(ALEATORIO()<p, 1, 0)`
+  * Reemplace `p` con la probabilidad de éxito.
+
+**Binomial (n ensayos, probabilidad de éxito p):**
+
+* Excel tiene una función inversa directa.
+* **Fórmula en Excel:** `=INV.BINOM(n, p, ALEATORIO())` o en inglés `=BINOM.INV(trials, probability_s, RAND())`.  &#x20;
+  * Reemplace `n` y `p` con los parámetros deseados.
 
