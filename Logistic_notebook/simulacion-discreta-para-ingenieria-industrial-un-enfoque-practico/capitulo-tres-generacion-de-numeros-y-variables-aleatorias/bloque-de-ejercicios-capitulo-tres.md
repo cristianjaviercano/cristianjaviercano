@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Bloque de ejercicios Capitulo Tres
 
 1. **Ejercicios**
