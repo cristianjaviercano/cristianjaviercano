@@ -4,7 +4,7 @@ description: se define la simulación y su contexto en la ingeniería industrial
 
 # Capitulo uno: Introducción a la Simulación en Ingeniería Industrial
 
-<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
 
 ### Objetivos del capitulo
 
@@ -44,7 +44,7 @@ Reconocer aplicaciones relevantes de la simulación en los campos de la ingenier
 Para comprender la simulación, es esencial primero definir los conceptos fundamentales sobre los que se construye
 {% endhint %}
 
-<img src="../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
 {% tab title="Sistema" %}
@@ -394,7 +394,7 @@ Es crucial que el ingeniero industrial comprenda estas características para dec
 
 Un estudio de simulación es un proyecto estructurado que sigue una serie de pasos metodológicos para asegurar que los resultados sean creíbles y útiles para la toma de decisiones. La verificación y la validación son componentes críticos de este proceso, que se realizan de manera iterativa a lo largo del ciclo de vida del estudio
 
-<figure><img src="../../.gitbook/assets/Fases Generales de un Proyecto de Simulación - visual selection.png" alt=""><figcaption><p>ciclo de la generacion del modelo de simulacion</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Fases Generales de un Proyecto de Simulación - visual selection.png" alt=""><figcaption><p>ciclo de la generacion del modelo de simulacion</p></figcaption></figure>
 
 ### Fases Generales de un Proyecto de Simulación.
 

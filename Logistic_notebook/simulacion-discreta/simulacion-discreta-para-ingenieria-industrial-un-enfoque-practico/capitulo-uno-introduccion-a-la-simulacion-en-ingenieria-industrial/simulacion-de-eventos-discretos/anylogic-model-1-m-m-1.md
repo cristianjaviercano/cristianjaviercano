@@ -19,17 +19,17 @@ Dado que:
 
 empezamos por crear la hoja en Anulogic.
 
-<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-05-29 a la(s) 2.32.08 p.m..png" alt="" width="375"><figcaption><p>Hoja de anylogic en blanco</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Captura de pantalla 2025-05-29 a la(s) 2.32.08 p.m..png" alt="" width="375"><figcaption><p>Hoja de anylogic en blanco</p></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-05-29 a la(s) 2.32.16 p.m..png" alt="" width="375"><figcaption><p>Nombre del modelo</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Captura de pantalla 2025-05-29 a la(s) 2.32.16 p.m..png" alt="" width="375"><figcaption><p>Nombre del modelo</p></figcaption></figure>
 
 ### creamos el flujo del problema
 
-<img src="../../../.gitbook/assets/file.excalidraw (5).svg" alt="flujo basico del sistema" class="gitbook-drawing">
+<img src="../../../../.gitbook/assets/file.excalidraw (5).svg" alt="flujo basico del sistema" class="gitbook-drawing">
 
 Para el software anylogic seria algo asi.
 
-<figure><img src="../../../.gitbook/assets/flujomm1.png" alt="" width="366"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/flujomm1.png" alt="" width="366"><figcaption></figcaption></figure>
 
 {% hint style="danger" %}
 **Importante**: Viene predeterminado que las colas AnyLogic nunca se crean con capacidad infinita, sino siempre con una capacidad limitada en 100 agentes. Si su valor no se cambia a la capacidad máxima y la cola excede su capacidad durante la simulación, AnyLogic presentará un mensaje de error.
@@ -37,7 +37,7 @@ Para el software anylogic seria algo asi.
 
 una vez que se cree el modelo con los parametros indicados, se debe compilar para corroborar que no tega errores el sistena de ahi luego simular.
 
-<figure><img src="../../../.gitbook/assets/mm1_running.png" alt="" width="339"><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/mm1_running.png" alt="" width="339"><figcaption></figcaption></figure>
 
 si bien esta es una pequeña mustra de las capacidades del programa y de la interpretacion de los sitemas a con el uso de la simulacion a lo largo del curso iremos abordando otros conceptos que nos conduciran a diferentes instancias, pero la base es la misma:
 
