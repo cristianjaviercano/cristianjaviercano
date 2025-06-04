@@ -56,4 +56,4 @@
     * [Bloque de ejercicios Capitulo Tres](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-tres-generacion-de-numeros-y-variables-aleatorias/bloque-de-ejercicios-capitulo-tres.md)
   * [Capitulo Cuatro: Simulación de Montecarlo con Excel](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-cuatro-simulacion-de-montecarlo-con-excel.md)
 * [Software de Simulacion: Anylogic](simulacion-discreta/software-de-simulacion-anylogic/README.md)
-  * [Retos de Simulación con AnyLogic](simulacion-discreta/software-de-simulacion-anylogic/retos-de-simulacion-con-anylogic.md)
+  * [Retos de simulacion](https://cristianjaviercano.github.io/Retos/)
