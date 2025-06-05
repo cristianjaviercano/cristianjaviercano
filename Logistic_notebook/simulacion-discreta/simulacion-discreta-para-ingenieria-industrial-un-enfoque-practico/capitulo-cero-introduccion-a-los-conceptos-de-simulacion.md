@@ -24,3 +24,33 @@ La metodología de aprendizaje propuesta combina la exposición teórica riguros
 {% hint style="success" %}
 la simulación no es simplemente una técnica más; es una forma de pensar, una metodología para la experimentación virtual y un pilar para la mejora continua en la ingeniería industrial
 {% endhint %}
+
+***
+
+### Cuando la simulacion es una herramienta util?
+
+**Cuándo NO usar la Simulación de Software Especializado**
+
+El uso de software especializado para simular la realidad tiene tanto ventajas como desventajas. Aunque estas herramientas son reconocidas y aceptadas dentro de la industria por autores como Naylor et al. (1996) y Shannon (1998), no siempre representan la mejor solución. A continuación, exploraremos situaciones en las que no es recomendable utilizar simulaciones:
+
+1. **Complejidad y Tiempo**: Algunos aspectos de la simulación pueden ser excesivamente complicados y consumir mucho tiempo, dificultando su implementación.
+2. **Coste**: La inversión en software especializado puede ser elevada, lo que no siempre justifica su uso frente a soluciones más simples y económicas.
+3. **Relevancia y Necesidad**: En ocasiones, la complejidad de los problemas no justifica el uso de simulación si existen métodos más directos para resolverlos.
+4. **Precisión de Datos**: Si los datos disponibles no son fiables o precisos, la eficacia de la simulación se ve comprometida.
+
+Evaluar cuidadosamente estas condiciones puede ayudar a determinar cuándo es mejor evitar el uso de simulaciones y optar por enfoques alternativos.
+
+{% hint style="info" %}
+La Simulacion NO de be ser usada, si el PROBLEMA SE SOLUCIONA CON SENTIDO COMÚN"
+{% endhint %}
+
+para todos los demas contextos la sumulacion de eventos discretos en este caso es bienvenida.
+
+> Banks and Gibsoon (1997)
+
+***
+
+### Caracterizacion de un modelo de simulacion
+
+<img src="../../.gitbook/assets/file.excalidraw (6).svg" alt="" class="gitbook-drawing">
+
