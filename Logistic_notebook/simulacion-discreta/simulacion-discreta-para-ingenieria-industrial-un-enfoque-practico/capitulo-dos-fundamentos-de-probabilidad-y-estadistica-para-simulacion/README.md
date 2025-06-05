@@ -1,4 +1,4 @@
-# Capítulo 2: Fundamentos de Probabilidad y Estadística para Simulación
+# Capítulo Dos: Fundamentos de Probabilidad y Estadística para Simulación
 
 ### Objetivos del Capítulo:
 
@@ -93,7 +93,7 @@ Una variable aleatoria (VA) es una función que asigna un valor numérico a cada
 
 {% tabs %}
 {% tab title="Variables Aleatorias Discretas" %}
-Una V.A. es discreta si el conjunto de valores que puede tomar es finito o infinito numerable (es decir, se pueden contar, como los números enteros).1
+Una V.A. es discreta si el conjunto de valores que puede tomar es finito o infinito numerable (es decir, se pueden contar, como los números enteros).
 
 Ejemplos en Ingeniería Industrial:
 
