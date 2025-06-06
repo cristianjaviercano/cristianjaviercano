@@ -61,5 +61,35 @@ Cada **experimento** almacena la configuración que se utilizará en una simulac
 * El tipo de experimento, explicado a continuación.
 
 {% hint style="info" %}
-para ayuda con el sotware por favro visitar --->[HELP](https://anylogic.help/)<---
+para ayuda con el sotware por favor visitar --->[HELP](https://anylogic.help/)<---
 {% endhint %}
+
+***
+
+### Ejercicio 1.2.1
+
+<details>
+
+<summary>Ejercicio Número 1.2.1 .  modelado de montecarlo</summary>
+
+una tienda tiene solo nun check out counter, los clientes llegan en tiempos aleatorios entre 1 a 8 minutos,  cada llegada tiene la misma probabilidad  de ocurrencia , como se muestra en la tabla 1, el servicio varia entre 1 a 6 minutos con las probabilidades mostradas en la tabla 2
+
+#### Tabla 1 - distribucion de tiempo entre llegadas
+
+<table><thead><tr><th width="112.5078125" align="center">Tiempo entre llegadas</th><th width="111.1015625" align="center">Probabilidad</th><th align="center">Probabilidad acumulada</th><th>Digito aleatorio</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">0,125</td><td align="center">0,125</td><td>001 - 125</td></tr><tr><td align="center">2</td><td align="center">0,125</td><td align="center">0,250</td><td>126 - 250</td></tr><tr><td align="center">3</td><td align="center">0,125</td><td align="center">0,375</td><td>251 - 375</td></tr><tr><td align="center">4</td><td align="center">0,125</td><td align="center">0,500</td><td>376 - 500</td></tr><tr><td align="center">5</td><td align="center">0,125</td><td align="center">0,625</td><td>501 - 625</td></tr><tr><td align="center">6</td><td align="center">0,125</td><td align="center">0,750</td><td>626 - 750</td></tr><tr><td align="center">7</td><td align="center">0,125</td><td align="center">0,875</td><td>751 - 875</td></tr><tr><td align="center">8</td><td align="center">0,125</td><td align="center">1,00</td><td>876 - 000</td></tr></tbody></table>
+
+#### tabla 2 - distribucion de tiempo de servicio
+
+| Service time (minutes) | Probabilidad | Acumulado | Random Digit Assigment |
+| ---------------------- | ------------ | --------- | ---------------------- |
+| 1                      | 0,10         | 0,10      | 01 - 10                |
+| 2                      | 0,20         | 0,30      | 11 - 30                |
+| 3                      | 0,30         | 0,60      | 31 - 60                |
+| 4                      | 0,25         | 0,85      | 61 - 85                |
+| 5                      | 0,10         | 0,95      | 86 - 95                |
+| 6                      | 0,05         | 1,0       | 96 - 00                |
+
+</details>
+
+
+
