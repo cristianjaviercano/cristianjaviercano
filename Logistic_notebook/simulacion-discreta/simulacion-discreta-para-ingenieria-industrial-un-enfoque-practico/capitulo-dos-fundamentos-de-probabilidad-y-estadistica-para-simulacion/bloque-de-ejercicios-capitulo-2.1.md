@@ -347,3 +347,17 @@ Una bolsa contiene 4 bolas blancas y 3 negras, y una segunda bolsa contiene 3 bl
 ¿Cual es la probabilidad de que ahora saque una pelota negra de la segunda bolsa?
 
 </details>
+
+<details>
+
+<summary>Ejercicio 2.4.4 Sistema electrico</summary>
+
+Suponga un sistema electrico con el diagrama que esta en la figura, cual es la probabilidad que el sistema funcione, suponga que los componentes fallan de forma independiente.
+
+el diagrama se representa asi: un diagrama de circuito de derecha a izquierda, dola primera estacion A tenga una p(0.95) de ahi se ramifica en B y C con probabilidad de P(0,7) y P(0,8) respectivamente luego elñ glujo se junta hacia D con p(0,9)
+
+
+
+</details>
+
+<img src="../../../.gitbook/assets/file.excalidraw (7).svg" alt="" class="gitbook-drawing">
