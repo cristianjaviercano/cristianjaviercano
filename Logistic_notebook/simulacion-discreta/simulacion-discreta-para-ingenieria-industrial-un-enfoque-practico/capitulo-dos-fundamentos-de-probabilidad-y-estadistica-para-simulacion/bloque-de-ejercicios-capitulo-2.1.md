@@ -302,3 +302,48 @@ plt.show()
 # '000': Complemento de la unión (fuera de todos los círculos)
 ```
 
+***
+
+{% hint style="info" %}
+para mas ejercicios busca la pagina 42 a la 44 del. libro estadistica y probalblidad para ingenieros.
+{% endhint %}
+
+***
+
+<details>
+
+<summary>Ejercicio 2.4.1 Probabilidad condicional</summary>
+
+suponga que tenemos un espacio muestral S constituido por la poblacion adulta de una pequeña poblacion que cumple con los requisitos para obetener un titulo universitario, los vamos a clasificar deacuerdo a su genero y situacion laboral
+
+<table><thead><tr><th></th><th data-type="number">Empleado</th><th data-type="number">Desempleado</th><th data-type="number">Total</th></tr></thead><tbody><tr><td>Hombre</td><td>460</td><td>40</td><td>500</td></tr><tr><td>Mujer</td><td>140</td><td>260</td><td>400</td></tr><tr><td>Total</td><td>600</td><td>300</td><td>900</td></tr></tbody></table>
+
+se selecciona al azae uno de estos individuos par que realice un viaje por el pais: nos interesan los siguientes eventos.
+
+1. M = se elige un hombre
+
+2) E = el elegido tiene empleo
+
+</details>
+
+<details>
+
+<summary>Ejercicio 2.4.2 El aereopuerto</summary>
+
+La probabilidad de que un vuelo programado normalemte salga a tiempo es P(D) = 0,83 y la probabilidad de que llegue a tiempo es P(A)=0,82 y la probabilidad de que salga y llegue a tiempo es $$P(D∩A) = 0,78$$, calcule la probabilidad de que:
+
+1. llege a tiempo, dado que salio a tiempo
+2. salio a tiempo, dado que llego a tiempo
+3. &#x20;llego a tiempo pero salga retrazado&#x20;
+
+</details>
+
+<details>
+
+<summary>Ejercicio 2.4.3 bolsa de pelotas</summary>
+
+Una bolsa contiene 4 bolas blancas y 3 negras, y una segunda bolsa contiene 3 blancas y 5 negras, se saca una bola de la primera bolsa y se coloca sin verla en la segunda bolsa
+
+¿Cual es la probabilidad de que ahora saque una pelota negra de la segunda bolsa?
+
+</details>
