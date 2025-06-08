@@ -16,3 +16,4 @@ icon: file-doc
 
 <img src="../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
+link de interes ---> [`AQUI!`](https://anylogic.help/anylogic/ui/properties-view.html)

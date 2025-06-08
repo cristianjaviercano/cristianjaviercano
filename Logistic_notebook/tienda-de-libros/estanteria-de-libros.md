@@ -1,5 +1,5 @@
 ---
-icon: books
+icon: book
 ---
 
 # Estanteria de libros
