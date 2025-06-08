@@ -54,3 +54,23 @@ Siguiendo la metodología presentada en Mahdavi (s.f., pp. 39-45), se puede cons
 >
 > * Borshchev, A. (2013). _The Big Book of Simulation Modeling: Multimethod Modeling with AnyLogic 8_. AnyLogic North America.
 > * Mahdavi, A. (s.f.). _The Art of Process-Centric Modeling with AnyLogic_. Manuscrito no publicado.
+
+***
+
+### links de consulta:
+
+<details>
+
+<summary>lista de herramientas:</summary>
+
+la lista de herramientas de anylogic esta en linea en el siguiente [link](https://anylogic.help/library-reference-guides/process-modeling-library/pml-blocks.html)
+
+</details>
+
+<details>
+
+<summary>Anylogic cloud tootls bar:<br></summary>
+
+Lista de herramientas para anylogic online ---> [Aqui](https://anylogic.help/cloud/toolbar.html)
+
+</details>

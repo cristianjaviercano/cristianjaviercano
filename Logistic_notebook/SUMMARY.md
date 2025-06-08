@@ -61,7 +61,7 @@
   * [Mini juegos](https://cristianjaviercano.github.io/minijuegos/)
   * [Anylogic explicacion](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/README.md)
     * [Call center](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/call-center.md)
-    * [Tienda de Pasteles CRC](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-crc.md)
+    * [Tienda de Pasteles DC](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
 
 ## Tienda de libros
 
