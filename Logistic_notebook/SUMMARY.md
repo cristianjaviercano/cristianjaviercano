@@ -59,3 +59,7 @@
 * [Software de Simulacion: Anylogic](simulacion-discreta/software-de-simulacion-anylogic/README.md)
   * [Retos de simulacion](https://cristianjaviercano.github.io/Retos/)
   * [Mini juegos](https://cristianjaviercano.github.io/minijuegos/)
+
+## Tienda de libros
+
+* [Estanteria de libros](tienda-de-libros/estanteria-de-libros.md)
