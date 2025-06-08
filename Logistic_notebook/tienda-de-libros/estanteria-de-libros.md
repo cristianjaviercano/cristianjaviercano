@@ -18,7 +18,7 @@ We invite you to be part of the launch of a unique literary work: **"The Requiem
 
 ![](../.gitbook/assets/coverENG.jpg)
 
-Buy now---> here
+Buy now---> [here](https://go.hotmart.com/Q100177044E)
 
 </details>
 
