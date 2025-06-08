@@ -10,4 +10,28 @@ icon: books
 
 ### Cuentos cortos a la venta.
 
-<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody><tr><td>The requiem of the Sea:<br>We invite you to be part of the launch of a unique literary work: <strong>"The Requiem of the Sea"</strong>. This isn't just a short story; it's an immersive, poetic, and deeply emotional experience based on the legendary tragedy of the San José galleon. This product has been created with exceptional quality, from the narrative to the visual materials, to ensure that both you and your customers will be captivated.</td><td><a href="../.gitbook/assets/coverENG.jpg">coverENG.jpg</a></td></tr><tr><td>ECos del San josé: El caos ruge. Los cañones truenan. El mar reclama el barco más poderoso de su tiempo. Pero en medio del naufragio, un hombre no busca salvarse, busca encontrarla a ella. Su rostro se revela "como mi muerte, pero también como mi vida". Una historia de amor que desafía el tiempo y la tragedia.</td><td><a href="../.gitbook/assets/Ecos del San Jose!.jpg">Ecos del San Jose!.jpg</a></td></tr></tbody></table>
+<details>
+
+<summary><strong>The Requiem of the Sea</strong></summary>
+
+We invite you to be part of the launch of a unique literary work: **"The Requiem of the Sea"**. This isn't just a short story; it's an immersive, poetic, and deeply emotional experience based on the legendary tragedy of the San José galleon. This product has been created with exceptional quality, from the narrative to the visual materials, to ensure that both you and your customers will be captivated.
+
+![](../.gitbook/assets/coverENG.jpg)
+
+Buy now---> here
+
+</details>
+
+<details>
+
+<summary>Ecos del San josé.</summary>
+
+El caos ruge. Los cañones truenan. El mar reclama el barco más poderoso de su tiempo. Pero en medio del naufragio, un hombre no busca salvarse, busca encontrarla a ella. Su rostro se revela "como mi muerte, pero también como mi vida". Una historia de amor que desafía el tiempo y la tragedia.
+
+![](<../.gitbook/assets/Ecos del San Jose!.jpg>)
+
+#### Promoción Especial: **Ecos del San José**
+
+Descubre un relato donde el amor desafía las tormentas y la temporalidad. **"Ecos del San José"** no es solo un cuento, es una experiencia épica sumergida en la historia y la emoción. Perfecto para aquellos que buscan una narrativa que los transporte a épocas pasadas, donde el romance y el destino se entrelazan en un mar de incertidumbres y descubrimientos. Adquiere este título hoy y siente cada batida del océano y cada latido de un amor eterno. ¡No te lo pierdas! Adquiere tu copia ---> [AQUI!](https://go.hotmart.com/C100167402Y)
+
+</details>
