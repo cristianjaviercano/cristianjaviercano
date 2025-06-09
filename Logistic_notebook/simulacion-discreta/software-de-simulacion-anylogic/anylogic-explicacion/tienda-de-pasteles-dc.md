@@ -44,7 +44,7 @@ El flujo para la producción de alfajores es el siguiente:
 
 <details>
 
-<summary><strong>Proceso del Queque o Bizcocho (Insumo: Masa)</strong></summary>
+<summary><strong>Proceso del Queque o Bizcocho</strong></summary>
 
 El flujo para la producción de queques sigue una ruta diferente en las etapas iniciales:
 
