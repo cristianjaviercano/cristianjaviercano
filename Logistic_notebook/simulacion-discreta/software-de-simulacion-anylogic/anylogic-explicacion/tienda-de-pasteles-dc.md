@@ -14,7 +14,7 @@ esta vez abordaremos la simulacion de eventos discretos desde la contruccion de 
 
 **Fecha:** Junio de 2025
 
-**Resumen del Caso:** La empresa **Pasteles DC** se especializa en la producción de dos artículos de repostería: **Alfajores** y **Queques**. Para optimizar su eficiencia, la empresa utiliza insumos pre-procesados (galletas y masas pre-hechas). El sistema de producción se caracteriza por un flujo complejo donde ambos productos compiten por recursos compartidos, como los hornos y la estación de envasado, y siguen rutas diferenciadas en ciertas etapas del proceso. El sistema opera bajo una restricción de capacidad máxima de producción (WIP - Work In Process). El presente estudio tiene como objetivo desarrollar un modelo de simulación de eventos discretos para replicar el sistema de producción actual, identificar cuellos de botella y evaluar el impacto potencial de inversiones en capacidad.
+**Caso:** La empresa **Pasteles DC** se especializa en la producción de dos artículos de repostería: **Alfajores** y **Queques**. Para optimizar su eficiencia, la empresa utiliza insumos pre-procesados (galletas y masas pre-hechas). El sistema de producción se caracteriza por un flujo complejo donde ambos productos compiten por recursos compartidos, como los hornos y la estación de envasado, y siguen rutas diferenciadas en ciertas etapas del proceso. El sistema opera bajo una restricción de capacidad máxima de producción (WIP - Work In Process). El presente estudio tiene como objetivo desarrollar un modelo de simulación de eventos discretos para replicar el sistema de producción actual, identificar cuellos de botella y evaluar el impacto potencial de inversiones en capacidad.
 
 ***
 
@@ -24,7 +24,43 @@ Ustedes han sido contratados como ingenieros de procesos por **Pasteles DC**. La
 
 El reto consiste en construir un modelo de simulación de eventos discretos en **AnyLogic** que replique fielmente el sistema de producción de Pasteles DC. El objetivo final es identificar el principal cuello de botella del sistema y proponer una mejora cuantificable, evaluando su impacto en la producción total.
 
-**Detalles del Sistema de Producción**
+<details>
+
+<summary><strong>Proceso del Alfajor</strong></summary>
+
+El flujo para la producción de alfajores es el siguiente:
+
+1. **Suministro y Control de Capacidad**: El proceso inicia con un lote de X **galletas**. Estas ingresan al sistema principal de producción siempre.
+2. **Control de Calidad (Galleta)**: Una vez dentro del sistema, la galleta pasa por una estación de control de calidad exclusiva para este insumo, con su propio tiempo de proceso.
+3. **Moldeado**: La galleta es moldeada según las especificaciones del alfajor.
+4. **Primer Horneado**: El producto ingresa a la cola de la estación de **Horneado**. Esta es la primera estación donde compite por un recurso compartido (el horno) con los queques.
+5. **Aplicación de Manjar**: Tras el horneado, pasa a la estación donde se le añade el manjar. Esta es otra estación con recursos compartidos. En este punto, el producto se podría reclasificar internamente (ej. de "galleta" a "galleta con manjar").
+6. **Segundo Horneado**: Después de la aplicación de manjar, el producto **regresa a la cola del horno** para un segundo proceso de horneado, probablemente para sellar el producto.
+7. **Envasado**: Una vez completado el segundo horneado, el alfajor terminado pasa a la línea de envasado, que es el último recurso compartido del sistema. El tiempo de este proceso sigue una distribución exponencial.
+8. **Salida del Sistema**: Al ser envasado, el producto final sale del sistema, siendo contabilizado como producción terminada (`Sink`).\
+
+
+</details>
+
+<details>
+
+<summary><strong>Proceso del Queque o Bizcocho (Insumo: Masa)</strong></summary>
+
+El flujo para la producción de queques sigue una ruta diferente en las etapas iniciales:
+
+1. **Suministro y Control de Capacidad**: El proceso inicia con un lote de Y **unidades de masa**.
+2. **Control de Calidad (Masa)**: La masa ingresa a su propia línea de control de calidad, que es distinta a la de las galletas y tiene su propio tiempo de proceso.
+3. **Amasado**:  Requiere ser procesada en la estación de **Amasado**. Esta es una estación dedicada únicamente a este producto.
+4. **Moldeado**: Después del amasado, la masa es moldeada.
+5. **Primer Horneado**: El queque moldeado entra a la cola compartida de la estación de **Horneado**.
+6. **Aplicación de Manjar**: Pasa a la estación de manjar compartida.
+7. **Segundo Horneado**: Al igual que el alfajor, el queque con manjar **regresa a la cola del horno** para su segundo horneado.
+8. **Envasado**: El producto terminado se dirige a la estación de envasado final.
+9. **Salida del Sistema**: Una vez envasado, el queque sale del sistema (`Sink`).
+
+</details>
+
+**Detalles del Sistema de Producción**&#x20;
 
 * **Productos y Entidades:**
   * Se debe crear un tipo de agente `Producto` con un parámetro `tipo_producto` (ej. 1 para Alfajor, 2 para Queque).
@@ -32,16 +68,26 @@ El reto consiste en construir un modelo de simulación de eventos discretos en *
 * **Flujo del Proceso y Estaciones:**
   1. **Llegada de Insumos**: Al inicio de cada día (simulación inicia en t=0), llegan **150 unidades** de galletas (Mp1) y 9**0 unidades** de masa. (Mp2)
   2. **Control de Calidad**: Procesos separados para galletas y masas.
-  3. **Amasado**: Exclusivo para las masas.
+     1. Calidad de Galletas  Triangular (2,5,9)
+     2. Calidad de Masa Triangular (3,6,9)
+  3. **Amasado**: Exclusivo para las masas.&#x20;
+     1. tiempo de amasado Triangular(22,30,32)
   4. **Moldeado**: Para dar forma final a los productos.
+     1. Moldeado para Alfajor triangular(9,10,11)
+     2. Moldeado para la masa triangular(12,13,14)
   5. **Horneado**: Recurso compartido por ambos productos.
+     1. horneado para Alfajor triangular (2,15,28)
+     2. Horneado para Queque  triangular (13,16,19)
   6. **Aplicación de Manjar**: Estación compartida por ambos productos.
+     1. Alfajor triangular(7,9,13)
+     2. Queque triangular(8,10,14)
   7. **Lógica Condicional**: Tras la aplicación de manjar, el producto vuelve a la cola del horno para un segundo horneado.
-  8. **Envasado**: Estación final compartida.
+  8. **Envasado/Empaquetado**: Estación final compartida.
+     1. exponential(1.0/5) para cada producto
 * **Distribuciones de Tiempos de Proceso:**
-  * **Control de Calidad**: Distribución **Triangular ()**
-  * **Horneado**: Distribución **Triangular ()**
-  * **Aplicación de Manjar**: Distribución **Triangular. ()**
+  * **Control de Calidad**: Distribución **Triangular**
+  * **Horneado**: Distribución **Triangular**&#x20;
+  * **Aplicación de Manjar**: Distribución **Triangular.**
   * **Envasado**: El tiempo de proceso sigue una distribución **Exponencial** con una media de 5 minutos por producto.
 * **Restricciones del Sistema:**
   * El sistema completo tiene una **capacidad máxima de 100 productos** (WIP). Las nuevas materias primas deben esperar en una cola de suministro si el sistema está lleno. Se debe modelar utilizando los bloques `RestrictedAreaStart` y `RestrictedAreaEnd`.
