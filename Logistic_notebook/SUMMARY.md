@@ -62,6 +62,7 @@
   * [Anylogic explicacion](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/README.md)
     * [Call center](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/call-center.md)
     * [Tienda de Pasteles DC](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
+    * [Manufactura de Calzado DC](simulacion-discreta/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
 
 ## Tienda de libros
 
