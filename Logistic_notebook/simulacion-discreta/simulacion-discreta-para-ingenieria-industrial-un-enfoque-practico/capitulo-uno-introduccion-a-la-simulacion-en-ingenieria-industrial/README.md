@@ -148,7 +148,7 @@ El proceso de modelado a menudo es iterativo. Se puede comenzar con un modelo re
 
 La habilidad para realizar abstracciones y simplificaciones adecuadas, sin perder la fidelidad esencial del modelo respecto al sistema y los objetivos del estudio, es una de las competencias más importantes de un **buen modelador.**
 
-#### Tipos de Modelos de Simulacion que buscan imitar la Reaidad.
+#### Tipos de Modelos de Simulacion que buscan imitar la Realidad.
 
 Los modelos pueden clasificarse de diversas maneras, lo que ayuda a entender su naturaleza y las herramientas adecuadas para su análisis
 
