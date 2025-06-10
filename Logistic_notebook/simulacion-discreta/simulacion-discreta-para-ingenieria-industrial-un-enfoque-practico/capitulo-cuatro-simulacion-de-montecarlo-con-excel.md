@@ -114,3 +114,99 @@ Una mejor implementación sería: Celda D1: `=ALEATORIO()` Celda E1: `=SI(D1<=(B
 * **Fórmula en Excel:** `=INV.BINOM(n, p, ALEATORIO())` o en inglés `=BINOM.INV(trials, probability_s, RAND())`.  &#x20;
   * Reemplace `n` y `p` con los parámetros deseados.
 
+***
+
+### **El Problema de la Diana**
+
+Imagina un tablero cuadrado que tiene un lado de longitud 2 y un área de 4 unidades. Dentro de este cuadrado, inscribimos un círculo de radio 1, cuya área es $$πr2=π$$.
+
+<img src="../../.gitbook/assets/file.excalidraw (8).svg" alt="Problema de la Diana" class="gitbook-drawing">
+
+Si lanzamos _dardos al azar_ a este tablero, de manera que cada punto del cuadrado tenga la misma probabilidad de ser impactado, la proporción de dardos que caen dentro del círculo con respecto al total de dardos lanzados será aproximadamente igual a la **proporción de sus áreas.**
+
+El método se basa en un experimento estocástico. Considere un espacio muestral definido por un cuadrado en el plano cartesiano. Para simplificar el modelo, se suele centrar este cuadrado en el origen, con vértices en los puntos (1, 1), (1, -1), (-1, -1), y (-1, 1). La longitud de cada lado es, por tanto, de 2 unidades, y su **área total** $$A_{cuadrado​} = 4$$ **unidades cuadradas**.
+
+Dentro de este cuadrado, se inscribe un círculo con centro en el origen (0,0) y radio r=1. El área de este **círculo** $$A_{circulo}$$ se define por la fórmula $$πr2$$**,** que en este caso es simplemente π.
+
+El experimento consiste en generar una gran cantidad de puntos aleatorios (x,y) que caen de manera uniforme dentro de los límites del cuadrado. Esto significa que cada punto tiene la misma probabilidad de aterrizar en cualquier lugar del área del cuadrado.
+
+$$
+−1≤x≤1 \ y\  −1≤y≤1
+$$
+
+Para cada punto generado, se evalúa si este ha caído dentro del círculo inscrito. Un punto (x,y) se encuentra dentro del círculo si la distancia desde el origen hasta dicho punto es menor o igual al radio del círculo. Según el Teorema de Pitágoras, esta condición se expresa matemáticamente como:
+
+$$
+x 
+2
+ +y 
+2
+ ≤r 
+2
+$$
+
+Dado que r=1, la condición se simplifica a
+
+$$
+x 
+2
+ +y 
+2
+ ≤1
+$$
+
+* Teóricamente, la probabilidad (P) de que un dardo lanzado al azar impacte dentro del círculo es la razón entre el área del círculo y el área del cuadrado
+
+$$
+P(dentro del círculo)= \frac{A_{círculo}}{ A_{cuadrado}}= \frac{π}{4}
+$$
+
+#### **Forma Algebraica y Algoritmo de Implementación**
+
+Al reordenar algebraicamente la expresión anterior para despejar π, se obtiene la fórmula de estimación utilizada en la simulación:
+
+$$
+π≈4⋅\frac{N_{total}}{​N_{círculo​}}​
+$$
+
+* **Inicialización**: Definir el número total de "dardos" a lanzar $$N_{total}$$​ e inicializar un contador para los puntos dentro del círculo $$N_{círculo}​$$ en cero.
+* **Generación de Puntos**: Iniciar un bucle que se repita N\_total​ de veces. En cada iteración, generar dos números aleatorios, x e y, a partir de una distribución uniforme en el intervalo \[-1, 1].
+* **Evaluación de Condición**: Para cada punto (x,y) generado, calcular x2+y2.
+* **Conteo**: Si el resultado de la evaluación es menor o igual a 1, incrementar el contador N\_círculo​.
+* **Estimación Final**: Una vez completado el bucle, calcular la aproximación de π utilizando la fórmula derivada: $$π_{estimado​} = 4⋅\frac{N_{círculo}}{​{N_{total}}}$$​.
+
+
+
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-06-10 a la(s) 1.54.58 p.m..png" alt="" width="375"><figcaption></figcaption></figure>
+
+### **Lógica del Modelo (Single-Server Queue):**
+
+El reloj de la simulación avanzará de cliente en cliente. Para cada cliente, se debe determinar:
+
+1. ¿Cuándo llega?
+2. ¿Cuánto tiempo requiere su servicio?
+3. ¿Cuándo comienza su servicio? Esto depende de su hora de llegada y de cuándo se desocupa el servidor.
+4. ¿Cuánto tiempo esperó en la cola?
+5. ¿Cuándo finaliza su servicio y abandona el sistema?
+
+El objetivo es recopilar datos sobre el rendimiento del sistema (KPIs), como el tiempo de espera promedio, la utilización del servidor y la longitud de la cola.
+
+#### **Implementación del Modelo en Microsoft Excel**
+
+Se estructurará la hoja de cálculo en dos secciones:&#x20;
+
+<details>
+
+<summary>Los parámetros de entrada (distribuciones de probabilidad)  </summary>
+
+**Parámetros de Entrada y Distribuciones**
+
+Primero, se definen las distribuciones de probabilidad para los tiempos entre llegadas y los tiempos de servicio. Este es el núcleo del método de Monte Carlo, donde se usarán números aleatorios para muestrear de estas distribuciones.
+
+<table><thead><tr><th>Tiempo</th><th data-type="number">Probabilidad</th><th data-type="number">Probabilidad acum</th><th data-type="number">Rango inferior</th></tr></thead><tbody><tr><td>1</td><td>0.25</td><td>0.25</td><td>0</td></tr><tr><td>2</td><td>0.4</td><td>0.65</td><td>0.25</td></tr><tr><td>3</td><td>0.2</td><td>0.85</td><td>0.65</td></tr><tr><td>4</td><td>0.15</td><td>1</td><td>0.85</td></tr></tbody></table>
+
+</details>
+
+
+
+1. La tabla de simulación principal.

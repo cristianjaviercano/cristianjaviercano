@@ -72,7 +72,7 @@ para ayuda con el sotware por favor visitar --->[HELP](https://anylogic.help/)<-
 
 <summary>Ejercicio Número 1.2.1 .  modelado de montecarlo</summary>
 
-una tienda tiene solo nun check out counter, los clientes llegan en tiempos aleatorios entre 1 a 8 minutos,  cada llegada tiene la misma probabilidad  de ocurrencia , como se muestra en la tabla 1, el servicio varia entre 1 a 6 minutos con las probabilidades mostradas en la tabla 2
+una tienda tiene solo un check out counter, los clientes llegan en tiempos aleatorios entre 1 a 8 minutos,  cada llegada tiene la misma probabilidad  de ocurrencia , como se muestra en la tabla 1, el servicio varia entre 1 a 6 minutos con las probabilidades mostradas en la tabla 2
 
 #### Tabla 1 - distribucion de tiempo entre llegadas
 
