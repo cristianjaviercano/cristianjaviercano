@@ -94,3 +94,6 @@ $$
 P_0 = \frac{1}{16}, P_1 = \frac{4}{16}, P_2 = \frac{6}{16},P_3 = \frac{4}{16},P_4 = \frac{1}{16}.
 $$
 
+* calcule L y como se lo explicaria a los peluqueros?
+* en el caso de cada valor posible del número de clientes en el sistema, especifique cuanto sclientes hay en la cola, y como se lo explica a los peluqueros?
+* Dado que llega un promedo de 4 clientes por hora y esperan el corte, determine W y Wq, desfriba los resultados en terminos que los peluqueros entiendan.
