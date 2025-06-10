@@ -86,3 +86,11 @@ Se ha diseñado un sistema de inventario en el que los pedidos llegan de manera 
 
 Utilice las fórmulas pertinentes para calcular las métricas del sistema, como el nivel de inventario esperado y la probabilidad de ruptura de stock.
 
+#### Problema 4:
+
+Juan y pedro son dos peluqueros que opetran de manera independiente, Tienen dos sillas para clientes que esperan su corte, por que el número de clientes en el sistema varia en 0 y 4, para n = 1, 2, 3, 4, la probabilidad de. $$P_n$$ de que halla exactamente n cllientes en el sistema es:
+
+$$
+f(x) = x * e^{2 pi i \xi x}
+$$
+
