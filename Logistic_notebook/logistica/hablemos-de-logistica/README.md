@@ -9,7 +9,7 @@ coverY: 0
 
 ### ![](../../.gitbook/assets/CRCwh.png)
 
-<img src="../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="la logistica es el ADN del ingniero" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (1) (1) (1) (1).svg" alt="la logistica es el ADN del ingniero" class="gitbook-drawing">
 
 ### Descripción del Contenido
 
