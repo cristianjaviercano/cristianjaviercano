@@ -4,7 +4,7 @@ description: se define la simulación y su contexto en la ingeniería industrial
 
 # Capitulo uno: Introducción a la Simulación en Ingeniería Industrial
 
-<img src="../../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
 
 ### Objetivos del capitulo
 

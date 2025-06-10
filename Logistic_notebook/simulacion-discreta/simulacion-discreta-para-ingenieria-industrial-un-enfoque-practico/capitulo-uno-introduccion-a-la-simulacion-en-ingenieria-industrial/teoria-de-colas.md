@@ -94,7 +94,7 @@ donde $$\lambda$$  es la tasa promedio de ocurrencia de eventos y ( e ) es la ba
 
 </details>
 
-<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="Sistema de colas conceptual" class="gitbook-drawing">
 
 ### Disciplina de la cola
 
@@ -112,24 +112,16 @@ Dependiendo de las necesidades específicas del servicio y de los requisitos org
 los diferentes tipos de mecanismos y cómo pueden ser implementados.
 
 {% tabs %}
-{% tab title="undefined" %}
+{% tab title="Unico Servidor" %}
+En este sistema, un único servidor gestiona todas las solicitudes de los usuarios. Este método es sumamente simple de implementar y administrar, lo que lo hace muy atractivo para proyectos pequeños o medianos debido a su bajo costo inicial y económico.&#x20;
 
-{% endtab %}
+Sin embargo, presenta ciertas limitaciones significativas si no se maneja adecuadamente el tráfico de solicitudes. A medida que el volumen de tráfico y solicitudes aumenta, el servidor puede fácilmente convertirse en un cuello de botella, afectando negativamente el rendimiento general del sistema.&#x20;
 
-{% tab title="undefined" %}
-En este sistema, un único servidor gestiona todas las solicitudes de los usuarios. Este método es sumamente simple de implementar y administrar, lo que lo hace muy atractivo para proyectos pequeños o medianos debido a su bajo costo inicial y económico. Sin embargo, presenta ciertas limitaciones significativas si no se maneja adecuadamente el tráfico de solicitudes. A medida que el volumen de tráfico y solicitudes aumenta, el servidor puede fácilmente convertirse en un cuello de botella, afectando negativamente el rendimiento general del sistema. Esto se debe a que la capacidad de procesamiento de un solo servidor es finita y puede llevar a tiempos de respuesta más lentos, especialmente durante períodos de alta demanda. Además, el riesgo de tiempo de inactividad es mayor, ya que si el servidor falla, no hay copias de seguridad inmediatas que tomen su lugar. Es vital evaluar cuidadosamente estas consideraciones antes de optar por un enfoque de servidor único para aplicaciones críticas o de
+Esto se debe a que la capacidad de procesamiento de un solo servidor es finita y puede llevar a tiempos de respuesta más lentos, especialmente durante períodos de alta demanda. Además, el riesgo de tiempo de inactividad es mayor, ya que si el servidor falla, no hay copias de seguridad inmediatas que tomen su lugar. Es vital evaluar cuidadosamente estas consideraciones antes de optar por un enfoque de servidor único para aplicaciones críticas o de
 {% endtab %}
 
 {% tab title="Mecanismos de Servidores Múltiples" %}
 En este sistema, un único servidor gestiona todas las solicitudes. Este método es simple de implementar y gestionar, pero puede generar cuellos de botella si el volumen de solicitudes es alto.
-{% endtab %}
-{% endtabs %}
-
-####
-
-
-
-####
 
 **Servidores Paralelos**
 
@@ -142,4 +134,59 @@ Las solicitudes pasan de un servidor a otro en una secuencia predefinida. Este e
 #### Sistemas Distribuidos
 
 Esta estrategia combina múltiples servidores ubicados en diferentes lugares, permitiendo gestionar solicitudes en una amplia área geográfica. Es útil para organizaciones que operan en varias ubicaciones.
+{% endtab %}
+{% endtabs %}
+
+<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="Sistema de colas Basico" class="gitbook-drawing">
+
+### Distribuciones de tiempos de servicio:
+
+* M = Distribucion exponencial
+
+La distribución exponencial es una distribución de probabilidad continua que describe el tiempo entre eventos en un proceso de Poisson. Es una distribución clave para modelar el tiempo de servicio en sistemas de colas. Se caracteriza por su tasa de ocurrencia constante, lo que significa que no importa cuánto tiempo haya pasado desde el último evento, la probabilidad de que ocurra un nuevo evento en el siguiente instante es la misma. La función de densidad de probabilidad de una distribución exponencial se expresa como:
+
+$$
+f(x; \lambda) = \lambda e^{-\lambda x}
+$$
+
+donde ( \lambda ) es la tasa de ocurrencia y ( x ) es el tiempo. Esta propiedad de "sin memoria" hace que sea muy útil en diversos contextos, como la modelización de tiempos de espera en colas y sistemas de telecomunicaciones.
+
+* D = distribucion degenerada
+
+La **distribución degenerada** es una distribución de probabilidad que concentra toda su probabilidad en un solo punto. En otras palabras, es una distribución donde una variable aleatoria siempre toma el mismo valor con probabilidad 1. Si ( X ) es una variable con distribución degenerada en ( a ), se denota como $$X \sim D(a)$$ y se define por:
+
+$$
+P(X = a) = 1
+$$
+
+Esta distribución no tiene variabilidad y, por lo tanto, su varianza es cero. En contextos prácticos, se considera que no introduce incertidumbre o aleatoriedad en los escenarios de modelización.
+
+* Distribucion de Erlang
+
+La **distribución de Erlang** es un caso particular de la distribución gamma, utilizada frecuentemente en la teoría de colas y en modelización de tiempo entre eventos. La distribución de Erlang está definida por dos parámetros: un número entero ( k ), que indica el número de fases exponenciales idénticas, y un parámetro de tasa $$\lambda$$ , que es la tasa de cada fase exponencial. Se denota como $$X \sim \text{Erlang}(k, \lambda)$$ y su función de densidad es:
+
+$$
+f(x; k, \lambda) = \frac{\lambda^k x^{k-1} e^{-\lambda x}}{(k-1)!}, \quad x \geq 0
+$$
+
+Esta distribución se caracteriza por su capacidad de modelar procesos donde se requiere que ocurran múltiples eventos independientes previamente.
+
+* G = Distribucion General
+
+La **distribución general** (G) se refiere a una clase amplia de distribuciones que no se ajustan necesariamente a una forma específica, como las distribuciones normal, exponencial o Erlang. En modelado estadístico y teoría de colas, se utiliza para representar procesos que tienen características arbitrarias y no específicas. La función de densidad de probabilidad y las propiedades exactas de una distribución general pueden variar significativamente dependiendo del contexto particular en el que se aplique.
+
+### Notacion de la teoria de colas
+
+* estado del sistema: Numero de clientes en el sistema
+* Longitud de la cola: Numero de clientes que esperan el servicio
+  * estado del sistema _menos_ numero de clientes a quienes se les da el servicio.
+* N(t): Número de clientes en el sistema de colas en el tiempo $$t(t \ge 0)$$
+* $$P_n(t)$$: Probabilidad de que exactamente n clientes esten en el sistema en el tiempo t, dado el número en tiempo 0
+* s: Número de servidores
+* $$\lambda_n$$: tasa media de llegadas de nuevos clientes cuando hay n clientes en el sistema
+* $$\mu_n$$ tasa media de servicio en todo el sistema cuando hay n clientes en el sistema
+
+
+
+
 
