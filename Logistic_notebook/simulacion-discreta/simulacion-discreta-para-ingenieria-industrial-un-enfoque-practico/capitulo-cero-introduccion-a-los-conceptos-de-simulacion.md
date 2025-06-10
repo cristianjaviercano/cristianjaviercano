@@ -1,6 +1,6 @@
 # Capitulo cero: introduccion a los conceptos de simulacion
 
-<img src="../../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Unrapido vistazo al mundo e la simulacion" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="Unrapido vistazo al mundo e la simulacion" class="gitbook-drawing">
 
 Bienvenido al fascinante mundo de la simulación de eventos discretos, una disciplina que se ha convertido en una herramienta indispensable en el arsenal del ingeniero industrial moderno. En una era caracterizada por la creciente complejidad de los sistemas productivos, logísticos y de servicios, la capacidad de modelar, analizar y optimizar estos sistemas es más crucial que nunca. La investigación de operaciones (IO), en general, ha demostrado ser un motor tecnológico fundamental para el éxito de innumerables organizaciones a nivel mundial , y dentro de este campo, la simulación emerge como una de sus técnicas más versátiles y poderosas. Empresas líderes, como Federal Express, han integrado la IO en el núcleo de sus procesos de toma de decisiones estratégicas, logrando optimizar desde la inversión en equipos hasta la estructura de sus complejas rutas logísticas.
 

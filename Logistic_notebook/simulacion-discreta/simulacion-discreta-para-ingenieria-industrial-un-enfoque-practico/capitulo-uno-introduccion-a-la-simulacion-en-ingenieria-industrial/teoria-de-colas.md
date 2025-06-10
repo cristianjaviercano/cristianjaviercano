@@ -94,7 +94,7 @@ donde $$\lambda$$  es la tasa promedio de ocurrencia de eventos y ( e ) es la ba
 
 </details>
 
-<img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="Sistema de colas conceptual" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Sistema de colas conceptual" class="gitbook-drawing">
 
 ### Disciplina de la cola
 
@@ -137,7 +137,7 @@ Esta estrategia combina múltiples servidores ubicados en diferentes lugares, pe
 {% endtab %}
 {% endtabs %}
 
-<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="Sistema de colas Basico" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
 
 ### Distribuciones de tiempos de servicio:
 
@@ -232,9 +232,42 @@ En la teoría de colas, el **proceso de nacimiento y muerte** es un tipo de proc
 
 El proceso de nacimiento y muerte es básico en el análisis de colas **M/M/1**, ayudando a calcular métricas como el tamaño promedio de la cola y el tiempo de espera medio, cruciales para optimizar el rendimiento de sistemas de servicio.
 
+#### Ejemplo Uno de Teoría de Colas
 
+**Problema:**
 
+Supongamos un sistema de colas **M/M/1** donde los clientes llegan a una tasa de $$\lambda = 4$$ clientes por hora y son atendidos a una tasa de $$\mu = 5$$ clientes por hora. Calcule el tamaño promedio de la cola y el tiempo de espera promedio en el sistema.
 
+**Solución:**
+
+Primero, calculemos la utilización del sistema ((\rho)):\
+$$\rho = \frac{\lambda}{\mu} = \frac{4}{5} = 0.8$$
+
+**Tamaño promedio de la cola ((L\_q)):**\
+$$L_q = \frac{\rho^2}{1 - \rho} = \frac{0.8^2}{1 - 0.8} = \frac{0.64}{0.2} = 3.2$$
+
+**Tiempo de espera promedio en el sistema ((W)):**\
+$$W = \frac{1}{\mu - \lambda} = \frac{1}{5 - 4} = 1 \text{ hora}$$
+
+Por lo tanto, el tamaño promedio de la cola es de 3.2 clientes, y el tiempo de espera promedio en el sistema es de 1 hora.
+
+#### Ejemplo 2: Sistema con múltiples servidores
+
+Consideremos un sistema con **N** servidores, donde la tasa de llegada de clientes es $$\lambda$$ y cada servidor atiende a una tasa de $$\mu$$.
+
+**Utilización del sistema** $$\rho$$**:**\
+$$[ \rho = \frac{\lambda}{N \cdot \mu} ]$$
+
+**Probabilidad de que un cliente espere** $$P_w$$**:**\
+Cuando la utilización del sistema es alta $$\rho \approx 1$$, es más probable que haya clientes esperando. Se puede calcular usando la fórmula de Erlang B o C dependiendo del modelo elegido.
+
+**Tamaño promedio de la cola** $$L_q$$**:**\
+$$[ L_q = \frac{(\frac{\lambda}{\mu})^N (\rho)}{N! (1-\rho)^2} \times P_0 ]$$\
+Donde  $$P_0$$ es la probabilidad de que no haya clientes en el sistema.
+
+**Tiempo de espera promedio en el sistema ((W)):**\
+$$[ W = \frac{L}{\lambda} ]$$\
+Donde ( L ) es el número promedio de clientes en el sistema, que puede ser calculado como $$L = L_q + \frac{\lambda}{\mu}$$.
 
 
 
