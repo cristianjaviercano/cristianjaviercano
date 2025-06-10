@@ -213,6 +213,27 @@ La **distribución exponencial** es fundamental en la teoría de colas debido a 
 
 La simplicidad matemática de la distribución exponencial permite realizar cálculos y simulaciones eficientes, siendo una herramienta esencial para la optimización y diseño de sistemas de colas.
 
+#### Proceso de Nacimiento y Muerte
+
+En la teoría de colas, el **proceso de nacimiento y muerte** es un tipo de proceso estocástico que modela sistemas donde las llegadas y servicios pueden ser descritos por tasas constantes. Estos nombres se deben a la analogía con los procesos demográficos: "nacimiento" se refiere a la llegada de un nuevo cliente al sistema, mientras que "muerte" representa la salida de un cliente tras ser atendido.
+
+**Descripción del Proceso**
+
+1. **Estado del sistema**: El sistema se encuentra en un estado determinado por el número de clientes presentes.
+2. **Tasa de nacimiento ((\lambda))**: La tasa a la que nuevos clientes llegan al sistema. En modelos de colas, esta suele seguir la distribución exponencial.
+3. **Tasa de muerte ((\mu))**: La tasa a la que los clientes completan su servicio y dejan el sistema. También modelada a menudo por la distribución exponencial.
+
+**Ejecución**
+
+* **Transiciones entre estados**: Un cambio de estado ocurre cuando un cliente llega o se va.
+* **Balance de tasas**: En el estado estacionario, el sistema puede lograr un equilibrio donde la tasa promedio de nacimientos iguala a la tasa promedio de muertes.
+
+#### Aplicaciones
+
+El proceso de nacimiento y muerte es básico en el análisis de colas **M/M/1**, ayudando a calcular métricas como el tamaño promedio de la cola y el tiempo de espera medio, cruciales para optimizar el rendimiento de sistemas de servicio.
+
+####
+
 
 
 
