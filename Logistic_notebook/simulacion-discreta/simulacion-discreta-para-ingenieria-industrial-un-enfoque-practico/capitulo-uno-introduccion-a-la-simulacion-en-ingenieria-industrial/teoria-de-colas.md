@@ -232,8 +232,6 @@ En la teoría de colas, el **proceso de nacimiento y muerte** es un tipo de proc
 
 El proceso de nacimiento y muerte es básico en el análisis de colas **M/M/1**, ayudando a calcular métricas como el tamaño promedio de la cola y el tiempo de espera medio, cruciales para optimizar el rendimiento de sistemas de servicio.
 
-####
-
 
 
 
