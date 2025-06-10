@@ -220,8 +220,8 @@ En la teoría de colas, el **proceso de nacimiento y muerte** es un tipo de proc
 **Descripción del Proceso**
 
 1. **Estado del sistema**: El sistema se encuentra en un estado determinado por el número de clientes presentes.
-2. **Tasa de nacimiento ((\lambda))**: La tasa a la que nuevos clientes llegan al sistema. En modelos de colas, esta suele seguir la distribución exponencial.
-3. **Tasa de muerte ((\mu))**: La tasa a la que los clientes completan su servicio y dejan el sistema. También modelada a menudo por la distribución exponencial.
+2. **Tasa de nacimiento** $$\lambda$$: La tasa a la que nuevos clientes llegan al sistema. En modelos de colas, esta suele seguir la distribución exponencial.
+3. **Tasa de muerte** $$\mu$$: La tasa a la que los clientes completan su servicio y dejan el sistema. También modelada a menudo por la distribución exponencial.
 
 **Ejecución**
 
@@ -269,7 +269,100 @@ Donde  $$P_0$$ es la probabilidad de que no haya clientes en el sistema.
 $$[ W = \frac{L}{\lambda} ]$$\
 Donde ( L ) es el número promedio de clientes en el sistema, que puede ser calculado como $$L = L_q + \frac{\lambda}{\mu}$$.
 
+#### Sistema de Colas en un Restaurante
+
+En un restaurante, el sistema de colas se puede modelar de manera similar a un sistema de servidores múltiples, donde cada mesero actúa como un servidor capaz de manejar múltiples clientes a la vez.
+
+* **Clientes y Meseros**: Los clientes llegan al restaurante y forman una cola si todos los meseros están ocupados. La tasa de llegada de clientes se simboliza por $$\lambda$$, y cada mesero tiene una tasa de servicio $$\mu$$, que indica la velocidad a la que puede atender a los clientes.
+* **Utilización**: Al igual que en el modelo teórico, la utilización de cada mesero, $$ho$$, se calcula como $$ho = \frac{\lambda}{N \cdot \mu}$$ donde **N** es el número de meseros.
+* **Probabilidad de Espera**: Durante las horas pico, cuando la utilización es alta ($$ho \approx 1$$), es probable que los clientes tengan que esperar antes de ser atendidos.
+* **Tamaño de la Cola y Tiempo de Espera**: Siguiendo las fórmulas mencionadas anteriormente, se puede calcular el tamaño promedio de la cola y el tiempo promedio que un cliente espera en el sistema.
+
+### Ejemplo 3 de un Restaurante con 3 Meseros
+
+Supongamos que un restaurante tiene 3 meseros disponibles para atender a los clientes. La tasa promedio de llegada de clientes al restaurante es de 15 clientes por hora ($$\lambda = 15$$), y cada mesero puede atender a un cliente en un promedio de 20 minutos, es decir, la tasa de servicio por mesero es de 3 clientes por hora ($$\mu = 3$$).
 
 
 
+#### Resolución del Problema
+
+1.  **Cálculo de la Utilización**: La utilización de cada mesero se calcula usando la fórmula:
+
+    $$ho = \frac{\lambda}{N \cdot \mu} = \frac{15}{3 \cdot 3} = \frac{15}{9} = \frac{5}{3} \approx 0.56$$
+
+    Esto indica que cada mesero está ocupado aproximadamente un 56% del tiempo.
+
+#### Otros Cálculos del Sistema de Meseros
+
+2. **Tiempo de Espera en Cola (Wq)**: Este se calcula usando la fórmula de Little y el modelo M/M/c, donde Wq es la cantidad promedio de tiempo que un cliente espera en la cola antes de ser atendido.
+
+Para calcular el **Tiempo de Espera en Cola (Wq)**, se utiliza la fórmula para sistemas M/M/c:
+
+$$Wq = \frac{L_q}{\lambda} = \frac{\rho^c \cdot \frac{1}{c!} \cdot \frac{c \cdot \mu}{c \cdot \mu - \lambda} \cdot P_0}{\lambda}$$
+
+donde:
+
+* $$\rho$$ es la utilización del sistema.
+* c es el número de meseros.
+* $$P_0$$ es la probabilidad de que haya 0 clientes en el sistema.
+
+Para calcular $$P_0$$, que es la probabilidad de que haya 0 clientes en el sistema, se utiliza la siguiente fórmula en un sistema M/M/c:
+
+$$
+P_0 = \left[ \sum_{n=0}^{c-1} \frac{(\lambda/\mu)^n}{n!} + \frac{(\lambda/\mu)^c}{c!} \cdot \frac{1}{1 - \rho} \right]^{-1}
+$$
+
+donde:
+
+* $$\lambda$$ es la tasa de llegada de clientes.
+* $$\mu$$ es la tasa de servicio de los meseros.
+* $$\rho = \frac{\lambda}{c \cdot \mu}$$ es la utilización del sistema.
+
+Esta fórmula ayuda a determinar la probabilidad de que el sistema esté vacío, lo cual es crucial para calcular otros parámetros del sistema de colas.
+
+***
+
+#### teoria de colas en sistemas de inventarios
+
+Para ilustrar el uso de la teoría de colas en la gestión de inventarios, consideremos un ejemplo sencillo de un sistema de inventario donde las llegadas de demanda siguen un proceso de Poisson y los tiempos de reposición son exponencialmente distribuidos.
+
+Imaginemos un minorista que gestiona un inventario con las siguientes características:
+
+* La tasa de llegada de demanda es $$\lambda = 5\text{ unidades/día}$$.
+* La tasa de suministro o reposición es $$\mu = 8\text{ unidades/día}$$.
+
+#### Cálculo de las métricas del sistema:
+
+1. **Nivel de Inventario Esperado**: Se basa en calcular el número promedio de unidades en inventario considerando las tasas de llegada y servicio. Generalmente se asume que el inventario opera bajo un control $$(s, Q)$$ donde $s$ es el punto de reorden y $Q$ es la cantidad de pedido.
+
+En este contexto, calcularemos la utilización del sistema como:
+
+$$ho = \frac{\lambda}{\mu} = \frac{5}{8} = 0.625$$
+
+Esto indica que el sistema está ocupado el 62.5% del tiempo, sugiriendo una baja probabilidad de ruptura de stock mientras el inventario es repuesto consistentemente. La probabilidad exacta de ruptura de stock y el nivel de inventario se derivan adicionalmente mediante métodos específicos de la teoría de colas, como abordar el sistema como un modelo $$M/M/1$$ o $$M/M/c$$, dependiendo de la configuración.
+
+#### Ejemplo de Cálculo del Nivel de Inventario
+
+Supongamos un sistema de gestión de inventario con las siguientes características:
+
+* **Tasa de llegada** $$\lambda$$**:** 5 unidades por hora
+* **Tasa de servicio** $$\mu$$**:** 8 unidades por hora
+* **Punto de reorden s:** 10 unidades
+* **Cantidad de pedido Q:** 20 unidades
+
+Para calcular el **nivel de inventario esperado**, primero determinamos la **utilización del sistema** como se muestra anteriormente:
+
+$$ho = \frac{\lambda}{\mu} = \frac{5}{8} = 0.625$$
+
+Con esta utilización y asumiendo un modelo de tipo $$M/M/1$$, podemos calcular el _número promedio de unidades en inventario_ utilizando la fórmula del nivel de trabajo en un sistema de colas:
+
+$$L = \frac{\lambda}{\mu - \lambda} = \frac{5}{8-5} = \frac{5}{3} \approx 1.67 \text{ unidades}$$
+
+Este resultado indica que, en promedio, hay aproximadamente 1.67 unidades en inventario mientras el sistema lanza pedidos cada vez que cae por debajo del punto de reorden.
+
+Para calcular la **probabilidad de ruptura de stock** en un sistema $$M/M/1$$, se utiliza la fórmula de la probabilidad de que no haya unidades disponibles, que es igual a la probabilidad de que el sistema esté vacío. Esta probabilidad viene dada por:
+
+$$P_0 = 1 - \frac{\lambda}{\mu} = 1 - 0.625 = 0.375$$
+
+Por lo tanto, hay un 37.5% de probabilidad de que el inventario esté vacío en cualquier momento dado.
 

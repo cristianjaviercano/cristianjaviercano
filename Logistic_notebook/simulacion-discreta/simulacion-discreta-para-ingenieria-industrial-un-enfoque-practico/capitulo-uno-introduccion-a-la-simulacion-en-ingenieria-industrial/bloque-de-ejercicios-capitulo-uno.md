@@ -52,3 +52,37 @@ Para los siguientes escenarios de ingeniería ind, clasifique el tipo de modelo 
 
 ### [Evaluacion de Contenidos del Capitulo Uno](https://forms.office.com/r/TgMZHF6w0C)
 
+***
+
+### Ejercicio de Teoría de Colas
+
+#### **Problema 1:**
+
+Una cafetería cuenta con un único servidor que atiende a los clientes. El tiempo entre la llegada de los clientes sigue una distribución exponencial con una tasa media de 10 clientes por hora, y el tiempo de servicio de cada cliente también sigue una distribución exponencial con una tasa de 12 clientes por hora. Con base en esta información:
+
+**Diagrama del Sistema de Colas:**
+
+* Utilice un diagrama para representar el sistema de colas, identificando el servidor, la llegada y el servicio de los clientes.
+
+Utilice las fórmulas del modelo (M/M/1) para resolver estas métricas.
+
+#### **Problema 2:**
+
+En otra sección de la cafetería, se ha implementado un sistema de colas distinto al anterior. Este nuevo sistema tiene dos servidores que atienden a los clientes. El tiempo entre la llegada de los clientes sigue una distribución exponencial con una tasa media de 8 clientes por hora, mientras que cada servidor tiene una tasa de servicio de 10 clientes por hora. Con base en esta información:
+
+**Diagrama del Sistema de Colas:**
+
+* Use un diagrama para representar este nuevo sistema de colas, destacando los dos servidores, la llegada de los clientes y el proceso de servicio.
+
+Utilice las fórmulas del modelo (M/M/2) para calcular las métricas del sistema, tales como la probabilidad de que un cliente tenga que esperar y el tiempo promedio en el sistema.
+
+#### **Problema 3:**
+
+Se ha diseñado un sistema de inventario en el que los pedidos llegan de manera continua y son atendidos bajo una política de revisión periódica. La tasa de llegada de pedidos sigue una distribución de Poisson con una media de 5 pedidos por día. El tiempo de entrega para reponer el inventario tiene una media de 2 días y sigue una distribución exponencial. Con base en esta información:
+
+**Diagrama del Sistema de Inventario:**
+
+* Dibuje un diagrama que represente el flujo de pedidos y el proceso de reabastecimiento.
+
+Utilice las fórmulas pertinentes para calcular las métricas del sistema, como el nivel de inventario esperado y la probabilidad de ruptura de stock.
+
