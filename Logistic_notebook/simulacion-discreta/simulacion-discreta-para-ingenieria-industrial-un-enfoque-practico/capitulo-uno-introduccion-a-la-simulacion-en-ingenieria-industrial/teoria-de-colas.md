@@ -184,7 +184,38 @@ La **distribución general** (G) se refiere a una clase amplia de distribuciones
 * $$P_n(t)$$: Probabilidad de que exactamente n clientes esten en el sistema en el tiempo t, dado el número en tiempo 0
 * s: Número de servidores
 * $$\lambda_n$$: tasa media de llegadas de nuevos clientes cuando hay n clientes en el sistema
-* $$\mu_n$$ tasa media de servicio en todo el sistema cuando hay n clientes en el sistema
+* $$\mu_n$$ tasa media de servicio en todo el sistema cuando hay n clientes en el sistema.
+* Cuando $$\lambda_n$$  es constante para toda n, esta constante se escribe como  $$\lambda$$,
+*   Cuando la _tasa media de servicio_ por servidor ocupado es constante para toda n $$n \ge 1$$, esta constante se escribe como $$\mu$$
+
+    * $$\mu_n = s\mu, cuando\ n\ge s,$$ cuando los servidores estan ocupados
+    * $$\frac{1}{\lambda}$$ _tiempo esperado entre llegadas_
+    * $$\frac{1}{\mu},$$ tiempo esperado de servicio
+    * $$\rho = \frac{\lambda}{(s\mu)},$$ es el _factor de utilizacion_ de la instalacion de servicio, la fraccion esperada de tiempo en que los setvidores individuales están ocupados, es la fraccion de la capacidad usada del servicio por los clientes que llegan.
+
+    Cuando el sistema esta en ejecusion al inicio de este, cuando los clientes apenas estan entrando al sistema se conoce como _estado inicial_ es un estado donde el mismo comportamiento del sistema es dificil de evidenciar ya que se esta estabilizando, una ves relaizado o pasado este fenomeno el sistema entra en lo que se conoce como _estado estable_, esta ultima es el foco de observacion de la teoria de colas.
+
+    * $$P_n =$$ probabilidad de que haya exactamente n clientes en el sistema
+    * $$L =$$ número esperado de clientes en el sistema = $$\sum_{n=0}^{\infin}nP_n$$
+    * $$L_q =$$longitu esperada de la cola, este excluye a los clientes que estan en el modo _servicio_ = $$\sum_{n = s}^{\infin}(n-s)P_n$$
+    * $$W =$$tiempo de espera en el sistema, incluye le tiempo de servicio para cada cliente $$W = E(W)$$
+    * $$W_q=$$ tiempo de espera en el sistema, excluye el tiempo de servicio para cada cliente $$W_q = E(W_q)$$
+
+### Papel de la Distribución Exponencial
+
+La **distribución exponencial** es fundamental en la teoría de colas debido a su capacidad para modelar situaciones en las que los eventos ocurren de manera continua y a una tasa constante. Una de las propiedades más importantes de la distribución exponencial es su falta de memoria, lo que significa que el tiempo de espera restante para un evento es independiente del tiempo ya transcurrido. Esta propiedad simplifica en gran medida el análisis de sistemas de colas, especialmente en los modelos **M/M/1**, donde las llegadas y el servicio siguen un proceso de Poisson y tiempos de servicio exponenciales respectivamente.
+
+#### Aplicaciones
+
+* **Modelado de tiempos de servicio**: En sistemas donde el tiempo de servicio real varía de manera aleatoria, y la tasa promedio es constante.
+* **Análisis de espera**: Determinar tiempos de espera promedio en sistemas de colas.
+* **Eficiencia de la red**: En redes de comunicación para modelar la llegada de paquetes y la duración de las conexiones.
+
+La simplicidad matemática de la distribución exponencial permite realizar cálculos y simulaciones eficientes, siendo una herramienta esencial para la optimización y diseño de sistemas de colas.
+
+
+
+
 
 
 
