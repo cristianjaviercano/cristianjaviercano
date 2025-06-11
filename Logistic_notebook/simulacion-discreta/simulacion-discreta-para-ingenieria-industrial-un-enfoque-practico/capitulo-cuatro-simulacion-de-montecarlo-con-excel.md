@@ -207,6 +207,14 @@ Primero, se definen las distribuciones de probabilidad para los tiempos entre ll
 
 </details>
 
+<details>
 
+<summary>La tabla de simulación principal.</summary>
 
-1. La tabla de simulación principal.
+<table><thead><tr><th>tiempo MIn</th><th>Probabilidad</th><th>Acum</th><th data-type="number">limite inferior</th></tr></thead><tbody><tr><td>2</td><td>0.3</td><td>0.3</td><td>0</td></tr><tr><td>3</td><td>0.5</td><td>0.8</td><td>0.3</td></tr><tr><td>4</td><td>0.2</td><td>1</td><td>0.8</td></tr></tbody></table>
+
+</details>
+
+{% embed url="https://docs.google.com/spreadsheets/d/18sUk-lkaXOz7nrbjiC0UxqG91DfLOFqM07N6GbR9kAk/edit?usp=sharing" %}
+ejercico montecarlo con aleatorios
+{% endembed %}
