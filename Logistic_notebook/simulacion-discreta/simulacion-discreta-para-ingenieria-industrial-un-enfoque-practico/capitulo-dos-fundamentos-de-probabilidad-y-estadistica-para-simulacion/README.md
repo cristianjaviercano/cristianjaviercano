@@ -87,6 +87,39 @@ La [teoría de la probabilidad ](https://www.probabilidadyestadistica.net/teoria
 
 ***
 
+### Ejemplo de probabiilidad usando el ejercicio de la Diana
+
+Se tiene un tablero cuadrado y un círculo inscrito en él. El círculo tiene un radio _r_ y, dado que está perfectamente inscrito, el lado del cuadrado es _2r_. Se lanzan dardos al cuadrado de manera aleatoria, lo que significa que cada punto dentro del cuadrado tiene la misma probabilidad de ser alcanzado.
+
+_El objetivo es determinar la probabilidad de que un dardo que cae dentro del cuadrado también caiga dentro del círculo._
+
+$$
+P(A)= \frac{ 
+Medida del espacio muestral total}{
+Medida del espacio de resultados favorables}
+$$
+
+Para este problema:
+
+* El **espacio muestral total (S)** son todos los puntos posibles donde puede caer el dardo, que es el área del cuadrado.
+* El **evento favorable (E)** es que el dardo caiga dentro del círculo, que corresponde al área del círculo.
+
+**Área del Círculo (A\_círculo)**: El área de un círculo se calcula con la fórmula A=πr2.&#x20;
+
+Para r=1, el área es: $$A_{\text{círculo}} = \pi (1)^2 = \pi$$
+
+**Área del Cuadrado (A\_cuadrado)**: Si el círculo de radio 1 está centrado y es concéntrico con el cuadrado, el lado del cuadrado _(l)_ es igual al diámetro del círculo, es decir, l=2r. Para r=1, el lado del cuadrado es l=2(1)=2. El área del cuadrado se calcula como $$A=l2.  \ A_{\text{cuadrado}} = (2)^2 = 4$$
+
+**Cálculo de la Probabilidad**: La probabilidad de que el dardo caiga dentro del círculo es la razón de las dos áreas.&#x20;
+
+$$
+P(\text{Dardo en círculo}) = \frac{A_{\text{círculo}}}{A_{\text{cuadrado}}} = \frac{\pi}{4}
+$$
+
+Numéricamente, esto es aproximadamente:&#x20;
+
+$$4π​≈\frac{4}{3.14159}​≈0.7854$$ Esto significa que hay aproximadamente un **78.54%** de probabilidad de que el dardo acierte dentro del círculo.
+
 ### Variables aleatorias: discretas y continuas
 
 Una variable aleatoria (VA) es una función que asigna un valor numérico a cada resultado posible de un experimento aleatorio. En lugar de trabajar con los eventos cualitativos, las variables aleatorias nos permiten cuantificar los resultados y aplicar herramientas matemáticas y estadísticas.&#x20;
@@ -117,9 +150,15 @@ Ejemplos en Ingeniería Industrial:
 
 ***
 
-**Funciones de probabilidad, densidad y distribución acumulada.**
+**Definicones de Funciones de probabilidad, densidad y distribución acumulada.**
 
+**Función de Densidad de Probabilidad (FDP):** Describe la probabilidad de que una variable aleatoria continua tome un valor dentro de un rango específico, donde el área bajo la curva equivale a la probabilidad.
+
+**Función de Distribución Acumulada (FDA):** Proporciona la probabilidad de que una variable aleatoria, discreta o continua, sea menor o igual a un valor específico, representando la suma o integración de valores hasta ese punto.
+
+{% hint style="warning" %}
 Una vez que hemos identificado una variable aleatoria, necesitamos una forma de describir la probabilidad de que tome diferentes valores o rangos de valores. Esto se logra mediante funciones específicas.
+{% endhint %}
 
 #### Para Variables Aleatorias Discretas, Función de Masa de Probabilidad (FMP o PMF, por sus siglas en inglés)
 
@@ -128,7 +167,27 @@ La FMP de una V.A. discreta X, denotada como $$p(x) o P(X=x)$$, especifica la pr
 * **Propiedades:**
   1. $$0≤p(x)≤1$$ para todo x.
   2. $$∑_{todo x}​p(x)=1$$ (la suma de las probabilidades de todos los posibles valores es 1).
-* **Ejemplo:** Si X es el resultado de lanzar un dado equilibrado, $$p(x)=1/6$$ para $$x∈{1,2,3,4,5,6},\ y\ p(x)=0$$ para cualquier otro x.
+* **Ejemplo:**&#x20;
+  * Si X es el resultado de lanzar un dado equilibrado, $$p(x)=1/6$$ para $$x∈{1,2,3,4,5,6},\ y\ p(x)=0$$ para cualquier otro x.
+* la formula para la FMP es:
+
+$$
+P(X=k)=(kn)p^k(1−p)^{n−k}
+$$
+
+
+
+> #### **Ejemplo Práctico: Inspección de Calidad en un Lote de Producción**
+>
+> **Escenario:** Un ingeniero industrial está supervisando una línea de producción de componentes electrónicos. Se sabe que, en promedio, el 5% de los componentes producidos son defectuosos. El ingeniero toma una muestra aleatoria de **10 componentes** de un gran lote para realizar una inspección de calidad.
+>
+> El interés se centra en el número de componentes defectuosos encontrados en esa muestra.
+>
+> **Variable Aleatoria:** Se define la variable aleatoria discreta X como: X = "el número de componentes defectuosos en la muestra de 10".
+>
+> Los valores posibles que puede tomar X son {0,1,2,3,4,5,6,7,8,9,10}.
+>
+>
 
 #### Para Variables Aleatorias Continuas: Función de Densidad de Probabilidad (FDP o PDF, por sus siglas en inglés)
 
