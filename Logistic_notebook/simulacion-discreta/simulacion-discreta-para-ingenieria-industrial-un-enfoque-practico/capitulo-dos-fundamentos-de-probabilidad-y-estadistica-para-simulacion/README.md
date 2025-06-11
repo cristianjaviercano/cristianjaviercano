@@ -172,10 +172,19 @@ La FMP de una V.A. discreta X, denotada como $$p(x) o P(X=x)$$, especifica la pr
 * la formula para la FMP es:
 
 $$
-P(X=k)=(kn)p^k(1−p)^{n−k}
+P(X=k) =   {n \choose k}  \cdot p^k(1−p)^{n−k}
 $$
 
+Donde:
 
+* n es el número de ensayos (tamaño de la muestra).
+* k es el número de éxitos (componentes defectuosos).
+* p es la probabilidad de éxito en un solo ensayo.
+* &#x20;$${k\choose n} = \frac{k!(n−k)!}{n!} ​$$es el coeficiente binomial, que cuenta el número de maneras de elegir k elementos de un conjunto de n.
+
+$$
+{n}\choose{k}
+$$
 
 > #### **Ejemplo Práctico: Inspección de Calidad en un Lote de Producción**
 >
@@ -187,7 +196,9 @@ $$
 >
 > Los valores posibles que puede tomar X son {0,1,2,3,4,5,6,7,8,9,10}.
 >
+> _resolviendo: en una hoja de excel reemplaza los datos y grafica los resultados._
 >
+> ![](<../../../.gitbook/assets/Captura de pantalla 2025-06-11 a la(s) 5.46.30 p.m..png>)
 
 #### Para Variables Aleatorias Continuas: Función de Densidad de Probabilidad (FDP o PDF, por sus siglas en inglés)
 
