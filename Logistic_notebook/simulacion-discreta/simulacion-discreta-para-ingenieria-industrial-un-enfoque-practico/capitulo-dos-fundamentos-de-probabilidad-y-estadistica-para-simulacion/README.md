@@ -118,9 +118,11 @@ La [teoría de la probabilidad ](https://www.probabilidadyestadistica.net/teoria
 
 ### Teorema de eventos mutuamente excluyentes.
 
+{% hint style="warning" %}
+Desde una perspectiva estadística, dos o más eventos se consideran **mutuamente excluyentes** si la ocurrencia de uno de ellos imposibilita la ocurrencia simultánea de cualquiera de los otros. En términos de la teoría de conjuntos, esto significa que la intersección de estos eventos es el conjunto vacío
+{% endhint %}
 
-
-El teorema de eventos mutuamente excluyentes indica que dos eventos no pueden ocurrir simultáneamente. En otras palabras, si un evento ocurre, el otro no puede suceder. Matemáticamente, dos eventos A y B son mutuamente excluyentes si su intersección es vacía, es decir,&#x20;
+_El teorema de eventos mutuamente excluyentes_ indica que dos eventos no pueden ocurrir simultáneamente. En otras palabras, si un evento ocurre, el otro no puede suceder. Matemáticamente, dos eventos A y B son mutuamente excluyentes si su intersección es vacía, es decir,&#x20;
 
 $$A \cap B = \emptyset$$.
 
@@ -136,6 +138,27 @@ $$A \cap B = \emptyset$$.
 > #### Propiedad
 >
 > Para eventos mutuamente excluyentes, la probabilidad de que ocurra alguno de ellos es la suma de sus probabilidades individuales:$$P(A \cup B) = P(A) + P(B)$$
+
+En el contexto de la _simulación de eventos discretos_, el concepto de eventos mutuamente excluyentes es fundamental para modelar **puntos de decisión, ramificaciones y enrutamiento de entidades**. Cuando una entidad (un cliente, un producto, un documento) llega a un punto en el proceso donde debe seguir una de varias trayectorias posibles, estas trayectorias representan eventos mutuamente excluyentes. La entidad no puede tomar dos caminos a la vez.
+
+La implementación de esta lógica en _AnyLogic_ se realiza principalmente a través del bloque **`SelectOutput`** de la Process Modeling Library (PML).
+
+* **Implementación Práctica**: Un bloque `SelectOutput` tiene una entrada y múltiples salidas. Una entidad que llega es dirigida a **una y solo una** de estas salidas, haciendo que la elección de cada ruta sea un evento mutuamente excluyente.
+
+Este enrutamiento se puede definir de dos maneras principales:
+
+1. **Enrutamiento Probabilístico**: Se puede configurar el bloque para que dirija a las entidades con base en probabilidades. Por ejemplo, el 50% de las entidades van a la salida 1, el 30% a la salida 2 y el 20% a la salida 3. La suma de las probabilidades debe ser 1, lo que garantiza que cada entidad tomará exactamente una ruta.
+2. **Enrutamiento Condicional**: La selección de la ruta se basa en una condición booleana (verdadero/falso). Por ejemplo: `SI (entidad.tipo == "Urgente") ENTONCES Salida1 SINO Salida2`. La condición `entidad.tipo == "Urgente"` solo puede ser verdadera o falsa para una entidad dada, nunca ambas. Por lo tanto, tomar la Salida 1 y tomar la Salida 2 son eventos mutuamente excluyentes.
+
+> ### Fábrica de Calzado:
+>
+> Consideremos el caso de la "Fábrica de calzado".
+>
+> **Descripción del Proceso**: El documento establece que, en la primera etapa, el proceso de corte depende del tipo de zapato. El 50% de las unidades son del **Tipo 1**, el 30% del **Tipo 2**, y el 20% del **Tipo 3**
+>
+> **Análisis de Eventos**: Una unidad de zapato que llega a la estación de corte no puede ser del Tipo 1 y del Tipo 2 al mismo tiempo. Por lo tanto, los eventos "la unidad es de Tipo 1", "la unidad es de Tipo 2" y "la unidad es de Tipo 3" son **mutuamente excluyentes**.
+>
+> **Implementación en AnyLogic**: Para modelar este sistema, se utilizaría un bloque `Source` para generar las llegadas de los pares de zapatos, seguido inmediatamente por un bloque `SelectOutput`. Este `SelectOutput` se configuraría con tres salidas, cada una conectada a un proceso de corte diferente, y con las probabilidades de 0.5, 0.3 y 0.2 respectivamente.
 
 ### Variables aleatorias: discretas y continuas
 
@@ -177,17 +200,36 @@ $$P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx$$
 
 > **Ejemplo:**
 >
-> Si X es una variable aleatoria continua con FDP $$f(x) = \frac{1}{2}$$ para $$0 \leq x \leq 2$$, y cero en cualquier otro lugar, la probabilidad de que $X$ esté entre 0.5 y 1.5 se calcula así:
+> Si X es una variable aleatoria continua con FDP $$f(x) = \frac{1}{2}$$ para $$0 \leq x \leq 2$$, y cero en cualquier otro lugar, la probabilidad de que X esté entre 0.5 y 1.5 se calcula así:
 >
 > $$P(0.5 \leq X \leq 1.5) = \int_{0.5}^{1.5} \frac{1}{2} \, dx = \left[\frac{1}{2}x\right]_{0.5}^{1.5} = \frac{1}{2}(1.5) - \frac{1}{2}(0.5) = 0.5$$
 >
-> Por lo tanto, la probabilidad de que $X$ esté entre 0.5 y 1.5 es 0.5.
->
->
+> Por lo tanto, la probabilidad de que X esté entre 0.5 y 1.5 es 0.5.
 
 **Función de Distribución Acumulada (FDA):** Proporciona la probabilidad de que una variable aleatoria, discreta o continua, sea menor o igual a un valor específico, representando la suma o integración de valores hasta ese punto.
 
+> **Ejemplo: Lanzamiento de un Dado**
 >
+> Consideremos un experimento simple: el lanzamiento de un dado estándar de seis caras.
+>
+> * **Variable Aleatoria Discreta (X)**: El resultado del lanzamiento, que puede tomar los valores discretos {1,2,3,4,5,6}.
+> * **Función de Densidad de Probabilidad (fdp)**: Para un dado justo, cada resultado tiene la misma probabilidad de ocurrir.
+>
+> $$p(x)=P(X=x)=  \frac{1}{6} ​  ,para x=\{1,2,3,4,5,6\}$$
+>
+>
+>
+> **Cálculo de la Función de Distribución Acumulada (FDA)**
+>
+> La FDA, denotada como F(x), nos da la probabilidad de que el resultado del lanzamiento sea **menor o igual a** un valor específico x. Se calcula sumando las probabilidades de todos los resultados hasta ese valor.
+>
+> * **Probabilidad de obtener un 1 o menos:** $$F(1)=P(X≤1)=P(X=1)=\frac{1}{6}$$
+> * **Probabilidad de obtener un 2 o menos:**  $$F(2)=P(X≤2)=P(X=1)+P(X=2)=\frac{1}{6}​+\frac{1}{6}=\frac{2}{6}$$
+> * **Probabilidad de obtener un 3 o menos:** $$F(3)=P(X≤3)=P(X=1)+P(X=2)+P(X=3)=\frac{1}{6}​+\frac{1}{6}​+\frac{1}{6}​=\frac{3}{6}​$$
+
+<table><thead><tr><th>Resultado de x_i</th><th width="177.18359375">Probabilidad individual</th><th>Prob Acumulada</th></tr></thead><tbody><tr><td>1</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{1}{6}</span></td></tr><tr><td>2</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{2}{6}</span></td></tr><tr><td>3</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{3}{6}</span></td></tr><tr><td>4</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{4}{6}</span></td></tr><tr><td>5</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{5}{6}</span></td></tr><tr><td>6</td><td><span class="math">\frac{1}{6}</span></td><td>1</td></tr></tbody></table>
+
+
 
 {% hint style="warning" %}
 Una vez que hemos identificado una variable aleatoria, necesitamos una forma de describir la probabilidad de que tome diferentes valores o rangos de valores. Esto se logra mediante funciones específicas.
