@@ -321,7 +321,7 @@ Esta fórmula ayuda a determinar la probabilidad de que el sistema esté vacío,
 
 ***
 
-#### teoria de colas en sistemas de inventarios
+### Teoria de colas en sistemas de inventarios
 
 Para ilustrar el uso de la teoría de colas en la gestión de inventarios, consideremos un ejemplo sencillo de un sistema de inventario donde las llegadas de demanda siguen un proceso de Poisson y los tiempos de reposición son exponencialmente distribuidos.
 
