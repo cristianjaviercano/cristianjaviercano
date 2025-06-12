@@ -118,6 +118,8 @@ La [teoría de la probabilidad ](https://www.probabilidadyestadistica.net/teoria
 
 ### Teorema de eventos mutuamente excluyentes.
 
+
+
 El teorema de eventos mutuamente excluyentes indica que dos eventos no pueden ocurrir simultáneamente. En otras palabras, si un evento ocurre, el otro no puede suceder. Matemáticamente, dos eventos A y B son mutuamente excluyentes si su intersección es vacía, es decir,&#x20;
 
 $$A \cap B = \emptyset$$.
@@ -152,7 +154,7 @@ Ejemplos en Ingeniería Industrial:
 {% endtab %}
 
 {% tab title="Variables Aleatorias Continuas" %}
-Una V.A. es continua si puede tomar cualquier valor dentro de un intervalo (o unión de intervalos) de números reales.1 Entre dos valores cualesquiera que pueda tomar, siempre existe un número infinito de otros posibles valores.
+Una V.A. es continua si puede tomar cualquier valor dentro de un intervalo (o unión de intervalos) de números reales. Entre dos valores cualesquiera que pueda tomar, siempre existe un número infinito de otros posibles valores.
 
 Ejemplos en Ingeniería Industrial:
 
@@ -167,9 +169,25 @@ Ejemplos en Ingeniería Industrial:
 
 **Definicones de Funciones de probabilidad, densidad y distribución acumulada.**
 
-**Función de Densidad de Probabilidad (FDP):** Describe la probabilidad de que una variable aleatoria continua tome un valor dentro de un rango específico, donde el área bajo la curva equivale a la probabilidad.
+**Función de Densidad de Probabilidad (FDP):** Describe la probabilidad de que una _variable aleatoria continua_ tome un valor dentro de un rango específico, donde el área bajo la curva equivale a la probabilidad.
+
+La función de densidad de probabilidad (FDP). La probabilidad de que X esté entre los valores a y b es la integral de la FDP desde a hasta b:
+
+$$P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx$$
+
+> **Ejemplo:**
+>
+> Si X es una variable aleatoria continua con FDP $$f(x) = \frac{1}{2}$$ para $$0 \leq x \leq 2$$, y cero en cualquier otro lugar, la probabilidad de que $X$ esté entre 0.5 y 1.5 se calcula así:
+>
+> $$P(0.5 \leq X \leq 1.5) = \int_{0.5}^{1.5} \frac{1}{2} \, dx = \left[\frac{1}{2}x\right]_{0.5}^{1.5} = \frac{1}{2}(1.5) - \frac{1}{2}(0.5) = 0.5$$
+>
+> Por lo tanto, la probabilidad de que $X$ esté entre 0.5 y 1.5 es 0.5.
+>
+>
 
 **Función de Distribución Acumulada (FDA):** Proporciona la probabilidad de que una variable aleatoria, discreta o continua, sea menor o igual a un valor específico, representando la suma o integración de valores hasta ese punto.
+
+>
 
 {% hint style="warning" %}
 Una vez que hemos identificado una variable aleatoria, necesitamos una forma de describir la probabilidad de que tome diferentes valores o rangos de valores. Esto se logra mediante funciones específicas.
