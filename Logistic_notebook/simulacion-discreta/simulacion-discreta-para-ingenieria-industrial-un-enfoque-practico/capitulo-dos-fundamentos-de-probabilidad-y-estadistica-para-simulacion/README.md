@@ -87,50 +87,53 @@ La [teoría de la probabilidad ](https://www.probabilidadyestadistica.net/teoria
 
 ***
 
-### Ejemplo de probabiilidad usando el ejercicio de la Diana
-
-Se tiene un tablero cuadrado y un círculo inscrito en él. El círculo tiene un radio _r_ y, dado que está perfectamente inscrito, el lado del cuadrado es _2r_. Se lanzan dardos al cuadrado de manera aleatoria, lo que significa que cada punto dentro del cuadrado tiene la misma probabilidad de ser alcanzado.
-
-_El objetivo es determinar la probabilidad de que un dardo que cae dentro del cuadrado también caiga dentro del círculo._
-
-$$
-P(A)= \frac{ 
-Medida del espacio muestral total}{
-Medida del espacio de resultados favorables}
-$$
-
-Para este problema:
-
-* El **espacio muestral total (S)** son todos los puntos posibles donde puede caer el dardo, que es el área del cuadrado.
-* El **evento favorable (E)** es que el dardo caiga dentro del círculo, que corresponde al área del círculo.
-
-**Área del Círculo (A\_círculo)**: El área de un círculo se calcula con la fórmula A=πr2.&#x20;
-
-Para r=1, el área es: $$A_{\text{círculo}} = \pi (1)^2 = \pi$$
-
-**Área del Cuadrado (A\_cuadrado)**: Si el círculo de radio 1 está centrado y es concéntrico con el cuadrado, el lado del cuadrado _(l)_ es igual al diámetro del círculo, es decir, l=2r. Para r=1, el lado del cuadrado es l=2(1)=2. El área del cuadrado se calcula como $$A=l2.  \ A_{\text{cuadrado}} = (2)^2 = 4$$
-
-**Cálculo de la Probabilidad**: La probabilidad de que el dardo caiga dentro del círculo es la razón de las dos áreas.&#x20;
-
-$$
-P(\text{Dardo en círculo}) = \frac{A_{\text{círculo}}}{A_{\text{cuadrado}}} = \frac{\pi}{4}
-$$
-
-Numéricamente, esto es aproximadamente:&#x20;
-
-$$4π​≈\frac{4}{3.14159}​≈0.7854$$ Esto significa que hay aproximadamente un **78.54%** de probabilidad de que el dardo acierte dentro del círculo.
+> ### Ejemplo de probabilidad usando el ejercicio de la Diana
+>
+> Se tiene un tablero cuadrado y un círculo inscrito en él. El círculo tiene un radio _r_ y, dado que está perfectamente inscrito, el lado del cuadrado es _2r_. Se lanzan dardos al cuadrado de manera aleatoria, lo que significa que cada punto dentro del cuadrado tiene la misma probabilidad de ser alcanzado.
+>
+> _El objetivo es determinar la probabilidad de que un dardo que cae dentro del cuadrado también caiga dentro del círculo._
+>
+> $$P(A)= \frac{  Medida del espacio muestral total}{ Medida del espacio de resultados favorables}$$
+>
+> Para este problema:
+>
+> * El **espacio muestral total (S)** son todos los puntos posibles donde puede caer el dardo, que es el área del cuadrado.
+> * El **evento favorable (E)** es que el dardo caiga dentro del círculo, que corresponde al área del círculo.
+>
+> **Área del Círculo (A\_círculo)**: El área de un círculo se calcula con la fórmula A=πr2.&#x20;
+>
+> Para r=1, el área es: $$A_{\text{círculo}} = \pi (1)^2 = \pi$$
+>
+> **Área del Cuadrado (A\_cuadrado)**: Si el círculo de radio 1 está centrado y es concéntrico con el cuadrado, el lado del cuadrado _(l)_ es igual al diámetro del círculo, es decir, l=2r. Para r=1, el lado del cuadrado es l=2(1)=2. El área del cuadrado se calcula como $$A=l2.  \ A_{\text{cuadrado}} = (2)^2 = 4$$
+>
+> **Cálculo de la Probabilidad**: La probabilidad de que el dardo caiga dentro del círculo es la razón de las dos áreas.&#x20;
+>
+> $$P(\text{Dardo en círculo}) = \frac{A_{\text{círculo}}}{A_{\text{cuadrado}}} = \frac{\pi}{4}$$
+>
+> Numéricamente, esto es aproximadamente:&#x20;
+>
+> $$4π​≈\frac{4}{3.14159}​≈0.7854$$ Esto significa que hay aproximadamente un **78.54%** de probabilidad de que el dardo acierte dentro del círculo.
+>
+>
 
 ### Teorema de eventos mutuamente excluyentes.
 
-#### investigar&#x20;
+El teorema de eventos mutuamente excluyentes indica que dos eventos no pueden ocurrir simultáneamente. En otras palabras, si un evento ocurre, el otro no puede suceder. Matemáticamente, dos eventos A y B son mutuamente excluyentes si su intersección es vacía, es decir,&#x20;
 
-$$
-\frac{1}{2}
-$$
+$$A \cap B = \emptyset$$.
 
-```r
-rnorm(10,2,0.5)
-```
+> #### Ejemplo:
+>
+> Imagina lanzar un dado de seis caras. Define los siguientes eventos:
+>
+> * Evento A: salir un número par (2, 4, 6)
+> * Evento B: salir un número impar (1, 3, 5)
+>
+> Claramente, un número no puede ser par e impar al mismo tiempo. Por lo tanto, A y B son eventos mutuamente excluyentes.
+>
+> #### Propiedad
+>
+> Para eventos mutuamente excluyentes, la probabilidad de que ocurra alguno de ellos es la suma de sus probabilidades individuales:$$P(A \cup B) = P(A) + P(B)$$
 
 ### Variables aleatorias: discretas y continuas
 
