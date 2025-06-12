@@ -124,7 +124,13 @@ $$4π​≈\frac{4}{3.14159}​≈0.7854$$ Esto significa que hay aproximadament
 
 #### investigar&#x20;
 
+$$
+\frac{1}{2}
+$$
 
+```r
+rnorm(10,2,0.5)
+```
 
 ### Variables aleatorias: discretas y continuas
 
