@@ -257,10 +257,6 @@ Donde:
 * p es la probabilidad de éxito en un solo ensayo.
 * &#x20;$${k\choose n} = \frac{k!(n−k)!}{n!} ​$$es el coeficiente binomial, que cuenta el número de maneras de elegir k elementos de un conjunto de n.
 
-$$
-{n}\choose{k}
-$$
-
 > #### **Ejemplo Práctico: Inspección de Calidad en un Lote de Producción**
 >
 > **Escenario:** Un ingeniero industrial está supervisando una línea de producción de componentes electrónicos. Se sabe que, en promedio, el 5% de los componentes producidos son defectuosos. El ingeniero toma una muestra aleatoria de **10 componentes** de un gran lote para realizar una inspección de calidad.
@@ -303,8 +299,6 @@ La FDA, denotada como $$f(x)$$, es aplicable tanto a V.A. discretas como continu
 {% hint style="info" %}
 La FDA juega un papel particularmente importante en la simulación, ya que es la base del método de la transformada inversa, una técnica fundamental para generar observaciones aleatorias de una distribución de probabilidad específica a partir de números aleatorios uniformes
 {% endhint %}
-
-Si U es un número aleatorio generado de una distribución Uniforme (0,1), entonces $$X=F−1(U)$$ (donde F−1 es la función inversa de la FDA) será una observación de la variable aleatoria X con FDA F(x).&#x20;
 
 {% hint style="danger" %}
 Este concepto, que se explorará en detalle en el Capítulo 3, subraya la importancia de comprender la FDA

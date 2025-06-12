@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Bloques de Ejercicios Capitulo Dos
 
 ### **Bloque de preguntas**
