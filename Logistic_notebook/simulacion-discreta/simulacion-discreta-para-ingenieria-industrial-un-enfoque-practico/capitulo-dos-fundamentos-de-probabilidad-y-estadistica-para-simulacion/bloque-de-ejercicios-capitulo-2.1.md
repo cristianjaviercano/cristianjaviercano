@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Bloque de Ejercicios Capitulo 2.1
 
 En esta sección, profundizaremos en los problemas planteados en el capítulo dos del contenido. Analizaremos los conceptos clave, brindando una comprensión detallada y abordando posibles soluciones y enfoques críticos para resolver los desafíos presentados.
@@ -361,3 +357,4 @@ el diagrama se representa asi: un diagrama de circuito de derecha a izquierda, d
 </details>
 
 <img src="../../../.gitbook/assets/file.excalidraw (7).svg" alt="" class="gitbook-drawing">
+
