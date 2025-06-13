@@ -6,7 +6,7 @@ icon: chart-area
 
 ## DISTRIBUCION DE BERNOULLI
 
-#### 1. Defunicion de la DB
+### 1. Definicion
 
 > La **distribución de Bernoulli** es la distribución de probabilidad discreta más fundamental. Describe un experimento o ensayo que tiene únicamente **dos resultados posibles**, los cuales son mutuamente excluyentes. Estos resultados se denominan genéricamente:
 
@@ -17,7 +17,7 @@ Matemáticamente.
 
 Un solo experimento de este tipo se conoce como **ensayo de Bernoulli**. Por lo tanto, esta distribución modela el resultado de una única prueba o evento, no de una secuencia de ellos.
 
-#### **2. ¿Cómo y Cuándo se Usa?**
+### **2. ¿Cómo y Cuándo se Usa?**
 
 Se utiliza para modelar cualquier situación en la que un evento único tiene un resultado binario. Es la base para distribuciones más complejas como la Binomial y la Geométrica.
 
@@ -28,7 +28,7 @@ Algunos ejemplos de su aplicación son:
 * **Resultado de un Examen**: Un estudiante aprueba (éxito) o reprueba (fracaso).
 * **Decisión de un Cliente**: Un cliente compra un producto (éxito) o no lo compra (fracaso).
 
-#### **3. Forma Algebraica**
+### **3. Forma Algebraica**
 
 Para formalizarla, se define una variable aleatoria X que puede tomar dos valores:
 
@@ -54,7 +54,7 @@ Las principales medidas estadísticas son:
 * **Valor Esperado (Media)**: $$E[X]=p$$
 * **Varianza**: $$Var(X)=p(1−p)$$
 
-#### **4. Forma en Excel**
+### **4. Forma en Excel**
 
 Excel no posee una función dedicada como `BERNOULLI.DIST`. Sin embargo, un ensayo de Bernoulli es un caso especial de la distribución Binomial donde el número de ensayos es 1 (n=1). Por lo tanto, se utiliza la función `BINOM.DIST` (o `DISTR.BINOM` en versiones en español).
 
@@ -69,7 +69,7 @@ Para simular un ensayo de Bernoulli:
 
 **Ejemplo:** Para calcular la probabilidad de que una pieza sea defectuosa (p=0.05), el resultado sería "éxito" si X=1. `=DISTR.BINOM(1; 1; 0.05; FALSO)` devuelve `0.05`.
 
-#### **5. Forma de Usarla en Simulación (AnyLogic)**
+### **5. Forma de Usarla en Simulación (AnyLogic)**
 
 En la simulación de sistemas, el ensayo de Bernoulli es crucial para modelar puntos de decisión probabilísticos. La implementación no requiere muestrear de una distribución compleja, sino comparar un número aleatorio con la probabilidad de éxito.
 
@@ -80,8 +80,6 @@ En la simulación de sistemas, el ensayo de Bernoulli es crucial para modelar pu
 3. Si R>p, el resultado es "fracaso".
 
 **En AnyLogic**, esto se simplifica enormemente con la función incorporada:
-
-Java
 
 ```java
 randomTrue(p)
@@ -169,8 +167,6 @@ En simulación, la distribución Binomial se utiliza para determinar el resultad
 
 **En AnyLogic**, se puede obtener una muestra de una distribución binomial directamente con la función:
 
-Java
-
 ```java
 binomial(n, p)
 ```
@@ -180,8 +176,6 @@ Esta función realiza n ensayos de Bernoulli con una probabilidad de éxito p y 
 **Ejemplo de uso:** Imaginemos un modelo de un puerto al que llega un buque con un cargamento de 200 contenedores (n=200). Por experiencia, se sabe que la probabilidad de que un contenedor sea seleccionado para una inspección de aduanas es del 15% (p=0.15).
 
 Para determinar cuántos contenedores de ese buque serán inspeccionados, en lugar de simular 200 eventos `randomTrue(0.15)`, se puede usar una sola llamada:
-
-Java
 
 ```java
 int contenedores_a_inspeccionar = binomial(200, 0.15);
@@ -649,16 +643,16 @@ Este comando asegura que si la función `normal()` devuelve un valor negativo, e
 ### **1. Definición**
 
 > La **distribución Triangular** es una distribución de probabilidad continua definida por tres parámetros que determinan su forma de triángulo:
-
-* **a**: el valor **mínimo** posible de la variable.
-* **b**: el valor **máximo** posible de la variable.
-* **c**: el valor **más probable** o **moda**, que representa el pico del triángulo.
-
-A diferencia de la distribución Normal que es teóricamente infinita, la Triangular está definida sobre un rango finito \[a,b], lo que la hace muy práctica para modelar fenómenos acotados.
+>
+> * **a**: el valor **mínimo** posible de la variable.
+> * **b**: el valor **máximo** posible de la variable.
+> * **c**: el valor **más probable** o **moda**, que representa el pico del triángulo.
+>
+> A diferencia de la distribución Normal que es teóricamente infinita, la Triangular está definida sobre un rango finito \[a,b], lo que la hace muy práctica para modelar fenómenos acotados.
 
 ***
 
-**2. ¿Cómo y Cuándo se Usa?**
+### **2. ¿Cómo y Cuándo se Usa?**
 
 Es la distribución ideal cuando no se dispone de una gran cantidad de datos históricos para realizar un ajuste de distribución formal, pero se cuenta con la **opinión de un experto**. Un experto en un proceso a menudo puede estimar fácilmente los escenarios "mejor caso" (mínimo), "peor caso" (máximo) y "caso más probable" (moda).
 
@@ -670,13 +664,16 @@ Sus aplicaciones más comunes en ingeniería y simulación son:
 
 ***
 
-**3. Forma Algebraica**
+### **3. Forma Algebraica**
 
 Sea X la variable aleatoria continua.
 
-* **Función de Densidad de Probabilidad (fdp)**: Es una función definida por tramos que forma un triángulo. f(x)={(b−a)(c−a)2(x−a)​(b−a)(b−c)2(b−x)​​para a≤x≤cpara c\<x≤b​
-* **Valor Esperado (Media)**: E\[X]=3a+b+c​
-* **Varianza**: Var(X)=18a2+b2+c2−ab−ac−bc​
+* **Función de Densidad de Probabilidad (fdp)**: Es una función definida por tramos que forma un triángulo.&#x20;
+
+$$f(x) = \begin{cases}   \frac{2(x-a)}{(b-a)(c-a)} & \text{para } a \leq x \leq c \\   \frac {2(b-x)}{(b-a)(b-c)} & \text{para} \  c <x \le b \end{cases}$$​
+
+* **Valor Esperado (Media)**: $$E[X]=\frac {a+b+c}{3}​$$
+* **Varianza**: $$Var(X)=\frac {a2+b2+c2−ab−ac−bc​}{18}$$
 
 ***
 
@@ -687,11 +684,13 @@ Excel no cuenta con una función `TRIANG.DIST` incorporada. Para generar una mue
 La lógica es la siguiente:
 
 1. Se genera un número aleatorio R de una distribución Uniforme(0,1) con la función `ALEATORIO()`.
-2. Se calcula un umbral de probabilidad Fc​=(c−a)/(b−a).
+2. Se calcula un umbral de probabilidad $$Fc​=(c−a)/(b−a).$$
 3. Si R\<Fc​, se aplica una fórmula para obtener un valor en la rampa ascendente del triángulo.
 4. Si R≥Fc​, se aplica otra fórmula para obtener un valor en la rampa descendente.
 
+{% hint style="warning" %}
 Debido a su complejidad, esta implementación en Excel generalmente se realiza a través de macros (VBA) o complementos de simulación, en lugar de una fórmula directa en una celda.
+{% endhint %}
 
 ***
 
@@ -701,9 +700,7 @@ La distribución Triangular es una de las más utilizadas en AnyLogic para model
 
 **En AnyLogic**, la función es directa e intuitiva:
 
-Java
-
-```
+```java
 triangular(min, mode, max)
 ```
 
@@ -719,4 +716,86 @@ triangular(min, mode, max)
 
 Esta forma de modelar es sumamente útil porque se alinea perfectamente con la manera en que los ingenieros y gerentes de operaciones a menudo describen la duración de los procesos en la vida real.
 
-![foto de perfil](https://lh3.googleusercontent.com/a/ACg8ocIcYOFgYsh-953IzlvoZy91UPEWaKL1wMfWhjh2UISflloQEQ_G=s64-c)Generar resumen de audio
+***
+
+## **Distribución de Erlang**
+
+***
+
+### **1. Definición**
+
+> La **distribución de Erlang** es una distribución de probabilidad continua que describe el **tiempo total hasta que ocurren `k` eventos sucesivos** en un proceso de Poisson.
+>
+> Conceptualmente, puede entenderse como la **suma (o convolución) de `k` variables aleatorias exponenciales**, cada una de ellas independiente e idénticamente distribuida con la misma tasa media λ. Mientras que la distribución Exponencial modela el tiempo hasta el _primer_ evento, la Erlang modela el tiempo total hasta el _k-ésimo_ evento.
+>
+> Está definida por dos parámetros:
+>
+> * **k**: El **parámetro de forma** (shape parameter), un entero positivo que representa el número de eventos exponenciales idénticos que se suman.
+> * **λ (lambda)**: La **tasa media de ocurrencia** de los eventos individuales del proceso de Poisson subyacente.
+>
+> A medida que k aumenta, la forma de la distribución se vuelve más simétrica y se aproxima a la distribución Normal (debido al Teorema del Límite Central).
+>
+>
+
+***
+
+### **2. ¿Cómo y Cuándo se Usa?**
+
+Se utiliza para modelar tiempos de espera o duraciones de tareas que pueden ser vistas como la suma de varias etapas secuenciales e independientes. Su flexibilidad la hace muy útil en teoría de colas, telecomunicaciones y procesos estocásticos.
+
+* **Teoría de Colas**: Es excelente para modelar un **tiempo de servicio** que se compone de varias fases distintas (ej. diagnóstico, reparación y prueba). Si cada fase tiene una duración exponencial, el tiempo total del servicio sigue una distribución de Erlang.
+* **Gestión de la Cadena de Suministro**: El tiempo total de entrega de un pedido que debe pasar por k centros de distribución o etapas de procesamiento.
+* **Ingeniería de Fiabilidad**: El tiempo hasta la falla de un sistema que tiene k componentes de respaldo y que entra en funcionamiento secuencialmente.
+
+***
+
+### **3. Forma Algebraica**
+
+Sea T la variable aleatoria continua que representa el tiempo total hasta que ocurre el k-ésimo evento.
+
+* **Función de Densidad de Probabilidad (fdp)**: $$f(t)=\frac {λ^kt^{k−1}e^{−λt}}{(k−1)!}​,para t≥0,k=1,2,...$$
+* **Valor Esperado (Media)**: El tiempo medio total para los k eventos. $$E[T]=\frac{k​}{λ}$$
+* **Varianza**: $$Var(T)=\frac{k}{λ^2}​$$
+
+***
+
+### **4. Forma en Excel**
+
+Excel no tiene una función dedicada `ERLANG.DIST`, pero la distribución de Erlang es un caso especial de la **distribución Gamma** donde el parámetro de forma es un entero. Por lo tanto, se utiliza la función `GAMMA.DIST` (o `DISTR.GAMMA` en español).
+
+La sintaxis es: `DISTR.GAMMA(x; alfa; beta; acumulado)`
+
+La correspondencia de parámetros es la siguiente:
+
+* **`x`**: El valor del tiempo total, t.
+* **`alfa`**: Es el parámetro de forma de Erlang, **k**.
+* **`beta`**: Es el parámetro de escala, que equivale al tiempo medio de cada fase exponencial, **1/λ**.
+* **`acumulado`**: `VERDADERO` para la FDA, `FALSO` para la fdp.
+
+**Ejemplo:** Un proceso consiste en 4 etapas (k=4), y la tasa de eventos es de 2 por minuto (λ=2). ¿Cuál es la probabilidad de que el proceso completo tarde 3 minutos o menos? `=DISTR.GAMMA(3; 4; 1/2; VERDADERO)`
+
+***
+
+### **5. Forma de Usarla en Simulación (AnyLogic)**
+
+La distribución de Erlang es muy valiosa en AnyLogic para modelar tiempos de proceso que son menos variables que la distribución Exponencial (cuyo pico siempre está en cero), pero que no son necesariamente simétricos como la Normal.
+
+**En AnyLogic**, la función es:
+
+```java
+erlang(k, mean)
+```
+
+* **`k`**: El parámetro de forma, el número de etapas exponenciales.
+* **`mean`**: El **tiempo medio total** del proceso. **Atención**: este argumento es k/λ, no 1/λ.
+
+**Ejemplo de uso:** Se modela un proceso de ensamble que consta de 2 fases secuenciales (k=2). Se sabe que el tiempo promedio para completar **todo el ensamble** es de 30 minutos. En el bloque `Service` o `Delay` correspondiente, se escribiría:
+
+```java
+erlang(2, 30)
+```
+
+Esto implica que cada una de las dos fases exponenciales subyacentes tiene un tiempo medio de 30/2=15 minutos.
+
+
+
