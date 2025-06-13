@@ -639,3 +639,84 @@ max(0, normal(mean, stdDev))
 ```
 
 Este comando asegura que si la función `normal()` devuelve un valor negativo, el sistema utilizará `0` en su lugar, manteniendo la integridad del modelo.
+
+***
+
+## **Distribución Triangular**
+
+***
+
+### **1. Definición**
+
+> La **distribución Triangular** es una distribución de probabilidad continua definida por tres parámetros que determinan su forma de triángulo:
+
+* **a**: el valor **mínimo** posible de la variable.
+* **b**: el valor **máximo** posible de la variable.
+* **c**: el valor **más probable** o **moda**, que representa el pico del triángulo.
+
+A diferencia de la distribución Normal que es teóricamente infinita, la Triangular está definida sobre un rango finito \[a,b], lo que la hace muy práctica para modelar fenómenos acotados.
+
+***
+
+**2. ¿Cómo y Cuándo se Usa?**
+
+Es la distribución ideal cuando no se dispone de una gran cantidad de datos históricos para realizar un ajuste de distribución formal, pero se cuenta con la **opinión de un experto**. Un experto en un proceso a menudo puede estimar fácilmente los escenarios "mejor caso" (mínimo), "peor caso" (máximo) y "caso más probable" (moda).
+
+Sus aplicaciones más comunes en ingeniería y simulación son:
+
+* **Gestión de Proyectos**: Es la base de la técnica **PERT** (Program Evaluation and Review Technique) para estimar la duración de las actividades de un proyecto.
+* **Modelado de Tiempos de Servicio/Proceso**: Estimar el tiempo que toma una operación manual, como la atención de un cajero, la reparación de una máquina o el tiempo de un corte de pelo.
+* **Análisis de Riesgos**: Modelar variables financieras o de negocio cuando solo se dispone de estimaciones subjetivas.
+
+***
+
+**3. Forma Algebraica**
+
+Sea X la variable aleatoria continua.
+
+* **Función de Densidad de Probabilidad (fdp)**: Es una función definida por tramos que forma un triángulo. f(x)={(b−a)(c−a)2(x−a)​(b−a)(b−c)2(b−x)​​para a≤x≤cpara c\<x≤b​
+* **Valor Esperado (Media)**: E\[X]=3a+b+c​
+* **Varianza**: Var(X)=18a2+b2+c2−ab−ac−bc​
+
+***
+
+**4. Forma en Excel**
+
+Excel no cuenta con una función `TRIANG.DIST` incorporada. Para generar una muestra aleatoria de esta distribución, se debe aplicar el **método de la transformada inversa** sobre su Función de Distribución Acumulada (FDA), lo cual resulta en una fórmula condicional compleja.
+
+La lógica es la siguiente:
+
+1. Se genera un número aleatorio R de una distribución Uniforme(0,1) con la función `ALEATORIO()`.
+2. Se calcula un umbral de probabilidad Fc​=(c−a)/(b−a).
+3. Si R\<Fc​, se aplica una fórmula para obtener un valor en la rampa ascendente del triángulo.
+4. Si R≥Fc​, se aplica otra fórmula para obtener un valor en la rampa descendente.
+
+Debido a su complejidad, esta implementación en Excel generalmente se realiza a través de macros (VBA) o complementos de simulación, en lugar de una fórmula directa en una celda.
+
+***
+
+**5. Forma de Usarla en Simulación (AnyLogic)**
+
+La distribución Triangular es una de las más utilizadas en AnyLogic para modelar tiempos de proceso, dada la facilidad para estimar sus parámetros.
+
+**En AnyLogic**, la función es directa e intuitiva:
+
+Java
+
+```
+triangular(min, mode, max)
+```
+
+* **`min`**: El valor mínimo, a.
+* **`mode`**: El valor más probable (la moda), c.
+* **`max`**: El valor máximo, b.
+
+**Ejemplo de uso:** En el libro de AnyLogic de Andrei Borshchev se muestra un ejemplo donde el tiempo de un proceso se modela con `triangular(0.5, 1, 1.5)` segundos. Esto significa que la operación tarda:
+
+* Como mínimo **0.5 segundos**.
+* Como máximo **1.5 segundos**.
+* Lo más probable es que tarde **1 segundo**.
+
+Esta forma de modelar es sumamente útil porque se alinea perfectamente con la manera en que los ingenieros y gerentes de operaciones a menudo describen la duración de los procesos en la vida real.
+
+![foto de perfil](https://lh3.googleusercontent.com/a/ACg8ocIcYOFgYsh-953IzlvoZy91UPEWaKL1wMfWhjh2UISflloQEQ_G=s64-c)Generar resumen de audio
