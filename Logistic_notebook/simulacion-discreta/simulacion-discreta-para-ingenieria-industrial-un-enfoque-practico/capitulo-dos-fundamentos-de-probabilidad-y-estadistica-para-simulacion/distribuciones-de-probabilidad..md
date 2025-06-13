@@ -591,10 +591,10 @@ Se utiliza para modelar:
 
 Sea X una variable aleatoria continua.
 
-* **Función de Densidad de Probabilidad (fdp)**: f(x)=σ2π​1​e−21​(σx−μ​)2,para −∞\<x<∞
+* **Función de Densidad de Probabilidad (fdp)**: $$F(x)=\frac{1}{σ \sqrt{2π}​}e^{-\frac{1}{2} \left(\frac{(x−μ​)}{σ }\right)^2},\ para\ −∞<x<∞$$
 * **Función de Distribución Acumulada (FDA)**: La integral de esta función no tiene una forma cerrada simple, por lo que su cálculo se realiza numéricamente o mediante el uso de tablas estadísticas estandarizadas.
-* **Valor Esperado (Media)**: E\[X]=μ
-* **Varianza**: Var(X)=σ2
+* **Valor Esperado (Media)**: $$E[X]=μ$$
+* **Varianza**: $$f(x) = x * e^{2 pi i \xi x}$$
 
 Para calcular probabilidades, se estandariza la variable X a una variable Z que sigue una distribución normal estándar (N con μ=0 y σ=1): Z=σX−μ​ Luego, se utilizan tablas o software para encontrar las probabilidades asociadas a Z.
 
@@ -623,9 +623,7 @@ En simulación, la distribución Normal es excelente para modelar tiempos de pro
 
 **En AnyLogic**, la función es:
 
-Java
-
-```
+```java
 normal(mean, stdDev)
 ```
 
@@ -636,9 +634,7 @@ normal(mean, stdDev)
 
 **Advertencia Importante en Simulación:** Como ya experimentaste, la distribución Normal teóricamente puede generar valores negativos. Al modelar variables físicas como el tiempo o las dimensiones (que no pueden ser negativas), es una práctica de ingeniería indispensable **truncar la distribución** para evitar errores en tiempo de ejecución. La forma correcta de hacerlo es:
 
-Java
-
-```
+```java
 max(0, normal(mean, stdDev))
 ```
 
