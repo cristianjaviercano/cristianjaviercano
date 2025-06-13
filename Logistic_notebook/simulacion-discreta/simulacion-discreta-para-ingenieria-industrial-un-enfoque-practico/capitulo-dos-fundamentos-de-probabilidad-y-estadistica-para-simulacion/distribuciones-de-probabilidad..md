@@ -797,5 +797,116 @@ erlang(2, 30)
 
 Esto implica que cada una de las dos fases exponenciales subyacentes tiene un tiempo medio de 30/2=15 minutos.
 
+***
 
+## **Distribución de Weibull**
+
+***
+
+### **1. Definición**
+
+La **distribución de Weibull** es una distribución de probabilidad continua extremadamente versátil. Su principal ventaja es su capacidad para modelar diferentes comportamientos de la **tasa de fallas** de un componente o sistema a lo largo del tiempo.
+
+Está definida por dos parámetros:
+
+* **α (alfa)**: El **parámetro de forma** (shape parameter). Este es el parámetro clave que define el carácter de la distribución.
+* **β (beta)**: El **parámetro de escala** (scale parameter), también conocido como la **vida característica**. Representa el punto en el que el 63.2% de las fallas habrán ocurrido.
+
+### **2. ¿Cómo y Cuándo se Usa?**
+
+Es la distribución por excelencia en **ingeniería de fiabilidad**, **análisis de tiempo de vida** y **gestión de garantías**, ya que puede representar tres fases de la vida de un producto basándose en el valor de su parámetro de forma (α):
+
+* **Si α<1**: La tasa de fallas disminuye con el tiempo. Modela la "mortalidad infantil", donde los productos defectuosos fallan al principio de su vida.
+* **Si α=1**: La tasa de fallas es constante. En este caso, la distribución de Weibull **se reduce a la distribución Exponencial**.
+* **Si α>1**: La tasa de fallas aumenta con el tiempo. Modela el **desgaste por envejecimiento** de los componentes mecánicos.
+
+### **3. Forma Algebraica**
+
+Sea T la variable aleatoria que representa el tiempo hasta la falla.
+
+* **Función de Densidad de Probabilidad (fdp)**:  $$F(t) =\frac{α}{β}  \left( \frac{t}{β}\right)^{α−1} e^{−(\frac{t}{β})^α}  \text{para todo}\ t ≥ 0$$
+* **Valor Esperado (Media)**: $$E[T]=β⋅Γ(1+1/α)$$
+* **Varianza**: $$Var(T)=β2[Γ(1+2/α)−(Γ(1+1/α))2]$$ _(donde Γ es la función Gamma, una generalización del factorial)_
+
+### **4. Forma en Excel**
+
+Excel tiene una función directa para la distribución de Weibull: `WEIBULL.DIST` (o `DISTR.WEIBULL` en español).
+
+La sintaxis es: `DISTR.WEIBULL(x; alfa; beta; acumulado)`
+
+* **`x`**: El valor del tiempo, t.
+* **`alfa`**: El parámetro de forma, α.
+* **`beta`**: El parámetro de escala, β.
+* **`acumulado`**: `VERDADERO` para la FDA, `FALSO` para la fdp.
+
+**Ejemplo:** Un componente tiene un parámetro de forma α=2 (desgaste) y una vida característica β=8000 horas. La probabilidad de que falle antes de las 7000 horas es: `=DISTR.WEIBULL(7000; 2; 8000; VERDADERO)` devuelve `0.535` (un 53.5%).
+
+### **5. Forma de Usarla en Simulación (AnyLogic)**
+
+En AnyLogic, se usa para modelar tiempos de falla o duraciones de procesos que no siguen una tasa constante.
+
+La función es:
+
+```java
+weibull(shape, scale)
+```
+
+* **`shape`**: El parámetro de forma, α.
+* **`scale`**: El parámetro de escala, β.
+
+**Ejemplo de uso:** Para modelar el tiempo de vida de un motor que sufre desgaste, un ingeniero podría estimar α=2.5 y β=15000 horas. Para simular el evento de falla, se usaría `weibull(2.5, 15000)`.
+
+***
+
+## **Distribución Lognormal**
+
+***
+
+### **1. Definición**
+
+La **distribución Lognormal** es una distribución de probabilidad continua de una variable aleatoria cuyo **logaritmo natural está normalmente distribuido**. Dado que el logaritmo de un número negativo no está definido, esta distribución solo modela variables estrictamente positivas (X>0).
+
+Su forma es **sesgada a la derecha**, lo que la hace ideal para muchos fenómenos donde los valores bajos son comunes pero ocasionalmente pueden ocurrir valores extremadamente altos.
+
+### **2. ¿Cómo y Cuándo se Usa?**
+
+Se aplica a variables aleatorias que se cree que son el **producto de muchos pequeños factores independientes**. Esto es una consecuencia del Teorema del Límite Central aplicado a un proceso multiplicativo.
+
+* **Finanzas**: Precios de acciones, valores de activos.
+* **Ingeniería y Medicina**: Tiempos de reparación, periodos de incubación de enfermedades, concentraciones de químicos, tamaños de partículas.
+
+### **3. Forma Algebraica**
+
+* **Función de Densidad de Probabilidad (fdp)**: $$f(x) = \frac{1}{x \sigma_{\ln} \sqrt{2\pi}} e^{-\frac{(\ln(x) - \mu_{\ln})^2}{2 \sigma_{\ln}^2}}, \quad \text{para } x > 0$$
+  * _Importante_: $$μ_{ln​}\  y\  σ_{ln​}$$ son la media y la desviación estándar del **logaritmo natural de la variable**, no de la variable misma.
+* **Valor Esperado (Media)**: $$E[X]=e^{μ_{ln}+σ_{ln}^{2} /2}$$
+* **Varianza**: $$Var(X)=(e^{σ_{ln}^2​}−1)e^{2μ_{ln}​+σ_{ln}^2}$$​
+
+### **4. Forma en Excel**
+
+Excel tiene una función directa: `LOGNORM.DIST` (o `DISTR.LOG.NORM` en español).
+
+La sintaxis es: `DISTR.LOG.NORM(x; media; desv_estándar; acumulado)`
+
+* **`x`**: El valor de la variable.
+* **`media`**: La media de ln(X), es decir, μln​.
+* **`desv_estándar`**: La desviación estándar de ln(X), es decir, σln​.
+* **`acumulado`**: `VERDADERO` para la FDA, `FALSO` para la fdp.
+
+### **5. Forma de Usarla en Simulación (AnyLogic)**
+
+Es ideal para modelar tiempos de proceso que no pueden ser negativos y que presentan un sesgo, donde la mayoría de los tiempos son cortos pero ocasionalmente hay procesos muy largos.
+
+**En AnyLogic**, la función es:
+
+```java
+lognormal(mean, stdDev)
+```
+
+* **`mean`**: La **media de la propia distribución lognormal**, E\[X].
+* **`stdDev`**: La **desviación estándar de la distribución lognormal**.
+
+**Nota importante:** AnyLogic simplifica su uso. No necesitas calcular los parámetros μln​ y σln​ del logaritmo. Simplemente proporcionas la media y desviación estándar que observarías en el mundo real, y AnyLogic realiza la conversión interna.
+
+**Ejemplo de uso:** Si el tiempo para diagnosticar una falla en una máquina tiene una media observada de 45 minutos y una desviación estándar de 20 minutos (y se sabe que está sesgado a la derecha), en un bloque `Delay` o `Service` se podría usar `lognormal(45, 20)`.
 
