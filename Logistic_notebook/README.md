@@ -8,14 +8,14 @@ coverY: 0
 <figure><img src=".gitbook/assets/Imagen base para animar (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
 {% tabs %}
-{% tab title="Bienvenido/a" %}
+{% tab title="Wellcome" %}
 Hello and welcome to this exploration and learning space. I am Cristian J Cano, an industrial engineer with a master's in innovation management. Over my career, I have gained extensive experience in production environments, data management, and analysis, equipping me with deep insights into the challenges and opportunities in these dynamic and evolving sectors.
 
 I invite you to delve into this space, specially designed to offer you a wide range of technical and specialized content. Here you can find detailed analytics, enriching case studies, and reflections on contemporary innovations that are shaping the future of the industry. Each page has been curated with the purpose of providing you valuable and insightful information, capable of illuminating and enriching your knowledge in different areas of interest.
 {% endtab %}
 
-{% tab title="¿Que es este espacio?" %}
-Este espacio no solo se trata de la transmisión de información, sino también de inspirar un diálogo continuo sobre las soluciones creativas y las ideas innovadoras que pueden transformar nuestro enfoque hacia los retos del futuro. Espero que el contenido que encuentres aquí no solo sea de gran utilidad para tus iniciativas actuales, sino que también despierte tu curiosidad, te motive a cuestionar lo establecido, y te impulse a desarrollar nuevas estrategias en tu propio campo profesional.
+{% tab title="What is this page about?" %}
+This space isn't just about transmitting information; it's also about **inspiring continuous dialogue** on creative solutions and innovative ideas that can transform our approach to future challenges. We hope the content you find here will not only be highly useful for your current initiatives but also **spark your curiosity**, motivate you to **question the established**, and drive you to **develop new strategies** in your own professional field.
 {% endtab %}
 {% endtabs %}
 
