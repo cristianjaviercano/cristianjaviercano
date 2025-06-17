@@ -27,20 +27,20 @@
 * [Python para logistica](python-para-logistica/README.md)
   * [Usando FOLIUM](python-para-logistica/usando-folium.md)
 
-## Analisis de Datos
+## Data Analisys
 
-* [SQL + PYTHON](analisis-de-datos/sql-+-python/README.md)
-  * [SQL en Python para Ingenieros Industriales](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/README.md)
-    * [El Universo de los Datos](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/el-universo-de-los-datos.md)
-    * [SQL - El Idioma Universal de los Datos](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/sql-el-idioma-universal-de-los-datos.md)
-    * [Python al Mando - Conectando Mundos](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/python-al-mando-conectando-mundos.md)
-    * [Análisis de Datos Nivel Experto - SQL + Python en Acción](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/analisis-de-datos-nivel-experto-sql-+-python-en-accion.md)
-    * [Conclusión y Próximos Pasos](analisis-de-datos/sql-+-python/sql-en-python-para-ingenieros-industriales/conclusion-y-proximos-pasos.md)
-  * [Analisis de Datos usando Python y SQL (SqLite)](analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/README.md)
-    * [Que es Jupyter Notebook](analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/que-es-jupyter-notebook.md)
-    * [La Naturaleza de los Datos](analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/la-naturaleza-de-los-datos.md)
-    * [Usando JN](analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/usando-jn.md)
-    * [Entendiendo a python en JN](analisis-de-datos/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/entendiendo-a-python-en-jn.md)
+* [SQL + PYTHON](data-analisys/sql-+-python/README.md)
+  * [Sql using Pyhton using Pandas and Sqlite](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/README.md)
+    * [The Data´s Universe](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/the-data-s-universe.md)
+    * [SQL - El Idioma Universal de los Datos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/sql-el-idioma-universal-de-los-datos.md)
+    * [Python al Mando - Conectando Mundos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/python-al-mando-conectando-mundos.md)
+    * [Análisis de Datos Nivel Experto - SQL + Python en Acción](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/analisis-de-datos-nivel-experto-sql-+-python-en-accion.md)
+    * [Conclusión y Próximos Pasos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/conclusion-y-proximos-pasos.md)
+  * [Analisis de Datos usando Python y SQL (SqLite)](data-analisys/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/README.md)
+    * [Que es Jupyter Notebook](data-analisys/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/que-es-jupyter-notebook.md)
+    * [La Naturaleza de los Datos](data-analisys/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/la-naturaleza-de-los-datos.md)
+    * [Usando JN](data-analisys/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/usando-jn.md)
+    * [Entendiendo a python en JN](data-analisys/sql-+-python/analisis-de-datos-usando-python-y-sql-sqlite/entendiendo-a-python-en-jn.md)
 
 ## Simulacion discreta
 
