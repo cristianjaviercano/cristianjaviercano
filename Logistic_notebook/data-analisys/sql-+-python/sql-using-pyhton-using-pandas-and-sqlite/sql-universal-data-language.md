@@ -1,14 +1,14 @@
-# SQL - El Idioma Universal de los Datos
+# SQL - Universal Data language
 
-SQL (Structured Query Language) es el lenguaje estándar para interactuar con bases de datos relacionales. Esta sección detalla los comandos esenciales que todo ingeniero industrial debe conocer para extraer y manipular datos operativos eficazmente.
+SQL (Structured Query Language) is the standard language for interacting with relational databases. This section details the essential commands every industrial engineer should know to efficiently extract and manipulate operational data.
 
-SQL te permite:
+SQL allows you to:
 
-* **Consultar (Leer):** Extraer la información que necesitas.
-* **Manipular (Escribir):** Insertar, actualizar y borrar datos.
-* **Definir (Crear):** Estructurar la base de datos (crear tablas, etc.).
+* **Consult (Read):** Extract the
+* **Manipulate (Write):** Insert, update, and delete data
+* **Define (Create):** Structure the database (create tables)
 
-Para el ingeniero industrial, dominar las consultas SQL es fundamental para acceder a los datos operativos.
+For the industrial engineer, mastering SQL queries is essential for accessing the operational Data
 
 ### Comandos SQL Clave para el Ingeniero Industrial
 

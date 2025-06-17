@@ -32,7 +32,7 @@
 * [SQL + PYTHON](data-analisys/sql-+-python/README.md)
   * [Sql using Pyhton using Pandas and Sqlite](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/README.md)
     * [The Data´s Universe](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/the-data-s-universe.md)
-    * [SQL - El Idioma Universal de los Datos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/sql-el-idioma-universal-de-los-datos.md)
+    * [SQL - Universal Data language](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/sql-universal-data-language.md)
     * [Python al Mando - Conectando Mundos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/python-al-mando-conectando-mundos.md)
     * [Análisis de Datos Nivel Experto - SQL + Python en Acción](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/analisis-de-datos-nivel-experto-sql-+-python-en-accion.md)
     * [Conclusión y Próximos Pasos](data-analisys/sql-+-python/sql-using-pyhton-using-pandas-and-sqlite/conclusion-y-proximos-pasos.md)
