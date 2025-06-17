@@ -6,7 +6,7 @@ description: >-
 
 # Chapter One: Introduction to Simulation in Industrial Engineering
 
-<img src="../../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (2) (1) (1).svg" alt="" class="gitbook-drawing">
 
 ### Chapter Objectives: Introduction to Simulation in Industrial Engineering
 

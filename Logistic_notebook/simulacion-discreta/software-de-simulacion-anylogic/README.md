@@ -14,6 +14,6 @@ icon: file-doc
 4. **Optimización de procesos**: Contribuyen al análisis y mejora continua de procesos mediante la identificación de cuellos de botella y áreas de mejora.
 5. **Visualización de datos**: Ofrecen herramientas para representar visualmente los datos simulados, mejorando la comprensión y comunicación de los resultados.
 
-<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
 
 link de interes ---> [`AQUI!`](https://anylogic.help/anylogic/ui/properties-view.html)
