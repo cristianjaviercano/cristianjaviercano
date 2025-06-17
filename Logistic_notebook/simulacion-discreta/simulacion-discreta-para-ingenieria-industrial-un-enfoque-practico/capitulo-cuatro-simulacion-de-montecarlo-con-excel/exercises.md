@@ -1,6 +1,6 @@
 # Exercises
 
-### Case Numer One
+### Case Number One
 
 **Instrucciones:** No se permite la utilización de ningún tipo de dispositivo electrónico diferentes al PC. No se permite el uso de Internet, ni de dispositivos USB. No se pueden utilizar apuntes. Se entregan la hoja de examen parcial via Classroom. El archivo de Excel debe cargar.
 
