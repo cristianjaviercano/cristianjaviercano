@@ -120,7 +120,7 @@ Una mejor implementación sería: Celda D1: `=ALEATORIO()` Celda E1: `=SI(D1<=(B
 
 Imagina un tablero cuadrado que tiene un lado de longitud 2 y un área de 4 unidades. Dentro de este cuadrado, inscribimos un círculo de radio 1, cuya área es $$πr2=π$$.
 
-<img src="../../.gitbook/assets/file.excalidraw (8).svg" alt="Problema de la Diana" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (8).svg" alt="Problema de la Diana" class="gitbook-drawing">
 
 Si lanzamos _dardos al azar_ a este tablero, de manera que cada punto del cuadrado tenga la misma probabilidad de ser impactado, la proporción de dardos que caen dentro del círculo con respecto al total de dardos lanzados será aproximadamente igual a la **proporción de sus áreas.**
 
@@ -177,7 +177,7 @@ $$
 
 
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-06-10 a la(s) 1.54.58 p.m..png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-06-10 a la(s) 1.54.58 p.m..png" alt="" width="375"><figcaption></figcaption></figure>
 
 ### **Lógica del Modelo (Single-Server Queue):**
 
