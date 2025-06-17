@@ -1,70 +1,74 @@
 ---
+description: >-
+  understands that Queueing Theory is a fundamental analytical discipline within
+  Operations Research. It provides a mathematical framework for analyzing
+  systems where customers or items arrive.
 icon: colon
 ---
 
-# Teoria de colas
+# Queueing theory
 
 {% hint style="info" %}
 El proceso basico supuesto por la mayoria de los modelos, es que **Los clientes quieren un servicio**
 {% endhint %}
 
-### Teoria de colas.
+### QT.
 
-**¿Qué es la Teoría de Colas?**
+Queueing theory deals with the mathematical study of waiting lines, or queues. It models the flow of entities through a service system. The theoretical models typically represent a **stochastic process** where random variables govern arrivals and service times. The objective is to analyze performance measures such as average waiting time, average queue length, server utilization, and the probability of a customer having to wait.
 
-En su esencia, la Teoría de Colas es el **estudio matemático de las líneas de espera**. Su objetivo es analizar, modelar y predecir el comportamiento de sistemas donde las "entidades" (como clientes, productos, llamadas o datos) llegan en busca de un servicio, pero deben esperar si los "servidores" (recursos como cajeros, máquinas, operadores o procesadores) están ocupados.
+**Whay is Qt about?**
 
-El núcleo de cualquier sistema de colas se puede descomponer en:
+At its core, **Queueing Theory** is the mathematical study of waiting lines. Its objective is to **analyze, model, and predict the behavior of systems** where "entities" (such as customers, products, calls, or data) arrive seeking a service but must wait if "servers" (resources like cashiers, machines, operators, or processors) are busy.
 
-* **Entidades**: Los elementos que fluyen a través del sistema y demandan servicio.
-* **La Cola**: El lugar donde las entidades esperan.
-* **La Estación de Servicio**: La combinación de la cola y los servidores que prestan el servicio.
+The nucleus of any queueing system can be broken down into:
 
-### **El Enfoque Analítico y sus Limitaciones**
+* **Entities:** The elements that flow through the system and demand service.
+* **The Queue:** The place where entities wait.
+* **The Service Station:** The combination of the queue and the servers providing the service.
 
-La Teoría de Colas nos proporciona un poderoso conjunto de **fórmulas matemáticas (soluciones analíticas)** para calcular indicadores de rendimiento clave:
+### The Analytical Approach and its Limitations
 
-* **Lq**: El número promedio de entidades en la cola.
-* **Wq**: El tiempo promedio de espera en la cola.
-* **L**: El número promedio de entidades en todo el sistema (en cola + en servicio).
-* **W**: El tiempo promedio total en el sistema.
+Queueing Theory provides us with a powerful set of **mathematical formulas (analytical solutions)** to calculate key performance indicators:
 
-Para que estas fórmulas funcionen, el sistema debe ser clasificado usando una notación estándar, como la **notación de Kendall (A/B/C/D/E)**, que describe las características del sistema (ej. tipo de llegadas, tipo de servicio, número de servidores).
+* **Lq​**: The average number of entities in the queue.
+* **Wq​**: The average waiting time in the queue.
+* **L**: The average number of entities in the entire system (in queue + in service).
+* **W**: The average total time in the system.
+
+For these formulas to work, the system must be classified using a standard notation, such as the **Kendall Notation (A/B/C/D/E)**, which describes the system's characteristics (e.g., arrival type, service type, number of servers).
 
 <details>
 
-<summary>Notación de Kendall</summary>
+<summary>Kendall's Notation</summary>
 
-La notación de Kendall es una manera estandarizada de describir colas en sistemas de espera y es vital para clasificar los modelos dentro de la teoría de colas. La notación típicamente tiene la forma de A/B/C/D/E, donde:
+The **Kendall Notation** is a standardized way to describe queues in waiting line systems and is vital for classifying models within queueing theory. The notation typically takes the form of **A/B/C/D/E**, where:
 
-* **A**: Distribución del tiempo entre llegadas (ej. M para Poisson).
-* **B**: Distribución del tiempo de servicio (ej. M para Exponencial).
-* **C**: Número de servidores (por ejemplo, 1 para un solo servidor).
-* **D**: Capacidad total del sistema (puede ser ∞ para ilimitada).
-* **E**: Tamaño de la población fuente de clientes (puede ser ∞ para ilimitada).
+* **A**: **Inter-arrival time distribution** (e.g., **M** for Markovian/Poisson, **D** for Deterministic, **G** for General).
+* **B**: **Service time distribution** (e.g., **M** for Markovian/Exponential, **D** for Deterministic, **G** for General).
+* **C**: **Number of servers** (e.g., **1** for a single server, **c** for multiple servers).
+* **D**: **Total system capacity** (e.g., can be **∞** for unlimited, or a specific number).
+* **E**: **Population size** of customers (e.g., can be **∞** for unlimited, or a finite number).
 
-Utilizar correctamente esta notación ayuda a identificar rápidamente las características del sistema y a aplicar las fórmulas analíticas adecuadas.
+Properly using this notation helps in quickly identifying the system's characteristics and applying the appropriate analytical formulas.
 
 </details>
 
+However, this is where we encounter the **major limitation of pure theory**: these formulas are only valid under **very strict and simplified assumptions**.
 
+For example, classic formulas assume that arrivals follow a Poisson distribution and service times follow an Exponential distribution (the M/M/1 system, for instance).
 
-Sin embargo, aquí es donde encontramos la gran limitación de la teoría pura: **estas fórmulas solo son válidas bajo supuestos muy estrictos y simplificados**.&#x20;
+**What happens when the real system is more complex?**
 
-* Por ejemplo, las fórmulas clásicas asumen que las llegadas siguen una distribución de Poisson y los tiempos de servicio una distribución Exponencial (el sistema M/M/1, por ejemplo).
+* **If service times follow a Normal or Triangular distribution?**
+* **If there are multiple steps in the process with different types of resources?**
+* **If customers can abandon the queue (renege)?**
+* **If there are priorities (VIP customers)?**
 
-¿Qué sucede cuando el sistema real es más complejo?
+In these cases, mathematical solutions become **extremely complex** or, most often, simply **do not exist**.
 
-* ¿Si los tiempos de servicio siguen una distribución Normal o Triangular?
-* ¿Si hay múltiples pasos en el proceso con diferentes tipos de recursos?
-* ¿Si los clientes pueden abandonar la cola (renegar)?
-* ¿Si hay prioridades (clientes VIP)?
+A utilization factor below 1 indicates that the system has **sufficient capacity** to serve customers.
 
-En estos casos, las soluciones matemáticas se vuelven extremadamente complejas o, la mayoría de las veces, **simplemente no existen**.\
-\
-Un factor de utilización por debajo de 1 indica que el sistema tiene capacidad suficiente para atender a los clientes.
-
-### **La Teoría de Colas en la Práctica con AnyLogic**
+### Queueing Theory in Practice with AnyLogic
 
 Los conceptos de la Teoría de Colas se mapean directamente a los bloques de la **Process Modeling Library (PML)** de AnyLogic:
 

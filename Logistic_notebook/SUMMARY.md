@@ -32,7 +32,7 @@
 * [Discrete Event Simulation for Industrial Engineering: A Practical Approach](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/README.md)
   * [Chapter Zero: Introduction to Simulation Concepts](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-cero-introduccion-a-los-conceptos-de-simulacion.md)
   * [Chapter One: Introduction to Simulation in Industrial Engineering](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/README.md)
-    * [Teoria de colas](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/teoria-de-colas.md)
+    * [Queueing theory](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/chapter-one-introduction-to-simulation-in-industrial-engineering/queueing-theory.md)
     * [Simulacion de eventos Discretos](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/README.md)
       * [Anylogic Model 1 M/M/1](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/simulacion-de-eventos-discretos/anylogic-model-1-m-m-1.md)
     * [Bloque de ejercicios Capitulo Uno](simulacion-discreta/simulacion-discreta-para-ingenieria-industrial-un-enfoque-practico/capitulo-uno-introduccion-a-la-simulacion-en-ingenieria-industrial/bloque-de-ejercicios-capitulo-uno.md)
