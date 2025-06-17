@@ -28,10 +28,10 @@ This chapter aims to establish a robust foundational understanding of simulation
 To understand the simulation, it is essential first to define the fundamental concepts on which it is built.
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (4).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
-{% tab title="Sistema" %}
+{% tab title="System" %}
 
 
 A **collection of entities (e.g., people, machines, components) that interact with each other to achieve a logical purpose or objective** (Law, 2015; Banks et al., 2010). A system is bounded, meaning there is a clear distinction between what is inside the system and what is part of its environment. The behavior of the system emerges from the interactions of its components over time.
@@ -55,7 +55,7 @@ Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de
 {% endhint %}
 {% endtab %}
 
-{% tab title="Modelo" %}
+{% tab title="Model" %}
 
 
 A **model** is an abstraction or representation of a real-world system. Its primary purpose is to capture the essential features and relationships of the system under study, simplifying its complexity to enable analysis, prediction, and understanding (Shannon, 1998).
@@ -80,7 +80,7 @@ Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event System
 {% endhint %}
 {% endtab %}
 
-{% tab title="Simulacion" %}
+{% tab title="Simulation" %}
 **The process of designing and developing a computerized model of a real or proposed system for the purpose of conducting numerical experiments to understand, predict, or improve the behavior of the system over time** (Banks et al., 2010).
 
 Alternatively, Law (2015) states that simulation is the **imitation of the operation of a real-world process or system over time**. This involves generating an artificial history of the system and drawing inferences about its operating characteristics.
@@ -105,25 +105,24 @@ Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Educa
 The simulation process involves more than just "running a program." It starts with a thorough understanding of the real system and a clear definition of the study
 {% endhint %}
 
-#### El proceso de modelado, Abstracción y simplificación
+***
 
-El desarrollo de un modelo de simulación es tanto un arte como una ciencia. Implica tomar decisiones cruciales sobre qué incluir y qué omitir, un proceso guiado por los objetivos del estudio y la naturaleza del sistema.
+### The Modeling Process: Abstraction and Simplification
+
+The development of a simulation model is as much an **art as it is a science**. It involves making crucial decisions about what to include and what to omit—a process guided by the study's objectives and the nature of the system being modeled.
 
 <details>
 
-<summary>La Abstraccion de un Fenomeno Observado</summary>
+<summary>Abstraction of the Model</summary>
 
-La abstracción consiste en _**identificar y capturar la esencia de un sistema**_, _ignorando los detalles que se consideran irrelevantes para el propósito del estudio._&#x20;
+**Abstraction** involves identifying and capturing the **essence of a system**, while ignoring details considered irrelevant to the study's purpose. It's the process of "rising above" minute details to gain a more general and manageable overview.
 
-{% hint style="info" %}
-Es el proceso de "elevarse" por encima de los detalles minuciosos para obtener una visión más general y manejable.&#x20;
-{% endhint %}
+* **Theoretical Perspective:** Abstraction involves mapping a complex real-world system S to a simplified representation M such that M captures the critical functional relationships of S relevant to the study's objectives. This can be viewed as identifying the **"first principles"** or dominant mechanisms governing the system's behavior.
+* **Practical Application:** If studying a manufacturing line's throughput, an engineer would abstract away details like the color of machines or the specific brand of tools, focusing instead on processing times, machine capacities, breakdown rates, and material flow logic.
 
-En el contexto del modelado, la abstracción permite **"usar cada parte del modelo sin conocer sus detalles internos"**. Los modelos de simulación pueden operar en diferentes niveles de abstracción.&#x20;
+**Abstraction** is the conceptual process of identifying the essential characteristics and behaviors of a system while deliberately ignoring irrelevant details. In simulation, this means focusing on the elements and interactions that directly influence the performance measures of interest.
 
-Por ejemplo, a un nivel _estratégico alto_, se pueden modelar flujos agregados en una cadena de suministro sin detallar cada camión o producto individual.&#x20;
-
-A un nivel _operativo bajo_, se podría modelar el movimiento preciso de un vehículo guiado automáticamente (AGV) en un almacén, incluyendo sus aceleraciones y desaceleraciones.&#x20;
+&#x20;
 
 {% hint style="warning" %}
 La elección del nivel de abstracción correcto es **crítica**,&#x20;
@@ -137,15 +136,15 @@ La elección del nivel de abstracción correcto es **crítica**,&#x20;
 
 <details>
 
-<summary>La Simplificación Del Modelo Observado.</summary>
+<summary>Simplification of the Model</summary>
 
-La simplificación va de la mano con la abstracción. Dado que los sistemas reales son inherentemente complejos, cualquier modelo será una simplificación de esa realidad.&#x20;
 
-El objetivo es lograr una _"simplificación válida"_ , es decir, un modelo que sea lo suficientemente simple para ser comprendido, construido y analizado, pero lo suficientemente detallado para representar adecuadamente aquellos aspectos del sistema que son cruciales para los objetivos del estudio.&#x20;
 
-Como lo expresa la máxima citada en , un modelo debe ser "_**tan simple como sea posible, pero nunca más simple"**_. Esto implica un delicado equilibrio.&#x20;
+**Simplification** is the practical act of reducing the complexity of the abstracted model to make it tractable for implementation and analysis. This often involves making assumptions, aggregating components, or using statistical distributions to represent variability rather than modeling every individual micro-event.
 
-Omitir características importantes puede invalidar el modelo, mientras que incluir detalles superfluos puede oscurecer los resultados, aumentar el tiempo de desarrollo y ejecución, y dificultar la validación del mismo.
+* **Theoretical Perspective:** Simplification often involves reducing the number of state variables, assuming certain distributions for random inputs, or linearizing non-linear relationships, provided these simplifications do not significantly compromise the **validity** of the model with respect to the study's objectives.
+
+As expressed by the maxim cited, a model should be "as simple as possible, but never simpler." This implies a **delicate balance**. Omitting important characteristics can invalidate the model, while including superfluous details can **obscure the results**, **increase development and execution time**, and **complicate its validation**.
 
 {% hint style="success" %}
 Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.)
@@ -154,68 +153,66 @@ Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Eve
 </details>
 
 {% hint style="info" %}
-El proceso de modelado a menudo es iterativo. Se puede comenzar con un modelo relativamente simple y, a medida que se gana comprensión del sistema y de la sensibilidad del modelo a diferentes factores, se pueden añadir gradualmente más detalles o complejidad donde sea necesario.
+The modeling process is often **iterative**. One can start with a relatively simple model, and as understanding of the system and the model's sensitivity to different factors grows, **more details or complexity can be gradually added where necessary**.
 {% endhint %}
 
-La habilidad para realizar abstracciones y simplificaciones adecuadas, sin perder la fidelidad esencial del modelo respecto al sistema y los objetivos del estudio, es una de las competencias más importantes de un **buen modelador.**
+The ability to perform appropriate **abstractions** and **simplifications**—without losing the model's essential fidelity to the system and the study's objectives—is one of the most important competencies of a good modeler.
 
-#### Tipos de Modelos de Simulacion que buscan imitar la Realidad.
+#### Types of Simulation Models that Imitate Reality.
 
-Los modelos pueden clasificarse de diversas maneras, lo que ayuda a entender su naturaleza y las herramientas adecuadas para su análisis
+Models can be classified in various ways, which helps in understanding their nature and the appropriate tools for their analysis.
 
 <details>
 
-<summary><strong>Modelos Fisicos</strong></summary>
+<summary>Physic Models</summary>
 
-Son representaciones tangibles o a escala del sistema real. Ejemplos clásicos incluyen maquetas de edificios utilizadas por arquitectos o modelos de aviones en túneles de viento. Aunque útiles en ciertos campos, en el contexto de la simulación de sistemas de ingeniería industrial, el enfoque se centra predominantemente en los modelos matemáticos
+These are **tangible or scaled representations** of the real system. Classic examples include building models used by architects or airplane models in wind tunnels. While useful in certain fields, in the context of simulating industrial engineering systems, the focus is predominantly on **mathematical models**.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos Matemáticos</strong></summary>
+<summary><strong>Matemathics Models</strong></summary>
 
-Utilizan el lenguaje y los símbolos matemáticos (ecuaciones, algoritmos) para describir las relaciones entre los componentes y las variables de un sistema. Estos son los modelos que se implementan y analizan mediante simulación por computado
-
-</details>
-
-<details>
-
-<summary><strong>Modelos Analíticos</strong></summary>
-
-Son aquellos modelos matemáticos que pueden resolverse mediante técnicas matemáticas directas para obtener soluciones exactas o en forma cerrada&#x20;
-
-por ejemplo, la solución de un sistema de ecuaciones diferenciales lineales o la fórmula para el tiempo de espera promedio en una cola M/M/1&#x20;
+These utilize **mathematical language and symbols** (equations, algorithms) to describe the relationships between a system's components and variables. These are the models that are **implemented and analyzed via computer simulation**.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos de Simulación</strong></summary>
+<summary><strong>Analithics Models</strong></summary>
 
-Cuando un modelo matemático es demasiado complejo para una solución analítica, se recurre a la simulación. Esta implica la evaluación numérica del modelo a través de la experimentación computarizada para estimar su comportamiento
-
-</details>
-
-<details>
-
-<summary><strong>Modelos Estáticos</strong></summary>
-
-El tiempo no es una variable explícita o significativa en el modelo. Representan el sistema en un único punto en el tiempo o bajo condiciones de equilibrio. La simulación de Montecarlo, por ejemplo, a menudo se aplica a modelos estáticos para evaluar el impacto de la incertidumbre en las entradas sobre una salida de interés
+These are mathematical models that can be solved using **direct mathematical techniques** to obtain **exact or closed-form solutions**—for example, the solution to a system of linear differential equations or the formula for the average waiting time in an M/M/1 queue.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos Dinámicos</strong></summary>
+<summary><strong>Simulation Models</strong></summary>
 
-El estado del sistema evoluciona con el tiempo. Las variables del sistema cambian como resultado de actividades o eventos que ocurren a lo largo del tiempo. La simulación de eventos discretos se ocupa fundamentalmente de modelos dinámicos
+When a mathematical model is too complex for an analytical solution, **simulation** is employed. This involves the **numerical evaluation** of the model through **computerized experimentation** to estimate its behavior.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos Deterministas</strong></summary>
+<summary><strong>Static Models</strong></summary>
+
+Time is **not an explicit or significant variable** in the model. They represent the system at a **single point in time** or under **equilibrium conditions**. Monte Carlo simulation, for instance, is often applied to static models to evaluate the impact of input uncertainty on an output of interest.
+
+</details>
+
+<details>
+
+<summary><strong>Dinamic Models</strong></summary>
+
+The **system's state evolves over time**. System variables change as a result of activities or events occurring throughout time. Discrete-event simulation fundamentally deals with **dynamic models**.
+
+</details>
+
+<details>
+
+<summary><strong>Deterministic Models</strong></summary>
 
 No contienen componentes aleatorios. Dada una entrada y un estado inicial, la trayectoria futura del sistema está completamente determinada.
 

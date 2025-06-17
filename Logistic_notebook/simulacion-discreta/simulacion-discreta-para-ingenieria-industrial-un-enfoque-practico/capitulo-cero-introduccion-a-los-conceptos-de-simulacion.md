@@ -7,7 +7,7 @@ description: >-
 
 # Chapter Zero: Introduction to Simulation Concepts
 
-<img src="../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="Unrapido vistazo al mundo e la simulacion" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (3).svg" alt="simulation events and processing" class="gitbook-drawing">
 
 Welcome to the fascinating world of **discrete-event simulation**—a discipline that has become an indispensable tool in the modern industrial engineer's arsenal. In an era characterized by the increasing complexity of production, logistics, and service systems, the ability to model, analyze, and optimize these systems is more crucial than ever.
 
@@ -70,7 +70,7 @@ Another crucial scenario where simulation should **not** be used is when the **p
 
 ### Characterization of a Simulation Model
 
-<img src="../../.gitbook/assets/file.excalidraw (6).svg" alt="" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (6).svg" alt="Simulation Models" class="gitbook-drawing">
 
 {% hint style="info" %}
 A simulation model, at its core, is a **representation of a real-world system** that captures its essential features and behaviors. The theoretical framework for characterizing these models often distinguishes between several key attributes (Law, 2015; Banks et al., 2010).
