@@ -195,7 +195,9 @@ The theoretical benefit of multiple servers, compared to a single server with th
 
 ## Service Time Distributions
 
-* M = exponential distribution
+
+
+### Exponential distribution
 
 The **exponential distribution** is a continuous probability distribution that describes the time between events in a Poisson process. It is a key distribution for modeling service time in queueing systems. It is characterized by its **constant rate of occurrence**, meaning that no matter how much time has passed since the last event, the probability of a new event occurring in the next instant is the same. The probability density function of an exponential distribution is expressed as:
 
@@ -205,7 +207,9 @@ $$
 
 where λ is the occurrence rate and x is time. This **"memoryless" property** makes it very useful in various contexts, such as modeling waiting times in queues and telecommunications systems.
 
-* D = Degenerate Distribution
+
+
+### Degenerate Distribution
 
 The **degenerate distribution** is a probability distribution that **concentrates all its probability at a single point**. In other words, it is a distribution where a random variable always takes the same value with probability 1. If X is a variable with a degenerate distribution at a, it is denoted as: $$X \sim D(a)$$ and defined by:
 
@@ -215,7 +219,9 @@ $$
 
 This distribution has **no variability**, and therefore, its variance is zero. In practical contexts, it is considered to introduce **no uncertainty or randomness** into modeling scenarios.
 
-* Erlang distribution
+
+
+### Erlang distribution
 
 
 
@@ -227,66 +233,72 @@ $$
 
 This distribution is characterized by its ability to model processes where multiple independent events are required to occur beforehand.
 
-* G = Distribucion General
 
-La **distribución general** (G) se refiere a una clase amplia de distribuciones que no se ajustan necesariamente a una forma específica, como las distribuciones normal, exponencial o Erlang. En modelado estadístico y teoría de colas, se utiliza para representar procesos que tienen características arbitrarias y no específicas. La función de densidad de probabilidad y las propiedades exactas de una distribución general pueden variar significativamente dependiendo del contexto particular en el que se aplique.
 
-### Notacion de la teoria de colas
+General Distribution
 
-* estado del sistema: Numero de clientes en el sistema
-* Longitud de la cola: Numero de clientes que esperan el servicio
-  * estado del sistema _menos_ numero de clientes a quienes se les da el servicio.
-* N(t): Número de clientes en el sistema de colas en el tiempo $$t(t \ge 0)$$
-* $$P_n(t)$$: Probabilidad de que exactamente n clientes esten en el sistema en el tiempo t, dado el número en tiempo 0
-* s: Número de servidores
-* $$\lambda_n$$: tasa media de llegadas de nuevos clientes cuando hay n clientes en el sistema
-* $$\mu_n$$ tasa media de servicio en todo el sistema cuando hay n clientes en el sistema.
-* Cuando $$\lambda_n$$  es constante para toda n, esta constante se escribe como  $$\lambda$$,
-*   Cuando la _tasa media de servicio_ por servidor ocupado es constante para toda n $$n \ge 1$$, esta constante se escribe como $$\mu$$
+The **general distribution (G)** refers to a broad class of distributions that do not necessarily conform to a specific shape, such as the normal, exponential, or Erlang distributions. In statistical modeling and queueing theory, it is used to represent processes that have **arbitrary and non-specific characteristics**. The probability density function and exact properties of a general distribution can vary significantly depending on the particular context in which it is applied.
 
-    * $$\mu_n = s\mu, cuando\ n\ge s,$$ cuando los servidores estan ocupados
-    * $$\frac{1}{\lambda}$$ _tiempo esperado entre llegadas_
-    * $$\frac{1}{\mu},$$ tiempo esperado de servicio
-    * $$\rho = \frac{\lambda}{(s\mu)},$$ es el _factor de utilizacion_ de la instalacion de servicio, la fraccion esperada de tiempo en que los setvidores individuales están ocupados, es la fraccion de la capacidad usada del servicio por los clientes que llegan.
+## Queueing Theory Notation
 
-    Cuando el sistema esta en ejecusion al inicio de este, cuando los clientes apenas estan entrando al sistema se conoce como _estado inicial_ es un estado donde el mismo comportamiento del sistema es dificil de evidenciar ya que se esta estabilizando, una ves relaizado o pasado este fenomeno el sistema entra en lo que se conoce como _estado estable_, esta ultima es el foco de observacion de la teoria de colas.
+* system status: Number of customers in the system
+* Queue length: Number of customers waiting for service.
+  * system state _minus_ number of customers being
+* Input:
+* N(t): Number of customers in the queueing system at time $$t(t \ge 0)$$
+* $$P_n(t)$$: Probability that exactly n customers are in the system at time
+* s: Númber of servers
+* $$\lambda_n$$: Mean arrival rate of new customers when there are n customers in the system.
+* $$\mu_n$$ Mean service rate for the entire system when there are n customers in the system.
+* When λ\_n is constant for all n, this constant is written as λ.
+*   When the _average service rate_ per busy server is constant for all $$n \ge 1$$, this constant is denoted by $$\mu$$.
 
-    * $$P_n =$$ probabilidad de que haya exactamente n clientes en el sistema
-    * $$L =$$ número esperado de clientes en el sistema = $$\sum_{n=0}^{\infin}nP_n$$
-    * $$L_q =$$longitu esperada de la cola, este excluye a los clientes que estan en el modo _servicio_ = $$\sum_{n = s}^{\infin}(n-s)P_n$$
-    * $$W =$$tiempo de espera en el sistema, incluye le tiempo de servicio para cada cliente $$W = E(W)$$
-    * $$W_q=$$ tiempo de espera en el sistema, excluye el tiempo de servicio para cada cliente $$W_q = E(W_q)$$
+    * $$\mu_n = s\mu, \text{ when } n\ge s,$$ when servers are busy.
+    * $$\frac{1}{\lambda}$$ is the _expected time between arrivals_.
+    * $$\frac{1}{\mu},$$ is the expected service time.
+    * $$ho = \frac{\lambda}{(s\mu)},$$ is the _utilization factor_ of the service facility, representing the expected fraction of time individual servers are busy, or the fraction of service capacity used by arriving customers.
 
-### Papel de la Distribución Exponencial
+    When the system is first starting and customers are just entering the system, it is known as the _initial state_. This is a state where the behavior of the system is hard to observe as it stabilizes. Once this initial phase has passed, the system transitions into what is known as a _steady state_, which is the primary focus of queueing theory.
 
-La **distribución exponencial** es fundamental en la teoría de colas debido a su capacidad para modelar situaciones en las que los eventos ocurren de manera continua y a una tasa constante. Una de las propiedades más importantes de la distribución exponencial es su falta de memoria, lo que significa que el tiempo de espera restante para un evento es independiente del tiempo ya transcurrido. Esta propiedad simplifica en gran medida el análisis de sistemas de colas, especialmente en los modelos **M/M/1**, donde las llegadas y el servicio siguen un proceso de Poisson y tiempos de servicio exponenciales respectivamente.
+    * $$P_n =$$ probability of having exactly n customers in the system.
+    * $$L =$$ the expected number of customers in the system = $$\sum_{n=0}^{\infty}nP_n$$.
+    * $$L_q =$$ expected queue length, excluding customers in _service_ mode = $$\sum_{n = s}^{\infty}(n-s)P_n$$.
+    * $$W =$$ the waiting time in the system, including service time for each customer $$W = E(W)$$.
+    * $$W_q =$$ the waiting time in the system, excluding service time for each customer $$W_q = E(W_q)$$\
 
-#### Aplicaciones
 
-* **Modelado de tiempos de servicio**: En sistemas donde el tiempo de servicio real varía de manera aleatoria, y la tasa promedio es constante.
-* **Análisis de espera**: Determinar tiempos de espera promedio en sistemas de colas.
-* **Eficiencia de la red**: En redes de comunicación para modelar la llegada de paquetes y la duración de las conexiones.
+### Role of the Exponential Distributionl
 
-La simplicidad matemática de la distribución exponencial permite realizar cálculos y simulaciones eficientes, siendo una herramienta esencial para la optimización y diseño de sistemas de colas.
+The **exponential distribution** is fundamental in queueing theory due to its ability to model situations where events occur continuously and at a constant rate. One of the most important properties of the exponential distribution is its **memoryless property**, meaning that the remaining waiting time for an event is independent of the time already elapsed. This property greatly simplifies the analysis of queueing systems, especially in **M/M/1 models**, where arrivals and service follow a Poisson process and exponential service times, respectively.
 
-#### Proceso de Nacimiento y Muerte
+The exponential distribution describes the **time between events in a Poisson process**. If events occur at a constant average rate, then the time elapsed between any two consecutive events follows an exponential distribution. Conversely, if inter-event times are exponentially distributed, the number of events occurring in any fixed interval follows a Poisson distribution. This duality is fundamental.
 
-En la teoría de colas, el **proceso de nacimiento y muerte** es un tipo de proceso estocástico que modela sistemas donde las llegadas y servicios pueden ser descritos por tasas constantes. Estos nombres se deben a la analogía con los procesos demográficos: "nacimiento" se refiere a la llegada de un nuevo cliente al sistema, mientras que "muerte" representa la salida de un cliente tras ser atendido.
+#### Applications.
 
-**Descripción del Proceso**
+* **Modeling service times:** In systems where actual service time varies randomly and the average rate is constant.
+* **Waiting line analysis:** To determine average waiting times in queueing systems.
+* **Network efficiency:** In communication networks, to model packet arrivals and connection durations.
 
-1. **Estado del sistema**: El sistema se encuentra en un estado determinado por el número de clientes presentes.
-2. **Tasa de nacimiento** $$\lambda$$: La tasa a la que nuevos clientes llegan al sistema. En modelos de colas, esta suele seguir la distribución exponencial.
-3. **Tasa de muerte** $$\mu$$: La tasa a la que los clientes completan su servicio y dejan el sistema. También modelada a menudo por la distribución exponencial.
+The mathematical simplicity of the exponential distribution allows for efficient calculations and simulations, making it an essential tool for the optimization and design of queueing systems.
 
-**Ejecución**
+### Birth-Death Process
 
-* **Transiciones entre estados**: Un cambio de estado ocurre cuando un cliente llega o se va.
-* **Balance de tasas**: En el estado estacionario, el sistema puede lograr un equilibrio donde la tasa promedio de nacimientos iguala a la tasa promedio de muertes.
+In queueing theory, the **birth-death process** is a type of stochastic process that models systems where arrivals and services can be described by constant rates. These names stem from the analogy with demographic processes: "birth" refers to the arrival of a new customer into the system, while "death" represents a customer's departure after being served.
 
-#### Aplicaciones
+#### Process Description
 
-El proceso de nacimiento y muerte es básico en el análisis de colas **M/M/1**, ayudando a calcular métricas como el tamaño promedio de la cola y el tiempo de espera medio, cruciales para optimizar el rendimiento de sistemas de servicio.
+* **System State:** The system is in a state determined by the number of customers present.
+* **Birth Rate (λ):** The rate at which new customers arrive at the system. In queueing models, this typically follows an exponential distribution.
+* **Death Rate (μ):** The rate at which customers complete their service and leave the system. Also often modeled by the exponential distribution.
+
+#### Execution
+
+* **Transitions Between States:** A state change occurs when a customer arrives or leaves.
+* **Rate Balance:** In the steady state, the system can achieve an equilibrium where the average birth rate equals the average death rate.
+
+#### Applications
+
+The birth-death process is fundamental in the analysis of M/M/1 queues, helping to calculate metrics such as average queue size and mean waiting time, which are crucial for optimizing the performance of service systems.
 
 #### Ejemplo Uno de Teoría de Colas
 
@@ -334,47 +346,45 @@ En un restaurante, el sistema de colas se puede modelar de manera similar a un s
 * **Probabilidad de Espera**: Durante las horas pico, cuando la utilización es alta ($$ho \approx 1$$), es probable que los clientes tengan que esperar antes de ser atendidos.
 * **Tamaño de la Cola y Tiempo de Espera**: Siguiendo las fórmulas mencionadas anteriormente, se puede calcular el tamaño promedio de la cola y el tiempo promedio que un cliente espera en el sistema.
 
-### Ejemplo 3 de un Restaurante con 3 Meseros
+### Example 3: A Restaurant with 3 Servers
 
-Supongamos que un restaurante tiene 3 meseros disponibles para atender a los clientes. La tasa promedio de llegada de clientes al restaurante es de 15 clientes por hora ($$\lambda = 15$$), y cada mesero puede atender a un cliente en un promedio de 20 minutos, es decir, la tasa de servicio por mesero es de 3 clientes por hora ($$\mu = 3$$).
+Suppose a restaurant has **3 servers** available to attend to customers. The **average customer arrival rate** at the restaurant is **15 customers per hour**. ($$\lambda = 15$$), and each server can attend to one customer in an average of **20 minutes**, meaning the service rate per server is **3 customers per hou** ($$\mu = 3$$).
 
+Solving:
 
-
-#### Resolución del Problema
-
-1.  **Cálculo de la Utilización**: La utilización de cada mesero se calcula usando la fórmula:
+1.  The utilization of each server is calculated using the formula:
 
     $$ho = \frac{\lambda}{N \cdot \mu} = \frac{15}{3 \cdot 3} = \frac{15}{9} = \frac{5}{3} \approx 0.56$$
 
-    Esto indica que cada mesero está ocupado aproximadamente un 56% del tiempo.
+    This indicates that each server is busy approximately **56% of the time**.
 
-#### Otros Cálculos del Sistema de Meseros
+Other Server System Calculations
 
-2. **Tiempo de Espera en Cola (Wq)**: Este se calcula usando la fórmula de Little y el modelo M/M/c, donde Wq es la cantidad promedio de tiempo que un cliente espera en la cola antes de ser atendido.
+2.  **Queue Waiting Time (Wq​):** This is calculated using Little's Law and the M/M/c model, where Wq​ is the average amount of time a customer waits in the queue before being served.
 
-Para calcular el **Tiempo de Espera en Cola (Wq)**, se utiliza la fórmula para sistemas M/M/c:
+    To calculate the Queue Waiting Time (Wq​), the formula for M/M/c systems is used.:
 
 $$Wq = \frac{L_q}{\lambda} = \frac{\rho^c \cdot \frac{1}{c!} \cdot \frac{c \cdot \mu}{c \cdot \mu - \lambda} \cdot P_0}{\lambda}$$
 
-donde:
+Where:
 
-* $$\rho$$ es la utilización del sistema.
-* c es el número de meseros.
-* $$P_0$$ es la probabilidad de que haya 0 clientes en el sistema.
+* $$\rho$$ sistem usage
+* c Number of servers.
+* $$P_0$$ Probability that theres Zero clients in the system.
 
-Para calcular $$P_0$$, que es la probabilidad de que haya 0 clientes en el sistema, se utiliza la siguiente fórmula en un sistema M/M/c:
+To calculate $$P_0$$, The probability that there are **0 customers in the system**, the following formula is used in an M/M/c system:
 
 $$
 P_0 = \left[ \sum_{n=0}^{c-1} \frac{(\lambda/\mu)^n}{n!} + \frac{(\lambda/\mu)^c}{c!} \cdot \frac{1}{1 - \rho} \right]^{-1}
 $$
 
-donde:
+Where:
 
-* $$\lambda$$ es la tasa de llegada de clientes.
-* $$\mu$$ es la tasa de servicio de los meseros.
-* $$\rho = \frac{\lambda}{c \cdot \mu}$$ es la utilización del sistema.
+* $$\lambda$$ Arriving rate of the customers.
+* $$\mu$$ Servers service Rate.
+* $$\rho = \frac{\lambda}{c \cdot \mu}$$ System Usage.
 
-Esta fórmula ayuda a determinar la probabilidad de que el sistema esté vacío, lo cual es crucial para calcular otros parámetros del sistema de colas.
+This formula helps determine the **probability that the system is empty**, which is crucial for calculating other parameters of the queueing system.
 
 ***
 
