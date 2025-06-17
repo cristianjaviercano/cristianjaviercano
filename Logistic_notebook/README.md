@@ -9,9 +9,9 @@ coverY: 0
 
 {% tabs %}
 {% tab title="Bienvenido/a" %}
-Hola y bienvenido(a) a este espacio de exploración y aprendizaje. Soy Cristian J Cano, un ingeniero industrial con una maestría en gestión de la innovación. A lo largo de mi trayectoria profesional, he acumulado una vasta experiencia en el campo productivo, así como en la gestión y análisis de datos, permitiéndome adquirir una comprensión profunda de los desafíos y oportunidades que enfrentamos en estos sectores tan dinámicos y en constante evolución.
+Hello and welcome to this exploration and learning space. I am Cristian J Cano, an industrial engineer with a master's in innovation management. Over my career, I have gained extensive experience in production environments, data management, and analysis, equipping me with deep insights into the challenges and opportunities in these dynamic and evolving sectors.
 
-Te invito a adentrarte en este espacio, diseñado especialmente para ofrecerte una amplia gama de contenidos técnicos y especializados. Aquí podrás encontrar analíticas detalladas, estudios de caso enriquecedores, y reflexiones sobre innovaciones contemporáneas que están moldeando el futuro de la industria. Cada página ha sido curada con el propósito de proporcionarte información valiosa y perspicaz, capaz de iluminar y enriquecer tu conocimiento en diferentes áreas de interés.
+I invite you to delve into this space, specially designed to offer you a wide range of technical and specialized content. Here you can find detailed analytics, enriching case studies, and reflections on contemporary innovations that are shaping the future of the industry. Each page has been curated with the purpose of providing you valuable and insightful information, capable of illuminating and enriching your knowledge in different areas of interest.
 {% endtab %}
 
 {% tab title="¿Que es este espacio?" %}
@@ -20,9 +20,11 @@ Este espacio no solo se trata de la transmisión de información, sino también 
 {% endtabs %}
 
 {% hint style="info" %}
-Gracias por tomarte el tiempo para explorar este espacio. Espero que lo encuentres tan enriquecedor como inspirador y que pronto puedas aplicar algunas de estas ideas y conocimientos a tus propias experiencias profesionales. ¡Bienvenido(a) al viaje!
+Thank you for taking the time to explore this space. I hope you find it as enriching as it is inspiring, and that you'll soon be able to apply some of these ideas and insights to your own professional experiences. Welcome to the journey!
 {% endhint %}
 
-Te espero en mi página de Instagram para compartir información. Puedes seguirme [aquí](https://www.instagram.com/tu_usuario).
+I'll be waiting for you on my Instagram page to share information. You can follow me [Here](https://www.instagram.com/tu_usuario)
+
+
 
 <figure><img src=".gitbook/assets/CRclogo2.png" alt="" width="188"><figcaption><p>Msc Cristian J cano M</p></figcaption></figure>

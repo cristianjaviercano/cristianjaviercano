@@ -1,62 +1,54 @@
 ---
-description: se define la simulación y su contexto en la ingeniería industrial
+description: >-
+  This chapter introduces the fundamental concepts of simulation within the
+  specific context of industrial engineering.
 ---
 
-# Capitulo uno: Introducción a la Simulación en Ingeniería Industrial
+# Chapter One: Introduction to Simulation in Industrial Engineering
 
 <img src="../../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
 
-### Objetivos del capitulo
+### Chapter Objectives: Introduction to Simulation in Industrial Engineering
 
-{% stepper %}
-{% step %}
-Definir con precisión los conceptos de sistema, modelo y simulación en el contexto de la ingeniería industrial
-{% endstep %}
+This chapter aims to establish a robust foundational understanding of simulation, specifically tailored for industrial engineers. Upon successful completion of this chapter, the reader will be able to:
 
-{% step %}
-Describir el proceso de modelado, explicando la importancia de la abstracción y la simplificación
-{% endstep %}
+1. **Define with precision the concepts of system, model, and simulation** within the context of industrial engineering. This involves understanding their interrelationships and significance in problem-solving.
+2. **Describe the modeling process**, explaining the critical importance of abstraction and simplification in translating real-world complexity into manageable representations.
+3. **Classify models according to various criteria**, including physical vs. mathematical; analytical vs. simulation; static vs. dynamic; deterministic vs. stochastic; and continuous vs. discrete. This will provide a structured framework for model selection.
+4. **Identify the key concepts of discrete-event simulation**: entities, attributes, activities, events, system state, and the simulation clock. A clear understanding of these elements is fundamental for building and analyzing DES models.
+5. **Argue effectively about the advantages and disadvantages** of utilizing simulation as an analytical tool, discerning when it is the most appropriate approach and when alternatives should be considered.
+6. **Enumerate and describe the methodological steps** involved in a comprehensive simulation study, emphasizing the crucial roles of model verification and validation in ensuring model accuracy and credibility.
+7. **Recognize relevant applications of simulation** across the diverse fields of industrial engineering, logistics, and production, demonstrating its practical utility in optimizing real-world operations.
 
-{% step %}
-Clasificar los modelos según diferentes criterios (físicos, matemáticos; analíticos, de simulación; estáticos/dinámicos; deterministas/estocásticos; continuos/discretos)
-{% endstep %}
+***
 
-{% step %}
-Identificar los conceptos clave de la simulación de eventos discretos: entidades, atributos, actividades, eventos, estado del sistema y reloj de simulación.
-{% endstep %}
-
-{% step %}
-Argumentar sobre las ventajas y desventajas de utilizar la simulación como herramienta de análisis.
-{% endstep %}
-
-{% step %}
-Enumerar y describir los pasos metodológicos involucrados en un estudio de simulación, destacando la importancia de la verificación y la validación.
-{% endstep %}
-
-{% step %}
-Reconocer aplicaciones relevantes de la simulación en los campos de la ingeniería industrial, la logística y la producción.
-{% endstep %}
-{% endstepper %}
-
-### ¿Qué es la simulación? Definiciones: sistema, modelo, simulación
+### What is Simulation? Definitions: System, Model, Simulation
 
 {% hint style="warning" %}
-Para comprender la simulación, es esencial primero definir los conceptos fundamentales sobre los que se construye
+To understand the simulation, it is essential first to define the fundamental concepts on which it is built.
 {% endhint %}
 
 <img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
 {% tab title="Sistema" %}
-En el ámbito de la ingeniería y las ciencias, un **sistema** se define como un conjunto de elementos o componentes que interactúan entre sí para lograr un objetivo común o desempeñar una función específica.&#x20;
 
-Estos componentes pueden ser físicos (máquinas, personas, materiales) o lógicos (información, reglas de decisión).&#x20;
 
-Desde la perspectiva del modelado y la simulación, un sistema es cualquier porción de la realidad que se aísla para su estudio, ya sea un entorno real o uno virtual que se desea analizar.&#x20;
+A **collection of entities (e.g., people, machines, components) that interact with each other to achieve a logical purpose or objective** (Law, 2015; Banks et al., 2010). A system is bounded, meaning there is a clear distinction between what is inside the system and what is part of its environment. The behavior of the system emerges from the interactions of its components over time.
 
-Ejemplos de sistemas en ingeniería industrial son vastos y variados: una línea de ensamblaje en una fábrica, un centro de distribución logístico, el flujo de pacientes en un hospital, una cadena de suministro completa, o incluso un proceso de toma de decisiones gerenciales.&#x20;
+**Key Characteristics:**
 
-La característica distintiva es la interdependencia de sus partes y su comportamiento emergente como un todo&#x20;
+* **Components/Entities:** Distinct parts or elements.
+* **Interactions:** Relationships and dependencies between components.
+* **Purpose/Objective:** A defined goal or function.
+* **Boundary:** A conceptual or physical demarcation separating the system from its environment.
+* **Environment:** Everything outside the system that can influence its behavior.
+
+**Examples in Industrial Engineering:**
+
+* **Manufacturing System:** Entities include raw materials, products, machines, operators. Interactions involve processing, material handling, and quality control. Purpose: produce goods.
+* **Supply Chain System:** Entities include suppliers, manufacturers, distributors, retailers, and customers. Interactions involve ordering, production, transportation, and inventory management. Purpose: deliver products to customers.
+* **Healthcare System (e.g., Emergency Department):** Entities include patients, doctors, nurses, examination rooms, equipment. Interactions involve patient admission, diagnosis, treatment, and discharge. Purpose: provide medical care.
 
 {% hint style="success" %}
 Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de Operaciones_ (9th ed.). McGraw-Hill. (Capítulo 20 sobre Simulación, secciones 20.3, 20.4)
@@ -64,11 +56,24 @@ Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de
 {% endtab %}
 
 {% tab title="Modelo" %}
-Dado que los sistemas reales suelen ser demasiado complejos para ser estudiados directamente en su totalidad, se recurre a la creación de **modelos**.&#x20;
 
-_Un modelo es una representación simplificada y abstracta de un sistema, construida con un propósito específico_. **No es una réplica exacta de la realidad, sino una aproximación que captura los aspectos esenciales del sistema relevantes para el problema que se investiga**.&#x20;
 
-Como se indica, _"el modelo es siempre menos complejo que el sistema original"_. El propósito del modelo guía las simplificaciones y abstracciones que se realizan. Por ejemplo, para estudiar el flujo de producción en una fábrica, un modelo podría representar las máquinas y los buffers, pero ignorar detalles como la temperatura ambiente o el color de las máquinas, si estos no son relevantes para el objetivo del estudio
+A **model** is an abstraction or representation of a real-world system. Its primary purpose is to capture the essential features and relationships of the system under study, simplifying its complexity to enable analysis, prediction, and understanding (Shannon, 1998).
+
+Theoretically, a model can be conceptualized as a **set of logical and mathematical relationships that describe the behavior of a system or phenomenon** (Law, 2015). It is not the system itself, but a tool used to reason about the system.
+
+**Key Characteristics:**
+
+* **Abstraction:** Focuses on relevant aspects while omitting irrelevant details.
+* **Representation:** Translates real-world elements into a formal structure (e.g., equations, flowcharts, code).
+* **Purpose-Driven:** Designed with a specific analytical objective in mind. A model's validity is relative to its intended use.
+
+**Types of Models (as per Chapter Objectives):**
+
+* **Physical Models:** Tangible, scaled representations (e.g., miniature factory layout, wind tunnel model).
+* **Mathematical Models:** Use symbols and equations to represent relationships. These can be:
+  * **Analytical Models:** Provide exact or approximate solutions using mathematical formulas (e.g., queuing theory formulas, linear programming).
+  * **Simulation Models:** Imitate the behavior of a system over time, often relying on numerical methods and statistical sampling.
 
 {% hint style="success" %}
 Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event Systems (2nd ed.). Springer.
@@ -76,13 +81,19 @@ Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event System
 {% endtab %}
 
 {% tab title="Simulacion" %}
-La **simulación** es el proceso de diseñar un modelo de un sistema real y llevar a cabo experimentos con este modelo con el fin de entender el comportamiento del sistema o evaluar diversas estrategias para su operación.&#x20;
+**The process of designing and developing a computerized model of a real or proposed system for the purpose of conducting numerical experiments to understand, predict, or improve the behavior of the system over time** (Banks et al., 2010).
 
-En esencia, _**la simulación imita el funcionamiento de un sistema a lo largo del tiempo**_, generando una historia artificial de su evolución. Esta historia se utiliza luego para extraer conclusiones sobre las características operativas del sistema real.&#x20;
+Alternatively, Law (2015) states that simulation is the **imitation of the operation of a real-world process or system over time**. This involves generating an artificial history of the system and drawing inferences about its operating characteristics.
 
-Cuando los modelos matemáticos de un sistema son demasiado complejos para ser resueltos por métodos analíticos (es decir, mediante fórmulas exactas), la simulación, que es un experimento numérico realizado sobre el modelo, se convierte en una herramienta indispensable.&#x20;
+**Key Aspects:**
 
-Un modelo de simulación de eventos discretos, por ejemplo, es inherentemente estocástico (incorpora aleatoriedad) y dinámico (evoluciona con el tiempo), y su característica principal es que las variables que describen el estado del sistema cambian de valor únicamente en instantes discretos de tiempo, conocidos como "eventos"
+* **Computerized Model:** Simulation is almost exclusively performed using software.
+* **Numerical Experimentation:** Involves running the model multiple times under different conditions.
+* **Dynamic/Time-Based:** Crucially captures how a system evolves over time.
+* **"What-If" Analysis:** Enables the evaluation of alternative designs, policies, or scenarios without physical intervention.
+* **Stochasticity (often):** Many simulations incorporate random variables to reflect real-world uncertainty, producing probabilistic outputs.
+
+**In essence, simulation allows an industrial engineer to create a "digital twin" or "virtual laboratory" of a system, enabling safe, cost-effective, and rapid experimentation that would be impractical or impossible in the real world.** This makes it an invaluable tool for understanding complex operational dynamics and supporting data-driven decision-making.
 
 {% hint style="success" %}
 Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Education.
@@ -91,7 +102,7 @@ Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Educa
 {% endtabs %}
 
 {% hint style="warning" %}
-El proceso de simulación no es simplemente "ejecutar un programa". Comienza con una comprensión profunda del sistema real y una definición clara de los objetivos del estudio.
+The simulation process involves more than just "running a program." It starts with a thorough understanding of the real system and a clear definition of the study
 {% endhint %}
 
 #### El proceso de modelado, Abstracción y simplificación
