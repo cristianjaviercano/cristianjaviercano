@@ -158,69 +158,74 @@ In simulation software like **AnyLogic**, these disciplines are often pre-built 
 
 ***
 
-### Mecanismos de Servidores o de Estaciones de Servicio
+## Server Mechanisms or Service Stations
 
-los diferentes tipos de mecanismos y cómo pueden ser implementados.
+the different types of mechanisms and how they can be implemented.
 
 {% tabs %}
-{% tab title="Unico Servidor" %}
-En este sistema, un único servidor gestiona todas las solicitudes de los usuarios. Este método es sumamente simple de implementar y administrar, lo que lo hace muy atractivo para proyectos pequeños o medianos debido a su bajo costo inicial y económico.&#x20;
+{% tab title="Unique Server" %}
+A **unique server** (also often referred to as a **single server**) describes a service station where there is **only one resource available to process entities at any given time**.
 
-Sin embargo, presenta ciertas limitaciones significativas si no se maneja adecuadamente el tráfico de solicitudes. A medida que el volumen de tráfico y solicitudes aumenta, el servidor puede fácilmente convertirse en un cuello de botella, afectando negativamente el rendimiento general del sistema.&#x20;
+Theoretically, in such a configuration, entities requiring service will form a single queue and wait for this sole server to become available. This is the simplest configuration in queueing theory models.
 
-Esto se debe a que la capacidad de procesamiento de un solo servidor es finita y puede llevar a tiempos de respuesta más lentos, especialmente durante períodos de alta demanda. Además, el riesgo de tiempo de inactividad es mayor, ya que si el servidor falla, no hay copias de seguridad inmediatas que tomen su lugar. Es vital evaluar cuidadosamente estas consideraciones antes de optar por un enfoque de servidor único para aplicaciones críticas o de
+**Key Characteristics:**
+
+* **Single Channel:** Only one processing unit or individual capable of providing the service.
+* **Sequential Processing:** Entities are processed one after another. If an entity arrives while the server is busy, it must wait in a queue.
+* **Utilization Sensitivity:** The utilization of a unique server is highly sensitive to fluctuations in arrival rates and service times. Even small increases in demand can lead to significant increases in queue lengths and waiting times if the server's capacity is approached.
 {% endtab %}
 
-{% tab title="Mecanismos de Servidores Múltiples" %}
-En este sistema, un único servidor gestiona todas las solicitudes. Este método es simple de implementar y gestionar, pero puede generar cuellos de botella si el volumen de solicitudes es alto.
+{% tab title="Multiple Server Mechanisms" %}
 
-**Servidores Paralelos**
 
-Varios servidores trabajan de manera simultánea para repartir la carga de trabajo. Es ideal para servicios con alta demanda, reduciendo tiempos de espera significativamente.
+As an industrial engineer and researcher, understanding **multiple server mechanisms** is fundamental for analyzing and designing many real-world systems. This configuration involves **two or more identical resources (servers) working in parallel** to provide service to entities from a common queue (Law, 2015; Banks et al., 2010).
 
-**Servidores en Serie**
+The theoretical benefit of multiple servers, compared to a single server with the same total capacity, is often the **reduction in average queue lengths and waiting times**. This is due to the pooling of waiting lines, allowing any free server to pick up the next available entity.
 
-Las solicitudes pasan de un servidor a otro en una secuencia predefinida. Este enfoque es útil para procesos que requieren múltiples etapas de atención.
+#### Key Characteristics:
 
-#### Sistemas Distribuidos
-
-Esta estrategia combina múltiples servidores ubicados en diferentes lugares, permitiendo gestionar solicitudes en una amplia área geográfica. Es útil para organizaciones que operan en varias ubicaciones.
+* **Parallel Channels:** The system has c servers (c>1) operating simultaneously.
+* **Common Queue:** Entities typically form a single waiting line and are dispatched to the first available server. This common queue is generally more efficient than separate queues for each server.
+* **Load Balancing:** The system implicitly balances the workload among the available servers.
+* **Reduced Waiting:** The probability of an entity having to wait, and the duration of that wait, generally decrease compared to an equivalent single-server system, especially as utilization approaches capacity.
 {% endtab %}
 {% endtabs %}
 
 <img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
 
-### Distribuciones de tiempos de servicio:
+## Service Time Distributions
 
-* M = Distribucion exponencial
+* M = exponential distribution
 
-La distribución exponencial es una distribución de probabilidad continua que describe el tiempo entre eventos en un proceso de Poisson. Es una distribución clave para modelar el tiempo de servicio en sistemas de colas. Se caracteriza por su tasa de ocurrencia constante, lo que significa que no importa cuánto tiempo haya pasado desde el último evento, la probabilidad de que ocurra un nuevo evento en el siguiente instante es la misma. La función de densidad de probabilidad de una distribución exponencial se expresa como:
+The **exponential distribution** is a continuous probability distribution that describes the time between events in a Poisson process. It is a key distribution for modeling service time in queueing systems. It is characterized by its **constant rate of occurrence**, meaning that no matter how much time has passed since the last event, the probability of a new event occurring in the next instant is the same. The probability density function of an exponential distribution is expressed as:
 
 $$
 f(x; \lambda) = \lambda e^{-\lambda x}
 $$
 
-donde ( \lambda ) es la tasa de ocurrencia y ( x ) es el tiempo. Esta propiedad de "sin memoria" hace que sea muy útil en diversos contextos, como la modelización de tiempos de espera en colas y sistemas de telecomunicaciones.
+where λ is the occurrence rate and x is time. This **"memoryless" property** makes it very useful in various contexts, such as modeling waiting times in queues and telecommunications systems.
 
-* D = distribucion degenerada
+* D = Degenerate Distribution
 
-La **distribución degenerada** es una distribución de probabilidad que concentra toda su probabilidad en un solo punto. En otras palabras, es una distribución donde una variable aleatoria siempre toma el mismo valor con probabilidad 1. Si ( X ) es una variable con distribución degenerada en ( a ), se denota como $$X \sim D(a)$$ y se define por:
+The **degenerate distribution** is a probability distribution that **concentrates all its probability at a single point**. In other words, it is a distribution where a random variable always takes the same value with probability 1. If X is a variable with a degenerate distribution at a, it is denoted as: $$X \sim D(a)$$ and defined by:
 
 $$
 P(X = a) = 1
 $$
 
-Esta distribución no tiene variabilidad y, por lo tanto, su varianza es cero. En contextos prácticos, se considera que no introduce incertidumbre o aleatoriedad en los escenarios de modelización.
+This distribution has **no variability**, and therefore, its variance is zero. In practical contexts, it is considered to introduce **no uncertainty or randomness** into modeling scenarios.
 
-* Distribucion de Erlang
+* Erlang distribution
 
-La **distribución de Erlang** es un caso particular de la distribución gamma, utilizada frecuentemente en la teoría de colas y en modelización de tiempo entre eventos. La distribución de Erlang está definida por dos parámetros: un número entero ( k ), que indica el número de fases exponenciales idénticas, y un parámetro de tasa $$\lambda$$ , que es la tasa de cada fase exponencial. Se denota como $$X \sim \text{Erlang}(k, \lambda)$$ y su función de densidad es:
+
+
+The **Erlang distribution** is a special case of the gamma distribution, frequently used in queueing theory and event time modeling. The Erlang distribution is defined by two parameters: an integer k, which indicates the number of identical exponential phases, and a rate parameter λ, which is the rate of each exponential phase. It is denoted as:$$X \sim \text{Erlang}(k, \lambda)$$ nad his density function is:
 
 $$
 f(x; k, \lambda) = \frac{\lambda^k x^{k-1} e^{-\lambda x}}{(k-1)!}, \quad x \geq 0
 $$
 
-Esta distribución se caracteriza por su capacidad de modelar procesos donde se requiere que ocurran múltiples eventos independientes previamente.
+This distribution is characterized by its ability to model processes where multiple independent events are required to occur beforehand.
 
 * G = Distribucion General
 
