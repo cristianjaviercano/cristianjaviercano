@@ -7,7 +7,7 @@ description: >-
 
 # Chapter Zero: Introduction to Simulation Concepts
 
-<img src="../../.gitbook/assets/file.excalidraw (3).svg" alt="simulation events and processing" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="simulation events and processing" class="gitbook-drawing">
 
 Welcome to the fascinating world of **discrete-event simulation**—a discipline that has become an indispensable tool in the modern industrial engineer's arsenal. In an era characterized by the increasing complexity of production, logistics, and service systems, the ability to model, analyze, and optimize these systems is more crucial than ever.
 

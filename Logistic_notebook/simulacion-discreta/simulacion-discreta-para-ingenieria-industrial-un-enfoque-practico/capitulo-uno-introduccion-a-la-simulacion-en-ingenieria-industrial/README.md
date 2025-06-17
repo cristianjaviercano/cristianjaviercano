@@ -28,7 +28,7 @@ This chapter aims to establish a robust foundational understanding of simulation
 To understand the simulation, it is essential first to define the fundamental concepts on which it is built.
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (4).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
 {% tab title="System" %}
@@ -220,33 +220,33 @@ No contienen componentes aleatorios. Dada una entrada y un estado inicial, la tr
 
 <details>
 
-<summary><strong>Modelos Estocásticos (o Probabilísticos)</strong></summary>
+<summary>Stochastic (or Probabilistic) Models</summary>
 
-Contienen al menos un componente aleatorio. Las variables de entrada o los parámetros del modelo se describen mediante distribuciones de probabilidad. Como resultado, la salida del modelo también es aleatoria y debe analizarse estadísticamente. La mayoría de los sistemas de ingeniería industrial reales exhiben comportamiento estocástico (tiempos de proceso variables, llegadas aleatorias de clientes, fallas de máquinas, etc.), por lo que los modelos de simulación suelen ser estocásticos.
-
-</details>
-
-<details>
-
-<summary><strong>Modelos de Variables Continuas / Tiempo Continuo</strong></summary>
-
-Las variables de estado pueden cambiar continuamente a lo largo del tiempo. A menudo se describen mediante ecuaciones diferenciales (como en la dinámica de fluidos o el movimiento de un proyectil). La simulación de estos sistemas implica la discretización del tiempo para su solución numérica
+They contain at least one **random component**. Input variables or model parameters are described using **probability distributions**. As a result, the model's output is also random and must be analyzed statistically. Most real-world industrial engineering systems exhibit **stochastic behavior** (variable process times, random customer arrivals, machine failures, etc.), so simulation models are typically stochastic.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos de Variables Discretas / Tiempo Discreto:</strong></summary>
+<summary>Continuous Variable / Continuous Time Models</summary>
 
-Las variables de estado cambian solo en instantes específicos y contables de tiempo. Si estos instantes están espaciados uniformemente, se habla de modelos de tiempo discreto (descritos por ecuaciones en diferencias)
+State variables can **change continuously over time**. They are often described by differential equations (as in fluid dynamics or projectile motion). Simulating these systems involves **discretizing time** for numerical solutions.
 
 </details>
 
 <details>
 
-<summary><strong>Modelos de Eventos Discretos (MED)</strong></summary>
+<summary>Discrete Variables Models / Discrete Time</summary>
 
-Son un tipo particular de modelo dinámico y generalmente estocástico, donde las variables de estado cambian instantáneamente en puntos discretos e irregularmente espaciados en el tiempo, como resultado de la ocurrencia de "eventos" (ej. llegada de un cliente, finalización de un servicio). Este es el enfoque principal de este curso
+State variables change only at **specific and countable instances in time**. If these instances are uniformly spaced, we refer to them as **discrete-time models**
+
+</details>
+
+<details>
+
+<summary>Discrete-Event Models (DEM)</summary>
+
+These are a particular type of **dynamic and generally stochastic model** where state variables change instantaneously at discrete and irregularly spaced points in time, as a result of the occurrence of "events" (e.g., a customer arrival, a service completion). This is the **primary focus of this course**.
 
 </details>
 
