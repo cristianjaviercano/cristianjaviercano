@@ -388,47 +388,75 @@ This formula helps determine the **probability that the system is empty**, which
 
 ***
 
-### Teoria de colas en sistemas de inventarios
+### Queueing Theory In Inventory System
 
-Para ilustrar el uso de la teoría de colas en la gestión de inventarios, consideremos un ejemplo sencillo de un sistema de inventario donde las llegadas de demanda siguen un proceso de Poisson y los tiempos de reposición son exponencialmente distribuidos.
+This analogy allows for the application of queueing models to analyze and optimize various aspects of inventory systems, particularly those characterized by **stochastic demand** and **variable lead times**.
 
-Imaginemos un minorista que gestiona un inventario con las siguientes características:
+#### The Analogy in the system
 
-* La tasa de llegada de demanda es $$\lambda = 5\text{ unidades/día}$$.
-* La tasa de suministro o reposición es $$\mu = 8\text{ unidades/día}$$.
+* **"Customers" or "Entities":** In inventory systems, these are often **demand requests** for items.
+* **"Servers":** The **inventory itself** acts as the server. When an item is in stock, it "serves" the demand immediately. If an item is out of stock, demand "waits" (is backordered) or is "lost."
+* **"Queue":**
+  * **Positive Inventory:** Can be seen as a "queue" of available items waiting for demand to "arrive."
+  * **Backorders/Shortages:** Represent a "queue" of unfulfilled demand waiting for new inventory to "arrive" (from production or replenishment).
+* **"Arrival Rate" (λ):** The **demand rate** for items.
+* **"Service Rate" (μ):** The rate at which inventory is replenished or available for consumption. This might be related to production capacity or supplier lead times.
+* **"Service Time":** The time it takes to "serve" a demand once an item is available. If an item is in stock, this time is effectively zero. If there's a backlog, it's the time until replenishment.
 
-#### Cálculo de las métricas del sistema:
+#### Applications of Queueing Theory in Inventory Systems
 
-1. **Nivel de Inventario Esperado**: Se basa en calcular el número promedio de unidades en inventario considerando las tasas de llegada y servicio. Generalmente se asume que el inventario opera bajo un control $$(s, Q)$$ donde $s$ es el punto de reorden y $Q$ es la cantidad de pedido.
+1. **Modeling Demand and Lead Times:** Queueing theory provides frameworks to model stochastic demand patterns (e.g., Poisson arrivals for independent demands) and variable lead times (e.g., exponential or Erlang distributions for replenishment times).
+2. **Analyzing Stockout Probabilities and Backlogs:** By treating unsatisfied demand as a queue, one can use queueing models to:
+   * Estimate the probability of a stockout.
+   * Calculate the average number of backordered items (average queue length of unfulfilled demand, Lq​).
+   * Determine the average time a backorder remains unfulfilled (average waiting time for backorders, Wq​).
+3. **Optimizing Reorder Points and Safety Stock:** Understanding the queueing dynamics helps in setting appropriate reorder points and safety stock levels. A higher safety stock reduces the "queue" of unfulfilled demand (backorders) and decreases the probability of stockouts, but increases holding costs. Queueing models can help find the balance.
+4. **Evaluating Replenishment Policies:** Different inventory replenishment policies (e.g., continuous review, periodic review) can be analyzed as different "service mechanisms" or "queue disciplines" for satisfying demand.
+5. **Perishable Inventory:** For perishable goods, queueing concepts can model items "waiting" to be sold before they expire, with "spoilage" analogous to entities leaving the system without service.
 
-En este contexto, calcularemos la utilización del sistema como:
+To illustrate the use of queueing theory in inventory management, let's consider a simple example of an inventory system where demand arrivals follow a Poisson process and replenishment times are exponentially distributed.
+
+Imagine a retailer managing an inventory with the following characteristics:
+
+* The demand arrival rate is
+  * $$\lambda = 5\text{ unidades/día}$$.
+* The Supply rate is:
+  * &#x20;$$\mu = 8\text{ unidades/día}$$.
+
+### Calculation of System Metrics
+
+1. **Expected Inventory Level:** This is based on calculating the average number of units in inventory, considering arrival and service rates. It's generally assumed that the inventory operates under an **(s,Q) control policy**, where s is the reorder point and Q is the order quantity.
+
+so we proceed to calculate the system as h\_0
 
 $$ho = \frac{\lambda}{\mu} = \frac{5}{8} = 0.625$$
 
-Esto indica que el sistema está ocupado el 62.5% del tiempo, sugiriendo una baja probabilidad de ruptura de stock mientras el inventario es repuesto consistentemente. La probabilidad exacta de ruptura de stock y el nivel de inventario se derivan adicionalmente mediante métodos específicos de la teoría de colas, como abordar el sistema como un modelo $$M/M/1$$ o $$M/M/c$$, dependiendo de la configuración.
+This indicates that the system is busy **62.5% of the time**, suggesting a **low probability of a stockout** as long as the inventory is consistently replenished. The exact probability of a stockout and the inventory level are further derived using specific queueing theory methods, such as approaching the system as an **M/M/1 or M/M/c model**, depending on the configuration.
 
-#### Ejemplo de Cálculo del Nivel de Inventario
+***
 
-Supongamos un sistema de gestión de inventario con las siguientes características:
+### Example of Inventory Level Calculation
 
-* **Tasa de llegada** $$\lambda$$**:** 5 unidades por hora
-* **Tasa de servicio** $$\mu$$**:** 8 unidades por hora
-* **Punto de reorden s:** 10 unidades
-* **Cantidad de pedido Q:** 20 unidades
+Suppose an inventory management system with the following characteristics:
 
-Para calcular el **nivel de inventario esperado**, primero determinamos la **utilización del sistema** como se muestra anteriormente:
+* **Arrival rate (λ):** 5 units per hour
+* **Service rate (μ):** 8 units per hour
+* **Reorder point (s):** 10 units
+* **Order quantity (Q):** 20 units
+
+To calculate the expected inventory level, we first determine the system utilization as shown previously:
 
 $$ho = \frac{\lambda}{\mu} = \frac{5}{8} = 0.625$$
 
-Con esta utilización y asumiendo un modelo de tipo $$M/M/1$$, podemos calcular el _número promedio de unidades en inventario_ utilizando la fórmula del nivel de trabajo en un sistema de colas:
+With this utilization, and assuming an M/M/1 type model, we can calculate the **average number of units in inventory** using the formula for the work-in-process level in a queueing system:
 
 $$L = \frac{\lambda}{\mu - \lambda} = \frac{5}{8-5} = \frac{5}{3} \approx 1.67 \text{ unidades}$$
 
-Este resultado indica que, en promedio, hay aproximadamente 1.67 unidades en inventario mientras el sistema lanza pedidos cada vez que cae por debajo del punto de reorden.
+This result indicates that, on average, there are approximately **1.67 units in inventory** while the system places orders whenever it falls below the reorder point.
 
-Para calcular la **probabilidad de ruptura de stock** en un sistema $$M/M/1$$, se utiliza la fórmula de la probabilidad de que no haya unidades disponibles, que es igual a la probabilidad de que el sistema esté vacío. Esta probabilidad viene dada por:
+To calculate the **probability of a stockout** in an M/M/1 system, the formula for the probability of no units being available is used, which is equal to the probability that the system is empty. This probability is given by:
 
 $$P_0 = 1 - \frac{\lambda}{\mu} = 1 - 0.625 = 0.375$$
 
-Por lo tanto, hay un 37.5% de probabilidad de que el inventario esté vacío en cualquier momento dado.
+Therefore, there is a **37.5% probability** that the inventory will be empty at any given time.
 
