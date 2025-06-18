@@ -1,32 +1,36 @@
 ---
+description: >-
+  is a dynamic, typically stochastic, and computational modeling technique used
+  to represent systems where changes in state occur only at specific, distinct
+  points in time, known as events.
 icon: coin-blank
 ---
 
-# Simulacion de eventos Discretos
+# Discrete Event Simulation
 
-La simulación de eventos discretos es un enfoque utilizado para modelar sistemas dinámicos que evolucionan a través de una serie de eventos que ocurren en puntos de tiempo discretos e irregulares.&#x20;
+**Discrete-event simulation (DES)** is an approach used to model dynamic systems that evolve through a series of events occurring at discrete and irregular points in time.
 
 {% hint style="success" %}
-_A diferencia de un proceso continuo_, los cambios en el estado del sistema solo ocurren en estos momentos específicos cuando se produce un evento, como la llegada de un cliente o la finalización de un servicio.&#x20;
+Unlike a continuous process, changes in the system's state only occur at these specific moments when an event takes place, such as a customer's arrival or the completion of a service.
 {% endhint %}
 
-Este tipo de simulación es particularmente útil para analizar sistemas donde los eventos son fundamentales para determinar el comportamiento del mismo, como líneas de producción, sistemas de colas, o cualquier operación donde el tiempo entre eventos es crítico.&#x20;
+This type of simulation is particularly useful for analyzing systems where events are fundamental in determining their behavior, such as production lines, queueing systems, or any operation where the time between events is critical.
 
-Los modelos de simulación de eventos discretos a menudo son estocásticos, lo que significa que incluyen incertidumbre o variabilidad aleatoria en el modelo. los eventos cambian en funcion de la ocurrencia aleatoria, a esto se le llama **eventos discretos**, por ejemplo imagina un sistema de colas donde el estado del sistema es número de clientes en él, los eventos que inciden en este y cambian su estado son las **Llegadas o las Salidas del mismo de la cola**&#x20;
+Discrete-event simulation models are often **stochastic**, meaning they include uncertainty or random variability. Events change based on random occurrences—these are called **discrete events**. For example, imagine a queueing system where the system's state is the number of customers in it. The events that impact this and change its state are **arrivals** or **departures** from the queue.
 
-por otra parte las simulaciones de tipo **continuas** los cambios en el estado del sistema ocurren de manera continua en el tiempo por ejemplo imagina un avion en su vuelo como el sistema de observacion y el estado esta definido como su **posicion** esta varia a lo largo de la trayectoria durante toda la observacion, o por ejemplo proceso quimicos o reacciones que con el paso del tiempo su medicion en presion u otras varibales deban ser observadas continuamente por su cambio en tiempo.
+On the other hand, in **continuous simulations**, changes in the system's state occur **continuously over time**. For example, imagine an airplane in flight as the system under observation, with its state defined by its position. This position varies along the trajectory throughout the entire observation period. Another example would be chemical processes or reactions where measurements like pressure or other variables must be continuously observed due to their change over time.
 
-#### Ejercicio numero uno de la seccion.
+### Exercise Number One: The Miami Casino Game
 
-Imagina que has ganado un concurso, donde te dan un viaje todo pago aun hotel cinco estrellas de Miami Florida, Estados Enidos. en este hotel hay un casino en el cual decides apostar, pero no te gustan los juegos tradiconales, asi que vas por uno nuevo y te dan las siguientes reglas:
+Imagine you've won a competition: an all-expenses-paid trip to a five-star hotel in Miami, Florida, United States. At this hotel, there's a casino where you decide to gamble, but you're not interested in traditional games. So, you opt for a new one with the following rules:
 
-1. En cada Jugada se lanza una Moneda no alterada en repetidas ocasiones hasta que la diferencia entre en número de caras y cruces que aparezca sea tres.
-2. si usted decide participar, debe pagar un dolar cada vez que se lanza la moneda, NO puede abadonar el juego hasta que esrte finalice o tendra una sancion.
-3. se reciben 8 dolares al final del juego.
+* In each round, an **unbiased coin** is tossed repeatedly until the **difference between the number of heads and tails** that appears reaches **three**.
+* If you decide to participate, you must **pay one dollar for each coin toss**. You **cannot abandon the game** until it finishes, or you will incur a penalty.
+* You **receive eight dollars at the end of the game**.
 
-esto quiere decir que se gana dinero si el número de lanzamientoses menor que ocho, pero se pierde si se lanza la moneda mas de ocho veces
+This means you win money if the number of tosses is less than eight, but you lose money if the coin is tossed more than eight times.
 
-seguimos estos ejemplos donde  C es cara y S es cruz o sello
+Let's follow these examples where C **is Heads** and S **is Tails**.
 
 | Resultados  | Lanzamientos | Ganancias   |
 | ----------- | ------------ | ----------- |
@@ -34,7 +38,7 @@ seguimos estos ejemplos donde  C es cara y S es cruz o sello
 | CSCCC       | 5            | Se gana 3   |
 | SCCSCSCSSSS | 11           | Se pierde 3 |
 
-ahora intenta simular este proceso en Python y corroboremos si es viable jugar o no.
+Now try to play this game, but first lets make a simualtion in Python in order to know what woukd happen.
 
 ```python
 import random
@@ -78,27 +82,27 @@ Juego 8: 3 lanzamientos, ganó 5 dólares\
 Juego 9: 5 lanzamientos, ganó 3 dólares\
 Juego 10: 5 lanzamientos, ganó 3 dólares
 
--¿te animas a jugar?
+-¿are you in?
 {% endhint %}
 
-Ahora intentemos hacer esta pequeña Simulacion en EXCEL.
+### Now let's try to perform this small Simulation in EXCEL.
 
-debemos generar una secuencia de observaciones aleatorias de una distribucion uniforme entre 0 y 1, donde se hace referencia a las _observaciones aleatorias de una distribucion uniforme, usaremos la funcion "ALEATORIO()"_
+We need to generate a sequence of random observations from a **uniform distribution between 0 and 1**. To refer to random observations from a uniform distribution, we will use the **"RAND()"** function.
 
-_Donde:_
-
-_la probabilidad de que caiga cara es ½ y de que caiga Sellos es ½_&#x20;
+Where: The probability of getting Heads is ½ and the probability of getting Tails is ½.
 
 $$
 P(Caras) = \frac{1}{2} ; P(sellos) = \frac{1}{2}
 $$
 
-| Limite inferior | limite superior |       |
-| --------------- | --------------- | ----- |
-| 0,0000          | 0,4999          | Cara  |
-| 0,5000          | 0,99999         | Sello |
+| Lower bound | Uper bound |   |
+| ----------- | ---------- | - |
+| 0,0000      | 0,4999     | C |
+| 0,5000      | 0,99999    | S |
 
-_Usamos la formula_ $$= SI(ALEATORIO NÚMERO \lt 0,5, "Cara", "Cruz").$$
+_We unse the formula_
+
+$$= SI(ALEATORIO NÚMERO \lt 0,5, "Cara", "Cruz").$$
 
 puedes usar otras celdas donde tengas las funciones "contar.si" para contar las "caras" y "sellos" haciendo la diferencia para saber cuando detenerte.
 
