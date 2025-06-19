@@ -16,7 +16,7 @@ Dentro del proceso de elaboración del calzado, este puede dividirse en 2 etapas
 
 | Tipo   | % elaboracion | Tiempo de operacion                                                                       |
 | ------ | ------------- | ----------------------------------------------------------------------------------------- |
-| Tipo 3 | 50 %          | 2 min                                                                                     |
+| Tipo 1 | 50 %          | 2 min                                                                                     |
 | Tipo 2 | 30 %          | entre 45 segundos y un minuto                                                             |
 | Tipo 3 | 20 %          | <p>Distribución normal con media 2 minutos y</p><p>desviación estándar de 20 segundos</p> |
 

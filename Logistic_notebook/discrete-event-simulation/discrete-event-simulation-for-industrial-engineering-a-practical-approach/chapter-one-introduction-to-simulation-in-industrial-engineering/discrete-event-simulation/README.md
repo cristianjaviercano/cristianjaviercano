@@ -100,34 +100,34 @@ $$
 | 0,0000      | 0,4999     | C |
 | 0,5000      | 0,99999    | S |
 
-_We unse the formula_
+_We use the formula_
 
-$$= SI(ALEATORIO NÚMERO \lt 0,5, "Cara", "Cruz").$$
+$$= SI(RANDOM \lt 0,5, "Cara", "Cruz").$$
 
-puedes usar otras celdas donde tengas las funciones "contar.si" para contar las "caras" y "sellos" haciendo la diferencia para saber cuando detenerte.
+You can use other cells where you have the "countif" functions to count the "heads" and "tails," calculating the difference to know when to stop.
 
 {% hint style="success" %}
-juego sacado del libro . Hillier, F. S., & Lieberman, G. J. (2010). Introducción a la Investigación de Operaciones (9th ed.). McGraw-Hill
+From the book . Hillier, F. S., & Lieberman, G. J. (2010). IO1 Introduction (9th ed.). McGraw-Hill
 {% endhint %}
 
-#### Teoria de colas en la simulacion un acercamiento ilustrativo
+### Queueing Theory in Simulation: An Illustrative Approach
 
-Consideremos el modelo M/M/1 con los siguientes parametros:
+Let´s consider the  M/M/1 with the fowolling parameters
 
-* entradas de poisson, tiempo de servicio exponencial y un solo servidor. donde la tasa de llegada $$\lambda = 3u/hora \ y \ \mu= 5u/hora$$
+* Poisson arrivals, exponential service time, and a single server. Where the arrival rate... $$\lambda = 3u/hr \ y \ \mu= 5u/hr$$
 
-el sistema es sencillo, los clientes que llegan se unen a  una cola, son atendidos y luego se van del sistema, iniciamos el reloj de la simulacion en 0 es decir. t = 0, tendremos una hora de corrida de la simulacion, donde el estado actual del mismo es:
-
-$$
-N(t) = No\ de\ Clientes\ en\ el\ tiempo\ t
-$$
-
-los eventos como dijimos anteriormente, en la explicacion, que cambian el estado del sistema es la **llegada** y **Salida** de clientes del sistema.
-
-La formula de transcicion de estado es:
+The system is straightforward: arriving customers join a queue, are served, and then leave the system. We start the simulation clock at 0, i.e., t=0. We will have a one-hour simulation run, where the current state of the system is:
 
 $$
-Reestablecer\ N(t) = \left\{ \begin{aligned}N(t) +1 \text{ si una llegada ocurre en el tiempo t } \\ N(t) - 1 \ \text{si un servicio se completa en tiempo t}\end{aligned} \right\}
+N(t) = Qty\ of\ Client\ in\ time\ t
+$$
+
+The events, as we previously stated in the explanation, that change the system's state are the **arrival** and **departure** of customers from the system.
+
+The state transition formula is:
+
+$$
+Reestablecer\ N(t) = \left\{ \begin{aligned}N(t) +1 \text{ arrive in time t } \\ N(t) - 1 \ \text{service completed in time t}\end{aligned} \right\}
 $$
 
 #### Comportamiento y Pasos para Resolver un Problema M/M/1
