@@ -6,7 +6,7 @@ description: >-
 
 # Chapter One: Introduction to Simulation in Industrial Engineering
 
-<img src="../../../.gitbook/assets/file.excalidraw (2) (1) (1).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="" class="gitbook-drawing">
 
 ### Chapter Objectives: Introduction to Simulation in Industrial Engineering
 
@@ -28,7 +28,7 @@ This chapter aims to establish a robust foundational understanding of simulation
 To understand the simulation, it is essential first to define the fundamental concepts on which it is built.
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (3) (1).svg" alt="Relacion entre los elementos fundamentales de la simulacion" class="gitbook-drawing">
 
 {% tabs %}
 {% tab title="System" %}
@@ -251,10 +251,10 @@ These are a particular type of **dynamic and generally stochastic model** where 
 </details>
 
 {% hint style="success" %}
-La correcta clasificación de un problema y el tipo de modelo necesario es un paso crucial, ya que guía la selección de la metodología de simulación más apropiada (Montecarlo, eventos discretos, dinámica de sistemas, etc.)
+The correct classification of a problem and the required model type is a crucial step, as it guides the selection of the most appropriate simulation methodology (e.g., Monte Carlo, Discrete-Event, System Dynamics)
 {% endhint %}
 
-Resumiendo a informacion anterior podemos definir que los modelos de simulacion si bien se pueden clasificar en un sin numero de tipos, lo importante es reconocerlos con sus especificacione para poder seleccionar la metodologia de interpretacion correcta.
+Summarizing the previous information, we can define that while simulation models can be classified into countless types, the important thing is to recognize them by their specifications to be able to select the correct interpretation methodology.
 
 | Característica del Modelo | Tiempo       | Aleatoriedad | Cambio de Estado | Ejemplo en IE                                              | Enfoque de Simulación Común              |
 | ------------------------- | ------------ | ------------ | ---------------- | ---------------------------------------------------------- | ---------------------------------------- |
