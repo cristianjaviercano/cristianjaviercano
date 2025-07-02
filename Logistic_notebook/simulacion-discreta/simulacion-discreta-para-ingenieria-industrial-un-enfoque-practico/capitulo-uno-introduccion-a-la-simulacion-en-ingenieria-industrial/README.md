@@ -256,333 +256,348 @@ The correct classification of a problem and the required model type is a crucial
 
 Summarizing the previous information, we can define that while simulation models can be classified into countless types, the important thing is to recognize them by their specifications to be able to select the correct interpretation methodology.
 
-| Característica del Modelo | Tiempo       | Aleatoriedad | Cambio de Estado | Ejemplo en IE                                              | Enfoque de Simulación Común              |
-| ------------------------- | ------------ | ------------ | ---------------- | ---------------------------------------------------------- | ---------------------------------------- |
-| Estático                  | No relevante | Determinista | No relevante     | Cálculo de costo fijo de un producto                       | (No requiere simulación)                 |
-| Estático                  | No relevante | Estocástico  | No relevante     | Análisis de riesgo de inversión (VPN con flujos inciertos) | Montecarlo                               |
-| Dinámico                  | Relevante    | Determinista | Continuo         | Modelo de decaimiento de un fármaco (ODE)                  | Simulación de tiempo continuo (numérica) |
-| Dinámico                  | Relevante    | Estocástico  | Continuo         | Modelo de precios de acciones (ecu. dif. estoc.)           | Simulación de tiempo continuo (avanzada) |
-| Dinámico                  | Relevante    | Determinista | Discreto         | Plan de producción fijo con llegadas programadas           | (Puede ser analítico o SED simple)       |
-| Dinámico                  | Relevante    | Estocástico  | Discreto         | Sistema de colas, línea de producción con fallas           | Simulación de Eventos Discretos (SED)    |
+| Characterístics Model | Time         | Randomness    | Change of State | Example in IE                                       | Common Simulation Approach             |
+| --------------------- | ------------ | ------------- | --------------- | --------------------------------------------------- | -------------------------------------- |
+| Estatic               | Not relevant | Deterministic | Not relevant    | Calculation of fixed cost of a product              | (No simulation required)               |
+| Estatic               | Not relevant | Stocástic     | Not relevant    | Investment risk analysis (NPV with uncertain flows) | Montecarlo                             |
+| Dinamic               | Relevant     | Deterministic | Continuos       | Drug Decay Model (ODE)                              | Continuous-time simulation (numerical) |
+| Dinamic               | Relevant     | Stocástic     | Continuos       | Stock pricing model (stock dif. equ.)               | Continuous Time Simulation (Advanced)  |
+| Dinamic               | Relevant     | Deterministic | Discrete        | Fixed production plan with scheduled arrivals       | (Can be analytical or simple SED)      |
+| Dinamic               | Relevant     | Stocástic     | Discrete        | Queuing system, faulty production line              | Discrete Event Simulation (DES)        |
 
-#### Simulacion en los estudios de Investigacion de Operaciones
+### Simulation in Operations Research studies
 
-la simulacion tiene el mismo papel en muchos estudios que la IO, pero cuando la IO busca la optimizacion o el hallazgo de una solucion, la simulacion busca el describir el entorno o el sistema con el fin de conocer el comportamiento y predecir o encontrar estas fallas o elementos que dan valor a las decisiones a tiempo.
+Simulation plays the same role in many studies as IoT, but while IoT seeks optimization or finding a solution, simulation seeks to describe the environment or system in order to understand its behavior and predict or find those faults or elements that add value to timely decisions.
 
-la IO se dedica a diseñar un diseño o procedimiento para algún sistema estocastico, que pued eoperar de forma probabilistica a travez del tiempo,
+IO is dedicated to designing a design or procedure for some stochastic system, which can operate probabilistically over time,
 
-Cuando es necesario usar la Simulacion como parte del estudio de IO, es muy comun que contenga los mismos pasos, el **Modelo de Simulacion** detallado es necesario para formular y descrinbir la operacion y como debe simularse.
+When Simulation is required as part of an OR study, it is very common that it contains the same steps, the detailed Simulation Model is necessary to formulate and describe the operation and how it should be simulated.
 
-1. Definir el _Estado del sistema, como el número de clientes en un sistema de colas_
-2. _identificar los estados posibles_
-3. _identificar los eventos posibles_
-4. contar con un Reloj de Simulacion, que registre el tiempo
-5. Metodo para  generar **eventos de manera aleatoria**
-6. Una formula para identificar las _Transiciones de los estados_ que generen los eventos aleatorios
+1. Define the State of the system, such as the number of customers in a queuing system
+2. identify possible states
+3. identify possible events
+4. have a Simulation Clock, which records the time
+5. Method to generate events randomly
+6. A formula to identify state transitions that generate random events
 
 ***
 
-### Simulacion de Eventos Discretos (SED) Vs. Eventos Continuo (SEC)
+### Simulation of Discrete Events (DES) vs. Continuous Events (CES)
 
-Las Dos grandes categorias de la simulacion son de eventos de **tipo discreto y de tipo continuo.**
+The two major categories of simulation are discrete event and continuous event.
 
-La (SED) es una metodología poderosa para modelar sistemas cuyo estado cambia en puntos discretos en el tiempo como resultado de la ocurrencia de ciertos sucesos o eventos. Entre un evento y el siguiente, se asume que el estado del sistema permanece constante; es decir, _"nada significativo sucede entre eventos"_. Para construir y comprender los modelos SED, es crucial familiarizarse con sus componentes fundamentales.
+DES is a powerful methodology for modeling systems whose state changes at discrete points in time as a result of the occurrence of certain events. Between one event and the next, the state of the system is assumed to remain constant; that is, "nothing significant happens between events." To build and understand DES models, it is crucial to become familiar with their fundamental components.
 
 <details>
 
-<summary>Entidades</summary>
+<summary>Entities</summary>
 
-Son los objetos dinámicos que _"fluyen"_ a través del sistema, solicitan servicios, ocupan recursos y desencadenan eventos. En contextos de ingeniería industrial, las entidades pueden ser clientes en un banco, piezas en una línea de producción, pedidos en un sistema logístico, camiones en una red de transporte, o incluso paquetes de datos en una red de comunicación
+They are dynamic objects that "flow" through the system, requesting services, occupying resources, and triggering events. In industrial engineering contexts, entities can be customers in a bank, parts on a production line, orders in a logistics system, trucks in a transportation network, or even data packets in a communications network.
 
 </details>
 
 <details>
 
-<summary>Atributos</summary>
+<summary>Attributes</summary>
 
-Son las propiedades o características individuales de las entidades. Los atributos permiten diferenciar entre entidades del mismo tipo y pueden influir en su procesamiento dentro del sistema. Por ejemplo, un cliente (entidad) puede tener atributos como "tipo de transacción requerida" o "tiempo de llegada". Una pieza (entidad) puede tener atributos como "tipo de producto", "ruta de procesamiento" o "prioridad"
-
-</details>
-
-<details>
-
-<summary>Actividades (o Retrasos - Delays)</summary>
-
-Representan operaciones o procesos que consumen tiempo dentro del sistema. Una entidad puede experimentar una actividad, como ser atendida por un servidor, ser procesada por una máquina, o viajar de un punto a otro. La duración de una actividad puede ser determinista (fija) o, más comúnmente en SED, estocástica (aleatoria), modelada por una distribución de probabilidad
+These are the individual properties or characteristics of entities. Attributes allow differentiation between entities of the same type and can influence their processing within the system. For example, a customer (entity) may have attributes such as "required transaction type" or "arrival time." A part (entity) may have attributes such as "product type," "processing route," or "priority."
 
 </details>
 
 <details>
 
-<summary>Eventos</summary>
+<summary>Activities (or Delays)</summary>
 
-Son sucesos instantáneos que pueden cambiar el estado del sistema. Los eventos marcan el inicio o el fin de una actividad, o cualquier otro cambio significativo. Ejemplos típicos incluyen la llegada de una entidad al sistema (evento de llegada), la finalización del servicio de una entidad (evento de fin de servicio), o la falla de una máquina (evento de falla)
-
-</details>
-
-<details>
-
-<summary>Estado del Sistema</summary>
-
-Es un conjunto de variables que contienen toda la información necesaria para describir el sistema en un instante particular. El estado del sistema debe ser suficiente para reanudar la simulación desde ese punto si se detuviera. Ejemplos de variables de estado incluyen el número de clientes esperando en una cola, el estado de un servidor (ocupado, libre, en reparación), o el nivel de inventario de un producto
+They represent time-consuming operations or processes within the system. An entity may experience an activity, such as being served by a server, being processed by a machine, or traveling from one point to another. The duration of an activity may be deterministic (fixed) or, more commonly in SED, stochastic (random), modeled by a probability distribution.
 
 </details>
 
 <details>
 
-<summary>Reloj de Simulación (Simulation Clock)</summary>
+<summary>Events</summary>
 
-Es una variable que mantiene el valor actual del tiempo simulado. A diferencia del tiempo real, el reloj de simulación no avanza continuamente, sino que salta de un instante de evento al siguiente. Este mecanismo se conoce como "avance del próximo evento" (next-event time advance) y es fundamental para la eficiencia de la SED
-
-</details>
-
-<details>
-
-<summary>Lista de Eventos (Event List o Event Calendar)</summary>
-
-Es una estructura de datos esencial que almacena todos los eventos futuros que han sido programados para ocurrir. Los eventos en esta lista están típicamente ordenados cronológicamente, es decir, por su tiempo de ocurrencia programado. El reloj de simulación avanza al tiempo del evento más inminente en esta lista
+They are instantaneous events that can change the state of the system. Events mark the beginning or end of an activity, or any other significant change. Typical examples include the arrival of an entity to the system (arrival event), the end of service for an entity (end-of-service event), or the failure of a machine (failure event).
 
 </details>
 
 <details>
 
-<summary>Recursos</summary>
+<summary>System Status</summary>
 
-Son los componentes del sistema que proporcionan servicio o son utilizados por las entidades. Los recursos suelen tener una capacidad limitada (por ejemplo, un número finito de cajeros, máquinas, operarios, o muelles de carga). Las entidades a menudo compiten por el uso de estos recursos
+A set of variables that contain all the information necessary to describe the system at a particular instant. The state of the system must be sufficient to resume the simulation from that point if it were stopped. Examples of state variables include the number of customers waiting in a queue, the status of a server (busy, free, under repair), or the inventory level of a product.
 
 </details>
 
 <details>
 
-<summary>Colas (Queues)</summary>
+<summary>Simulation Clock</summary>
 
-Son lugares dentro del sistema donde las entidades esperan cuando no pueden acceder inmediatamente a un recurso o servicio porque este está ocupado o no disponible. Las colas son una consecuencia natural de la contención de recursos en sistemas con llegadas y/o servicios aleatorios
+It is a variable that maintains the current value of the simulated time. Unlike real time, the simulation clock does not advance continuously, but rather jumps from one event instant to the next. This mechanism is known as "next-event time advance" and is essential for the efficiency of SED.
+
+</details>
+
+<details>
+
+<summary>Event List or Event Calendar</summary>
+
+It is an essential data structure that stores all future events that have been scheduled to occur. The events in this list are typically ordered chronologically, that is, by their scheduled occurrence time. The simulation clock advances to the time of the most imminent event in this list.
+
+</details>
+
+<details>
+
+<summary>Resources</summary>
+
+These are the system components that provide services or are used by entities. These resources typically have limited capacity (e.g., a finite number of cashiers, machines, operators, or loading docks). Entities often compete for the use of these resources.
+
+</details>
+
+<details>
+
+<summary>Queues</summary>
+
+Queues are places within the system where entities wait when they cannot immediately access a resource or service because it is busy or unavailable. Queues are a natural consequence of resource contention in systems with random arrivals and/or services.
 
 </details>
 
 {% hint style="warning" %}
-La interrelación de estos conceptos es lo que define la dinámica de un modelo SED. Las entidades llegan, posiblemente con atributos específicos, y solicitan recursos para realizar actividades. Si los recursos no están disponibles, las entidades pueden esperar en colas. La ocurrencia de eventos (como llegadas o fines de actividad) cambia el estado del sistema
+### The interrelationship of these concepts defines the dynamics of a SED model. Entities arrive, possibly with specific attributes, and request resources to perform activities. If resources are unavailable, entities may wait in queues. The occurrence of events (such as arrivals or activity completions) changes the state of the system.Ventajas y desventajas de la simulación
 {% endhint %}
 
-### Ventajas y desventajas de la simulación
+It is a powerful analytical tool, but like any methodology, it has both strengths and weaknesses.
 
-Es una herramienta analítica de gran alcance, pero como cualquier metodología, presenta tanto fortalezas como debilidades.&#x20;
-
-Es crucial que el ingeniero industrial comprenda estas características para decidir cuándo y cómo aplicar la simulación de manera efectiva.
+It is crucial for the industrial engineer to understand these characteristics in order to decide when and how to apply simulation effectively.
 
 {% tabs %}
-{% tab title="Ventajas" %}
+{% tab title="Benefits" %}
 
 
-1. **Análisis de Sistemas Complejos**: Permite estudiar sistemas cuya complejidad (gran número de variables, interacciones no lineales, comportamiento estocástico) impide el uso de métodos analíticos puros. La simulación es especialmente útil para sistemas de colas complejos donde las fórmulas matemáticas son limitadas o inexistentes.1
-2. **Experimentación Segura y Económica**: Facilita la experimentación con el sistema sin necesidad de interrumpir la operación real, construir costosos prototipos físicos o exponer el sistema a riesgos innecesarios. Se pueden probar cambios radicales o condiciones extremas en un entorno virtual controlado.1
-3. **Evaluación de Alternativas ("What-if Analysis")**: Permite comparar diferentes políticas de operación, diseños de sistemas o escenarios de inversión antes de su implementación. Esto ayuda a tomar decisiones más informadas y a seleccionar las opciones más prometedoras.
-4. **Compresión y Expansión del Tiempo**: Es posible simular largos períodos de operación (años) en cuestión de minutos u horas de tiempo computacional, o, inversamente, analizar eventos de corta duración con gran detalle.
-5. **Identificación de Problemas y Comprensión del Sistema**: Ayuda a identificar cuellos de botella, comprender las interdependencias entre componentes del sistema y visualizar la dinámica general del sistema. La propia construcción del modelo a menudo conduce a una mejor comprensión del sistema.
-6. **Incorporación de Aleatoriedad e Incertidumbre:** Permite modelar y analizar el impacto de la variabilidad inherente a los sistemas reales (tiempos de llegada aleatorios, duraciones de servicio variables, fallas de equipos, fluctuaciones de la demanda).
-7. **Herramienta de Comunicación y Visualización:** Los modelos de simulación, especialmente aquellos con capacidades de animación gráfica, son excelentes herramientas para comunicar el funcionamiento de un sistema y los resultados de un estudio a diferentes audiencias, incluyendo la gerencia y el personal operativo.1
-8. **Entrenamiento:** Los simuladores pueden utilizarse como herramientas de entrenamiento para operadores y tomadores de decisiones, permitiéndoles experimentar las consecuencias de sus acciones en un entorno libre de riesgos.
+1. Complex Systems Analysis: Allows the study of systems whose complexity (large number of variables, nonlinear interactions, stochastic behavior) precludes the use of pure analytical methods. Simulation is especially useful for complex queuing systems where mathematical formulas are limited or nonexistent.1\
+
+2. Safe and Economical Experimentation: Facilitates system experimentation without disrupting real operations, building expensive physical prototypes, or exposing the system to unnecessary risks. Radical changes or extreme conditions can be tested in a controlled virtual environment.1\
+
+3. Alternatives Evaluation ("What-if Analysis"): Allows the comparison of different operating policies, system designs, or investment scenarios before implementation. This helps make more informed decisions and select the most promising options.\
+
+4. Time Compression and Expansion: Long periods of operation (years) can be simulated in a matter of minutes or hours of computing time, or, conversely, short-duration events can be analyzed in great detail. Problem Identification and System Understanding: Helps identify bottlenecks, understand the interdependencies between system components, and visualize overall system dynamics. Building the model itself often leads to a better understanding of the system.\
+
+5. Incorporating Randomness and Uncertainty: Allows for modeling and analyzing the impact of variability inherent in real systems (random arrival times, variable service durations, equipment failures, demand fluctuations).\
+
+6. Communication and Visualization Tool: Simulation models, especially those with graphic animation capabilities, are excellent tools for communicating system operation and study results to different audiences, including management and operating personnel.\
+
+7. Training: Simulators can be used as training tools for operators and decision-makers, allowing them to experience the consequences of their actions in a risk-free environment.
 {% endtab %}
 
-{% tab title="Desventajas" %}
+{% tab title="Disadvantages" %}
 
 
-1. **Costo y Tiempo de Desarrollo:** El desarrollo de un modelo de simulación válido y detallado puede ser un proceso largo y costoso, requiriendo personal especializado, software y tiempo computacional significativo. "La simulación tiende a ser un proceso relativamente caro".1
-2. **Resultados como Estimaciones Estadísticas:** La simulación, especialmente la estocástica, produce estimaciones del comportamiento del sistema, no soluciones exactas u óptimas (a menos que se combine con técnicas de optimización). Los resultados están sujetos a error muestral y requieren un análisis estadístico cuidadoso para su interpretación.1
-3. **Requerimiento Intensivo de Datos:** La validez de un modelo de simulación depende en gran medida de la calidad de los datos de entrada utilizados para definir las distribuciones de probabilidad y los parámetros del sistema. El principio "basura entra, basura sale" (GIGO, Garbage In, Garbage Out) es plenamente aplicable. La recolección y el análisis de estos datos pueden ser un desafío.
-4. **Complejidad en la Interpretación de Resultados:** La interpretación de los resultados de salida de una simulación puede ser compleja y requiere un buen entendimiento de los métodos estadísticos para evitar conclusiones erróneas.
-5. **Riesgo de Falsa Confianza:** Un modelo de simulación, especialmente si es visualmente atractivo, puede generar una falsa sensación de precisión o validez si no ha sido rigurosamente verificado y validado.
-6. **Especificidad del Modelo:** Un modelo de simulación suele ser específico para el sistema y los objetivos para los cuales fue desarrollado. Generalizar sus resultados a otros sistemas o cambiar significativamente los objetivos puede requerir una revisión sustancial o la construcción de un nuevo modelo.
+1. Cost and Development Time: Developing a valid and detailed simulation model can be a lengthy and expensive process, requiring specialized personnel, software, and significant computational time. Simulation tends to be a relatively expensive process.1\
+
+2. Outputs as Statistical Estimates: Simulation, especially stochastic simulation, produces estimates of system behavior, not exact or optimal solutions (unless combined with optimization techniques). The results are subject to sampling error and require careful statistical analysis for interpretation.1\
+
+3. Data Intensiveness: The validity of a simulation model depends largely on the quality of the input data used to define probability distributions and system parameters. The "garbage in, garbage out" (GIGO) principle fully applies. Collecting and analyzing this data can be challenging. Complexity in Interpreting&#x20;
+4. Results: Interpreting simulation output can be complex and requires a good understanding of statistical methods to avoid erroneous conclusions.\
+
+5. Risk of False Confidence: A simulation model, especially a visually appealing one, can generate a false sense of accuracy or validity if it has not been rigorously verified and validated.\
+
+6. Model Specificity: A simulation model is typically specific to the system and objectives for which it was developed. Generalizing its results to other systems or significantly changing the objectives may require substantial revision or the construction of a new model.
 {% endtab %}
 {% endtabs %}
 
 ***
 
-## Pasos en un estudio de simulación.
+## Steps in a simulation study.
 
-Un estudio de simulación es un proyecto estructurado que sigue una serie de pasos metodológicos para asegurar que los resultados sean creíbles y útiles para la toma de decisiones. La verificación y la validación son componentes críticos de este proceso, que se realizan de manera iterativa a lo largo del ciclo de vida del estudio
+A simulation study is a structured project that follows a series of methodological steps to ensure that the results are credible and useful for decision-making. Verification and validation are critical components of this process, which are performed iteratively throughout the study lifecycle.
 
-<figure><img src="../../../.gitbook/assets/Fases Generales de un Proyecto de Simulación - visual selection.png" alt=""><figcaption><p>ciclo de la generacion del modelo de simulacion</p></figcaption></figure>
-
-### Fases Generales de un Proyecto de Simulación.
+### General Phases of a Simulation Project.
 
 {% stepper %}
 {% step %}
-**Definición del Problema y Establecimiento de Objetivos y Alcance del Estudio**
+Definition of the Problem and Establishment of Objectives and Scope of the Study
 
-Este es el paso inicial y, posiblemente, el más crucial. Consiste en comprender claramente el sistema a estudiar, el problema que se quiere resolver y los objetivos específicos que se persiguen con la simulación. _¿Qué preguntas se espera que responda la simulación?_ _¿Qué métricas de desempeño son importantes?_&#x20;
+This is the initial and possibly most crucial step. It involves clearly understanding the system being studied, the problem to be solved, and the specific objectives pursued with the simulation. What questions is the simulation expected to answer? What performance metrics are important?
 
 {% hint style="warning" %}
-_**Un problema mal definido o unos objetivos ambiguos conducirán inevitablemente a un estudio de simulación ineficaz**_
+A poorly defined problem or ambiguous objectives will inevitably lead to an ineffective simulation study.
 {% endhint %}
 {% endstep %}
 
 {% step %}
-**Formulación del Modelo Conceptual**
+Formulation of the Conceptual Model
 
-Una vez definidos los objetivos, se desarrolla un modelo conceptual del sistema. Esto implica identificar los componentes clave del sistema, las variables relevantes, las interacciones entre ellas, las entradas, las salidas, y el nivel de detalle o abstracción necesario para cumplir los objetivos del estudio.&#x20;
+Once the objectives have been defined, a conceptual model of the system is developed. This involves identifying the key components of the system, relevant variables, the interactions between them, inputs, outputs, and the level of detail or abstraction necessary to meet the study's objectives.
 
 {% hint style="warning" %}
-Se deben establecer las hipótesis y simplificaciones que se realizarán
+The hypotheses and simplifications to be made must be established.
 {% endhint %}
 {% endstep %}
 
 {% step %}
-**Recolección y Análisis de Datos de Entrada**
+Collection and Analysis of Input Data
 
-La simulación requiere datos para alimentar el modelo. Esto incluye datos para estimar los parámetros del sistema (ej. capacidades de máquinas, número de servidores) y para caracterizar la variabilidad de las entradas (ej. tiempos entre llegadas de clientes, tiempos de servicio, tasas de falla de equipos) mediante distribuciones de probabilidad.
+Simulation requires data to feed the model. This includes data to estimate system parameters (e.g., machine capacities, number of servers) and to characterize the variability of inputs (e.g., customer interarrival times, service times, equipment failure rates) using probability distributions.
 
 {% hint style="warning" %}
-La calidad de estos datos es fundamental para la validez del modelo
+The quality of this data is essential for the validity of the model
 {% endhint %}
 {% endstep %}
 
 {% step %}
-**Construcción del Modelo Computacional (Programación)**
+Construction of the Computational Model (Programming)
 
-El modelo conceptual se traduce a un modelo computacional utilizando un lenguaje de simulación específico (ej. AnyLogic, Simio), una librería de simulación en un lenguaje de propósito general (ej. SimPy en Python), o incluso una hoja de cálculo para modelos más simples (ej. Excel para Montecarlo)
+The conceptual model is translated into a computational model using a specific simulation language (e.g. AnyLogic, Simio), a simulation library in a general-purpose language (e.g. SimPy in Python), or even a spreadsheet for simpler models (e.g. Excel for Monte Carlo).
 
 {% hint style="warning" %}
-se recomienda hacer uso de la logica de programacion lineal y sus variantes para estos casos, hacer el modelo matematico paa comprender la logica del sistema
+It is recommended to use linear programming logic and its variants for these cases, to make the mathematical model to understand the logic of the system.
 {% endhint %}
 {% endstep %}
 
 {% step %}
-**Verificación del Modelo Computacional**
+Verification of the Computational Model
 
-La verificación se enfoca en asegurar que el modelo computacional se comporta tal como el modelador lo diseñó, es decir, que el programa implementa correctamente la lógica y los algoritmos del modelo conceptual y de especificación.&#x20;
-
-{% hint style="warning" %}
-La pregunta clave es: "¿Construimos el modelo (programa) correctamente?
-{% endhint %}
-
-_Técnicas de Verificación, (prueba de escritorio)_
-
-1. Revisión del código (code walkthroughs).
-2. Pruebas modulares (probar componentes individuales del modelo).
-3. Uso de trazas (seguir la ejecución paso a paso para valores de entrada simples).
-4. Comparación con resultados conocidos de casos simples o versiones simplificadas del modelo.
-5. Comprobación de la lógica bajo condiciones extremas de los parámetros.
-6. Uso de animación para detectar comportamientos anómalos
-{% endstep %}
-
-{% step %}
-**Validación del Modelo**
-
-La validación busca determinar si el modelo de simulación es una representación suficientemente precisa del sistema real para los propósitos del estudio.&#x20;
+Verification focuses on ensuring that the computational model behaves as the modeler designed it—that is, that the program correctly implements the logic and algorithms of the conceptual and specification model.
 
 {% hint style="warning" %}
-La pregunta clave es: "¿Construimos el modelo correcto (que representa la realidad)
+The key question is: "Did we build the model (program) correctly?
 {% endhint %}
 
-_Técnicas de Validación:_
-
-1. Comparación de los resultados del modelo con datos históricos del sistema real (si existen).
-2. Revisión del modelo y sus resultados por expertos en el sistema real.
-3. Pruebas de Turing: presentar a expertos los resultados del modelo y del sistema real (sin identificar cuál es cuál) y ver si pueden distinguirlos.1
-4. Análisis de sensibilidad: variar los parámetros de entrada del modelo y verificar si las salidas cambian de una manera que sea consistente con el comportamiento esperado del sistema real.
-5. Comprobar la "validez aparente" (face validity): ¿El modelo parece razonable a quienes conocen el sistema?
+1. Verification Techniques (desktop testing)
+   1. Code review (code walkthroughs).
+   2. Modular testing (testing individual model components).
+   3. Use of traces (following execution step by step for simple input values).
+   4. Comparison with known results from simple cases or simplified versions of the model.
+   5. Verifying logic under extreme parameter conditions.
+   6. Using animation to detect anomalous behavior
 {% endstep %}
 
 {% step %}
-**Diseño de Experimentos de Simulación**
+Model Validation
 
-Una vez verificado y validado el modelo, se planifican los experimentos que se realizarán. Esto incluye definir los escenarios a evaluar, las alternativas a comparar, el número de réplicas (corridas independientes) para cada escenario, la duración de cada réplica, y la duración del período de calentamiento (warm-up period) si se buscan resultados de estado estacionario
+Validation seeks to determine whether the simulation model is a sufficiently accurate representation of the real system for the purposes of the study.
+
+{% hint style="warning" %}
+The key question is: "Do we build the correct model (that represents reality)?"
+{% endhint %}
+
+_Validation Techniques:_
+
+1. Comparison of model results with historical data from the real system (if available).
+2. Review of the model and its results by experts on the real system.
+3. Turing tests: Presenting experts with the results of the model and the real system (without identifying which is which) and seeing if they can distinguish them.
+4. Sensitivity analysis: Varying the model's input parameters and checking whether the outputs change in a way that is consistent with the expected behavior of the real system.
+5. Checking face validity: Does the model appear reasonable to those familiar with the system?
 {% endstep %}
 
 {% step %}
-**Ejecución de las Corridas de Simulación (Corridas de Producción)**
+Design of Simulation Experiments
 
-Se ejecutan las simulaciones según el diseño experimental. Es importante gestionar adecuadamente la generación de números aleatorios para asegurar la independencia entre réplicas o la reproducibilidad si es necesario.
+Once the model has been verified and validated, the experiments to be performed are planned. This includes defining the scenarios to be evaluated, the alternatives to be compared, the number of replicates (independent runs) for each scenario, the duration of each replicate, and the length of the warm-up period if steady-state results are sought.
 {% endstep %}
 
 {% step %}
-**Análisis de los Resultados de Salida**
+Execution of Simulation Runs (Production Runs)
 
-Los datos generados por las simulaciones se analizan utilizando herramientas estadísticas para estimar las métricas de desempeño de interés (ej. promedios, varianzas, percentiles, intervalos de confianza) y para comparar las diferentes alternativas o escenarios
+Simulations are run according to the experimental design. It is important to properly manage random number generation to ensure independence between replicates or reproducibility, if necessary.
 {% endstep %}
 
 {% step %}
-**Documentación, Presentación de Resultados y Toma de Decisiones/Implementación**
+Analysis of Output Results
 
-Finalmente, se documenta todo el estudio, incluyendo el modelo, los supuestos, los datos de entrada, los procesos de V\&V, los experimentos realizados y los resultados obtenidos. Los hallazgos se presentan a los tomadores de decisiones, y si el estudio lo justifica, se procede a la implementación de las recomendaciones
+The data generated by the simulations are analyzed using statistical tools to estimate the performance metrics of interest (e.g., means, variances, percentiles, confidence intervals) and to compare different alternatives or scenarios.
+{% endstep %}
+
+{% step %}
+Documentation, Presentation of Results and Decision-Making/Implementation
+
+Finally, the entire study is documented, including the model, assumptions, input data, virtual processes, experiments performed, and results obtained. The findings are presented to decision-makers, and if the study warrants it, the recommendations are implemented.
 {% endstep %}
 {% endstepper %}
 
 {% hint style="danger" %}
-Es fundamental entender que la verificación y la validación no son actividades que se realizan una única vez al final del desarrollo del modelo. Son procesos continuos e iterativos que deben llevarse a cabo a lo largo de todo el ciclo de vida del estudio de simulación.
+It is essential to understand that verification and validation are not activities performed once and for all at the end of model development. They are continuous and iterative processes that must be carried out throughout the entire simulation study lifecycle.\
 
-Un modelo que no ha sido adecuadamente verificado y validado carece de credibilidad, y las decisiones basadas en él pueden ser erróneas y costosas. La participación del cliente o del experto en el sistema real es vital durante todo el proceso, especialmente en la definición del problema, la formulación conceptual y la validación. -crc-
+
+_**A model that has not been adequately verified and validated lacks credibility, and decisions based on it can be erroneous and costly**_. The involvement of the client or real-system expert is vital throughout the entire process, especially in problem definition, conceptual formulation, and validation. -crc-
 {% endhint %}
 
 ***
 
-### Aplicaciones en ingeniería industrial, logística y producción
+## Applications in industrial engineering, logistics and production
 
-La simulación es una herramienta extraordinariamente versátil que ha encontrado una amplia gama de aplicaciones en prácticamente todas las áreas de la ingeniería industrial, la logística y la producción.&#x20;
+Simulation is an extraordinarily versatile tool that has found a wide range of applications in virtually all areas of industrial engineering, logistics, and production.
 
-Su capacidad para modelar la complejidad, la dinámica y la estocasticidad de los sistemas la convierte en un instrumento invaluable para el análisis, diseño y mejora continua.&#x20;
+Its ability to model the complexity, dynamics, and stochasticity of systems makes it an invaluable tool for analysis, design, and continuous improvement.
 
 {% tabs %}
-{% tab title="Sistemas de Manufactura y Producción" %}
-* **Diseño y Distribución de Planta (Layout):** Evaluar diferentes configuraciones de planta, ubicación de maquinaria, estaciones de trabajo y áreas de almacenamiento para optimizar flujos de materiales, minimizar distancias de recorrido, reducir cuellos de botella y mejorar la eficiencia general.
-* **Análisis de Líneas de Producción y Ensamblaje:** Modelar líneas de producción para analizar su capacidad, identificar cuellos de botella (un concepto central en la Teoría de Restricciones - TOC 1), determinar el tamaño óptimo de los buffers intermedios, y evaluar el impacto de la variabilidad en los tiempos de proceso y las tasas de falla de las máquinas.1 General Motors, por ejemplo, utilizó la simulación para incrementar significativamente el rendimiento de sus plantas.
-* **Programación y Secuenciación de la Producción:** Probar diferentes reglas de prioridad y algoritmos de secuenciación para minimizar tiempos de ciclo, reducir el trabajo en proceso (WIP) y mejorar el cumplimiento de las fechas de entrega.1 Swift & Company aplicó la simulación para la programación a nivel de turno y la gestión de la capacidad de promesa.
-* **Control de Inventarios (WIP y Materias Primas):** Evaluar políticas de control de inventario en el piso de producción, como sistemas Kanban o CONWIP, y determinar niveles óptimos de inventario de materias primas y componentes.1 Samsung Electronics utilizó la simulación para reducir tiempos de ciclo e inventarios.
-* **Planificación de Capacidad:** Determinar los requerimientos de maquinaria, personal y otros recursos para satisfacer la demanda proyectada, y evaluar el impacto de inversiones en nueva capacidad.
-* **Sistemas de Manejo de Materiales:** Diseñar y evaluar la eficiencia de sistemas de transporte interno como vehículos guiados automáticamente (AGVs), bandas transportadoras, grúas y robots, considerando sus velocidades, capacidades y lógicas de control.
-* **Modelado de Confiabilidad y Mantenimiento:** Analizar el impacto de las fallas de equipos y las políticas de mantenimiento (preventivo, predictivo, correctivo) sobre la disponibilidad de la línea y la producción total.
-* **Implementación de Sistemas Lean/Just-in-Time (JIT):** Simular la transición a sistemas de producción esbelta para evaluar sus beneficios y desafíos antes de la implementación a gran escala.
+{% tab title="Manufacturing and Production Systems" %}
+* Plant Layout and Design: Evaluate different plant configurations, machinery placement, workstations, and storage areas to optimize material flows, minimize travel distances, reduce bottlenecks, and improve overall efficiency.\
+
+* Production and Assembly Line Analysis: Model production lines to analyze their capacity, identify bottlenecks (a core concept in the Theory of Constraints (TOC 1), determine the optimal size of intermediate buffers, and evaluate the impact of variability on process times and machine failure rates. General Motors, for example, used simulation to significantly increase the throughput of its plants.\
+
+* Production Scheduling and Sequencing: Test different priority rules and sequencing algorithms to minimize cycle times, reduce work in process (WIP), and improve delivery date adherence.1 Swift & Company applied simulation for shift-level scheduling and promise capacity management.\
+
+* Inventory Control (WIP and Raw Materials): Evaluate inventory control policies on the production floor, such as Kanban or CONWIP systems, and determine optimal inventory levels for raw materials and components.1 Samsung Electronics used simulation to reduce cycle times and inventories.\
+
+* Capacity Planning: Determine the requirements for machinery, personnel, and other resources to meet projected demand, and evaluate the impact of investments in new capacity.\
+
+* Material Handling Systems: Design and evaluate the efficiency of internal transportation systems such as automated guided vehicles (AGVs), conveyors, cranes, and robots, considering their speeds, capacities, and control logic.\
+
+* Reliability and Maintenance Modeling: Analyze the impact of equipment failures and maintenance policies (preventive, predictive, corrective) on line availability and total production.\
+
+* Lean/Just-in-Time (JIT) Systems Implementation: Simulate the transition to lean production systems to evaluate their benefits and challenges before full-scale implementation.
 {% endtab %}
 
-{% tab title="Logística y Cadenas de Suministro" %}
-* **Diseño de Redes de Distribución**: Optimizar la ubicación y el número de almacenes y centros de distribución, y definir las rutas de flujo de productos para minimizar costos totales y mejorar los niveles de servicio.
-* **Gestión de Almacenes:** Modelar las operaciones internas de un almacén (recepción, almacenamiento, picking, empaque, despacho) para mejorar la utilización del espacio, optimizar los recorridos de los operarios y equipos, y reducir los tiempos de procesamiento de pedidos.
-* **Optimización de Rutas de Transporte**: Evaluar diferentes estrategias de ruteo para flotas de vehículos, considerando factores como costos de transporte, ventanas de tiempo de entrega, capacidades de los vehículos y variabilidad en los tiempos de viaje.1 Yellow Freight System mejoró su servicio y rendimiento mediante la optimización interactiva de sus operaciones de transporte.1
-* **Políticas de Inventario en la Cadena de Suministro**: Analizar el impacto de diferentes políticas de inventario (centralizado vs. descentralizado, niveles de seguridad) en múltiples eslabones de la cadena de suministro, considerando la variabilidad de la demanda y los tiempos de entrega de los proveedores.1 IBM aplicó la simulación para optimizar su sistema de inventario multi-escalón para la logística de servicios 1, y Philips Electronics la usó para sincronizar su cadena y mitigar el efecto látigo.1
-* **Análisis del Efecto Látigo (Bullwhip Effect)**: Simular cómo las variaciones en la demanda del consumidor final se amplifican a medida que se asciende en la cadena de suministro, y probar estrategias para mitigarlo.
-* **Colaboración y Sincronización en la Cadena de Suministro:** Evaluar los beneficios de compartir información y coordinar decisiones entre los diferentes actores de la cadena.
+{% tab title="Logistics and Supply Chains" %}
+* Distribution Network Design: Optimize the location and number of warehouses and distribution centers, and define product flow routes to minimize total costs and improve service levels.\
+
+* Warehouse Management: Model a warehouse's internal operations (receiving, storage, picking, packing, shipping) to improve space utilization, optimize operator and equipment routes, and reduce order processing times.\
+
+* Transportation Route Optimization: Evaluate different routing strategies for vehicle fleets, considering factors such as transportation costs, delivery time windows, vehicle capacities, and travel time variability. Yellow Freight System improved its service and performance by interactively optimizing its transportation operations.\
+
+* Supply Chain Inventory Policies: Analyze the impact of different inventory policies (centralized vs. decentralized, security levels) on multiple links in the supply chain, considering demand variability and supplier lead times. IBM applied simulation to optimize its multi-echelon inventory system for service logistics, and Philips Electronics used it to synchronize its chain and mitigate the bullwhip effect.\
+
+* Bullwhip Effect Analysis: Simulate how variations in end-consumer demand amplify up the supply chain, and test strategies to mitigate it. Supply Chain Collaboration and Synchronization: Evaluate the benefits of sharing information and coordinating decisions among different actors in the supply chain.
 {% endtab %}
 
-{% tab title="Sistemas de Servicios" %}
-* **Análisis de Sistemas de Colas:** Modelar y analizar el rendimiento de sistemas donde los clientes (o trabajos) esperan por servicio, como en bancos, centros de llamadas (call centers), hospitales, aeropuertos, restaurantes, y oficinas gubernamentales. El objetivo suele ser equilibrar los costos de servicio con la calidad del servicio (tiempos de espera).&#x20;
-  * AT\&T desarrolló un sistema basado en simulación para ayudar a sus clientes a diseñar centros de atención telefónica.
-* **Optimización de Personal (Staffing)**: Determinar el número óptimo de servidores (cajeros, agentes, médicos, enfermeras) en diferentes momentos del día o semana para cumplir con los niveles de servicio deseados a un costo razonable.&#x20;
-  * Merrill Lynch utilizó simulación para su análisis de precios y servicios.
+{% tab title="Service Systems" %}
+* Queuing Systems Analysis: Modeling and analyzing the performance of systems where customers (or jobs) wait for service, such as in banks, call centers, hospitals, airports, restaurants, and government offices. The objective is often to balance service costs with service quality (wait times).\
 
-**Diseño y Rediseño de Procesos de Servicio**: Evaluar el impacto de cambios en los flujos de procesos, la asignación de tareas o la introducción de nueva tecnología en la eficiencia y la experiencia del cliente.
+  * AT\&T developed a simulation-based system to help its clients design call centers.\
+
+* Staffing Optimization: Determining the optimal number of servers (tellers, agents, doctors, nurses) at different times of the day or week to meet desired service levels at a reasonable cost.\
+
+  * Merrill Lynch used simulation for its pricing and service analysis.\
+
+* Service Process Design and Redesign: Evaluating the impact of changes in process flows, task assignments, or the introduction of new technology on efficiency and customer experience.
 {% endtab %}
 
-{% tab title="Gestión de Proyectos" %}
-* **Estimación de la Duración y Costo de Proyectos:** Modelar la duración y el costo de las actividades de un proyecto como variables aleatorias (usando distribuciones como la Triangular o Beta en PERT) para obtener una distribución de la duración y el costo total del proyecto.
-* **Análisis de Rutas Críticas y Sensibilidad:** Identificar las actividades más críticas y analizar cómo la variabilidad en sus duraciones afecta la probabilidad de cumplir con los plazos del proyecto.
-* **Gestión de Riesgos en Proyectos:** Evaluar el impacto de posibles riesgos (retrasos en proveedores, problemas técnicos, falta de recursos) y la efectividad de planes de contingencia.
+{% tab title="Project management" %}
+* Project Duration and Cost Estimation: Model the duration and cost of project activities as random variables (using distributions such as Triangular or Beta in PERT) to obtain a distribution of the total project duration and cost.\
+
+* Critical Path and Sensitivity Analysis: Identify the most critical activities and analyze how variability in their durations affects the probability of meeting project deadlines.\
+
+* Project Risk Management: Evaluate the impact of potential risks (supplier delays, technical issues, lack of resources) and the effectiveness of contingency plans.
 {% endtab %}
 {% endtabs %}
 
-La versatilidad de la simulación es tal que su aplicación se extiende a casi cualquier sistema donde la dinámica, la interacción entre componentes y la incertidumbre juegan un papel importante.
+The versatility of simulation is such that its application extends to almost any system where dynamics, interaction between components, and uncertainty play an important role.
 
 {% hint style="success" %}
-la competitividad de las organizaciones. La clave para el ingeniero industrial es aprender a identificar las características de un problema que lo hacen candidato para un análisis por simulación y luego traducir ese problema en un modelo válido y útil
+the competitiveness of organizations. The key for the industrial engineer is to learn to identify the characteristics of a problem that make it a candidate for simulation analysis and then translate that problem into a valid and useful model.
 {% endhint %}
 
 ***
 
-###
+Literature
 
+1. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.). Prentice Hall.\
 
+2. Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Education.\
 
+3. Leemis, L. M., & Park, S. K. (2006). Discrete-Event Simulation: A First Course. Prentice Hall.\
 
+4. Hillier, F. S., & Lieberman, G. J. (2010). Introduction to Operations Research (9th ed.). McGraw-Hill. (Chapters on simulation)\
 
+5. Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event Systems (2nd ed.). Springer.\
 
-
-
-
-## Bibliografia
-
-1. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.). Prentice Hall.
-2. Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Education.
-3. Leemis, L. M., & Park, S. K. (2006). Discrete-Event Simulation: A First Course. Prentice Hall.&#x20;
-4. Hillier, F. S., & Lieberman, G. J. (2010). Introducción a la Investigación de Operaciones (9th ed.). McGraw-Hill. (Capítulos sobre simulación)&#x20;
-5. Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event Systems (2nd ed.). Springer.
-6. Urquía Moraleda, A., & Martín Villalba, C. (2016). Métodos de simulación y modelado. UNED.&#x20;
+6. Urquía Moraleda, A., & Martín Villalba, C. (2016). Simulation and modeling methods. UNED.
