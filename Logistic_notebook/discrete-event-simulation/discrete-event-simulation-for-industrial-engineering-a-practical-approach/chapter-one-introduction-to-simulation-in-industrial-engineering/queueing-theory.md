@@ -9,10 +9,10 @@ icon: colon
 # Queueing theory
 
 {% hint style="info" %}
-El proceso basico supuesto por la mayoria de los modelos, es que **Los clientes quieren un servicio**
+The basic process assumed by most models is that customers want a service
 {% endhint %}
 
-### QT.
+## Queueing theory
 
 Queueing theory deals with the mathematical study of waiting lines, or queues. It models the flow of entities through a service system. The theoretical models typically represent a **stochastic process** where random variables govern arrivals and service times. The objective is to analyze performance measures such as average waiting time, average queue length, server utilization, and the probability of a customer having to wait.
 
@@ -195,8 +195,6 @@ The theoretical benefit of multiple servers, compared to a single server with th
 
 ## Service Time Distributions
 
-
-
 ### Exponential distribution
 
 The **exponential distribution** is a continuous probability distribution that describes the time between events in a Poisson process. It is a key distribution for modeling service time in queueing systems. It is characterized by its **constant rate of occurrence**, meaning that no matter how much time has passed since the last event, the probability of a new event occurring in the next instant is the same. The probability density function of an exponential distribution is expressed as:
@@ -300,55 +298,52 @@ In queueing theory, the **birth-death process** is a type of stochastic process 
 
 The birth-death process is fundamental in the analysis of M/M/1 queues, helping to calculate metrics such as average queue size and mean waiting time, which are crucial for optimizing the performance of service systems.
 
-#### Ejemplo Uno de Teoría de Colas
+***
 
-**Problema:**
+## Example of Queuing Theory
 
-Supongamos un sistema de colas **M/M/1** donde los clientes llegan a una tasa de $$\lambda = 4$$ clientes por hora y son atendidos a una tasa de $$\mu = 5$$ clientes por hora. Calcule el tamaño promedio de la cola y el tiempo de espera promedio en el sistema.
+### **Example One: M/M/1 - Basic**
 
-**Solución:**
+Suppose a M/M/1 queuing system where customers arrive at a rate of $$\lambda = 4$$ customers per hour and are served at a rate of $$\mu = 5$$ customers per hour. Calculate the average queue size and average wait time in the system.
 
-Primero, calculemos la utilización del sistema ((\rho)):\
-$$\rho = \frac{\lambda}{\mu} = \frac{4}{5} = 0.8$$
+**Solution:**
 
-**Tamaño promedio de la cola ((L\_q)):**\
-$$L_q = \frac{\rho^2}{1 - \rho} = \frac{0.8^2}{1 - 0.8} = \frac{0.64}{0.2} = 3.2$$
+1. et's calculate the system utilization $$\rho$$:\
+   $$\rho = \frac{\lambda}{\mu} = \frac{4}{5} = 0.8$$
+2. Average queue size $$L_q$$:\
+   $$L_q = \frac{\rho^2}{1 - \rho} = \frac{0.8^2}{1 - 0.8} = \frac{0.64}{0.2} = 3.2$$
+3. Average waiting time in the system $$W$$\
+   $$W = \frac{1}{\mu - \lambda} = \frac{1}{5 - 4} = 1 \text{ hora}$$
 
-**Tiempo de espera promedio en el sistema ((W)):**\
-$$W = \frac{1}{\mu - \lambda} = \frac{1}{5 - 4} = 1 \text{ hora}$$
+Therefore, the average queue size is 3.2 customers, and the average wait time in the system is 1 hour.
 
-Por lo tanto, el tamaño promedio de la cola es de 3.2 clientes, y el tiempo de espera promedio en el sistema es de 1 hora.
+### Example 2: System with multiple servers
 
-#### Ejemplo 2: Sistema con múltiples servidores
+Consider a system with N servers, where the client arrival rate is $$\lambda$$ and each server serves at a rate of $$\mu$$.
 
-Consideremos un sistema con **N** servidores, donde la tasa de llegada de clientes es $$\lambda$$ y cada servidor atiende a una tasa de $$\mu$$.
+1. system utilization $$\rho$$**:**\
+   $$[ \rho = \frac{\lambda}{N \cdot \mu} ]$$
+2. Probability that a customer will wait $$P_w$$**:**\
+   When system utilization is high $$\rho \approx 1$$, It's more likely that there will be customers waiting. This can be calculated using the Erlang B or C formula, depending on the model chosen.
+3. Average tail size $$L_q$$**:**\
+   $$[ L_q = \frac{(\frac{\lambda}{\mu})^N (\rho)}{N! (1-\rho)^2} \times P_0 ]$$\
+   Where  $$P_0$$ is the probability that there are no customers in the system.
+4. Average waiting time in the systema $$W$$**:**\
+   $$[ W = \frac{L}{\lambda} ]$$\
+   Where ( L ) is the average number of customers in the system, which can be calculated as $$L = L_q + \frac{\lambda}{\mu}$$.
 
-**Utilización del sistema** $$\rho$$**:**\
-$$[ \rho = \frac{\lambda}{N \cdot \mu} ]$$
+### Queuing System in a Restaurant
 
-**Probabilidad de que un cliente espere** $$P_w$$**:**\
-Cuando la utilización del sistema es alta $$\rho \approx 1$$, es más probable que haya clientes esperando. Se puede calcular usando la fórmula de Erlang B o C dependiendo del modelo elegido.
+In a restaurant, the queuing system can be modeled similarly to a multi-server system, where each server acts as a server capable of handling multiple customers at once.
 
-**Tamaño promedio de la cola** $$L_q$$**:**\
-$$[ L_q = \frac{(\frac{\lambda}{\mu})^N (\rho)}{N! (1-\rho)^2} \times P_0 ]$$\
-Donde  $$P_0$$ es la probabilidad de que no haya clientes en el sistema.
+* Customers and Waiters: Customers arrive at the restaurant and form a queue if all the waiters are busy. The customer arrival rate is symbolized by $$\lambda$$, and each waiter has a service charge $$\mu$$, which indicates the speed at which you can serve customers.
+* Utilization: As in the theoretical model, the utilization of each waiter, $$ho$$, it´s calculated as $$ho = \frac{\lambda}{N \cdot \mu}$$ where N is the number of waiters.
+* Probability of Waiting: During peak hours, when utilization is high ($$ho \approx 1$$), Customers may have to wait before being served.
+* Queue Size and Wait Time: Following the formulas mentioned above, you can calculate the average queue size and the average time a customer waits in the system.
 
-**Tiempo de espera promedio en el sistema ((W)):**\
-$$[ W = \frac{L}{\lambda} ]$$\
-Donde ( L ) es el número promedio de clientes en el sistema, que puede ser calculado como $$L = L_q + \frac{\lambda}{\mu}$$.
+### Example three: A Restaurant with 3 Servers
 
-#### Sistema de Colas en un Restaurante
-
-En un restaurante, el sistema de colas se puede modelar de manera similar a un sistema de servidores múltiples, donde cada mesero actúa como un servidor capaz de manejar múltiples clientes a la vez.
-
-* **Clientes y Meseros**: Los clientes llegan al restaurante y forman una cola si todos los meseros están ocupados. La tasa de llegada de clientes se simboliza por $$\lambda$$, y cada mesero tiene una tasa de servicio $$\mu$$, que indica la velocidad a la que puede atender a los clientes.
-* **Utilización**: Al igual que en el modelo teórico, la utilización de cada mesero, $$ho$$, se calcula como $$ho = \frac{\lambda}{N \cdot \mu}$$ donde **N** es el número de meseros.
-* **Probabilidad de Espera**: Durante las horas pico, cuando la utilización es alta ($$ho \approx 1$$), es probable que los clientes tengan que esperar antes de ser atendidos.
-* **Tamaño de la Cola y Tiempo de Espera**: Siguiendo las fórmulas mencionadas anteriormente, se puede calcular el tamaño promedio de la cola y el tiempo promedio que un cliente espera en el sistema.
-
-### Example 3: A Restaurant with 3 Servers
-
-Suppose a restaurant has **3 servers** available to attend to customers. The **average customer arrival rate** at the restaurant is **15 customers per hour**. ($$\lambda = 15$$), and each server can attend to one customer in an average of **20 minutes**, meaning the service rate per server is **3 customers per hou** ($$\mu = 3$$).
+Suppose a restaurant has 3 servers available to serve customers. The average customer arrival rate at the restaurant is 15 customers per hour. ($$\lambda = 15$$), and each server can attend to one customer in an average of 20 minutes, meaning the service rate per server is 3 customers per hour ($$\mu = 3$$).
 
 Solving:
 
