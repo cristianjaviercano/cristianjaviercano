@@ -71,16 +71,16 @@ simular_varios_juegos(10)
 ```
 
 {% hint style="info" %}
-Juego 1: 3 lanzamientos, ganó 5 dólares\
-Juego 2: 3 lanzamientos, ganó 5 dólares\
-Juego 3: 15 lanzamientos, perdió 7 dólares\
-Juego 4: 7 lanzamientos, ganó 1 dólares\
-Juego 5: 7 lanzamientos, ganó 1 dólares\
-Juego 6: 3 lanzamientos, ganó 5 dólares\
-Juego 7: 7 lanzamientos, ganó 1 dólares\
-Juego 8: 3 lanzamientos, ganó 5 dólares\
-Juego 9: 5 lanzamientos, ganó 3 dólares\
-Juego 10: 5 lanzamientos, ganó 3 dólares
+Game 1: 3 tosses, won $5\
+Game 2: 3 tosses, won $5\
+Game 3: 15 tosses, lost $7\
+Game 4: 7 tosses, won $1\
+Game 5: 7 tosses, won $1\
+Game 6: 3 tosses, won $5\
+Game 7: 7 tosses, won $1\
+Game 8: 3 tosses, won $5\
+Game 9: 5 tosses, won $3\
+Game 10: 5 tosses, won $3
 
 -¿are you in?
 {% endhint %}
@@ -102,7 +102,7 @@ $$
 
 _We use the formula_
 
-$$= SI(RANDOM \lt 0,5, "Cara", "Cruz").$$
+$$= IF(RANDOM \lt 0,5, "Cara", "Sello").$$
 
 You can use other cells where you have the "countif" functions to count the "heads" and "tails," calculating the difference to know when to stop.
 
@@ -130,9 +130,9 @@ $$
 Reestablecer\ N(t) = \left\{ \begin{aligned}N(t) +1 \text{ arrive in time t } \\ N(t) - 1 \ \text{service completed in time t}\end{aligned} \right\}
 $$
 
-#### Comportamiento y Pasos para Resolver un Problema M/M/1
+### Behavior and Steps to Solve a Problem M/M/1
 
-Un sistema M/M/1 es un modelo básico de teoría de colas utilizado para representar un sistema con llegadas, un servicio y una sola fila. A continuación se detalla el comportamiento del sistema y los pasos necesarios para resolver problemas relacionados:
+An M/M/1 system is a basic queuing theory model used to represent a system with arrivals, one service, and a single queue. The system's behavior and the steps required to solve related problems are detailed below:
 
 1. **Definición del Sistema**:
    * **Llegadas**: Los clientes llegan siguiendo un proceso de Poisson con una tasa de llegada $$(\lambda)$$, lo que significa que el tiempo entre llegadas sucesivas es aleatorio y sigue una distribución exponencial.
