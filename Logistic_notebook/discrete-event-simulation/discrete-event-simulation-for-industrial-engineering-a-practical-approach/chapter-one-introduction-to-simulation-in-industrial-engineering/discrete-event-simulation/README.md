@@ -134,14 +134,12 @@ $$
 
 An M/M/1 system is a basic queuing theory model used to represent a system with arrivals, one service, and a single queue. The system's behavior and the steps required to solve related problems are detailed below:
 
-1. **Definición del Sistema**:
-   * **Llegadas**: Los clientes llegan siguiendo un proceso de Poisson con una tasa de llegada $$(\lambda)$$, lo que significa que el tiempo entre llegadas sucesivas es aleatorio y sigue una distribución exponencial.
-   * **Servicio**: Los tiempos de servicio también son aleatorios y siguen una distribución exponencial con una tasa de servicio $$(\mu)$$. Hay un único servidor disponible para atender a los clientes.
-   * **Cola Única**: El sistema tiene una sola cola, donde los clientes esperan su turno para ser atendidos. Una vez atendidos, los clientes salen del sistema.
+1. System Definition:
+   * Arrivals: Customers arrive following a Poisson process with an arrival rate $$(\lambda)$$, which means that the time between successive arrivals is random and follows an exponential distribution.
+   * Service: Service times are also random and follow an exponential distribution with a service rate $$(\mu)$$. There is only one server available to serve customers.
+   * Single Queue: The system has a single queue where customers wait their turn to be served. Once served, customers exit the system.
 
-este modelo hace referencia a los modelos de "nacimiento y muerte" de la **teoria de colas** explicado de forma general por el modelo **M/M/s**, este supone que los tiempos de llegadas son independientes y distribuidos deacuerdo con una distribucion exponencial, proceso de entrada de poisson , se le conoce como modelo de nacimiento y muerte cuando la tas ade llegada nedia y la tasa de servicio media son constantes e independientes del estado del sistema.
-
-en nuestro caso tenemos un solo servidor. s =1 , por que lo que es facil expresarla, lo que no seria si s > 1.&#x20;
+This model refers to the "birth and death" models of queuing theory, generally explained by the M/M/s model. This assumes that arrival times are independent and distributed according to an exponential distribution, a Poisson input process. It is known as the birth and death model when the average arrival rate and the average service rate are constant and independent of the system state. In our case, we have a single server. s = 1, which is easy to express, which would not be the case if s > 1.
 
 la **tasa de servicio del sistema** $$\mu_n$$ Representa la tasa media de los servicios terminados de todo el sistema de colas cuando existen n clientes en él; caso diferente cuando tenemos multiples servidores (s > 1) en tonces $$\mu_n$$ no es lo mismo que $$\mu$$,&#x20;
 
