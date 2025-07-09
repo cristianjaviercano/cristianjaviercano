@@ -141,27 +141,25 @@ An M/M/1 system is a basic queuing theory model used to represent a system with 
 
 This model refers to the "birth and death" models of queuing theory, generally explained by the M/M/s model. This assumes that arrival times are independent and distributed according to an exponential distribution, a Poisson input process. It is known as the birth and death model when the average arrival rate and the average service rate are constant and independent of the system state. In our case, we have a single server. s = 1, which is easy to express, which would not be the case if s > 1.
 
-la **tasa de servicio del sistema** $$\mu_n$$ Representa la tasa media de los servicios terminados de todo el sistema de colas cuando existen n clientes en él; caso diferente cuando tenemos multiples servidores (s > 1) en tonces $$\mu_n$$ no es lo mismo que $$\mu$$,&#x20;
+the system service rate $$\mu_n$$ It represents the average rate of completed services of the entire queuing system when there are n clients in it; different case when we have multiple servers (s > 1) then $$\mu_n$$ It is not the same as $$\mu$$,&#x20;
 
-$$\mu = n\mu\ \text{cuando n es} \le s,$$ &#x20;
+$$\mu = n\mu\ \text{when n is} \le s,$$ &#x20;
 
-&#x20;$$\mu = s\mu\ \text{cuando n es} \ge s,$$
+&#x20;$$\mu = s\mu\ \text{when n is} \ge s,$$
 
-usando estas formulas procedemos a calcular los factores $$C_n$$ del proceso de nacimiento y muerte
-
-
+Using these formulas we proceed to calculate the factors $$C_n$$ of the process of birth and death
 
 $$
 C_n = \left(\frac{\lambda}{\mu}\right)^n =\rho^n, \ \text{para}\  n=0,1,2,...
 $$
 
-por lo tanto,
+therefore,
 
 $$
 P_n = \rho^nP_0, \ para\ n=0,1,2,...
 $$
 
-Donde
+Where,
 
 $$
 P_0 = \left( \sum_{n=0}^{\infty} \rho^n \right)^{-1}
@@ -175,9 +173,9 @@ $$
 P_n = (1 - \rho) \rho^n \quad \forall n \in \{0, 1, 2, \ldots\}
 $$
 
-#### Hgamos un ejemplo de este sistema
+### Let's look at an example of this system.
 
-Considérese una sucursal bancaria pequeña que cuenta con un único cajero. Los clientes llegan a esta sucursal para ser atendidos por el cajero. Se asume que este sistema puede ser modelado como una cola [M/M/1,](https://en.wikipedia.org/wiki/M/M/1_queue)
+Consider a small bank branch with a single teller. Customers arrive at this branch to be served by the teller. It is assumed that this system can be modeled as an [M/M/1,](https://en.wikipedia.org/wiki/M/M/1_queue) queue
 
 **Llegadas (M):** Las llegadas de clientes siguen un proceso de Poisson con una tasa media de λ clientes por unidad de tiempo. Esto significa que los tiempos entre llegadas sucesivas son variables aleatorias independientes e idénticamente distribuidas (i.i.d.) según una distribución exponencial con media $$\frac{1}{\lambda}$$
 
