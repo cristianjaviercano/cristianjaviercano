@@ -25,7 +25,7 @@ empezamos por crear la hoja en Anulogic.
 
 ### creamos el flujo del problema
 
-<img src="../../../../.gitbook/assets/file.excalidraw (5).svg" alt="flujo basico del sistema" class="gitbook-drawing">
+<img src="../../../../.gitbook/assets/file.excalidraw (10).svg" alt="flujo basico del sistema" class="gitbook-drawing">
 
 Para el software anylogic seria algo asi.
 
