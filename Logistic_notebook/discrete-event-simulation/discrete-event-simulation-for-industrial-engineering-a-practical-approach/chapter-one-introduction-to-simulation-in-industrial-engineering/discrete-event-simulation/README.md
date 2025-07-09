@@ -177,73 +177,72 @@ $$
 
 Consider a small bank branch with a single teller. Customers arrive at this branch to be served by the teller. It is assumed that this system can be modeled as an [M/M/1,](https://en.wikipedia.org/wiki/M/M/1_queue) queue
 
-**Llegadas (M):** Las llegadas de clientes siguen un proceso de Poisson con una tasa media de λ clientes por unidad de tiempo. Esto significa que los tiempos entre llegadas sucesivas son variables aleatorias independientes e idénticamente distribuidas (i.i.d.) según una distribución exponencial con media $$\frac{1}{\lambda}$$
+Arrivals (M): Customer arrivals follow a Poisson process with an average rate of λ customers per unit time. This means that the times between successive arrivals are independent and identically distributed (i.i.d.) random variables according to an exponential distribution with mean $$\frac{1}{\lambda}$$
 
-**Servicio (M):** Los tiempos de servicio del cajero siguen una distribución exponencial con una tasa media de servicio de μ clientes por unidad de tiempo (si el cajero está ocupado). Esto significa que la duración del servicio es una variable aleatoria con media 1/μ.
+Service (M): Cashier service times follow an exponential distribution with an average service rate of μ customers per unit of time (if the cashier is busy). This means that service duration is a random variable with mean 1/μ.
 
-**Servidor (1):** Hay un único servidor (el cajero).
+Server (1): There is only one server (the cashier).
 
-**Capacidad del sistema:** Se asume una capacidad infinita para la cola (los clientes siempre esperan si el cajero está ocupado).
+System capacity: Infinite queue capacity is assumed (customers always wait if the cashier is busy).
 
-**Disciplina de la cola:** Los clientes son atendidos en orden de llegada (FCFS - First Come, First Served).
+Queue discipline: Customers are served in order of arrival (FCFS - First Come, First Served).
 
-Para este ejemplo, se utilizaremos los siguientes parámetros:
-
-* Tasa media de llegada de clientes (λ): 20 clientes por hora.
-* Tasa media de servicio del cajero (μ): 25 clientes por hora.
+For this example, we will use the following parameters:\
+Average customer arrival rate (λ): 20 customers per hour.\
+Average cashier service rate (μ): 25 customers per hour.
 
 {% hint style="warning" %}
-Es fundamental que λ<μ para que el sistema sea estable y no crezca indefinidamente. En este caso, 20<25, por lo que el sistema es estable.
+It is essential that λ<μ for the system to be stable and not grow indefinitely. In this case, 20<25, so the system is stable.
 {% endhint %}
 
-Solucionando, Las principales medidas de desempeño para un sistema M/M/1 en estado estacionario se calculan con las siguientes fórmulas (Gross, Shortle, Thompson, & Harris, 2008)
+Solving, The main performance measures for a steady-state M/M/1 system are calculated with the following formulas (Gross, Shortle, Thompson, & Harris, 2008)
 
-**Factor de utilización del servidor (ρ)**: Es la proporción de tiempo que el servidor está ocupado.&#x20;
+Server utilization factor (ρ): It is the proportion of time that the server is busy.
 
 $$
 ρ=\frac{μ}{λ}
 $$
 
-**Probabilidad de que el sistema esté vacío (P0​)**: Probabilidad de que no haya clientes en el sistema (el cajero está ocioso).&#x20;
+Probability that the system is empty (P0​): Probability that there are no customers in the system (the ATM is idle).
 
 $$
 P_0​=(1−ρ)
 $$
 
-**Probabilidad de que haya n clientes en el sistema (Pn​)**:
+Probability that there are n customers in the system (Pn​):
 
 $$
 P_n=(1−ρ)ρ^n=P_0ρ^n
 $$
 
-**Número promedio de clientes en el sistema (L)**: Incluye los que están en cola y el que está siendo atendido.
+Average number of customers in the system (L): Includes those in queue and those being served.
 
 $$
 L = \frac{ρ}{1−ρ} = \frac{λ}{μ−λ}
 $$
 
-**Número promedio de clientes en la cola (Lq​)**:
+Average number of customers in the queue (Lq​):
 
 $$
 L = \frac{ρ^2}{1−ρ} = \frac{λ^2}{μ(μ−λ)}
 $$
 
-**Tiempo promedio que un cliente pasa en el sistema (W)**: Tiempo total desde la llegada hasta la salida (espera + servicio).
+Average time a customer spends in the system (W): Total time from arrival to departure (waiting + service).
 
 $$
 W = \frac{L}{\lambda} = \frac{1}{\mu - \lambda}
 $$
 
-**Tiempo promedio que un cliente pasa esperando en la cola (Wq​)**:
+Average time a customer spends waiting in line (Wq​):
 
 $$
 W_q= \frac{\lambda}{\mu(\mu - \lambda)}
 $$
 
-También se puede calcular como $$W_q = W - \frac{1}{\mu}$$
+It can also be calculated as $$W_q = W - \frac{1}{\mu}$$
 
 {% hint style="info" %}
-MINI TAREA: Calciula cada uno de los indices y saca tus conclusiones.
+MINI TASK: Calculate each of the indices and draw your conclusions, also perform a Monte Carlo simulation and these metrics will become your indicators
 {% endhint %}
 
 #### Apliquemos un poco de python al asunto...
