@@ -1,33 +1,31 @@
-# Bloques de Ejercicios Capitulo Dos
+# Exercise Blocks Chapter Two
 
-### **Bloque de preguntas**
+### **Question Block**
 
-1.  **Cálculo de Probabilidades:** Un proceso de producción tiene una tasa de defectos del 5%. Si se toma una muestra de 10 unidades:
+1.  **Probability Calculation:** A production process has a defect rate of 5%. If a sample of 10 units is taken:
+    1. What is the probability that exactly one unit is defective? (Use Binomial)
+    2. What is the probability that at least two units are defective?
 
-    1. ¿Cuál es la probabilidad de que exactamente una unidad sea defectuosa? (Usar Binomial)
-    2. ¿Cuál es la probabilidad de que al menos dos unidades sean defectuosas?
+2.  **Expected Value and Variance:** The service time at a workstation follows a uniform distribution between 5 and 15 minutes.  
+    1. Calculate the expected service time and its standard deviation.
 
+3. **Distribution Selection:** For each of the following scenarios in a logistics system, propose an appropriate probability distribution and justify your choice:
+    1. Number of trucks arriving at a distribution center in a period of one hour.
+    2. Time it takes an operator to prepare an order, knowing that the minimum time is 3 minutes, the maximum is 10 minutes, and the most frequent is 5 minutes.
+    3. The proportion of orders delivered on time.
+    4. The time until a new forklift experiences its first major breakdown, assuming breakdowns occur at a constant rate.
 
-2.  **Valor Esperado y Varianza:** El tiempo de servicio en una estación de trabajo sigue una distribución uniforme entre 5 y 15 minutos.&#x20;
+4. **Central Limit Theorem:** If the time to complete each of 25 independent tasks in a project has a mean of 4 hours and a standard deviation of 1 hour (normal distribution assumed):
+    1. What can you say about the distribution of the total time to complete the project?  
+        1. Estimate the probability that the project takes more than 105 hours.
 
-    1. Calcule el tiempo de servicio esperado y su desviación estándar.
+5. **Goodness of Fit:** 100 observations of the time between arrivals to a system have been collected. It is suspected that they follow an exponential distribution.  
+    1. Describe the steps you would follow to verify this hypothesis using the Kolmogorov-Smirnov test.  
+        1. What would you do if the test rejects the hypothesis?
 
+### Discussion Questions
 
-3. **Selección de Distribución:** Para cada uno de los siguientes escenarios en un sistema logístico, proponga una distribución de probabilidad adecuada y justifique su elección:
-   1. Número de camiones que llegan a un centro de distribución en un período de una hora.
-   2. Tiempo que tarda un operario en preparar un pedido, sabiendo que el tiempo mínimo es de 3 minutos, el máximo de 10 minutos y el más frecuente es de 5 minutos.
-   3. La proporción de pedidos que se entregan a tiempo.
-   4. El tiempo hasta que una nueva carretilla elevadora experimenta su primera avería importante, asumiendo que las averías ocurren a una tasa constante.
-4. **Teorema del Límite Central:** Si el tiempo para completar cada una de 25 tareas independientes de un proyecto tiene una media de 4 horas y una desviación estándar de 1 hora (distribución desconocida),&#x20;
-   1. ¿qué puede decir sobre la distribución del tiempo total para completar el proyecto?&#x20;
-      1. Estime la probabilidad de que el proyecto tarde más de 105 horas.
-5. **Bondad de Ajuste:** Se han recolectado 100 observaciones del tiempo entre llegadas a un sistema. Se sospecha que siguen una distribución exponencial.&#x20;
-   1. Describa los pasos que seguiría para verificar esta hipótesis utilizando la prueba de Kolmogorov-Smirnov.&#x20;
-      1. ¿Qué haría si la prueba rechaza la hipótesis?
-
-### Preguntas para discusion.
-
-1. Explique la diferencia fundamental entre una variable aleatoria discreta y una continua, y cómo afecta esto a la forma en que se describen sus probabilidades.
-2. ¿Por qué es importante el concepto de independencia de variables aleatorias al construir un modelo de simulación de una línea de producción con múltiples máquinas?
-3. Si una prueba de bondad de ajuste para una distribución Normal aplicada a unos datos de tiempos de proceso arroja un p-value de 0.25, ¿cómo interpretaría este resultado? ¿Significa que los datos provienen definitivamente de una distribución Normal?
-4. Discuta las limitaciones de usar solo la media para describir una variable aleatoria en un modelo de simulación. ¿Por qué es importante considerar también la varianza u otras medidas de dispersión?
+1. Explain the fundamental difference between a discrete random variable and a continuous one, and how this affects the way their probabilities are described.
+2. Why is the concept of independence of random variables important when building a simulation model of a production line with multiple machines?
+3. If a goodness-of-fit test for a Normal distribution applied to process time data yields a p-value of 0.25, how would you interpret this result? Does it mean the data are normally distributed? Why or why not?
+4. Discuss the limitations of using only the mean to describe a random variable in a simulation model. Why is it important to also consider the variance or other measures of dispersion?
