@@ -46,12 +46,12 @@
   * [Chapter Four: Monte Carlo Simulation with Excel](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-cuatro-simulacion-de-montecarlo-con-excel/README.md)
     * [Exercises](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-cuatro-simulacion-de-montecarlo-con-excel/exercises.md)
 * [Soft Simulation: Anylogic](discrete-event-simulation/software-de-simulacion-anylogic/README.md)
-  * [Retos de simulacion](https://cristianjaviercano.github.io/Retos/)
-  * [Mini juegos](https://cristianjaviercano.github.io/minijuegos/)
-  * [Anylogic explicacion](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/README.md)
+  * [Simulation Tasks](https://cristianjaviercano.github.io/Retos/)
+  * [Mini Games](https://cristianjaviercano.github.io/minijuegos/)
+  * [Anylogic Examples](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/README.md)
     * [Call center](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/call-center.md)
-    * [Tienda de Pasteles DC](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
-    * [Manufactura de Calzado DC](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
+    * [DC Bakery](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
+    * [DC Shoe Handcrafting](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
 
 ## Book Store
 
