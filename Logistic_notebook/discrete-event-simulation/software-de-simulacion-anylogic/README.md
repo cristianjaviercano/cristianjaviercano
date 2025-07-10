@@ -6,13 +6,13 @@ icon: file-doc
 
 ## Simulation software
 
-#### ¿Por qué usar un software de simulación?
+#### Why use simulation software?
 
-1. **Precisión y eficacia**: Permiten modelar escenarios complejos sin necesidad de recurrir a experimentos físicos costosos.
-2. **Ahorro de tiempo y recursos**: Facilitan iteraciones rápidas y ajustes sobre el modelo simulado en lugar de en prototipos físicos.
-3. **Prevención de riesgos**: Posibilitan identificar errores antes de su aplicación en entornos reales, minimizando riesgos potenciales.
-4. **Optimización de procesos**: Contribuyen al análisis y mejora continua de procesos mediante la identificación de cuellos de botella y áreas de mejora.
-5. **Visualización de datos**: Ofrecen herramientas para representar visualmente los datos simulados, mejorando la comprensión y comunicación de los resultados.
+1. **Accuracy and efficiency**: They allow complex scenarios to be modeled without resorting to costly physical experiments.
+2. **Time and resource savings**: They facilitate rapid iterations and adjustments to the simulated model rather than physical prototypes.
+3. **Risk prevention**: They make it possible to identify errors before applying them to real-world environments, minimizing potential risks.
+4. **Process optimization**: They contribute to the analysis and continuous improvement of processes by identifying bottlenecks and areas for improvement.
+5. **Data visualization**: They offer tools to visually represent simulated data, improving the understanding and communication of results.
 
 <img src="../../.gitbook/assets/file.excalidraw (3).svg" alt="" class="gitbook-drawing">
 
