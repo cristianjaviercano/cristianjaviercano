@@ -543,149 +543,152 @@ La prueba es sensible a desviaciones en el centro, las colas y la forma de la di
 
 ***
 
-#### **Pruebas de Independencia**
+#### **Independence Tests**
 
-Estas pruebas verifican si los números generados son independientes entre sí (es decir, si el valor de un número no influye en el valor de los siguientes).
+These tests verify whether the generated numbers are independent of each other (that is, whether the value of one number does not influence the value of the following numbers).
 
-1. **Prueba de Rachas (Runs Test):** Una "racha" es una subsecuencia de observaciones con una propiedad común.
-   1. Por ejemplo, una racha ascendente es una secuencia de números donde cada uno es mayor que el anterior. Se analiza el número total de rachas en la secuencia. Si hay demasiadas o muy pocas rachas en comparación con lo que se esperaría de una secuencia verdaderamente independiente, se rechaza la hipótesis de independencia.
-2. **Prueba de Autocorrelación:** Mide la correlación lineal entre números separados por un cierto "retraso" (lag) $$k$$ en la secuencia. La autocorrelación de lag k, $$ρ_k$$​, estima la correlación entre $$U_i$$​ y $$U_i+k$$​. Para una secuencia independiente, se espera que todas las autocorrelaciones (para $$k≥1$$) sean cercanas a cero. Se construye un estadístico de prueba (basado en la aproximación Normal para $$ρ^​k$$​ cuando N es grande) para verificar si $$ρ_k$$​ es significativamente diferente de cero.
+1. **Runs Test:** A "run" is a subsequence of observations with a common property.
+1. For example, an upward run is a sequence of numbers where each is greater than the previous one. The total number of runs in the sequence is analyzed. If there are too many or too few runs compared to what would be expected from a truly independent sequence, the hypothesis of independence is rejected.
+2. **Autocorrelation Test:** This test measures the linear correlation between numbers separated by a certain "lag" (lag) $$k$$ in the sequence. The lag k autocorrelation, $$ρ_k$$​, estimates the correlation between $$U_i$$​ and $$U_i+k$$​. For an independent sequence, all autocorrelations (for $$k≥1$$) are expected to be close to zero. A test statistic (based on the Normal approximation for $$ρ^​k$$​ when N is large) is constructed to check whether $$ρ_k$$​ is significantly different from zero.
 
 {% hint style="warning" %}
-Es importante destacar que un generador debe pasar un conjunto diverso y riguroso de estas pruebas estadísticas antes de ser considerado aceptable para su uso en estudios de simulación serios. El hecho de que una secuencia pase una prueba no garantiza que sea "perfecta", solo que no se ha encontrado evidencia en contra de la hipótesis de uniformidad o independencia bajo esa prueba particular.
+It is important to note that a generator must pass a diverse and rigorous set of these statistical tests before being considered acceptable for use in serious simulation studies. The fact that a sequence passes a test does not guarantee that it is "perfect," only that no evidence against the assumption of uniformity or independence has been found under that particular test.
 {% endhint %}
 
 ***
 
-#### Métodos de generación de variables aleatorias.
+#### Random Variable Generation Methods.
 
-Una vez que se dispone de una fuente fiable de números pseudoaleatorios $$U_i∼U(0,1)$$, el siguiente paso es transformar estos números uniformes en realizaciones de variables aleatorias que sigan las distribuciones de probabilidad específicas (Exponencial, Normal, Poisson, etc.) que se han identificado como modelos para los componentes inciertos del sistema bajo estudio.
+Once a reliable source of pseudorandom numbers $$U_i∼U(0,1)$$ is available, the next step is to transform these uniform numbers into realizations of random variables that follow the specific probability distributions (Exponential, Normal, Poisson, etc.) that have been identified as models for the uncertain components of the system under study.
 
-Existen varios métodos para realizar esta transformación.
+There are several methods for performing this transformation.
 
-**Método de la Transformada Inversa (MTI)**
+**Inverse Transform Method (ITM)**
 
-Este es el método más fundamental y, cuando es aplicable, a menudo el más eficiente y directo
+This is the most fundamental method and, when applicable, often the most efficient and straightforward.
 
-1. **Principio** Se basa en el hecho de que si X es una variable aleatoria con función de distribución acumulada (FDA) continua y estrictamente creciente $$F(x)$$, y U es una variable aleatoria $$U(0,1)$$, entonces la variable aleatoria $$Y=F−1(U)$$ tiene la misma distribución que X. Aquí, $$F−1(u)$$ es la función inversa de la FDA, definida como el valor y tal que $$F(y)=u$$.
-   1.  **Algoritmo para V.A. Continuas:**
+1. **Principle** It is based on the fact that if X is a random variable with a continuous and strictly increasing cumulative distribution function (CDF) $$F(x)$$, and U is a random variable $$U(0,1)$$, then the random variable $$Y=F−1(U)$$ has the same distribution as X. Here, $$F−1(u)$$ is the inverse function of the CDF, defined as the value y such that $$F(y)=u$$.
+1. **Algorithm for Continuous VAs:**
 
-       Generar un número $$u∼U(0,1)$$.
+Generate a number $$u∼U(0,1)$$.
 
-       1. Calcular $$x=F−1(u)$$. Este x es la observación deseada de la V.A. X.
-   2.  **Aplicación a V.A. Discretas:**
+1. Compute $$x=F−1(u)$$. This x is the desired observation from the CDF. X.
+2. **Application to Discrete A.V.:**
 
-       Si X es discreta con $$FMP\ p(xj​)$$ y $$FDA F(xj​)=P(X≤xj​)$$, se genera $$u∼U(0,1)$$ y se busca el valor _xj​_ tal que $$F(xj−1​)<u≤F(xj​)\ (donde\ F(x0​)=0)$$. Entonces _x&#x6A;_&#x200B; es la observación generada. Esto se puede implementar mediante una búsqueda secuencial o más eficiente.
+If X is discrete with $$MPF\ p(xj​)$$ and $$FDA F(xj​)=P(X≤xj​)$$, then $$u∼U(0,1)$$ is generated and the value _xj​_ is searched for such that $$F(xj−1​)<u≤F(xj​)\ (where\ F(x0​)=0)$$. Then _x&#x6A;_&#x200B; is the generated observation. This can be implemented using a sequential or more efficient search.
 
-* **Ejemplos de Aplicación Directa, donde F−1(u) tiene forma cerrada:**
-  * **Uniforme Continua U(a,b):** $$F(x)=(x−a)/(b−a)$$. Invirtiendo, $$x=a+(b−a)u$$.
-  * **Exponencial (media** $$μ=1/λ$$**):** $$F(x)=1−e−λx$$. Invirtiendo, $$x=−(1/λ)ln(1−u)$$. Dado que si $$u∼U(0,1)$$, entonces $$1−u∼U(0,1)$$, se puede usar $$x=−(1/λ)ln(u)$$ de forma equivalente.
-  * **Triangular:** La FDA es lineal por tramos, y su inversa también se puede encontrar analíticamente por tramos.
-  * **Weibull:** $$F(x)=1−e−(x/α)β$$. Invirtiendo, $$x=α(−ln(1−u))1/β$$.
+* **Direct Application Examples, where F−1(u) has closed form:**
+* **Uniform Continuous U(a,b):** $$F(x)=(x−a)/(b−a)$$. Inverting, $$x=a+(b−a)u$$.
+* **Exponential (mean** $$μ=1/λ$$**):** $$F(x)=1−e−λx$$. Inverting, $$x=−(1/λ)ln(1−u)$$. Since if $$u∼U(0,1)$$, then $$1−u∼U(0,1)$$, one can use $$x=−(1/λ)ln(u)$$ equivalently.
+* **Triangular:** The CDF is piecewise linear, and its inverse can also be found analytically piecewise.
+* **Weibull:** $$F(x)=1−e−(x/α)β$$. Inverting, $$x=α(−ln(1−u))1/β$$.
 
 <details>
 
-<summary><strong>Ventajas:</strong></summary>
+<summary><strong>Advantages:</strong></summary>
 
-Es exacto si $$F−1(u)$$ se puede calcular con precisión. Es intuitivo. Preserva la monotonicidad (si $$u1​<u2$$​, entonces $$F−1(u1​)≤F−1(u2​)$$), lo cual es útil para algunas técnicas de reducción de varianza.
+It is exact if $$F−1(u)$$ can be calculated precisely. It is intuitive. It preserves monotonicity (if $$u1​<u2$$​, then $$F−1(u1​)≤F−1(u2​)$$), which is useful for some variance reduction techniques.
 
 </details>
 
 <details>
 
-<summary><strong>Desventajas:</strong></summary>
+<summary><strong>Disadvantages:</strong></summary>
 
-La función $$F−1(u)$$ no siempre tiene una expresión analítica simple o de forma cerrada
+The function $$F−1(u)$$ does not always have a simple analytic or closed-form expression
 
-(ej. para las distribuciones Normal, Gamma, Beta, Binomial, Poisson con parámetros grandes). En estos casos, se requieren aproximaciones numéricas o métodos alternativos.
+(e.g., for the Normal, Gamma, Beta, Binomial, and Poisson distributions with large parameters). In these cases, numerical approximations or alternative methods are required.
 
 </details>
 
 ***
 
-#### Método de Aceptación-Rechazo (A-R).
+#### Acceptance-Rejection (A-R) Method.
 
-Este es un método general que se puede utilizar cuando el MTI es difícil o ineficiente de aplicar
+This is a general method that can be used when the ITM is difficult or inefficient to apply.
 
-Supongamos que queremos generar una V.A. X con FDP $$f(x)$$. Se elige otra FDP "mayorante" $$g(x)$$ (de la cual sea fácil generar variables, por ejemplo, usando MTI) y una constante $$c≥1$$ tal que $$f(x)≤c⋅g(x)$$ para todo x donde $$f(x)>0$$. La idea es generar un candidato Y a partir de $$g(y)$$, y luego "aceptarlo" como una realización de X con una probabilidad $$f(Y)/(c⋅g(Y))$$.
+Suppose we want to generate a VA X with PDF $$f(x)$$. We choose another "majority" PDF $$g(x)$$ (from which it is easy to generate variables, for example, using ITM) and a constant $$c≥1$$ such that $$f(x)≤c⋅g(x)$$ for all x where $$f(x)>0$$. The idea is to generate a candidate Y from $$g(y)$$, and then "accept" it as a realization of X with probability $$f(Y)/(c⋅g(Y))$$.
 
-**Algoritmo General.**
+**General Algorithm.**
 
-1. Generar un candidato Y a partir de la distribución con FDP $$g(y)$$.
-2. Generar un número $$U∼U(0,1)$$ (independiente de Y).
-3. Si $$U≤c⋅g(Y)f(Y)$$​, entonces aceptar $$X=Y$$.
-4. Si no, rechazar Y y volver al paso 1.
+1. Generate a candidate Y from the distribution with PDF $$g(y)$$.
 
-**Eficiencia.**
+2. Generate a number $$U∼U(0,1)$$ (independent of Y).
+3. If $$U≤c⋅g(Y)f(Y)$$​, then accept $$X=Y$$.
+4. Otherwise, reject Y and return to step 1.
 
-La probabilidad de aceptación en cada iteración es 1/c. Por lo tanto, se desea que c sea lo más cercano a 1 posible, lo que significa que la función "envolvente" $$c⋅g(x)$$ debe ser lo más ajustada posible a f(x).
+**Efficiency.**
 
-El número esperado de iteraciones para generar una observación es c
+The probability of acceptance at each iteration is 1/c. Therefore, we want c to be as close to 1 as possible, which means the "envelope" function $$c⋅g(x)$$ should be as close to f(x) as possible.
 
-**Usos**
+The expected number of iterations to generate an observation is c.
 
-Útil para distribuciones como la Normal, usando una FDP Normal como mayorante para una parte, y exponenciales para las colas, como en el algoritmo Ziggurat, Gamma y Beta, donde el MTI no es directo.
+**Uses**
 
-#### Método de Box-Muller para la Distribución Normal
+Useful for distributions such as the Normal, using a Normal PDF as the major factor for one side, and exponentials for the tails, as in the Ziggurat, Gamma, and Beta algorithms, where the MTI is not straightforward.
 
-Este es un método específico y elegante para generar _pares_ de variables aleatorias Normales estándar $$Z1​,Z2​∼N(0,1)$$ independientes, a partir de dos números aleatorios $$U1​,U2​∼U(0,1)$$ independientes.
+#### Box-Muller Method for the Normal Distribution
+
+This is a specific and elegant method for generating pairs of independent standard normal random variables $$Z1​,Z2​∼N(0,1)$$ from two independent random numbers $$U1​,U2​∼U(0,1)$$.
 
 $$
 Z_1=\sqrt(−2lnU_1 ). cos(2πU_2)
 $$
 
 $$
-Z_2=\sqrt(−2lnU_1 ). sen(2πU_2)
+Z_2=\sqrt(−2lnU_1 ). sin(2πU_2)
 $$
 
-Para generar una variable $$X∼N(μ,σ2)$$, se genera primero $$Z_1\ o\ Z_2$$ y luego se transforma: $$X=μ+σZ_1$$.
+To generate a variable $$X∼N(μ,σ2)$$, first generate $$Z_1\ or\ Z_2$$ and then transform it: $$X=μ+σZ_1$$.
 
-**Variante Polar (Marsaglia-Bray):** Existe una modificación que evita el uso directo de funciones trigonométricas, utilizando un método de aceptación-rechazo para generar puntos dentro de un círculo unitario, lo que puede ser computacionalmente más eficiente en algunas arquitecturas.
+**Polar Variant (Marsaglia-Bray):** There is a modification that avoids the direct use of trigonometric functions, using an acceptance-rejection method to generate points within a unit circle, which can be computationally more efficient on some architectures.
 
-**Generación para Distribuciones Empíricas**
+**Generation for Empirical Distributions**
 
-Cuando se dispone de un conjunto de datos observados $$x_1,…,x_N$$. de un sistema real, y no se encuentra una distribución teórica que se ajuste bien a ellos (o no se desea asumir una), se puede utilizar la distribución empírica
+When a set of observed data $$x_1,…,x_N$$ from a real system is available, and a theoretical distribution that fits them well cannot be found (or one is unwilling to assume one), the empirical distribution can be used.
 
-1. **Para Datos Discretos:** Si hay k valores distintos v1​,…,vk​ con frecuencias relativas p1​,…,pk​, se aplica el MTI para discretas.
-2. **Para Datos Continuos:** Se puede construir una FDA empírica escalonada (si se usan los datos directamente) o una FDA lineal por tramos (si los datos se agrupan en un histograma y se interpola). Luego se aplica el MTI
+1. **For Discrete Data:** If there are k distinct values ​​v1​,…,vk​ with relative frequencies p1​,…,pk​, the MTI for discrete data is applied.
+2. **For Continuous Data:** A stepwise empirical CDF can be constructed (if the data are used directly) or a piecewise linear CDF (if the data are grouped into a histogram and interpolated). Then, the MTI is applied.
 
-#### Técnicas Especiales
+#### Special Techniques
 
 {% tabs %}
-{% tab title="Composicion" %}
-se utiliza para generar variables aleatorias cuando una distribución compleja puede ser expresada como una combinación ponderada de varias distribuciones más simples. Básicamente, si se conoce que una variable aleatoria ( X ) tiene una función de distribución que es una mezcla de ( k ) distribuciones diferentes con probabilidades asociadas ( $$p_1, p_2, \ldots, p_k$$) (donde ( $$\sum_{i=1}^k p_i = 1 )$$), la técnica de composición permite su simulación de la siguiente manera:
+{% tab title="Composition" %}
+is used to generate random variables when a complex distribution can be expressed as a weighted combination of several simpler distributions. Basically, if a random variable ( X ) is known to have a distribution function that is a mixture of ( k ) different distributions with associated probabilities ( $$p_1, p_2, \ldots, p_k$$) (where ( $$\sum_{i=1}^k p_i = 1 )$$), the composition technique allows its simulation as follows:
 
-1. Se elige ( i ) con probabilidad ( p\_i ).
-2. Se genera una variable aleatoria ( X\_i ) de la ( i )-ésima distribución.
+1. ( i ) is chosen with probability ( p\_i ).
+2. A random variable ( X\_i ) is generated from the ( i )th distribution.
 
-La variable generada ( $$X = X_i$$ ) entonces sigue la distribución deseada, combinando las características de las diferentes distribuciones participantes de acuerdo con los pesos especificados.
+The generated variable ($$X = X_i$$) then follows the desired distribution, combining the characteristics of the different participating distributions according to the specified weights.
 {% endtab %}
 
 {% tab title="Convulsion" %}
-La técnica de convolución se utiliza para generar variables aleatorias que son la suma de otras variables aleatorias independientes. Es particularmente útil cuando se conoce que una variable aleatoria ( $$Z$$ ) es la suma de otras $$( X_1, X_2, \ldots, X_n )$$ que siguen distribuciones conocidas. /
+The convolution technique is used to generate random variables that are the sum of other independent random variables. It is particularly useful when a random variable ($$Z$$) is known to be the sum of other $$(X_1, X_2, \ldots, X_n)$$ that follow known distributions. /
 
-Para simular ( Z ) usando convolución:
+To simulate (Z) using convolution:
 
-1. Generar ( n ) variables aleatorias independientes $$X_1, X_2, \ldots, X_n$$ siguiendo sus respectivas distribuciones.
-2. Calcular ( $$Z = X_1 + X_2 + \ldots + X_n$$ ).
+1. Generate (n) independent random variables $$X_1, X_2, \ldots, X_n$$ following their respective distributions.
+2. Calculate ($$Z = X_1 + X_2 + \ldots + X_n$$).
 
-El resultado es que ( Z ) sigue la distribución resultante de la suma de las distribuciones de ( $$X_1, X_2, \ldots, X_n$$ ).
+The result is that ( Z ) follows the distribution resulting from the sum of the distributions of ( $$X_1, X_2, \ldots, X_n$$ ).
 
-La técnica de rechazo se usa para generar una variable aleatoria de una distribución compleja cuando es difícil de muestrear directamente. Se requiere una función de densidad ( $$g(x)$$) que sea mayor o igual a la función deseada $$f(x)$$ para todos los valores posibles de ( X ). El procedimiento es:
+The rejection technique is used to generate a random variable from a complex distribution when it is difficult to sample directly. A density function ( $$g(x)$$) is required that is greater than or equal to the desired function $$f(x)$$ for all possible values ​​of ( X ). The procedure is:
 
-1. Elegir ( $$X$$ ) tal que siga la distribución de ( $$g(x)$$ ).
-2. Generar un número aleatorio ( $$U$$ ) uniforme entre 0 y 1.
-3. Aceptar ( $$X$$ ) si ( $$U \leq \frac{f(X)}{cg(X)}$$ ), donde ( $$c$$ ) es una constante tal que ( $$cg(x) \geq f(x)$$ ) para todos ( $$x$$ ).
+1. Choose ( $$X$$ ) such that it follows the distribution of ( $$g(x)$$ ).
+2. Generate a uniform random number ( $$U$$ ) between 0 and 1.
+3. Accept ( $$X$$ ) if ( $$U \leq \frac{f(X)}{cg(X)}$$ ), where ( $$c$$ ) is a constant such that ( $$cg(x) \geq f(x)$$ ) for all ( $$x$$ ).
 
-Repetir el proceso hasta aceptar un ( $$X$$ ), garantizando que sigue la distribución ( $$f(x)$$ ).\\
+Repeat the process until an ( $$X$$ ) is accepted, ensuring that it follows the ( $$f(x)$$ ) distribution.
+\\
 {% endtab %}
 {% endtabs %}
 
+
 ***
 
-* **Bibliografía Recomendada:**
-  1. Law, A. M. (2015). _Simulation Modeling and Analysis_ (5th ed.). McGraw-Hill Education. (Capítulos sobre generación de números aleatorios y variables aleatorias).
-  2. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). _Discrete-Event System Simulation_ (5th ed.). Prentice Hall. (Capítulos sobre números aleatorios y generación de variables aleatorias).
-  3. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Capítulos 2, 6, 7).
-  4. Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de Operaciones_ (9th ed.). McGraw-Hill. (Capítulo 20 sobre Simulación, secciones 20.3, 20.4).
-  5. Cassandras, C. G., & Lafortune, S. (2008). _Introduction to Discrete Event Systems_ (2nd ed.). Springer. (Sección 10.5 sobre Generación de Variables Aleatorias).
+* **Recommended Reading:**
+1. Law, A. M. (2015). _Simulation Modeling and Analysis_ (5th ed.). McGraw-Hill Education. (Chapters on random number generation and random variables).
+2. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). _Discrete-Event System Simulation_ (5th ed.). Prentice Hall. (Chapters on random numbers and random variable generation).
+3. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Chapters 2, 6, 7).
+4. Hillier, F. S., & Lieberman, G. J. (2010). _Introduction to Operations Research_ (9th ed.). McGraw-Hill. (Chapter 20 on Simulation, sections 20.3, 20.4).
+5. Cassandras, C. G., & Lafortune, S. (2008). _Introduction to Discrete Event Systems_ (2nd ed.). Springer. (Section 10.5 on Random Variable Generation).
