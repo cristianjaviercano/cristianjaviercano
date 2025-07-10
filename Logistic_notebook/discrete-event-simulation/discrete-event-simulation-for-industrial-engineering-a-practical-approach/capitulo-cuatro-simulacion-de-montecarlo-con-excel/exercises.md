@@ -2,24 +2,24 @@
 
 ### Case Number One
 
-**Instrucciones:** No se permite la utilización de ningún tipo de dispositivo electrónico diferentes al PC. No se permite el uso de Internet, ni de dispositivos USB. No se pueden utilizar apuntes. Se entregan la hoja de examen parcial via Classroom. El archivo de Excel debe cargar.
+**Instructions:** The use of any type of electronic device other than a PC is prohibited. The use of the internet or USB drives is prohibited. Notes are not permitted. The midterm exam sheet is submitted via Classroom. The Excel file must be uploaded.
 
-1. Preguntas de Conocimientos generales sobre la simulación de procesos. **(**_**Valor: 0,5 puntos cada pregunta.)**_
-   1. Explique en qué se diferencian (no defina) los modelos estáticos y los modelos dinámicos, enuncie un ejemplo de cada uno.
-   2. Construya un algoritmo que explique cómo recrearía el comportamiento de una variable aleatoria uniforme continua por medio de la Simulación Montecarlo.
+1. General Knowledge Questions on Process Simulation. **(**_**Worth: 0.5 points per question.)**_
+1. Explain the differences (do not define) between static and dynamic models, and give an example of each.
+2. Build an algorithm that explains how you would recreate the behavior of a continuous uniform random variable using Monte Carlo Simulation.
 
-### ESTUDIOS DE CASO
+### CASE STUDIES
 
-#### Fábrica de calzado
+#### Shoe Factory
 
-Dentro del proceso de elaboración del calzado, este puede dividirse en 2 etapas, que son corte y ensamble. Las unidades (pares de zapatos) llegan a la estación 1 de tal forma que el tiempo entre llegadas se distribuye normalmente con media 1 minuto con 30 segundos y desviación de 20 segundos. La primera etapa depende del tipo de corte, actualmente la empresa tiene 3 tipos de corte y se realizan en la misma máquina. La segunda etapa es realizada por una maquina la cual tiene un tiempo de operación que se distribuye normalmente con media 3 minutos y desviación de 1 minuto. Simule la elaboración de 100 pares de zapatos. Determine el tiempo promedio en el sistema y el tiempo promedio de espera de las unidades en el sistema.
+Within the shoemaking process, it can be divided into two stages: cutting and assembly. The units (pairs of shoes) arrive at station 1 such that the time between arrivals is normally distributed with a mean of 1 minute and 30 seconds and a deviation of 20 seconds. The first stage depends on the type of cut; the company currently has three types of cuts, and they are all made on the same machine. The second stage is performed by a machine with a normally distributed operating time with a mean of 3 minutes and a deviation of 1 minute. Simulate the production of 100 pairs of shoes. Determine the average time in the system and the average waiting time for the units in the system.
 
-| Tipo   | % elaboracion | Tiempo de operacion                                                                       |
+| Type | % Production | Operating Time |
 | ------ | ------------- | ----------------------------------------------------------------------------------------- |
-| Tipo 1 | 50 %          | 2 min                                                                                     |
-| Tipo 2 | 30 %          | entre 45 segundos y un minuto                                                             |
-| Tipo 3 | 20 %          | <p>Distribución normal con media 2 minutos y</p><p>desviación estándar de 20 segundos</p> |
+| Type 1 | 50% | 2 min |
+| Type 2 | 30% | between 45 seconds and one minute |
+| Type 3 | 20% | <p>Normal distribution with a mean of 2 minutes and a standard deviation of 20 seconds</p> |
 
-2. Identificación de los elementos del sistema a simular, sus dependencias e interacciones. **(Valor: 1,5 puntos)**.
-   1. Construya un flujograma donde a demás de describir la secuencia de las actividades del proceso, se enuncien las entidades y locaciones, las variables de entrada y de resultado y se identifiquen los eventos en el sistema.
-3. Construcción del modelo de Simulación MC en Excel recreando el comportamiento de variables y las interacciones de los diferentes elementos del sistema. Determine el tiempo promedio de espera y el tiempo promedio en el sistema. **(Valor: 2,5 puntos)**
+2. Identify the system elements to be simulated, their dependencies, and interactions. **(Value: 1.5 points)**
+1. Construct a flowchart that, in addition to describing the sequence of process activities, lists the entities and locations, input and output variables, and identifies the events in the system.
+3. Build the MC Simulation model in Excel, recreating the behavior of variables and the interactions of the different system elements. Determine the average waiting time and the average time in the system. **(Value: 2.5 points)**
