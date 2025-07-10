@@ -6,7 +6,7 @@
 
 * [Let´s Talk about Logistics!](logistics/let-s-talk-about-logistics/README.md)
   * [Logistics Notebook](logistics/let-s-talk-about-logistics/el-cuaderno-de-logistica.md)
-  * [Unit Zero: Typical Logistics Components](logistics/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
+  * [Unit Zero: Introduction to Logistics Systems](logistics/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
   * [Unidad Uno: Servicio Al Cliente](logistics/let-s-talk-about-logistics/unidad-uno-servicio-al-cliente.md)
   * [Unidad Dos: Modelos de inventarios](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
     * [Inventario ABC](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)

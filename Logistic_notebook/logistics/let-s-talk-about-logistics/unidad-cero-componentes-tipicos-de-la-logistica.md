@@ -1,8 +1,71 @@
-# Unidad Cero: Componentes tipicos de la Logistica
+# Unit Zero: Introduction to Logistics Systems
 
 {% hint style="info" %}
-Un sistema logístico típico se compone de varios elementos clave que trabajan en conjunto para garantizar que los productos lleguen al cliente final de manera eficiente y a tiempo. Estos son algunos de los componentes más comunes:
+A typical logistics system consists of several key elements that work together to ensure products reach the end customer efficiently and on time. These are some of the most common components:
 {% endhint %}
+
+## Defining Logistics and Supply Chain Management
+
+Logistics, at its core, represents the strategic process of managing the procurement, movement, and storage of materials, parts, and finished inventory, along with their associated information flows. The ultimate objective of logistics is to maximize current and future profitability by ensuring cost-effective order fulfillment and serving customers efficiently. This discipline is fundamentally about planning and establishing a framework for the seamless flow of products and information throughout a business
+
+Supply Chain Management (SCM) extends beyond the internal focus of logistics, encompassing the management of upstream and downstream relationships with suppliers and customers. Its aim is to deliver superior customer value at a lower cost for the supply chain as a whole. The concept of SCM is relatively recent, first articulated in 1982, marking a significant shift from traditional, often adversarial, buyer-supplier relationships towards a model built on cooperation and trust. This collaborative approach recognizes that the collective output of interconnected entities can be greater than the sum of their individual parts
+
+While **"supply chain"** is a widely used term, a more accurate representation of modern interconnectedness would be **"supply network."** This term better reflects the reality of multiple suppliers, suppliers to suppliers, customers, and customers' customers that constitute the total system. The evolution of integration within these networks can be observed in distinct stages: from initial functional independence, where each business function operates in isolation, to functional integration between adjacent areas, then to internal integration with an **"end-to-end"** planning framework, and finally to true external integration that extends linkage and coordination upstream to suppliers and downstream to customers
+
+The historical context of logistics reveals a persistent challenge in recognizing and implementing integrated approaches. For instance, military campaigns throughout history have been won or lost based on the strength or weakness of their logistics capabilities, as exemplified by the British defeat in the American War of Independence due to logistics failures. Early business thinkers, such as Arch Shaw in 1915, articulated the need for coordination between demand creation and physical supply, yet widespread acceptance and implementation of these principles took nearly a century. This historical pattern underscores that the transition from isolated functional silos to integrated supply chain networks is not merely an operational enhancement but a strategic imperative for organizational survival and sustained competitive advantage in contemporary markets. Achieving this integration is complex and requires overcoming deep-seated organizational and cultural barriers, as the historical resistance to integrated logistics clearly demonstrates
+
+## Competitive Advantage through Logistics and Supply Chain Management
+
+Commercial success in today's marketplace is fundamentally driven by achieving either a cost advantage, a value advantage, or ideally, both. Logistics and supply chain management play a pivotal role in securing these advantages
+
+Traditionally, cost leadership strategies have been associated with economies of scale, gained through high sales volume and market share. However, a powerful and increasingly significant route to cost advantage emerges from effective logistics and SCM.&#x20;
+
+In many industries, logistics costs represent a substantial portion of total expenses, making it possible to achieve major cost reductions by fundamentally re-engineering logistics processes.&#x20;
+
+This involves optimizing capacity utilization, reducing inventory levels, and fostering closer integration with suppliers at a planning level. The true cost of ownership, often hidden beneath the surface like an iceberg, includes significant logistics-related expenses such as inventory carrying costs, maintenance, and disposal. By strategically managing these often-overlooked costs, organizations can unlock substantial financial leverage
+
+Equally impactful is the pursuit of a value advantage, achieved by differentiating a product or service through added values beyond its basic features. As markets become increasingly sensitive to service and as product differences converge due to technological advancements, service emerges as a powerful differentiator. Logistics plays a crucial role in delivering this superior service.&#x20;
+
+_For example_, the "service surround" concept illustrates how logistics activities, such as timely delivery and effective after-sales support, augment the core product, transforming it from a mere item in a warehouse into a valuable asset in the customer's hands. This demonstrates how logistics contributes directly to the perceived benefits component of customer value.
+
+Leading organizations strive to achieve both cost leadership and service leadership, occupying a strong competitive position that is difficult for rivals to challenge. This dual pursuit is encapsulated in the competitive equation:&#x20;
+
+**Competitive advantage = Product excellence x Process excellence.**&#x20;
+
+Historically, many companies prioritized investment in product innovation. However, the current competitive landscape demands a greater emphasis on process innovation and excellence to deliver enhanced value to customers. The ability of logistics management to impact both the cost structure and the value proposition of a company positions it as a unique and often underutilized strategic lever for achieving sustainable competitive superiority.&#x20;
+
+By optimizing logistics processes, organizations can simultaneously drive down total costs—including those often hidden—and enhance customer value through superior service, thereby shifting competition from a product-centric to a process-centric paradigm
+
+## The Changing Competitive Environment and Future Trends
+
+The competitive landscape has undergone a fundamental transformation, shifting from traditional company-versus-company rivalry to "supply chain against supply chain" competition. In this new environment, success hinges on an organization's ability to manage its core processes—such as new product development, supplier development, order fulfillment, and customer management—more cost-effectively than its rivals.
+
+A significant factor influencing this change is the trend towards market commoditization, where customers perceive little technical difference between competing products. In such scenarios, actual product availability becomes a major determinant of demand, and order-winning criteria are increasingly service-based rather than product-based. This shift places a premium on logistics process excellence.
+
+Furthermore, increased turbulence and volatility in both demand and supply challenge traditional forecast-driven business models, necessitating a fundamental shift towards more agile, demand-driven approaches. Globalization, characterized by a dramatic move towards offshore sourcing, manufacturing, and assembly, has significantly lengthened supply chains. This extension increases complexity and extends lead times, making "time-based competition" a critical strategic consideration. For global corporations, competitive advantage increasingly derives from excellence in managing these complex international relationships and material flows.
+
+The global competitive environment, coupled with the removal of trade barriers and the pervasive influence of the Internet, exerts a continuous downward pressure on prices. To maintain profitability in this deflationary environment, companies must find new opportunities for cost reduction.&#x20;
+
+The most significant remaining opportunities for major cost reduction often lie within the wider supply chain, rather than solely within a firm's internal operations, necessitating an "end-to-end" view of costs.
+
+Guiding principles for future supply chain managers revolve around the "4Rs":&#x20;
+
+* Responsiveness (the ability to meet customer requirements rapidly and flexibly) ,  &#x20;
+* Reliability (achieving consistency through process control and variability reduction) ,  &#x20;
+* Resilience (the capacity to cope with unexpected disturbances, requiring an understanding of vulnerabilities and strategic inventory or spare capacity) , and  &#x20;
+* Relationships (building mutually beneficial, long-term partnerships with a reduced supplier base).
+
+Looking ahead, several mega-trends will shape the supply chain of the future. These include significant demographic shifts, such as population growth and increasing urbanization leading to the rise of mega-cities, which will necessitate specialized "city logistics" solutions. A redistribution of global wealth towards emerging economies will require companies to reconfigure their supply chain networks to capitalize on these rapidly developing markets. This will also lead to a shift in supply chain "centers of gravity," moving away from large-scale, centralized manufacturing towards more flexible, "small footprint" supply chains that can better serve local markets.  &#x20;
+
+Growing societal concern for "governance and compliance" will demand ethical sourcing, material provenance, and transparency throughout the supply network. The accelerating rate of change in markets and supply chains underscores the critical need for adaptability and structural flexibility, enabling supply chains to reconfigure their architecture in response to major demand or supply changes. This flexibility is enabled by enhanced visibility, access to capacity and knowledge, inter-operability of processes and information systems, and sophisticated network orchestration.  &#x20;
+
+The "New Industrial Revolution" will profoundly impact supply chains, driven by advancements in rapid manufacturing (e.g., 3D printing), advanced robotics, and the pervasive digitization of the supply chain through technologies like the Internet of Things (IoT), Artificial Intelligence (AI), and Machine Learning (ML). These technological shifts will enable seven major business transformations: a move from supplier-centric to customer-centric models, from "production push" to "demand pull," from reliance on inventory to reliance on information, from transactional relationships to long-term partnerships, from managing "trucks and sheds" to end-to-end pipeline management, from functional silos to process-oriented organizations, and from stand-alone competition to network rivalry.  &#x20;
+
+Historically, there has been a strong emphasis on supply chain efficiency, often achieved through lean practices like Just-in-Time (JIT), which inadvertently increased vulnerability and risk. However, the future demands both efficiency and resilience. This presents a seemingly paradoxical challenge: how to achieve low costs while simultaneously building flexibility and robustness. The resolution lies in strategically leveraging advanced technologies such as AI, ML, IoT, and data analytics. These tools provide the necessary visibility and enable informed decision-making that optimizes both efficiency and resilience. For example, real-time data can identify potential bottlenecks, which reduces the perceived risk associated with adding safety stock or flexible capacity. Therefore, future supply chain strategies must navigate the apparent trade-off between efficiency and resilience not by choosing one over the other, but by strategically integrating advanced technologies and data-driven decision-making to build adaptable, responsive, and robust networks that can absorb disruptions while maintaining cost-effectiveness
+
+## SCM desition and problem solving for Indutrial engineers.
+
+<img src="../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
 ### **1. Servicio al cliente:**
 
