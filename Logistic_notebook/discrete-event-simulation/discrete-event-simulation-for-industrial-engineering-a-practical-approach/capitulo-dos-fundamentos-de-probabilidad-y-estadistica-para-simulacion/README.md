@@ -1,397 +1,406 @@
-# Capítulo Dos: Fundamentos de Probabilidad y Estadística para Simulación
+# Chapter Two: Fundamentals of Probability and Statistics for Simulation
 
-### Objetivos del Capítulo:
+### Chapter Objectives:
 
-1. Aplicar los conceptos básicos de la teoría de la probabilidad para modelar la incertidumbre en sistemas de ingeniería industrial.
-2. Distinguir entre variables aleatorias discretas y continuas, y describir sus propiedades fundamentales.
-3. Utilizar e interpretar funciones de masa de probabilidad (FMP), funciones de densidad de probabilidad (FDP) y funciones de distribución acumulada (FDA).
-4. Calcular e interpretar el valor esperado, la varianza y otras medidas descriptivas de variables aleatorias.
-5. Identificar las distribuciones de probabilidad más comunes (Bernoulli, Binomial, Poisson, Geométrica, Uniforme, Exponencial, Normal, Triangular, Gamma, Weibull, Lognormal) y seleccionar la más adecuada para modelar fenómenos aleatorios en logística y producción.
-6. Comprender el enunciado y las implicaciones prácticas del Teorema del Límite Central (TLC).
-7. Describir el proceso de estimación de parámetros de una distribución a partir de datos muestrales y la necesidad de realizar pruebas de bondad de ajuste.
+1. Apply basic concepts of probability theory to model uncertainty in industrial engineering systems.
+2. Distinguish between discrete and continuous random variables, and describe their fundamental properties.
+3. Use and interpret probability mass functions (PMF), probability density functions (PDF), and cumulative distribution functions (CDF).
+4. Calculate and interpret the expected value, variance, and other descriptive measures of random variables.
+5. Identify the most common probability distributions (Bernoulli, Binomial, Poisson, Geometric, Uniform, Exponential, Normal, Triangular, Gamma, Weibull, Lognormal) and select the most appropriate one to model random phenomena in logistics and production.
+6. Understand the statement and practical implications of the Central Limit Theorem (CLT).
+7. Describe the process of parameter estimation from sample data and the need to perform goodness-of-fit tests.
 
 ***
 
-## Conceptos básicos de probabilidad
+## Basic Concepts of Probability
 
-La ingeniería industrial trata con sistemas que operan bajo condiciones de incertidumbre. _La demanda de productos fluctúa, los tiempos de producción varían, las máquinas fallan inesperadamente._ **La probabilidad** es la rama de las matemáticas que nos proporciona el lenguaje y las herramientas para cuantificar y analizar esta incertidumbre. Una comprensión sólida de sus principios es, por lo tanto, un prerrequisito indispensable para la simulación estocástica.
+Industrial engineering deals with systems that operate under uncertainty. _Product demand fluctuates, production times vary, machines fail unexpectedly._ **Probability** is the branch of mathematics that provides the language and tools to quantify and analyze this uncertainty. A solid understanding of its principles is therefore an indispensable prerequisite for stochastic simulation.
 
 {% tabs %}
-{% tab title="Espacio Muestral (Ω)" %}
+{% tab title="Sample Space (Ω)" %}
 
 
-_Es el conjunto de todos los resultados posibles de un experimento aleatorio_. Por ejemplo, si se inspecciona una pieza manufacturada, el espacio muestral podría ser {defectuosa, no defectuosa}. Si se mide el tiempo de ciclo de un producto, el espacio muestral podría ser todos los números reales positivos.
+_It is the set of all possible outcomes of a random experiment._ For example, if a manufactured part is inspected, the sample space could be {defective, not defective}. If the cycle time of a product is measured, the sample space could be all positive real numbers.
 
 {% hint style="info" %}
 Montgomery, D. C., & Runger, G. C. (2018). Applied Statistics and Probability for Engineers (7th ed.). Wiley.
 {% endhint %}
 {% endtab %}
 
-{% tab title="Evento (E)" %}
-Un evento es cualquier subconjunto del espacio muestral; es decir, una colección de uno o más resultados posibles.&#x20;
+{% tab title="Event (E)" %}
+An event is any subset of the sample space; that is, a collection of one or more possible outcomes.
 
-Por ejemplo,&#x20;
+For example,
 
-* Que una pieza sea "defectuosa" es un evento.&#x20;
-* Que el tiempo de ciclo sea "menor a 10 minutos" es otro evento.
+* That a part is "defective" is an event.
+* That the cycle time is "less than 10 minutes" is another event.
 {% endtab %}
 
-{% tab title="Axiomas de Probabilidad" %}
-La probabilidad de un evento A, denotada como P(A), es un número entre 0 y 1 que satisface tres axiomas básicos:
+{% tab title="Axioms of Probability" %}
+The probability of an event A, denoted as P(A), is a number between 0 and 1 that satisfies three basic axioms:
 
 $$
-0≤P(A)≤1\   \text{para cualquier evento A}
-$$
-
-$$
-P(Ω)=1\ \text{(la probabilidad de que ocurra algún resultado del espacio muestral es 1)}
+0≤P(A)≤1\   \text{for any event A}
 $$
 
 $$
-Si\ A_1​,A_2​,…,A_n​\ \text{son eventos mutuamente excluyentes, entonces} \\P(A_1​∪A_2​∪…∪A_n​)=P(A_1​)+P(A2_​)+…+P(A_n​)
+P(Ω)=1\ \text{(the probability that some outcome in the sample space occurs is 1)}
 $$
 
+$$
+If\ A_1​,A_2​,…,A_n​\ \text{are mutually exclusive events, then} \\P(A_1​∪A_2​∪…∪A_n​)=P(A_1​)+P(A2_​)+…+P(A_n​)
+$$
 
 {% endtab %}
 
-{% tab title="Probabilidad Condicional" %}
-La probabilidad de que ocurra un evento A, dado que otro evento B ya ha ocurrido, se llama probabilidad condicional y se denota $$P(A∣B)$$.&#x20;
+{% tab title="Conditional Probability" %}
+The probability that event A occurs, given that another event B has already occurred, is called conditional probability and is denoted $$P(A|B)$$.
 
-Se calcula como,&#x20;
+It is calculated as,
 
-$$P(A∣B)=\frac{P(A∩B)}{P(B)}$$&#x20;
+$$P(A|B)=\frac{P(A∩B)}{P(B)}$$
 
-Siempre que $$P(B)>0.1$$ Este concepto es vital para modelar dependencias en los sistemas, como la probabilidad de que una máquina falle dado que ha estado operando por un cierto tiempo.
+As long as $$P(B)>0.1$$ This concept is vital for modeling dependencies in systems, such as the probability that a machine fails given that it has been operating for a certain time.
 {% endtab %}
 
-{% tab title="Independencia de Eventos" %}
-Dos eventos A y B son independientes si la ocurrencia de uno no afecta la probabilidad de ocurrencia del otro.&#x20;
+{% tab title="Independence of Events" %}
+Two events A and B are independent if the occurrence of one does not affect the probability of occurrence of the other.
 
-Formalmente, A y B son independientes si $$P(A∩B)=P(A)P(B)$$, lo que implica que $$P(A∣B)=P(A)\ y\ P(B∣A)=P(B)$$.&#x20;
+Formally, A and B are independent if $$P(A∩B)=P(A)P(B)$$, which implies that $$P(A|B)=P(A)\ and\ P(B|A)=P(B)$$.
 
-_La suposición de independencia_, cuando es válida, simplifica enormemente el modelado. Sin embargo, _**asumirla incorrectamente**_ puede llevar a modelos erróneos.&#x20;
+_The assumption of independence_, when valid, greatly simplifies modeling. However, _**assuming it incorrectly**_ can lead to erroneous models.
 
-Por ejemplo, las fallas de dos máquinas pueden no ser independientes si comparten una fuente de energía común.
+For example, the failures of two machines may not be independent if they share a common power source.
 {% endtab %}
 
-{% tab title="Teorema de Bayes" %}
-Permite actualizar la probabilidad de un evento basándose en nueva evidencia. Aunque su aplicación directa en la generación de entradas para simulación no es tan frecuente como otros conceptos, es una herramienta fundamental en la inferencia estadística y la toma de decisiones bajo incertidumbre.
+{% tab title="Bayes' Theorem" %}
+Allows updating the probability of an event based on new evidence. Although its direct application in generating simulation inputs is not as frequent as other concepts, it is a fundamental tool in statistical inference and decision-making under uncertainty.
 {% endtab %}
 {% endtabs %}
 
 {% hint style="info" %}
-La base de la simulación estocástica radica en la capacidad de representar numéricamente la incertidumbre. Los procesos de producción y logística están repletos de variabilidad - CRC-
+The foundation of stochastic simulation lies in the ability to numerically represent uncertainty. Production and logistics processes are full of variability. - CRC -
 {% endhint %}
 
-La [teoría de la probabilidad ](https://www.probabilidadyestadistica.net/teoria-de-la-probabilidad/)ofrece el _marco conceptual_ para describir estos fenómenos. Conceptos como la independencia de eventos son cruciales; por ejemplo, al modelar un sistema con múltiples máquinas, es importante determinar si las fallas de una máquina son independientes de las fallas de otra. Si no lo son (quizás debido a un mantenimiento deficiente generalizado o a fluctuaciones de energía), el modelo debe capturar esta dependencia, a menudo a través de probabilidades condicionales.
+[Probability theory](https://www.probabilidadyestadistica.net/teoria-de-la-probabilidad/) provides the _conceptual framework_ for describing these phenomena. Concepts such as event independence are crucial; for example, when modeling a system with multiple machines, it is important to determine if the failure of one machine is independent of failures of another. If they are not (perhaps due to widespread poor maintenance or power fluctuations), the model must capture this dependence, often through conditional probabilities.
 
 ***
 
-> ### Ejemplo de probabilidad usando el ejercicio de la Diana
+> ### Example of Probability Using the Dartboard Exercise
 >
-> Se tiene un tablero cuadrado y un círculo inscrito en él. El círculo tiene un radio _r_ y, dado que está perfectamente inscrito, el lado del cuadrado es _2r_. Se lanzan dardos al cuadrado de manera aleatoria, lo que significa que cada punto dentro del cuadrado tiene la misma probabilidad de ser alcanzado.
+> There is a square board with an inscribed circle. The circle has a radius _r_ and, since it is perfectly inscribed, the side of the square is _2r_. Darts are thrown at the square randomly, meaning each point inside the square has the same probability of being hit.
 >
-> _El objetivo es determinar la probabilidad de que un dardo que cae dentro del cuadrado también caiga dentro del círculo._
+> _The goal is to determine the probability that a dart that lands inside the square also lands inside the circle._
 >
-> $$P(A)= \frac{  Medida del espacio muestral total}{ Medida del espacio de resultados favorables}$$
+> $$P(A)= \frac{ \text{Measure of the total sample space}}{ \text{Measure of the favorable outcome space}}$$
 >
-> Para este problema:
+> For this problem:
 >
-> * El **espacio muestral total (S)** son todos los puntos posibles donde puede caer el dardo, que es el área del cuadrado.
-> * El **evento favorable (E)** es que el dardo caiga dentro del círculo, que corresponde al área del círculo.
+> * The **total sample space (S)** is all possible points where the dart can land, i.e., the area of the square.
+> * The **favorable event (E)** is that the dart lands inside the circle, which corresponds to the area of the circle.
 >
-> **Área del Círculo (A\_círculo)**: El área de un círculo se calcula con la fórmula A=πr2.&#x20;
+> **Area of the Circle ($A_\text{circle}$)**: The area of a circle is calculated with the formula $A=\pi r^2$.
 >
-> Para r=1, el área es: $$A_{\text{círculo}} = \pi (1)^2 = \pi$$
+> For r=1, the area is: $$A_{\text{circle}} = \pi (1)^2 = \pi$$
 >
-> **Área del Cuadrado (A\_cuadrado)**: Si el círculo de radio 1 está centrado y es concéntrico con el cuadrado, el lado del cuadrado _(l)_ es igual al diámetro del círculo, es decir, l=2r. Para r=1, el lado del cuadrado es l=2(1)=2. El área del cuadrado se calcula como $$A=l2.  \ A_{\text{cuadrado}} = (2)^2 = 4$$
+> **Area of the Square ($A_\text{square}$)**: If the circle of radius 1 is centered and concentric with the square, the side of the square _(l)_ equals the diameter of the circle, i.e., l=2r. For r=1, the side of the square is l=2(1)=2. The area of the square is calculated as $$A=l^2.  \ A_{\text{square}} = (2)^2 = 4$$
 >
-> **Cálculo de la Probabilidad**: La probabilidad de que el dardo caiga dentro del círculo es la razón de las dos áreas.&#x20;
+> **Calculation of Probability**: The probability that the dart lands inside the circle is the ratio of the two areas.
 >
-> $$P(\text{Dardo en círculo}) = \frac{A_{\text{círculo}}}{A_{\text{cuadrado}}} = \frac{\pi}{4}$$
+> $$P(\text{Dart in circle}) = \frac{A_{\text{circle}}}{A_{\text{square}}} = \frac{\pi}{4}$$
 >
-> Numéricamente, esto es aproximadamente:&#x20;
+> Numerically, this is approximately:
 >
-> $$4π​≈\frac{4}{3.14159}​≈0.7854$$ Esto significa que hay aproximadamente un **78.54%** de probabilidad de que el dardo acierte dentro del círculo.
->
->
+> $$\frac{\pi}{4} \approx \frac{3.14159}{4} \approx 0.7854$$ This means there is approximately a **78.54%** probability that the dart lands inside the circle.
 
-### Teorema de eventos mutuamente excluyentes.
+
+
+### Theorem of Mutually Exclusive Events
 
 {% hint style="warning" %}
-Desde una perspectiva estadística, dos o más eventos se consideran **mutuamente excluyentes** si la ocurrencia de uno de ellos imposibilita la ocurrencia simultánea de cualquiera de los otros. En términos de la teoría de conjuntos, esto significa que la intersección de estos eventos es el conjunto vacío
+From a statistical perspective, two or more events are considered **mutually exclusive** if the occurrence of one makes it impossible for any of the others to occur at the same time. In set theory terms, this means that the intersection of these events is the empty set.
 {% endhint %}
 
-_El teorema de eventos mutuamente excluyentes_ indica que dos eventos no pueden ocurrir simultáneamente. En otras palabras, si un evento ocurre, el otro no puede suceder. Matemáticamente, dos eventos A y B son mutuamente excluyentes si su intersección es vacía, es decir,&#x20;
+_The theorem of mutually exclusive events_ states that two events cannot occur simultaneously. In other words, if one event happens, the other cannot. Mathematically, two events A and B are mutually exclusive if their intersection is empty, that is,
 
 $$A \cap B = \emptyset$$.
 
-> #### Ejemplo:
+> #### Example:
 >
-> Imagina lanzar un dado de seis caras. Define los siguientes eventos:
+> Imagine rolling a six-sided die. Define the following events:
 >
-> * Evento A: salir un número par (2, 4, 6)
-> * Evento B: salir un número impar (1, 3, 5)
+> * Event A: rolling an even number (2, 4, 6)
+> * Event B: rolling an odd number (1, 3, 5)
 >
-> Claramente, un número no puede ser par e impar al mismo tiempo. Por lo tanto, A y B son eventos mutuamente excluyentes.
+> Clearly, a number cannot be even and odd at the same time. Therefore, A and B are mutually exclusive events.
 >
-> #### Propiedad
+> #### Property
 >
-> Para eventos mutuamente excluyentes, la probabilidad de que ocurra alguno de ellos es la suma de sus probabilidades individuales:$$P(A \cup B) = P(A) + P(B)$$
+> For mutually exclusive events, the probability that any of them occurs is the sum of their individual probabilities: $$P(A \cup B) = P(A) + P(B)$$
 
-En el contexto de la _simulación de eventos discretos_, el concepto de eventos mutuamente excluyentes es fundamental para modelar **puntos de decisión, ramificaciones y enrutamiento de entidades**. Cuando una entidad (un cliente, un producto, un documento) llega a un punto en el proceso donde debe seguir una de varias trayectorias posibles, estas trayectorias representan eventos mutuamente excluyentes. La entidad no puede tomar dos caminos a la vez.
+In the context of _discrete-event simulation_, the concept of mutually exclusive events is fundamental for modeling **decision points, branching, and entity routing**. When an entity (a customer, product, document) reaches a point in the process where it must follow one of several possible paths, these paths represent mutually exclusive events. The entity cannot take two paths at once.
 
-La implementación de esta lógica en _AnyLogic_ se realiza principalmente a través del bloque **`SelectOutput`** de la Process Modeling Library (PML).
+This logic is implemented in _AnyLogic_ mainly through the **`SelectOutput`** block from the Process Modeling Library (PML).
 
-* **Implementación Práctica**: Un bloque `SelectOutput` tiene una entrada y múltiples salidas. Una entidad que llega es dirigida a **una y solo una** de estas salidas, haciendo que la elección de cada ruta sea un evento mutuamente excluyente.
+* **Practical Implementation**: A `SelectOutput` block has one input and multiple outputs. An arriving entity is routed to **one and only one** of these outputs, making the choice of each route a mutually exclusive event.
 
-Este enrutamiento se puede definir de dos maneras principales:
+This routing can be defined in two main ways:
 
-1. **Enrutamiento Probabilístico**: Se puede configurar el bloque para que dirija a las entidades con base en probabilidades. Por ejemplo, el 50% de las entidades van a la salida 1, el 30% a la salida 2 y el 20% a la salida 3. La suma de las probabilidades debe ser 1, lo que garantiza que cada entidad tomará exactamente una ruta.
-2. **Enrutamiento Condicional**: La selección de la ruta se basa en una condición booleana (verdadero/falso). Por ejemplo: `SI (entidad.tipo == "Urgente") ENTONCES Salida1 SINO Salida2`. La condición `entidad.tipo == "Urgente"` solo puede ser verdadera o falsa para una entidad dada, nunca ambas. Por lo tanto, tomar la Salida 1 y tomar la Salida 2 son eventos mutuamente excluyentes.
+1. **Probabilistic Routing**: The block can be set to route entities based on probabilities. For example, 50% of entities go to output 1, 30% to output 2, and 20% to output 3. The sum of probabilities must be 1, ensuring each entity takes exactly one route.
+2. **Conditional Routing**: The route selection is based on a boolean condition (true/false). For example: `IF (entity.type == "Urgent") THEN Output1 ELSE Output2`. The condition `entity.type == "Urgent"` can only be true or false for a given entity, never both. Therefore, taking Output 1 and taking Output 2 are mutually exclusive events.
 
-> ### Fábrica de Calzado:
+> ### Shoe Factory Example:
 >
-> Consideremos el caso de la "Fábrica de calzado".
+> Consider the "Shoe Factory" case.
 >
-> **Descripción del Proceso**: El documento establece que, en la primera etapa, el proceso de corte depende del tipo de zapato. El 50% de las unidades son del **Tipo 1**, el 30% del **Tipo 2**, y el 20% del **Tipo 3**
+> **Process Description**: The document states that, in the first stage, the cutting process depends on the shoe type. 50% of units are **Type 1**, 30% are **Type 2**, and 20% are **Type 3**.
 >
-> **Análisis de Eventos**: Una unidad de zapato que llega a la estación de corte no puede ser del Tipo 1 y del Tipo 2 al mismo tiempo. Por lo tanto, los eventos "la unidad es de Tipo 1", "la unidad es de Tipo 2" y "la unidad es de Tipo 3" son **mutuamente excluyentes**.
+> **Event Analysis**: A shoe unit arriving at the cutting station cannot be both Type 1 and Type 2 at the same time. Therefore, the events "the unit is Type 1", "the unit is Type 2", and "the unit is Type 3" are **mutually exclusive**.
 >
-> **Implementación en AnyLogic**: Para modelar este sistema, se utilizaría un bloque `Source` para generar las llegadas de los pares de zapatos, seguido inmediatamente por un bloque `SelectOutput`. Este `SelectOutput` se configuraría con tres salidas, cada una conectada a un proceso de corte diferente, y con las probabilidades de 0.5, 0.3 y 0.2 respectivamente.
+> **Implementation in AnyLogic**: To model this system, a `Source` block is used to generate shoe pairs' arrivals, immediately followed by a `SelectOutput` block. This `SelectOutput` is configured with three outputs, each connected to a different cutting process, and with probabilities of 0.5, 0.3, and 0.2, respectively.
 
-### Variables aleatorias: discretas y continuas
+---
 
-Una variable aleatoria (VA) es una función que asigna un valor numérico a cada resultado posible de un experimento aleatorio. En lugar de trabajar con los eventos cualitativos, las variables aleatorias nos permiten cuantificar los resultados y aplicar herramientas matemáticas y estadísticas.&#x20;
+### Random Variables: Discrete and Continuous
+
+A random variable (RV) is a function that assigns a numeric value to each possible outcome of a random experiment. Instead of working with qualitative events, random variables allow us to quantify outcomes and apply mathematical and statistical tools.
 
 {% tabs %}
-{% tab title="Variables Aleatorias Discretas" %}
-Una V.A. es discreta si el conjunto de valores que puede tomar es finito o infinito numerable (es decir, se pueden contar, como los números enteros).
+{% tab title="Discrete Random Variables" %}
+An RV is discrete if the set of values it can take is finite or countably infinite (that is, can be counted, like the integers).
 
-Ejemplos en Ingeniería Industrial:
+Examples in Industrial Engineering:
 
-* Número de llegadas de clientes a un sistema de servicio en una hora.
-* Número de piezas defectuosas en un lote de producción.
-* Número de camiones esperando para cargar en un muelle.
-* Cantidad de unidades demandadas de un producto en un día.
+* Number of customer arrivals at a service system in an hour.
+* Number of defective items in a production lot.
+* Number of trucks waiting to load at a dock.
+* Number of units demanded of a product in a day.
 {% endtab %}
 
-{% tab title="Variables Aleatorias Continuas" %}
-Una V.A. es continua si puede tomar cualquier valor dentro de un intervalo (o unión de intervalos) de números reales. Entre dos valores cualesquiera que pueda tomar, siempre existe un número infinito de otros posibles valores.
+{% tab title="Continuous Random Variables" %}
+An RV is continuous if it can take any value within an interval (or union of intervals) of real numbers. Between any two possible values, there is always an infinite number of other possible values.
 
-Ejemplos en Ingeniería Industrial:
+Examples in Industrial Engineering:
 
-* Tiempo entre llegadas consecutivas de pedidos a un almacén.
-* Tiempo de servicio de una operación en una máquina.
-* Peso o dimensión de una pieza manufacturada.
-* Tiempo hasta la falla de un equipo.
+* Time between consecutive order arrivals at a warehouse.
+* Service time of an operation on a machine.
+* Weight or dimension of a manufactured part.
+* Time until equipment failure.
 {% endtab %}
 {% endtabs %}
 
 ***
 
-**Definicones de Funciones de probabilidad, densidad y distribución acumulada.**
+**Definitions: Probability, Density, and Cumulative Distribution Functions**
 
-**Función de Densidad de Probabilidad (FDP):** Describe la probabilidad de que una _variable aleatoria continua_ tome un valor dentro de un rango específico, donde el área bajo la curva equivale a la probabilidad.
+**Probability Density Function (PDF):** Describes the probability that a _continuous random variable_ takes a value within a specific range, where the area under the curve equals the probability.
 
-La función de densidad de probabilidad (FDP). La probabilidad de que X esté entre los valores a y b es la integral de la FDP desde a hasta b:
+The probability density function (PDF): The probability that X is between values a and b is the integral of the PDF from a to b:
 
 $$P(a \leq X \leq b) = \int_{a}^{b} f(x) \, dx$$
 
-> **Ejemplo:**
+> **Example:**
 >
-> Si X es una variable aleatoria continua con FDP $$f(x) = \frac{1}{2}$$ para $$0 \leq x \leq 2$$, y cero en cualquier otro lugar, la probabilidad de que X esté entre 0.5 y 1.5 se calcula así:
+> If X is a continuous random variable with PDF $$f(x) = \frac{1}{2}$$ for $$0 \leq x \leq 2$$, and zero elsewhere, the probability that X is between 0.5 and 1.5 is calculated as:
 >
 > $$P(0.5 \leq X \leq 1.5) = \int_{0.5}^{1.5} \frac{1}{2} \, dx = \left[\frac{1}{2}x\right]_{0.5}^{1.5} = \frac{1}{2}(1.5) - \frac{1}{2}(0.5) = 0.5$$
 >
-> Por lo tanto, la probabilidad de que X esté entre 0.5 y 1.5 es 0.5.
+> Therefore, the probability that X is between 0.5 and 1.5 is 0.5.
 
-**Función de Distribución Acumulada (FDA):** Proporciona la probabilidad de que una variable aleatoria, discreta o continua, sea menor o igual a un valor específico, representando la suma o integración de valores hasta ese punto.
+**Cumulative Distribution Function (CDF):** Provides the probability that a random variable, discrete or continuous, is less than or equal to a specific value, representing the sum or integration of values up to that point.
 
-> **Ejemplo: Lanzamiento de un Dado**
+> **Example: Rolling a Die**
 >
-> Consideremos un experimento simple: el lanzamiento de un dado estándar de seis caras.
+> Consider a simple experiment: rolling a standard six-sided die.
 >
-> * **Variable Aleatoria Discreta (X)**: El resultado del lanzamiento, que puede tomar los valores discretos {1,2,3,4,5,6}.
-> * **Función de Densidad de Probabilidad (fdp)**: Para un dado justo, cada resultado tiene la misma probabilidad de ocurrir.
+> * **Discrete Random Variable (X)**: The result of the roll, which can take discrete values {1,2,3,4,5,6}.
+> * **Probability Density Function (pdf)**: For a fair die, each result has the same probability of occurring.
 >
-> $$p(x)=P(X=x)=  \frac{1}{6} ​  ,para x=\{1,2,3,4,5,6\}$$
+> $$p(x)=P(X=x)=  \frac{1}{6} ,\quad \text{for } x=\{1,2,3,4,5,6\}$$
 >
 >
 >
-> **Cálculo de la Función de Distribución Acumulada (FDA)**
+> **Calculation of the Cumulative Distribution Function (CDF)**
 >
-> La FDA, denotada como F(x), nos da la probabilidad de que el resultado del lanzamiento sea **menor o igual a** un valor específico x. Se calcula sumando las probabilidades de todos los resultados hasta ese valor.
+> The CDF, denoted as F(x), gives us the probability that the outcome of the roll is **less than or equal to** a specific value x. It is calculated by summing the probabilities of all outcomes up to that value.
 >
-> * **Probabilidad de obtener un 1 o menos:** $$F(1)=P(X≤1)=P(X=1)=\frac{1}{6}$$
-> * **Probabilidad de obtener un 2 o menos:**  $$F(2)=P(X≤2)=P(X=1)+P(X=2)=\frac{1}{6}​+\frac{1}{6}=\frac{2}{6}$$
-> * **Probabilidad de obtener un 3 o menos:** $$F(3)=P(X≤3)=P(X=1)+P(X=2)+P(X=3)=\frac{1}{6}​+\frac{1}{6}​+\frac{1}{6}​=\frac{3}{6}​$$
+> * **Probability of getting a 1 or less:** $$F(1)=P(X≤1)=P(X=1)=\frac{1}{6}$$
+> * **Probability of getting a 2 or less:**  $$F(2)=P(X≤2)=P(X=1)+P(X=2)=\frac{1}{6}+\frac{1}{6}=\frac{2}{6}$$
+> * **Probability of getting a 3 or less:** $$F(3)=P(X≤3)=P(X=1)+P(X=2)+P(X=3)=\frac{1}{6}+\frac{1}{6}+\frac{1}{6}=\frac{3}{6}$$
 
 <table><thead><tr><th>Resultado de x_i</th><th width="177.18359375">Probabilidad individual</th><th>Prob Acumulada</th></tr></thead><tbody><tr><td>1</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{1}{6}</span></td></tr><tr><td>2</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{2}{6}</span></td></tr><tr><td>3</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{3}{6}</span></td></tr><tr><td>4</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{4}{6}</span></td></tr><tr><td>5</td><td><span class="math">\frac{1}{6}</span></td><td><span class="math">\frac{5}{6}</span></td></tr><tr><td>6</td><td><span class="math">\frac{1}{6}</span></td><td>1</td></tr></tbody></table>
 
 
 
 {% hint style="warning" %}
-Una vez que hemos identificado una variable aleatoria, necesitamos una forma de describir la probabilidad de que tome diferentes valores o rangos de valores. Esto se logra mediante funciones específicas.
+Once we have identified a random variable, we need a way to describe the probability that it takes different values or ranges of values. This is achieved through specific functions.
 {% endhint %}
 
-#### Para Variables Aleatorias Discretas, Función de Masa de Probabilidad (FMP o PMF, por sus siglas en inglés)
+#### For Discrete Random Variables, Probability Mass Function (PMF)
 
-La FMP de una V.A. discreta X, denotada como $$p(x) o P(X=x)$$, especifica la probabilidad de que X tome exactamente el valor x
+The PMF of a discrete random variable X, denoted as $$p(x)$$ or $$P(X=x)$$, specifies the probability that X takes exactly the value x.
 
-* **Propiedades:**
-  1. $$0≤p(x)≤1$$ para todo x.
-  2. $$∑_{todo x}​p(x)=1$$ (la suma de las probabilidades de todos los posibles valores es 1).
-* **Ejemplo:**&#x20;
-  * Si X es el resultado de lanzar un dado equilibrado, $$p(x)=1/6$$ para $$x∈{1,2,3,4,5,6},\ y\ p(x)=0$$ para cualquier otro x.
-* la formula para la FMP es:
+* **Properties:**
+  1. $$0 \leq p(x) \leq 1$$ for all x.
+  2. $$\sum_{\text{all } x} p(x) = 1$$ (the sum of the probabilities of all possible values is 1).
+* **Example:**  
+  * If X is the result of rolling a fair die, $$p(x)=1/6$$ for $$x \in \{1,2,3,4,5,6\}$$, and $$p(x)=0$$ for any other x.
+* The formula for the PMF is:
 
 $$
-P(X=k) =   {n \choose k}  \cdot p^k(1−p)^{n−k}
+P(X=k) =   {n \choose k}  \cdot p^k (1-p)^{n-k}
 $$
 
-Donde:
+Where:
 
-* n es el número de ensayos (tamaño de la muestra).
-* k es el número de éxitos (componentes defectuosos).
-* p es la probabilidad de éxito en un solo ensayo.
-* &#x20;$${k\choose n} = \frac{k!(n−k)!}{n!} ​$$es el coeficiente binomial, que cuenta el número de maneras de elegir k elementos de un conjunto de n.
+* n is the number of trials (sample size).
+* k is the number of successes (defective components).
+* p is the probability of success in a single trial.
+* $${n\choose k} = \frac{n!}{k!(n-k)!}$$ is the binomial coefficient, which counts the number of ways to choose k elements from a set of n.
 
-> #### **Ejemplo Práctico: Inspección de Calidad en un Lote de Producción**
+> #### **Practical Example: Quality Inspection in a Production Lot**
 >
-> **Escenario:** Un ingeniero industrial está supervisando una línea de producción de componentes electrónicos. Se sabe que, en promedio, el 5% de los componentes producidos son defectuosos. El ingeniero toma una muestra aleatoria de **10 componentes** de un gran lote para realizar una inspección de calidad.
+> **Scenario:** An industrial engineer is supervising an electronic components production line. On average, 5% of the components produced are defective. The engineer randomly takes a sample of **10 components** from a large batch for a quality inspection.
 >
-> El interés se centra en el número de componentes defectuosos encontrados en esa muestra.
+> The interest is in the number of defective components found in that sample.
 >
-> **Variable Aleatoria:** Se define la variable aleatoria discreta X como: X = "el número de componentes defectuosos en la muestra de 10".
+> **Random Variable:** Define the discrete random variable X as: X = "the number of defective components in the sample of 10".
 >
-> Los valores posibles que puede tomar X son {0,1,2,3,4,5,6,7,8,9,10}.
+> The possible values X can take are {0,1,2,3,4,5,6,7,8,9,10}.
 >
-> _resolviendo: en una hoja de excel reemplaza los datos y grafica los resultados._
->
+> _Solution: In an Excel sheet, replace the values and plot the results._>
 > ![](<../../../.gitbook/assets/Captura de pantalla 2025-06-11 a la(s) 5.46.30 p.m..png>)
 
-#### Para Variables Aleatorias Continuas: Función de Densidad de Probabilidad (FDP o PDF, por sus siglas en inglés)
+#### For Continuous Random Variables: Probability Density Function (PDF)
 
-Para una VA. continua X, la FDP, denotada como $$f(x)$$, no da la probabilidad de que X sea igual a un valor específico _**"esta probabilidad es siempre cero para VA. continuas"**_. En cambio, el área bajo la curva de  $$f(x)$$ sobre un intervalo \[a,b] representa la probabilidad de que X caiga en ese intervalo:&#x20;
+For a continuous random variable X, the PDF, denoted as $$f(x)$$, does **not** give the probability that X is equal to a specific value — _this probability is always zero for continuous random variables_. Instead, the area under the curve of $$f(x)$$ over an interval \[a,b] represents the probability that X falls within that interval:
 
 $$
-P(a≤X≤b)=∫_a^bf(x)dx.
+P(a \leq X \leq b) = \int_a^b f(x) dx
 $$
 
-**Propiedades:**
+**Properties:**
 
-1. $$f(x)≥0$$ para todo x.
-2. $$∫_{−∞}^∞​f(x)dx=1$$ (el área total bajo la curva de densidad es 1).
+1. $$f(x) \geq 0$$ for all x.
+2. $$\int_{-\infty}^{\infty} f(x) dx = 1$$ (the total area under the density curve is 1).
 
-#### Función de Distribución Acumulada (FDA o CDF, por sus siglas en inglés)
+#### Cumulative Distribution Function (CDF)
 
-La FDA, denotada como $$f(x)$$, es aplicable tanto a V.A. discretas como continuas. Define la probabilidad de que la variable aleatoria X tome un valor menor o igual a x, $$F(x)=P(X≤x)$$.
+The CDF, denoted as $$F(x)$$, applies to both discrete and continuous random variables. It defines the probability that the random variable X takes a value less than or equal to x, $$F(x) = P(X \leq x)$$.
 
-* **Para V.A. Discretas:** $$F(x)=∑_{k≤x}​p(k).$$
-* **Para V.A. Continuas:** $$F(x)=∫_{−∞}^x​f(t)dt.$$
-* **Propiedades Generales:**
-  1. $$0≤F(x)≤1.$$
-  2. F(x) es una función no decreciente (es decir, si $$a<b$$, entonces $$F(a)≤F(b)$$).
-  3. $$lim_{x→−∞}​F(x)=0\ y\ lim_{x→∞​}F(x)=1.$$
-* **Utilidad:** La FDA es muy útil para calcular probabilidades de intervalos $$P(a<X≤b)=F(b)−F(a)$$
+* **For Discrete Random Variables:** $$F(x) = \sum_{k \leq x} p(k)$$
+* **For Continuous Random Variables:** $$F(x) = \int_{-\infty}^x f(t) dt$$
+
+* **General Properties:**
+  1. $$0 \leq F(x) \leq 1$$
+  2. F(x) is a non-decreasing function (that is, if $$a < b$$, then $$F(a) \leq F(b)$$).
+  3. $$\lim_{x \to -\infty} F(x) = 0$$ and $$\lim_{x \to \infty} F(x) = 1$$
+* **Usefulness:** The CDF is very useful for calculating interval probabilities: $$P(a < X \leq b) = F(b) - F(a)$$
 
 {% hint style="info" %}
-La FDA juega un papel particularmente importante en la simulación, ya que es la base del método de la transformada inversa, una técnica fundamental para generar observaciones aleatorias de una distribución de probabilidad específica a partir de números aleatorios uniformes
+The CDF plays a particularly important role in simulation, as it is the basis of the inverse transform method, a fundamental technique for generating random observations from a specific probability distribution using uniform random numbers.
 {% endhint %}
 
 {% hint style="danger" %}
-Este concepto, que se explorará en detalle en el Capítulo 3, subraya la importancia de comprender la FDA
+This concept, which will be explored in detail in Chapter 3, highlights the importance of understanding the CDF.
 {% endhint %}
 
 ***
 
-### Valor esperado, varianza y otras medidas
+### Expected Value, Variance, and Other Measures
 
-Para resumir las características de una distribución de probabilidad y de la variable aleatoria que sigue, se utilizan diversas medidas numéricas.&#x20;
+To summarize the characteristics of a probability distribution and its associated random variable, various numerical measures are used.
 
-Las más importantes son el _valor esperado y la varianza_.
+The most important are _expected value and variance_.
 
 {% tabs %}
-{% tab title="Valor esperado" %}
+{% tab title="Expected Value" %}
 
+The expected value of a random variable X, denoted as $$E[X]$$ or $$\mu_X$$, represents the average value X would take if the random experiment were repeated a very large number of times. It is a measure of the central tendency of the distribution.
 
-El valor esperado de una variable aleatoria X, denotado como $$E[X]$$ o $$μX​$$, representa el valor promedio que tomaría X si el experimento aleatorio se repitiera un número muy grande de veces. Es una medida de la tendencia central de la distribución.1
+* For discrete X with PMF $$p(x):\quad E[X] = \sum_{\text{all }x} x \cdot p(x)$$
+* For continuous X with PDF $$f(x):\quad E[X] = \int_{-\infty}^{\infty} x f(x) dx$$
 
-* Para VA Discreta X con FMP $$p(x): E[X]=∑_{todo x}​x⋅p(x)$$.
-* Para VA Continua X con FDP $$f(x): E[X]=∫_{−∞}^∞​x⋅f(x)dx$$
+Properties of Expected Value (if a and b are constants):
 
-Propiedades del Valor Esperado: Si a y b son constantes:
-
-* $$E[a]=a$$
-* $$E[aX]=aE[X]$$
-* $$E[aX+b]=aE[X]+b$$
-* $$E[X+Y]=E[X]+E[Y] \text{(para cualesquiera V.A. X e Y)}$$
-* $$E[g(X)]=∑_x​g(x)p(x)\ o\ E[g(X)]=∫_{−∞}^∞​g(x)f(x)dx.$$
+* $$E[a] = a$$
+* $$E[aX] = aE[X]$$
+* $$E[aX + b] = aE[X] + b$$
+* $$E[X + Y] = E[X] + E[Y]$$ (for any random variables X and Y)
+* $$E[g(X)] = \sum_x g(x)p(x)$$ or $$E[g(X)] = \int_{-\infty}^{\infty} g(x)f(x)dx$$
 {% endtab %}
 
-{% tab title="Varianza" %}
-La varianza de una variable aleatoria X, denotada como $$Var(X)\ o\ σ_2^x$$, mide la dispersión o variabilidad de los valores de X alrededor de su media $$E[X]$$. Una varianza pequeña indica que los valores de X tienden a estar cerca de la media, mientras que una varianza grande indica que los valores están más dispersos.
+{% tab title="Variance" %}
+The variance of a random variable X, denoted as $$Var(X)$$ or $$\sigma^2_X$$, measures the dispersion or variability of the values of X around its mean $$E[X]$$. A small variance indicates that the values of X tend to be close to the mean, while a large variance indicates that the values are more spread out.
 
 $$
-Var(X)=E[(X−E[X]) ^2 ]=E[X ^2 ]−(E[X]) ^2
+Var(X) = E[(X - E[X])^2] = E[X^2] - (E[X])^2
 $$
 
-**Propiedades de la Varianza:** Si a y b son constantes
+**Properties of Variance:** If a and b are constants:
 
-* $$Var(a)=0$$
-* $$Var(aX)=a^2Var(X)$$
-* $$Var(aX+b)=a^2Var(X)$$
-* Si X e Y son independientes: $$Var(X+Y)=Var(X)+Var(Y)$$.
+* $$Var(a) = 0$$
+* $$Var(aX) = a^2 Var(X)$$
+* $$Var(aX + b) = a^2 Var(X)$$
+* If X and Y are independent: $$Var(X + Y) = Var(X) + Var(Y)$$
 {% endtab %}
 
-{% tab title="Desviación Estándar" %}
-La desviación estándar, denotada como  $$σ_x ​$$ o $$DE(X)$$, es la raíz cuadrada positiva de la varianza $$σ_x = \sqrt{Var(X)}$$, Se expresa en las mismas unidades que la variable aleatoria X, lo que facilita su interpretación como una medida de dispersión típica alrededor de la media.
+{% tab title="Standard Deviation" %}
+The standard deviation, denoted as $$\sigma_X$$ or $$SD(X)$$, is the positive square root of the variance: $$\sigma_X = \sqrt{Var(X)}$$. It is expressed in the same units as the random variable X, making it easier to interpret as a typical measure of dispersion around the mean.
 
-#### Otros Momentos y Medidas ​**Momentos:**
+#### Other Moments and Measures
 
-$$E[K^x]$$ es el k-ésimo momento de X alrededor del origen.&#x20;
+**Moments:**
+$$E[X^k]$$ is the k-th moment of X about the origin.
 
-$$E[(X−μ)^k]$$ es el k-ésimo momento central.&#x20;
+$$E[(X-\mu)^k]$$ is the k-th central moment.
 
-La media es el primer momento alrededor del origen, y la varianza es el segundo momento central.
+The mean is the first moment about the origin, and the variance is the second central moment.
 
-#### Coeficiente de Variación (CV).
+#### Coefficient of Variation (CV)
 
-Es una medida relativa de dispersión, definida como&#x20;
+A relative measure of dispersion, defined as:
 
-$$CV(X)=\frac{σ_x}{∣E[X]∣},\ para\ E[X]\ne0$$&#x20;
+$$CV(X) = \frac{\sigma_X}{|E[X]|}, \quad \text{for } E[X] \neq 0$$
 
-Es útil para comparar la variabilidad de variables aleatorias con diferentes medias
+It is useful for comparing the variability of random variables with different means.
 {% endtab %}
 {% endtabs %}
 
-Estas medidas descriptivas son fundamentales en simulación por **dos razones principales**
+These descriptive measures are fundamental in simulation for **two main reasons**:
 
 <details>
+<summary>1. Input Modeling</summary>
 
-<summary> 1. Modelado de Entradas</summary>
-
-Al seleccionar distribuciones de probabilidad para las variables de entrada de un modelo (ej. tiempos de servicio, demanda), sus parámetros a menudo se relacionan directamente con la media, la varianza u otras medidas (ej. la distribución exponencial se define por su media, la normal por su media y desviación estándar).
-
+When selecting probability distributions for a model's input variables (e.g., service times, demand), their parameters are often directly related to the mean, variance, or other measures (e.g., the exponential distribution is defined by its mean, the normal by its mean and standard deviation).
 </details>
 
 <details>
+<summary>2. Output Analysis</summary>
 
-<summary>  2. Análisis de Salidas</summary>
-
-Las métricas de desempeño que se estiman a partir de las corridas de simulación suelen ser valores esperados (ej. tiempo promedio en cola, utilización promedio de un recurso) y medidas de su variabilidad (ej. varianza del tiempo de ciclo, desviación estándar de la ganancia).
-
+Performance metrics estimated from simulation runs are often expected values (e.g., average queue time, average resource utilization) and measures of their variability (e.g., cycle time variance, standard deviation of profit).
 </details>
 
 ***
 
-### Distribuciones de probabilidad comunes y su aplicación en IInd
+### Common Probability Distributions and Their Application in Industrial Engineering
 
-La elección de una distribución de probabilidad adecuada para representar un fenómeno aleatorio es un paso crítico en la construcción de un modelo de simulación válido. A continuación, se presentan algunas de las distribuciones más utilizadas en ingeniería industrial, logística y producción, junto con sus características y aplicaciones típicas.
+Choosing an appropriate probability distribution to represent a random phenomenon is a critical step in building a valid simulation model. Below are some of the most commonly used distributions in industrial engineering, logistics, and production, along with their characteristics and typical applications.
 
-<table><thead><tr><th width="182.78125">Distribución</th><th width="137.02734375">Tipo</th><th width="194.45703125">Parámetros Clave</th><th width="155.96484375">Media</th><th width="250.921875">Varianza</th><th width="312.44921875">Aplicaciones Comunes en IE (Logística/Producción)</th></tr></thead><tbody><tr><td><strong>Bernoulli</strong></td><td>Discreta</td><td><span class="math">p (prob. \ éxito)</span></td><td>p</td><td><span class="math">p(1-p)</span></td><td>Pieza defectuosa/no defectuosa, máquina operativa/fallada.</td></tr><tr><td><strong>Binomial</strong></td><td>Discreta</td><td>n(ensayos), p</td><td>np</td><td><span class="math">np(1-p)</span></td><td>N° de defectuosos en lote, N° de clientes que compran un producto.</td></tr><tr><td><strong>Poisson</strong></td><td>Discreta</td><td><p><span class="math">\lambda</span></p><p>(tasa media)</p></td><td><span class="math">\lambda</span></td><td><span class="math">\lambda</span></td><td>N° de llegadas/hora, N° de fallas/día, N° de defectos/unidad.</td></tr><tr><td><strong>Geométrica</strong></td><td>Discreta</td><td><span class="math">p</span> (prob. éxito)</td><td>1/p</td><td><span class="math">(1-p)/p^2</span></td><td>N° de inspecciones hasta primer defecto.</td></tr><tr><td><strong>Uniforme Disc.</strong></td><td>Discreta</td><td>a, b (min, max) o N valores</td><td><span class="math">(a+b)/2</span></td><td><span class="math">((b-a+1)^2-1)/12</span></td><td>Selección aleatoria entre N opciones equiprobables.</td></tr><tr><td><strong>Uniforme Cont.</strong></td><td>Continua</td><td>a, b (min, max)</td><td><span class="math">(a+b)/2</span></td><td><span class="math">(b-a)^2/12</span></td><td>Incertidumbre con solo límites conocidos, tiempos de proceso si no hay más info.</td></tr><tr><td><strong>Exponencial</strong></td><td>Continua</td><td><span class="math">\lambda</span> (tasa) o <span class="math">\mu=1/\lambda</span>(media)</td><td><span class="math">1/\lambda</span></td><td><span class="math">1/\lambda^2</span></td><td>Tiempos entre llegadas (Poisson), tiempos de servicio, vida de componentes sin desgaste.</td></tr><tr><td><strong>Normal</strong></td><td>Continua</td><td><p><span class="math">\mu</span></p><p> (media), <span class="math">\sigma</span> (desv. est.)</p></td><td><span class="math">\mu</span></td><td><span class="math">\sigma^2</span></td><td>Dimensiones de piezas, errores, sumas de V.A. (TLC), tiempos de tareas.</td></tr><tr><td><strong>Triangular</strong></td><td>Continua</td><td>a (min), b (max), c (moda)</td><td><span class="math">(a+b+c)/3</span></td><td><span class="math">\frac{a^2+b^2+c^2-ab-ac-bc}{18}</span></td><td>Duración de actividades (PERT), tiempos de proceso con datos limitados.</td></tr><tr><td><strong>Erlang</strong></td><td>Continua</td><td><span class="math">k (forma), \lambda (tasa)</span></td><td><span class="math">k/\lambda</span></td><td><span class="math">k/\lambda^2</span></td><td>Suma de k exponenciales, tiempos de reparación en fases.</td></tr><tr><td><strong>Weibull</strong></td><td>Continua</td><td><span class="math">\alpha (escala), \beta (forma)</span></td><td><span class="math">\alpha\Gamma(1+1/\beta)</span></td><td><span class="math">\alpha^2[\Gamma(1+2/\beta)-(\Gamma(1+1/\beta))^2]</span></td><td>Tiempos de falla (desgaste, mortalidad infantil, constante).</td></tr><tr><td><strong>Lognormal</strong></td><td>Continua</td><td><span class="math">\mu_{\ln} (media de \ln X), \sigma_{\ln} (desv. est. de \ln X)</span></td><td><span class="math">e^{\mu_{\ln} + \sigma_{\ln}^2/2}</span></td><td><span class="math">e^{2\mu_{\ln} + \sigma_{\ln}^2}(e^{\sigma_{\ln}^2} - 1)</span></td><td>Tiempos de reparación, algunos procesos multiplicativos.</td></tr></tbody></table>
-
+| Distribution         | Type      | Key Parameters                                      | Mean                             | Variance                                              | Common Applications in IE (Logistics/Production)                             |
+|----------------------|-----------|-----------------------------------------------------|----------------------------------|-------------------------------------------------------|-------------------------------------------------------------------------------|
+| **Bernoulli**        | Discrete  | p (prob. of success)                                | p                                | p(1-p)                                                | Defective/non-defective part, machine up/down.                               |
+| **Binomial**         | Discrete  | n (trials), p                                       | np                               | np(1-p)                                               | Number of defectives in a lot, number of customers buying a product.         |
+| **Poisson**          | Discrete  | λ (mean rate)                                       | λ                                | λ                                                     | Arrivals/hour, failures/day, defects/unit.                                    |
+| **Geometric**        | Discrete  | p (prob. of success)                                | 1/p                              | (1-p)/p²                                              | Number of inspections until first defect.                                     |
+| **Uniform Disc.**    | Discrete  | a, b (min, max) or N values                         | (a+b)/2                          | ((b-a+1)²-1)/12                                       | Random selection among N equally likely options.                              |
+| **Uniform Cont.**    | Continuous| a, b (min, max)                                     | (a+b)/2                          | (b-a)²/12                                             | Uncertainty with only known limits, process times with no more info.          |
+| **Exponential**      | Continuous| λ (rate) or μ=1/λ (mean)                            | 1/λ                              | 1/λ²                                                  | Interarrival times (Poisson), service times, life of non-aging components.    |
+| **Normal**           | Continuous| μ (mean), σ (std. dev.)                             | μ                                | σ²                                                    | Part dimensions, errors, sums of RVs (CLT), task durations.                   |
+| **Triangular**       | Continuous| a (min), b (max), c (mode)                          | (a+b+c)/3                        | (a²+b²+c²-ab-ac-bc)/18                                | Activity durations (PERT), process times with limited data.                   |
+| **Erlang**           | Continuous| k (shape), λ (rate)                                 | k/λ                              | k/λ²                                                  | Sum of k exponentials, repair times in phases.                                |
+| **Weibull**          | Continuous| α (scale), β (shape)                                | αΓ(1+1/β)                        | α²[Γ(1+2/β)-(Γ(1+1/β))²]                              | Failure times (wear-out, infant mortality, constant rate).                    |
+| **Lognormal**        | Continuous| μₗₙ (mean of lnX), σₗₙ (std. dev. of lnX)          | exp(μₗₙ + σₗₙ²/2)                | exp(2μₗₙ + σₗₙ²) (exp(σₗₙ²) - 1)                      | Repair times, some multiplicative processes.                                  |
 ### Teorema del Límite Central (TLC)
 
 El Teorema del Límite Central (TLC) es uno de los resultados más importantes y notables en la teoría de la probabilidad y la estadística, con profundas implicaciones para la simulación
