@@ -1,26 +1,26 @@
 # Table of contents
 
-* [Cristian´s Bookshell](README.md)
+* [Cristian´s Bookshelf](README.md)
 
-## Logistica
+## Logistics
 
-* [Let´s Talk about Logistics!](logistica/let-s-talk-about-logistics/README.md)
-  * [El cuaderno de logistica](logistica/let-s-talk-about-logistics/el-cuaderno-de-logistica.md)
-  * [Unidad Cero: Componentes tipicos de la Logistica](logistica/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
-  * [Unidad Uno: Servicio Al Cliente](logistica/let-s-talk-about-logistics/unidad-uno-servicio-al-cliente.md)
-  * [Unidad Dos: Modelos de inventarios](logistica/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
-    * [Inventario ABC](logistica/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
-    * [Indiscadores o KPI de Inventario](logistica/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
-    * [Quantity discount Model](logistica/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
-  * [Unidad tres: Modelos de Transporte](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
-    * [Ejercicios 1](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
-    * [Diseño de Rutas con Python](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
-      * [Ejercicios 2](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
-      * [Modelo de Transbordo](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
-    * [Almacenamiento en Bodegas o CEDIS](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
-    * [Modelo de redes](logistica/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
-  * [Unidad Cuatro: Modelos de Localizacion](logistica/let-s-talk-about-logistics/unidad-cuatro-modelos-de-localizacion.md)
-  * [Unidad Cinco: supply chain models and methods](logistica/let-s-talk-about-logistics/unidad-cinco-supply-chain-models-and-methods.md)
+* [Let´s Talk about Logistics!](logistics/let-s-talk-about-logistics/README.md)
+  * [Logistics Notebook](logistics/let-s-talk-about-logistics/el-cuaderno-de-logistica.md)
+  * [Unit Zero: Typical Logistics Components](logistics/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
+  * [Unidad Uno: Servicio Al Cliente](logistics/let-s-talk-about-logistics/unidad-uno-servicio-al-cliente.md)
+  * [Unidad Dos: Modelos de inventarios](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
+    * [Inventario ABC](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
+    * [Indiscadores o KPI de Inventario](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
+    * [Quantity discount Model](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
+  * [Unidad tres: Modelos de Transporte](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
+    * [Ejercicios 1](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
+    * [Diseño de Rutas con Python](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
+      * [Ejercicios 2](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
+      * [Modelo de Transbordo](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
+    * [Almacenamiento en Bodegas o CEDIS](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
+    * [Modelo de redes](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
+  * [Unidad Cuatro: Modelos de Localizacion](logistics/let-s-talk-about-logistics/unidad-cuatro-modelos-de-localizacion.md)
+  * [Unidad Cinco: supply chain models and methods](logistics/let-s-talk-about-logistics/unidad-cinco-supply-chain-models-and-methods.md)
 
 ***
 
@@ -53,6 +53,6 @@
     * [Tienda de Pasteles DC](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
     * [Manufactura de Calzado DC](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
 
-## Tienda de libros
+## Book Store
 
-* [Estanteria de libros](tienda-de-libros/estanteria-de-libros.md)
+* [Book Shelf](book-store/estanteria-de-libros.md)

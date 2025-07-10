@@ -446,7 +446,7 @@ This means that we do not have sufficient statistical evidence to conclude that 
 {% endtab %}
 
 {% tab title="K-S Test Example" %}
-### Kolmogorov-Smirnov (KS) Normality Test
+#### Kolmogorov-Smirnov (KS) Normality Test
 
 ***
 
@@ -548,8 +548,8 @@ La prueba es sensible a desviaciones en el centro, las colas y la forma de la di
 These tests verify whether the generated numbers are independent of each other (that is, whether the value of one number does not influence the value of the following numbers).
 
 1. **Runs Test:** A "run" is a subsequence of observations with a common property.
-1. For example, an upward run is a sequence of numbers where each is greater than the previous one. The total number of runs in the sequence is analyzed. If there are too many or too few runs compared to what would be expected from a truly independent sequence, the hypothesis of independence is rejected.
-2. **Autocorrelation Test:** This test measures the linear correlation between numbers separated by a certain "lag" (lag) $$k$$ in the sequence. The lag k autocorrelation, $$ρ_k$$​, estimates the correlation between $$U_i$$​ and $$U_i+k$$​. For an independent sequence, all autocorrelations (for $$k≥1$$) are expected to be close to zero. A test statistic (based on the Normal approximation for $$ρ^​k$$​ when N is large) is constructed to check whether $$ρ_k$$​ is significantly different from zero.
+2. For example, an upward run is a sequence of numbers where each is greater than the previous one. The total number of runs in the sequence is analyzed. If there are too many or too few runs compared to what would be expected from a truly independent sequence, the hypothesis of independence is rejected.
+3. **Autocorrelation Test:** This test measures the linear correlation between numbers separated by a certain "lag" (lag) $$k$$ in the sequence. The lag k autocorrelation, $$ρ_k$$​, estimates the correlation between $$U_i$$​ and $$U_i+k$$​. For an independent sequence, all autocorrelations (for $$k≥1$$) are expected to be close to zero. A test statistic (based on the Normal approximation for $$ρ^​k$$​ when N is large) is constructed to check whether $$ρ_k$$​ is significantly different from zero.
 
 {% hint style="warning" %}
 It is important to note that a generator must pass a diverse and rigorous set of these statistical tests before being considered acceptable for use in serious simulation studies. The fact that a sequence passes a test does not guarantee that it is "perfect," only that no evidence against the assumption of uniformity or independence has been found under that particular test.
@@ -568,7 +568,7 @@ There are several methods for performing this transformation.
 This is the most fundamental method and, when applicable, often the most efficient and straightforward.
 
 1. **Principle** It is based on the fact that if X is a random variable with a continuous and strictly increasing cumulative distribution function (CDF) $$F(x)$$, and U is a random variable $$U(0,1)$$, then the random variable $$Y=F−1(U)$$ has the same distribution as X. Here, $$F−1(u)$$ is the inverse function of the CDF, defined as the value y such that $$F(y)=u$$.
-1. **Algorithm for Continuous VAs:**
+2. **Algorithm for Continuous VAs:**
 
 Generate a number $$u∼U(0,1)$$.
 
@@ -612,7 +612,6 @@ Suppose we want to generate a VA X with PDF $$f(x)$$. We choose another "majorit
 **General Algorithm.**
 
 1. Generate a candidate Y from the distribution with PDF $$g(y)$$.
-
 2. Generate a number $$U∼U(0,1)$$ (independent of Y).
 3. If $$U≤c⋅g(Y)f(Y)$$​, then accept $$X=Y$$.
 4. Otherwise, reject Y and return to step 1.
@@ -678,15 +677,14 @@ The rejection technique is used to generate a random variable from a complex dis
 2. Generate a uniform random number ( $$U$$ ) between 0 and 1.
 3. Accept ( $$X$$ ) if ( $$U \leq \frac{f(X)}{cg(X)}$$ ), where ( $$c$$ ) is a constant such that ( $$cg(x) \geq f(x)$$ ) for all ( $$x$$ ).
 
-Repeat the process until an ( $$X$$ ) is accepted, ensuring that it follows the ( $$f(x)$$ ) distribution.
-\\
+Repeat the process until an ( $$X$$ ) is accepted, ensuring that it follows the ( $$f(x)$$ ) distribution. \\
 {% endtab %}
 {% endtabs %}
-
 
 ***
 
 * **Recommended Reading:**
+
 1. Law, A. M. (2015). _Simulation Modeling and Analysis_ (5th ed.). McGraw-Hill Education. (Chapters on random number generation and random variables).
 2. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). _Discrete-Event System Simulation_ (5th ed.). Prentice Hall. (Chapters on random numbers and random variable generation).
 3. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Chapters 2, 6, 7).
