@@ -63,7 +63,7 @@ The "New Industrial Revolution" will profoundly impact supply chains, driven by 
 
 Historically, there has been a strong emphasis on supply chain efficiency, often achieved through lean practices like Just-in-Time (JIT), which inadvertently increased vulnerability and risk. However, the future demands both efficiency and resilience. This presents a seemingly paradoxical challenge: how to achieve low costs while simultaneously building flexibility and robustness. The resolution lies in strategically leveraging advanced technologies such as AI, ML, IoT, and data analytics. These tools provide the necessary visibility and enable informed decision-making that optimizes both efficiency and resilience. For example, real-time data can identify potential bottlenecks, which reduces the perceived risk associated with adding safety stock or flexible capacity. Therefore, future supply chain strategies must navigate the apparent trade-off between efficiency and resilience not by choosing one over the other, but by strategically integrating advanced technologies and data-driven decision-making to build adaptable, responsive, and robust networks that can absorb disruptions while maintaining cost-effectiveness
 
-## SCM desition and problem solving for Indutrial engineers.
+## SCM decision and problem solving for Industrial engineers.
 
 <img src="../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
 
