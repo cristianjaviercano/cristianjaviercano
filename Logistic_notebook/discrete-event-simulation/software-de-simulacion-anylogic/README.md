@@ -2,9 +2,9 @@
 icon: file-doc
 ---
 
-# Software de Simulacion: Anylogic
+# Soft Simulation: Anylogic
 
-### Software de simulacion
+## Simulation software
 
 #### ¿Por qué usar un software de simulación?
 
