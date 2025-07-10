@@ -1,6 +1,10 @@
-# Exercise Block Chapter 2.1
+---
+hidden: true
+---
 
-In this section, we will delve into the problems presented in chapter two of the content. We will analyze the key concepts, providing a detailed understanding and addressing possible solutions [...]
+# Block of Exercises Chapter 2.1
+
+In this section, we will delve into the problems presented in chapter two of the content. We will analyze the key concepts, providing a detailed understanding and addressing possible solutions \[...]
 
 ***
 
@@ -10,7 +14,7 @@ For each of the following problems, the student must:
 
 1. **Identify and describe the Sample Space (S)** as a set.
 2. **Construct a Tree Diagram** that represents the experiment and its possible final outcomes.
-3. **Generate a Random Sample** of 1000 observations from this experiment using **Python** or **Excel**. If Python is used, a simple script is expected to simulate the experiment and store the result[...]
+3. **Generate a Random Sample** of 1000 observations from this experiment using **Python** or **Excel**. If Python is used, a simple script is expected to simulate the experiment and store the result\[...]
 
 <details>
 
@@ -32,7 +36,7 @@ A quality inspector randomly selects **two items** from a production line. Each 
 
 <summary>Exercise 2.1.3</summary>
 
-An engineering company is evaluating the success of its Research and Development (R&D) projects. A project can have **Technical Success (TS)** or **Technical Failure (TF)**. Additionally, [...]
+An engineering company is evaluating the success of its Research and Development (R\&D) projects. A project can have **Technical Success (TS)** or **Technical Failure (TF)**. Additionally, \[...]
 
 </details>
 
@@ -40,7 +44,7 @@ An engineering company is evaluating the success of its Research and Development
 
 <summary>Exercise 2.1.4</summary>
 
-In a warehouse, the inventory level of a product is monitored (high (H), medium (M), low (L)) and the daily demand for that product (high (D_H), low (D_L)). The inventory status and demand are observe[...]
+In a warehouse, the inventory level of a product is monitored (high (H), medium (M), low (L)) and the daily demand for that product (high (D\_H), low (D\_L)). The inventory status and demand are observe\[...]
 
 </details>
 
@@ -48,7 +52,7 @@ In a warehouse, the inventory level of a product is monitored (high (H), medium 
 
 <summary>Exercise 2.1.5</summary>
 
-A project team must be formed with two members selected from a group of candidates consisting of **an engineer (E)**, **an economist (Ec)**, and **a designer (D)**. The two members are selected [...]
+A project team must be formed with two members selected from a group of candidates consisting of **an engineer (E)**, **an economist (Ec)**, and **a designer (D)**. The two members are selected \[...]
 
 </details>
 
@@ -56,7 +60,7 @@ A project team must be formed with two members selected from a group of candidat
 
 <summary>Exercise 2.1.6</summary>
 
-Let’s consider the results of the first inspection as initial categories: **D** (defective), **M** (minor defects), and **A** (acceptable). If it is 'M', a second inspection classifies according to [...]
+Let’s consider the results of the first inspection as initial categories: **D** (defective), **M** (minor defects), and **A** (acceptable). If it is 'M', a second inspection classifies according to \[...]
 
 </details>
 
@@ -64,7 +68,7 @@ Let’s consider the results of the first inspection as initial categories: **D*
 
 <summary>Exercise 2.1.7</summary>
 
-A software test yields two possible results: **Pass (P)** or **Fail (F)**. If it fails, the failure can be classified as **Critical (C)** or **Non-Critical (NC)**. A test is performed on a [...]
+A software test yields two possible results: **Pass (P)** or **Fail (F)**. If it fails, the failure can be classified as **Critical (C)** or **Non-Critical (NC)**. A test is performed on a \[...]
 
 </details>
 
@@ -72,7 +76,7 @@ A software test yields two possible results: **Pass (P)** or **Fail (F)**. If it
 
 <summary>Exercise 2.1.8</summary>
 
-An investor is considering an investment in a startup. The first decision is whether to **Invest (I)** or **Not Invest (NI)**. If they decide to invest, the startup can have **Success (S)** or **Failu[...]
+An investor is considering an investment in a startup. The first decision is whether to **Invest (I)** or **Not Invest (NI)**. If they decide to invest, the startup can have **Success (S)** or \*\*Failu\[...]
 
 </details>
 
@@ -80,7 +84,7 @@ An investor is considering an investment in a startup. The first decision is whe
 
 <summary>Exercise 2.1.9</summary>
 
-A student applies for admission to a university. The first stage is **Document Review (DR)**, which can result in **Approved (A_DR)** or **Rejected (R_DR)**. If approved, they move on to [...]
+A student applies for admission to a university. The first stage is **Document Review (DR)**, which can result in **Approved (A\_DR)** or **Rejected (R\_DR)**. If approved, they move on to \[...]
 
 </details>
 
@@ -88,7 +92,7 @@ A student applies for admission to a university. The first stage is **Document R
 
 <summary>Exercise 2.1.10</summary>
 
-The performance of a machine on a production line is monitored. The machine can be **Operational (O)** or **Non-Operational (NO)**. If it is Operational, it can produce with **High Efficiency (HE)[...]
+The performance of a machine on a production line is monitored. The machine can be **Operational (O)** or **Non-Operational (NO)**. If it is Operational, it can produce with \*\*High Efficiency (HE)\[...]
 
 </details>
 
@@ -100,11 +104,11 @@ The performance of a machine on a production line is monitored. The machine can 
 
 <summary><strong>Problem 1: Monitoring Process Parameters</strong></summary>
 
-In an industrial process, two critical parameters are monitored to ensure product quality: **temperature (T)** and **pressure (P)**. The process is considered **under control** if [...]
+In an industrial process, two critical parameters are monitored to ensure product quality: **temperature (T)** and **pressure (P)**. The process is considered **under control** if \[...]
 
 A product is randomly selected and the status of its parameters is recorded.
 
-1. **Sample Space (S):** Define the sample space representing the possible combinations of temperature and pressure states (e.g., (T_opt, P_opt)).
+1. **Sample Space (S):** Define the sample space representing the possible combinations of temperature and pressure states (e.g., (T\_opt, P\_opt)).
 2. **Events:**
    * **Event A**: Temperature is within the optimal range.
    * **Event B**: Pressure is within the optimal range.
@@ -121,7 +125,7 @@ A product is randomly selected and the status of its parameters is recorded.
 
 **Two fair six-sided dice** (one red and one blue) are rolled simultaneously and the result of the upper face of each die is recorded.
 
-1. **Sample Space (S):** Define the sample space of this experiment as the set of ordered pairs (result red die, result blue die). It is not necessary to list all 36 elements[...]
+1. **Sample Space (S):** Define the sample space of this experiment as the set of ordered pairs (result red die, result blue die). It is not necessary to list all 36 elements\[...]
 2. **Events:**
    * **Event X**: The sum of the numbers on the two dice is 7.
    * **Event Y**: The number on the red die is greater than 4.
@@ -152,7 +156,7 @@ An engineering company conducts a survey among its employees about their preferr
 
 <summary><strong>Problem 4: Security Audit Results</strong></summary>
 
-In an IT security audit, a system is classified according to two criteria: whether it presents **critical vulnerabilities (CV)** and whether it has suffered **security breaches (SB)** in the past year[...]
+In an IT security audit, a system is classified according to two criteria: whether it presents **critical vulnerabilities (CV)** and whether it has suffered **security breaches (SB)** in the past year\[...]
 
 A system is randomly selected for the audit.
 
@@ -170,11 +174,11 @@ A system is randomly selected for the audit.
 
 <summary><strong>Problem 6: Classification of Defects in a Product</strong></summary>
 
-In the final inspection of a product, the types of defects found are recorded. Possible defects are: **scratches (S)**, **dents (D)**, and **electronic failures (EF)**. A product may [...]
+In the final inspection of a product, the types of defects found are recorded. Possible defects are: **scratches (S)**, **dents (D)**, and **electronic failures (EF)**. A product may \[...]
 
 A product is randomly selected from the production line.
 
-1. **Sample Space (S):** List a sample space that represents whether a product has each type of defect or not (e.g., (No S, No D, No EF), (S, No D, No EF), etc.). Consider that e[...]
+1. **Sample Space (S):** List a sample space that represents whether a product has each type of defect or not (e.g., (No S, No D, No EF), (S, No D, No EF), etc.). Consider that e\[...]
 2. **Events:**
    * **Event J**: The product has at least one scratch.
    * **Event K**: The product has only dents (and no other defect).
@@ -189,14 +193,14 @@ A product is randomly selected from the production line.
 
 <summary>Problem 7: Management of Multiple Projects</summary>
 
-An engineering company manages **three different projects** simultaneously: Project Alpha (α), Project Beta (β), and Project Gamma (γ). At the end of each quarter, each project is evaluated as e[...]
+An engineering company manages **three different projects** simultaneously: Project Alpha (α), Project Beta (β), and Project Gamma (γ). At the end of each quarter, each project is evaluated as e\[...]
 
 A project manager is interested in analyzing the quarterly results of these three projects. The result of each project is recorded.
 
-#### Requirements:
+**Requirements:**
 
 1. **Sample Space (S):**
-   * Define the sample space (S) representing all possible combined outcomes of the three projects at the end of the quarter. The elements of S must be ordered tuples (result α, result β, result γ[...]
+   * Define the sample space (S) representing all possible combined outcomes of the three projects at the end of the quarter. The elements of S must be ordered tuples (result α, result β, result γ\[...]
    * Describe S as a set.
 2. **Definition of Events as Sets:** Describe the following events as subsets of S:
    * **Event A**: At least two projects result in Success.
@@ -230,9 +234,9 @@ For each of the following problems, the student must:
 
 <summary>2.3.1 Customer Preferences on a Streaming Service</summary>
 
-A video streaming company classifies its customers according to their preference for three content genres: **Movies (M)**, **TV Series (S)**, and **Documentaries (D)**. A customer may pr[...]
+A video streaming company classifies its customers according to their preference for three content genres: **Movies (M)**, **TV Series (S)**, and **Documentaries (D)**. A customer may pr\[...]
 
-* **Sample Space (S):** Define the sample space representing all possible combinations of preferences. For example, a customer who prefers only movies could be (M,Sc,Dc), where Sc and Dc indicate no p[...]
+* **Sample Space (S):** Define the sample space representing all possible combinations of preferences. For example, a customer who prefers only movies could be (M,Sc,Dc), where Sc and Dc indicate no p\[...]
 * **Events:**
   * **Event A**: The customer prefers Movies.
   * **Event B**: The customer prefers TV Series.
@@ -245,7 +249,7 @@ A video streaming company classifies its customers according to their preference
 
 <summary>2.3.2 Evaluation of Work Teams’ Performance</summary>
 
-In a consulting firm, a work team is evaluated on three performance criteria: **Productivity (P)**, **Quality of Work (Q)**, and **Timeliness (T)**. For each criteri[...]
+In a consulting firm, a work team is evaluated on three performance criteria: **Productivity (P)**, **Quality of Work (Q)**, and **Timeliness (T)**. For each criteri\[...]
 
 * **Sample Space (S):** Define the sample space. Use notation similar to problem 1 (e.g., (P, Q, T) for Satisfactory in all three).
 * **Events:**
@@ -260,7 +264,7 @@ In a consulting firm, a work team is evaluated on three performance criteria: **
 
 <summary>2.3.3: Fault Detection in a Complex System</summary>
 
-A complex electronic system consists of three independent subsystems: Subsystem 1 (S1), Subsystem 2 (S2), and Subsystem 3 (S3). It is recorded whether each subsystem has a **failure (F)** or is **oper[...]
+A complex electronic system consists of three independent subsystems: Subsystem 1 (S1), Subsystem 2 (S2), and Subsystem 3 (S3). It is recorded whether each subsystem has a **failure (F)** or is \*\*oper\[...]
 
 * **Sample Space (S):** Define the sample space. Use notation like (F, O, F) to indicate Failure in S1, Operational in S2, Failure in S3.
 * **Events:**
@@ -310,51 +314,8 @@ for more exercises, see pages 42 to 44 of the book "Estadística y Probabilidad 
 
 <summary>Exercise 2.4.1 Conditional Probability</summary>
 
-Suppose we have a sample space S consisting of the adult population of a small town that meets the requirements to obtain a university degree. We classify them according to [...]
+Suppose we have a sample space S consisting of the adult population of a small town that meets the requirements to obtain a university degree. We classify them according to \[...]
 
-<table><thead><tr><th></th><th data-type="number">Employed</th><th data-type="number">Unemployed</th><th data-type="number">Total</th></tr></thead><tbody><tr><td>Man</td><td>460</td><td>40</td><td>[...]
-
-One of these individuals is randomly selected to take a trip across the country: we are interested in the following events.
-
-1. M = a man is chosen
-
-2) E = the chosen person is employed
+<table><thead><tr><th></th><th data-type="number">Employed</th><th data-type="number">Unemployed</th><th data-type="number">Total</th></tr></thead><tbody><tr><td>Man</td><td>460</td><td>40</td><td>null</td></tr></tbody></table>
 
 </details>
-
-<details>
-
-<summary>Exercise 2.4.2 The Airport</summary>
-
-The probability that a scheduled flight departs on time is P(D) = 0.83 and the probability that it arrives on time is P(A)=0.82 and the probability that it departs and arrives on time is $$P(D∩A)[...]
-
-1. Arrives on time, given that it departed on time
-2. Departed on time, given that it arrived on time
-3. Arrived on time but departed late
-
-</details>
-
-<details>
-
-<summary>Exercise 2.4.3 Bag of Balls</summary>
-
-A bag contains 4 white balls and 3 black balls, and a second bag contains 3 white and 5 black balls. A ball is drawn from the first bag and placed, unseen, in the second bag.
-
-What is the probability that a black ball is now drawn from the second bag?
-
-</details>
-
-<details>
-
-<summary>Exercise 2.4.4 Electrical System</summary>
-
-Suppose an electrical system with the diagram shown in the figure. What is the probability that the system works, assuming the components fail independently?
-
-The diagram is represented as follows: a circuit diagram from right to left, the first station A has p(0.95), from there it branches into B and C with probabilities P(0.7) and P(0.8), respectively[...]
-
-
-
-</details>
-
-<img src="../../../.gitbook/assets/file.excalidraw (12).svg" alt="" class="gitbook-drawing">
-

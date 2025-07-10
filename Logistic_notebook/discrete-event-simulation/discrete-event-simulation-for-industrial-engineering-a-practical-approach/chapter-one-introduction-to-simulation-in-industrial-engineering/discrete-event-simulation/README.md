@@ -3,6 +3,7 @@ description: >-
   is a dynamic, typically stochastic, and computational modeling technique used
   to represent systems where changes in state occur only at specific, distinct
   points in time, known as events.
+hidden: true
 icon: coin-blank
 ---
 
