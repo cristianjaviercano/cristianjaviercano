@@ -43,7 +43,7 @@
     * [Probabilistics Distribution.](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-dos-fundamentos-de-probabilidad-y-estadistica-para-simulacion/probabilistics-distribution..md)
   * [Chapter Three: Number Generation and Random Variables](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-tres-generacion-de-numeros-y-variables-aleatorias/README.md)
     * [Exercise Block Chapter Three](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-tres-generacion-de-numeros-y-variables-aleatorias/bloque-de-ejercicios-capitulo-tres.md)
-  * [Capitulo Cuatro: Simulación de Montecarlo con Excel](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-cuatro-simulacion-de-montecarlo-con-excel/README.md)
+  * [Chapter Four: Monte Carlo Simulation with Excel](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-cuatro-simulacion-de-montecarlo-con-excel/README.md)
     * [Exercises](discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/capitulo-cuatro-simulacion-de-montecarlo-con-excel/exercises.md)
 * [Software de Simulacion: Anylogic](discrete-event-simulation/software-de-simulacion-anylogic/README.md)
   * [Retos de simulacion](https://cristianjaviercano.github.io/Retos/)
