@@ -1,205 +1,361 @@
-# Capitulo Tres: Generación de Números y Variables Aleatorias
+# Chapter Three: Generation of Random Numbers and Random Variables
 
-### **Objetivos del Capítulo:**
+## Chapter Objectives
 
-1. Comprender la necesidad y las propiedades deseables de los generadores de números pseudoaleatorios.
-2. Describir y aplicar el método de Lehmer (Generador Congruencial Multiplicativo) para la generación de secuencias de números pseudoaleatorios.
-3. Conocer los principios de las pruebas estadísticas utilizadas para evaluar la uniformidad e independencia de los generadores de números aleatorios.
-4. Aplicar el método de la transformada inversa para generar variables aleatorias a partir de distribuciones discretas y continuas comunes.
-5. Entender y aplicar el método de aceptación-rechazo para la generación de variables aleatorias.
-6. Utilizar el método de Box-Muller para generar variables aleatorias normales.
+1. Explain the importance of random number generation in stochastic simulation.
+2. Describe the characteristics and requirements of a good pseudo-random number generator (PRNG).
+3. Understand the basic algorithms for generating uniform random numbers (linear congruential generator).
+4. Apply transformation techniques to generate random variables with specific probability distributions from uniform random numbers.
+5. Analyze and validate the quality of sequences of random numbers and random variables generated.
+6. Use software tools and libraries (such as Excel, Python, AnyLogic) to generate and test random numbers and random variables.
 
 ***
 
 {% hint style="warning" %}
-La generación de números aleatorios es fundamental en la simulación de procesos, ya que permite modelar la incertidumbre y variabilidad inherentes a sistemas complejos. Números aleatorios de alta calidad aseguran que las simulaciones sean realistas y precisas, lo que es crucial para el análisis, predicción y toma de decisiones en ámbitos como la ingeniería, economía y ciencias computacionales. Por este motivo, el uso de generadores de números pseudoaleatorios eficientes y la validación de su idoneidad mediante pruebas estadísticas son pilares esenciales en cualquier entorno de simulación. -crc-
+Random number generation is fundamental to process simulation, as it allows for modeling the uncertainty and variability inherent in complex systems. High-quality random numbers ensure realistic and accurate simulations, which is crucial for analysis, prediction, and decision-making in fields such as engineering, economics, and computer science. For this reason, the use of efficient pseudorandom number generators and validating their suitability through statistical testing are essential pillars of any simulation environment. -crc-
 {% endhint %}
 
-### Generación de números pseudoaleatorios: Método de Lehmer.
+## Introduction
 
-La simulación estocástica, que es el núcleo de la modelización de la mayoría de los sistemas de ingeniería industrial, se basa fundamentalmente en la capacidad de generar secuencias de números que se comporten como si fueran realizaciones de variables aleatorias uniformemente distribuidas en el intervalo (0,1). Estos números, comúnmente denotados como&#x20;
+In stochastic simulation, random numbers and random variables are fundamental building blocks. Through them, we can model uncertainty, variability, and chance events that occur in real systems—such as arrival times, service times, demand, machine failures, and more.
+
+However, computers are deterministic machines; they cannot generate truly random numbers, but only **pseudo-random numbers**—sequences that "appear" random but are produced by mathematical algorithms.
+
+**A solid understanding of random number and random variable generation is essential** for building valid and reliable simulation models.
+
+---
+
+## 1. Pseudo-Random Number Generators (PRNGs)
+
+### What Are Pseudo-Random Numbers?
+
+- A **pseudo-random number** is a value produced by a deterministic algorithm that simulates randomness.
+- In simulation, we usually require random numbers uniformly distributed between 0 and 1 (Uniform[0,1]).
+- These numbers serve as a basis for generating random variables with any distribution.
+
+### Requirements for a Good PRNG
+
+A good random number generator should:
+
+1. Produce numbers uniformly distributed in the interval [0,1].
+2. Have a long period before repeating the sequence.
+3. Be computationally efficient (fast).
+4. Be reproducible (the same seed produces the same sequence).
+5. Pass statistical tests for independence and randomness.
+
+### Linear Congruential Generator (LCG)
+
+One of the most common and oldest algorithms for generating pseudo-random numbers.
+
+The LCG is defined by the recurrence:
+
+$$
+X_{n+1} = (a X_n + c) \mod m
+$$
+
+where:
+
+- $X_0$ is the seed (initial value),
+- $a$ is the multiplier,
+- $c$ is the increment,
+- $m$ is the modulus.
+
+The normalized random number is:
+
+$$
+U_n = \frac{X_n}{m}
+$$
+
+#### Example
+
+Let $a = 5$, $c = 1$, $m = 16$, $X_0 = 7$
+
+Compute the first four random numbers:
+
+- $X_1 = (5*7 + 1) \mod 16 = 36 \mod 16 = 4$, $U_1 = 4/16 = 0.25$
+- $X_2 = (5*4 + 1) \mod 16 = 21 \mod 16 = 5$, $U_2 = 5/16 = 0.3125$
+- $X_3 = (5*5 + 1) \mod 16 = 26 \mod 16 = 10$, $U_3 = 10/16 = 0.625$
+- $X_4 = (5*10 + 1) \mod 16 = 51 \mod 16 = 3$, $U_4 = 3/16 = 0.1875$
+
+#### Parameters in Practice
+
+- The choice of parameters $a$, $c$, and $m$ is critical for the quality of the generator.
+- In practice, well-tested generators are used (e.g., Mersenne Twister in Python).
+
+---
+
+## 2. Statistical Tests for Random Numbers
+
+To ensure the quality of the numbers generated, several statistical tests are used:
+
+- **Uniformity Test**: Checks whether the numbers are uniformly distributed in [0,1].
+- **Independence Test**: Checks for correlations or patterns between numbers.
+- **Runs Test**: Detects long sequences of increasing or decreasing numbers.
+- **Chi-Square Test**: Compares observed frequencies with expected frequencies.
+- **Kolmogorov-Smirnov Test**: Compares the empirical distribution with the uniform distribution.
+
+> In simulation, it is recommended to use established libraries (e.g., NumPy, random in Python) rather than building your own generators.
+
+---
+
+## 3. Generation of Random Variables
+
+The goal is to generate random variables with a specific distribution (e.g., Exponential, Normal, Poisson) from uniform random numbers.
+
+### General Steps
+
+1. Generate a uniform random number $U$ in [0,1].
+2. Transform $U$ using a method appropriate for the desired distribution.
+
+### Methods for Generating Random Variables
+
+#### a) Inverse Transform Method
+
+If $F(x)$ is the cumulative distribution function (CDF) of the desired distribution and $U$ is Uniform[0,1], then:
+
+$$
+X = F^{-1}(U)
+$$
+
+will have the desired distribution.
+
+- **Example:** For the Exponential distribution with mean $1/\lambda$:
+
+  $$
+  F(x) = 1 - e^{-\lambda x} \implies x = -\frac{1}{\lambda} \ln(1 - U)
+  $$
+
+#### b) Acceptance-Rejection Method
+
+- Used when the inverse CDF is not easily obtainable.
+- Involves generating candidate values and accepting or rejecting them according to a rule.
+
+#### c) Other Methods
+
+- **Box-Muller Method** for generating Normal random variables.
+- **Composition and convolution** when dealing with sums of random variables.
+
+---
+
+## 4. Generation in Excel, Python, and AnyLogic
+
+### Excel
+
+- `RAND()`: Generates Uniform[0,1].
+- `RANDBETWEEN(a,b)`: Generates random integers between a and b.
+- Use formulas to transform to other distributions.
+
+### Python
+
+- `random.random()`: Uniform[0,1].
+- `numpy.random`: Library with generators for many distributions (normal, exponential, Poisson, etc.)
+- `scipy.stats`: Advanced random variable generation and statistical tests.
+
+### AnyLogic
+
+- Built-in functions: `uniform()`, `exponential()`, `normal()`, `poisson()`, etc.
+- Can specify parameters and use in models directly.
+
+---
+
+## 5. Validation and Analysis of Generated Variables
+
+- Always check that the generated data matches the expected theoretical distribution.
+- Use histograms, summary statistics, and formal statistical tests.
+- In simulation, the accuracy of random variable generation directly affects the quality of results.
+
+---
+
+# Step By Step Guide
+
+### Pseudorandom number generation: Lehmer's method.
+
+Stochastic simulation, which is at the core of modeling most industrial engineering systems, is fundamentally based on the ability to generate sequences of numbers that behave as if they were realizations of uniformly distributed random variables in the interval (0,1). These numbers, commonly denoted as&#x20;
 
 $$U_i∼U(0,1)$$&#x20;
 
-son el ingrediente básico para luego generar variables aleatorias de distribuciones más complejas _"Exponencial, Normal, Poisson, etc._ que representan los diversos fenómenos inciertos en un sistema.
+They are the basic ingredient for later generating random variables from more complex distributions (Exponential, Normal, Poisson, etc.) that represent the various uncertain phenomena in a system.
 
-#### Números Pseudoaleatorios vs. Verdaderamente Aleatorios
+#### Pseudo-Random vs. Truly Random Numbers
 
-_Las computadoras son máquinas deterministas._ Por lo tanto, no pueden generar números verdaderamente aleatorios en el sentido estricto.&#x20;
+Computers are deterministic machines. Therefore, they cannot generate truly random numbers in the strict sense.
 
-En su lugar, utilizan algoritmos matemáticos para producir secuencias de números que _parecen_ aleatorios y que pasan diversas pruebas estadísticas de aleatoriedad.&#x20;
+Instead, they use mathematical algorithms to produce sequences of numbers that appear random and that pass various statistical tests of randomness.
 
-Estos se denominan **números pseudoaleatorios**. Las propiedades deseables de una secuencia de números pseudoaleatorios.
+These are called **pseudo-random numbers**. The desirable properties of a sequence of pseudo-random numbers.
 
 {% tabs %}
-{% tab title="Uniformidad" %}
-Los números deben estar uniformemente distribuidos en el intervalo (0,1)
+{% tab title="Uniformity" %}
+The numbers should be uniformly distributed over the interval (0,1)
 {% endtab %}
 
-{% tab title="Independencia" %}
-Cada número generado debe ser independiente de los números anteriores en la secuencia.
+{% tab title="Independence" %}
+Each generated number should be independent of the previous numbers in the sequence.
 {% endtab %}
 
-{% tab title="Período Largo" %}
-La secuencia eventualmente se repetirá (es periódica). El período (longitud de la secuencia antes de que comience a repetirse) debe ser lo más largo posible, idealmente mucho más largo que la cantidad de números aleatorios necesarios para cualquier simulación.
+{% tab title="Long Period" %}
+The sequence will eventually repeat (it is periodic). The period (length of the sequence before it begins to repeat) should be as long as possible, ideally much longer than the number of random numbers needed for any simulation.
 {% endtab %}
 
-{% tab title="Reproducibilidad" %}
-Dada la misma semilla inicial, el generador debe producir exactamente la misma secuencia de números. Esto es crucial para la depuración de modelos y para comparar diferentes configuraciones del sistema bajo las mismas condiciones aleatorias
+{% tab title="Reproducibility" %}
+Given the same initial seed, the generator must produce exactly the same sequence of numbers. This is crucial for model debugging and for comparing different system configurations under the same random conditions.
 {% endtab %}
 
-{% tab title="Eficiencia Computacional" %}
-El algoritmo debe ser rápido para generar números, ya que una simulación puede requerir millones de ellos.
+{% tab title="Computational Efficiency" %}
+The algorithm must be fast at generating numbers, as a simulation may require millions of them.
 {% endtab %}
 
-{% tab title="Portabilidad" %}
-El generador debe producir los mismos resultados (o estadísticamente equivalentes) en diferentes plataformas computacionales.
+{% tab title="Portability" %}
+The generator must produce the same (or statistically equivalent) results on different computing platforms.
 {% endtab %}
 {% endtabs %}
 
-#### Generadores Congruenciales Lineales (GCL)
+### Linear Congruential Generators (LCGs)
 
-#### Generadores Congruenciales Lineales (GCL)
-
-Los Generadores Congruenciales Lineales son una clase de algoritmos para generar números pseudoaleatorios. Funcionan utilizando una relación de recurrencia lineal. La fórmula general para un GCL es:
+Linear Congruential Generators are a class of algorithms for generating pseudorandom numbers. They operate using a linear recurrence relation. The general formula for a LCG is:
 
 $$
 [ X_{i+1} = (aX_i + c) \mod m ]
 $$
 
-donde:
+where:
 
-* $$X_i$$ es el i-ésimo número entero de la secuencia.
-* $$X_o$$ es la semilla o valor inicial.
-* a es el multiplicador.
-* c es el incremento.
-* m es el módulo.
+* $$X_i$$ is the i-th integer in the sequence.
+* $$X_o$$ is the seed or initial value.
+* a is the multiplier.
+* c is the increment.
+* m is the modulus.
 
 {% hint style="info" %}
-Los parámetros $$a,c,m y X_0$$ son enteros no negativos. El término $$mod\ m$$ significa obtener el residuo de la división de $$(aX_i+c)$$ por m. Los números pseudoaleatorios $$U_i$$ en (0,1) se obtienen como $$U_i=X_i/m.$$
+The parameters $$a, c, m, and X_0$$ are non-negative integers. The term $$mod\ m$$ means the remainder of dividing $$(aX_i+c)$$ by m. The pseudorandom numbers $$U_i$$ in (0,1) are obtained as $$U_i=X_i/m.$$
 {% endhint %}
 
-**Ejemplo**
+**Example**
 
-Consideremos los siguientes valores:
+Consider the following values:
 
 * ( a = 5 )
 * ( c = 3 )
 * ( m = 16 )
-* Semilla $$(( X_0 )) = 7$$
+* Seed $$(( X_0 )) = 7$$
 
-La secuencia puede generarse así:
+The sequence can be generated as follows:
 
 1. $$( X_1 = (5 \times 7 + 3) \mod 16 = 38 \mod 16 = 6 )$$
 2. $$( X_2 = (5 \times 6 + 3) \mod 16 = 33 \mod 16 = 1 )$$
 3. $$( X_3 = (5 \times 1 + 3) \mod 16 = 8 \mod 16 = 8 )$$
 
-Repetimos este proceso para generar más números. Este método es simple y eficiente, pero la elección de ( a ), ( c ), y ( m ) es crucial para obtener una buena calidad de aleatoriedad y un largo período.
+We repeat this process to generate more numbers. This method is simple and efficient, but the choice of ( a ), ( c ), and ( m ) is crucial to obtain good randomness and a long period.
 
-#### Método de Lehmer (Generador Congruencial Multiplicativo)
+#### Lehmer's Method (Multiplicative Congruential Generator)
 
-#### Método de Lehmer
+#### Lehmer's Method
 
-El Método de Lehmer, también conocido como Generador Congruencial Multiplicativo, es un algoritmo para generar números pseudoaleatorios a través de una relación recursiva de la forma:
+Lehmer's Method, also known as the Multiplicative Congruential Generator, is an algorithm for generating pseudorandom numbers through a recursive relation of the form:
 
 $$
 [ X_{n+1} = (a \times X_n) \mod m ]
 $$
 
-donde:
+where:
 
-* a es el multiplicador,
-* m es el módulo,
-* $$X_0$$ es la semilla inicial del generador.
+* a is the multiplier,
+* m is the modulus,
+* $$X_0$$ is the initial seed of the generator.
 
-Este método es una variante del generador congruencial lineal, pero no incluye el término constante de incremento ( c ). El valor de ( a ) y ( m ) son elegidos cuidadosamente para maximizar la longitud del período y la calidad de la aleatoriedad.
+This method is a variant of the linear congruential generator, but does not include the constant increment term ( c ). The values ​​of ( a ) and ( m ) are carefully chosen to maximize the period length and the quality of the randomness.
 
-#### Ejemplo
+#### Example
 
-Supongamos que ( a = 7 ), ( m = 31 ), y la semilla inicial ( $$X_0 = 3$$ ).
+Suppose ( a = 7 ), ( m = 31 ), and the initial seed ( $$X_0 = 3$$ ).
 
-1. Calculamos el primer número en la secuencia:\
-   $$[ X_1 = (7 \times 3) \mod 31 = 21 ]$$
-2. Calculamos el segundo número:\
-   $$[X_2 = (7 \times 21) \mod 31 = 23 ]$$
-3. Calculamos el tercer número:\
-   $$[ X_3 = (7 \times 23) \mod 31 = 6 ]$$
+1. We calculate the first number in the sequence:
 
-Podemos continuar este proceso para generar más números en la secuencia.&#x20;
+$$[ X_1 = (7 \times 3) \mod 31 = 21 ]$$
+2. We calculate the second number:
 
-_**Elección de Parámetros:**_&#x20;
+$$[ X_2 = (7 \times 21) \mod 31 = 23 ]$$
+3. We calculate the third number:
 
-La calidad del generador de Lehmer depende críticamente de la elección de $$m, a, y X_0​.$$
+$$[ X_3 = (7 \times 23) \mod 31 = 6 ]$$
 
-1. **Módulo m:** Debe ser un número primo grande. Una elección común, especialmente en máquinas de 32 bits, es $$m = 2^{31} − 1$$, que es un número primo de Mersenne.  &#x20;
-2. **Multiplicador a:** Debe elegirse cuidadosamente para asegurar un período completo (o casi completo) y buenas propiedades estadísticas. Un período completo para un generador multiplicativo con módulo primo m es $$m−1$$, lo que significa que la secuencia $$X_1​,X_2​,…,X_{m−1}$$​ contiene todos los enteros desde 1 hasta m−1 exactamente una vez, en algún orden.&#x20;
-   1. Se han realizado extensas investigaciones para encontrar _"buenos"_ multiplicadores. Por ejemplo, para $$m=2^{31}−1$$, un multiplicador comúnmente citado es $$a=7^5=16807$$, aunque otros como $$a=48271$$ también se han propuesto por sus buenas propiedades y eficiencia de implementación.  &#x20;
+We can continue this process to generate more numbers in the sequence.
 
-* **Semilla** $$X_0$$**​:** Debe ser un entero entre 1 y m−1. Diferentes semillas producirán diferentes secuencias (aunque relacionadas).
-* **Implementación:** Un desafío en la implementación es calcular $$aX_i$$​ sin que ocurra un desbordamiento (overflow) si el producto excede la capacidad máxima de representación de enteros de la computadora, antes de tomar el módulo m.
+_**Parameter Choice:**_&#x20;
 
-La generación de números $$U(0,1)$$ es el primer paso fundamental. La calidad de estos números impacta directamente la validez de todo el estudio de simulación.&#x20;
+The quality of the Lehmer generator depends critically on the choice of $$m, a, and X_0​.$$
+
+1. **Modulus m:** Must be a large prime number. A common choice, especially on 32-bit machines, is $$m = 2^{31} − 1$$, which is a Mersenne prime. &#x20;
+2. **Multiplier a:** Must be carefully chosen to ensure a full (or nearly full) period and good statistical properties. A full period for a multiplicative generator with prime modulo m is $$m−1$$, which means that the sequence $$X_1​,X_2​,…,X_{m−1}$$​ contains all integers from 1 to m−1 exactly once, in some order.&#x20;
+1. Extensive research has been done to find _"good"_ multipliers. For example, for $$m=2^{31}−1$$, a commonly cited multiplier is $$a=7^5=16807$$, although others such as $$a=48271$$ have also been proposed for their good properties and implementation efficiency. &#x20;
+
+* **Seed** $$X_0$$**​:** Must be an integer between 1 and m−1. Different seeds will produce different (albeit related) sequences.
+* **Implementation:** One challenge in the implementation is to calculate $$aX_i$$​ without overflowing if the product exceeds the computer's maximum integer representation capacity, before taking the modulo m.
+
+Generating $$U(0,1)$$ numbers is the first critical step. The quality of these numbers directly impacts the validity of the entire simulation study.&#x20;
 
 {% hint style="danger" %}
-Si el generador base es defectuoso (ej. no es uniforme, o los números no son independientes), entonces las variables aleatorias generadas a partir de él también serán defectuosas, y los resultados de la simulación no serán fiables, sin importar cuán sofisticado sea el resto del modelo
+If the base generator is flawed (e.g., it's not uniform, or the numbers are not independent), then the random variables generated from it will also be flawed, and the simulation results will be unreliable, no matter how sophisticated the rest of the model is.
 {% endhint %}
 
-### Pruebas de aleatoriedad e independencia
+--- 
 
-Dado que los generadores de números pseudoaleatorios son algoritmos deterministas, es crucial someter sus secuencias de salida a rigurosas pruebas estadísticas para evaluar si se comportan de manera suficientemente similar a secuencias verdaderamente aleatorias e independientes de una distribución. U(1,0)
+### Randomness and Independence Tests
+
+Since pseudorandom number generators are deterministic algorithms, it is crucial to subject their output sequences to rigorous statistical tests to assess whether they behave sufficiently similarly to truly random and independent sequences from a distribution. U(1,0)
 
 {% hint style="warning" %}
-Ningún generador es perfecto, y ninguna prueba puede "probar" que un generador es bueno; más bien, las pruebas pueden revelar si un generador es "malo" al no pasar ciertos criterios estadísticos
+No generator is perfect, and no test can "prove" that a generator is good; rather, tests can reveal whether a generator is "bad" by failing to meet certain statistical criteria.
 {% endhint %}
 
-Las dos propiedades fundamentales que se desean evaluar son la **uniformidad** y la **independencia**.
+The two fundamental properties that we want to evaluate are **uniformity** and **independence**.
 
-#### Pruebas de Uniformidad
+#### Uniformity Tests
 
 {% tabs %}
-{% tab title="Prueba Chi-cuadrado (χ2)" %}
-Es una herramienta estadística utilizada para evaluar la uniformidad en una secuencia de números pseudoaleatorios. Consiste en comparar la frecuencia observada de números en diferentes intervalos con las frecuencias esperadas, lo que permite determinar si los números están distribuidos de manera uniforme.
+{% tab title="Chi-square Test (χ2)" %}
+It is a statistical tool used to assess uniformity in a sequence of pseudorandom numbers. It involves comparing the observed frequencies of numbers in different intervals with the expected frequencies, which allows us to determine whether the numbers are uniformly distributed.
 
-1. Se divide el intervalo (0,1) en k subintervalos de igual longitud (1/k).
-2. Se genera una muestra de N números aleatorios $$U_i$$​.
-3. Se cuenta el número de observaciones $$(O_j​)$$ que caen en cada subintervalo j.
-4. Bajo la hipótesis nula de uniformidad, la frecuencia esperada $$(E_j​)$$ para cada subintervalo es $$N/k.$$
-5. Se calcula el estadístico de prueba: $$X_0^2​=∑_{j=1}^k \frac{​(Oj​−Ej​)^2}{Ej}​.$$
-6. Este estadístico se compara con un valor crítico de la distribución Chi-cuadrado con k−1 grados de libertad y un nivel de significancia α (ej. 0.05). Si $$χ_0^2$$​ es mayor que el valor crítico (o si el p-value es menor que α), se rechaza la hipótesis de uniformidad.
+1. The interval (0,1) is divided into k subintervals of equal length (1/k).
+2. A sample of N random numbers $$U_i$$​ is generated.
+3. The number of observations $$(O_j​)$$ that fall within each subinterval j is counted.
+4. Under the null hypothesis of uniformity, the expected frequency $$(E_j​)$$ for each subinterval is $$N/k.$$
+5. The test statistic is calculated: $$X_0^2​=∑_{j=1}^k \frac{​(Oj​−Ej​)^2}{Ej}​.$$
+6. This statistic is compared to a critical value from the Chi-square distribution with k−1 degrees of freedom and a significance level α (e.g., 0.05). If $$χ_0^2$$​ is greater than the critical value (or if the p-value is less than α), the uniformity hypothesis is rejected.
 
 ***
 {% endtab %}
 
-{% tab title="Prueba de Kolmogorov-Smirnov (K-S)" %}
-1. Se ordenan los N números generados $$U(1)​≤U(2)​≤…≤U(N)$$​.
-2. Se calcula la función de distribución acumulada empírica (FDAe) $$F_e​(x)=(número\ de\ U_i​≤x)/N$$.
-3. Para una distribución U(0,1), la FDA teórica es $$F_t​(x)=x\ para\ 0≤x≤1$$.
-4. El estadístico de prueba K-S es la máxima diferencia vertical absoluta entre $$F_e​(x)\ y\ F_t​(x): D_N​=max_{0≤x≤1}​∣F_e​(x)−F_t​(x)∣$$. En la práctica, se calcula como&#x20;
+{% tab title="Kolmogorov-Smirnov (K-S) Test" %}
+1. Sort the N generated numbers $$U(1)​≤U(2)​≤…≤U(N)$$​.
+2. Calculate the empirical cumulative distribution function (CDF) $$F_e​(x)=(number\ of\ U_i​≤x)/N$$.
+3. For a U(0,1) distribution, the theoretical CDF is $$F_t​(x)=x\ for\ 0≤x≤1$$.
+4. The K-S test statistic is the maximum absolute vertical difference between $$F_e​(x)\ and\ F_t​(x): D_N​=max_{0≤x≤1}​∣F_e​(x)−F_t​(x)∣$$. In practice, it is calculated as&#x20;
 
 $$
 D_N = \max\left\{ \max_{1 \le j \le N} \left( \frac{j}{N} - U_{(j)} \right), \max_{1 \le j \le N} \left( U_{(j)} - \frac{j-1}{N} \right) \right\}
 $$
 
-1. $$D_N​$$ se compara con un valor crítico de la distribución de Kolmogorov-Smirnov para el tamaño de muestra N y nivel de significancia α. _**Si**_ $$D_N$$_**​ es mayor que el valor crítico, se rechaza la hipótesis de uniformidad.**_
+1. $$D_N​$$ is compared to a critical value of the Kolmogorov-Smirnov distribution for sample size N and significance level α. _**If**_ $$D_N$$_**​ is greater than the critical value, the uniformity hypothesis is rejected.**_
 {% endtab %}
 {% endtabs %}
 
 {% tabs %}
-{% tab title="Ejemplo de chi cuadrado" %}
-Imaginemos que hemos recolectado $$n=100$$ observaciones de una variable continua y queremos verificar si estos datos pueden ser modelados por una distribución normal.
+{% tab title="Chi-square Example" %}
+Let's imagine we have collected $$n=100$$ observations of a continuous variable and we want to verify whether these data can be modeled by a normal distribution.
 
-#### 1. Estimar Parámetros y Definir Intervalos
+#### 1. Estimate Parameters and Define Intervals
 
-Primero, necesitamos la media y la desviación estándar de nuestra muestra. Supongamos que para nuestros datos:
+First, we need the mean and standard deviation of our sample. Suppose for our data:
 
-* Media muestral $$(\bar{x}) = 50$$
-* Desviación estándar muestral $$(s) = 10$$
+* Sample mean $$(\bar{x}) = 50$$
+* Sample standard deviation $$(s) = 10$$
 
-A continuación, dividimos el rango de los datos en k intervalos. Es crucial que la frecuencia esperada para cada intervalo $$(E_i)$$ sea suficientemente grande, generalmente, $$E_i \ge 5$$. Para este ejemplo, seleccionaremos k=5 intervalos.
+Next, we divide the data range into k intervals. It is crucial that the expected frequency for each interval $$(E_i)$$ be sufficiently large, typically $$E_i \ge 5$$. For this example, we will select k=5 intervals.
 
-Los límites de los intervalos se definen y luego se estandarizan (convierten a puntuaciones Z) usando $$\bar{x} \ y\  s$$:clap:
+The interval boundaries are defined and then standardized (converted to Z scores) using $$\bar{x} \ y\ s$$:clap:
 
-| Intervalo (Datos Originales) | Límites Z (Estandarizados)         |
+| Interval (Original Data) | Límit Z (Estandarizated)         |
 | ---------------------------- | ---------------------------------- |
 | X < 40                       | $$Z < (40-50)/10 = -1.0$$          |
 | $$40 \le X < 45$$            | $$-1.0 \le Z < (45-50)/10 = -0.5$$ |
@@ -207,11 +363,11 @@ Los límites de los intervalos se definen y luego se estandarizan (convierten a 
 | $$55 \le X < 60$$            | $$0.5 \le Z < (60-50)/10 = 1.0$$   |
 | $$X \ge 60$$                 | $$Z \ge 1.0$$                      |
 
-#### 2. Calcular Frecuencias Observadas (O\_i)
+#### 2. Calculate Observed Frequencies (O\_i)
 
-Contamos el número de datos de nuestra muestra que caen dentro de cada uno de los intervalos definidos:
+We count the number of data in our sample that fall within each of the defined intervals:
 
-| Intervalo         | Frecuencia Observada (O\_i) |
+| Interval          |  Observed Frecuence  (O\_i) |
 | ----------------- | --------------------------- |
 | X < 40            | 18                          |
 | $$40 \le X < 45$$ | 15                          |
@@ -220,11 +376,11 @@ Contamos el número de datos de nuestra muestra que caen dentro de cada uno de l
 | $$X \ge 60$$      | 18                          |
 | **Total**         | **100**                     |
 
-#### 3. Calcular Frecuencias Esperadas (E\_i)
+#### 3. Calculate Expected Frequencies (E\_i)
 
-Para cada intervalo, determinamos la probabilidad de que un valor de una distribución normal estándar caiga dentro de sus límites Z. Luego, multiplicamos esta probabilidad por el tamaño total de la muestra (n=100) para obtener E\_i.
+For each interval, we determine the probability that a value from a standard normal distribution falls within its Z limits. We then multiply this probability by the total sample size (n=100) to obtain E\_i.
 
-| Intervalo         | Límites Z             | P(Intervalo) (Prob. Normal Estándar)    | E\_i = n . P(Intervalo})     |
+| Interval          | Límit  Z              | P(Interval)  (Prob. Normal Stándar)     | E\_i = n . P(Interval})      |
 | ----------------- | --------------------- | --------------------------------------- | ---------------------------- |
 | X < 40            | $$Z < -1.0$$          | $$P(Z < -1.0) \approx 0.1587$$          | $$100 \cdot 0.1587 = 15.87$$ |
 | $$40 \le X < 45$$ | $$-1.0 \le Z < -0.5$$ | $$P(-1.0 \le Z < -0.5) \approx 0.1498$$ | $$100 \cdot 0.1498 = 14.98$$ |
@@ -234,14 +390,14 @@ Para cada intervalo, determinamos la probabilidad de que un valor de una distrib
 | **Total**         |                       | $$\approx 1.0$$                         | $$\approx 100$$              |
 
 {% hint style="warning" %}
-_Las probabilidades_ $$P(\text{Intervalo})$$ _se obtienen de una tabla de distribución normal estándar (tabla Z) o usando software estadístico._
+The probabilities $$P(\text{Interval})$$ are obtained from a standard normal distribution table (Z-table) or using statistical software._
 {% endhint %}
 
-#### 4. Calcular el Estadístico $$\chi^2$$
+#### 4. Calculate the $$\chi^2$$ Statistic
 
-Utilizamos las frecuencias observadas (O\_i) y esperadas (E\_i) para calcular el estadístico $$\chi^2$$
+We use the observed (O\_i) and expected (E\_i) frequencies to calculate the $$\chi^2$$ statistic
 
-| Intervalo         | O\_i | E\_i  | O\_i - E\_i | (O\_i - E\_i)^2 | (O\_i - E\_i)^2 / E\_i    |
+| Interval          | O\_i | E\_i  | O\_i - E\_i | (O\_i - E\_i)^2 | (O\_i - E\_i)^2 / E\_i    |
 | ----------------- | ---- | ----- | ----------- | --------------- | ------------------------- |
 | $$X < 40$$        | 18   | 15.87 | 2.13        | 4.5369          | $$\approx 0.2859$$        |
 | $$40 \le X < 45$$ | 15   | 14.98 | 0.02        | 0.0004          | $$\approx 0.00002$$       |
@@ -250,67 +406,67 @@ Utilizamos las frecuencias observadas (O\_i) y esperadas (E\_i) para calcular el
 | $$X \ge 60$$      | 18   | 15.87 | 2.13        | 4.5369          | $$\approx 0.2859$$        |
 | **Total**         |      |       |             |                 | $$\chi^2 \approx 0.9704$$ |
 
-El valor calculado del estadístico es $$\chi^2_{calculado} \approx 0.9704$$.
+The calculated value of the statistic is $$\chi^2_{calculated} \approx 0.9704$$.
 
-#### 5. Determinar Grados de Libertad (gl)
+#### 5. Determine Degrees of Freedom (df)
 
-Los grados de libertad para esta prueba se calculan como:
+The degrees of freedom for this test are calculated as:
 
 $$
 gl = k - 1 - m
 $$
 
-Donde:
+Where:
 
-* k = número de intervalos (5 en nuestro ejemplo).
-* m = número de parámetros de la distribución que fueron estimados a partir de la muestra. Para una distribución normal, estimamos la media y la desviación estándar, por lo que m=2.
+* k = number of intervals (5 in our example).
+* m = number of distribution parameters estimated from the sample. For a normal distribution, we estimate the mean and standard deviation, so m = 2.
 
-Entonces, $$gl = 5 - 1 - 2 = 2$$
+So, $$df = 5 - 1 - 2 = 2$$
 
-#### 6. Tomar una Decisión Estadística
+#### 6. Making a Statistical Decision
 
-1. Elegimos un nivel de significancia, comúnmente $$\alpha = 0.05$$.
-2. Buscamos el valor crítico de $$\chi^2$$ en una tabla de distribución Chi-cuadrado (o usando software) para $$gl=2\ y\ \alpha=0.05$$.\
-   El valor $$\chi^2_{critico}(2, 0.05)$$ es aproximadamente 5.991.
+1. We choose a significance level, typically $$\alpha = 0.05$$.
+2. We look for the critical value of $$\chi^2$$ in a Chi-square distribution table (or using software) for $$df=2\ and\ \alpha=0.05$$.\
+The value $$\chi^2_{critical}(2, 0.05)$$ is approximately 5.991.
 
-**Regla de decisión:**
+**Decision Rule:**
 
-* Si $$\chi^2_{calculado} > \chi^2_{critico}$$, rechazamos H\_0.
-* Si $$\chi^2_{calculado} \le \chi^2_{critico}$$, no rechazamos H\_0.
+* If $$\chi^2_{calculated} > \chi^2_{critical}$$, we reject H\_0.
+* If $$\chi^2_{calculated} \le \chi^2_{critical}$$, we fail to reject H\_0.
 
-En nuestro ejemplo: $$0.9704 \le 5.991.$$
+In our example: $$0.9704 \le 5.991.$$
 
-#### 7. Conclusión
+#### 7. Conclusion
 
-Dado que el valor calculado de $$\chi^2 (0.9704)$$ es menor que el valor crítico (5.991) para un nivel de significancia de 0.05, no rechazamos la hipótesis nula (H\_0).&#x20;
+Since the calculated value of $$\chi^2 (0.9704)$$ is less than the critical value (5.991) for a significance level of 0.05, we fail to reject the null hypothesis (H\_0).
 
-Esto significa que no tenemos suficiente evidencia estadística para concluir que los datos de la muestra no siguen una distribución normal.
+This means that we do not have sufficient statistical evidence to conclude that the sample data do not follow a normal distribution.
 
 ***
 {% endtab %}
 
-{% tab title="Ejemplo de la Prueba K-S" %}
-## Prueba de Normalidad de Kolmogorov-Smirnov (KS)
+{% tab title="K-S Test Example" %}
+## Kolmogorov-Smirnov (KS) Normality Test
 
 ***
 
-#### Hipótesis
+#### Hypothesis
 
-* $$H_0$$: Los datos siguen una distribución normal.
-* $$H_1$$: Los datos no siguen una distribución normal.
+* $$H_0$$: The data follow a normal distribution.
+* $$H_1$$: The data do not follow a normal distribution.
 
 ***
 
-#### Estadístico de Prueba (D)
+#### Test Statistic (D)
 
-El estadístico de prueba de Kolmogorov-Smirnov, D, es la máxima diferencia absoluta entre la ECDF de la muestra $$S_n(x)$$ y la CDF teórica de la distribución normal F(x):
+The Kolmogorov-Smirnov test statistic, D, is the maximum absolute difference between the sample CDF $$S_n(x)$$ and the theoretical CDF of the normal distribution F(x):
 
 $$
 D = \sup_x |S_n(x) - F(x)|
 $$
 
-Para el cálculo práctico con una muestra ordenada $$x_{(1)}, x_{(2)}, \ldots, x_{(n)}$$:\
-Primero se calculan $$D^+\ y\ D^-$$:
+For practical calculations with an ordered sample $$x_{(1)}, x_{(2)}, \ldots, x_{(n)}$$:\
+First, $$D^+\ and\ D^-$$ are calculated:
 
 $$D^+ = \max_{1 \le i \le n} \left( \frac{i}{n} - F(x_{(i)}) \right)$$
 
@@ -318,36 +474,36 @@ $$
 D^- = \max_{1 \le i \le n} \left( F(x_{(i)}) - \frac{i-1}{n} \right)
 $$
 
-Entonces, el estadístico D es el máximo de estos dos valores:
+Then, the statistic D is the maximum of these two values:
 
 $$
 D = \max(D^+, D^-)
 $$
 
-Donde:
+Where:
 
-* n es el tamaño de la muestra.
-* $$x_{(i)}$$ es el i-ésimo valor más pequeño en la muestra (datos ordenados).
-* $$S_n(x_{(i)}) = i/n$$ es el valor de la ECDF en $$x_{(i)}$$
-* $$F(x_{(i)})$$ es el valor de la CDF teórica de la distribución normal evaluada en $$x_{(i)}$$, utilizando la media $$(\mu)$$ y desviación estándar $$(\sigma)$$ especificadas (o estimadas de la muestra para la prueba de Lilliefors).
+* n is the sample size. * $$x_{(i)}$$ is the ith smallest value in the sample (ordered data).
+* $$S_n(x_{(i)}) = i/n$$ is the value of the ECDF at $$x_{(i)}$$
+* $$F(x_{(i)})$$ is the value of the theoretical CDF of the normal distribution evaluated at $$x_{(i)}$$, using the specified mean $$(\mu)$$ and standard deviation $$(\sigma)$$ (or estimated from the sample for the Lilliefors test).
 
 ***
 
-#### Ejemplo Paso a Paso
+#### Step-by-Step Example
 
-Supongamos que tenemos una muestra pequeña de n=5 observaciones: $$X = {10, 12, 15, 16, 20}$$. Queremos probar si provienen de una distribución normal.
+Suppose we have a small sample of n = 5 observations: $$X = {10, 12, 15, 16, 20}$$. We want to test whether they come from a normal distribution.
 
-**Pasos:**
+**Steps:**
 
-1. **Ordenar los Datos:**\
-   Los datos ya están ordenados: $$x_{(1)}=10, x_{(2)}=12, x_{(3)}=15, x_{(4)}=16, x_{(5)}=20$$.
-2. **Estimar Parámetros de la Distribución Normal (para prueba de Lilliefors):**\
-   Calculamos la media muestral $$(\bar{x})$$ y la desviación estándar muestral (s).
-   * $$\bar{x} = (10+12+15+16+20)/5 = 73/5 = 14.6$$
-   * $$s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}} = \sqrt{\frac{(10-14.6)^2 + (12-14.6)^2 + (15-14.6)^2 + (16-14.6)^2 + (20-14.6)^2}{4}}$$
-   * $$s = \sqrt{\frac{(-4.6)^2 + (-2.6)^2 + (0.4)^2 + (1.4)^2 + (5.4)^2}{4}} = \sqrt{\frac{21.16 + 6.76 + 0.16 + 1.96 + 29.16}{4}} = \sqrt{\frac{59.2}{4}} = \sqrt{14.8} \approx 3.847$$
-3.  **Calcular** $$F(x_{(i)}), S_n(x_{(i)})$$ **y las diferencias:**\
-    Para cada $$x_{(i)}$$, calculamos $$F(x_{(i)})$$ usando la CDF de una normal con $$\mu=14.6$$ y $$\sigma=3.847$$. Esto implica estandarizar cada $$x_{(i)}$$ a $$z_{(i)} = (x_{(i)} - \bar{x})/s$$ y luego encontrar $$P(Z \le z_{(i)})$$
+1. **Sort the Data:**\
+The data are already sorted: $$x_{(1)}=10, x_{(2)}=12, x_{(3)}=15, x_{(4)}=16, x_{(5)}=20$$.
+2. **Estimate Normal Distribution Parameters (for Lilliefors test):**\
+We calculate the sample mean $$(\bar{x})$$ and the sample standard deviation (s).
+* $$\bar{x} = (10+12+15+16+20)/5 = 73/5 = 14.6$$ 
+* $$s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}} = \sqrt{\frac{(10-14.6)^2 + (12-14.6)^2 + (15-14.6)^2 + (16-14.6)^2 + (20-14.6)^2}{4}}$$ 
+* $$s = \sqrt{\frac{(-4.6)^2 + (-2.6)^2 + (0.4)^2 + (1.4)^2 + (5.4)^2}{4}} = \sqrt{\frac{21.16 + 6.76 + 0.16 + 1.96 + 29.16}{4}} = \sqrt{\frac{59.2}{4}} = \sqrt{14.8} \approx 3.847$$
+3. **Calculate** $$F(x_{(i)}), S_n(x_{(i)})$$ **and the differences:**\
+For each $$x_{(i)}$$, we calculate $$F(x_{(i)})$$ using the one-normal CDF with $$\mu=14.6$$ and $$\sigma=3.847$$. This involves standardizing each $$x_{(i)}$$ to $$z_{(i)} = (x_{(i)} - \bar{x})/s$$ and then finding $$P(Z \le z_{(i)})$$
+
 
     |  i  | x\_(i) |    z\_(i) = x\_(i)-14.6)/3.847$    | $F(x\_{(i)}) = P(Z \le z\_{(i)})$ | S\_n(x\_(i)) = i/n | $\frac{i-1}{n}$ | $D\_i^+ = \frac{i}{n} - F(x\_{(i)})$ | $D\_i^- = F(x\_{(i)}) - \frac{i-1}{n}$ |
     | :-: | :----: | :--------------------------------: | :-------------------------------: | :----------------: | :-------------: | :----------------------------------: | :------------------------------------: |
