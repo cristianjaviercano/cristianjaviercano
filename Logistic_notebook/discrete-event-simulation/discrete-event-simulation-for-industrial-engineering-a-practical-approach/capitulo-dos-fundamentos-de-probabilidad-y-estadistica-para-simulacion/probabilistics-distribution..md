@@ -2,5 +2,6 @@
 icon: chart-area
 ---
 
-# Distribuciones de probabilidad.
+# Probabilistics Distribution.
 
+hola este es
