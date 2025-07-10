@@ -1,213 +1,213 @@
-# Bloque de Ejercicios Capitulo 2.1
+# Exercise Block Chapter 2.1
 
-En esta sección, profundizaremos en los problemas planteados en el capítulo dos del contenido. Analizaremos los conceptos clave, brindando una comprensión detallada y abordando posibles soluciones y enfoques críticos para resolver los desafíos presentados.
-
-***
-
-### Ejercicios 2.1. probabilidad
-
-Para cada uno de los siguientes problemas, el estudiante deberá:
-
-1. **Identificar y describir el Espacio Muestral (S)** en forma de conjunto.
-2. **Construir un Diagrama de Árbol** que represente el experimento y sus posibles resultados finales.
-3. **Generar una Muestra Aleatoria** de 1000 observaciones de este experimento utilizando **Python** o **Excel**. Si se utiliza Python, se espera un script sencillo que simule el experimento y almacene los resultados. Si se utiliza Excel, se deben describir las funciones y la metodología empleada.
-
-<details>
-
-<summary>Ejercicio 2.1.1</summary>
-
-Se lanza una moneda justa **tres veces consecutivas**. Se registra la secuencia de caras (C) y sellos (S).
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.2</summary>
-
-Un inspector de calidad selecciona **dos artículos al azar** de una línea de producción. Cada artículo puede ser categorizado como **Aceptable (A)**, **Defectuoso (D)**, **Requiere Ajuste (R)** o **Descontinuado (X)**. Se registra el estado de cada
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.3</summary>
-
-Una empresa de ingeniería está evaluando el éxito de sus proyectos de Investigación y Desarrollo (I+D). Un proyecto puede tener **Éxito Técnico (ET)** o **Fallo Técnico (FT)**. Adicionalmente, puede resultar en un **Beneficio Económico (BE)** o una **Pérdida Económica (PE)**. Se considera un proyecto de I+D y se registran ambos resultados.
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.4</summary>
-
-En un almacén, se monitorea el nivel de inventario de un producto (alto (H), medio (M), bajo (B)) y la demanda diaria de ese producto (alta (D\_A), baja (D\_B)). Se observa el estado del inventario y la demanda un día particular.
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.5</summary>
-
-Un equipo de proyecto debe formarse con dos miembros seleccionados de un grupo de candidatos que consta de **un ingeniero (I)**, **un economista (E)** y **un diseñador (D)**. Los dos miembros se seleccionan aleatoriamente, **sin reemplazo**, y el orden de selección importa.
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.6</summary>
-
-Consideremos los resultados de la primera inspección como categorías iniciales: **D** (defectuoso), **M** (con defectos menores), y **A** (aceptable). Si es 'M', una segunda inspección clasifica como **A'** (aceptable después de ajuste) o **D'** (definitivamente defectuoso).
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.7</summary>
-
-Una prueba de software arroja dos posibles resultados: **Pasa (P)** o **Falla (F)**. Si falla, el fallo puede ser clasificado como **Crítico (C)** o **No Crítico (NC)**. Se realiza una prueba a una nueva versión del software y se registra su resultado.
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.8</summary>
-
-Un inversor considera una inversión en una _startup_. La primera decisión es si **Invertir (I)** o **No Invertir (NI)**. Si decide invertir, la _startup_ puede tener **Éxito (E)** o **Fallo (F)** en el mercado. Si tiene éxito, el inversor obtiene una **Gran Ganancia (GG)** o una **Pequeña Ganancia (PG)**. Si falla, solo puede haber una **Pérdida (P)**. Si decide no invertir, su resultado es **Sin Ganancia ni Pérdida (SGNP)**
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.9</summary>
-
-Un estudiante solicita admisión a una universidad. La primera etapa es la **Revisión de Documentos (RD)**, cuyo resultado puede ser **Aprobado (A\_RD)** o **Rechazado (R\_RD)**. Si es aprobado, pasa a la **Entrevista Personal (EP)**, donde puede ser **Aceptado (A\_EP)** o **Rechazado (R\_EP)**.
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.1.10</summary>
-
-Se monitorea el rendimiento de una máquina en una línea de producción. La máquina puede estar **Operativa (O)** o **Inoperativa (I)**. Si está Operativa, puede producir con **Alta Eficiencia (AE)** o **Baja Eficiencia (BE)**. Si está Inoperativa, se clasifica si la falla es **Menor (FM)** o **Mayor (FMy)**.
-
-</details>
+In this section, we will delve into the problems presented in chapter two of the content. We will analyze the key concepts, providing a detailed understanding and addressing possible solutions [...]
 
 ***
 
-### Bloque de ejercicios 2.2
+### Exercises 2.1. Probability
+
+For each of the following problems, the student must:
+
+1. **Identify and describe the Sample Space (S)** as a set.
+2. **Construct a Tree Diagram** that represents the experiment and its possible final outcomes.
+3. **Generate a Random Sample** of 1000 observations from this experiment using **Python** or **Excel**. If Python is used, a simple script is expected to simulate the experiment and store the result[...]
 
 <details>
 
-<summary><strong>Problema 1: Monitoreo de Parámetros de Proceso</strong></summary>
+<summary>Exercise 2.1.1</summary>
 
-En un proceso industrial, se monitorean dos parámetros críticos para asegurar la calidad de un producto: la **temperatura (T)** y la **presión (P)**. Se considera que el proceso está **bajo control (C)** si la temperatura está dentro del rango óptimo y la presión está dentro del rango óptimo. Si cualquiera de los parámetros está fuera de rango, se considera **fuera de control (FC)**.
-
-Se selecciona un producto al azar y se registra el estado de sus parámetros.
-
-1. **Espacio Muestral (S):** Defina el espacio muestral que represente las combinaciones posibles de los estados de temperatura y presión (e.g., (T\_opt, P\_opt)).
-2. **Eventos:**
-   * **Evento A**: La temperatura está dentro del rango óptimo.
-   * **Evento B**: La presión está dentro del rango óptimo.
-3. **Intersección:**
-   * Describa el **evento A∩B** (la intersección de A y B) en palabras.
-   * Enumere los elementos de **A∩B** como un subconjunto de S.
-   * ¿Qué significa este evento en el contexto del problema?
+A fair coin is tossed **three consecutive times**. The sequence of heads (H) and tails (T) is recorded.
 
 </details>
 
 <details>
 
-<summary><strong>Problema 2: Lanzamiento de Dos Dados</strong></summary>
+<summary>Exercise 2.1.2</summary>
 
-Se lanzan simultáneamente **dos dados justos de seis caras** (uno rojo y uno azul) y se registra el resultado de la cara superior de cada dado.
-
-1. **Espacio Muestral (S):** Defina el espacio muestral de este experimento como el conjunto de pares ordenados (resultado dado rojo, resultado dado azul). No es necesario listar todos los 36 elementos, pero sí cómo se conformaría el conjunto.
-2. **Eventos:**
-   * **Evento X**: La suma de los números de los dos dados es 7.
-   * **Evento Y**: El número del dado rojo es mayor que 4.
-3. **Intersección:**
-   * Describa el **evento X∩Y** en palabras.
-   * Enumere los elementos de **X∩Y** como un subconjunto de S.
+A quality inspector randomly selects **two items** from a production line. Each item can be categorized as **Acceptable (A)**, **Defective (D)**, **Requires Adjustment (R)**, or **Rework (W)**.
 
 </details>
 
 <details>
 
-<summary><strong>Problema 3: Encuesta de Preferencias de Software</strong></summary>
+<summary>Exercise 2.1.3</summary>
 
-Una empresa de ingeniería realiza una encuesta a sus empleados sobre su preferencia de software para análisis de datos. Los empleados pueden preferir **Python (P)**, **R (R)**, **ambos**, o **ninguno**. Se selecciona a un empleado al azar.
-
-1. **Espacio Muestral (S):** Defina el espacio muestral que representa las posibles preferencias del empleado.
-2. **Eventos:**
-   * **Evento M**: El empleado prefiere Python.
-   * **Evento N**: El empleado prefiere R.
-3. **Intersección:**
-   * Describa el **evento M∩N** en palabras.
-   * Enumere los elementos de **M∩N** como un subconjunto de S.
-   * ¿Qué implicación tiene este evento para el uso de software en la empresa?
+An engineering company is evaluating the success of its Research and Development (R&D) projects. A project can have **Technical Success (TS)** or **Technical Failure (TF)**. Additionally, [...]
 
 </details>
 
 <details>
 
-<summary><strong>Problema 4: Resultados de una Auditoría de Seguridad</strong></summary>
+<summary>Exercise 2.1.4</summary>
 
-En una auditoría de seguridad informática, se clasifica un sistema en función de dos criterios: si presenta **vulnerabilidades críticas (VC)** y si ha sufrido **brechas de seguridad (BS)** en el último año. Un sistema puede tener vulnerabilidades críticas o no (VCc), y puede haber sufrido brechas o no (BSc).
-
-Se selecciona un sistema al azar para la auditoría.
-
-1. **Espacio Muestral (S):** Defina el espacio muestral de las posibles combinaciones de resultados de la auditoría (e.g., (VC, BS)).
-2. **Eventos:**
-   * **Evento G**: El sistema no presenta vulnerabilidades críticas.
-   * **Evento H**: El sistema ha sufrido brechas de seguridad.
-3. **Disjunción:**
-   * Determine si los **eventos G y H son disjuntos**. Justifique su respuesta basándose en su definición de conjuntos.
-   * Describa **G∩H**.
+In a warehouse, the inventory level of a product is monitored (high (H), medium (M), low (L)) and the daily demand for that product (high (D_H), low (D_L)). The inventory status and demand are observe[...]
 
 </details>
 
 <details>
 
-<summary><strong>Problema 6: Clasificación de Defectos en un Producto</strong></summary>
+<summary>Exercise 2.1.5</summary>
 
-En la inspección final de un producto, se registran los tipos de defectos encontrados. Los posibles defectos son: **rayones (R)**, **abolladuras (A)**, y **fallas electrónicas (FE)**. Un producto puede tener uno o más de estos defectos, o ninguno.
-
-Se selecciona un producto al azar de la línea de producción.
-
-1. **Espacio Muestral (S):** Enumere un espacio muestral que represente si un producto tiene o no cada uno de los tipos de defectos (e.g., (No R, No A, No FE), (R, No A, No FE), etc.). Considere que el producto puede no tener ningún defecto.
-2. **Eventos:**
-   * **Evento J**: El producto tiene al menos un rayón.
-   * **Evento K**: El producto tiene solo abolladuras (y ningún otro defecto).
-   * **Evento L**: El producto no tiene ningún defecto.
-3. **Disjunción:**
-   * ¿Son los **eventos K y L disjuntos**? Justifique su respuesta y describa su intersección.
-   * ¿Son los **eventos J y L disjuntos**? Justifique su respuesta y describa su intersección.
+A project team must be formed with two members selected from a group of candidates consisting of **an engineer (E)**, **an economist (Ec)**, and **a designer (D)**. The two members are selected [...]
 
 </details>
 
 <details>
 
-<summary>Problema 7: Gestión de Proyectos Múltiples</summary>
+<summary>Exercise 2.1.6</summary>
 
-Una empresa de ingeniería gestiona simultáneamente **tres proyectos distintos**: el Proyecto Alfa (α), el Proyecto Beta (β) y el Proyecto Gamma (γ). Al final de cada trimestre, cada proyecto es evaluado y clasificado en una de dos categorías mutuamente excluyentes: **Éxito (E)** o **Fallo (F)**.
+Let’s consider the results of the first inspection as initial categories: **D** (defective), **M** (minor defects), and **A** (acceptable). If it is 'M', a second inspection classifies according to [...]
 
-Un gerente de proyectos está interesado en analizar los resultados trimestrales de estos tres proyectos. Se registra el resultado de cada proyecto.
+</details>
 
-#### Requerimientos:
+<details>
 
-1. **Espacio Muestral (S):**
-   * Defina el espacio muestral (S) que represente todos los posibles resultados combinados de los tres proyectos al final del trimestre. Los elementos de S deben ser tuplas ordenadas (resultado α, resultado β, resultado γ).
-   * Describa S en forma de conjunto.
-2. **Definición de Eventos en Forma de Conjunto:** Describa los siguientes eventos como subconjuntos de S:
-   * **Evento A**: Al menos dos de los proyectos resultan en Éxito.
-   * **Evento B**: El Proyecto Alfa resulta en Éxito y el Proyecto Beta resulta en Fallo.
-   * **Evento C**: Todos los proyectos tienen el mismo resultado (todos Éxito o todos Fallo).
-   * **Evento D**: Solo uno de los proyectos resulta en Éxito.
-3.  **Análisis de Intersecciones:** Para los siguientes pares de eventos, realice lo siguiente:
+<summary>Exercise 2.1.7</summary>
 
-    * Describa la **intersección** en palabras.
-    * Liste los elementos de la intersección como un subconjunto de S.
-    * Determine si los eventos son **mutuamente excluyentes (disjuntos)**. Justifique su respuesta.
+A software test yields two possible results: **Pass (P)** or **Fail (F)**. If it fails, the failure can be classified as **Critical (C)** or **Non-Critical (NC)**. A test is performed on a [...]
+
+</details>
+
+<details>
+
+<summary>Exercise 2.1.8</summary>
+
+An investor is considering an investment in a startup. The first decision is whether to **Invest (I)** or **Not Invest (NI)**. If they decide to invest, the startup can have **Success (S)** or **Failu[...]
+
+</details>
+
+<details>
+
+<summary>Exercise 2.1.9</summary>
+
+A student applies for admission to a university. The first stage is **Document Review (DR)**, which can result in **Approved (A_DR)** or **Rejected (R_DR)**. If approved, they move on to [...]
+
+</details>
+
+<details>
+
+<summary>Exercise 2.1.10</summary>
+
+The performance of a machine on a production line is monitored. The machine can be **Operational (O)** or **Non-Operational (NO)**. If it is Operational, it can produce with **High Efficiency (HE)[...]
+
+</details>
+
+***
+
+### Exercise Block 2.2
+
+<details>
+
+<summary><strong>Problem 1: Monitoring Process Parameters</strong></summary>
+
+In an industrial process, two critical parameters are monitored to ensure product quality: **temperature (T)** and **pressure (P)**. The process is considered **under control** if [...]
+
+A product is randomly selected and the status of its parameters is recorded.
+
+1. **Sample Space (S):** Define the sample space representing the possible combinations of temperature and pressure states (e.g., (T_opt, P_opt)).
+2. **Events:**
+   * **Event A**: Temperature is within the optimal range.
+   * **Event B**: Pressure is within the optimal range.
+3. **Intersection:**
+   * Describe the **event A∩B** (the intersection of A and B) in words.
+   * List the elements of **A∩B** as a subset of S.
+   * What does this event mean in the context of the problem?
+
+</details>
+
+<details>
+
+<summary><strong>Problem 2: Rolling Two Dice</strong></summary>
+
+**Two fair six-sided dice** (one red and one blue) are rolled simultaneously and the result of the upper face of each die is recorded.
+
+1. **Sample Space (S):** Define the sample space of this experiment as the set of ordered pairs (result red die, result blue die). It is not necessary to list all 36 elements[...]
+2. **Events:**
+   * **Event X**: The sum of the numbers on the two dice is 7.
+   * **Event Y**: The number on the red die is greater than 4.
+3. **Intersection:**
+   * Describe **event X∩Y** in words.
+   * List the elements of **X∩Y** as a subset of S.
+
+</details>
+
+<details>
+
+<summary><strong>Problem 3: Software Preference Survey</strong></summary>
+
+An engineering company conducts a survey among its employees about their preferred software for data analysis. Employees may prefer **Python (P)**, **R (R)**, **both**, or **none**.
+
+1. **Sample Space (S):** Define the sample space representing the possible employee preferences.
+2. **Events:**
+   * **Event M**: The employee prefers Python.
+   * **Event N**: The employee prefers R.
+3. **Intersection:**
+   * Describe **event M∩N** in words.
+   * List the elements of **M∩N** as a subset of S.
+   * What implication does this event have for software use in the company?
+
+</details>
+
+<details>
+
+<summary><strong>Problem 4: Security Audit Results</strong></summary>
+
+In an IT security audit, a system is classified according to two criteria: whether it presents **critical vulnerabilities (CV)** and whether it has suffered **security breaches (SB)** in the past year[...]
+
+A system is randomly selected for the audit.
+
+1. **Sample Space (S):** Define the sample space of the possible combinations of audit results (e.g., (CV, SB)).
+2. **Events:**
+   * **Event G**: The system does not present critical vulnerabilities.
+   * **Event H**: The system has suffered security breaches.
+3. **Disjunction:**
+   * Determine whether **events G and H are disjoint**. Justify your answer based on your set definitions.
+   * Describe **G∩H**.
+
+</details>
+
+<details>
+
+<summary><strong>Problem 6: Classification of Defects in a Product</strong></summary>
+
+In the final inspection of a product, the types of defects found are recorded. Possible defects are: **scratches (S)**, **dents (D)**, and **electronic failures (EF)**. A product may [...]
+
+A product is randomly selected from the production line.
+
+1. **Sample Space (S):** List a sample space that represents whether a product has each type of defect or not (e.g., (No S, No D, No EF), (S, No D, No EF), etc.). Consider that e[...]
+2. **Events:**
+   * **Event J**: The product has at least one scratch.
+   * **Event K**: The product has only dents (and no other defect).
+   * **Event L**: The product has no defect.
+3. **Disjunction:**
+   * Are **events K and L disjoint**? Justify your answer and describe their intersection.
+   * Are **events J and L disjoint**? Justify your answer and describe their intersection.
+
+</details>
+
+<details>
+
+<summary>Problem 7: Management of Multiple Projects</summary>
+
+An engineering company manages **three different projects** simultaneously: Project Alpha (α), Project Beta (β), and Project Gamma (γ). At the end of each quarter, each project is evaluated as e[...]
+
+A project manager is interested in analyzing the quarterly results of these three projects. The result of each project is recorded.
+
+#### Requirements:
+
+1. **Sample Space (S):**
+   * Define the sample space (S) representing all possible combined outcomes of the three projects at the end of the quarter. The elements of S must be ordered tuples (result α, result β, result γ[...]
+   * Describe S as a set.
+2. **Definition of Events as Sets:** Describe the following events as subsets of S:
+   * **Event A**: At least two projects result in Success.
+   * **Event B**: Project Alpha results in Success and Project Beta in Failure.
+   * **Event C**: All projects have the same result (all Success or all Failure).
+   * **Event D**: Only one project results in Success.
+3.  **Intersection Analysis:** For the following pairs of events, do the following:
+
+    * Describe the **intersection** in words.
+    * List the elements of the intersection as a subset of S.
+    * Determine if the events are **mutually exclusive (disjoint)**. Justify your answer.
 
     a) **A∩B** b) **B∩C** c) **C∩D**
 
@@ -215,142 +215,142 @@ Un gerente de proyectos está interesado en analizar los resultados trimestrales
 
 ***
 
-### Bloque de ejercicios 2.3
+### Exercise Block 2.3
 
-Para cada uno de los siguientes problemas, el estudiante deberá:
+For each of the following problems, the student must:
 
-1. **Identificar y describir el Espacio Muestral (S)** en forma de conjunto.
-2. **Definir los Eventos** dados como subconjuntos de S.
-3. **Describir en palabras** las operaciones de conjuntos solicitadas.
-4. **Enumerar los elementos** resultantes de cada operación de conjuntos solicitada.
-5. **Construir un Diagrama de Venn** que ilustre los conjuntos involucrados y la región que representa la operación solicitada.
-6. **Graficar el Diagrama de Venn en Python** utilizando una librería adecuada (como `matplotlib_venn` o `matplotlib` para una representación simple si la primera no está disponible).
+1. **Identify and describe the Sample Space (S)** as a set.
+2. **Define the given Events** as subsets of S.
+3. **Describe in words** the requested set operations.
+4. **List the resulting elements** of each requested set operation.
+5. **Construct a Venn Diagram** illustrating the involved sets and the region representing the requested operation.
+6. **Plot the Venn Diagram in Python** using an appropriate library (such as `matplotlib_venn` or a simple representation with `matplotlib` if the former is not available).
 
 <details>
 
-<summary>2.3.1 Preferencias de Clientes en un Servicio de Streaming</summary>
+<summary>2.3.1 Customer Preferences on a Streaming Service</summary>
 
-Una compañía de streaming de video clasifica a sus clientes según su preferencia por tres géneros de contenido: **Películas (P)**, **Series de TV (S)** y **Documentales (D)**. Un cliente puede preferir uno, dos, los tres o ninguno de estos géneros. Se selecciona un cliente al azar y se registran sus preferencias.
+A video streaming company classifies its customers according to their preference for three content genres: **Movies (M)**, **TV Series (S)**, and **Documentaries (D)**. A customer may pr[...]
 
-* **Espacio Muestral (S):** Defina el espacio muestral que represente todas las posibles combinaciones de preferencias. Por ejemplo, un cliente que prefiere solo películas podría ser (P,Sc,Dc), donde Sc y Dc significan "no series" y "no documentales", respectivamente. Se pueden usar 0s y 1s para representar "no prefiere" y "prefiere" (ej. (1,0,0) para solo Películas).
-* **Eventos:**
-  * **Evento A**: El cliente prefiere Películas.
-  * **Evento B**: El cliente prefiere Series de TV.
-  * **Evento C**: El cliente prefiere Documentales.
-* **Operaciones con Conjuntos:** a) **A∩B∩C**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. b) **(A∪B)∩C**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. c) **Ac∩Bc∩Cc**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn.
+* **Sample Space (S):** Define the sample space representing all possible combinations of preferences. For example, a customer who prefers only movies could be (M,Sc,Dc), where Sc and Dc indicate no p[...]
+* **Events:**
+  * **Event A**: The customer prefers Movies.
+  * **Event B**: The customer prefers TV Series.
+  * **Event C**: The customer prefers Documentaries.
+* **Set Operations:** a) **A∩B∩C**: Describe in words, list the elements, and plot the Venn Diagram. b) **(A∪B)∩C**: Describe in words, list the elements, and plot the Venn Diagram.
 
 </details>
 
 <details>
 
-<summary>2.3.2 Evaluación de Desempeño de Equipos de Trabajo</summary>
+<summary>2.3.2 Evaluation of Work Teams’ Performance</summary>
 
-En una empresa de consultoría, un equipo de trabajo es evaluado en tres criterios de desempeño: **Productividad (P)**, **Calidad del Trabajo (C)** y **Cumplimiento de Plazos (T)**. Para cada criterio, el equipo puede ser calificado como "Satisfactorio" (indicado por el criterio) o "No Satisfactorio" (indicado por el complemento del criterio, e.g., Pc). Se evalúa un equipo al azar.
+In a consulting firm, a work team is evaluated on three performance criteria: **Productivity (P)**, **Quality of Work (Q)**, and **Timeliness (T)**. For each criteri[...]
 
-* **Espacio Muestral (S):** Defina el espacio muestral. Utilice una notación similar al problema 1 (ej. (P, C, T) para Satisfactorio en los tres).
-* **Eventos:**
-  * **Evento X**: El equipo tiene desempeño Satisfactorio en Productividad.
-  * **Evento Y**: El equipo tiene desempeño Satisfactorio en Calidad del Trabajo.
-  * **Evento Z**: El equipo tiene desempeño Satisfactorio en Cumplimiento de Plazos.
-* **Operaciones con Conjuntos:** a) **X∪Y∪Z**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. b) **(X∩Y)∪Zc**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. c) **(XΔY)∩Z**: (Diferencia simétrica de X e Y, interceptado con Z) Describa en palabras, enumere los elementos y grafique el Diagrama de Venn.
+* **Sample Space (S):** Define the sample space. Use notation similar to problem 1 (e.g., (P, Q, T) for Satisfactory in all three).
+* **Events:**
+  * **Event X**: The team has Satisfactory performance in Productivity.
+  * **Event Y**: The team has Satisfactory performance in Quality of Work.
+  * **Event Z**: The team has Satisfactory performance in Timeliness.
+* **Set Operations:** a) **X∪Y∪Z**: Describe in words, list the elements, and plot the Venn Diagram. b) **(X∩Y)∪Zc**: Describe in words, list the elements, and plot the Venn Diagram.
 
 </details>
 
 <details>
 
-<summary>2.3.3: Detección de Fallas en un Sistema Complejo</summary>
+<summary>2.3.3: Fault Detection in a Complex System</summary>
 
-Un sistema electrónico complejo consta de tres subsistemas independientes: Subsistema 1 (S1), Subsistema 2 (S2) y Subsistema 3 (S3). Se registra si cada subsistema tiene una **falla (F)** o está **operativo (O)**. Se observa el estado de los tres subsistemas.
+A complex electronic system consists of three independent subsystems: Subsystem 1 (S1), Subsystem 2 (S2), and Subsystem 3 (S3). It is recorded whether each subsystem has a **failure (F)** or is **oper[...]
 
-* **Espacio Muestral (S):** Defina el espacio muestral. Utilice una notación como (F, O, F) para indicar Falla en S1, Operativo en S2, Falla en S3.
-* **Eventos:**
-  * **Evento E1​**: El Subsistema 1 tiene una falla.
-  * **Evento E2​**: El Subsistema 2 tiene una falla.
-  * **Evento E3​**: El Subsistema 3 tiene una falla.
-* **Operaciones con Conjuntos:** a) **(E1​∪E2​)∪E3​**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. b) **E1​∩(E2c​∪E3​)**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn. c) **(E1​∩E2c​)∩E3c​**: Describa en palabras, enumere los elementos y grafique el Diagrama de Venn.
+* **Sample Space (S):** Define the sample space. Use notation like (F, O, F) to indicate Failure in S1, Operational in S2, Failure in S3.
+* **Events:**
+  * **Event E1**: Subsystem 1 has a failure.
+  * **Event E2**: Subsystem 2 has a failure.
+  * **Event E3**: Subsystem 3 has a failure.
+* **Set Operations:** a) **(E1∪E2)∪E3**: Describe in words, list the elements, and plot the Venn Diagram. b) **E1∩(E2c∪E3)**: Describe in words, list the elements, and plot the Venn Diagram.
 
 </details>
 
-#### Diagrama de VENN en python
+#### VENN Diagram in Python
 
 ```python
 from matplotlib_venn import venn3, venn3_circles
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(8, 8))
-venn = venn3(subsets=(1, 1, 1, 1, 1, 1, 1), set_labels=('Películas (A)', 'Series (B)', 'Documentales (C)')) # Estos son valores arbitrarios para la visualización
-# Para sombrear la intersección A ∩ B ∩ C, se usa el índice '111'
-venn.get_patch_by_id('111').set_color('blue') # Colorea la intersección
-venn.get_patch_by_id('111').set_alpha(0.4) # Ajusta la transparencia
+venn = venn3(subsets=(1, 1, 1, 1, 1, 1, 1), set_labels=('Movies (A)', 'Series (B)', 'Documentaries (C)')) # These are arbitrary values for visualization
+# To shade the intersection A ∩ B ∩ C, use the '111' index
+venn.get_patch_by_id('111').set_color('blue') # Color the intersection
+venn.get_patch_by_id('111').set_alpha(0.4) # Adjust transparency
 
-plt.title("Diagrama de Venn: Intersección A $\\cap$ B $\\cap$ C")
+plt.title("Venn Diagram: Intersection A $\\cap$ B $\\cap$ C")
 plt.show()
 
-# Para otras operaciones, se ajustarían los parámetros subsets y los IDs de los parches a colorear.
-# Los IDs de los parches en venn3 son:
-# '100': solo A
-# '010': solo B
-# '001': solo C
-# '110': A ∩ B (sin C)
-# '101': A ∩ C (sin B)
-# '011': B ∩ C (sin A)
+# For other operations, adjust the subsets parameters and the patch IDs to color.
+# The patch IDs in venn3 are:
+# '100': only A
+# '010': only B
+# '001': only C
+# '110': A ∩ B (not C)
+# '101': A ∩ C (not B)
+# '011': B ∩ C (not A)
 # '111': A ∩ B ∩ C
-# '000': Complemento de la unión (fuera de todos los círculos)
+# '000': Complement of the union (outside all circles)
 ```
 
 ***
 
 {% hint style="info" %}
-para mas ejercicios busca la pagina 42 a la 44 del. libro estadistica y probalblidad para ingenieros.
+for more exercises, see pages 42 to 44 of the book "Estadística y Probabilidad para Ingenieros."
 {% endhint %}
 
 ***
 
 <details>
 
-<summary>Ejercicio 2.4.1 Probabilidad condicional</summary>
+<summary>Exercise 2.4.1 Conditional Probability</summary>
 
-suponga que tenemos un espacio muestral S constituido por la poblacion adulta de una pequeña poblacion que cumple con los requisitos para obetener un titulo universitario, los vamos a clasificar deacuerdo a su genero y situacion laboral
+Suppose we have a sample space S consisting of the adult population of a small town that meets the requirements to obtain a university degree. We classify them according to [...]
 
-<table><thead><tr><th></th><th data-type="number">Empleado</th><th data-type="number">Desempleado</th><th data-type="number">Total</th></tr></thead><tbody><tr><td>Hombre</td><td>460</td><td>40</td><td>500</td></tr><tr><td>Mujer</td><td>140</td><td>260</td><td>400</td></tr><tr><td>Total</td><td>600</td><td>300</td><td>900</td></tr></tbody></table>
+<table><thead><tr><th></th><th data-type="number">Employed</th><th data-type="number">Unemployed</th><th data-type="number">Total</th></tr></thead><tbody><tr><td>Man</td><td>460</td><td>40</td><td>[...]
 
-se selecciona al azae uno de estos individuos par que realice un viaje por el pais: nos interesan los siguientes eventos.
+One of these individuals is randomly selected to take a trip across the country: we are interested in the following events.
 
-1. M = se elige un hombre
+1. M = a man is chosen
 
-2) E = el elegido tiene empleo
-
-</details>
-
-<details>
-
-<summary>Ejercicio 2.4.2 El aereopuerto</summary>
-
-La probabilidad de que un vuelo programado normalemte salga a tiempo es P(D) = 0,83 y la probabilidad de que llegue a tiempo es P(A)=0,82 y la probabilidad de que salga y llegue a tiempo es $$P(D∩A) = 0,78$$, calcule la probabilidad de que:
-
-1. llege a tiempo, dado que salio a tiempo
-2. salio a tiempo, dado que llego a tiempo
-3. &#x20;llego a tiempo pero salga retrazado&#x20;
+2) E = the chosen person is employed
 
 </details>
 
 <details>
 
-<summary>Ejercicio 2.4.3 bolsa de pelotas</summary>
+<summary>Exercise 2.4.2 The Airport</summary>
 
-Una bolsa contiene 4 bolas blancas y 3 negras, y una segunda bolsa contiene 3 blancas y 5 negras, se saca una bola de la primera bolsa y se coloca sin verla en la segunda bolsa
+The probability that a scheduled flight departs on time is P(D) = 0.83 and the probability that it arrives on time is P(A)=0.82 and the probability that it departs and arrives on time is $$P(D∩A)[...]
 
-¿Cual es la probabilidad de que ahora saque una pelota negra de la segunda bolsa?
+1. Arrives on time, given that it departed on time
+2. Departed on time, given that it arrived on time
+3. Arrived on time but departed late
 
 </details>
 
 <details>
 
-<summary>Ejercicio 2.4.4 Sistema electrico</summary>
+<summary>Exercise 2.4.3 Bag of Balls</summary>
 
-Suponga un sistema electrico con el diagrama que esta en la figura, cual es la probabilidad que el sistema funcione, suponga que los componentes fallan de forma independiente.
+A bag contains 4 white balls and 3 black balls, and a second bag contains 3 white and 5 black balls. A ball is drawn from the first bag and placed, unseen, in the second bag.
 
-el diagrama se representa asi: un diagrama de circuito de derecha a izquierda, dola primera estacion A tenga una p(0.95) de ahi se ramifica en B y C con probabilidad de P(0,7) y P(0,8) respectivamente luego elñ glujo se junta hacia D con p(0,9)
+What is the probability that a black ball is now drawn from the second bag?
+
+</details>
+
+<details>
+
+<summary>Exercise 2.4.4 Electrical System</summary>
+
+Suppose an electrical system with the diagram shown in the figure. What is the probability that the system works, assuming the components fail independently?
+
+The diagram is represented as follows: a circuit diagram from right to left, the first station A has p(0.95), from there it branches into B and C with probabilities P(0.7) and P(0.8), respectively[...]
 
 
 
