@@ -401,145 +401,148 @@ Choosing an appropriate probability distribution to represent a random phenomeno
 | **Erlang**           | Continuous| k (shape), λ (rate)                                 | k/λ                              | k/λ²                                                  | Sum of k exponentials, repair times in phases.                                |
 | **Weibull**          | Continuous| α (scale), β (shape)                                | αΓ(1+1/β)                        | α²[Γ(1+2/β)-(Γ(1+1/β))²]                              | Failure times (wear-out, infant mortality, constant rate).                    |
 | **Lognormal**        | Continuous| μₗₙ (mean of lnX), σₗₙ (std. dev. of lnX)          | exp(μₗₙ + σₗₙ²/2)                | exp(2μₗₙ + σₗₙ²) (exp(σₗₙ²) - 1)                      | Repair times, some multiplicative processes.                                  |
-### Teorema del Límite Central (TLC)
 
-El Teorema del Límite Central (TLC) es uno de los resultados más importantes y notables en la teoría de la probabilidad y la estadística, con profundas implicaciones para la simulación
+### Central Limit Theorem (CLT)
 
-> El Teorema del Límite Central (TLC) establece que, dada una muestra suficientemente grande de variables aleatorias independientes e idénticamente distribuidas, la distribución de la suma o promedio muestral se aproximará a una distribución normal, independientemente de la distribución original de las variables. Esto significa que, incluso si los datos individuales no están distribuidos normalmente, su media tenderá a seguir una distribución normal a medida que el tamaño de la muestra aumenta, lo que permite hacer inferencias estadísticas y aplicar técnicas como intervalos de confianza y pruebas de hipótesis.
+The Central Limit Theorem (CLT) is one of the most important and remarkable results in probability theory and statistics, with profound implications for simulation.
 
-establece que si se tiene una secuencia de variables aleatorias:
+> The Central Limit Theorem (CLT) states that, given a sufficiently large sample of independent and identically distributed random variables, the distribution of the sum or sample mean will approximate a normal distribution, regardless of the original distribution of the variables. This means that even if the individual data are not normally distributed, their mean will tend to follow a normal distribution as the sample size increases. This enables statistical inference and the use of techniques such as confidence intervals and hypothesis testing.
 
-$$
-X _1,X_2,…,X_n
-$$
-
-que son independientes e idénticamente distribuidas, con una media finita μ y una varianza finita $$σ^2$$, entonces, a medida que n (el número de variables) se vuelve grande, la distribución de la suma.
+Formally, if we have a sequence of random variables:
 
 $$
-S 
-n
-​
- =X 
-1
-​
- +X 
-2
-​
- +…+X 
-n
-​
+X_1, X_2, \ldots, X_n
 $$
 
-se aproxima a una distribución normal. Más formalmente, la variable estandarizada
+that are independent and identically distributed, with finite mean μ and finite variance $$\sigma^2$$, then as n (the number of variables) becomes large, the distribution of the sum
 
-$$Z_n=\frac{(S_n−nμ)}{(σ\sqrt n)} = \left(\frac{\overline{X_n}−μ}{\frac{σ}{\sqrt n}} \right)$$, converge en distribución a una variable aleatoria Normal estándar N(0,1) a medida que $$n→∞$$.  &#x20;
+$$
+S_n = X_1 + X_2 + \ldots + X_n
+$$
 
-### Importancia del TLC en la simulacion
+approaches a normal distribution. More formally, the standardized variable
+
+$$
+Z_n = \frac{(S_n - n\mu)}{(\sigma \sqrt{n})} = \left(\frac{\overline{X_n} - \mu}{\frac{\sigma}{\sqrt{n}}} \right)
+$$
+
+converges in distribution to a standard normal variable N(0,1) as $$n \to \infty$$.
+
+---
+
+### Importance of the CLT in Simulation
 
 {% tabs %}
-{% tab title="Justificación del Uso de la Distribución Normal" %}
-Muchos fenómenos en ingeniería industrial, como el tiempo total para completar un producto que pasa por múltiples etapas de proceso, pueden considerarse como la suma de duraciones de actividades individuales. Incluso si las duraciones de las actividades individuales no siguen una distribución normal, su suma (si hay suficientes actividades y son aproximadamente independientes) tenderá a ser normalmente distribuida gracias al TLC. Esto justifica el uso de la distribución normal como modelo para muchas cantidades agregadas en los sistemas.
+{% tab title="Justification for Using the Normal Distribution" %}
+Many phenomena in industrial engineering, such as the total time to complete a product that passes through multiple processing stages, can be considered as the sum of individual activity durations. Even if the individual activity times are not normally distributed, their sum (if there are enough activities and they are approximately independent) will tend to be normally distributed thanks to the CLT. This justifies the use of the normal distribution as a model for many aggregated quantities in systems.
 {% endtab %}
 
-{% tab title="Análisis de Salidas de Simulación" %}
-En la simulación, a menudo se está interesado en estimar la media de una métrica de desempeño (ej. el tiempo promedio de espera de un cliente). Esto se hace ejecutando la simulación múltiples veces (réplicas) y calculando el promedio de la métrica obtenida en cada réplica. Si el número de réplicas es suficientemente grande, el TLC implica que la distribución de esta media muestral será aproximadamente normal. Esta propiedad es fundamental para construir intervalos de confianza para la media verdadera de la métrica de desempeño, lo cual es esencial para cuantificar la precisión de las estimaciones obtenidas por simulación
+{% tab title="Simulation Output Analysis" %}
+In simulation, we are often interested in estimating the mean of a performance metric (e.g., the average customer waiting time). This is done by running the simulation multiple times (replications) and calculating the average of the metric obtained in each replication. If the number of replications is sufficiently large, the CLT implies that the distribution of this sample mean will be approximately normal. This property is fundamental for constructing confidence intervals for the true mean of the performance metric, which is essential for quantifying the precision of simulation-based estimates.
 {% endtab %}
 {% endtabs %}
 
 {% hint style="warning" %}
-El TLC es poderoso porque se aplica independientemente de la forma de la distribución original de las X\_i (_siempre que tengan media y varianza finitas)_. Es el puente que conecta las distribuciones individuales de los componentes aleatorios de un sistema con el comportamiento agregado o promedio del sistema, que es frecuentemente el foco del análisis en un estudio de simulación
+The CLT is powerful because it applies regardless of the original distribution of the $X_i$ (as long as they have finite mean and variance). It is the bridge that connects the individual distributions of the random components of a system with the aggregate or average behavior of the system, which is frequently the focus of analysis in a simulation study.
 {% endhint %}
 
-### Estimación de parámetros y pruebas de bondad de ajuste
+---
 
-#### Qué es la Prueba de Bondad de Ajuste
+### Parameter Estimation and Goodness-of-Fit Tests
 
-La prueba de bondad de ajuste es una herramienta estadística utilizada para determinar qué tan bien un conjunto de datos se ajusta a una distribución teórica esperada. Se evalúa cuán probable es que una muestra observada haya sido generada a partir de una población que se ajusta a una distribución específica.
+#### What is a Goodness-of-Fit Test?
 
-#### Para qué Sirve
+A goodness-of-fit test is a statistical tool used to determine how well a set of data fits an expected theoretical distribution. It evaluates how likely it is that an observed sample was generated from a population that follows a specific distribution.
 
-La prueba de bondad de ajuste se utiliza principalmente para:
+#### What Is It For?
 
-1. **Validar Modelos Estadísticos**: Ayuda a verificar si el modelo estadístico elegido es adecuado para los datos.
-2. **Comparar Distribuciones**: Permite comparar la distribución teórica con la distribución observada.
-3. **Toma de Decisiones**: Facilita decisiones en campos como la calidad de procesos, ya que entender la distribución de los datos puede llevar a mejores ajustes y soluciones.
+The goodness-of-fit test is mainly used to:
 
-#### Cómo se Usa
+1. **Validate Statistical Models**: Helps verify if the chosen statistical model is appropriate for the data.
+2. **Compare Distributions**: Allows comparing the theoretical distribution with the observed distribution.
+3. **Decision Making**: Facilitates decisions in fields such as process quality, as understanding the data distribution can lead to better adjustments and solutions.
 
-1. **Seleccionar la Distribución Teórica**: Elegir la distribución que mejor describe los datos (ej. Normal, Binomial, Poisson, etc.).
-2. **Realizar la Prueba Estadística**: Usar pruebas como Chi-cuadrado, Kolmogorov-Smirnov o Anderson-Darling.
-3. **Interpretar los Resultados**: Analizar el valor p de la prueba para afirmar si se rechaza o no la hipótesis nula de que los datos siguen la distribución teórica seleccionada.
+#### How Is It Used?
+
+1. **Select the Theoretical Distribution**: Choose the distribution that best describes the data (e.g., Normal, Binomial, Poisson, etc.).
+2. **Perform the Statistical Test**: Use tests such as Chi-square, Kolmogorov-Smirnov, or Anderson-Darling.
+3. **Interpret the Results**: Analyze the p-value of the test to determine whether to reject or not the null hypothesis that the data follow the selected theoretical distribution.
 
 {% hint style="warning" %}
-Este análisis es crucial en estudios de simulación, ya que garantiza que los resultados obtenidos sean realmente representativos del comportamiento esperado bajo el modelo teórico asumido -crc-
+This analysis is crucial in simulation studies, as it ensures that the results obtained are truly representative of the expected behavior under the assumed theoretical model. -crc-
 {% endhint %}
 
-#### Estimación de Parámetros
+---
 
-Una vez que se ha seleccionado una familia de distribuciones candidata (basada en el conocimiento del sistema y/o un análisis preliminar de los datos, como histogramas), el siguiente paso es estimar los parámetros de esa distribución utilizando los datos muestrales disponibles&#x20;
+#### Parameter Estimation
 
-(ej. tiempos de servicio observados, demandas históricas).&#x20;
+Once a candidate family of distributions has been selected (based on system knowledge and/or a preliminary analysis of the data, such as histograms), the next step is to estimate the parameters of that distribution using the available sample data
 
-Los métodos más comunes incluyen (...)
+(e.g., observed service times, historical demands).
+
+The most common methods include:
 
 {% tabs %}
-{% tab title="Método de los Momentos" %}
-_Iguala los momentos muestrales_ (ej. media muestral, varianza muestral) con los momentos teóricos de la distribución (que son funciones de los parámetros) y resuelve el sistema de ecuaciones resultante para los parámetros.&#x20;
+{% tab title="Method of Moments" %}
+_Equates the sample moments_ (e.g., sample mean, sample variance) with the theoretical moments of the distribution (which are functions of the parameters) and solves the resulting system of equations for the parameters.
 
-Es conceptualmente simple pero no siempre el más eficiente.
+It is conceptually simple but not always the most efficient.
 {% endtab %}
 
-{% tab title="Método de Máxima Verosimilitud (Maximum Likelihood Estimation - MLE)" %}
-Encuentra los valores de los parámetros que maximizan la probabilidad (o "verosimilitud") de haber observado la muestra de datos dada. Los estimadores MLE suelen tener buenas propiedades estadísticas (consistencia, eficiencia asintótica, normalidad asintótica) y son ampliamente utilizados.&#x20;
+{% tab title="Maximum Likelihood Estimation (MLE)" %}
+Finds the parameter values that maximize the likelihood of having observed the given data sample. MLE estimators usually have good statistical properties (consistency, asymptotic efficiency, asymptotic normality) and are widely used.
 
-Para muchas distribuciones comunes, existen fórmulas cerradas para los estimadores MLE; para otras, se requieren métodos numéricos.
+For many common distributions, there are closed-form formulas for MLE estimators; for others, numerical methods are required.
 {% endtab %}
 {% endtabs %}
 
-#### Pruebas de Bondad de Ajuste (Goodness-of-Fit Tests)
+---
 
-Después de seleccionar una distribución y estimar sus parámetros, [_**es crucial evaluar formalmente qué tan bien esa distribución teórica (ajustada) concuerda con los datos empíricos observados**_](#user-content-fn-1)[^1]. Las pruebas de bondad de ajuste cuantifican esta concordancia.
+#### Goodness-of-Fit Tests
 
-**Hipótesis:**
+After selecting a distribution and estimating its parameters, [_**it is crucial to formally assess how well that fitted theoretical distribution agrees with the observed empirical data**_](#user-content-fn-1)[^1]. Goodness-of-fit tests quantify this agreement.
 
-* Hipótesis Nula $$(H_0​)$$: Los datos observados provienen de la distribución teórica especificada.
-* Hipótesis Alternativa $$(H_1​)$$: Los datos observados no provienen de la distribución teórica especificada.
+**Hypotheses:**
 
-**Prueba Chi-cuadrado (χ2):**
+* Null Hypothesis $$(H_0)$$: The observed data come from the specified theoretical distribution.
+* Alternative Hypothesis $$(H_1)$$: The observed data do not come from the specified theoretical distribution.
 
-1. Aplicable tanto a datos discretos como continuos&#x20;
+**Chi-square ($\chi^2$) Test:**
 
-{% hint style="warning" %}
-estos últimos deben ser agrupados en intervalos o "bins".
-{% endhint %}
-
-2. Compara las frecuencias observadas $$(O_i​)$$ en cada categoría o intervalo con las frecuencias esperadas $$(E_i​)$$ bajo la hipótesis nula.
-3. El estadístico de prueba es $$χ^2=∑(O_i​−E_i​)^2/E_i​.$$
-4. Si el valor del estadístico es grande (superando un valor crítico de la distribución _Chi-cuadrado_ con ciertos grados de libertad, o si el p-value es pequeño), se rechaza $$H_0​$$, concluyendo que la distribución teórica no es un buen ajuste.  &#x20;
-
-**Prueba de Kolmogorov-Smirnov (K-S):**
-
-1. Principalmente para _**datos continuos**_ (aunque existen adaptaciones para discretos).
-2. Compara la Función de Distribución Acumulada empírica $$(F_e​(x))$$, construida a partir de los datos, con la FDA teórica $$(F_t​(x))$$ de la distribución hipotética.
-3. El estadístico de prueba es $$D=max_x​∣F_e​(x)−F_t​(x)∣$$, la máxima diferencia vertical absoluta entre las dos CDFs.
-4. Si D es grande (superando un valor crítico, o si el p-value es pequeño), se rechaza $$H_0$$​. Es más sensible a diferencias en la forma, mediana o dispersión que la prueba Chi-cuadrado.  &#x20;
-
-**Interpretación del p-value.**&#x20;
-
-Un p-value pequeño (típicamente < 0.05 o < 0.10) indica que hay suficiente evidencia para rechazar la hipótesis nula, sugiriendo que la distribución elegida no se ajusta bien a los datos. Un p-value grande no "prueba" que $$H_0$$​ sea verdadera, solo que _**no hay suficiente evidencia para rechazarla.**_
+1. Applicable to both discrete and continuous data
 
 {% hint style="warning" %}
-El modelado de entrada _es un paso iterativo_. Si una distribución no pasa las pruebas de bondad de ajuste, se debe considerar otra familia de distribuciones, o quizás utilizar directamente la distribución empírica derivada de los datos si el tamaño muestral es suficientemente grande. La precisión del modelo de simulación global depende en gran medida de la precisión de sus modelos de entrada; de ahí el dicho **"basura entra, basura sale" (GIGO) - crc-**
+the latter must be grouped into intervals or "bins".
 {% endhint %}
 
-### Bibliografia
+2. Compares the observed frequencies $$(O_i)$$ in each category or interval with the expected frequencies $$(E_i)$$ under the null hypothesis.
+3. The test statistic is $$\chi^2 = \sum (O_i - E_i)^2 / E_i$$.
+4. If the value of the statistic is large (exceeding a critical value from the _Chi-square_ distribution with certain degrees of freedom, or if the p-value is small), we reject $$H_0$$, concluding that the theoretical distribution is not a good fit.
 
-*
-  1. Montgomery, D. C., & Runger, G. C. (2018). _Applied Statistics and Probability for Engineers_ (7th ed.). Wiley.
-  2. Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. E. (2017). _Probabilidad y Estadística para Ingeniería y Ciencias_ (9th ed.). Pearson Educación.
-  3. Ross, S. M. (2014). _Introduction to Probability Models_ (11th ed.). Academic Press.
-  4. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Capítulos 6, 7 y 9)
-  5. Winston, W. L. (2005). _Investigación de Operaciones: Aplicaciones y Algoritmos_. (Capítulo 12)
-  6. Hillier, F. S., & Lieberman, G. J. (2010). _Introducción a la Investigación de Operaciones_. (Capítulos de probabilidad y estadística)
+**Kolmogorov-Smirnov (K-S) Test:**
 
-[^1]: ojo, importante!!
+1. Mainly for _**continuous data**_ (though there are adaptations for discrete).
+2. Compares the empirical cumulative distribution function $$(F_e(x))$$, built from the data, with the theoretical CDF $$(F_t(x))$$ of the hypothesized distribution.
+3. The test statistic is $$D = \max_x |F_e(x) - F_t(x)|$$, the maximum absolute vertical difference between the two CDFs.
+4. If D is large (exceeding a critical value, or if the p-value is small), we reject $$H_0$$. It is more sensitive to differences in shape, median, or spread than the Chi-square test.
+
+**Interpretation of the p-value**
+
+A small p-value (typically < 0.05 or < 0.10) indicates that there is enough evidence to reject the null hypothesis, suggesting that the chosen distribution does not fit the data well. A large p-value does not "prove" that $$H_0$$ is true, only that _**there is not enough evidence to reject it.**_
+
+{% hint style="warning" %}
+_Input modeling is an iterative step._ If a distribution does not pass goodness-of-fit tests, another family of distributions should be considered, or the empirical distribution derived from the data may be used directly if the sample size is sufficiently large. The accuracy of the overall simulation model depends largely on the accuracy of its input models; hence the saying: **"garbage in, garbage out" (GIGO) - crc-**
+{% endhint %}
+
+---
+
+### Bibliography
+
+1. Montgomery, D. C., & Runger, G. C. (2018). _Applied Statistics and Probability for Engineers_ (7th ed.). Wiley.
+2. Walpole, R. E., Myers, R. H., Myers, S. L., & Ye, K. E. (2017). _Probability and Statistics for Engineering and the Sciences_ (9th ed.). Pearson Education.
+3. Ross, S. M. (2014). _Introduction to Probability Models_ (11th ed.). Academic Press.
+4. Leemis, L. M., & Park, S. K. (2006). _Discrete-Event Simulation: A First Course_. (Chapters 6, 7, and 9)
+5. Winston, W. L. (2005). _Operations Research: Applications and Algorithms_. (Chapter 12)
+6. Hillier, F. S., & Lieberman, G. J. (2010). _Introduction to Operations Research_. (Probability and statistics chapters)
+
+[^1]: Note, important!!
