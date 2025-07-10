@@ -2,13 +2,13 @@
 icon: book
 ---
 
-# Estanteria de libros
+# Bookshelf
 
-¡Bienvenido a la estantería de libros, un espacio creado especialmente para ti! Aquí podrás descubrir una variedad de obras realizadas por el autor. Nuestra colección incluye libros completamente gratuitos, así como otros a precios muy accesibles, todo con el propósito de hacer más fácil el acceso al conocimiento. Te invitamos a explorar, aprender y disfrutar, mientras colaboras con la sustentabilidad de esta página que busca difundir sabiduría y experiencias a todos sus visitantes. Sumérgete en el mundo de la lectura y encuentra el título perfecto para ti.
+Welcome to the bookshelf, a space created especially for you! Here you can discover a variety of works by the author. Our collection includes completely free books, as well as others at very affordable prices, all with the aim of making knowledge easier to access. We invite you to explore, learn, and enjoy, while contributing to the sustainability of this page, which seeks to spread wisdom and experiences to all its visitors. Immerse yourself in the world of reading and find the perfect title for you.
 
 ***
 
-### Cuentos cortos a la venta.
+### Short stories for sale.
 
 <details>
 
@@ -26,12 +26,12 @@ Buy now---> [here](https://go.hotmart.com/Q100177044E)
 
 <summary>Ecos del San josé.</summary>
 
-El caos ruge. Los cañones truenan. El mar reclama el barco más poderoso de su tiempo. Pero en medio del naufragio, un hombre no busca salvarse, busca encontrarla a ella. Su rostro se revela "como mi muerte, pero también como mi vida". Una historia de amor que desafía el tiempo y la tragedia.
+Chaos roars. Cannons thunder. The sea claims the most powerful ship of its time. But amidst the shipwreck, a man doesn't seek to save himself, he seeks to find her. Her face reveals itself "as my death, but also as my life." A love story that defies time and tragedy.
 
 ![](<../.gitbook/assets/Ecos del San Jose!.jpg>)
 
-#### Promoción Especial: **Ecos del San José**
+#### Special Promotion: **Echoes of San José**
 
-Descubre un relato donde el amor desafía las tormentas y la temporalidad. **"Ecos del San José"** no es solo un cuento, es una experiencia épica sumergida en la historia y la emoción. Perfecto para aquellos que buscan una narrativa que los transporte a épocas pasadas, donde el romance y el destino se entrelazan en un mar de incertidumbres y descubrimientos. Adquiere este título hoy y siente cada batida del océano y cada latido de un amor eterno. ¡No te lo pierdas! Adquiere tu copia ---> [AQUI!](https://go.hotmart.com/C100167402Y)
+Discover a story where love defies storms and time. **"Echoes of San José"** is not just a short story; it's an epic experience steeped in history and emotion. Perfect for those seeking a narrative that transports them to bygone eras, where romance and destiny intertwine in a sea of ​​uncertainty and discovery. Purchase this title today and feel every lap of the ocean and every heartbeat of eternal love. Don't miss out! Get your copy. ---> [AQUI!](https://go.hotmart.com/C100167402Y)
 
 </details>
