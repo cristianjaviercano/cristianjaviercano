@@ -2,122 +2,140 @@
 icon: pie
 ---
 
-# Tienda de Pasteles DC
+#DC Cake Shop
 
-esta vez abordaremos la simulacion de eventos discretos desde la contruccion de un modelo para una pasteleria.
+This time, we will address discrete event simulation by building a model for a bakery.
 
-**Título:** Modelado y Análisis de un Sistema de Producción Discreta con Múltiples Productos y Recursos Compartidos.&#x20;
+**Title:** Modeling and Analysis of a Discrete Production System with Multiple Products and Shared Resources.
 
-**Autor:** Ing. Cristian J. Cano, M.Sc. | Ing. Darwin Ramos, M.Sc.&#x20;
+**Author:** Cristian J. Cano, M.Sc. | Darwin Ramos, M.Sc.
 
-**Empresa Objeto de Estudio:** Pasteles DC
+**Company Under Study:** DC Cakes
 
-**Fecha:** Junio de 2025
+**Date:** June 2025
 
-**Caso:** La empresa **Pasteles DC** se especializa en la producción de dos artículos de repostería: **Alfajores** y **Queques**. Para optimizar su eficiencia, la empresa utiliza insumos pre-procesados (galletas y masas pre-hechas). El sistema de producción se caracteriza por un flujo complejo donde ambos productos compiten por recursos compartidos, como los hornos y la estación de envasado, y siguen rutas diferenciadas en ciertas etapas del proceso. El sistema opera bajo una restricción de capacidad máxima de producción (WIP - Work In Process). El presente estudio tiene como objetivo desarrollar un modelo de simulación de eventos discretos para replicar el sistema de producción actual, identificar cuellos de botella y evaluar el impacto potencial de inversiones en capacidad.
+**Case:** The company **DC Cakes** specializes in the production of two pastry items: **Alfajores** and **Cakes**. To optimize its efficiency, the company uses pre-processed inputs (cookies and pre-made doughs). The production system is characterized by a complex flow where both products compete for shared resources, such as ovens and the packaging station, and follow differentiated routes at certain stages of the process. The system operates under a maximum production capacity constraint (WIP - Work In Process). The objective of this study is to develop a discrete event simulation model to replicate the current production system, identify bottlenecks, and evaluate the potential impact of capacity investments.
 
 ***
 
-**Planteamiento del Problema:**
+**Problem Statement:**
 
-Ustedes han sido contratados como ingenieros de procesos por **Pasteles DC**. La gerencia ha observado que la producción diaria no alcanza las metas esperadas y sospecha que existen cuellos de botella en el sistema, pero no tienen claro dónde se encuentran ni cuál sería la inversión más efectiva para resolverlos.
+You have been hired as process engineers by **DC Cakes**. Management has observed that daily production is not meeting expected targets and suspects that there are bottlenecks in the system, but is unclear about where they are or what the most effective investment would be to resolve them.
 
-El reto consiste en construir un modelo de simulación de eventos discretos en **AnyLogic** que replique fielmente el sistema de producción de Pasteles DC. El objetivo final es identificar el principal cuello de botella del sistema y proponer una mejora cuantificable, evaluando su impacto en la producción total.
+The challenge is to build a discrete event simulation model in **AnyLogic** that faithfully replicates the DC Cakes production system. The ultimate objective is to identify the main bottleneck in the system and propose a quantifiable improvement, evaluating its impact on total production.
 
 <details>
 
-<summary><strong>Proceso del Alfajor</strong></summary>
+<summary><strong>Alfajor Process</strong></summary>
 
-El flujo para la producción de alfajores es el siguiente:
+The flow for alfajor production is as follows:
 
-1. **Suministro y Control de Capacidad**: El proceso inicia con un lote de X **galletas**. Estas ingresan al sistema principal de producción siempre.
-2. **Control de Calidad (Galleta)**: Una vez dentro del sistema, la galleta pasa por una estación de control de calidad exclusiva para este insumo, con su propio tiempo de proceso.
-3. **Moldeado**: La galleta es moldeada según las especificaciones del alfajor.
-4. **Primer Horneado**: El producto ingresa a la cola de la estación de **Horneado**. Esta es la primera estación donde compite por un recurso compartido (el horno) con los queques.
-5. **Aplicación de Manjar**: Tras el horneado, pasa a la estación donde se le añade el manjar. Esta es otra estación con recursos compartidos. En este punto, el producto se podría reclasificar internamente (ej. de "galleta" a "galleta con manjar").
-6. **Segundo Horneado**: Después de la aplicación de manjar, el producto **regresa a la cola del horno** para un segundo proceso de horneado, probablemente para sellar el producto.
-7. **Envasado**: Una vez completado el segundo horneado, el alfajor terminado pasa a la línea de envasado, que es el último recurso compartido del sistema. El tiempo de este proceso sigue una distribución exponencial.
-8. **Salida del Sistema**: Al ser envasado, el producto final sale del sistema, siendo contabilizado como producción terminada (`Sink`).\
+1. **Supply and Capacity Control**: The process begins with a batch of X **cookies**. These always enter the main production system.
+2. **Quality Control (Cookie)**: Once inside the system, the cookie passes through a quality control station dedicated to this input, with its own processing time.
+3. **Shaping**: The cookie is shaped according to the alfajor specifications.
+4. **First Baking**: The product enters the queue at the **Baking** station. This is the first station where it competes for a shared resource (the oven) with the cakes.
+5. **Manjar Application**: After baking, it moves to the station where the manjar is added. This is another station with shared resources. At this point, the product could be reclassified internally (e.g., from "cookie" to "cookie with caramel").
+6. **Second Baking**: After applying caramel, the product **returns to the oven queue** for a second baking process, likely to seal the product.
+7. **Packaging**: Once the second baking is complete, the finished alfajor moves to the packaging line, which is the last shared resource in the system. The time for this process follows an exponential distribution.
+8. **System Output**: Once packaged, the final product leaves the system and is counted as finished production ('Sink').
 
-
+   
 </details>
 
 <details>
 
-<summary><strong>Proceso del Queque o Bizcocho</strong></summary>
+<summary><strong>Cake Process</strong></summary>
 
-El flujo para la producción de queques sigue una ruta diferente en las etapas iniciales:
+The cake production flow follows a different route in the initial stages:
 
-1. **Suministro y Control de Capacidad**: El proceso inicia con un lote de Y **unidades de masa**.
-2. **Control de Calidad (Masa)**: La masa ingresa a su propia línea de control de calidad, que es distinta a la de las galletas y tiene su propio tiempo de proceso.
-3. **Amasado**:  Requiere ser procesada en la estación de **Amasado**. Esta es una estación dedicada únicamente a este producto.
-4. **Moldeado**: Después del amasado, la masa es moldeada.
-5. **Primer Horneado**: El queque moldeado entra a la cola compartida de la estación de **Horneado**.
-6. **Aplicación de Manjar**: Pasa a la estación de manjar compartida.
-7. **Segundo Horneado**: Al igual que el alfajor, el queque con manjar **regresa a la cola del horno** para su segundo horneado.
-8. **Envasado**: El producto terminado se dirige a la estación de envasado final.
-9. **Salida del Sistema**: Una vez envasado, el queque sale del sistema (`Sink`).
+1. **Supply and Capacity Control**: The process begins with a batch of Y **units of dough**.
+2. **Quality Control (Dough)**: The dough enters its own quality control line, which is separate from the cookie line and has its own processing time.
+3. **Kneading**: It must be processed at the **Kneading** station. This is a station dedicated solely to this product.
+4. **Shaping**: After kneading, the dough is shaped.
+5. **First Baking**: The shaped cake enters the shared queue at the **Baking** station.
+6. **Flavoring**: It moves to the shared flavoring station.
+7. **Second Baking**: Like the alfajor, the manjar cake **returns to the oven queue** for its second baking.
+8. **Packaging**: The finished product heads to the final packaging station.
+9. **System Exit**: Once packaged, the cake exits the system ('Sink').</details>
 
-</details>
 
-**Detalles del Sistema de Producción**&#x20;
+**Production System Details**
 
-* **Productos y Entidades:**
-  * Se debe crear un tipo de agente `Producto` con un parámetro `tipo_producto` (ej. 1 para Alfajor, 2 para Queque).
-  * Los productos cambian de estado y tipo a medida que avanzan (ej. una galleta se convierte en "galleta con manjar").
-* **Flujo del Proceso y Estaciones:**
-  1. **Llegada de Insumos**: Al inicio de cada día (simulación inicia en t=0), llegan **150 unidades** de galletas (Mp1) y 9**0 unidades** de masa. (Mp2)
-  2. **Control de Calidad**: Procesos separados para galletas y masas.
-     1. Calidad de Galletas  Triangular (2,5,9)
-     2. Calidad de Masa Triangular (3,6,9)
-  3. **Amasado**: Exclusivo para las masas.&#x20;
-     1. tiempo de amasado Triangular(22,30,32)
-  4. **Moldeado**: Para dar forma final a los productos.
-     1. Moldeado para Alfajor triangular(9,10,11)
-     2. Moldeado para la masa triangular(12,13,14)
-  5. **Horneado**: Recurso compartido por ambos productos.
-     1. horneado para Alfajor triangular (2,15,28)
-     2. Horneado para Queque  triangular (13,16,19)
-  6. **Aplicación de Manjar**: Estación compartida por ambos productos.
-     1. Alfajor triangular(7,9,13)
-     2. Queque triangular(8,10,14)
-  7. **Lógica Condicional**: Tras la aplicación de manjar, el producto vuelve a la cola del horno para un segundo horneado.
-  8. **Envasado/Empaquetado**: Estación final compartida.
-     1. exponential(1.0/5) para cada producto
-* **Distribuciones de Tiempos de Proceso:**
-  * **Control de Calidad**: Distribución **Triangular**
-  * **Horneado**: Distribución **Triangular**&#x20;
-  * **Aplicación de Manjar**: Distribución **Triangular.**
-  * **Envasado**: El tiempo de proceso sigue una distribución **Exponencial** con una media de 5 minutos por producto.
-* **Restricciones del Sistema:**
-  * El sistema completo tiene una **capacidad máxima de 100 productos** (WIP). Las nuevas materias primas deben esperar en una cola de suministro si el sistema está lleno. Se debe modelar utilizando los bloques `RestrictedAreaStart` y `RestrictedAreaEnd`.
-  * La simulación debe correr por un total de **7200 minutos** (equivalente a 5 días de producción).
+* **Products and Entities:**
+  A `Product` agent type must be created with a `product_type` parameter (e.g., 1 for Alfajor, 2 for Queque).
+  Products change state and type as they progress (e.g., a cookie becomes a "cookie with caramel").
+  **Process Flow and Stations:**
+  
+1. **Arrival of Inputs**: At the beginning of each day (simulation starts at t=0), **150 units** of cookies (Mp1) and 9**0 units** of dough arrive. (Mp2)
+2. **Quality Control**: Separate processes for cookies and dough.
+   Triangular Cookie Quality (2, 5, 9)
+   Triangular Dough Quality (3, 6, 9)
+3. **Kneading**: Exclusively for doughs.
+   Triangular kneading time (22, 30, 32)
+4. **Shaping**: To give the final shape to the products.
+   Shaping for triangular Alfajor (9, 10, 11)
+   Shaping for triangular dough (12, 13, 14)
+5. **Baking**: A resource shared by both products.
+   Baking for triangular Alfajor (2, 15, 28)
+   Baking for triangular Cake (13, 16, 19)
+6. **Manjar Application**: A station shared by both products.
+   Triangular alfajor (7, 9, 13)
+   Triangular cake (8, 10, 14)
+7. **Conditional Logic**: After applying caramel, the product returns to the oven queue for a second baking.
+8. **Packaging**: Shared final station.
+   Exponential (1.0/5) for each product
+
+**Process Time Distributions:**
+**Quality Control**: Triangular Distribution**
+**Baking**: Triangular Distribution**
+**Applying Caramel**: Triangular Distribution**
+**Packaging**: The process time follows an Exponential distribution with an average of 5 minutes per product.
+
+**System Constraints:**
+
+The entire system has a maximum capacity of 100 products (WIP). New raw materials must wait in a supply queue if the system is full. This must be modeled using the `RestrictedAreaStart` and `RestrictedAreaEnd` blocks.
+* The simulation must run for a total of **7200 minutes** (equivalent to 5 days of production).
 
 ***
 
-**Fases para la Resolución del Reto**
+**Phases for Solving the Challenge**
 
-1. **fase CERO**: Visualizacion del proceso
-   * &#x20;Construya el modelo teorico del proceso, usando diagramas de flujo o cualquiuer herramienta grafica que le permita visualizar el proceso.
-2. **Fase 1: Construcción del Modelo Base**
-   * Cree el agente `Producto` con sus respectivos parámetros.
-   * Modele el flujo del proceso utilizando los bloques de la librería PML: `Source`, `Queue`, `Service`, `SelectOutput` para las decisiones lógicas, y `RestrictedAreaStart/End` para la restricción de WIP.
-   * Configure cada bloque de servicio (`Service`) con los recursos y las distribuciones de tiempo especificadas.
-3. **Fase 2: Verificación y Validación**
-   * Ejecute el modelo y verifique que el flujo de entidades es correcto (los queques pasan por amasado, los alfajores no, etc.).
-   * Asegúrese de que la restricción de 100 unidades en el sistema funciona correctamente.
-   * Valide que el número total de productos de salida más los que quedaron en proceso sea igual al número de insumos que ingresaron.
-4. **Fase 3: Análisis e Identificación de Cuellos de Botella**
-   * Ejecute la simulación por los 7200 minutos.
-   * Analice los resultados: identifique la estación de trabajo que presenta la **cola más larga** y el **mayor tiempo de espera promedio**.
-   * Revise la **utilización** de todos los recursos (amasadora, horno, estación de manjar, envasadora). El recurso con la utilización más cercana al 100% es probablemente el cuello de botella.
-5. **Fase 4: Propuesta y Evaluación de Mejoras**
-   * Con base en su análisis, formule una hipótesis. Por ejemplo: "El horno es el principal cuello de botella del sistema".
-   * **Propuesta de Mejora**: La gerencia evalúa comprar un segundo horno. Modifique su modelo para reflejar esta mejora, aumentando la capacidad del `ResourcePool` del horno a **2**.
-   * Ejecute el nuevo escenario y compare los resultados con el modelo base.
-6. **Fase 5: Presentación de Resultados (Informe Técnico)**
-   * Prepare un informe de no más de 2 páginas que contenga:
-     * Una breve descripción del modelo construido.
-     * La identificación clara del cuello de botella, justificada con datos (longitud de cola, utilización).
-     * Una tabla comparativa de KPIs (Producción Total de Alfajores y Queques, Tiempo de Ciclo Promedio) entre el **escenario base** y el **escenario con la mejora**.
-     * Una recomendación final para la gerencia de **Pasteles CRC**, indicando si la inversión en un segundo horno es justificable o no según los resultados de la simulación.
+1. **Phase ZERO**: Process Visualization
+
+Build the theoretical model of the process, using flowcharts or any graphical tool that allows you to visualize the process.
+
+2. **Phase 1: Construction of the Base Model**
+
+Create the `Product` agent with its respective parameters.
+
+Model the process flow using the PML library blocks: `Source`, `Queue`, `Service`, `SelectOutput` for logical decisions, and `RestrictedAreaStart/End` for the WIP restriction.
+Configure each service block (`Service`) with the specified resources and time allocations.
+
+3. **Phase 2: Verification and Validation**
+
+Run the model and verify that the entity flow is correct (cakes are kneaded, alfajores are not, etc.).
+Ensure that the 100-unit restriction in the system is working correctly.
+Validate that the total number of output products plus those left in process equals the number of inputs.
+
+4. **Phase 3: Bottleneck Analysis and Identification**
+
+Run the simulation for 7,200 minutes.
+Analyze the results: Identify the workstation with the **longest queue** and the **longest average wait time**.
+Review the **utilization** of all resources (dough mixer, oven, deli station, packaging machine). The resource with the utilization closest to 100% is likely the bottleneck.
+
+5. **Phase 4: Improvement Proposal and Evaluation**
+Based on your analysis, formulate a hypothesis. For example: "The oven is the main bottleneck in the system."
+
+**Improvement Proposal**: Management is considering purchasing a second oven. Modify your model to reflect this improvement, increasing the oven's Resource Pool capacity to **2**.
+Run the new scenario and compare the results with the baseline model.
+
+6. **Phase 5: Presentation of Results (Technical Report)**
+
+* Prepare a report of no more than 2 pages containing:
+* A brief description of the model built.
+* A clear identification of the bottleneck, supported by data (queue length, utilization).
+* A comparative table of KPIs (Total Production of Alfajores and Queques, Average Cycle Time) between the **base scenario** and the
+
+**scenario with the improvement**.
+
+* A final recommendation for the management of **Pasteles CRC**, indicating whether the investment in a second oven is justifiable or not based on the simulation results.
