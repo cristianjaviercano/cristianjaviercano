@@ -2,30 +2,30 @@
 icon: boot-heeled
 ---
 
-# Manufactura de Calzado DC
+# DC Footwear Manufacturing
 
-**1. Objetivos**
+**1. Objectives**
 
-* [ ] Modelar un proceso de producción de dos etapas con llegadas y tiempos de servicio estocásticos.
-* [ ] Implementar la lógica de enrutamiento probabilístico para diferentes tipos de productos.
-* [ ] Configurar y ejecutar un experimento de simulación para un número finito de productos.
-* [ ] Medir y analizar los indicadores de rendimiento clave: tiempo promedio en el sistema y tiempo promedio de espera.
+* [ ] Model a two-stage production process with stochastic arrivals and service times.
+* [ ] Implement probabilistic routing logic for different product types.
+* [ ] Set up and run a simulation experiment for a finite number of products.
+* [ ] Measure and analyze key performance indicators: average time in system and average waiting time.
 
-**2. Análisis del Sistema**
+**2. System Analysis**
 
-Antes de modelar, es crucial definir los componentes del sistema basado en la descripción del caso de la "Fábrica de calzado".
+Before modeling, it is crucial to define the system components based on the "Shoe Factory" case description.
 
-* **Entidades**: Pares de zapatos.
-* **Proceso**: Un flujo de dos etapas: Corte (Estación 1) y Ensamble (Estación 2).
-* **Llegadas**: Los pares de zapatos llegan a la Estación 1 con un tiempo entre llegadas que sigue una distribución **Normal** con una media de 1.5 minutos (90 segundos) y una desviación estándar de 20 segundos.
-* **Recursos**:
-  * Máquina de Corte (Estación 1): 1 unidad.
-  * Máquina de Ensamble (Estación 2): 1 unidad.
-* **Lógica de Flujo**:
-  * En la Estación 1 (Corte), hay 3 tipos de corte con diferentes probabilidades y tiempos de operación.
-  * **50%** son de **Tipo 1** (tiempo fijo).
-  * **30%** son de **Tipo 2** (tiempo uniforme).
-  * **20%** son de **Tipo 3** (tiempo normal).
-* **Fin de la Simulación**:&#x20;
+* **Entities**: Pairs of shoes.
+* **Process**: A two-stage flow: Cutting (Station 1) and Assembly (Station 2).
+* **Arrivals**: The pairs of shoes arrive at Station 1 with an interarrival time that follows a **Normal** distribution with a mean of 1.5 minutes (90 seconds) and a standard deviation of 20 seconds.
+* **Resources**:
+* Cutting Machine (Station 1): 1 unit.
+* Assembly Machine (Station 2): 1 unit.
+* **Flow Logic**:
+* At Station 1 (Cutting), there are 3 types of cutting with different probabilities and operation times.
+* **50%** are **Type 1** (fixed time).
+* **30%** are **Type 2** (uniform time).
+* **20%** are **Type 3** (normal time).
+* **End of Simulation**:&#x20;
 
-El modelo debe detenerse después de procesar **100 pares de zapatos**. o una unidad e tiempo responsable.
+The model must stop after processing **100 pairs of shoes**, or one unit of responsible time.
