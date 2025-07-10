@@ -4,218 +4,216 @@ icon: timeline-arrow
 
 # Chapter Four: Monte Carlo Simulation with Excel
 
-Objetivos:
+Objectives:
 
-1. Comprender los principios fundamentales y las aplicaciones típicas de la simulación de Montecarlo.
-2. Utilizar eficientemente las funciones incorporadas en Microsoft Excel para generar números aleatorios y muestrear de distribuciones de probabilidad comunes.
-3. Estructurar e implementar modelos de simulación de Montecarlo en hojas de cálculo de Excel para resolver problemas simples de ingeniería industrial, logística y producción.
-4. Realizar análisis estadísticos básicos (media, desviación estándar, histogramas) de los resultados obtenidos de una simulación de Montecarlo en Excel.
-5. Evaluar el impacto de la incertidumbre en los parámetros de un modelo y realizar análisis de sensibilidad básicos
-
-***
-
-### **Introducción a la simulación de Montecarlo.**
-
-La simulación de Montecarlo es una técnica computacional que utiliza el muestreo aleatorio para obtener resultados numéricos. Esencialmente, se basa en la idea de repetir un experimento simulado muchas veces, utilizando en cada ocasión valores de entrada generados a partir de sus distribuciones de probabilidad, para luego analizar el conjunto de resultados obtenidos y así entender el comportamiento del sistema o proceso bajo estudio, especialmente en presencia de incertidumbre.  &#x20;
-
-#### **Definición y Principio.**&#x20;
-
-A diferencia de la simulación de eventos discretos que se enfoca en la evolución dinámica de sistemas a lo largo del tiempo, la simulación de Montecarlo se aplica a menudo a modelos estáticos o para evaluar el impacto de la incertidumbre en modelos que de otro modo serían deterministas. El nombre proviene del Casino de Montecarlo, aludiendo al carácter aleatorio inherente al método. La idea central es que, mediante un número suficiente de "experimentos" o "muestras" aleatorias, se puede aproximar la solución de problemas que serían difíciles o imposibles de resolver analíticamente.  &#x20;
-
-### **Pasos Generales de un Estudio Montecarlo:**
-
-1. **Definir el Modelo del Sistema:** Establecer las relaciones matemáticas o lógicas que describen el sistema o problema, identificando las variables de salida de interés (ej. ganancia, costo, tiempo de finalización).
-2. **Identificar Entradas Inciertas:** Determinar qué variables de entrada o parámetros del modelo son inciertos y deben ser tratados como variables aleatorias.
-3. **Especificar Distribuciones de Probabilidad:** Para cada entrada incierta, seleccionar y parametrizar una distribución de probabilidad adecuada que represente su variabilidad (ej. demanda Normal, duración de actividad Triangular).
-4. **Generar Muestras Aleatorias (Replicaciones):** Para cada replicación del modelo:
-   * Generar un valor aleatorio para cada variable de entrada incierta a partir de su distribución especificada.
-   * Calcular el valor de la(s) variable(s) de salida del modelo utilizando estos valores de entrada generados.
-5. **Repetir el Paso 4:** Realizar un gran número de replicaciones (cientos o miles) para obtener una muestra representativa de los posibles resultados de salida.
-6. **Analizar Estadísticamente los Resultados:** Calcular estadísticas descriptivas (media, varianza, percentiles), construir histogramas o funciones de distribución empírica para las variables de salida, y estimar probabilidades de interés (ej. probabilidad de que la ganancia exceda un cierto umbral).
-
-### **Aplicaciones Típicas en Ingeniería Industrial:**
-
-* **Análisis de Riesgo en Proyectos e Inversiones:** Evaluar la distribución de posibles resultados financieros (ej. Valor Presente Neto - VPN, Tasa Interna de Retorno - TIR) cuando los flujos de caja o los costos son inciertos.  &#x20;
-* **Estimación de Fiabilidad de Sistemas:** Calcular la probabilidad de que un sistema (compuesto por múltiples componentes con probabilidades de falla individuales) funcione correctamente.
-* **Problemas de Inventario Simples:** Determinar políticas de pedido óptimas cuando la demanda es incierta (ej. el problema del vendedor de periódicos).  &#x20;
-* **Planificación de la Producción bajo Incertidumbre:** Estimar la cantidad de producción necesaria para satisfacer una demanda fluctuante minimizando costos de inventario y faltantes.
-* **Análisis de Tolerancias en Manufactura:** Evaluar cómo las variaciones en las dimensiones de las piezas afectan el ensamblaje final.
-* **Estimación de Tiempos en Proyectos (PERT Estocástico):** Calcular la distribución del tiempo de finalización de un proyecto cuando las duraciones de las actividades son inciertas.  &#x20;
-
-Excel, aunque no es un software de simulación especializado, es una plataforma muy accesible y ampliamente utilizada. Sus capacidades para generar números aleatorios y realizar cálculos estadísticos lo convierten en una herramienta útil para introducir los conceptos de la simulación de Montecarlo y para realizar análisis de modelos relativamente simples donde la dinámica temporal compleja no es el foco principal. Muchos problemas en ingeniería industrial que involucran incertidumbre en parámetros pueden ser abordados inicialmente con este enfoque antes de recurrir a herramientas más sofisticadas.  &#x20;
+1. Understand the fundamental principles and typical applications of Monte Carlo simulation.
+2. Efficiently use the built-in functions in Microsoft Excel to generate random numbers and sample from common probability distributions.
+3. Structure and implement Monte Carlo simulation models in Excel spreadsheets to solve simple problems in industrial engineering, logistics, and production.
+4. Perform basic statistical analyses (mean, standard deviation, histograms) on the results obtained from a Monte Carlo simulation in Excel.
+5. Evaluate the impact of uncertainty on model parameters and perform basic sensitivity analyses.
 
 ***
 
-### **Uso de funciones de Excel para generar aleatoriedad: `ALEATORIO()`, `ALEATORIO.ENTRE()`.**
+### **Introduction to Monte Carlo Simulation.**
 
-Microsoft Excel proporciona funciones incorporadas que son fundamentales para generar la aleatoriedad necesaria en las simulaciones de Montecarlo. Las dos funciones básicas son `ALEATORIO()` y `ALEATORIO.ENTRE()`.
+Monte Carlo simulation is a computational technique that uses random sampling to obtain numerical results. Essentially, it is based on the idea of ​​repeating a simulated experiment many times, each time using input values ​​generated from their probability distributions. The set of results obtained is then analyzed to understand the behavior of the system or process under study, especially in the presence of uncertainty.
 
-* **`ALEATORIO()` (RAND):**
-  * **Descripción:** Esta función genera un número real pseudoaleatorio que está uniformemente distribuido en el intervalo mayor o igual a 0 y menor que 1 (es decir, \[0,1)).  &#x20;
-  * **Sintaxis:** `ALEATORIO()`
-  * **Comportamiento:** Cada vez que la hoja de cálculo se recalcula (ya sea por un cambio en otra celda, al presionar la tecla F9, o al abrir el archivo), la función `ALEATORIO()` devuelve un nuevo número aleatorio. Esta volatilidad es esencial para generar múltiples replicaciones en una simulación de Montecarlo.
-  * **Uso Base:** `ALEATORIO()` es la piedra angular para generar variables aleatorias de otras distribuciones mediante el método de la transformada inversa, como se verá en la siguiente sección.
-  * **Fijar un Valor:** Si se desea conservar un valor aleatorio específico generado por `ALEATORIO()` sin que cambie con cada recálculo, se puede copiar la celda que contiene la función y luego usar la opción "Pegar Valores" para reemplazar la fórmula por su resultado numérico.  &#x20;
-* **`ALEATORIO.ENTRE(inferior, superior)` (RANDBETWEEN):**
-  * **Descripción:** Esta función devuelve un número entero pseudoaleatorio que está uniformemente distribuido entre los valores `inferior` y `superior`, ambos inclusive.  &#x20;
-  * **Sintaxis:** `ALEATORIO.ENTRE(inferior, superior)`
-    * `inferior`: El menor entero que la función puede devolver.
-    * `superior`: El mayor entero que la función puede devolver.
-  * **Comportamiento:** Al igual que `ALEATORIO()`, esta función es volátil y genera un nuevo entero aleatorio con cada recálculo de la hoja.
-  * **Uso Típico:** Útil para modelar situaciones donde los resultados son enteros equiprobables dentro de un rango definido, como el resultado de lanzar un dado (`ALEATORIO.ENTRE(1,6)`), o para seleccionar aleatoriamente un ítem de una lista numerada.
+#### **Definition and Principle.**
 
-Es importante comprender que tanto `ALEATORIO()` como `ALEATORIO.ENTRE()` generan números a partir de una _distribución uniforme_. Esto significa que cada valor posible dentro de sus respectivos rangos tiene la misma probabilidad de ocurrir. Si se necesita modelar fenómenos que siguen otras distribuciones (Normal, Exponencial, Poisson, etc.), será necesario transformar la salida de `ALEATORIO()` utilizando técnicas como la transformada inversa. Estas dos funciones, aunque simples, son los bloques de construcción esenciales para introducir la incertidumbre en los modelos de Excel y realizar simulaciones de Montecarlo.&#x20;
+Unlike discrete-event simulation, which focuses on the dynamic evolution of systems over time, Monte Carlo simulation is often applied to static models or to assess the impact of uncertainty on otherwise deterministic models. The name comes from the Monte Carlo Casino, alluding to the inherent randomness of the method. The central idea is that, through a sufficient number of random "experiments" or "samples," one can approximate the solution to problems that would be difficult or impossible to solve analytically.
+
+### **General Steps of a Monte Carlo Study:**
+
+1. **Define the System Model:** Establish the mathematical or logical relationships that describe the system or problem, identifying the output variables of interest (e.g., profit, cost, completion time).
+2. **Identify Uncertain Inputs:** Determine which input variables or model parameters are uncertain and should be treated as random variables.
+3. **Specify Probability Distributions:** For each uncertain input, select and parameterize an appropriate probability distribution that represents its variability (e.g., normal demand, triangular activity duration).
+4. **Generate Random Samples (Replications):** For each model replication:
+* Generate a random value for each uncertain input variable from its specified distribution.
+* Calculate the value of the model's output variable(s) using these generated input values.
+5. **Repeat Step 4:** Perform a large number of replications (hundreds or thousands) to obtain a representative sample of possible output outcomes.
+6. **Statistically Analyze the Results:** Calculate descriptive statistics (mean, variance, percentiles), construct histograms or empirical distribution functions for the output variables, and estimate probabilities of interest (e.g., the probability that the profit exceeds a certain threshold).
+
+### **Typical Applications in Industrial Engineering:**
+
+* **Project and Investment Risk Analysis:** Evaluate the distribution of possible financial outcomes (e.g., Net Present Value - NPV, Internal Rate of Return - IRR) when cash flows or costs are uncertain.
+* **System Reliability Estimation:** Calculate the probability that a system (composed of multiple components with individual probabilities of failure) will function correctly.
+* **Simple Inventory Problems:** Determine optimal ordering policies when demand is uncertain (e.g., the newspaper vendor problem).
+* **Production Planning under Uncertainty:** Estimate the amount of production needed to meet fluctuating demand while minimizing inventory costs and shortages.
+* **Manufacturing Tolerance Analysis:** Evaluate how variations in part dimensions affect final assembly.
+* **Project Time Estimating (Stochastic PERT):** Calculate the distribution of project completion times when activity durations are uncertain.
+
+Excel, although not a specialized simulation software, is a very accessible and widely used platform. Its capabilities for generating random numbers and performing statistical calculations make it a useful tool for introducing Monte Carlo simulation concepts and for performing analysis of relatively simple models where complex time dynamics are not the primary focus. Many problems in industrial engineering involving parameter uncertainty can be initially addressed with this approach before turning to more sophisticated tools.
 
 ***
 
-### Implementación de la Transformada Inversa en Excel para distribuciones comunes
+### **Using Excel Functions to Generate Randomness: `RAND()`, `RANDBETWEEN()`.**
 
-El método de la transformada inversa (MTI) es una técnica fundamental para generar variables aleatorias (V.A.) a partir de una distribución de probabilidad específica, utilizando como base números aleatorios uniformemente distribuidos.
+Microsoft Excel provides built-in functions that are critical for generating the randomness needed in Monte Carlo simulations. The two basic functions are `RAND()` and `RANDBETWEEN()`.
 
-1.  Normal $$N(μ,σ2)$$
+* **`RAND()` (RAND):**
+* **Description:** This function generates a pseudo-random real number that is uniformly distributed in the range greater than or equal to 0 and less than 1 (i.e., \[0,1)). &#x20;
+* **Syntax:** `RAND()`
+* **Behavior:** Each time the worksheet is recalculated (either by a change in another cell, pressing the F9 key, or opening the file), the `RAND()` function returns a new random number. This volatility is essential for generating multiple replications in a Monte Carlo simulation.
+* **Base Use:** `RANDBETWEEN()` is the cornerstone for generating random variables from other distributions using the inverse transform method, as will be seen in the next section.
+* **Setting a Value:** If you want to retain a specific random value generated by `RANDBETWEEN()` without it changing with each recalculation, you can copy the cell containing the function and then use the "Paste Values" option to replace the formula with its numerical result. &#x20;
+* **`RANDBETWEEN(lower, upper)` (RANDBETWEEN):**
+* **Description:** This function returns a pseudo-random integer that is uniformly distributed between the `lower` and `upper` values, inclusive. &#x20;
+* **Syntax:** `RANDBETWEEN(lower, upper)`
+* `lower`: The smallest integer the function can return.
+* `upper`: The largest integer the function can return.
+* **Behavior:** Like `RANDBETWEEN()`, this function is volatile and generates a new random integer with each recalculation of the spreadsheet.
+* **Typical Use:** Useful for modeling situations where outcomes are equally probable integers within a defined range, such as the result of rolling a die (`RANDBETWEEN(1,6)`), or randomly selecting an item from a numbered list.
 
-    1. &#x20;(media μ, desviación estándar σ)
-       1. Excel proporciona una función directa para la inversa de la FDA Normal
-          1. **Fórmula en Excel:** `=DISTR.NORM.INV(ALEATORIO(), media, desv_est)` o en inglés `=NORM.INV(RAND(), mean, standard_dev)`.  &#x20;
-             * Reemplace `media` y `desv_est` con los valores deseados.&#x20;
+It is important to understand that both `RANDBETWEEN()` and `RANDBETWEEN()` generate numbers from a _uniform distribution_. This means that each possible value within their respective ranges has the same probability of occurring. If you need to model phenomena that follow other distributions (Normal, Exponential, Poisson, etc.), you will need to transform the output of `RAND()` using techniques such as the inverse transform. These two functions, although simple, are essential building blocks for introducing uncertainty into Excel models and performing Monte Carlo simulations.
+
+***
+
+### Implementing the Inverse Transform in Excel for Common Distributions
+
+The inverse transform method (ITM) is a fundamental technique for generating random variables (RVs) from a specific probability distribution, using uniformly distributed random numbers as a basis.
+
+1. Normal $$N(μ, σ2)$$
+
+1. &#x20;(mean μ, standard deviation σ)
+1. Excel provides a direct function for the inverse of the Normal CDF
+1. **Excel formula:** `=NORM.INV(RAND(), mean, std_dev)` or `=NORM.INV(RAND(), mean, std_dev)`. &#x20;
+* Replace `mean` and `std_dev` with the desired values.&#x20;
+
+2. Triangular (minimum a, mode c, maximum b).
+
+The FDA is $$F(x)$$ = $$\left\{ \begin{matrix} \frac{(x-a)^2}{(b-a)(c-a)}\ si\ a \le x\le c\\ 1- \frac{(b-x)^2}{(b-a)(b-c)}\ si\ c \le x\le b\end{matrix} \right\}$$
+
+The inverse $$F^−1(u)$$ is defined piecewise:&#x20;
+
+$$If\ u≤F(c)=(c−a)/(b−a)$$, then $$x=a+\sqrt {u(b−a)(c−a)}$$.&#x20;
+
+$$If\ u>F(c)$$, then $$x=b−\sqrt{(1−u)(b−a)(b−c)}$$
 
 
-2. Triangular (mínimo a, moda c, máximo b).
 
-La FDA es $$F(x)$$ = $$\left\{ \begin{matrix} \frac{(x-a)^2}{(b-a)(c-a)}\  si\ a \le x\le c\\ 1- \frac{(b-x)^2}{(b-a)(b-c)}\  si\ c \le x\le b\end{matrix} \right\}$$
-
-La inversa $$F^−1(u)$$ se define por tramos:&#x20;
-
-$$Si\ u≤F(c)=(c−a)/(b−a)$$, entonces $$x=a+\sqrt {u(b−a)(c−a)}$$.&#x20;
-
-$$Si\ u>F(c)$$, entonces $$x=b−\sqrt{(1−u)(b−a)(b−c)}$$
-
-
-
-**Fórmula en Excel:**&#x20;
+**Formula in Excel:**&#x20;
 
 {% hint style="info" %}
-**Asumiendo que a,c,b están en las celdas A1, B1, C1 respectivamente**
+**Assuming a,c,b are in cells A1, B1, C1 respectively**
 {% endhint %}
 
-`=SI(ALEATORIO()<=(B1-A1)/(C1-A1), A1+RAIZ(ALEATORIO()*(C1-A1)*(B1-A1)), C1-RAIZ((1-ALEATORIO())*(C1-A1)*(C1-B1)))`&#x20;
+`=IF(RANDOM()<=(B1-A1)/(C1-A1), A1+ROOT(RANDOM()*(C1-A1)*(B1-A1)), C1-ROOT((1-RANDOM())*(C1-A1)*(C1-B1)))`&#x20;
 
-_Esta fórmula usa `ALEATORIO()` dos veces, lo que genera dos números aleatorios diferentes. Para usar el mismo número aleatorio U para la condición y el cálculo, U debería generarse en una celda separada y referenciarse._&#x20;
+_This formula uses `RANDOM()` twice, which generates two different random numbers. To use the same random number U for both the condition and the calculation, U should be generated in a separate cell and referenced.
 
-Una mejor implementación sería: Celda D1: `=ALEATORIO()` Celda E1: `=SI(D1<=(B1-A1)/(C1-A1), A1+RAIZ(D1*(C1-A1)*(B1-A1)), C1-RAIZ((1-D1)*(C1-A1)*(C1-B1)))`&#x20;
+A better implementation would be: Cell D1: `=RAND()` Cell E1: `=IF(D1<=(B1-A1)/(C1-A1), A1+SQRT(D1*(C1-A1)*(B1-A1)), C1-SQRT((1-D1)*(C1-A1)*(C1-B1)))`&#x20;
 
-#### **Bernoulli (probabilidad de éxito p):**
+#### **Bernoulli (probability of success p):**
 
-* La V.A. toma valor 1 (éxito) con probabilidad p, y 0 (fracaso) con probabilidad 1−p.
-* La FDA es $$F(0)=1−p, F(1)=1.$$
-* Si u\<p, X=1. Si u≥p, X=0. (O, más comúnmente, si u\<p, X=1, sino X=0).
-* **Fórmula en Excel:** `=SI(ALEATORIO()<p, 1, 0)`
-  * Reemplace `p` con la probabilidad de éxito.
+* The AV takes the value 1 (success) with probability p, and 0 (failure) with probability 1−p.
+* The CDF is $$F(0)=1−p, F(1)=1.$$
+* If u\<p, X=1. If u ≥ p, X = 0. (Or, more commonly, if u < p, X = 1, otherwise X = 0.)
+* **Excel formula:** `=IF(RAND()<p, 1, 0)`
+* Replace `p` with the probability of success.
 
-**Binomial (n ensayos, probabilidad de éxito p):**
+**Binomial (n trials, probability of success p):**
 
-* Excel tiene una función inversa directa.
-* **Fórmula en Excel:** `=INV.BINOM(n, p, ALEATORIO())` o en inglés `=BINOM.INV(trials, probability_s, RAND())`.  &#x20;
-  * Reemplace `n` y `p` con los parámetros deseados.
+* Excel has a direct inverse function.
+* **Excel formula:** `=BINOM.INV(n, p, RAND())` or `=BINOM.INV(trials, probability_s, RAND())`. &#x20;
+* Replace `n` and `p` with the desired parameters.
 
 ***
 
-### **El Problema de la Diana**
+### **The Bullseye Problem**
 
-Imagina un tablero cuadrado que tiene un lado de longitud 2 y un área de 4 unidades. Dentro de este cuadrado, inscribimos un círculo de radio 1, cuya área es $$πr2=π$$.
+Imagine a square board with a side length of 2 and an area of ​​4 units. Within this square, we inscribe a circle of radius 1, whose area is $$πr2=π$$.
 
-<img src="../../../.gitbook/assets/file.excalidraw (13).svg" alt="Problema de la Diana" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (13).svg" alt="Bullseye Problem" class="gitbook-drawing">
 
-Si lanzamos _dardos al azar_ a este tablero, de manera que cada punto del cuadrado tenga la misma probabilidad de ser impactado, la proporción de dardos que caen dentro del círculo con respecto al total de dardos lanzados será aproximadamente igual a la **proporción de sus áreas.**
+If we throw _darts randomly_ at this board, such that each point in the square has the same probability of being hit, the proportion of darts that fall inside the circle relative to the total number of darts thrown will be approximately equal to the **ratio of their areas.**
 
-El método se basa en un experimento estocástico. Considere un espacio muestral definido por un cuadrado en el plano cartesiano. Para simplificar el modelo, se suele centrar este cuadrado en el origen, con vértices en los puntos (1, 1), (1, -1), (-1, -1), y (-1, 1). La longitud de cada lado es, por tanto, de 2 unidades, y su **área total** $$A_{cuadrado​} = 4$$ **unidades cuadradas**.
+The method is based on a stochastic experiment. Consider a sample space defined by a square in the Cartesian plane. To simplify the model, this square is usually centered at the origin, with vertices at the points (1, 1), (1, -1), (-1, -1), and (-1, 1). The length of each side is therefore 2 units, and its **total area** $$A_{square} = 4$$ **square units**.
 
-Dentro de este cuadrado, se inscribe un círculo con centro en el origen (0,0) y radio r=1. El área de este **círculo** $$A_{circulo}$$ se define por la fórmula $$πr2$$**,** que en este caso es simplemente π.
+Within this square, a circle is inscribed with center at the origin (0,0) and radius r = 1. The area of ​​this **circle** $$A_{circle}$$ is defined by the formula $$πr2$$**,** which in this case is simply π.
 
-El experimento consiste en generar una gran cantidad de puntos aleatorios (x,y) que caen de manera uniforme dentro de los límites del cuadrado. Esto significa que cada punto tiene la misma probabilidad de aterrizar en cualquier lugar del área del cuadrado.
-
-$$
-−1≤x≤1 \ y\  −1≤y≤1
-$$
-
-Para cada punto generado, se evalúa si este ha caído dentro del círculo inscrito. Un punto (x,y) se encuentra dentro del círculo si la distancia desde el origen hasta dicho punto es menor o igual al radio del círculo. Según el Teorema de Pitágoras, esta condición se expresa matemáticamente como:
+The experiment consists of generating a large number of random points (x,y) that fall uniformly within the boundaries of the square. This means that each point has the same probability of landing anywhere within the square's area.
 
 $$
-x 
+−1≤x≤1 \ y\ −1≤y≤1
+$$
+
+For each generated point, we evaluate whether it falls within the inscribed circle. A point (x,y) is inside the circle if the distance from the origin to that point is less than or equal to the radius of the circle. According to the Pythagorean Theorem, this condition is expressed mathematically as:
+
+$$
+x
 2
- +y 
++y
 2
- ≤r 
+≤r
 2
 $$
 
-Dado que r=1, la condición se simplifica a
+Since r=1, the condition simplifies to
 
 $$
-x 
+x
 2
- +y 
++y
 2
- ≤1
+≤1
 $$
 
-* Teóricamente, la probabilidad (P) de que un dardo lanzado al azar impacte dentro del círculo es la razón entre el área del círculo y el área del cuadrado
+* Theoretically, the probability (P) that a randomly thrown dart will hit inside the circle is the ratio of the area of ​​the circle to the area of ​​the square.
 
 $$
-P(dentro del círculo)= \frac{A_{círculo}}{ A_{cuadrado}}= \frac{π}{4}
+P(inside the circle)= \frac{A_{circle}}{ A_{square}}= \frac{π}{4}
 $$
 
-#### **Forma Algebraica y Algoritmo de Implementación**
+#### **Algebraic Form and Implementation Algorithm**
 
-Al reordenar algebraicamente la expresión anterior para despejar π, se obtiene la fórmula de estimación utilizada en la simulación:
+By algebraically rearranging the above expression to solve for π, we obtain the estimation formula used in the Simulation:
 
 $$
-π≈4⋅\frac{N_{total}}{​N_{círculo​}}​
+π≈4⋅\frac{N_{total}}{​N_{circle​}}​
 $$
 
-* **Inicialización**: Definir el número total de "dardos" a lanzar $$N_{total}$$​ e inicializar un contador para los puntos dentro del círculo $$N_{círculo}​$$ en cero.
-* **Generación de Puntos**: Iniciar un bucle que se repita N\_total​ de veces. En cada iteración, generar dos números aleatorios, x e y, a partir de una distribución uniforme en el intervalo \[-1, 1].
-* **Evaluación de Condición**: Para cada punto (x,y) generado, calcular x2+y2.
-* **Conteo**: Si el resultado de la evaluación es menor o igual a 1, incrementar el contador N\_círculo​.
-* **Estimación Final**: Una vez completado el bucle, calcular la aproximación de π utilizando la fórmula derivada: $$π_{estimado​} = 4⋅\frac{N_{círculo}}{​{N_{total}}}$$​.
-
+* **Initialization**: Define the total number of "darts" to throw $$N_{total}$$​ and initialize a counter for the points inside the circle $$N_{circle}​$$ to zero.
+* **Point Generation**: Start a loop that repeats N\_total​ times. In each iteration, generate two random numbers, x and y, from a uniform distribution on the interval \[-1, 1].
+* **Condition Evaluation**: For each point (x,y) generated, calculate x2+y2.
+* **Counting**: If the evaluation result is less than or equal to 1, increment the counter N\_circle​.
+* **Final Estimate**: Once the loop is complete, calculate the approximation of π using the derived formula: $$π_{estimated​} = 4⋅\frac{N_{circle}}{​{N_{total}}}$$​.
 
 
 <figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-06-10 a la(s) 1.54.58 p.m..png" alt="" width="375"><figcaption></figcaption></figure>
 
-### **Lógica del Modelo (Single-Server Queue):**
+### **Model Logic (Single-Server Queue):**
 
-El reloj de la simulación avanzará de cliente en cliente. Para cada cliente, se debe determinar:
+The simulation clock will advance from client to client. For each client, the following must be determined:
 
-1. ¿Cuándo llega?
-2. ¿Cuánto tiempo requiere su servicio?
-3. ¿Cuándo comienza su servicio? Esto depende de su hora de llegada y de cuándo se desocupa el servidor.
-4. ¿Cuánto tiempo esperó en la cola?
-5. ¿Cuándo finaliza su servicio y abandona el sistema?
+1. When does the client arrive?
+2. How long does the client require service?
+3. When does the client begin service? This depends on the client's arrival time and when the server becomes available.
+4. How long did the client wait in the queue?
+5. When does the client end service and leave the system?
 
-El objetivo es recopilar datos sobre el rendimiento del sistema (KPIs), como el tiempo de espera promedio, la utilización del servidor y la longitud de la cola.
+The goal is to collect data on system performance (KPIs), such as average wait time, server utilization, and queue length.
 
-#### **Implementación del Modelo en Microsoft Excel**
+#### **Model Implementation in Microsoft Excel**
 
-Se estructurará la hoja de cálculo en dos secciones:&#x20;
+The spreadsheet will be structured into two sections:
 
 <details>
 
-<summary>Los parámetros de entrada (distribuciones de probabilidad)  </summary>
+<summary>Input parameters (probability distributions) </summary>
 
-**Parámetros de Entrada y Distribuciones**
+**Input Parameters and Distributions**
 
-Primero, se definen las distribuciones de probabilidad para los tiempos entre llegadas y los tiempos de servicio. Este es el núcleo del método de Monte Carlo, donde se usarán números aleatorios para muestrear de estas distribuciones.
+First, probability distributions for interarrival times and service times are defined. This is the core of the Monte Carlo method, where random numbers will be used to sample from these distributions.
 
-<table><thead><tr><th>Tiempo</th><th data-type="number">Probabilidad</th><th data-type="number">Probabilidad acum</th><th data-type="number">Rango inferior</th></tr></thead><tbody><tr><td>1</td><td>0.25</td><td>0.25</td><td>0</td></tr><tr><td>2</td><td>0.4</td><td>0.65</td><td>0.25</td></tr><tr><td>3</td><td>0.2</td><td>0.85</td><td>0.65</td></tr><tr><td>4</td><td>0.15</td><td>1</td><td>0.85</td></tr></tbody></table>
+<table><thead><tr><th>Time</th><th data-type="number">Probability</th><th data-type="number">Cumulative probability</th><th data-type="number">Range bottom</th></tr></thead><tbody><tr><td>1</td><td>0.25</td><td>0.25</td><td>0</td></tr><tr><td>2</td><td>0.4</td><td>0.65</td><td>0.25< /td></tr><tr><td>3</td><td>0.2</td><td>0.85</td><td>0.65</td></tr><tr><td>4</td><td>0.15</td><td>1</td><td>0.85</td></tr></tbody></table>
 
 </details>
 
 <details>
 
-<summary>La tabla de simulación principal.</summary>
+<summary>The main simulation table.</summary>
 
-<table><thead><tr><th>tiempo MIn</th><th>Probabilidad</th><th>Acum</th><th data-type="number">limite inferior</th></tr></thead><tbody><tr><td>2</td><td>0.3</td><td>0.3</td><td>0</td></tr><tr><td>3</td><td>0.5</td><td>0.8</td><td>0.3</td></tr><tr><td>4</td><td>0.2</td><td>1</td><td>0.8</td></tr></tbody></table>
+<table><thead><tr><th>time MIn</th><th>Probability</th><th>Accumulated</th><th data-type="number">limit bottom</th></tr></thead><tbody><tr><td>2</td><td>0.3</td><td>0.3</td><td>0</td></tr><tr><td>3</td><td>0 .5</td><td>0.8</td><td>0.3</td></tr><tr><td>4</td><td>0.2</td><td>1</td><td>0.8</td></tr></tbody></table>
 
 </details>
 
