@@ -3,6 +3,9 @@
 * [Cristian´s Bookshelf](README.md)
 * [Applied Technology Management](applied-technology-management/README.md)
   * [Module 1: Fundamentals of Innovation and Technology Management](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management.md)
+  * [Module 2: Innovation Project Management (PMI Approach)](applied-technology-management/module-2-innovation-project-management-pmi-approach.md)
+  * [Module 3: Technologies for Industrial Problem Solving](applied-technology-management/module-3-technologies-for-industrial-problem-solving.md)
+  * [Module 4: Application and Evaluation of Technology Projects](applied-technology-management/module-4-application-and-evaluation-of-technology-projects.md)
 
 ## Logistics
 

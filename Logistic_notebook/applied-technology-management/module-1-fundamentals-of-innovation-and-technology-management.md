@@ -1,3 +1,7 @@
+---
+icon: '1'
+---
+
 # Module 1: Fundamentals of Innovation and Technology Management
 
 
