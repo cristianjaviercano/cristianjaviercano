@@ -65,7 +65,7 @@ Historically, there has been a strong emphasis on supply chain efficiency, often
 
 ## SCM decision and problem solving for Industrial engineers.
 
-<img src="../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (1).svg" alt="" class="gitbook-drawing">
 
 ***
 

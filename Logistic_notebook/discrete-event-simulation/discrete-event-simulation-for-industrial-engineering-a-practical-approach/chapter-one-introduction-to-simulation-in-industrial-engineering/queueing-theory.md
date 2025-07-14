@@ -191,7 +191,7 @@ The theoretical benefit of multiple servers, compared to a single server with th
 {% endtab %}
 {% endtabs %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
 
 ## Service Time Distributions
 

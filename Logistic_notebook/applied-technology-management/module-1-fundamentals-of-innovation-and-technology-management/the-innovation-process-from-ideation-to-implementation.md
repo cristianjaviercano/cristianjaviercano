@@ -10,3 +10,5 @@ A general, yet adaptable, process for innovation management typically includes t
 4. **Step Four: Organize and Implement:** Given that no company possesses infinite resources, this crucial step involves prioritizing which ideas are most opportune to implement at a given point in time. Unchosen ideas should be safely archived for future consideration, reflecting a strategic practice of prioritization
 
 <figure><img src="../../.gitbook/assets/Module 1_ Fundamentals of Innovation and Technology Management - visual selection (2).png" alt=""><figcaption></figcaption></figure>
+
+Design Thinking stands out as a particularly noteworthy and effective approach to innovation, emphasizing a solution-based mindset. It requires a deep understanding of targeted users and their challenges before developing, prototyping, and testing new designs. The steps involved in Design Thinking—identifying targeted users, defining their challenges and empathizing with their needs, ideating innovative solutions, prototyping innovation frameworks, and performing testing—are iterative and may not follow a strict sequential order
