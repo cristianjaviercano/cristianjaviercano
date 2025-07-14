@@ -1,9 +1,24 @@
 ---
 cover: .gitbook/assets/imgena1.png
 coverY: 0
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: false
+  pagination:
+    visible: true
 ---
 
-# Cristian´s Bookshell
+# Cristian´s Bookshelf
 
 <figure><img src=".gitbook/assets/Imagen base para animar (1).png" alt="" width="375"><figcaption></figcaption></figure>
 
@@ -28,3 +43,7 @@ I'll be waiting for you on my Instagram page to share information. You can follo
 
 
 <figure><img src=".gitbook/assets/CRclogo2.png" alt="" width="188"><figcaption><p>Msc Cristian J cano M</p></figcaption></figure>
+
+## Book shelf Content!
+
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td>Technological solution Course</td><td><a href=".gitbook/assets/Gemini_Generated_Image_hth82zhth82zhth8.png">Gemini_Generated_Image_hth82zhth82zhth8.png</a></td><td><a href="applied-technology-management/">applied-technology-management</a></td></tr><tr><td>Logistic Course</td><td><a href=".gitbook/assets/file.excalidraw.svg">file.excalidraw.svg</a></td><td><a href="logistics/let-s-talk-about-logistics/">let-s-talk-about-logistics</a></td></tr><tr><td>Simulation Course</td><td><a href=".gitbook/assets/file.excalidraw (1) (1).svg">file.excalidraw (1) (1).svg</a></td><td><a href="discrete-event-simulation/discrete-event-simulation-for-industrial-engineering-a-practical-approach/">discrete-event-simulation-for-industrial-engineering-a-practical-approach</a></td></tr></tbody></table>
