@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Cristian´s Bookshelf](README.md)
+* [Applied Technology Management](applied-technology-management/README.md)
+  * [Module 1: Fundamentals of Innovation and Technology Management](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management.md)
 
 ## Logistics
 
@@ -22,11 +24,6 @@
     * [Modelo de redes](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
   * [Unidad Cuatro: Modelos de Localizacion](logistics/let-s-talk-about-logistics/unidad-cuatro-modelos-de-localizacion.md)
   * [Unidad Cinco: supply chain models and methods](logistics/let-s-talk-about-logistics/unidad-cinco-supply-chain-models-and-methods.md)
-
-***
-
-* [Python para logistica](python-para-logistica/README.md)
-  * [Usando FOLIUM](python-para-logistica/usando-folium.md)
 
 ## Discrete event Simulation
 
