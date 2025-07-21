@@ -5,21 +5,6 @@ description: >-
 icon: microchip
 cover: ../.gitbook/assets/Gemini_Generated_Image_hth82zhth82zhth8.png
 coverY: -46.80566280566282
-layout:
-  width: default
-  cover:
-    visible: true
-    size: full
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Applied Technology Management
