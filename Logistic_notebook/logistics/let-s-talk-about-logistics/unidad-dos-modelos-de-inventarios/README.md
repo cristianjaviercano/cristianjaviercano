@@ -1,148 +1,148 @@
-# Unidad Dos: Modelos de inventarios
+# Unit Two: Inventory Models
 
 {% hint style="info" %}
-Los modelos de inventario son fundamentales en la logística ya que permiten gestionar eficientemente los niveles de stock. Mediante la aplicación de estos modelos, se puede minimizar el costo total de inventario, balancear el suministro con la demanda, y mejorar el servicio al cliente reduciendo tiempos de entrega y evitando desabastecimientos. Asimismo, facilitan la planificación y la toma de decisiones estratégicas en la cadena de suministro, optimizando el flujo de bienes y mejorando la competitividad de la empresa.
+Inventory models are essential in logistics because they allow for efficient management of stock levels. By applying these models, total inventory costs can be minimized, supply and demand can be balanced, and customer service can be improved by reducing delivery times and avoiding stockouts. They also facilitate planning and strategic decision-making in the supply chain, optimizing the flow of goods and improving the company's competitiveness.
 {% endhint %}
 
-En general, la complejidad de los modelos de inventario depende de si la demanda es determinística o probabilística. Dentro de ambas categorías, la demanda puede variar, o no, con el tiempo. el patrón de la demanda en un modelo de inventario puede asumir uno de cuatro tipos:
+In general, the complexity of inventory models depends on whether demand is deterministic or probabilistic. Within both categories, demand may or may not vary over time. The demand pattern in an inventory model can take one of four types:
 
-1. Determinístico y constante(estático)con el tiempo.
-2. Determinístico y variable (dinámico) con el tiempo.
-3. Probabilístico y estacionario a lo largo del tiempo.
-4. Probabilístico y no estacionario a lo largo del tiempo.
+1. Deterministic and constant (static) over time.
+2. Deterministic and variable (dynamic) over time.
+3. Probabilistic and stationary over time.
+4. Probabilistic and non-stationary over time.
 
-Esta clasificación supone la disponibilidad de datos confiables para pronosticar la futura demanda.
+This classification assumes the availability of reliable data to forecast future demand.
 
-En función del desarrollo de modelos de inventario, la primera categoría es la más sencilla analíticamente, y la cuarta es la más compleja. Por otra parte, la primera categoría es la menos probable que ocurra en la práctica, y la cuarta es la más prevalente.
+Based on the development of inventory models, the first category is the simplest analytically, and the fourth is the most complex. On the other hand, the first category is the least likely to occur in practice, and the fourth is the most prevalent.
 
-### Definicion de modelos de inventario
+### Definition of Inventory Models
 
-los modelos de inventario son modelos estadisticos y ecuaciones matematicas que conjugadas intentan o logran predecir el comportamiento de la demanda en sistemas productivos o de servicio,, para garantizar la disponibilidad de los bienes suminsitrados ya sea en la cade logistica interna o externa segun sea el caso.
+Inventory models are statistical models and mathematical equations that, when combined, attempt or succeed in predicting demand behavior in production or service systems to ensure the availability of supplied goods, whether in the internal or external logistics chain, as the case may be.
 
-hay tipos de modelos que abarcan los inventarios desde los mas sencillos como el EOQ. econocmic orden quantity hasta los modelos mas complejos como los modelos de punto de reorden y los modelos de revision continua de inventario.
+There are types of models that cover inventories, from the simplest, such as the EOQ (economic order quantity) model, to the most complex, such as reorder point models and continuous inventory review models.
 
-### Google colab y los modelos de inventarios:[#](broken-reference)
+### Google Collab and Inventory Models: [#](broken-reference)
 
-para trabajar con los modelos de inventarios lo que debemos hacer es
+To work with inventory models, what we must do is
 
-1. identificar las librerias que usaremos en este caso usaremos:
+1. Identify the libraries we will use. In this case, we will use:
 
 * pandas
 * numpy
 * mathplotlib
 
-### Modelo general de Inventario[#](broken-reference)
+### General Inventory Model [#](broken-reference)
 
-Las grandes pregiuntas que pretende suplir el modelo de inventario es ¿Cuando pedir?¿cuanto pedir?, esto nos lleva a evaluar todos los aspectos del inventario y segun los autores encontramos la siguiente ecuacion que encierra el modelo general de inventario:
+The main questions that the inventory model aims to address are: When to order? How much to order? This leads us to evaluate all aspects of the inventory. According to the authors, we find the following equation that encompasses the general inventory model:
 
 $$
-[\text{Costo Total de Inventario} = \text{Costo de Compra} + \text{Costo de Preparación} + \text{Costo de Almacenamiento} + \text{Costo de Faltante}]
+[\text{Total Inventory Cost} = \text{Purchase Cost} + \text{Preparation Cost} + \text{Holding Cost} + \text{Shortage Cost}]
 $$
 
-Para representar la ecuación matemática del costo total de inventario en el contexto del modelo EOQ, utilizamos la fórmula:
+To represent the mathematical equation for the total inventory cost in the context of the EOQ model, we use the Formula:
 
 $$
 CT = \frac{D}{Q} \cdot S + \frac{Q}{2} \cdot H + D \cdot C
 $$
 
-Donde:
+Where:
 
-* (CT) es el costo total.
-* (D) es la demanda anual.
-* (Q) es la cantidad a ordenar (tamaño del lote).
-* (S) es el costo por pedido.
-* (H) es el costo de almacenamiento por unidad.
-* (C) es el costo de compra por unidad.
+* (CT) is the total cost.
+* (D) is the annual demand.
+* (Q) is the order quantity (lot size).
+* (S) is the cost per order.
+* (H) is the storage cost per unit.
+* (C) is the purchasing cost per unit.
 
-### empezaremos por el modelo EOQ tambien llamado modelos estaticos.
+### We'll start with the EOQ model, also called static models.
 
-* **el modelo eoq o cantidad optima de pedido:** (EOQ clasico)
+* **The EOQ model or optimal order quantity** (classic EOQ)
 
-es uno de los modelos mas comunes y mayor utilizados ya qu eeste modelo tiene encuenta los costos por pedido y amacenamiento del mismo. es decir que cuanto mas se compre mayor es el descuento pero mayor sera el costo de mantener, el objetivo principal de este modelo es encontrar el punto de equilibrio donde los costos se manejen de la mejor forma posible segun los requeirmientos de la demanda.
+This is one of the most common and widely used models, as it takes into account order and storage costs. This means that the more you buy, the greater the discount, but the higher the maintenance cost. The main objective of this model is to find the break-even point where costs are best managed according to demand requirements.
 
 $$
-EOQ = \sqrt{\frac{2*costo\ de\ ordenar*Demanda}{costo\ de\ almacenamiento}}\
+EOQ = \sqrt{\frac{2*ordering cost*Demand}{carrying cost}}\
 $$
 
 $$
 Q= \sqrt{\frac{2(K)(D)}{h}}\
 $$
 
-*   **EOQ con demanda Desconocida:**
+* **EOQ with Unknown Demand:**
 
-    se considera la demanda del producto como incierta o desconocida y se utliza un enfoque de nivel de servicio para mantener el nivel optimo de inventario, siendo el nivel de servicio pa probahbilidad de que el inventario este disponible cuando sea requerido, el objetivo principal es encontrar la cantidad optima de inventario que maximice el nivel de servicio mientras se minimizan los costos totales de inventario.
+Product demand is considered uncertain or unknown, and a service level approach is used to maintain the optimal inventory level. The service level is the probability that the inventory will be available when required. The main objective is to find the optimal amount of inventory that maximizes the service level while minimizing total inventory costs.
 
 $$
 EOQ = \sqrt{\frac{2KD}{h} + \left(\frac{Z \sigma_d \sqrt{L}}{h}\right)^2}
 $$
 
-Donde:
+Where:
 
-* Z es el valor de la distribución normal que corresponde al nivel de servicio deseado.
-* $$\sigma_d\$$ es la desviación estándar de la demanda durante el tiempo de entrega.
-* L es el tiempo de entrega (Lead Time).
+* Z is the value of the normal distribution that corresponds to the desired service level.
+* $$\sigma_d\$$ is the standard deviation of demand during the lead time.
+* L is the lead time.
 
-#### Palabras y nomeclaturas[#](broken-reference)
+#### Words and nomenclatures[#](broken-reference)
 
-* &#x20;D = Demanda
-* $$t_0$$ = Duracion del ciclo de pedido
-* ROQ = Reorder  Quantity&#x20;
+* &#x20;D = Demand
+* $$t_0$$ = Order cycle time
+* ROQ = Reorder Quantity&#x20;
 * ROL = Reorder Level
-* Q = cantidad optima de pedido
-* $$t_0 = \frac{Q}{D}$$ unidades de tiempo o cilcos de abastecimiento
-* K = costo de Preparacion de un  pedido
-* h = costo de Almacenamiento
-* L = lead Time
+* Q = Optimal Order Quantity
+* $$t_0 = \frac{Q}{D}$$ units of time or supply cycles
+* K = Order Preparation Cost
+* h = Storage Cost
+* L = Lead Time
 
 {% hint style="info" %}
-en general este conjnto de ecuaciones e inicitivas nos permiten definir en una operacion de almacenmaiento lo que se conoe como la **politica de inventario**
+In general, this set of equations and initiatives allows us to define what is known as the **inventory policy** in a warehousing operation.
 {% endhint %}
 
-### Definición de la Política de Inventarios
+### Inventory Policy Definition
 
-La política de inventarios en un sistema de gestión se define considerando varios elementos clave como EOQ (Economic Order Quantity), ROL (Reorder Level), ROQ (Reorder Quantity), y la demanda aleatoria:
+The inventory policy in a management system is defined by considering several key elements such as EOQ (Economic Order Quantity), ROL (Reorder Level), ROQ (Reorder Quantity), and random demand:
 
-* **EOQ (Cantidad Óptima de Pedido):** Es la cantidad que minimiza los costos totales de inventario, incluyendo los costos de preparación del pedido y los costos de almacenamiento. Se utiliza para determinar el tamaño óptimo de pedido.
-* **ROL (Nivel de Reorden):** Es el punto en el que se debe generar un nuevo pedido para evitar faltantes de inventario, calculado con base en el lead time y la demanda esperada durante ese período.
-* **ROQ (Cantidad de Reorden):** Es la cantidad a ordenar cada vez que se llegue al ROL. Esta cantidad se puede ajustar según la variabilidad de la demanda y el tiempo de entrega.
-* **Demanda Aleatoria:** Requiere ajustes dinámicos en ROL y ROQ, ya que es importante tener en cuenta las variaciones en la demanda para evitar escasez o exceso de inventario.
+* **EOQ (Optimal Order Quantity):** This is the quantity that minimizes total inventory costs, including order preparation costs and storage costs. It is used to determine the optimal order size.
+* **ROL (Reorder Level):** This is the point at which a new order must be generated to avoid inventory shortages, calculated based on the lead time and expected demand during that period.
+* **ROQ (Reorder Quantity):** This is the quantity to be ordered each time the ROL is reached. This quantity can be adjusted based on demand variability and delivery time.
+* **Random Demand:** This requires dynamic adjustments to ROL and ROQ, as it is important to account for variations in demand to avoid shortages or excess inventory.
 
 {% hint style="info" %}
-Una política de inventarios eficaz debe ser flexible y adaptarse a las variaciones de demanda, tiempos de entrega y otros factores que puedan afectar el inventario. La evaluación continua y el ajuste de las variables EOQ, ROL, y ROQ permiten mantener un equilibrio óptimo entre costos y disponibilidad.
+An effective inventory policy must be flexible and adapt to variations in demand, delivery times, and other factors that may affect inventory. Continuous evaluation and adjustment of the EOQ, ROL, and ROQ variables allows for maintaining an optimal balance between costs and availability.
 {% endhint %}
 
-### tiempo de entrega:
+### Lead time:
 
-cuando existe un pedido con un tiempo de entrega estipulado positivo se llamara “L” (lead time), en estos casos debemos tener en cuenta las relaciones del ROL y ROQ correspondientes ya que estos variaran el comportamiento del inventario segun su naturaleza de abastecimiento o lead time. se debera evidenciar las duraciones del lead time vs el tiempo de ciclo del inventario, ya que el lead time generalmente debera ser menor que el tiempo de ciclo de lo contrario habra que tomar otras medidas para controlar el inventario.
+When an order has a positive stipulated lead time, it will be called "L" (lead time). In these cases, we must take into account the corresponding ROL and ROQ ratios, since these will vary the inventory behavior depending on its supply nature or lead time. The lead time versus inventory cycle time should be shown, since lead time should generally be less than cycle time; otherwise, other measures will have to be taken to control inventory.
 
-ejemplo:
+Example:
 
-se define el tiempo efectivo de la siguiente forma:
+Effective lead time is defined as follows:
 
 $$
 L_e = L - nt_0\
 $$
 
-### ROL/ROQ , Lead time y Safety stock en los modelos de inventarios Deterministicos.[#](broken-reference)
+### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference)
 
-* Los supuestos del modelo Eoq se enumeran de la siguiente forma:
+* The assumptions of the EoQ model are listed as follows:
 
-1. **Demanda constante:** Se asume que la demanda del producto es constante a lo largo del tiempo, lo que implica que no hay fluctuaciones estacionales o cambios en la demanda.
-2. **Tasa de producción o suministro constante:** Se supone que el suministro o producción del inventario es instantáneo y constante. Es decir, cada vez que se realiza un pedido, este llega de inmediato y reabastece completamente el inventario.
-3. **Tiempo de entrega conocido y constante:** El tiempo que toma recibir un pedido después de realizarlo es conocido y no varía.
-4. **Costo de pedido constante:** El costo asociado a realizar un pedido es fijo, independientemente del tamaño del pedido.
-5. **Costo de almacenamiento constante:** El costo de mantener una unidad en inventario es constante y no varía con el tiempo o la cantidad de inventario.
+1. **Constant Demand:** Demand for the product is assumed to be constant over time, implying no seasonal fluctuations or changes in demand.
+2. **Constant Supply or Production Rate:** Inventory supply or production is assumed to be instantaneous and constant. That is, each time an order is placed, it arrives immediately and completely replenishes inventory.
+3. **Known and Constant Lead Time:** The time it takes to receive an order after it is placed is known and does not vary.
+4. **Constant Ordering Cost:** The cost associated with placing an order is fixed, regardless of the order size.
+5. **Constant Carrying Cost:** The cost of holding a unit in inventory is constant and does not vary over time or with the amount of inventory.
 
-no obstante existen otras variaciones del Modelo que implican una espera en el tiempo de ciclo del pedido, lo que obliga a tomar decisiones en tiempo real, como por ejemplo el _lead time_ de un proveedor, explico, si un proveedor toma su tiempo para entregar el pedido al cliente, este debe mantener una reserva o saber en que momento preciso realizar la orden con el fin de que una vez que este llegue no le afecte el conotrol de inventario o incurra en faltantes, a ese tiempo de ciclo entre el pedido y la recepcion teniendo encuenta el tiempo del cliente se le conoce como **Lead time** mientras que el _nivel de inventario_ donde se debe pedir se conoce como ROL; de igual forma la cantidad a pedir en ese momento se conoce como ROQ.
+However, there are other variations of the Model that involve a delay in the order cycle time, which requires real-time decisions. For example, a supplier's lead time. I explain that if a supplier takes their time delivering the order to the customer, the customer must maintain a reserve or know the exact time to place the order so that once it arrives, it does not affect inventory control or incur shortages. This cycle time between the order and receipt, taking into account customer time, is known as **Lead Time**, while the inventory level at which the order must be ordered is known as ROL; likewise, the quantity to be ordered at that time is known as ROQ.
 
-#### Conceptualizando:[#](broken-reference)
+#### Conceptualizing: [#](broken-reference)
 
-1. ROQ: es la cantidad de unidades que se debe pedir una vez el ROL sea alcanzado.
-2. ROL: es el nivel de inventario medido en unidades que funciona como detonante del pedido
-3. LT: lead time, es el tiempo que se demora en llegar un pedido desde el momento de su realizacion
-4. SStock: safety stock, es el nivel de inventario de seguridad que se necesita para soportanr la variabilidad de LT del proveedor \\(P\_i\\)
+1. ROQ: is the quantity of units that must be ordered once the ROQ is reached.
+2. ROL: inventory level measured in units that triggers the order.
+3. LT: lead time, the time it takes for an order to arrive from the moment it is placed.
+4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P_i_i).
 
-### Modelo de EOQ en python[#](broken-reference)
+### EOQ Model in Python[#](broken-reference)
 
 ```python
 import numpy as np
@@ -155,36 +155,36 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def eoq(costo_producto, costo_orden, costo_almacenamiento, demanda_anual):
-    q = np.sqrt((2 * costo_orden * demanda_anual) / costo_almacenamiento)
-    tiempo_entre_pedidos = q / demanda_anual
-    costo_total = (costo_producto * demanda_anual) + (costo_orden * demanda_anual / q) + (costo_almacenamiento * q / 2)
-    return q, tiempo_entre_pedidos, costo_total
+def eoq(product_cost, order_cost, storage_cost, annual_demand):
+q = np.sqrt((2 * order_cost * annual_demand) / storage_cost)
+time_between_orders = q / annual_demand
+total_cost = (product_cost * annual_demand) + (order_cost * annual_demand / q) + (storage_cost * q / 2)
+return q, time_between_orders, total_cost
 
-# Pedir al usuario que ingrese los valores de los parámetros del inventario
-costo_producto = float(input("Ingrese el costo del producto por unidad: "))
-costo_orden = float(input("Ingrese el costo por orden: "))
-costo_almacenamiento = float(input("Ingrese el costo de almacenamiento por unidad por año: "))
-demanda_anual = np.arange(10, 1000, 10)
+# Prompt the user to enter inventory parameter values
+product_cost = float(input("Enter the product cost per unit: "))
+order_cost = float(input("Enter the cost per order: "))
+storage_cost = float(input("Enter the storage cost per unit per year: "))
+annual_demand = np. arange(10, 1000, 10)
 
-# Calcular el EOQ para cada valor de la demanda anual
-q_values = [eoq(costo_producto, costo_orden, costo_almacenamiento, d)[0] for d in demanda_anual]
-costo_total_values = [eoq(costo_producto, costo_orden, costo_almacenamiento, d)[2] for d in demanda_anual]
+# Calculate the EOQ for each annual demand value
+q_values = [eoq(product_cost, order_cost, storage_cost, d)[0] for d in annual_demand]
+total_cost_values = [eoq(product_cost, order_cost, storage_cost, d)[2] for d in annual_demand]
 
-# Graficar el costo total como una función de la demanda anual
+# Plot total cost as a function of annual demand
 fig, ax1 = plt.subplots()
 
 color = 'tab:red'
-ax1.set_xlabel('Demanda anual')
-ax1.set_ylabel('Cantidad óptima de inventario', color=color)
-ax1.plot(demanda_anual, q_values, color=color)
+ax1.set_xlabel('Annual Demand')
+ax1.set_ylabel('Optimal Inventory Quantity', color=color)
+ax1.plot(annual_demand, q_values, color=color)
 ax1.tick_params(axis='y', labelcolor=color)
 
 ax2 = ax1.twinx()
 
 color = 'tab:blue'
-ax2.set_ylabel('Costo total de inventario', color=color)
-ax2.plot(demanda_anual, costo_total_values, color=color)
+ax2.set_ylabel('Total Inventory Cost', color=color)
+ax2.plot(annual_demand, total_cost_values, color=color)
 ax2.tick_params(axis='y', labelcolor=color)
 
 fig.tight_layout()
@@ -195,214 +195,227 @@ plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
-def costo_total(D, h, s, Q):
-   
-    return (D/Q)*s + (Q/2)*h
+def total_cost(D, h, s, Q):
 
-def graficar_eoq(D, h, s):
-    
-    # Rango de valores para Q
-    Q = np.linspace(1, 100, 100)
+return (D/Q)*s + (Q/2)*h
 
-    # Calcular costos
-    costo_mant = (Q/2)*h
-    costo_ped = (D/Q)*s
-    costo_total_anual = costo_total(D, h, s, Q)
+def graph_eoq(D, h, s):
 
-    # Crear la figura
-    plt.figure(figsize=(5, 3))
+# Range of values for Q
+Q = np.linspace(1, 100, 100)
 
-    # Graficar costos
-    plt.plot(Q, costo_mant, label='Costo de mantenimiento')
-    plt.plot(Q, costo_ped, label='Costo de pedido')
-    plt.plot(Q, costo_total_anual, label='Costo total')
+# Calculate costs
+maint_cost = (Q/2)*h
+ped_cost = (D/Q)*s
+annual_total_cost = total_cost(D, h, s, Q)
 
-    # Encontrar el punto mínimo del costo total (Q óptimo)
-    Q_optimo = np.sqrt(2*D*s/h)
-    plt.axvline(x=Q_optimo, color='red', linestyle='--', label='Q óptimo')
+# Create the figure
+plt.figure(figsize=(5, 3))
 
-    # Etiquetas y leyenda
-    plt.xlabel('Tamaño del lote (Q)')
-    plt.ylabel('Costo')
-    plt.title('Modelo EOQ')
-    plt.legend()
+# Graph costs
+plt.plot(Q, maint_cost, label='Maintenance Cost')
+plt.plot(Q, ed_cost, label='Ordering Cost')
+plt.plot(Q, total_annual_cost, label='Total Cost')
 
-    # Mostrar la gráfica
-    plt.grid(True)
-    plt.show()
+# Find the minimum total cost point (optimal Q)
+Q_optimum = np.sqrt(2*D*s/h)
+plt.axvline(x=Q_optimum, color='red', linestyle='--', label='Optimal Q')
 
-# Ejemplo de uso
-demanda_anual = 100
-costo_mantener = 7
-costo_pedido = 2
-graficar_eoq(demanda_anual, costo_mantener, costo_pedido)
+# Labels and Legend
+plt.xlabel('Lot Size (Q)')
+plt.ylabel('Cost')
+plt.title('EOQ Model')
+plt.legend()
+
+# Show the graph
+plt.grid(True)
+plt.show()
+
+# Usage Example
+annual_demand = 100
+holding_cost = 7
+order_cost = 2
+graph_eoq(annual_demand, holding_cost, order_cost)
 ```
 
-### Ejemplo numero uno:[#](broken-reference)
+### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference)
 
-La empresa IND sas tiene una demanda diaria de 100 unidades, y el costo en que se incurren dichos pedidos es de 100 Cop se estima que el almacenqamiento de cada uno de los elementos es de $0.01 Cop Diarios los pedidos se demoran 12 dias en ser entregados, debemos determinar la politica optima de invenario que nos permita mantener el mejor invetario posible. entonces:
+* The assumptions of the EoQ model are listed as follows:
 
-* D= 100 nunidades diarias
-* K= 100 por pedido
-* h=0.02. unidades por día
-* L= 12 dias
+1. **Constant Demand:** Demand for the product is assumed to be constant over time, implying no seasonal fluctuations or changes in demand.
+2. **Constant Supply or Production Rate:** Inventory supply or production is assumed to be instantaneous and constant. That is, each time an order is placed, it arrives immediately and completely replenishes inventory.
+3. **Known and Constant Lead Time:** The time it takes to receive an order after it is placed is known and does not vary.
+4. **Constant Ordering Cost:** The cost associated with placing an order is fixed, regardless of the order size.
+5. **Constant Carrying Cost:** The cost of holding a unit in inventory is constant and does not vary over time or with the amount of inventory.
 
-```python
-import math
+However, there are other variations of the Model that involve a delay in the order cycle time, which requires real-time decisions. For example, a supplier's lead time. I explain that if a supplier takes their time delivering the order to the customer, the customer must maintain a reserve or know the exact time to place the order so that once it arrives, it does not affect inventory control or incur shortages. This cycle time between the order and receipt, taking into account customer time, is known as **Lead Time**, while the inventory level at which the order must be ordered is known as ROL; likewise, the quantity to be ordered at that time is known as ROQ.
 
-def eoq(demand, ordering_cost, holding_cost):
-    """Calcula la cantidad óptima de pedido (EOQ) dado la demanda anual,
-       el costo de ordenar y el costo de mantenimiento de inventario."""
-    eoq = math.sqrt((2 * demand * ordering_cost) / holding_cost)
-    return eoq
+#### Conceptualizing: [#](broken-reference)
 
-def total_inventory_cost(demand, ordering_cost, holding_cost, eoq):
-    """Calcula el costo total de inventario dado la demanda anual,
-       el costo de ordenar, el costo de mantenimiento de inventario y el EOQ."""
-    total_cost = (demand * ordering_cost / eoq) + (eoq / 2 * holding_cost)
-    return total_cost
+1. ROQ: is the quantity of units that must be ordered once the ROQ is reached.
+2. ROL: inventory level measured in units that triggers the order.
+3. LT: lead time, the time it takes for an order to arrive from the moment it is placed.
+4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P_i_i).
 
-# Pide al usuario los datos del inventario
-demand = float(input("Ingrese la demanda correspondiente: "))
-ordering_cost = float(input("Ingrese el costo de ordenar: "))
-holding_cost = float(input("Ingrese el costo de mantener una unidad en inventario: "))
-
-# Calcula la EOQ y el costo total de inventario
-eoq_value = eoq(demand, ordering_cost, holding_cost)
-total_cost = total_inventory_cost(demand, ordering_cost, holding_cost, eoq_value)
-
-# Imprime los resultados
-print("EOQ: ", eoq_value)
-print("Costo total de inventario: ", total_cost)
-```
-
-{% hint style="info" %}
-#### Intentemos graficar el comportamiento de un Articulo de Inventario en el tiempo usando colab
-{% endhint %}
-
-En el siguiente ejercicio se pretende generar el comportamiento del inventario a lo largo del periodo \\(t\_0\\), para posteriormente graficarlo.
-
-se podran variar cantidades de productos
+### EOQ Model in Python[#](broken-reference)
 
 ```python
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
 ```python
-def calcular_q(demanda, holding_cost, costo_pedido):
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 
-    q = np.sqrt((2 * demanda * costo_pedido) / holding_cost)
-    return q
+def eoq(product_cost, order_cost, storage_cost, annual_demand):
+q = np.sqrt((2 * order_cost * annual_demand) / storage_cost)
+time_between_orders = q / annual_demand
+total_cost = (product_cost * annual_demand) + (order_cost * annual_demand / q) + (storage_cost * q / 2)
+return q, time_between_orders, total_cost
 
-def simular_inventario(demanda, q, tiempo_simulacion):
-    inventario = []
-    nivel_actual = q
-    for _ in range(tiempo_simulacion):
-        nivel_actual -= demanda
-        if nivel_actual <= 0:
-            nivel_actual = q
-        inventario.append(nivel_actual)
-    return inventario
+# Prompt the user to enter inventory parameter values
+product_cost = float(input("Enter the product cost per unit: "))
+order_cost = float(input("Enter the cost per order: "))
+storage_cost = float(input("Enter the storage cost per unit per year: "))
+annual_demand = np. arange(10, 1000, 10)
 
+# Calculate the EOQ for each annual demand value
+q_values = [eoq(product_cost, order_cost, storage_cost, d)[0] for d in annual_demand]
+total_cost_values = [eoq(product_cost, order_cost, storage_cost, d)[2] for d in annual_demand]
 
-# Solicitar datos al usuario
-demanda_anual = float(input("Ingrese la demanda anual: "))
-holding_cost = float(input("Ingrese el costo de mantener una unidad en inventario: "))
-costo_pedido = float(input("Ingrese el costo de realizar un pedido: "))
+# Plot total cost as a function of annual demand
+fig, ax1 = plt.subplots()
 
-# Calcular Q
-q_optimo = calcular_q(demanda_anual, holding_cost, costo_pedido)
-print("El tamaño del lote óptimo es:", q_optimo)
+color = 'tab:red'
+ax1.set_xlabel('Annual Demand')
+ax1.set_ylabel('Optimal Inventory Quantity', color=color)
+ax1.plot(annual_demand, q_values, color=color)
+ax1.tick_params(axis='y', labelcolor=color)
 
-# Simulación y visualización
-demanda_diaria = demanda_anual / 365
-tiempo_simulacion = 365
-niveles_inventario = simular_inventario(demanda_diaria, q_optimo, tiempo_simulacion)
+ax2 = ax1.twinx()
 
-# Graficar
-plt.plot(niveles_inventario)
-plt.xlabel("Tiempo (días)")
-plt.ylabel("Nivel de inventario")
-plt.title("Comportamiento del inventario")
+color = 'tab:blue'
+ax2.set_ylabel('Total Inventory Cost', color=color)
+ax2.plot(annual_demand, total_cost_values, color=color)
+ax2.tick_params(axis='y', labelcolor=color)
+
+fig.tight_layout()
 plt.show()
 ```
 
-{% hint style="info" %}
-### Ejercicios de Practica del modelo de inventario
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+def total_cost(D, h, s, Q):
+
+return (D/Q)*s + (Q/2)*h
+
+def graph_eoq(D, h, s):
+
+# Range of values for Q
+Q = np.linspace(1, 100, 100)
+
+# Calculate costs
+maint_cost = (Q/2)*h
+ped_cost = (D/Q)*s
+annual_total_cost = total_cost(D, h, s, Q)
+
+# Create the figure
+plt.figure(figsize=(5, 3))
+
+# Graph costs
+plt.plot(Q, maint_cost, label='Maintenance Cost')
+plt.plot(Q, ed_cost, label='Ordering Cost')
+plt.plot(Q, total_annual_cost, label='Total Cost')
+
+# Find the minimum total cost point (optimal Q)
+Q_optimum = np.sqrt(2*D*s/h)
+plt.axvline(x=Q_optimum, color='red', linestyle='--', label='Optimal Q')
+
+# Labels and Legend
+plt.xlabel('Lot Size (Q)')
+plt.ylabel('Cost')
+plt.title('EOQ Model')
+plt.legend()
+
+# Show the graph
+plt.grid(True)
+plt.show()
+
+# Usage Example
+annual_demand = 100
+holding_cost = 7
+order_cost = 2
+graph_eoq(annual_demand, holding_cost, order_cost)
 
 
 
-Vamos a poner en practica la teoria descrita en el cuaderno anterior
+### EOQ Exercises
 
-* debera realizar los siguientes ejercicios a mano en una hoja limpia con su calculadora
-* Realizara los siguientes ejercicios usando google colab como se describe en el documento.
-{% endhint %}
+#### Exercise 1[#](broken-reference)
 
+Industrial.inc. is a company dedicated to the manufacture of self-drilling screws for the aluminum industry. It wishes to reduce its inventory costs by determining the number of screws it should obtain in each order.
 
+* Demand is 10,000
+* The order has an associated cost of $1,000
+* Holding cost is $1.50 per year.
+* The year has 250 business days.
 
-### Ejercicios EOQ
+You must calculate:
 
-#### Ejercicio Numero 1[#](broken-reference)
+* a) Optimal Order Number \\((q)\\)
+* b) Number of orders per year
+* c) Cycle time, the expected time between orders.
 
-La empresa Industrial.inc, es una empresa qu se dedica a la fabricacion de tornillos autoperforantes para la industria del aluminio. esta desea reducir sus costos de inventarios mediante la determinacion del numero de tornillos que debe obtener en cada una de las ordenes
+#### Exercise 2[#](broken-reference)
 
-* la demanda es de 10000
-* el pedido tiene un costo asociado de $1000
-* el costo de mantener tiene un valor asociado de $1,50 un/año.
-* el año tiene 250 dias laborales
+The company [Amigos.sa](http://amigos.sa/) sells household goods, with an annual demand of 1,000 units. If the cost to place an order is $10 USD, the annual unit storage cost for each item is $2.5 USD. The company operates 365 days a week, seven days a week, and has a cost of sale of $15 USD per item, determine the optimal inventory policy for this problem.
 
-usted debera calcular
+#### Exercise 3[#](broken-reference)
 
-* a)Numero optimo de Orden \\((q)\\)
-* b)Numero de ordenes por año
-* c)Tiempo de ciclo, tiempo esperado entre ordenes.
+A school van transportation company consumes gasoline at a rate of 8,200 gallons per month. Gasoline costs 12,000 COP and has an ordering cost of 6,000 COP. The inventory holding cost is 2,000 COP per gallon.
 
-#### Ejercicio Numero 2[#](broken-reference)
+* Determine when and how much should be ordered if total costs are to be minimized.
+* Assume stockouts are allowed with a penalty of 1,500 COP per gallon per month.
+* Assume the cost of gasoline drops to 8,000 COP per gallon if at least 10,000 gallons are purchased. How would this affect the cost, taking into account the previous penalty?
+* Assume the cost of gasoline would be 7,000 COP per gallon if the minimum batch cost is 12,000 gallons, taking into account the previous penalty.
+* Will an initial inventory be necessary to solve the problem? Provide technical support for your answer.
 
-LA empresa [Amigos.sa](http://amigos.sa/), comercializa articulos para el hogar, con una demanda anual de 1000 unidades, si el costo para colocar un pedido es de $10usd,$ el costo de almacenamiento unitario anual de cada articulo es de $2,5 Usd, la empresa opera 365 dias, siete dias a la semana, un costo de venta de 15 dolares por articulo, determine la politica optima de inventario para este problema.
+#### Exercise Number 4[#](broken-reference)
 
-#### Ejercicio Numero 3[#](broken-reference)
+A company dedicated to the printing and marketing of books is making a monthly purchase. To do this, they conducted a market study on the company's most important input: the special paper used to print their books. Over the last 12 months, your demand behavior was:
 
-Una compañia de trasporte, de vans para servicio escolar consume gasolina a una tasa de 8.200 galones por mes, la gasolina cuesta 12.000 Cop. y tiene un costo de pedido 6.000 Cop el costo de mantener el inventario es de 2000 Cop por galon.
+(Demand = [10 -11-10-9-10-11-9-10.5-10-9-9-11.5]) tons per month. The purchase price is estimated to remain at COP $3,400,000 per ton. Your ordering cost is COP $350,000. Company policy states that a 15% charge will be made for inventory management plus COP $60,000 for warehouse management. Calculate:
 
-* determine cuando y cuanto se debe ordenar, si se desea minimizar el coste total
-* suponga que se permiten roturas de stock (stock ruptures) con una penalizacion de 1.500 cop por galon mensual
-* suponga que el costo de la gasolina desciende a 8.000 cop por galon si se compran por lo menos 10.000 galones, como afectaria el costo teniendo en cuenta la penalizacion anterior.
-* suponga que el costo de la gasolina seria de 7.000 Cop por galon si el costo de lote minimo es de 12.000 galones, teniendo en cuenta la penalizacion anterior.
-* ¿sera necesario un invenytario inicial para solucionar el problema?, sustente tecnicamente su respuesta.
+* The optimal model for managing this inventory
+* If the supplier offers to give us a 10% discount for purchases over 30 tons and another supplier offers an 11% discount for purchases over 60 tons, how would my inventory policy change in each of the scenarios?
+* If, in addition to the discount, we reach an agreement with an external warehouse where storage is reduced by 9% with a maximum capacity of 35 tons, how would our policy change?
 
-#### Ejercicio Numero 4[#](broken-reference)
+#### Exercise 5[#](broken-reference)
 
-Una empresa dedicada a la imopresion y comercializacion de libros esta haciendo una compra mensual, para esto realizo un estudio del comportamiento del mercado en el insumo mas importante de su empresa el papel especial con que imprimen sus libros. en los ultimos 12 meses el comportamiento de su demanda fue de:
+Economic Order Quantity The demand for Deskpro computers at Best Buy is 1,000 units per month. Best Buy incurs fixed ordering, transportation, and receiving costs of $4,000 each time an order is placed. Each computer costs $500, and the retailer has an inventory holding cost of 20%. Evaluate the number of computers the store manager should order in each replenishment batch.
 
-\\(Demanda = \[10 -11-10-9-10-11-9-10,5-10-9-9-11,5]\\) tonelas por mes se estima el precio de compra se mantendra en Cop $3,400.000 por tonelada su costo de pedido es de COP $350.000, la politica de la compañia dice que el se le cargara un 15% al manejo de los inventarios mas Cop $60.000 por manejo de bodegaje, calcular:
+#### Exercise Number 6[#](broken-reference)
 
-* el modelo optimo para manejar este imventario
-* si el proveedor ofrece darnos un descuento del 10% por compras superiores a 30 toneladas y otro proveedor un descuento del 11% por compras superiores a 60 toneladas, como cambiaria mi politica de inventario en cada uno de los escenaros?
-* si adicional al descuento logramos hacer un acuerdo con una bodega externa donde el almacenamiento de este se reduce al 9% con una capacidad maxima de 35 toneladas, como cambiaria nuestra politica?
-
-#### Ejercicio Numero 5[#](broken-reference)
-
-Cantidad ec.onómica de pedido La demanda de computadoras Deskpro en Best Buy es de 1,000 unidades por mes. Best Buy incu- rre en costos fijos de colocación del pedido, transporte y recepción de 4,000 dólares cada vez que ‘se coloca un pedido. Cada computadora le cuesta 500 dólares y el minorista tiene un costo de mantener inventario de 20%. Evalúe el número de computadoras que el gerente de la tienda debe ordenar en cada lote de reabastecimiento.
-
-#### Ejercicio Numero 6[#](broken-reference)
-
-Abc company have two item X\_1 and X\_2 for stockin into theirs warehouse, the Demand for each one of the items is:
+Abc company have two item X\_1 and X\_2 for stockin into their warehouse, the Demand for each one of the items is:
 
 D\_1 = 10000u&#x20;
 
 D\_2 = 12000u
 
-The holdig cost for each one of them is 13% and the costo is C\_1 = 5000cop And C\_2 = 7000Cop
+The holding cost for each one of them is 13% and the cost is C\_1 = 5000cop And C\_2 = 7000Cop
 
-the two items have the same supplier so they sahre the operation costing \\(6000cop\\) by S
+the two items have the same supplier so they save the operation costing \\(6000cop\\) by S
 
 * need to find the total cost of the operation
-* if the supplier takes 3 days of delay how would it be modelated
-* ROL
-* ROQ
+* if the supplier takes 3 days of delay how would it be modeled
+* ROLE
+*ROQ
+
 
 #### Ejercicio Numero 7[#](broken-reference)
 
@@ -412,127 +425,124 @@ Water testing at the Central Park reservoir requires a chemical reagent that cos
 
 Continuing with the information about the Central Park reservoir given in Problem 1, the city could make this reagent at the rate of 1/8 gallon per day, at a cost of $300 per gallon. The setup cost is 150usd. Use a 7-day week. Compare using the EOQ and the EPQ systems. What course of action do you recommend?
 
-#### Ejercicio de inventario con modelamiento matematico en python[#](broken-reference)
+#### Inventory Exercise with Mathematical Modeling in Python[#](broken-reference)
 
-la empresa **XYZ** posee Tres clientes y cuatro proveedores, la empresa manufactura dos productos X\_1 y X\_2 donde para el producto X\_1 es necesario dos unidades de MP\_1 y una unidad de MP\_2; mientras que es Producto X\_2 necesita una unidad de MP\_1 y tres unidades de MP\_2, el costo de almacenamiento del producto terminado de X\_1 y X\_2 es de 0,5 COP/Un y 0,8 COP/Un Respectivamente; el costo de pedir X\_1 y X\_2 es de 1,2 Cop/un y 0,8Cop/Un Respectivamente, cabe mencionar que al pedir un producto se responde desde los proveedores con los componentes respectivos de cada uno MP\_i
+Company **XYZ** has three customers and four suppliers. The company manufactures two products, X\_1 and X\_2. Product X\_1 requires two units of MP\_1 and one unit of MP\_2. Product X\_2 requires one unit of MP\_1 and three units of MP\_2. The storage cost for finished products X\_1 and X\_2 is 0.5 COP/unit and 0.8 COP/unit, respectively. The cost of ordering X\_1 and X\_2 is 1.2 COP/unit and 0.8 COP/unit, respectively. It is worth mentioning that when ordering a product, suppliers respond with the respective components for each MP\_i.
 
-La tabla de **costos** de MP\_i esta dada de la siguiente forma:
+The **cost** table for MP\_i is given as follows:
 
-| Proveedor | Rm\_1 | Rm\_2 |
+| Supplier | Rm\_1 | Rm\_2 |
 | --------- | ----- | ----- |
-| S\_1      | 90    | 75    |
-| S\_2      | 50    | 65    |
-| S\_3      | 65    | 25    |
-| S\_4      | 70    | 50    |
+| S\_1 | 90 | 75 |
+| S\_2 | 50 | 65 |
+| S\_3 | 65 | 25 |
+| S\_4 | 70 | 50 |
 
-* La Demanda del sistema esta dada de la siguiente forma:
+* The system demand is given as follows:
 
-| Cliente | X\_1 | X\_2 |
+| Customer | X\_1 | X\_2 |
 | ------- | ---- | ---- |
-| C\_1    | 500  | 250  |
-| C\_2    | 450  | 300  |
-| C\_3    | 250  | 300  |
+| C\_1 | 500 | 250 |
+| C\_2 | 450 | 300 |
+| C\_3 | 250 | 300 |
 
-* se asume que el sistema esta balanceado y que los proveedores pueden suplir la demanda en la totalidad de lo que se requiera.
+* It is assumed that the system is balanced and that suppliers can supply the demand in full.
 
-encuentre:
+Find:
 
-1. el costo minimo del sistema para suplir con la demanda.
-2. los costos asociados al sistema segun el modelo POQ
-3. si los proveedores tienen un lead time de:
+1. The minimum system cost to supply the demand.
 
-| PROVEEDOR | LEAD TIME |
+2. The costs associated with the system according to the POQ model.
+3. If the suppliers have a lead time of:
+
+| SUPPLIER | LEAD TIME |
 | --------- | --------- |
-| S\_1      | 2         |
-| S\_2      | 4         |
-| S\_3      | 2         |
-| S\_4      | 5         |
+| S\_1 | 2 |
+| S\_2 | 4 |
+| S\_3 | 2 |
+| S\_4 | 5 |
 
-Calcule los ROL y ROQ de cada uno de los productos, con base en su Bill of material.
+Calculate the ROL and ROQ for each product, based on their Bill of Material.
 
-4. calcule la tasa de demanda (descuento) \\(d\\) y teniendo en cuenta, una tasa de produccion de x\_1 = 80 un/dia y x\_2 = 60 un/dia calcule el lote economico optimo. y el tamaño de la bodega que deberia tener la empresa.
+4. Calculate the demand rate (discount) \\(d\\). Taking into account a production rate of x\_1 = 80 units/day and x\_2 = 60 units/day, calculate the optimal economic batch size and the warehouse size the company should have.
 
-**Agreguemos el costo total del inventario y grafiquemoslo**[**#**](broken-reference)
+**Let's add the total inventory cost and graph it**[**#**](broken-reference)
 
 ```python
-# Datos para la prueba de escritorio
-D = 100000
-h = 30000
-S = 14000
-periodo = 365
+# Data for the desktop test
+D = 100,000
+h = 30,000
+S = 14,000
+period = 365
 lead_time = 2
 
-# Calcular el Q óptimo y el inventario inicial
+# Calculate optimal Q and initial inventory
 Q_opt = ((2 * D * S) / h)**0.5
-inventario_inicial = round(Q_opt)
+initial_inventory = round(Q_opt)
 
+# Create a table to store the inventory
+inventory = pd.DataFrame(columns=["Day", "Initial_Inventory", "Inventory_Level", "Order", "Demand", "Ending_Inventory"])
 
-# Crear una tabla para almacenar el inventario
-inventario = pd.DataFrame(columns=["Dia", "Inventario_inicial", "Nivel_Inventario", "Pedido", "Demanda", "Inventario_Final"])
+# Initialize the table with day zero
+inventory_zero = round(Q_opt)
+inventory = inventory.append({"Day": 0,
+"Initial_Inventory": 0,
+"Inventory_Level": 0,
+"Order": 0,
+"Demand": 0,
+"Ending_Inventory": zero_inventory},
+ignore_index=True)
 
-# Inicializar la tabla con el día cero
-inventario_cero = round(Q_opt)
-inventario = inventario.append({"Dia": 0,
-                                "Inventario_inicial": 0,
-                                "Nivel_Inventario": 0,
-                                "Pedido": 0,
-                                "Demanda": 0,
-                                "Inventario_Final": inventario_cero},
-                               ignore_index=True)
+# Fill the table with the logic we defined
+for day in range(1, period+1):
+# Calculate demand for the current day
+demand = round(np. random. normal(D/period, 0.1*D/period))
 
-# Llenar la tabla con la lógica que definimos
-for dia in range(1, periodo+1):
-    # Calcular la demanda para el día actual
-    demanda = round(np.random.normal(D/periodo, 0.1*D/periodo))
+# Calculate inventory level and order
+if day == 1:
+starting_inventory = zero_inventory
+else:
+starting_inventory = inventory["Ending_Inventory"].iloc[day-1]
 
-    # Calcular el nivel de inventario y el pedido
-    if dia == 1:
-        inventario_inicial = inventario_cero
-    else:
-        inventario_inicial = inventario["Inventario_Final"].iloc[dia-1]
+inventory_level = starting_inventory - demand
+if inventory_level < 0:
+inventory_level = 0
+order = round(Q_opt) - inventory_level
+else:
+order = 0
 
-    nivel_inventario = inventario_inicial - demanda
-    if nivel_inventario < 0:
-        nivel_inventario = 0
-        pedido = round(Q_opt) - nivel_inventario
-    else:
-        pedido = 0
+# Update ending inventory
+ending_inventory = inventory_level + order
 
-    # Actualizar el inventario final
-    inventario_final = nivel_inventario + pedido
+# Add a row to the table
+inventory = inventory. append({"Day": day,
+"Starting_Inventory": starting_inventory,
+"Inventory_Level": inventory_level,
+"Order": order,
+"Demand": demand,
+"Ending_Inventory": ending_inventory},
+ignore_index=True)
 
-    # Agregar una fila a la tabla
-    inventario = inventario.append({"Dia": dia,
-                                    "Inventario_inicial": inventario_inicial,
-                                    "Nivel_Inventario": nivel_inventario,
-                                    "Pedido": pedido,
-                                    "Demanda": demanda,
-                                    "Inventario_Final": inventario_final},
-                                    ignore_index=True)
-
-
-# definimos el costo total del inventario
+# define the total inventory cost
 
 total_cost = (D * S / Q_opt) + (Q_opt / 2 * h)
 
+# to export the .csv file from the generated database, remove the numeral from the following code
+# the file will be generated in this spreadsheet; you must download it
+#inventory.to_csv("table_inventory_crc.csv", index=False)
 
-#para exportar el archivo .csv de la base de datos generada elimine el numeral del sigiuiente codigo
-#el archivo se generara en esta hoja de colab debera descargarla
-#inventario.to_csv("tabla_inventario_crc.csv", index=False)
+print("The optimal Q for this example is:", round(Q_opt))
+print("The total inventory cost is:", total_cost)
 
-print("el Q optimo de este ejemplo es:", round(Q_opt))
-print("el costo total del inventario es:", total_cost)
+# Print the table
+print(inventory)
 
-# Imprimir la tabla
-print(inventario)
-
-# Graficar el nivel de inventario
-
+# Graph the inventory level
 
 plt.figure(figsize=(40,10))
-plt.plot(inventario["Dia"], inventario["Nivel_Inventario"])
-plt.xlabel("Dias")
-plt.ylabel("Nivel de Inventario")
+plt.plot(inventory["Day"], inventory["Inventory_Level"])
+plt.xlabel("Days")
+plt.ylabel("Inventory Level")
 plt.show()
 ```
 
@@ -544,37 +554,37 @@ $$
 Q_{epq}=\sqrt{\left(\frac{2DS}{h\left(1-\frac{d}{q}\right)}\right)}
 $$
 
-#### Ejemplo EPQ
+#### EPQ Example
 
-hallemos:
+Let's find:
 
-1. Demandan anual = 50.000 Unidades
-2. setup cost = $25 usd
-3. costo de mantener = $5 usd
-4. _tasa de produccion (p)_ = 500 un/dia
-5. Dias laborales = 250 dias
+1. Annual demand = 50,000 units
+2. Setup cost = $25 USD
+3. Maintenance cost = $5 USD
+4. Production rate (p) = 500 units/day
+5. Working days = 250 days
 
-entonces resolvemos:
+So we solve:
 
-desconocemos _d_, pero esta puede ser calculada por medio de los dias laborales y demanda anual.
+We don't know _d_, but it can be calculated using the working days and annual demand.
 
 $$
-d = \frac{50.000}{250} = 200 un
+d = \frac{50,000}{250} = 200 un
 $$
 
-Usando la formula de _EPQ_ obtenemos:
+Using the _EPQ_ formula, we get:
 
 $$
 Q_{epq} = \sqrt{\frac{2*50,000*25}{5*(1-\frac{200}{250})}} = 912.87
 $$
 
-tambien podemos calcular el nivel de inventario maximo (\\(I\_{max})\\)
+We can also calculate the maximum inventory level (\\(I\_{max})\\)
 
 $$
 I_{max}=Q * \left(1-\frac{d}{p}\right)
 $$
 
-Reemplazando:
+Substituting:
 
 $$
 I_{max}=912.87*\left(1-\frac{200}{500}\right) = 547.72 un
