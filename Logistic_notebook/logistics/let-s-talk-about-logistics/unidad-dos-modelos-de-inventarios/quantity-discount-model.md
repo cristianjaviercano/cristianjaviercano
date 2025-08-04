@@ -2,65 +2,65 @@
 icon: sack-dollar
 ---
 
-# Quantity discount Model
+# Quantity Discount Model
 
-### Modelo de Descuento por Cantidad en EOQ
+### Quantity Discount Model in EOQ
 
-El modelo de descuento por cantidad aplicado al EOQ (Economic Order Quantity) incorpora descuentos en los precios unitarios al aumentar el volumen de pedido. Esto modifica el cálculo tradicional del EOQ, que busca minimizar los costos totales asociados al inventario, incluyendo costos de pedido y de mantenimiento.
+The quantity discount model applied to EOQ (Economic Order Quantity) incorporates discounts on unit prices as order volume increases. This modifies the traditional EOQ calculation, which seeks to minimize total costs associated with inventory, including ordering and carrying costs.
 
-#### Conceptos Clave
+#### Key Concepts
 
-* **EOQ (Economic Order Quantity):** Es la cantidad óptima de pedido que minimiza los costos totales de inventario.
-* **Descuento por Cantidad:** Reducción en el precio unitario de un producto al comprar en grandes volúmenes.
-* **Costo Total:** Incluye los costos de pedido, de mantenimiento y el costo de los productos adquiridos.
+* **EOQ (Economic Order Quantity):** The optimal order quantity that minimizes total inventory costs.
+* **Quantity Discount:** A reduction in the unit price of a product when purchasing in large volumes.
+* **Total Cost:** Includes ordering costs, carrying costs, and the cost of purchased products.
 
-#### Fórmula EOQ Ajustada con Descuentos
+#### EOQ Formula Adjusted with Discounts
 
-Para aplicar el modelo de descuento, primero se calcula el EOQ para cada nivel de precios por cantidad. Luego se evalúan los costos totales para cada escenario y se selecciona el más bajo.
+To apply the discount model, the EOQ is first calculated for each quantity price level. The total costs for each scenario are then evaluated, and the lowest is selected.
 
 ```
-EOQ Básico:
+Basic EOQ:
 ```
 
 $$
 EOQ = \sqrt{\frac{2DS}{H}}
 $$
 
-Donde:
+Where:
 
-* ( D ) = Demanda anual.
-* ( S ) = Costo por pedido.
-* ( H ) = Costo de mantener el inventario por unidad al año.
-*   **Cálculo Ajustado:**
+* ( D ) = Annual demand.
+* ( S ) = Cost per order.
+* ( H ) = Inventory holding cost per unit per year.
+* **Adjusted Calculation:**
 
-    1. Calcular el EOQ para cada posible precio de descuento.
-    2. Evaluar si el EOQ calculado cae dentro del rango de cantidades que califican para el descuento.
-    3. Calcular el costo total para el EOQ calculado y compararlo con los costos de los niveles siguientes con descuentos.
+1. Calculate the EOQ for each possible discount price.
+2. Evaluate whether the calculated EOQ falls within the range of quantities that qualify for the discount.
+3. Calculate the total cost for the calculated EOQ and compare it to the costs for the subsequent discounted levels.
 
-    #### Ejemplo
+#### Example
 
-    Supongamos que se tiene la siguiente información:
+Suppose you have the following information:
 
-    * Demanda anual (D): 1,000 unidades
-    * Costo por pedido (S): $50
-    * Costo de mantenimiento por unidad (H): $2
-    * Precio por unidad sin descuento: $100
-    *   Descuento por cantidades:
+* Annual demand (D): 1,000 units
+* Cost per order (S): $50
+* Holding cost per unit (H): $2
+* Price per unit without discount: $100
+* Quantity discount:
 
-        * 100-199 unidades: $95 por unidad
-        * 200+ unidades: $90 por unidad
+* 100-199 units: $95 per unit
+* 200+ units: $90 per unit
 
-        **Paso 1:** Calcular el EOQ sin descuentos.
+**Step 1:** Calculate the EOQ without discounts.
 
 $$
 EOQ = \sqrt{\frac{2 \times 1000 \times 50}{2}} = 100
 $$
 
-* **Paso 2:** Evaluar cada nivel de descuento.
-  * **100-199 unidades: ($95 x unidad):**
-    * Verificar si el EOQ cae en este rango. Calculamos costos totales para varias cantidades e identificamos el mínimo.
-  *   **200+ unidades: ($90 x unidad):**
+* **Step 2:** Evaluate each discount level.
+* **100-199 units: ($95 per unit):**
+* Check if the EOQ falls within this range. We calculate total costs for various quantities and identify the minimum.
+* **200+ units: ($90 per unit):**
 
-      * Recalcular EOQ aplicable y estimar costos totales.
+* Recalculate the applicable EOQ and estimate total costs.
 
-      Finalmente, se selecciona la cantidad de pedido que resulta en el costo total más bajo, considerando precios con descuento.
+Finally, select the order quantity that results in the lowest total cost, considering discounted prices.
