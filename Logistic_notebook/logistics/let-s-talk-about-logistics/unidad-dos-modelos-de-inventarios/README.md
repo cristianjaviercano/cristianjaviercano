@@ -1,4 +1,4 @@
-# Unit Two: Inventory Models
+# Unit two: inventory desitions
 
 {% hint style="info" %}
 Inventory models are essential in logistics because they allow for efficient management of stock levels. By applying these models, total inventory costs can be minimized, supply and demand can be balanced, and customer service can be improved by reducing delivery times and avoiding stockouts. They also facilitate planning and strategic decision-making in the supply chain, optimizing the flow of goods and improving the company's competitiveness.
@@ -21,7 +21,7 @@ Inventory models are statistical models and mathematical equations that, when co
 
 There are types of models that cover inventories, from the simplest, such as the EOQ (economic order quantity) model, to the most complex, such as reorder point models and continuous inventory review models.
 
-### Google Collab and Inventory Models: [#](broken-reference)
+### Google Collab and Inventory Models: [#](broken-reference/)
 
 To work with inventory models, what we must do is
 
@@ -31,7 +31,7 @@ To work with inventory models, what we must do is
 * numpy
 * mathplotlib
 
-### General Inventory Model [#](broken-reference)
+### General Inventory Model [#](broken-reference/)
 
 The main questions that the inventory model aims to address are: When to order? How much to order? This leads us to evaluate all aspects of the inventory. According to the authors, we find the following equation that encompasses the general inventory model:
 
@@ -82,11 +82,11 @@ Where:
 * $$\sigma_d\$$ is the standard deviation of demand during the lead time.
 * L is the lead time.
 
-#### Words and nomenclatures[#](broken-reference)
+#### Words and nomenclatures[#](broken-reference/)
 
-* &#x20;D = Demand
+* D = Demand
 * $$t_0$$ = Order cycle time
-* ROQ = Reorder Quantity&#x20;
+* ROQ = Reorder Quantity
 * ROL = Reorder Level
 * Q = Optimal Order Quantity
 * $$t_0 = \frac{Q}{D}$$ units of time or supply cycles
@@ -123,7 +123,7 @@ $$
 L_e = L - nt_0\
 $$
 
-### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference)
+### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference/)
 
 * The assumptions of the EoQ model are listed as follows:
 
@@ -135,14 +135,14 @@ $$
 
 However, there are other variations of the Model that involve a delay in the order cycle time, which requires real-time decisions. For example, a supplier's lead time. I explain that if a supplier takes their time delivering the order to the customer, the customer must maintain a reserve or know the exact time to place the order so that once it arrives, it does not affect inventory control or incur shortages. This cycle time between the order and receipt, taking into account customer time, is known as **Lead Time**, while the inventory level at which the order must be ordered is known as ROL; likewise, the quantity to be ordered at that time is known as ROQ.
 
-#### Conceptualizing: [#](broken-reference)
+#### Conceptualizing:
 
 1. ROQ: is the quantity of units that must be ordered once the ROQ is reached.
 2. ROL: inventory level measured in units that triggers the order.
 3. LT: lead time, the time it takes for an order to arrive from the moment it is placed.
-4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P_i_i).
+4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P\_i\_i).
 
-### EOQ Model in Python[#](broken-reference)
+### EOQ Model in Python
 
 ```python
 import numpy as np
@@ -238,7 +238,7 @@ order_cost = 2
 graph_eoq(annual_demand, holding_cost, order_cost)
 ```
 
-### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference)
+### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.
 
 * The assumptions of the EoQ model are listed as follows:
 
@@ -250,14 +250,14 @@ graph_eoq(annual_demand, holding_cost, order_cost)
 
 However, there are other variations of the Model that involve a delay in the order cycle time, which requires real-time decisions. For example, a supplier's lead time. I explain that if a supplier takes their time delivering the order to the customer, the customer must maintain a reserve or know the exact time to place the order so that once it arrives, it does not affect inventory control or incur shortages. This cycle time between the order and receipt, taking into account customer time, is known as **Lead Time**, while the inventory level at which the order must be ordered is known as ROL; likewise, the quantity to be ordered at that time is known as ROQ.
 
-#### Conceptualizing: [#](broken-reference)
+#### Conceptualizing:&#x20;
 
 1. ROQ: is the quantity of units that must be ordered once the ROQ is reached.
 2. ROL: inventory level measured in units that triggers the order.
 3. LT: lead time, the time it takes for an order to arrive from the moment it is placed.
-4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P_i_i).
+4. SStock: safety stock, the level of safety stock needed to withstand the supplier's LT variability (P\_i\_i).
 
-### EOQ Model in Python[#](broken-reference)
+### EOQ Model in Python
 
 ```python
 import numpy as np
@@ -306,7 +306,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-```python
+````python
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -544,9 +544,9 @@ plt.plot(inventory["Day"], inventory["Inventory_Level"])
 plt.xlabel("Days")
 plt.ylabel("Inventory Level")
 plt.show()
-```
+````
 
-### EPQ Model[#](broken-reference)
+### EPQ Model[#](broken-reference/)
 
 The economic production quantity (EPQ) model (also known as the economic lot size (ELS) model) is used in manufacturing situations where inventory increases at a finite rate and depends on the production rate and the usage rate of the item under consideration. In addition to the variables (D, S, H, Q, and C) defined earlier, we define two more variables: p = production rate per day (daily production rate) and d = demand rate per day (daily demand rate). The values of p and d must be in the same time unit. For example, these values could be weekly rates instead of daily rates. However, daily rates are most common. Q in this case is the production quantity (rather than order quantity) to be made in one lot and S is the cost of setting up the machine to produce that one lot. Therefore, S is called the setup cost per set up (rather than order cost per order).
 

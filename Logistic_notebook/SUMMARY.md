@@ -19,7 +19,7 @@
   * [Unit Zero: Introduction to Logistics Systems](logistics/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
   * [Customer service, the Heart of the logistics Management](logistics/let-s-talk-about-logistics/customer-service-the-heart-of-the-logistics-management/README.md)
     * [How to calculate a CS parameter](logistics/let-s-talk-about-logistics/customer-service-the-heart-of-the-logistics-management/unidad-uno-servicio-al-cliente.md)
-  * [Unidad Dos: Modelos de inventarios](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
+  * [Unit two: inventory desitions](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
     * [Inventario ABC](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
     * [Indicadores o KPI de Inventario](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
