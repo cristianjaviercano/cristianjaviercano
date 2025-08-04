@@ -21,7 +21,7 @@
     * [How to calculate a CS parameter](logistics/let-s-talk-about-logistics/customer-service-the-heart-of-the-logistics-management/unidad-uno-servicio-al-cliente.md)
   * [Unidad Dos: Modelos de inventarios](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/README.md)
     * [Inventario ABC](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
-    * [Indiscadores o KPI de Inventario](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
+    * [Indicadores o KPI de Inventario](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
   * [Unidad tres: Modelos de Transporte](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
     * [Ejercicios 1](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
