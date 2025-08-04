@@ -1,406 +1,406 @@
-# Unidad tres: Modelos de Transporte
+# Unit Three: Transportation Models
 
-## Instrucciones para el Uso de la Librería PuLP
+## Instructions for Using the PuLP Library
 
-La librería PuLP es una herramienta poderosa para la programación lineal en Python. Aquí te proporcionamos un guía paso a paso para usar esta librería de manera efectiva.
+The PuLP library is a powerful tool for linear programming in Python. Here we provide a step-by-step guide to using this library effectively.
 
-### Instalación de PuLP
+### Installing PuLP
 
-Antes de comenzar a usar PuLP, primero necesitas instalarla. Puedes hacerlo fácilmente utilizando pip. Abre una terminal y escribe el siguiente comando:
+Before you start using PuLP, you first need to install it. You can do this easily using pip. Open a terminal and type the following command:
 
 ```bash
 pip install pulp
 ```
 
-### Creación de un Problema
+### Creating a Problem
 
-Para definir un problema de programación lineal, debes comenzar por importar la librería y crear un objeto `LpProblem`. Este objeto es la representación de tu problema.
+To define a linear programming problem, you must start by importing the library and creating an `LpProblem` object. This object represents your problem.
 
 ```python
 from pulp import LpProblem, LpMaximize
 
-# Crear un problema de maximización
-problem = LpProblem("Mi_Problema", LpMaximize)
+# Creating a Maximization Problem
+problem = LpProblem("My_Problem", LpMaximize)
 ```
 
-### Declaración de Variables
+### Declaring Variables
 
-Luego, define las variables de decisión que serán usadas en tu modelo. PuLP proporciona la clase `LpVariable` para este propósito.
+Next, define the decision variables that will be used in your model. Pulp provides the `LpVariable` class for this purpose.
 
 ```python
 from pulp import LpVariable
 
-# Crear una variable continua de decisión
+# Create a continuous decision variable
 x = LpVariable('x', lowBound=0)
 y = LpVariable('y', lowBound=0)
 ```
 
-### Definición de la Función Objetivo
+### Defining the Objective Function
 
-La función objetivo es la función matemática que necesitas maximizar o minimizar. Puedes definirla utilizando las variables creadas.
-
-```python
-# Definir la función objetivo
-problem += 3*x + 2*y, "Función_Objetivo"
-```
-
-#### Agregar Restricciones
-
-Las restricciones del problema se añaden utilizando operadores matemáticos habituales. Estas limitan los valores posibles de las variables.
+The objective function is the mathematical function you need to maximize or minimize. You can define it using the variables you created.
 
 ```python
-# Añadir restricciones
-problem += (2*x + y <= 20), "Restricción_1"
-problem += (4*x - 5*y >= -10), "Restricción_2"
+# Defining the objective function
+problem += 3*x + 2*y, "Objective_Function"
 ```
 
-#### Resolución del Problema
+#### Adding Constraints
 
-Con la función objetivo y las restricciones definidas, el siguiente paso es resolver el problema. PuLP puede utilizar diferentes solucionadores, pero el solver predeterminado suele ser suficiente para la mayoría de los casos.
+Constraints are added to the problem using common mathematical operators. These limit the possible values of the variables.
+
+```python
+# Add constraints
+problem += (2*x + y <= 20), "Constraint_1"
+problem += (4*x - 5*y >= -10), "Constraint_2"
+```
+
+#### Problem Solving
+
+With the objective function and constraints defined, the next step is to solve the problem. PuLP can use different solvers, but the default solver is usually sufficient for most cases.
 
 ```python
 problem.solve()
 ```
 
-#### Imprimir Resultados
+#### Print Results
 
-Una vez que el problema es resuelto, puedes acceder a los resultados, como el valor óptimo de la función objetivo y las variables de decisión.
+Once the problem is solved, you can access the results, such as the optimal value of the objective function and the decision variables.
 
 ```python
-# Mostrar estatus del problema
+# Display problem status
 print("Status:", LpStatus[problem.status])
 
-# Mostrar el valor óptimo de las variables
+# Display the optimal value of the variables
 for variable in problem.variables():
-    print(f"{variable.name} = {variable.varValue}")
+print(f"{variable.name} = {variable.varValue}")
 
-# Valor óptimo de la función objetivo
-print("Valor óptimo: ", value(problem.objective))
+# Optimal value of the objective function
+print("Optimal value: ", value(problem.objective))
 ```
 
 {% hint style="info" %}
-La librería PuLP es una herramienta versátil para resolver problemas de programación lineal en Python. Permite una rápida implementación y simplifica la complejidad de modelar problemas de optimización. Con los pasos descritos anteriormente, puedes comenzar a explorar sus capacidades y aplicar programación lineal a tus proyectos.
+The PuLP library is a versatile tool for solving linear programming problems in Python. It allows for rapid implementation and simplifies the complexity of modeling optimization problems. With the steps described above, you can begin exploring its capabilities and applying linear programming to your projects.
 {% endhint %}
 
-esta libreria sera usada en la resolucion de problemas de transporte.
+This library will be used to solve transportation problems.
 
-para mayor informacion sobre esta libreroa podemos visitar: [https://pypi.org/project/PuLP/](https://pypi.org/project/PuLP/)
+For more information about this library, please visit: [https://pypi.org/project/PuLP/](https://pypi.org/project/PuLP/)
 
-1. Instalacion de la libreria: _“pip install pulp”_
+1. Install the library: _“pip install pulp”_
 
-#### Importamos:
+#### Import:
 
 * import pulp
 
-1. crear el problema: para cerar el problema debemos definir la variable que almacenara el problema, por ejempplo “prob” y #creamos el problema. con el comando _“pulp.LpProblem”_ donde le asignaremos nombre y el tipo de problema al que nos enfrentamos sea - Minimizacion : pulp.LpMinimize - Maximizacion: pulp.LpMaximice
+1. Create the problem: To create the problem, we must define the variable that will store the problem, for example, "prob." # Create the problem with the command _"pulp.LpProblem"_, where we will assign a name and the type of problem we are facing: - Minimization: pulp.LpMinimize - Maximization: pulp.LpMaximize
 
-con la sintaxis: **prob = pulp.LpProblem(“Asignacion de Tareas”, pulp.LpMinimize)**
+with the syntax: **prob = pulp.LpProblem("Task Assignment", pulp.LpMinimize)**
 
-#### Creacion de las Variables del modelo:
+#### Creating the Model Variables:
 
-las variables son la base de los problemas de optimización, y dependiendo del tipo de problema que estés resolviendo, pueden adoptar diferentes categorías (tipologías), como variables continuas, enteras o binarias.
+Variables are the basis of optimization problems, and depending on the type of problem you are solving, they can take on different categories (typologies), such as continuous, integer, or binary variables.
 
-* Para crear una variable en PuLP, se utiliza la clase LpVariable, que requiere al menos un nombre como argumento, y puede incluir restricciones como su tipo (binaria, continua, entera) y límites en sus valores. La forma básica de definir una variable es:
+* To create a variable in PuLP, use the LpVariable class, which requires at least a name as an argument and can include constraints such as its type (binary, continuous, integer) and limits on its values. The basic way to define a variable is:
 
-x = LpVariable(‘x’)
+x = LpVariable('x')
 
-las variables pueden contener datos espcificos del modelo o solo estar vacias para ser usadas por el modelo.
+Variables can contain model-specific data or simply be empty for use by the model.
 
-#### Definir las variables
+#### Defining Variables
 
-Ejemplos de variables
+Examples of Variables
 
-1. costos = \[\[10, 2, 20], \[12, 7, 15], \[8, 12, 5]]
-2. trabajadores = range(3)
-3. tareas = range(3)
-4. x = pulp.LpVariable.dicts(“x”, \[(i, j) for i in trabajadores for j in tareas], cat=’Binary’)
-5. Variables Continuas
+1. costs = \[\[10, 2, 20], \[12, 7, 15], \[8, 12, 5]]
+2. workers = range(3)
+3. tasks = range(3)
+4. x = pulp.LpVariable.dicts(“x”, \[(i, j) for i in workers for j in tasks], cat=’Binary’)
+5. Continuous Variables
 
-Estas son variables que pueden tomar cualquier valor dentro de un rango, ya sea positivo, negativo o sin límites. Esta es la categoría predeterminada cuando no se especifica el tipo.
+These are variables that can take any value within a range, whether positive, negative, or unbounded. This is the default category when the type is not specified.
 
 _**x= LpVariable('x')**_
 
-#### Con límites
+#### With Bounds
 
-Se puede restringir el valor de una variable continua a un intervalo dado (por ejemplo, entre un valor mínimo y máximo).
+The value of a continuous variable can be restricted to a given interval (for example, between a minimum and maximum value).
 
-* x = LpVariable(‘x’, lowBound=0, upBound=10)
+* x = LpVariable('x', lowBound=0, upBound=10)
 * \\\[0\<X\_i<10\\]
 
-lowBound y upBound son los atributos que definen los limites de las variables, es decir tambien sirven para las restricciones donde
+lowBound and upBound are the attributes that define the limits of variables, meaning they also serve as constraints where
 
-* x = LpVariable(‘x’, lowBound=0)
+* x = LpVariable('x', lowBound=0)
 * \\\[X\_{i,j}\ge0\\]
 
-#### Variables Enteras
+#### Integer Variables
 
-Las variables enteras solo pueden tomar valores numéricos enteros dentro de un rango específico.
+Integer variables can only take whole numeric values within a specific range.
 
-* y = LpVariable(‘y’, lowBound=0, upBound=5, cat=’Integer’)
+* y = LpVariable('y', lowBound=0, upBound=5, cat='Integer')
 
-en este caso se especifica el tipo de variable con el atributo “cat” donde se especifica la toipologoia en este caso “integer” de Entero.
+In this case, the variable type is specified with the "cat" attribute, which specifies the typology, in this case "integer".
 
-#### &#x20;Variables Binarias
+#### &#x20;Binary Variables
 
-Las variables _binarias_ son un caso especial de las variables enteras, ya que solo pueden tomar los valores 0 o 1. Este tipo de variable es útil cuando modelamos decisiones binarias (sí/no, verdadero/falso) en problemas como la selección de proyectos o la asignación de recursos, muy comunes en metodos de trasnporte y programacion avanzada.
+Binary variables are a special case of integer variables, as they can only take the values 0 or 1. This type of variable is useful when modeling binary decisions (yes/no, true/false) in problems such as project selection or resource allocation, which are very common in transportation methods and advanced programming.
 
-* z = LpVariable(‘z’, cat=’Binary’)
+* z = LpVariable('z', cat='Binary')
 
-cuando se modela este tipo de variables hay que tener en cuenta las desicion que conlleva la misma, es decir, sera 1 si se cumple una condicion dada o sera 0 si no se cumple, de esta forma podemos llevar control del sistema y la logica del mismo.
+When modeling this type of variable, the decision it entails must be taken into account. That is, it will be 1 if a given condition is met, or 0 if it is not. This way, we can control the system and its logic.
 
-* resumen de argumentos en variables de Pulp:
+* Summary of Pulp variable arguments:
 
-1. **lowBound:** Define el límite inferior de la variable (el valor más pequeño que puede tomar). Si no se especifica, el valor predeterminado es None (sin límite inferior).
-2. **upBound:** Define el límite superior de la variable (el valor más grande que puede tomar). Si no se especifica, el valor predeterminado es None (sin límite superior).
-3. **cat:** Este argumento define la categoría (tipo) de la variable:
-   * _‘Continuous’:_ Variables continuas (por defecto).
-   * _‘Integer’:_ Variables que solo pueden tomar valores enteros.
-   * _‘Binary’:_ Variables binarias (que solo toman los valores 0 o 1).
+1. **lowBound:** Defines the variable's lower bound (the smallest value it can take). If not specified, the default is None (no lower bound).
+2. **upBound:** Defines the variable's upper bound (the largest value it can take). If not specified, the default is None (no upper bound).
+3. **cat:** This argument defines the variable's category (type):
+* _'Continuous':_ Continuous variables (default).
+* _'Integer':_ Variables that can only take integer values.
+* _'Binary':_ Binary variables (which only take the values 0 or 1).
 
 ***
 
-### Definir la funcion objetivo:
+### Define the objective function:
 
-Se recomienda antes de proceder con la programacion en python de que el ejercicio o el sistema este definido de esta forma se hace mas facil el desarrollo del mismo, es decir. cuando se pretenda ingresar la F.O del sistema esta ya debe estar definida y conocida segun la naturaleza del sistema investigado, en este caso usaremos la siguiente funcion:
+Before proceeding with Python programming, it is recommended that the exercise or system be defined in this way, as this makes development easier. When entering the system's objective function, it must already be defined and known according to the nature of the system being investigated. In this case, we will use the following function:
 
 $$
 3x_1+2x_2+x_3
 $$
 
-* `problema += 3 * x1 + 2 * x2 + x3,` “Función Objetivo”
+* `problem += 3 * x1 + 2 * x2 + x3,` “Objective Function”
 
-notese el nombre de la variable que encierra el problema “problema”
+Note the name of the variable that encloses the problem: “problem.”
 
-#### Procedmos a agregar las restricciones del sistema:
+#### Let's add the system's constraints:
 
-`problema += x1 + x2 + x3 <= 2,`&#x20;
+`problem += x1 + x2 + x3 <= 2,`&#x20;
 
-“Restricción 1” `problema += x1 + x2 >= 1`,&#x20;
+“Constraint 1” `problem += x1 + x2 >= 1`,&#x20;
 
-“Restricción 2”
+“Restriction 2”
 
-en este caso las restricciones van precedidas por los signos $$\(\le\) y \(\ge\)$$
+In this case, the restrictions are preceded by the symbols $$\(\le\) and \(\ge\)$$
 
-notese que no definimos la restriccion de “no negatividad” ya que las variables al ser definidas y acotadas incluyen los valores donde estas pueden operar.
+Note that we do not define the “non-negativity” restriction since the variables, when defined and bounded, include the values on which they can operate.
 
-#### Resolvemos:
+#### We solve:
 
-Utiliza el método solve() para resolver el problema de optimización. PuLP usa un solver incorporado por defecto, pero puedes especificar uno si prefieres.
+Use the solve() method to solve the optimization problem. PuLP uses a built-in solver by default, but you can specify one if you prefer.
 
-* problema.solve()
+* problem.solve()
 
-#### Mostrar el resultado:
+#### Display the result:
 
-por ultimo debemos especificarle a la maquina que deseamos ver los resultados estos pueden ser mostrados como valore splanos o podemos usar otras librerias como pandas mathplotlib, etc, para mostrar estos resultados, pero para estos habria que definir las variables y almacenar los datos segun cada una lo requiera.
+Finally, we must specify to the machine that we want to see the results. These can be displayed as flat values, or we can use other libraries such as pandas, mathplotlib, etc., to display these results. However, for these, we would have to define the variables and store the data as required.
 
-print(“Estado:”, pulp.LpStatus\[problema.status])
+print(“Status:”, pulp.LpStatus\[problem.status])
 
-print(“Valor de x1:”, x1.varValue) print(“Valor de x2:”, x2.varValue) print(“Valor de x3:”, x3.varValue)
+print(“Value of x1:”, x1.varValue) print(“Value of x2:”, x2.varValue) print(“Value of x3:”, x3.varValue)
 
-print(“Valor óptimo de la función objetivo:”, pulp.value(problema.objective))
+print(“Optimal value of the objective function:”, pulp.value(problem.objective))
 
-### Definicion del modelo de Transporte[#](broken-reference)
+### Definition of the Transportation Model[#](broken-reference)
 
-El transporte es la columna vertebral de la logística, permitiendo el flujo de bienes y servicios a través de la cadena de suministro. Su eficiencia impacta directamente en los costos, la satisfacción del cliente y la competitividad de las empresas.
+Transportation is the backbone of logistics, enabling the flow of goods and services through the supply chain. Its efficiency directly impacts costs, customer satisfaction, and the competitiveness of companies.
 
-Existen diferentes **medios** de transporte, como el terrestre, marítimo, aéreo y ferroviario, cada uno con características que los hacen ideales para ciertos tipos de carga y distancias. La elección del medio adecuado es crucial para optimizar la logística.
+There are different modes of transportation, such as land, sea, air, and rail, each with characteristics that make them ideal for certain types of cargo and distances. Choosing the right mode is crucial to optimizing logistics.
 
-Además de los medios, se deben considerar los **modos** de transporte, que se refieren a la forma en que se organiza el transporte, como el transporte unimodal (un solo medio), multimodal (combinación de medios) e intermodal (combinación de medios con una sola unidad de carga).
+In addition to the modes, modes of transportation must be considered, which refer to the way transportation is organized, such as unimodal (a single mode of transportation), multimodal (a combination of modes of transportation), and intermodal (a combination of modes with a single cargo unit).
 
-Un modelo logístico que ha ganado popularidad es el **cross-docking**, que busca minimizar el tiempo de almacenamiento y agilizar la distribución.
+A logistics model that has gained popularity is cross-docking, which seeks to minimize storage time and streamline distribution.
 
-* Ejemplos
+* Examples
 
-1. Transporte marítimo: Ideal para grandes volúmenes y largas distancias, como el transporte de materias primas o productos manufacturados entre continentes.
-2. Transporte aéreo: Recomendado para productos perecederos o de alto valor que requieren entrega rápida, como flores o dispositivos electrónicos.
-3. Cross-docking: Un centro de distribución recibe productos de diferentes proveedores, los consolida y los envía inmediatamente a los clientes, reduciendo costos de almacenamiento y tiempos de entrega.
+1. Ocean Freight: Ideal for large volumes and long distances, such as the transport of raw materials or manufactured goods between continents.
+2. Air Freight: Recommended for perishable or high-value products that require rapid delivery, such as flowers or electronic devices.
+3. Cross-docking: A distribution center receives products from different suppliers, consolidates them, and ships them immediately to customers, reducing storage costs and delivery times.
 
-### Variables de Decisión Clave[#](broken-reference)
+### Key Decision Variables[#](broken-reference)
 
-Al evaluar las opciones de transporte, es fundamental considerar las siguientes variables:
+When evaluating transportation options, it is essential to consider the following variables:
 
-* Costo: Incluye el precio del flete, seguros, impuestos y otros gastos asociados al transporte.
-* Tiempo: Se refiere al tiempo total de tránsito, desde la recolección hasta la entrega final.
-* Capacidad: Hace referencia a la cantidad de carga que puede transportar el medio elegido.
-* Fiabilidad: Se refiere a la probabilidad de que la carga llegue a destino a tiempo y en las condiciones acordadas.
+* Cost: Includes freight, insurance, taxes, and other expenses associated with transportation.
+* Time: Refers to the total transit time, from pickup to final delivery.
+* Capacity: Refers to the amount of cargo that the chosen mode can carry.
+* Reliability: Refers to the probability that the cargo will arrive at its destination on time and under the agreed conditions.
 
-### Representacion grafica de los modelos de transporte en Progranacion lineal
+### Graphical Representation of Transportation Models in Linear Programming
 
-Un modelo de transporte se puede representar gráficamente mediante una red de nodos y arcos, similar a un diagrama de flujo.
+A transportation model can be represented graphically using a network of nodes and arcs, similar to a flowchart.
 
-1. Nodos: Representan los puntos de origen y destino de la mercancía.
+1. Nodes: These represent the origin and destination points of the goods.
 
-* Nodos de origen: Indican los lugares de donde sale la mercancía (fábricas, almacenes, etc.).
-* Nodos de destino: Representan los lugares a donde debe llegar la mercancía (clientes, centros de distribución, etc.). Arcos: Son las conexiones entre los nodos y simbolizan las rutas de transporte disponibles.
+* Origin nodes: These indicate the locations from which the goods originate (factories, warehouses, etc.).
+* Destination nodes: These represent the locations where the goods must arrive (customers, distribution centers, etc.). Arcs: These are the connections between nodes and symbolize the available transportation routes.
 
-2. Arcos
+2. Arcs
 
-* Cada arco se asocia con un costo de transporte, que puede representar la distancia, el tiempo de viaje o el costo monetario del transporte entre dos nodos. Se puede indicar la capacidad de cada arco, que representa la cantidad máxima de mercancía que se puede transportar por esa ruta.
+* Each arc is associated with a transportation cost, which can represent the distance, travel time, or monetary cost of transportation between two nodes. The capacity of each arc can be indicated, which represents the maximum amount of goods that can be transported along that route.
 
-en python tenemos librerias para modelar estos diagramas, por ejemplo
+In Python, we have libraries for modeling these diagrams, for example
 
 * graphviz
 
-se puede ampliar info en [https://graphviz.org](https://graphviz.org/)
+More information can be found at [https://graphviz.org](https://graphviz.org/)
 
-### Principio de nivelacion:
+### Leveling Principle:
 
-En los modelos de logística de programación lineal, el principio de nivelación se refiere a la necesidad de equilibrar la oferta y la demanda en el modelo. Esto significa que la cantidad total de bienes o productos que se envían desde los orígenes debe ser igual a la cantidad total de bienes o productos que se reciben en los destinos.
+In linear programming logistics models, the leveling principle refers to the need to balance supply and demand in the model. This means that the total amount of goods or products shipped from the origins must equal the total amount of goods or products received at the destinations.
 
-¿Cuándo usar elementos ficticios?
+When to Use Dummy Elements?
 
-Los elementos ficticios se utilizan cuando la oferta y la demanda no están equilibradas en el modelo de transporte. Se introduce un origen o destino ficticio para absorber el exceso de oferta o demanda, respectivamente.
+Dummy elements are used when supply and demand are not balanced in the transportation model. A dummy origin or destination is introduced to absorb excess supply or demand, respectively.
 
-1. **Exceso de oferta:** Si la oferta total es mayor que la demanda total, se crea un destino ficticio. Los costos de transporte a este destino ficticio se establecen en cero, ya que no representa un destino real.
-2. **Exceso de demanda:** Si la demanda total es mayor que la oferta total, se crea un origen ficticio. Los costos de transporte desde este origen ficticio se establecen en cero.
+1. **Excess Supply:** If total supply is greater than total demand, a dummy destination is created. Transportation costs to this dummy destination are set to zero, as it does not represent a real destination.
+2. **Excess Demand:** If total demand is greater than total supply, a dummy origin is created. Transportation costs from this dummy origin are set to zero.
 
-#### Ejemplo de probelma de trasporte usando Pulp[#](broken-reference)
+#### Transportation Problem Example Using Pulp[#](broken-reference)
 
-Imagina un problema de transporte con dos orígenes (O1 y O2) y tres destinos (D1, D2 y D3). La oferta de O1 es 100 unidades y la de O2 es 150 unidades. La demanda de D1 es 80 unidades, la de D2 es 100 unidades y la de D3 es 70 unidades.
+Imagine a transportation problem with two origins (O1 and O2) and three destinations (D1, D2, and D3). The supply at O1 is 100 units, and the demand at O2 is 150 units. The demand at D1 is 80 units, the demand at D2 is 100 units, and the demand at D3 is 70 units.
 
-En este caso, la oferta total (250 unidades) es mayor que la demanda total (250 unidades). Para nivelar el modelo, se introduce un destino ficticio (DF) con una demanda de 0 unidades. Los costos de transporte desde O1 y O2 a DF se establecen en cero.
+In this case, the total supply (250 units) is greater than the total demand (250 units). To level the model, a fictitious destination (DF) with a demand of 0 units is introduced. The transportation costs from O1 and O2 to DF are set to zero.
 
 ```python
 import pulp
 
-# Crear el problema
-prob = pulp.LpProblem("Problema de Transporte", pulp.LpMinimize)
+# Create the problem
+prob = pulp.LpProblem("Transportation Problem", pulp.LpMinimize)
 
-# Definir los orígenes y destinos
-origenes = ["O1", "O2"]
-destinos = ["D1", "D2", "D3", "DF"] # DF es el destino ficticio
+# Define the origins and destinations
+origins = ["O1", "O2"]
+destinations = ["D1", "D2", "D3", "DF"] # DF is the fictitious destination
 
-# Oferta de cada origen
-oferta = {"O1": 100, "O2": 150}
+# Supply for each origin
+supply = {"O1": 100, "O2": 150}
 
-# Demanda de cada destino
-demanda = {"D1": 80, "D2": 100, "D3": 70, "DF": 0}
+# Demand for each destination
+demand = {"D1": 80, "D2": 100, "D3": 70, "DF": 0}
 
-# Costos de transporte (se deben definir según el problema)
-costos = {
-    ("O1", "D1"): 10,
-    ("O1", "D2"): 2,
-    ("O1", "D3"): 20,
-    ("O1", "DF"): 0,  # Costo cero para el destino ficticio
-    ("O2", "D1"): 12,
-    ("O2", "D2"): 7,
-    ("O2", "D3"): 15,
-    ("O2", "DF"): 0,  # Costo cero para el destino ficticio
+# Transportation costs (must be defined according to the problem)
+costs = {
+("O1", "D1"): 10,
+("O1", "D2"): 2,
+("O1", "D3"): 20,
+("O1", "DF"): 0, # Zero cost for the fictitious destination
+("O2", "D1"): 12,
+("O2", "D2"): 7,
+("O2", "D3"): 15,
+("O2", "DF"): 0, # Zero cost for the fictitious destination
 }
 
-# Variables de decisión
-rutas = [(o, d) for o in origenes for d in destinos]
-x = pulp.LpVariable.dicts("ruta", rutas, lowBound=0, cat='Integer')
+# Decision variables
+routes = [(o, d) for o in origins for d in destinations]
+x = pulp.LpVariable.dicts("route", routes, lowBound=0, cat='Integer')
 
-# Función objetivo: Minimizar el costo total de transporte
-prob += pulp.lpSum([x[r] * costos[r] for r in rutas])
+# Objective function: Minimize total transportation cost
+prob += pulp.lpSum([x[r] * costs[r] for r in routes])
 
-# Restricciones
-# 1. Respetar la oferta de cada origen
-for o in origenes:
-    prob += pulp.lpSum([x[(o, d)] for d in destinos]) <= oferta[o]
+# Constraints
+# 1. Respect the offer of each origin
+for o in origins:
+probab += pulp.lpSum([x[(o, d)] for d in destinations]) <= supply[o]
 
-# 2. Satisfacer la demanda de cada destino
-for d in destinos:
-    prob += pulp.lpSum([x[(o, d)] for o in origenes]) >= demanda[d]
+# 2. Satisfy the demand for each destination
+for d in destinations:
+prob += pulp.lpSum([x[(o, d)] for o in origins]) >= demand[d]
 
-# Resolver el problema
+# Solve the problem
 prob.solve()
 
-# Imprimir los resultados
+# Print the results
 print("Status:", pulp.LpStatus[prob.status])
 for v in prob.variables():
-    if v.varValue > 0:
-        print(v.name, "=", v.varValue)
+if v.varValue > 0:
+print(v.name, "=", v.varValue)
 
-print("Costo total =", pulp.value(prob.objective))
+print("Total cost =", pulp.value(prob.objective))
 ```
 
-Los valores que quedan en los elementos ficticios en la solución de un problema de transporte representan la diferencia entre la oferta y la demanda.
+The values remaining in the fictitious elements in the solution to a transportation problem represent the difference between supply and demand.
 
-1. **Destino ficticio:** Si en la solución óptima hay un valor positivo en una ruta hacia el destino ficticio, significa que hay un exceso de oferta en el origen correspondiente. El valor indica la cantidad de unidades que no se envían a ningún destino real.
-2. **Origen ficticio:** Si en la solución óptima hay un valor positivo en una ruta desde el origen ficticio, significa que hay un exceso de demanda en el destino correspondiente. El valor indica la cantidad de unidades de demanda que no se pueden satisfacer con la oferta disponible.
+1. **Fictitious Destination:** If in the optimal solution there is a positive value on a route to the fictitious destination, it means there is excess supply at the corresponding origin. The value indicates the number of units that are not shipped to any real destination.
+2. **Fictitious Origin:** If in the optimal solution there is a positive value on a route from the fictitious origin, it means there is excess demand at the corresponding destination. The value indicates the number of demand units that cannot be satisfied with the available supply.
 
-### **Definicion del modelo de Transporte:**[#](broken-reference)
+### **Definition of the Transportation Model:**[#](broken-reference)
 
-Tiene que ver con encontrar un plan de costo mínimo para transportar una mercancía desde varios orígenes hasta varios destinos. Este modelo se puede extender para resolver numerosas aplicaciones que no se relacionan con el transporte dentro de los problemas de control de inventarios, flujo de efectivo, asignación de recursos.
+It involves finding a minimum-cost plan for transporting a good from multiple origins to multiple destinations. This model can be extended to solve numerous non-transportation applications within problems such as inventory control, cash flow, and resource allocation.
 
-Algoritmo del Transporte, es una adaptación del método Simplex aplicada al caso o estructura particular del modelo de Programación Lineal asociado. Aunque el modelo de este problema se puede resolver mediante el método Simplex, su estructura especial hace posible el uso de un procedimiento especial
+Transport Algorithm is an adaptation of the Simplex method applied to the particular case or structure of the associated Linear Programming model. Although the model for this problem can be solved using the Simplex method, its special structure makes it possible to use a special procedure.
 
 ```python
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Crear un grafo dirigido
+# Create a directed graph
 G = nx.DiGraph()
 
-# Definir las fuentes y los destinos
-fuentes = ['P_1', 'P_2', 'P_3', 'P_4']
-destinos = ['C_1', 'C_2', 'C_3', 'C_4']
+# Define the sources and destinations
+sources = ['P_1', 'P_2', 'P_3', 'P_4']
+destinations = ['C_1', 'C_2', 'C_3', 'C_4']
 
-# Añadir nodos al grafo con la propiedad bipartita
-G.add_nodes_from(fuentes, bipartite=0)  # Asignar bipartite=0 a las fuentes
-G.add_nodes_from(destinos, bipartite=1)  # Asignar bipartite=1 a los destinos
+# Add nodes to the graph with the bipartite property
+G.add_nodes_from(sources, bipartite=0) # Assign bipartite=0 to the sources
+G.add_nodes_from(destinations, bipartite=1) # Assign bipartite=1 to the destinations
 
-# Añadir arcos desde cada fuente a cada destino
-for fuente in fuentes:
-    for destino in destinos:
-        G.add_edge(fuente, destino)
+# Add edges from each source to each destination
+for source in sources:
+for destination in destinations:
+G.add_edge(source, destination)
 
-# Posicionamiento bipartito
+# Bipartite positioning
 pos = {}
-# Fuentes a la izquierda
-pos.update((n, (0, i)) for i, n in enumerate(fuentes))
-# Destinos a la derecha
-pos.update((n, (1, i)) for i, n in enumerate(destinos))
+# Sources on the left
+pos.update((n, (0, i)) for i, n in enumerate(sources))
+# Destinations on the right
+pos.update((n, (1, i)) for i, n in enumerate(destinations))
 
-# Dibujar el grafo con nodos y arcos
+# Draw the graph with nodes and edges
 nx.draw(G, pos, with_labels=True, node_size=3000, node_color='skyblue', font_size=12, font_weight='bold', arrows=True)
-plt.title("Red de Transporte: Fuentes a la izquierda y Destinos a la derecha")
+plt.title("Transportation Network: Sources on the left and Destinations on the right")
 plt.show()
 ```
 
 ```python
 import networkx as nx
 import matplotlib.pyplot as plt
-#grafico dirigido
+# directed graph
 G = nx.DiGraph()
-# Definir las fuentes y los destinos
-fuentes = ['P_1', 'P_2', 'P_3', 'P_4']
-destinos = ['C_1', 'C_2', 'C_3', 'C_4']
-# Definir los costos de transporte (por ejemplo, distancias o costos)
-costos = {
-    ('P_1', 'C_1'): 4, ('P_1', 'C_2'): 2, ('P_1', 'C_3'): 5, ('P_1', 'C_4'): 7,
-    ('P_2', 'C_1'): 3, ('P_2', 'C_2'): 6, ('P_2', 'C_3'): 1, ('P_2', 'C_4'): 4,
-    ('P_3', 'C_1'): 7, ('P_3', 'C_2'): 3, ('P_3', 'C_3'): 6, ('P_3', 'C_4'): 5,
-    ('P_4', 'C_1'): 4, ('P_4', 'C_2'): 5, ('P_4', 'C_3'): 3, ('P_4', 'C_4'): 2
+# Define sources and destinations
+sources = ['P_1', 'P_2', 'P_3', 'P_4']
+destinations = ['C_1', 'C_2', 'C_3', 'C_4']
+# Define transportation costs (e.g., distances or costs)
+costs = {
+('P_1', 'C_1'): 4, ('P_1', 'C_2'): 2, ('P_1', 'C_3'): 5, ('P_1', 'C_4'): 7,
+('P_2', 'C_1'): 3, ('P_2', 'C_2'): 6, ('P_2', 'C_3'): 1, ('P_2', 'C_4'): 4,
+('P_3', 'C_1'): 7, ('P_3', 'C_2'): 3, ('P_3', 'C_3'): 6, ('P_3', 'C_4'): 5,
+('P_4', 'C_1'): 4, ('P_4', 'C_2'): 5, ('P_4', 'C_3'): 3, ('P_4', 'C_4'): 2
 }
-# Añadir aristas al grafo con los costos como atributos de peso
-for (fuente, destino), costo in costos.items():
-    G.add_edge(fuente, destino, weight=costo)
+# Add edges to the graph with costs as weight attributes
+for (source, destination), cost in costs.items():
+G.add_edge(source, destination, weight=cost)
 
-# Posicionamiento bipartito para que las fuentes estén a la derecha y los destinos a la izquierda
+# Bipartite positioning so that sources are on the right and destinations are on the left
 pos = {}
-# Fuentes a la derecha (x=1)
-pos.update((fuente, (0, i)) for i, fuente in enumerate(fuentes))
-# Destinos a la izquierda (x=0)
-pos.update((destino, (1, i)) for i, destino in enumerate(destinos))
+# Sources on the right (x=1)
+pos.update((source, (0, i)) for i, source in enumerate(sources))
+# Destinations on the left (x=0)
+pos.update((destination, (1, i)) for i, destination in enumerate(destinations))
 
-# Dibujar el grafo
-plt.figure(figsize=(8, 6))  # Ajustar el tamaño del gráfico
+# Draw the graph
+plt.figure(figsize=(8, 6)) # Adjust the graph size
 nx.draw(G, pos, with_labels=True, node_size=3000, node_color='skyblue', font_size=12, font_weight='bold', arrows=True)
 
-# Añadir etiquetas con los pesos de las aristas
+# Add labels with edge weights
 labels = nx.get_edge_attributes(G, 'weight')
 nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
 
-# Mostrar el gráfico
-plt.title("Red de Transporte: Fuentes y Destinos con Costos de Transporte")
+# Display the graph
+plt.title("Transportation Network: Sources and Destinations with Costs" Transport")
 plt.show()
 ```
 
-1- para resolver estos problemas de optimizacion usaremos la ibreria pulp
+1- To solve these optimization problems, we will use the pulp library.
 
-* hay que instalarla ya que no viene preinstalada en COlab
+* You must install it since it doesn't come pre-installed in COlab.
 * [https://www.youtube.com/watch?v=Dq59G8Uf-\_o](https://www.youtube.com/watch?v=Dq59G8Uf-_o)
 * [https://pypi.org/project/PuLP/](https://pypi.org/project/PuLP/)
