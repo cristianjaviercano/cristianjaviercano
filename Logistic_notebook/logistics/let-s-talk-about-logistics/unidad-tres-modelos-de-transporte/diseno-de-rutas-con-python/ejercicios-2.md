@@ -2,299 +2,290 @@
 
 #### Traveling Salesman Problem (TSP)
 
-The Traveling Salesman Problem (TSP) is a classic optimization problem focused on finding the shortest possible route for a traveler to visit a set of cities and return to the origin city. The key characteristics of TSP include:
+The Traveling Salesman Problem (TSP) is a classic optimization problem focused on finding the shortest possible route for a traveler to visit a set of cities and return to the origin city. The key challenge is:
 
 1. **Unique Tour:**\
    Each city must be visited exactly once.
 
 TSP is commonly used in logistics, manufacturing, and transportation to optimize travel routes and reduce costs.
 
-#### Descripción del Problema
+#### Problem Description
 
-Dado un conjunto de ciudades y las distancias entre cada par de ellas, se busca una secuencia de visitas que minimice la distancia total recorrida. Este problema se puede visualizar como un circuito hamiltoniano en un grafo ponderado y requiere que el recorrido cumpla con las siguientes condiciones:
+Given a set of cities and the distances between each pair of them, the goal is to find a sequence of visits that minimizes the total distance traveled. This problem can be visualized as a closed circuit:
 
-1. **Recorrido Único:**\
-   Cada ciudad debe ser visitada exactamente una vez.
-2. **Circuito Cerrado:**\
-   El recorrido debe comenzar y terminar en la misma ciudad de origen.
-3. **Minimización de Distancia:**\
-   La suma total de las distancias entre las ciudades visitadas debe ser la menor posible.
+1. **Unique Route:**\
+   Each city must be visited exactly once.
+2. **Closed Circuit:**\
+   The route must start and end in the same origin city.
+3. **Distance Minimization:**\
+   The sum of all distances between the visited cities must be as small as possible.
 
-#### Ejemplo
+#### Example
 
-Supongamos que tenemos cinco ciudades: A, B, C, D y E. La tarea es encontrar el recorrido que cubra todas las ciudades y vuelva a la ciudad inicial A, de manera que la suma de las distancias entre las ciudades sea mínima.
+Suppose we have five cities: A, B, C, D, and E. The task is to find the route that covers all the cities and returns to the initial city A, so that the sum of the distances between the cities is minimized.
 
-#### Métodos de Solución
+#### Solution Methods
 
-Algunos métodos para resolver el problema del viajante incluyen:
+Some methods to solve the traveling salesman problem include:
 
-* **Fuerza Bruta:** Evalúa todas las posibles rutas y selecciona la de menor distancia. Es práctico para un pequeño número de ciudades debido a su complejidad factorial.
-* **Algoritmos Aproximados:** Como la búsqueda de colonia de hormigas, algoritmos genéticos o el algoritmo de recocido simulado, ofrecen soluciones cercanas al óptimo en un tiempo razonable para conjuntos mayores de ciudades.
-* **Programación Dinámica:** Utiliza el algoritmo de Held-Karp, que tiene una complejidad temporal de 2^n \* n^2, siendo más eficiente que la fuerza bruta, aunque aún exponencial.
+* **Brute Force:** Evaluates all possible routes and selects the one with the shortest distance. This is practical for a small number of cities due to its factorial complexity.
+* **Approximate Algorithms:** Such as ant colony search, genetic algorithms, or simulated annealing, which offer solutions close to optimal in reasonable time for large numbers of cities.
+* **Dynamic Programming:** Uses the Held-Karp algorithm, which has a time complexity of 2^n * n^2, more efficient than brute force, though still exponential.
 
-#### Ejercicio Práctico: Resolviendo el Problema del Viajante con PuLP
+#### Practical Exercise: Solving the Traveler Problem with PuLP
 
-En este ejercicio, los estudiantes utilizarán la biblioteca PuLP en Python para resolver el problema del viajante (TSP). A través de este ejercicio, los estudiantes modelarán y resolverán el problema utilizando programación lineal entera para encontrar el recorrido óptimo.
+In this exercise, students will use the PuLP library in Python to solve the traveling salesman problem (TSP). Through this exercise, students will model and solve the problem computationally.
 
-**Instrucciones**
+**Instructions**
 
-1.  **Introducción al Problema:**
+1.  **Introduction to the Problem:**
 
-    Imagina que eres un vendedor que debe visitar las siguientes ciudades: Ciudad1, Ciudad2, Ciudad3, Ciudad4 y Ciudad5. El objetivo es determinar la ruta que minimiza la distancia total recorrida al visitar cada ciudad exactamente una vez antes de regresar a la ciudad inicial.
+    Imagine you are a salesperson who must visit the following cities: City1, City2, City3, City4, and City5. The goal is to determine the route that minimizes the total distance traveled when visiting all the cities and returning to the initial city.
 
-**Ejemplo de Código**
+**Example Code**
 
 ```python
 import pulp
 
-# Definición de las ciudades y la matriz de distancias
-ciudades = ['Ciudad1', 'Ciudad2', 'Ciudad3', 'Ciudad4', 'Ciudad5']
-distancias = {('Ciudad1', 'Ciudad2'): 10, ('Ciudad1', 'Ciudad3'): 15, ...}
+# Definition of cities and distance matrix
+cities = ['City1', 'City2', 'City3', 'City4', 'City5']
+distances = {('City1', 'City2'): 10, ('City1', 'City3'): 15, ...}
 
-# Definir el problema
-problema = pulp.LpProblem("TSP", pulp.LpMinimize)
+# Define the problem
+problem = pulp.LpProblem("TSP", pulp.LpMinimize)
 
-# Variables de decisión
-x = pulp.LpVariable.dicts('ruta', distancias, cat='Binary')
+# Decision variables
+x = pulp.LpVariable.dicts('route', distances, cat='Binary')
 
-# Función objetivo
-problema += pulp.lpSum([distancias[i] * x[i] for i in distancias])
+# Objective function
+problem += pulp.lpSum([distances[i] * x[i] for i in distances])
 
-# Restricciones
+# Constraints
 ...
 
-# Resolviendo el problema
-problema.solve()
+# Solving the problem
+problem.solve()
 
-# Resultado
-print(f"Estado del solucionador: {pulp.LpStatus[problema.status]}")
-print("Recorrido óptimo:")
-for i in distancias:
+# Results
+print(f"Solver status: {pulp.LpStatus[problem.status]}")
+print("Optimal route:")
+for i in distances:
     if pulp.value(x[i]) == 1:
-        print(f"Viajar de {i[0]} a {i[1]}")
+        print(f"Travel from {i[0]} to {i[1]}")
 
-print(f"Distancia total: {pulp.value(problema.objective)}")
-```
+print(f"Total distance: {pulp.value(problem.objective)}")
 
-**Completa el código implementando las restricciones y comparte tus resultados. Este ejercicio te brindará experiencia práctica en optimización combinatoria y su aplicación con herramientas computacionales.**
+Complete the code by implementing the constraints and share your results. This exercise will provide practical experience in combinatorial optimization and its application with computational tools.
 
 ***
 
 {% hint style="info" %}
-#### Consejos para Implementar las Restricciones
+
+Tips to Implement the Constraints
 {% endhint %}
 
-**Restricción de Entrada y Salida:**\
-Cada ciudad debe tener exactamente una entrada y una salida. Para ello, asegúrate de que en cada ciudad, la suma de las rutas que entran y las que salen sea igual a 1.
+Entry and Exit Constraint:
+Each city must have exactly one entry and one exit. To achieve this, make sure that in each city, the sum of incoming and outgoing routes equals 1.
 
-### Ejercicio de Rutas en un CEDI
-
+Routing Exercise in a Distribution Center (CEDI)
 {% hint style="info" %}
-#### ¿Qué es un CEDI?
 
-Un Centro de Distribución, conocido como CEDI, es una instalación logística empleada por las empresas para la recepción, almacenamiento, gestión y distribución de productos. Su principal función es optimizar el flujo de mercancías desde el proveedor hasta el cliente final, asegurando la eficiencia en la cadena de suministro.
-{% endhint %}
+What is a CEDI?
+A Distribution Center, known as CEDI, is a logistics facility used by companies for receiving, storing, managing, and distributing products. Its main function is to optimize supply chain processes. {% endhint %}
 
-#### Contextualización para Empresas CRC
+Context for CRC Companies
+In the context of CRC Companies, a routing exercise is proposed for a CEDI handling a single type of product. The company has three forklifts that facilitate the movement of goods within the facility.
 
-En el contexto de Empresas CRC, se plantea un ejercicio de ruteo para un CEDI que maneja un único tipo de producto. La empresa dispone de tres montacargas que facilitan el movimiento de mercancía entre diferentes áreas funcionales, tales como recepción, inspección, almacenamiento, y despacho.
+The goal of this exercise is to determine the average service time or attention time inside the CEDI. This analysis will help CRC Companies optimize processes and resources, improving the efficiency of the distribution center.
 
-El objetivo de este ejercicio es determinar el tiempo de servicio o el tiempo promedio de atención dentro del CEDI. Este análisis ayudará a Empresas CRC en la optimización de procesos y recursos, mejorando su eficiencia operativa a través de una modelación precisa en Excel del layout y operaciones internas del CEDI.
+The CEDI will have the following areas and characteristics:
 
-El CEDI contará con las siguientes áreas y características:
+Product: A single type of product.
+Forklifts: Three forklifts.
+Functional Areas:
+Receiving Area (ARM): Location where the product is received.
+Inspection Area (AI): Zone for quality and quantity verification of the product.
+Forklift Parking Area (APM): Space designated for parking and recharging forklifts.
+Dispatch Area (AD): Point where finished products or orders leave.
+Storage Area (AA): Area designated for shelves for product storage.
+Shelves:
+Six shelves in total.
+Each shelf will have 12 towers.
+Each tower will have 3 levels.
+Coordinate Identification: Shelf locations will be identified by coordinates (x, y, z).
+II. Student Requirements
+The student must complete the following tasks:
 
-1. **Producto:** Un único tipo de producto.
-2. **Montacargas:** Tres montacargas.
-3. **Áreas Funcionales:**
-   1. **Área de Recepción de Mercancías (ARM):** Ubicación donde se recibe el producto.
-   2. **Área de Inspección (AI):** Zona para la verificación de la calidad y cantidad del producto.
-   3. **Área de Parqueo de Montacargas (APM):** Espacio designado para el estacionamiento y recarga de los montacargas.
-   4. **Área de Despacho (AD):** Punto de salida de los productos terminados o pedidos.
-   5. **Área de Almacenamiento (AA):** Zona destinada a las estanterías para el almacenamiento del producto.
-4. **Estanterías:**
-   * Seis estanterías en total.
-   * Cada estantería tendrá 12 torres.
-   * Cada torre tendrá 3 niveles.
-   * **Identificación de Coordenadas:** Las ubicaciones de las estanterías serán identificadas mediante coordenadas (x,y,z).
+1. Warehouse Modeling in Excel and Determination of Coordinates
 
-#### II. Requerimientos del Estudiante
+The first step is to build a warehouse model in a spreadsheet (Excel) to determine the coordinates of each area and each storage location.
 
-El estudiante deberá abordar las siguientes tareas:
+General Coordinates: All areas (ARM, AI, APM, AD) will have a z coordinate = 1 meter, assuming their operations occur at ground level.
+Storage Coordinates: For locations within the Storage Area (AA), coordinates (x, y) will be the same for a given tower, and the z coordinate will vary depending on the level:
+Level 1: z = 1 meter.
+Level 2: z = 2 meters.
+Level 3: z = 3 meters.
+Assume each unit change in z represents 1 meter.
+2. Matrix of Possible Routes, Times, and Distances
 
-**1. Modelado de la Bodega en Excel y Determinación de Coordenadas**
+Once all coordinates are defined, the student must build a matrix of distances and times between all relevant locations within the CEDI.
 
-El primer paso es construir un modelo de la bodega en una hoja de cálculo (Excel) para determinar las coordenadas de cada área y de cada ubicación de almacenamiento.
+Euclidean Distance: The three-dimensional Euclidean distance can be used to calculate the distance between two points (x1, y1, z1) and (x2, y2, z2): d = sqrt((x2−x1)^2 + (y2−y1)^2 + (z2−z1)^2)
+Average Forklift Speed: Assume an average forklift speed of 10 meters per second.
+Time Calculation: The travel time between two points will be calculated as: t = distance / average forklift speed
+Route Matrix: A matrix M will be generated where M_ij represents the time or distance traveled from location i to location j.
+3. Demand Simulation and Generation of CSV File
 
-* **Coordenadas Generales:** Todas las áreas (ARM, AI, APM, AD) tendrán una coordenada z=1 metro, asumiendo que sus operaciones se realizan a nivel de suelo.
-* **Coordenadas de Almacenamiento:** Para las ubicaciones dentro del Área de Almacenamiento (AA), las coordenadas (x,y) serán las mismas para una torre dada, y la coordenada z variará según el nivel:
-  * Nivel 1: z=1 metro.
-  * Nivel 2: z=2 metros.
-  * Nivel 3: z=3 metros.
-  * Se asume que cada unidad de cambio en z representa 1 metro.
+Demand for orders and the location of items in the warehouse will be simulated, assuming the warehouse is initially full.
 
-**2. Matriz de Rutas Posibles, Tiempos y Distancias**
+Initial Orders: The number of orders per simulation should be random, ranging from 1 to 5.
+Items per Order: Each order will contain a random number of items, between 5 and 20.
+Item Location: Each item in an order must be "located" at a specific coordinate within the Storage Area (AA). That is, it is assumed that these items must be picked from their storage location.
+CSV File Generation: The simulated demand (orders, items, and their origin coordinates) must be exported to a .csv file. This file will serve as input for the routing model.
+4. Formulation of the Vehicle Routing Problem with Capacities (VRPC)
 
-Una vez definidas todas las coordenadas, el estudiante deberá construir una matriz de distancias y tiempos entre todas las ubicaciones relevantes del CEDI.
+The student must formulate a VRPC model that uses the generated .csv file as input.
 
-* **Distancia Euclidiana:** Se puede utilizar la distancia euclidiana tridimensional para calcular la distancia entre dos puntos (x1​,y1​,z1​) y (x2​,y2​,z2​): d=(x2​−x1​)2+(y2​−y1​)2+(z2​−z1​)2​
-* **Velocidad Promedio del Montacargas:** Se asume una velocidad promedio de movimiento de los montacargas de 10 metros por segundo.
-* **Cálculo del Tiempo:** El tiempo de recorrido entre dos puntos se calculará como: t=Velocidad promedio del montacargasd​
-* **Matriz de Rutas:** Se generará una matriz M donde Mij​ represente el tiempo o la distancia de recorrido desde la ubicación i hasta la ubicación j.
+Objective: Minimize the total travel time of the forklifts to fulfill the orders.
+Decision Variables:
+Binary variables indicating whether a forklift visits a location.
+Binary variables indicating whether a route between two locations is taken.
+Constraints:
+Each order must be fulfilled.
+Forklifts have limited capacity (for example, in number of items or volume, which the student must define).
+Forklifts start and end their route in the Forklift Parking Area (APM).
+Each forklift cannot exceed its maximum operation time.
+Route continuity constraints.
+III. Deliverables
+The student must submit a report in PDF format containing:
 
-**3. Simulación de la Demanda y Generación del Archivo CSV**
+Detailed explanation of each step taken.
+Diagram or representation of the warehouse and its coordinates.
+The distance and time matrix.
+The logic of demand simulation.
+The theoretical and algebraic formulation of the VRPC model, including all assumptions and additional considerations.
+Analysis of the results obtained (if the VRPC solution is implemented).
+Additionally, the complete code developed in Python using Jupyter Notebook or Google Colab must be attached. The code should include:
 
-Se simulará la demanda de pedidos y la ubicación de los elementos en la bodega, asumiendo que la bodega está inicialmente llena.
+Generation of coordinates and the distance/time matrix.
+Demand simulation and export to a .csv file.
+Implementation of the VRPC model using an optimization library (e.g., PuLP, GurobiPy, OR-Tools).
+Additional Considerations for Problem Design
+Warehouse Layout: For modeling in Excel, a rectangular or grid layout can be assumed for the warehouse, which facilitates coordinate assignment.
+Forklift Capacity: The capacity of the forklifts must be specified. For example, a forklift can transport a maximum of X items per trip.
+Picking Strategy: An individual picking strategy per item will be assumed, i.e., each item has a specific location that must be visited.
+Loading/Unloading Time: To simplify the initial model, a constant loading/unloading time per item or per order can be assumed, or ignored in a first approximation. The student may choose to include it later.
+Operating Hours: Operating hours for the CEDI and forklifts can be established to include in the time constraints.
+Traffic/Congestion: For this initial level, congestion in aisles or areas can be omitted, assuming smooth movements. If greater complexity is desired, congestion can be introduced.
+This design provides a robust framework for students to apply concepts of facility design, logistics systems modeling, and optimization in a practical setting.
 
-* **Pedidos Iniciales:** La cantidad de pedidos por simulación debe ser aleatoria, en un rango de 1 a 5.
-* **Elementos por Pedido:** Cada pedido contendrá un número aleatorio de elementos, entre 5 y 20.
-* **Localización de Elementos:** Cada elemento en un pedido deberá ser "localizado" en una coordenada específica dentro del Área de Almacenamiento (AA). Es decir, se asumirá que estos elementos deben ser extraídos de estas coordenadas.
-* **Generación de Archivo CSV:** La demanda simulada (pedidos, elementos y sus coordenadas de origen) deberá ser exportada a un archivo `.csv`. Este archivo servirá como insumo para el modelo de ruteo de vehículos (VRP).
+References for Further Information
+Laporte, G. (1992). The vehicle routing problem: An overview of exact and approximate algorithms. European Journal of Operational Research, 59(2), 345-358.
+Toth, P., & Vigo, D. (2014). Vehicle Routing: Problems, Methods, and Applications. Society for Industrial and Applied Mathematics.
+Chopra, S., & Meindl, P. (2019). Supply Chain Management: Strategy, Planning, and Operation (7th ed.). Pearson.
 
-**4. Planteamiento del Problema de Ruteo de Vehículos con Capacidades (VRPC)**
-
-El estudiante deberá plantear un modelo de VRPC que utilice el archivo `.csv` generado como entrada.
-
-* **Objetivo:** Minimizar el tiempo total de recorrido de los montacargas para satisfacer los pedidos.
-* **Variables de Decisión:**
-  * Variables binarias que indiquen si un montacargas visita una ubicación.
-  * Variables binarias que indiquen si se toma una ruta entre dos ubicaciones.
-* **Restricciones:**
-  * Cada pedido debe ser atendido.
-  * Los montacargas tienen una capacidad limitada (por ejemplo, en número de elementos o volumen, lo cual el estudiante deberá definir).
-  * Los montacargas inician y terminan su ruta en el Área de Parqueo de Montacargas (APM).
-  * Cada montacargas no puede exceder su tiempo máximo de operación.
-  * Las restricciones de continuidad de las rutas.
-
-#### III. Entregables
-
-El estudiante deberá entregar un informe en formato PDF que contenga:
-
-* Explicación detallada de cada paso realizado.
-* Diagrama o representación de la bodega y sus coordenadas.
-* La matriz de distancias y tiempos.
-* La lógica de la simulación de la demanda.
-* El planteamiento teórico y algebraico del modelo VRPC, incluyendo todas las suposiciones y consideraciones adicionales.
-* Análisis de los resultados obtenidos (si se llega a implementar la solución del VRPC).
-
-Además, se debe adjuntar el código completo desarrollado en Python utilizando Jupyter Notebook o Google Colab. El código debe incluir:
-
-* Generación de coordenadas y la matriz de distancias/tiempos.
-* Simulación de la demanda y exportación al archivo `.csv`.
-* La implementación del modelo VRPC utilizando una librería de optimización (ej. `PuLP`, `GurobiPy`, `OR-Tools`).
-
-#### Consideraciones Adicionales para el Diseño del Problema
-
-* **Layout de la Bodega:** Para el modelado en Excel, se puede asumir un layout rectangular o cuadriculado para la bodega, lo que facilita la asignación de coordenadas.
-* **Capacidad de los Montacargas:** Se debe especificar la capacidad de los montacargas. Por ejemplo, un montacargas puede transportar un máximo de X elementos por viaje.
-* **Estrategia de Recogida:** Se asumirá una estrategia de recogida individual por elemento, es decir, cada elemento tiene una ubicación específica que debe ser visitada.
-* **Tiempo de Carga/Descarga:** Para simplificar el modelo inicial, se puede asumir un tiempo de carga/descarga constante por elemento o por pedido, o ignorarlo en una primera aproximación. El estudiante puede decidir si incluirlo.
-* **Horarios de Operación:** Se puede establecer un horario de operación para el CEDI y los montacargas para incluir en las restricciones de tiempo.
-* **Tráfico/Congestión:** Para este nivel inicial, se puede omitir la consideración de congestión en los pasillos o áreas, asumiendo movimientos fluidos. Si se desea complejizar, se podría introducir penalizaciones.
-
-Este diseño proporciona un marco robusto para que el estudiante aplique conceptos de diseño de instalaciones, modelado de sistemas logísticos y optimización en un entorno práctico.
-
-#### Referencias para mayor información.
-
-* Laporte, G. (1992). The vehicle routing problem: An overview of exact and approximate algorithms. _European Journal of Operational Research_, _59_(2), 345-358.
-* Toth, P., & Vigo, D. (2014). _Vehicle Routing: Problems, Methods, and Applications_. Society for Industrial and Applied Mathematics.
-* Chopra, S., & Meindl, P. (2019). _Supply Chain Management: Strategy, Planning, and Operation_ (7th ed.). Pearson.
 
 #### Ejercicios Varios
 
-3. En **el ejemplo 1**, suponer que la capacidad de la planta de Detroit es 1300 automóviles (en lugar de 1500). La oferta total (3700 autos) es menor que la demanda total (4300 autos), lo que quiere decir que no será satisfecha parte de la demanda en Denver y Miami. Como la demanda es mayor que la oferta se agrega una fuente _(planta) ficticia_ con una capacidad de 200 automóviles ( 3700  3500) para **balancear** el modelo de transporte. En este caso, el costo de transporte por unidad, desde la planta ficticia a los dos destinos es cero, porque no existe esa fábrica. El costo de transporte por unidad desde la fuente ficticia a los destinos puede asumir también valores positivos. _Por ejemplo,_ para asegurar que Miami recibe toda su demanda, se asignará un costo (penalización) alto de transporte por unidad al elemento cero, desde la fuente ficticia hasta Miami.
-   1. Resuelva este modelo usando simplex a mano y luego en Colab, compare los resultados.
-   2. Describa el codigo usado.
-4. Una tienda produce tres productos diferentes. Los productos se envían a tres almacenes. Los costos de envío por unidad, la oferta y la demanda de cada centro de distribución se muestran en las tablas a continuación. Determine la cantidad de productos que se deben enviar de la fábrica a cada centro de distribución para minimizar los costos de envío.
+Various Exercises
 
-|          | Almacén A | Almacén B | Almacén C | Oferta |
+In example 1, suppose the capacity of the Detroit plant is 1300 cars (instead of 1500). The total supply (3700 cars) is less than the total demand (4300 cars), which means:
+Solve this model using simplex by hand and then in Colab, compare the results.
+Describe the code used.
+A store produces three different products. The products are sent to three warehouses. The shipping costs per unit, supply, and demand for each distribution center are shown in the table:
+
+
+|          | Store A | Store B | Store C | Offert |
 | -------- | --------- | --------- | --------- | ------ |
-| Tienda 1 | $10       | $8        | $7        | 200    |
-| Tienda 2 | $5        | $12       | $6        | 300    |
-| Tienda 3 | $4        | $7        | $11       | 400    |
-| Demanda  | 150       | 250       | 200       |        |
+| Store 1 | $10       | $8        | $7        | 200    |
+| Store 2 | $5        | $12       | $6        | 300    |
+| Store 3 | $4        | $7        | $11       | 400    |
+| Demand  | 150       | 250       | 200       |        |
 
-5. Una empresa tiene tres tiendas en ciudades diferentes y dos almacenes en otras ciudades diferentes. Cada tienda oferta productos diferentes. Los costos de envío por unidad, la capacidad de producción y la demanda de cada almacén se muestran en las tablas a continuación. Determine la cantidad de productos que se deben enviar a los almacenes para satisfacer la demanda y minimizar los costos de envío.
+5. A company has three stores in different cities and two warehouses in other cities. Each store offers different products. The shipping costs per unit, production capacity, and demand for each warehouse are shown in the table:
 
-|          | Almacén A | Almacén B | Almacén C | Almacén D | Oferta |
+|          | Warehouse A | Warehouse B | Warehouse C | Warehouse D | Offert |
 | -------- | --------- | --------- | --------- | --------- | ------ |
-| Tienda 1 | $4        | $6        | $9        | $5        | 300    |
-| Tienda 2 | $7        | $3        | $5        | $8        | 400    |
-| Tienda 3 | $2        | $5        | $11       | $7        | 500    |
-| Demanda  | 400       | 400       | 300       | 300       |        |
+| Store 1 | $4        | $6        | $9        | $5        | 300    |
+| Store 2 | $7        | $3        | $5        | $8        | 400    |
+| Store 3 | $2        | $5        | $11       | $7        | 500    |
+| Demand  | 400       | 400       | 300       | 300       |        |
 
-6. Una empresa tiene tres tiendas y cuatro almacenes. Los costos de envío por unidad, la capacidad de producción y la demanda de cada almacén se muestran en las tablas a continuación. Determine la cantidad de productos que se deben enviar de las fábricas a los almacenes para satisfacer la demanda de cada almacén y minimizar los costos de envío.
+6. A company has three stores and four warehouses. The shipping costs per unit, production capacity, and demand for each warehouse are shown in the tables below. Determine the optimal shipping and cost:
 
-|          | Almacén A | Almacén B | Almacén C | Almacén D | Almacén E | Oferta |
+|          | Wharehouse A | Wharehouse B | Wharehouse C | Wharehouse D | Wharehouse E | Offert|
 | -------- | --------- | --------- | --------- | --------- | --------- | ------ |
-| Tienda 1 | $6        | $8        | $10       | $9        | $7        | 500    |
-| Tienda 2 | $5        | $11       | $7        | $4        | $3        | 400    |
-| Tienda 3 | $12       | $9        | $3        | $8        | $6        | 300    |
-| Demanda  | 300       | 400       | 400       | 200       | 400       |        |
+| Store 1 | $6        | $8        | $10       | $9        | $7        | 500    |
+| Store 2 | $5        | $11       | $7        | $4        | $3        | 400    |
+| Store 3 | $12       | $9        | $3        | $8        | $6        | 300    |
+| Demand  | 300       | 400       | 400       | 200       | 400       |        |
 
 ```
-    1. Formule el modelo de programación lineal teorico y algebraico.
-    2. Formule este problema como un problema de transporte mediante la construcción de la tabla de parámetros apropiada.
-    3. Obtenga una solución óptima para este problema.
-    4. realice el ejercicio en colab y dinamicelo diferemtes valores
+   1. Formulate the theoretical and algebraic linear programming model.
+    2. Formulate this problem as a transportation problem by constructing the appropriate parameter table.
+    3. Get an optimal solution for this problem.
+    4. Do the exercise in Colab and vary different values.
 ```
 
-7. Tres ciudades se abastecen de electricidad de tres centrales eléctricas con capacidades de 25, 40 y 30 megawatts (MW). Las demandas máximas en las tres ciudades se estiman en 30, 35 y 25 MW. El precio por MW en las tres ciudades se muestra en la tabla
+7. Three cities are supplied with electricity from three power plants with capacities of 25, 40, and 30 megawatts (MW). The maximum demands in the three cities are estimated at 30, 35, and 25 MW. The price per MW supplied from each plant to each city is:
 
-| Plantas\Ciudad | C\_1 | C\_2 | C\_3 |
+| Plant\City | C\_1 | C\_2 | C\_3 |
 | -------------- | ---- | ---- | ---- |
 | P\_1           | 600  | 700  | 400  |
 | P\_2           | 320  | 300  | 350  |
 | P\_3           | 500  | 480  | 450  |
 
-Durante el mes de agosto hay un aumento de 20% en la demanda de cada ciudad, que se puede satisfacer comprando electricidad a otra red, a una tasa elevada de $1000 por MW. Sin embargo, la red no está conectada con la ciudad 3. La empresa eléctrica desea determinar el plan más económico para distribuir y comprar la energía adicional.
+During August, there is a 20% increase in demand for each city, which can be met by purchasing electricity from another network, at a high rate of $1000 per MW. However, the network is not unlimited.
 
 ```
-1. Formule el problema como un modelo de transporte. en COlab usando latex.
-2. Resuelva el problema con COLAB y determine un plan óptimo de distribución para la empresa eléctrica.
-3. Determine el costo de la electricidad adicional comprada por cada una de las tres ciudades.
+1. Formulate the problem as a transportation model. In Colab using latex.
+2. Solve the problem with Colab and determine an optimal distribution plan for the power company.
+3. Determine the cost of additional electricity purchased by each of the three cities.
 ```
 
-8. La Compañía ABC tiene tres plantas de producción de Productos para bebés que deben distribuirse a cuatro centros de distribución. Las plantas 1, 2 y 3 producen 12, 17 y 11 cargamentos por mes, respectivamente. Cada centro de distribución necesita recibir 10 cargamentos por mes. En la siguiente tabla se da la distancia de cada planta a su respectivo centro de distribución:
+8. The ABC Company has three baby product manufacturing plants that must be distributed to four distribution centers. Plants 1, 2, and 3 produce 12, 17, and 11 shipments per month, respectively. The shipping costs for each plant to each distribution center are:
 
 |          | CEDI 1 | CEDI 2 | CEDI 3 | CEDI 4 |
 | -------- | ------ | ------ | ------ | ------ |
-| planta 1 | 800    | 13000  | 400    | 700    |
-| planta 2 | 1100   | 14000  | 600    | 1000   |
-| planta 3 | 600    | 1200   | 800    | 900    |
+| plant 1 | 800    | 13000  | 400    | 700    |
+| plant 2 | 1100   | 14000  | 600    | 1000   |
+| plant 3 | 600    | 1200   | 800    | 900    |
 
-* El costo del flete de cada embarque es de $100 más 0.50 centavos por milla.
-
-¿Cuánto se debería embarcar a cada centro de distribución para minimizar el costo total del envío?
-
-```
-1. Formule el problema como uno de transporte mediante la elaboración de una tabla de parámetros apropiada.
-2. Trace la representación de red de este problema.
-3. Obtenga una solución óptima.
-```
-
-9. Tom desearía comprar exactamente 3 litros de cerveza casera hoy y al menos 4 litros mañana. Dick quiere vender un máximo de 5 litros en total a un precio de 3.00usd por litro hoy y de 2.70Usd por litro mañana. Harry está dispuesto a vender un máximo de 4 litros en total, a un precio de 2.90Usd por litro hoy y 2.80Usd por litro mañana.
-
-Tom quiere saber cuánto debe comprar a cada uno para minimizar su costo y a la vez cumplir con los requisitos mínimos para satisfacer su sed.
+* The shipping cost for each shipment is $100 plus $0.50 per mile.
+How much should be shipped to each distribution center to minimize the total shipping cost?
 
 ```
-    1. Formule el modelo de programación lineal teorico y algebraico.
-    2. Formule este problema como un problema de transporte mediante la construcción de la tabla de parámetros apropiada.
-    3. Obtenga una solución óptima para este problema. \
+1. Formulate the problem as a transportation model by preparing the appropriate parameter table.
+2. Draw the network representation of this problem.
+3. Get an optimal solution.
 ```
 
-10. La corporación Versatech producirá tres productos nuevos. En este momento, cinco de sus plantas tienen exceso de capacidad de producción. El costo unitario respectivo de fabricación del primer producto será de 41usd, 39usd, 42usd, 38usd y 39usd en las plantas 1, 2, 3, 4 y 5, El costo unitario de fabricación del segundo producto será de 55usd, 51usd, 56usd, 52usd y 53usd en las plantas respectivas 1, 2, 3, 4 y 5; y para el tercer producto será de 48usd, 45usd y 50usd en las plantas respectivas 1, 2 y 3, pero las plantas 4 y 5 no pueden fabricar este producto. Los pronósticos de ventas indican que la producción diaria debe ser de 700, 1 000 y 900 unidades de los productos 1, 2 y 3, respectivamente. \\
-11. Las plantas 1, 2, 3, 4 y 5 tienen capacidades para producir 400, 600, 400, 600 y 1 000 unidades diarias, sin importar el producto o combinación de productos. Suponga que cualquier planta que tiene capacidad y posibilidad de fabricarlos podrá producir cualquier cantidad de productos y con cualquier combinación. La administración desea asignar los nuevos productos a las plantas con el mínimo costo total de fabricación.
-    1. Formule este problema como un problema de transporte mediante la construcción de la tabla de parámetros apropiada.
-    2. Obtenga una solución óptima para este problema.
-    3. realice este ejercicio en el entorno de google colab en latex y codigo \\
-12. La empresa XYZ produce 2 productos \\(X\_1\\) y \\(X\_2\\) en dos plantas diferentes \\(Pl\_1\\) y \\(Pl\_2\\) cada uno de los productos necesita de diferentes Materias primas para ser elaborado segun la siguiente tabla:
+9. Tom wants to buy exactly 3 liters of homemade beer today and at least 4 liters tomorrow. Dick wants to sell a maximum of 5 liters in total at a price of $3.00 per liter today and $2.70 per liter tomorrow.
+
+Tom wants to know how much he should buy from each to minimize his cost and still meet the minimum requirements to satisfy his thirst.
+
+```
+   1. Formulate the theoretical and algebraic linear programming model.
+    2. Formulate this problem as a transportation problem by constructing the appropriate parameter table.
+    3. Get an optimal solution for this problem. \
+```
+
+10. Versatech Corporation will produce three new products. At this time, five of its plants have excess production capacity. The respective unit manufacturing cost for the first product at each plant is: \\
+
+11. Plants 1, 2, 3, 4, and 5 have capacities to produce 400, 600, 400, 600, and 1,000 units per day, regardless of the product or product mix. Suppose any plant that has the capacity can manufacture any of the products.
+
+Formulate this problem as a transportation problem by constructing the appropriate parameter table.
+Get an optimal solution for this problem.
+Do this exercise in Google Colab using latex and code. \\
+
+12. XYZ company produces 2 products \(X_1\) and \(X_2\) in two different plants \(Pl_1\) and \(Pl_2\). Each product requires different raw materials for its production:
 
 |      | Mp1 | Mp2 | Mp3 | Tiempo de Prod     |
 | ---- | --- | --- | --- | ------------------ |
 | X\_1 | 2   | 3   | 1   | $$4\frac{min}{u}$$ |
 | X\_2 | 3   | 1   | 0   | $$3\frac{min}{u}$$ |
 
-La empresa cuenta son 5 proveedores
+The company has 5 suppliers:
 
 |      | Mp\_1 | Mp\_2 | Mp\_3 |
 | ---- | ----- | ----- | ----- |
@@ -304,7 +295,7 @@ La empresa cuenta son 5 proveedores
 | S\_4 | 5000  | 3000  | 900   |
 | S\_5 | 2000  | 4000  | 1000  |
 
-costos por ser enviadas las unidades (u/usd)
+Shipping costs per unit (u/usd):
 
 |      | CtMp\_1 | CtMp\_2 | CtMp\_3 |
 | ---- | ------- | ------- | ------- |
@@ -314,7 +305,7 @@ costos por ser enviadas las unidades (u/usd)
 | S\_4 | 4       | 2       | 4       |
 | S\_5 | 2       | 2,2     | 2       |
 
-Costo fijo por proveedor:
+Fixed cost per supplier:
 
 |      | Costo fijo |
 | ---- | ---------- |
@@ -332,7 +323,7 @@ Costo fijo por proveedor:
 | S\_4 | 0,2 usd        |
 | S\_5 | 0,6 usd        |
 
-Distancia de las plantas a los prioveedores
+Distance from plants to suppliers:
 
 |      | Plp\_1 | Plp\_2 |
 | ---- | ------ | ------ |
@@ -342,21 +333,21 @@ Distancia de las plantas a los prioveedores
 | S\_4 | 70     | 72     |
 | S\_5 | 90     | 94     |
 
-1. encuentre el modelo optimo para reducir lso costos y suplir con la demanda
-2. debe nivelar el sistema por medio del hallazgo de las unidades de demanda de acuerdo con las capacidades del sistema
-3. realice este ejercicio en google colab y modele su respuesta
+1. Find the optimal model to reduce costs and meet demand.
+2. You must balance the system by finding the demand units according to system capacities.
+3. Do this exercise in Google Colab and model your answer.
 
 ```
-1. encuentre el modelo optimo que minimice el costo del sistema
-2. nivele el sistema con base en la oferta
-3. realice este ejercicio en google colab
+1. Find the optimal model that minimizes system cost.
+2. Balance the system based on supply.
+3. Do this exercise in Google Colab.
 ```
 
-### Ejercicio numero 6 del libro hamndy taha - investigacion de operaciones capituo 5
+#### Exercise number 6 from the book "Hamdy Taha - Operations Research Chapter 5"
 
-Tres ciudades abastecen de electricidad de ytres centrales electricas con capacidades de 25, 40 y 30 megawatts. las demandas maximas en las tres ciudades se estiman en 30, 35 y 25 megawatts, el precio por megawatts en las tres ciudades se muestra en la siguiente tabla.
+Three cities are supplied with electricity from three power plants with capacities of 25, 40, and 30 megawatts. The maximum demands in the three cities are estimated at 30, 35, and 25 megawatts. The price per MW supplied from each plant to each city is:
 
-Tabla uno.
+
 
 |        |     | Ciudad |     |
 | ------ | --- | ------ | --- |
@@ -365,10 +356,10 @@ Tabla uno.
 | 2      | 320 | 300    | 350 |
 | 3      | 500 | 480    | 450 |
 
-* Durante el mes de Agosto hay un aumento del 20% en la demanda de cada ciudad, que se puede satisfacer comprando electricidad a otra Red, a una tasa elevada de 100usd/watts, sin embargo la red no esta conectada con la ciudad 3, la empresa electrica desea determinar el plan mas econominco para distribuir y comprar la energia adicional.
+*During August, there is a 20% increase in demand for each city, which can be met by purchasing electricity from another network, at a high rate of $100 per watt, but the network is not unlimited.
 
-1. formule el problema como un modelo de transporte
-2. resuelva el problema y determine un plan optimo de distribucion para la empresa
-3. deterine el costo de la electricidad comprada por cada una de las ciudades.
+1. Formulate the problem as a transportation model.
+2. Solve the problem and determine an optimal distribution plan for the company.
+3. Determine the cost of electricity purchased by each of the cities.
 
 ***
