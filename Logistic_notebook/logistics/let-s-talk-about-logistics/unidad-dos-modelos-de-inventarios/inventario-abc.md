@@ -2,7 +2,7 @@
 icon: store
 ---
 
-# ABC Inventory
+# ABC Inventory desitions
 
 ABC inventory is a categorization method that classifies products into three distinct groups (A, B, and C) based on their value and importance to the company. The goal is to identify items that require the most attention and management. Category "A" products are the most valuable, representing a high proportion of the total inventory value with a smaller number of items, and therefore deserve more detailed monitoring. "B" items are of moderate importance, while "C" items have lower value and can be managed with a more generalized approach. This system helps optimize inventory levels and maximize operational efficiency.
 
@@ -45,5 +45,5 @@ ABC inventory is an inventory categorization method that helps identify and prio
 * **Continuous Evaluation**: Maintain the flexibility to adjust your approach to managing inventory according to the company's evolving needs and strategies.
 
 {% hint style="info" %}
-OJO, no te pierdas que, siguiendo estos pasos, podrás implementar un sistema de inventario ABC que te permita optimizar la gestión de tus recursos, mejorar la eficiencia operativa y reducir costos.
+NOTE: By following these steps, you can implement an ABC inventory system that will allow you to optimize resource management, improve operational efficiency, and reduce costs.
 {% endhint %}
