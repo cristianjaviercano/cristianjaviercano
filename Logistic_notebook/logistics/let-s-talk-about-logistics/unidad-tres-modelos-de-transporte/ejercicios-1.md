@@ -1,4 +1,4 @@
-# Exercises 1
+# Some Exercises
 
 ### Context
 
@@ -9,8 +9,8 @@ The Cano company is dedicated to the distribution of food products in a specific
 1. Suppliers: P1, P2, P3, P4, P5
 2. Customers: C1, C2, C3, C4, C5, C6, C7, C8, C9
 3. Variables:
-    * Supply from each supplier
-    * Demand from each customer
+   * Supply from each supplier
+   * Demand from each customer
 4. Transportation costs between each supplier and customer
 5. Objective: Minimize the total transportation cost
 
@@ -21,12 +21,12 @@ How can the Cano company minimize the total transportation cost when distributin
 ### Additional Data
 
 | Supplier | Supply (units) |
-| --------- | -------------- |
-| P1        | 100            |
-| P2        | 200            |
-| P3        | 150            |
-| P4        | 180            |
-| P5        | 170            |
+| -------- | -------------- |
+| P1       | 100            |
+| P2       | 200            |
+| P3       | 150            |
+| P4       | 180            |
+| P5       | 170            |
 
 | Customer | Demand (units) |
 | -------- | -------------- |
@@ -48,10 +48,11 @@ How can the Cano company minimize the total transportation cost when distributin
 | P4                | 7  | 4  | 5  | 6  | 3  | 7  | 4  | 2  | 8  |
 | P5                | 6  | 5  | 7  | 9  | 8  | 6  | 3  | 4  | 5  |
 
-> ### Invitation:
+> #### Invitation:
+>
 > We invite students to design a solution for this problem using Python, employing the PuLP library to model and solve the transportation problem.
 
----
+***
 
 ### Exercise Number 2
 
@@ -78,9 +79,7 @@ A logistics company has a fleet of trucks for distributing products to its custo
 * **Trucks**:
   * Truck 1: Capacity 30 units
   * Truck 2: Capacity 40 units
-
-* **Transportation Costs**:
-  The cost matrix indicates the cost of transporting units between the warehouse and the customers, and between the customers themselves.
+* **Transportation Costs**: The cost matrix indicates the cost of transporting units between the warehouse and the customers, and between the customers themselves.
 
 | Origin/Destination | Warehouse | C1 | C2 | C3 | C4 | C5 |
 | ------------------ | --------- | -- | -- | -- | -- | -- |

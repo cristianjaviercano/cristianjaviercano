@@ -24,7 +24,7 @@
     * [KPI](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
   * [Unit Three: Transport Models](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
-    * [Ejercicios 1](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
+    * [Some Exercises](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
     * [Route Desing Using Python](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
       * [TSP problem](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
       * [Transshipment or Cross Docking Model](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
