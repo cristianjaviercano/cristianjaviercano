@@ -1,18 +1,18 @@
-# Modelo de redes
+# Network Model
 
-### Modelo de redes[#](broken-reference)
+### Network Model
 
 ***
 
-Definicion de redes: las redes son una serie de nodos localizados y enlazados con arcos la notacion para la descripcion de la red es
+Definition of networks: networks are a series of located nodes connected by arcs. The notation for describing the network is
 
 $$
-\begin{split} (N,A); \\ donde: \\ N = Conjunto\ de\ Nodos \\ A = Conjunto\ de\ Arcos \end{split}\
+\begin{split} (N,A); \\ where: \\ N = Set\ of\ Nodes \\ A = Set\ of\ Arcs \end{split}\
 $$
 
-Por ejmplo:
+For example:
 
-\\\[\begin{split} N = \\{1,2,3,4,5\\} \\\ A = \\{(1,2),(1,3),(2,3),(2,5),(3,4),(3,5),(4,2),(4,5)\\} \end{split}\\]
+\\[\begin{split} N = \\{1,2,3,4,5\\} \\\ A = \\{(1,2),(1,3),(2,3),(2,5),(3,4),(3,5),(4,2),(4,5)\\} \end{split}\\]
 
 ```python
 import networkx as nx
@@ -34,20 +34,20 @@ nx.draw_networkx_labels(G, pos=pos, labels=labels)
 plt.show()
 ```
 
-con cada una de las redes asociadas, se describira algun tipo de flujo, trafico, procesos etc(..) de denomina **arco dirigido u orientado** si permite el flujo positivo y flujo cero en la direccion opuesta.
+With each associated network, some type of flow, traffic, processes, etc., will be described. It is called a directed or oriented arc if it allows positive flow and zero flow in the direction of the arc.
 
-la **ruta** es la sucesion de arcos distintos que une dos nodos pasando por otros nodos, independientemente de la direcion del flujo de cada arco una **red dirigida** tiene todos sus arcos dirigidos. una ruta forma un **ciclo** si conecta un nodo con sigo mismo, pasando por otros nodos
+A path is the succession of distinct arcs that connects two nodes passing through other nodes, regardless of the direction of flow of each arc. A directed network has all its arcs directed.
 
-una **red conectada** es quella en que cada dos nodos distintos estan enlazados almenos con una ruta un **arbol** es una red conectada que puede ser facilmente la red conectada de todos los nodos, donde, no se permiten ciclos un **arbol de expansion** es un arbol que enlaza todos los nodosde la red tambien sin permitir ciclos.
-
-***
-
-Ejercicios:
+A connected network is one in which every two distinct nodes are connected by at least one path. A tree is a connected network that can easily be the connected network of all nodes, but with no cycles.
 
 ***
 
-1. grafique a mano y en colab el siguiente modelo
+Exercises:
 
+***
+
+1. Draw by hand and in Colab the following model:
+   
 $$
 N=\{1,2,3,4,5\} \\ A=\{(1,2),(2,5),(1,3),(3,4),(3,5),(5,1),(4,2)\}
 $$
@@ -59,63 +59,62 @@ $$
 
 
 ```
-  1. determine:
-    - una ruta
-    - un ciclo
-    - un cilo dirigido
-    - un árbol
-    - Un árbol de expansion.
+  1.Determine:
+    - a path
+    - a cycle
+    - a directed cycle
+    - a tree
+    - A spanning tree..
 ```
 
-2. Determine los conjuntos Conjuntos \\(N\\) y \\(A\\) en las redes
-3. Trace la Red definida por&#x20;
+2. Determine the sets (N) and (A) in the networks
+3. Draw the network defined by
 
 $$
 N=\{1,2,3,4,5\} \\ A=\{(1,2),(1,5),(2,3)(2,4),(3,5),(3,4),(4,3),(4,6),(5,2),(5,6)\}
 $$
 
-2. se debe transportar en un vehiculo tres productos desde la tienda ABC hasta la cada de doña pepita, para hacer el domicilio que esta solicito a la tienda, pero el domiciliario y su vehiculo no puede trasportar mas de dos elementos a la vez, el domiciliario puede pedir ayuda de sus compañeros, ya que por el tamaño del producto no puede caragar mas de uno a la vez, el maximo de personas incluido el domicialiario es de tres personas, no es recomendable que tengan mas productos que personas en el carro.
+2. Three products must be transported in a vehicle from the ABC store to Mrs. Pepita’s house to fulfill a delivery requested from the store, but the delivery person and their vehicle cannot repeat the same route.
 
-* formule el modelo de red para diseñar los viajes del vehiculo de modo que se asegure el domicilo a la casa de doña pepita.
+* Formulate the network model to design the vehicle's trips so that delivery to Mrs. Pepita’s house is ensured.
+  
+***
+
+### Minimum Spanning Tree Algorithm
 
 ***
 
-### Altogoritmo de Arbol de expansion Minima[#](broken-reference)
+The minimum spanning algorithm connects the nodes of a network, directly or indirectly, with the minimum possible length of the connecting branches. A possible use of this algorithm is in the design of distribution networks.
 
-***
+The most economical system design will be the one that minimizes the total distance of the created paths.
+Another definition: A minimum spanning tree is a special type of tree that minimizes the lengths (or money) of the tree’s edges. An example is a cable company wanting to minimize the cost of connecting homes.
 
-El altogirtmo de expansion minima enlaza los nodos de una red, en forma directa o indirecta, con la minima longitud posible, de las _ramas_ enlazantes. el uso posible de este altogirtmo es en el diseño de carreteras o rutas entre nodos que unen varias poblaciones. siendo que la ruta diseñada puede pasar entro otras poblaciones o nodos
+Procedure:
 
-* el diseño mas economico del sistema sera aquel que minimice la distancia total de caminos creados.
-
-_otra definicion:_ Un árbol de expansión mínimo es un tipo especial de árbol que minimiza las longitudes (o dinero) de los bordes del árbol. Un ejemplo es una compañía de cable que quiere tender línea a múltiples vecindarios; al minimizar la cantidad de cable tendido, la compañía de cable ahorrará dinero.
-
-procedimiento:
-
-Sea $$N=\{1,2,...n\}$$, en conjunto de  nodos en la Red.
+Let $$N=\{1,2,...n\}$$, en conjunto de  nodos en la Red.
 
 $$
 C_k=Conjunto\ de\ nodos\ que\ se\ han\ Conectado\ en \ forma\ permanente\ en\ la\ iteracion\ K \\ \bar{C_k} = Conjunto\ de\ nodos\ que\ faltan\ por\ conectar.
 $$
 
-**Paso Cero:** El conjunto:
+**Step Zero: The set:
 
 $$
 C_0=𝛳\ y \\ \bar{C_0} =N
 $$
 
-1. Comenzar con cualquier nodo en el conjunto $$\bar{C_0}$$ no conectado e igualas a $$C_1=\{i\}$$, con lo que $$\bar{C_1}=N-\{i\}$$, igualar a K=2
-2. **paso general K,** selecciona un nodo j en el conjunto no conectado $$\bar{C_{k-1}}$$ que produzca el arco mas corto a un nodo, en el conjunto conectado a $$C_{k-1}$$ enlazando j en forma permanente con $$C_{k-1}$$ y sacarlo de $$\bar{C_{k-1}}$$
+1. Start with any node in the set $$\bar{C_0}$$ not yet connected and set $$C_1=\{i\}$$, con lo que $$\bar{C_1}=N-\{i\}$$, igualar a K=2
+2. **paso general K,** select a node j in the unconnected set $$\bar{C_{k-1}}$$ that produces the shortest arc to a node in the connected set $$C_{k-1}$$ enlazando j permanently connecting $$C_{k-1}$$ and put it out of $$\bar{C_{k-1}}$$
 
 $$
 C_k=C_{k-1}+\{j\}, C_k = \bar{C_{k-1}}-\{j\}
 $$
 
-* donde los $$\bar{C_{k}}$$ es igual a 0 o vacío, detenerse, o por el contrario igualar $$K=k+1$$ y repertir el proceso.
+* when $$\bar{C_{k}}$$ is zero or empty, stop; otherwise, set $$K=k+1$$ and repeat the process.
 
 ***
 
-teniendo el siguiente cuadro:
+Given the following table:
 
 |       | A | B | C | D | E |
 | ----- | - | - | - | - | - |
@@ -125,56 +124,57 @@ teniendo el siguiente cuadro:
 | **D** | 6 | - | 5 | 0 | 4 |
 | **E** | 2 | 2 | 2 | 4 | 0 |
 
-utilice el altgoritmo de Prim y el de Kruskal y compare
+Use Prim’s and Kruskal’s algorithms and compare.
 
 ***
 
-#### Modelo Teórico según el Algoritmo de Prim:[#](broken-reference)
+#### Theoretical Model According to Prim’s Algorithm:
 
-Inicialización: Selecciona un nodo arbitrario como raíz del árbol. _Construcción paso a paso:_
 
-1. En cada paso, se agrega la arista más corta que conecta un nodo dentro del árbol con uno fuera del árbol.
-2. Selecciona el nodo más cercano al árbol actual y agrega la arista que conecta ese nodo con el árbol.
-3. Terminación: Repetir el paso 2 hasta que todos los nodos estén incluidos en el árbol.
+Initialization: Select an arbitrary node as the root of the tree. Step-by-step construction:
 
-#### Modelo Teórico según el Altgoritmo de Kruskal:[#](broken-reference)
+1. At each step, add the shortest edge that connects a node inside the tree with one outside the tree.
 
-Ordenación de aristas: Ordena todas las aristas en orden no decreciente de peso. _Construcción paso a paso:_
+2. Select the node closest to the current tree and add the edge connecting that node to the tree.
 
-1. En cada paso, selecciona la arista más corta que no forme un ciclo con las aristas ya seleccionadas.
-2. Agrega esta arista al árbol de expansión mínima.
+3. Termination: Repeat step 2 until all nodes are included in the tree.
 
-Terminación: Repetir el paso 2 hasta que se hayan seleccionado \\(n-1\\) aristas donde \\(n\\) es el numero de nodos en el sistema
+#### Theoretical Model According to Kruskal’s Algorithm:
 
-```python
-#usaremos en Altgoritmo de PRIMM
+Edge ordering: Sort all edges in non-decreasing order of weight. Step-by-step construction:
+
+1. At each step, select the shortest edge that does not form a cycle with the edges already selected.
+2. Add this edge to the minimum spanning tree.
+3. Termination: Repeat step 2 until (n-1) edges have been selected, where (n) is the number of nodes in the system.
+
+# We will use Prim's Algorithm
 import numpy as np
 
-def prim_mst(distancias):
-    num_nodos = len(distancias)
-    # Inicializar el MST y la lista de nodos visitados
+def prim_mst(distances):
+    num_nodes = len(distances)
+    # Initialize the MST and the visited nodes list
     mst = []
-    visitado = [False] * num_nodos
-    # Empezar desde el nodo 0
-    visitado[0] = True
-    # Repetir hasta que todos los nodos estén visitados
-    while len(mst) < num_nodos - 1:
-        # Encontrar la arista más corta que conecta un nodo visitado con uno no visitado
-        min_distancia = float('inf')
+    visited = [False] * num_nodes
+    # Start from node 0
+    visited[0] = True
+    # Repeat until all nodes are visited
+    while len(mst) < num_nodes - 1:
+        # Find the shortest edge connecting a visited node to an unvisited node
+        min_distance = float('inf')
         min_i, min_j = None, None
-        for i in range(num_nodos):
-            if visitado[i]:
-                for j in range(num_nodos):
-                    if not visitado[j] and distancias[i][j] < min_distancia:
-                        min_distancia = distancias[i][j]
+        for i in range(num_nodes):
+            if visited[i]:
+                for j in range(num_nodes):
+                    if not visited[j] and distances[i][j] < min_distance:
+                        min_distance = distances[i][j]
                         min_i, min_j = i, j
-        # Agregar la arista al MST
+        # Add the edge to the MST
         mst.append((min_i, min_j))
-        visitado[min_j] = True
+        visited[min_j] = True
     return mst
 
-# Definir la matriz de distancias
-distancias = [
+# Define the distance matrix
+distances = [
     [0, 1, 4, 6, 2],
     [1, 0, 2, float('inf'), 2],
     [4, 2, 0, 5, 2],
@@ -182,20 +182,19 @@ distancias = [
     [2, 2, 2, 4, 0]
 ]
 
-# Letras correspondientes a los nodos
-nodos_letras = ['A', 'B', 'C', 'D', 'E']
+# Letters corresponding to the nodes
+node_letters = ['A', 'B', 'C', 'D', 'E']
 
-# Ejecutar el algoritmo de Prim
-arbol_expansion_minima = prim_mst(distancias)
+# Run Prim's algorithm
+minimum_spanning_tree = prim_mst(distances)
 
-# Imprimir el MST resultante
-print("Árbol de Expansión Mínima:")
-for arista in arbol_expansion_minima:
-    print(f"Arista: {nodos_letras[arista[0]]} - {nodos_letras[arista[1]]}")
-```
+# Print the resulting MST
+print("Minimum Spanning Tree:")
+for edge in minimum_spanning_tree:
+    print(f"Edge: {node_letters[edge[0]]} - {node_letters[edge[1]]}")```
 
 ```python
-# Altgoritmo de Kruskal
+# Kruskal's Algorithm
 class UnionFind:
     def __init__(self, n):
         self.parent = list(range(n))
@@ -218,29 +217,29 @@ class UnionFind:
                 self.parent[root_y] = root_x
                 self.rank[root_x] += 1
 
-def kruskal_mst(distancias, nodos_letras):
-    num_nodos = len(distancias)
-    aristas = []
-    # Construir una lista de aristas (i, j, peso)
-    for i in range(num_nodos):
-        for j in range(i + 1, num_nodos):
-            peso = distancias[i][j]
-            aristas.append((i, j, peso))
-    # Ordenar las aristas por peso
-    aristas.sort(key=lambda x: x[2])
-    # Inicializar el MST y el Union-Find
+def kruskal_mst(distances, node_letters):
+    num_nodes = len(distances)
+    edges = []
+    # Build a list of edges (i, j, weight)
+    for i in range(num_nodes):
+        for j in range(i + 1, num_nodes):
+            weight = distances[i][j]
+            edges.append((i, j, weight))
+    # Sort edges by weight
+    edges.sort(key=lambda x: x[2])
+    # Initialize the MST and Union-Find
     mst = []
-    uf = UnionFind(num_nodos)
-    # Construir el MST
-    for arista in aristas:
-        u, v, peso = arista
+    uf = UnionFind(num_nodes)
+    # Build the MST
+    for edge in edges:
+        u, v, weight = edge
         if uf.find(u) != uf.find(v):
             mst.append((u, v))
             uf.union(u, v)
     return mst
 
-# Definir la matriz de distancias
-distancias = [
+# Define the distance matrix
+distances = [
     [0, 1, 4, 6, 2],
     [1, 0, 2, float('inf'), 2],
     [4, 2, 0, 5, 2],
@@ -248,41 +247,44 @@ distancias = [
     [2, 2, 2, 4, 0]
 ]
 
-# Letras correspondientes a los nodos
-nodos_letras = ['A', 'B', 'C', 'D', 'E']
+# Letters corresponding to the nodes
+node_letters = ['A', 'B', 'C', 'D', 'E']
 
-# Ejecutar el algoritmo de Kruskal
-arbol_expansion_minima_kruskal = kruskal_mst(distancias, nodos_letras)
+# Run Kruskal's algorithm
+minimum_spanning_tree_kruskal = kruskal_mst(distances, node_letters)
+
+# Print the resulting MST
+print("Minimum Spanning Tree (Kruskal):")
+for edge in minimum_spanning_tree_kruskal:
+    print(f"Edge: {node_letters[edge[0]]} - {node_letters[edge[1]]}")
+
 
 # Imprimir el MST resultante
+
 print("Árbol de Expansión Mínima (Kruskal):")
 for arista in arbol_expansion_minima_kruskal:
     print(f"Arista: {nodos_letras[arista[0]]} - {nodos_letras[arista[1]]}")
 ```
 
-los algoritmos de árbol de expansión mínima, como Prim y Kruskal, tienen una amplia gama de aplicaciones en diferentes campos, como por ejemplo:
+Minimum spanning tree algorithms, such as Prim and Kruskal, have a wide range of applications in different fields, for example:
 
-1. Redes de Distribución: Planificación de redes de distribución de electricidad, agua, gas, etc.
-2. Telecomunicaciones: Diseño de redes de telecomunicaciones para interconectar estaciones base, torres de telefonía, etc.
-3. Logística: Optimización de rutas en redes de transporte, como carreteras, ferrocarriles y rutas de envío.
-4. Cableado de Computadoras: Diseño de redes de computadoras y cableado para conectar dispositivos en una red local.
-5. Construcción de Infraestructura: Planificación de la construcción de carreteras, puentes y otras infraestructuras civiles.
-6. Diseño de Circuitos Electrónicos: Diseño de circuitos impresos y conexiones entre componentes electrónicos en placas de circuito.
-7. Análisis de Redes Sociales: Identificación de conexiones importantes y relaciones en redes sociales y de colaboración.
-8. Biología Molecular: Análisis de interacciones entre proteínas en biología molecular y diseño de rutas metabólicas.
-9. Exploración de Recursos Naturales: Planificación de rutas para la exploración y extracción de recursos naturales, como petróleo y minerales.
-10. Diseño de Sistemas de Riego: Planificación de sistemas de riego para agricultura y jardinería.
+1. Distribution Networks: Planning networks for electricity, water, gas, etc.
+2. Telecommunications: Designing telecommunication networks to interconnect base stations, cell towers, etc.
+3. Logistics: Route optimization in transportation networks, such as roads, railways, and shipping routes.
+4. Computer Cabling: Designing computer networks and cabling to connect devices in a local network.
+5. Infrastructure Construction: Planning the construction of roads, bridges, and other civil infrastructure.
+6. Electronic Circuit Design: Designing printed circuits and connections between electronic components on circuit boards.
+7. Social Network Analysis: Identifying important connections and relationships in social and collaborative networks.
+8. Molecular Biology: Analyzing interactions between proteins in molecular biology and designing metabolic pathways.
+9. Natural Resource Exploration: Planning routes for exploration and extraction of natural resources, such as oil and minerals.
+10. Irrigation System Design: Planning irrigation systems for agriculture and gardening.
+Exercise one:
 
-Ejercicio uno:
+The company ABC provides lighting service to five new populated areas through construction projects. The nodes are given by the following network:
 
-***
+\[\begin{split} N=\{1,2,3,4,5\} \\ A=\{(1,2),(1,4),(2,3),(3,4),(1,3),(1,5),(3,6),(4,6),(2,5)\} \end{split}\]
 
-la empresa ABC porvee un servicio de iluminacion a cinco nuevas areas pobladas por proyectos de costruccion, los nodos estan dados por la siguiente red:
-
-\\\[\begin{split} N=\\{1,2,3,4,5\\} \\\ A=\\{(1,2),(1,4),(2,3),(3,4),(1,3),(1,5),(3,6),(4,6),(2,5)\\} \end{split}\\]
-
-\
-valores (x10 km)
+Values (x10 km)
 
 |   | 1 | 2 | 3 | 4 | 5 | 6  |
 | - | - | - | - | - | - | -- |
