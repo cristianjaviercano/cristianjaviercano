@@ -1,12 +1,13 @@
-# Ejercicios 2
+# TSP problem
 
-### Ejercicio sobre Ruteo utilizando TSP (Problema del Viajero)
+#### Traveling Salesman Problem (TSP)
 
-**Descripción del problema:**
+The Traveling Salesman Problem (TSP) is a classic optimization problem focused on finding the shortest possible route for a traveler to visit a set of cities and return to the origin city. The key characteristics of TSP include:
 
-### Problema del Viajante
+1. **Unique Tour:**\
+   Each city must be visited exactly once.
 
-El problema del viajante, también conocido como el problema del vendedor viajero, es un desafío clásico en la optimización combinatoria. Consiste en encontrar el recorrido más corto posible que permita a un viajero visitar una serie de ciudades dispuestas en un grafo completo, de modo que cada ciudad sea visitada exactamente una vez antes de regresar al punto de partida.
+TSP is commonly used in logistics, manufacturing, and transportation to optimize travel routes and reduce costs.
 
 #### Descripción del Problema
 

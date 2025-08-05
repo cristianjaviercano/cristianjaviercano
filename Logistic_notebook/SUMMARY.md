@@ -26,7 +26,7 @@
   * [Unit Three: Transport Models](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
     * [Ejercicios 1](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
     * [Diseño de Rutas con Python](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
-      * [Ejercicios 2](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
+      * [TSP problem](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
       * [Modelo de Transbordo](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/modelo-de-transbordo.md)
     * [Almacenamiento en Bodegas o CEDIS](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/almacenamiento-en-bodegas-o-cedis.md)
     * [Modelo de redes](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
