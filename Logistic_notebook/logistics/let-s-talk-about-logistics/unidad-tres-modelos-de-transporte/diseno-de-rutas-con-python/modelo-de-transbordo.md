@@ -1,196 +1,194 @@
-# Modelo de Transbordo
+# Transshipment Model
 
-#### Explicación del Modelo de Transbordo o Cross Docking
+#### Explanation of the Transshipment or Cross Docking Model
 
-El modelo de transbordo, también conocido como cross docking, es una metodología logística donde los productos se trasladan directamente desde el proveedor hasta el cliente final con la mínima manipulación y almacenamiento. Este modelo implica el uso de centros de distribución, también llamados nodos intermedios, donde los productos que llegan son clasificadas y redirigidos rápidamente sin necesidad de almacenarlos por un largo periodo.
+The transshipment model, also known as cross docking, is a logistics methodology where products move directly from the supplier to the end customer with minimal handling and storage. This model involves the use of distribution centers, also called intermediate nodes, where incoming products are quickly sorted and rerouted without the need for long-term storage.
 
-La ventaja principal del cross docking es la eficiencia en la cadena de suministro, reduciendo costos de almacenamiento y acelerando los tiempos de envío al cliente final. En el escenario típico, los productos llegan a un centro de transbordo y se transfieren directamente a un vehículo de salida que se dirige al destino final, lo cual requiere una coordinación precisa pero proporciona un flujo eficiente y continuo de mercancías.
+The main advantage of cross docking is supply chain efficiency, reducing storage costs and speeding up shipping times to the end customer. In the typical scenario, products arrive at a transshipment center and are transferred directly to an outbound vehicle headed to the final destination, which requires precise coordination but provides an efficient and continuous flow of goods.
 
 ***
 
 {% hint style="info" %}
-En el modelo de transbordo o Cross docking se inicia con el supuesto que el hecho de pasar por nodos intermedios supone un ahorro al sistema, mientras que el modelo general de transporte solo supone entregas directas.
+The transshipment or cross-docking model starts with the assumption that passing through intermediate nodes represents savings for the system, while the general transportation model only assumes direct deliveries.
 {% endhint %}
 
-Ejemplo:
+Example:
 
-donde fabricas de producto X  P\_1 y P\_2 en asocian con tres agencias D\_1, D\_2 y D\_3 a travez de dos centros de distribicion T\_1  y T\_2
+where product X factories P\_1 and P\_2 are associated with three agencies D\_1, D\_2, and D\_3 through two distribution centers T\_1 and T\_2.
 
-1. genere el modelo de red de este apartado a mano y en colab. usando Graphviz
+1. Generate the network model for this section by hand and in collaboration. using Graphviz
 
 ```python
 from IPython.display import Image
-Image(filename='/content/drive/MyDrive/Libros academicos en colab/1. Logistica/Imagen 16-03-23 a las 1.26 p.m..jpeg')
+Image(filename='/content/drive/MyDrive/Academic books in colab/1. Logistics/Image 03-16-23 at 1:26 p.m..jpeg')
 ```
 
-La oferta de las plantas son como se muestran en la&#x20;
+The supply of plants is as shown in the following table:
 
 ```latex
-Demanda en los P_n
-- P_1 = 1000 Un  
-- P_2 = 1200 Un 
+Demand at P_n
+- P_1 = 1000 Un
+- P_2 = 1200 Un
 ```
 
 ```latex
-Demanda en los D_n 
+Demand at D_n
 - D_1 = 800
-- D_2 = 900  
+- D_2 = 900
 - D_3 = 500
 ```
+Note that nodes \\(t\_n\ and \\ D\_n\\) function as input and output. These are called **Transshipment Nodes**
 
-Note que los nodos \\(t\_n\ y\ D\_n\\) funcionan como entrada y salida. a estos se les denomina **Nodos de Transbordo**
+* Pure supply nodes are the issuers of units
+* Pure demand nodes are those that only receive units
+* Transshipment nodes are those that fulfill both functions simultaneously. (original supply + Buffer)
+* Pure demand and transshipment nodes have (original demand + Buffer)
 
-* los nodos de oferta pura son los emisores de las unidades
-* los nodos de demanda pura son los qu solop reciben unidades
-* los nodos de transbordo son los que cumplen estas dos funciones al tiempo. (oferta original + Amortiguador)
-* los nodos de demanda pura y transbordo tiene (demanada original + Amrtiguador)
+The Buffer Quantity must be large enough to ensure that all of the original supply or demand passes through any of the Transshipment nodes, with \\(B\\) being the desired buffer quantity. then:
 
-la Cantidad _amortiguador_ debe ser lo suficentemente grande para garantizar toda la oferta o demanda _original_ pase por cualquiera de los nodos de Transbordo siendo \\(B\\) la cantidad deseada de amortiguador. entonces:
+B = Supply (Total Demand) = 1000 + 1200 (or 800 + 900 + 500) = 2200 units
 
-B = Oferta(Demanda total) = 1000 + 1200 (ú\ 800 +900+500) = 2200 unidades
+With this buffer, this model transforms into an original transportation model (…)
 
-con este amortiguador este modelpo se transforma en un modelo original de transporte (…)
+Below is the response to the model using the traditional transportation model.
 
-A continuacion la respuesta al modelo usando el modelo tradicional de transporte.
-
-| -          | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) |      |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---- |
-| \\(P\_1\\) | 3          | 4          | M          | M          | M          | 1000 |
-| \\(P\_2\\) | 2          | 5          | M          | M          | M          | 1200 |
-| \\(T\_1\\) | 0          | 7          | 8          | 6          | M          | B    |
-| \\(T\_2\\) | M          | 0          | M          | 4          | 9          | B    |
-| \\(D\_1\\) | M          | M          | 0          | 5          | M          | B    |
-| \\(D\_2\\) | M          | M          | M          | 0          | 3          | B    |
+| - | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) | |
+| ---------- | ---------- | ---------- | ---------- | ---------- | ---- |
+| \\(P\_1\\) | 3 | 4 | M | M | M | 1000 |
+| \\(P\_2\\) | 2 | 5 | M | M | M | 1200 |
+| \\(T\_1\\) | 0 | 7 | 8 | 6 | M | B |
+| \\(T\_2\\) | M | 0 | M | 4 | 9 | B |
+| \\(D\_1\\) | M | M | 0 | 5 | M | B |
+| \\(D\_2\\) | M | M | M | 0 | 3 | B |
 
 \*\*
 
-#### Ejercicios de Transbordo:[#](broken-reference)
+#### Crossdocking Exercises:[#](broken-reference)
 
 ***
 
-1. Formule el modelo correspondiente a los siguinetes diagramas:
+1. Formulate the model corresponding to the following diagrams:
 
 ```
 from IPython.display import Image
-Image(filename='/content/drive/MyDrive/Libros academicos en colab/1. Logistica/red2.jpeg',width = 300, height = 200)
+Image(filename='/content/drive/MyDrive/Academic Books in Collab/1. Logistics/network2.jpeg',width = 300, height = 200)
 ```
 
 ```
 from IPython.display import Image
-Image(filename='/content/drive/MyDrive/Libros academicos en colab/1. Logistica/red3.jpeg')
+Image(filename='/content/drive/MyDrive/Academic Books in Collab/1. Logistics/network3.jpeg')
 ```
 
-2. Construya y optimice el siguiente ejercicio de crossdocking
+2. Build and optimize the following crossdocking exercise.
 
-la empresa Cano.Ltda es una empresa en expansion con un problema de tranbordo clasico, donde usted es contratado como ingeniero de peraciones y se enfrenta a esta desicion, la empresa cuenta con 3 plantas de produccion ubicadas en diferentes puntos de la ciudad, estas abastecen 2 almacenes propios de la compañia (CEDIS), pero debido al cambio en el mercado, el producto debera ser reempacado en bodegas para poder ser llevado a los CEDIS, en este caso contamos con 3 Bodegas que nos prestaran este servicio, estas bodegas tambien son propias.
+Cano. Ltda is a growing company with a classic crossdocking problem. You are hired as an operations engineer and are faced with this decision. The company has three production plants located At different points in the city, these supply two of the company's own warehouses (CEDIS). However, due to market changes, the product must be repackaged in warehouses to be transported to the CEDIS. In this case, we have three warehouses that will provide this service. These warehouses are also our own.
 
-* construya el diagrama de red y nodos con base en la siguiente informacion: el grafico debera ser visto de izquierda a derecha, donde en la primera parte encontraremos Tres nodos correspondientes a las tres plantas de fabricaciond e la compañia, estod nodos son P\_1, P\_2 y P\_3 estos se comunican por carretera con las Bodegas que hacen el cambio de empaque que se llaman B\_1. B\_2 y B\_3 estas se encuentran en el centro del grafico, las rutas existentes nos obligan a tener la siguente distribucion: la P\_1 solo puede enviar material a B\_1 con una distancia de 20km entre ellas, la P\_2 puede enviar materiales a B\_1, B\_2 y B\_3 con distancias de 10 km, 50 km y 20 km respectivamente, por ultimo P\_3 puede enviar material a B\_3 con una distancia de 15 km; estas tres bodegas pueden enviar material ya procesado a los CEDIS de la sihuiente forma B\_1 puede enviar al CEDI\_1 que esta a una distancia de 10 km, la B\_2 puede enviar a CEDI\_1 y CEDI\_2 que estan a una distacia de 50km y 20 km respectivamente y B\_3 puede enviar al CEDI\_2 que esta a una distancia de 30 km; en algunos casos puede pasar que la capacidad de procesamiento de alguna de las bodegas sea superada y estas puedan ayudarse con otras bodegas, para eso existen rutas de comunicacione entre ellas como son B\_1 esta comunicado con B\_2 a una distancia de 10 km y B\_3 con B\_2 a una distancia de 15 km.
+* Build the network and node diagram based on the following information: the graph should be viewed from left to right. In the first part, we find three nodes corresponding to the company's three manufacturing plants. These nodes are P\_1, P\_2, and P\_3. These are connected by road to the warehouses that handle the packaging change, called B\_1. B\_2 and B\_3 are located in the center of the graph, the existing routes force us to have the following distribution: P\_1 can only send material to B\_1 with a distance of 20km between them, P\_2 can send materials to B\_1, B\_2 and B\_3 with distances of 10 km, 50 km and 20 km respectively, finally P\_3 can send material to B\_3 with a distance of 15 km; These three warehouses can send already processed material to the CEDIS in the following way B\_1 can send to CEDI\_1 which is at a distance of 10 km, B\_2 can send to CEDI\_1 and CEDI\_2 which are at a distance of 50km and 20 km respectively and B\_3 can send to CEDI\_2 which is at a distance of 30 km; In some cases, it may happen that the processing capacity of one of the warehouses is exceeded and they can help each other with other warehouses, for this there are communication routes between them, such as B\_1 is connected to B\_2 at a distance of 10 km and B\_3 with B\_2 at a distance of 15 km.
 
 ```python
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Crear un grafo dirigido (ya que las rutas tienen una dirección)
+# Create a directed graph (since paths have a direction)
 G = nx.DiGraph()
 
-# Agregar nodos
-nodos = ['P_1', 'P_2', 'P_3', 'B_1', 'B_2', 'B_3', 'CEDI_1', 'CEDI_2']
-G.add_nodes_from(nodos)
+# Add nodes
+nodes = ['P_1', 'P_2', 'P_3', 'B_1', 'B_2', 'B_3', 'CEDI_1', 'CEDI_2']
+G.add_nodes_from(nodes)
 
-# Agregar aristas con distancias (pesos)
-aristas = [
-    ('P_1', 'B_1', 20),
-    ('P_2', 'B_1', 10),
-    ('P_2', 'B_2', 50),
-    ('P_2', 'B_3', 20),
-    ('P_3', 'B_3', 15),
-    ('B_1', 'CEDI_1', 10),
-    ('B_2', 'CEDI_1', 50),
-    ('B_2', 'CEDI_2', 20),
-    ('B_3', 'CEDI_2', 30),
-    ('B_1', 'B_2', 10),
-    ('B_3', 'B_2', 15)
+# Add edges with distances (weights)
+edges = [
+('P_1', 'B_1', 20),
+('P_2', 'B_1', 10),
+('P_2', 'B_2', 50),
+('P_2', 'B_3', 20),
+('P_3', 'B_3', 15), 
+('B_1', 'CEDI_1', 10), 
+('B_2', 'CEDI_1', 50), 
+('B_2', 'CEDI_2', 20), 
+('B_3', 'CEDI_2', 30), 
+('B_1', 'B_2', 10), 
+('B_3', 'B_2', 15)
 ]
-G.add_weighted_edges_from(aristas)
+G.add_weighted_edges_from(edges)
 
-# Dibujar el grafo
-pos = nx.shell_layout(G)  # Posicionamiento de los nodos
+# Draw the graph
+pos = nx.shell_layout(G) # Node positioning
 nx.draw(G, pos, with_labels=True, font_weight='bold')
 labels = nx.get_edge_attributes(G,'weight')
 nx.draw_networkx_edge_labels(G,pos,edge_labels=labels)
 plt.show()
 ```
 
-Matriz de Costos:
+Cost Matrix:
 
-| Nodos | 1 | 2 | 3 | 4  | 5  | 6  | 7  | 8  |
+| Nodes | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
 | ----- | - | - | - | -- | -- | -- | -- | -- |
-| 1     | - | - | - | 20 | -  | -  | -  |    |
-| 2     | - | - | - | 10 | 20 | 50 | -  | -  |
-| 3     | - | - | - | -  | 15 | -  | -  | -  |
-| 4     | - | - | - | -  | 20 | 10 | 10 | -  |
-| 5     | - | - | - | -  | -  | 30 |    | 30 |
-| 6     | - | - | - | -  | -  | -  | 50 | 20 |
-| 7     | - | - | - | -  | -  | -  | -  | -  |
-| 8     | - | - | - | -  | -  | -  | -  | -  |
+| 1 | - | - | - | 20 | - | - | - | |
+| 2 | - | - | - | 10 | 20 | 50 | - | - |
+| 3 | - | - | - | - | 15 | - | - | - |
+| 4 | - | - | - | - | 20 | 10 | 10 | - |
+| 5 | - | - | - | - | - | 30 | | 30 |
+| 6 | - | - | - | - | - | - | 50 | 20 |
+| 7 | - | - | - | - | - | - | - | - |
+| 8 | - | - | - | - | - | - | - | - |
 
-* Costos de produccion:
+* Production costs:
 
-|   | Costos de produccion |        |
+| | Production costs | |
 | - | -------------------- | ------ |
-| 1 | 400                  | unidad |
-| 2 | 450                  | unidad |
-| 3 | 470                  | unidad |
+| 1 | 400 | unit |
+| 2 | 450 | unit |
+| 3 | 470 | unit |
 
-1. con base en la matriz de costos hay hacer la matriz de envio, es decir solo con costos.
+1. Based on the cost matrix, the shipping matrix must be created, that is, with costs only.
 
-el modelo contempla que:
+The model considers that:
 
-1. debe estar nivelado
-2. toda la oferta debe pasar por los nodos de mixtos (transbordo)
-3. consrtruya la matriz de transbordo
+1. It must be leveled.
+2. All supply must pass through the mixed nodes (transshipment).
+3. Build the transshipment matrix.
 
-la empresa cano.ltda es una empresa en expansion y en su opercion acaba de firmar unas alienzas con diferentes empresas con el fin de comercializar su producto estrella la empresa posee dos fabricas \\(P\_1\\) y \\(P\_2\\) las cuales tienen una oferta de 1000 unidades y 1200 unidades respectivamente. el grupo ahora cuenta con dos centros de distribucion que llamamos. \\(T\_1\\) y \\(T\_2\\), al final de la cadena se cuenta con tres distribuidores \\(D\_1\\) \\(D\_2\\) y \\(D\_3\\) las cuales tienen una demanada de 800, 900 y 500 respectivamente.
+Cano.ltda is a growing company and has just signed alliances with different companies to market its flagship product. The company owns two factories (P1) and (P2), which have a supply of 1,000 units and 1,200 units, respectively. The group now has two distribution centers, which we call T1 and T2. At the end of the chain, there are three distributors (D1), D2, and D3), which have a demand of 800, 900, and 500 units, respectively.
 
-las distancias correspondientes entre cada uno de los actores se da en la siguiente tabla de distancias:
+The corresponding distances between each of the actors are given in the following distance table:
 
-|      | P\_1 | P\_2 | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 |
+| | P\_1 | P\_2 | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| P\_1 | 0    | -    | 3    | 4    | -    | -    | -    |
-| P\_2 | -    | 0    | 2    | 5    | -    | -    | -    |
-| T\_1 | -    | -    | 0    | 7    | 8    | 6    | -    |
-| T\_2 | -    | -    | -    | 0    | -    | 4    | 9    |
-| D\_1 | -    | -    | -    | -    | 0    | 5    | -    |
-| D\_2 | -    | -    | -    | -    | -    | 0    | 3    |
-| D\_3 | -    | -    | -    | -    | -    | -    | 0    |
+| P\_1 | 0 | - | 3 | 4 | - | - | - |
+| P\_2 | - | 0 | 2 | 5 | - | - | - |
+| T\_1 | - | - | 0 | 7 | 8 | 6 | - |
+| T\_2 | - | - | - | 0 | - | 4 | 9 |
+| D\_1 | - | - | - | - | 0 | 5 | - |
+| D\_2 | - | - | - | - | - | 0 | 3 |
+| D\_3 | - | - | - | - | - | - | 0 |
 
-| Oferta | qty     |
+| Supply | qty |
 | ------ | ------- |
-| P\_1   | 1000 Un |
-| P\_2   | 1200 Un |
+| P\_1 | 1000 Units |
+| P\_2 | 1200 Units |
 
-| Demanda | qty    |
+| Demand | qty |
 | ------- | ------ |
-| D\_1    | 800 Un |
-| D\_2    | 900 Un |
-| D\_3    | 500 Un |
+| D\_1 | 800 Units |
+| D\_2 | 900 Units |
+| D\_3 | 500 Units |
 
-1. Definimos los nodos de Transbordo T\_1  y  T\_2
-2. Definimos en “Buffer” del sistema B\_n debe ser lo suficientemente grande para suplir el proceso
+1. We define the transshipment nodes T\_1 and T\_2
+2. We define the system's "Buffer" B\_n must be large enough to supply the process
 
 $$
-B_n = Oferta - Demanda
+B\_n = Supply - Demand
 $$
 
-3. procedemos a hacer la matriz de transbordo
+3. We proceed to create the transshipment matrix
 
-|        | T\_1 | T\_2 | D\_1    | D\_2    | D\_3 | Demanda |
+| | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 | Demand |
 | ------ | ---- | ---- | ------- | ------- | ---- | ------- |
-| P\_1   | 3    | 4    | M       | M       | M    | 1000    |
-| P\_2   | 2    | 5    | M       | M       | M    | 1200    |
-| T\_1   | 0    | 7    | 8       | 6       | M    | B       |
-| T\_2   | M    | 0    | M       | 4       | 9    | B       |
-| D\_1   | M    | M    | 0       | 5       | M    | B       |
-| D\_2   | M    | M    | M       | 0       | 3    | B       |
-| Oferta | B    | B    | 800 + B | 900 + B | 500  | -       |
-
+| P\_1 | 3 | 4 | M | M | M | 1000 |
+| P\_2 | 2 | 5 | M | M | M | 1200 |
+| T\_1 | 0 | 7 | 8 | 6 | M | B |
+| T\_2 | M | 0 | M | 4 | 9 | B |
+| D\_1 | M | M | 0 | 5 | M | B |
+| D\_2 | M | M | M | 0 | 3 | B |
+| Offer | B | B | 800+B | 900+B | 500 | - |
