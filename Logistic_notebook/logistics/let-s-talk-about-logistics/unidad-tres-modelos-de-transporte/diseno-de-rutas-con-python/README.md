@@ -1,80 +1,77 @@
-# Diseño de Rutas con Python
+# Route Design with Python
 
-La programación lineal es una técnica matemática utilizada para optimizar un objetivo lineal, sujeto a restricciones lineales. En el diseño de rutas, permite modelar y resolver problemas donde se busca minimizar costos o tiempo total de recorrido mientras se respetan las restricciones de capacidad y tiempo. Esta técnica ayuda a determinar la mejor combinación de variables de decisión como rutas a tomar, cantidad de vehículos y secuencia de entregas, garantizando que los recursos se utilicen de manera eficiente y efectiva.
+Linear programming is a mathematical technique used to optimize a linear objective, subject to linear constraints. In route design, it allows you to model and solve problems that seek to minimize costs or total travel time while respecting capacity and time constraints. This technique helps determine the best combination of decision variables such as routes to be taken, number of vehicles, and delivery sequence, ensuring that resources are used efficiently and effectively.
 
 {% hint style="info" %}
-La optimización de rutas representa uno de los desafíos más comunes en la gestión de operaciones logísticas. Los modelos matemáticos proporcionan un marco sistemático para abordar estos problemas, permitiendo la toma de decisiones más informadas y eficientes. A continuación, se describen algunos de los modelos más utilizados.
-{% endhint %}
+Route optimization represents one of the most common challenges in logistics operations management. Mathematical models provide a systematic framework for addressing these problems, enabling more informed and efficient decision-making. Some of the most commonly used models are described below.
+{% hint %}
 
-**Modelo de Programación para Solucionar Problemas de Rutas**
+**Programming Model for Solving Routing Problems**
 
-Los problemas de rutas son desafíos comunes en la optimización del transporte y la logística. Estos problemas pueden involucrar encontrar la ruta más eficiente para entregar bienes, planificar itinerarios de viaje o minimizar costos de transporte. Un enfoque eficaz para abordar estos problemas es el uso de modelos de programación.
+Routing problems are common challenges in transportation and logistics optimization. These problems may involve finding the most efficient route to deliver goods, planning travel itineraries, or minimizing transportation costs. An effective approach to addressing these problems is the use of programming models.
 
-#### Tipos de Problemas de Rutas
+#### Types of Routing Problems
 
-1. **Problema del Viajante (TSP)**: Busca determinar la ruta más corta que permite visitar un conjunto de ciudades una sola vez y regresar al punto de partida.
-2. **Problema de Ruteo de Vehículos (VRP)**: Se centra en encontrar las rutas óptimas para una flota de vehículos que deben satisfacer una serie de demandas desde un depósito central.
-3. **Problemas de Ruta de Entrega y Recolección**: Involucran no solo la entrega de bienes, sino también la recolección de productos o envases para su reciclaje.
+1. **Traveling Salesman Problem (TSP)**: Seeks to determine the shortest route that allows a set of cities to be visited only once and return to the starting point.
+2. **Vehicle Routing Problem (VRP)**: Focuses on finding optimal routes for a fleet of vehicles that must meet a series of demands from a central depot.
+3. **Delivery and Collection Routing Problems**: Involves not only the delivery of goods but also the collection of products or packaging for recycling.
 
-#### Modelos de Programación Utilizados
+#### Programming Models Used
 
-1. **Programación Entera**: Utilizada para problemas donde las decisiones son binarias, como visitar o no un nodo.
-2. **Programación Lineal**: Permite modelar y resolver problemas con restricciones lineales y variables continuas.
-3. **Heurísticas y Metaheurísticas**: Algoritmos como “Ant Colony” o “Genetic Algorithms”, que buscan soluciones aproximadas pero rápidamente.
+**Programming Model for Solving Routing Problems**
 
-#### Pasos para Desarrollar un Modelo de Programación
+Routing problems are common challenges in transportation and logistics optimization. These problems may involve finding the most efficient route to deliver goods, planning travel itineraries, or minimizing transportation costs. An effective approach to addressing these problems is the use of programming models.
 
-1. **Definición del Problema**: Clarificar los objetivos, restricciones y parámetros del problema de rutas específicos.
-2. **Formulación del Modelo**: Traducir el problema en términos matemáticos, definiendo variables, ecuaciones y restricciones.
-3. **Selección del Algoritmo**: Elegir el algoritmo de solución más adecuado, considerando el tamaño y la complejidad del problema.
-4. **Implementación Computacional**: Usar software de optimización para implementar y probar el modelo.
-5. **Análisis de Resultados**: Evaluar las soluciones generadas, ajustando el modelo y parámetros según sea necesario.
+#### Types of Routing Problems
 
-#### Aplicaciones Prácticas
+1. **Traveling Salesman Problem (TSP)**: Seeks to determine the shortest route that allows a set of cities to be visited only once and return to the starting point.
+2. **Vehicle Routing Problem (VRP)**: Focuses on finding optimal routes for a fleet of vehicles that must meet a series of demands from a central depot.
+3. **Delivery and Collection Routing Problems**: Involves not only the delivery of goods but also the collection of products or packaging for recycling.
 
-Los modelos de programación para problemas de rutas tienen una amplia gama de aplicaciones prácticas, incluyendo:
+#### Programming Models Used
+Programming models for routing problems have a wide range of practical applications, including:
 
-* Optimización de rutas en servicios de entrega de compra en línea.
-* Planificación de rutas eficientes para servicios de transporte público.
-* Gestión de la logística de distribución en cadenas de suministro.
+* Route optimization in online shopping delivery services.
+* Efficient route planning for public transportation services.
+* Distribution logistics management in supply chains.
 
-### Diseño de rutas con python
+### Route Design with Python
 
-La planificación de rutas se enfoca en diseñar recorridos óptimos para la entrega de productos o el logro de los objetivos del sistema considerando.
+Route planning focuses on designing optimal routes for delivering products or achieving system objectives, considering:
 
-1. tiempo
-2. costo
-3. restricciones de capacidad
+1. Time
+2. Cost
+3. Capacity constraints
 
-**Objetivo de diseñar una ruta**
+**Objective of Designing a Route**
 
-el objetivo puede ser:
+The objective can be:
 
-1. Minimizar costos
-2. Optimizar tiempos de entregas
-3. Mejorar la utilizacion de recursos
+1. Minimize costs
+2. Optimize delivery times
+3. Improve resource utilization
 
 ***
 
-### DISEÑO DE RUTAS UTILIZANDO PYTHON.[#](broken-reference)
+### ROUTE DESIGN USING PYTHON.[#](broken-reference)
 
-Existen numerosas librerías y algoritmos disponibles que simplifican el proceso de diseño de rutas en Python. Estas herramientas se utilizan para optimizar y planificar caminos eficientes en diversas aplicaciones, como son la gestión de flotas de vehículos, la entrega de mercancías, la planificación de viajes y muchas otras más.
+There are numerous libraries and algorithms available that simplify the route design process in Python. These tools are used to optimize and plan efficient routes in various applications, such as vehicle fleet management, freight delivery, trip planning, and many others.
 
-Entre las librerías más destacadas se encuentra NetworkX, que proporciona estructuras de datos y algoritmos para el análisis de grafos y redes. También está GeoPandas, que extiende las capacidades de Pandas al permitir el manejo y el análisis de datos geoespaciales. Otra opción popular es OSRM (Open Source Routing Machine), que ofrece un servidor y una biblioteca de cliente para generar rutas utilizando datos de OpenStreetMap.
+Notable libraries include NetworkX, which provides data structures and algorithms for graph and network analysis. There is also GeoPandas, which extends Pandas' capabilities by allowing the handling and analysis of geospatial data. Another popular option is OSRM (Open Source Routing Machine), which offers a server and client library for generating routes using OpenStreetMap data.
 
-Por otro lado, se pueden emplear algoritmos de optimización de rutas como el algoritmo de Dijkstra, el algoritmo A\* (A-star) y los algoritmos de optimización metaheurística, que se usan para encontrar rutas óptimas en función de diversas restricciones y costos. Estos algoritmos son fundamentales para aplicaciones donde se requiere una alta eficiencia en la planificación de rutas.
+On the other hand, route optimization algorithms such as Dijkstra's algorithm, the A* (A-star) algorithm, and metaheuristic optimization algorithms can be used to find optimal routes based on various constraints and costs. These algorithms are essential for applications requiring high efficiency in route planning.
 
 {% hint style="info" %}
-El ecosistema de Python ofrece una variedad de herramientas y técnicas que permiten abordar el problema del diseño de rutas de manera eficiente y efectiva, adaptándose a las necesidades específicas de cada aplicación. Al aprovechar estas librerías y algoritmos, los desarrolladores pueden crear soluciones avanzadas en el ámbito de la planificación y optimización de rutas.
+The Python ecosystem offers a variety of tools and techniques that allow the problem of route design to be addressed efficiently and effectively, adapting to the specific needs of each application. By leveraging these libraries and algorithms, developers can create advanced solutions in the field of route planning and optimization.
 {% endhint %}
 
 {% code overflow="wrap" %}
 ```markdown
-Pulp: Una librería para resolver problemas de optimización, incluyendo el TSP y VRP.
+Pulp: A library for solving optimization problems, including TSP and VRP.
 ```
 {% endcode %}
 
-hagamnos el ejemplo donde tenemos un problema de asignación de tareas a trabajadores, donde cada trabajador debe realizar una sola tarea y cada tarea debe ser realizada por un solo trabajador. La función objetivo es minimizar el costo total de la asignación
+Let's consider an example where we have a problem assigning tasks to workers, where each worker must perform a single task, and each task must be performed by a single worker. The objective function is to minimize the total cost of the assignment.
 
 ```python
 !pip install Pulp
@@ -83,51 +80,51 @@ hagamnos el ejemplo donde tenemos un problema de asignación de tareas a trabaja
 ```python
 import pulp
 
-# Crear el problema
-prob = pulp.LpProblem("Asignacion de Tareas", pulp.LpMinimize)
+# Create the problem
+prob = pulp.LpProblem("Task Assignment", pulp.LpMinimize)
 
-# Definir las variables
-costos = [[10, 2, 20], [12, 7, 15], [8, 12, 5]]
-trabajadores = range(3)
-tareas = range(3)
-x = pulp.LpVariable.dicts("x", [(i, j) for i in trabajadores for j in tareas], cat='Binary')
+# Define the variables
+costs = [[10, 2, 20], [12, 7, 15], [8, 12, 5]]
+workers = range(3)
+tasks = range(3)
+x = pulp.LpVariable.dicts("x", [(i, j) for i in workers for j in tasks], cat='Binary')
 
-# Función objetivo
-prob += pulp.lpSum(costos[i][j] * x[(i, j)] for i in trabajadores for j in tareas)
+# Objective function
+prob += pulp.lpSum(costs[i][j] * x[(i, j)] for i in workers for j in tasks)
 
-# Restricciones
-for i in trabajadores:
-    prob += pulp.lpSum(x[(i, j)] for j in tareas) == 1
+# Constraints
+for i in workers:
+prob += pulp.lpSum(x[(i, j)] for j in tasks) == 1
 
-for j in tareas:
-    prob += pulp.lpSum(x[(i, j)] for i in trabajadores) == 1
+for j in tasks:
+prob += pulp.lpSum(x[(i, j)] for i in workers) == 1
 
-# Resolver el problema
+# Solve the problem
 prob.solve()
 
-# Imprimir los resultados
+# Print the results
 print("Status:", pulp.LpStatus[prob.status])
 for v in prob.variables():
-    print(v.name, "=", v.varValue)
+print(v.name, "=", v.varValue)
 
-print("Costo total =", pulp.value(prob.objective))
+print("Total cost =", pulp.value(prob.objective))
 ```
 
-#### Analisis de redes por medio de Networkx[#](broken-reference)
+#### Network Analysis Using NetworkX[#](broken-reference)
 
-**NetworkX** es una biblioteca poderosa y versátil de Python empleada para la creación, manipulación y análisis de redes complejas. Diseñada para facilitar el proceso de modelar estructuras de grafos, NetworkX encuentra aplicaciones en numerosos campos como la ciencia de redes, biología computacional, ingeniería, ciencias sociales, entre otros.
+**NetworkX** is a powerful and versatile Python library used for the creation, manipulation, and analysis of complex networks. Designed to facilitate the process of modeling graph structures, NetworkX finds applications in numerous fields such as network science, computational biology, engineering, social sciences, among others.
 
-Esta biblioteca ofrece funcionalidades que permiten un análisis detallado y preciso de las redes, incluyendo, pero no limitándose a, encontrar caminos mínimos entre nodos, lo cual es esencial en la optimización de rutas y redes de transporte. Además, NetworkX es capaz de detectar comunidades dentro de una red, ayudando a identificar agrupaciones o módulos que pueden representar entidades con características o intereses comunes en un contexto social o biológico.
+This library offers functionalities that enable detailed and accurate network analysis, including, but not limited to, finding shortest paths between nodes, which is essential in optimizing routes and transportation networks. Additionally, NetworkX is capable of detecting communities within a network, helping to identify clusters or modules that may represent entities with common characteristics or interests in a social or biological context.
 
-Otra característica destacada es su capacidad para calcular diversas métricas de centralidad, como la centralidad de grado, intermediación y cercanía, que son cruciales para determinar los nodos más influentes o críticos dentro de la red.
+Another notable feature is its ability to calculate various centrality metrics, such as degree, betweenness, and closeness centrality, which are crucial for determining the most influential or critical nodes within the network.
 
-El diseño intuitivo y la amplia documentación hacen de NetworkX una herramienta ideal tanto para investigadores como para profesionales que buscan llevar a cabo análisis complejos de redes de manera eficiente. Además, su compatibilidad con otras bibliotecas de Python, como Pandas y Matplotlib, permite una integración fluida en flujos de trabajo más amplios de ciencia de datos.&#x20;
+NetworkX's intuitive design and extensive documentation make it ideal for both researchers and practitioners looking to efficiently perform complex network analysis. Additionally, its compatibility with other Python libraries, such as Pandas and Matplotlib, enables seamless integration into broader data science workflows.
 
-**Características principales:**[**#**](broken-reference)
+**Main Features:**[**#**](broken-reference)
 
-1. Creación y manipulación de grafos: Soporta varios tipos de grafos (dirigidos, no dirigidos, multigrafos) y permite agregar nodos y aristas con atributos.
-2. Análisis de redes: Proporciona una amplia gama de algoritmos de teoría de grafos para realizar análisis estructural, como el cálculo de centralidades (grado, intermediación, cercanía), detección de componentes conectados, caminos mínimos, detección de comunidades, etc.
-3. Tipos de grafos: Soporta grafos dirigidos (donde las conexiones tienen dirección), no dirigidos y multigrafos (donde puede haber múltiples aristas entre dos nodos).
+1. Graph Creation and Manipulation: Supports various graph types (directed, undirected, multigraphs) and allows adding nodes and edges with attributes.
+2. Network Analysis: Provides a wide range of graph theory algorithms for performing structural analysis, such as calculating centralities (degree, betweenness, closeness), detecting connected components, shortest paths, community detection, etc.
+3. Graph Types: Supports directed graphs (where connections are directed), undirected graphs, and multigraphs (where there can be multiple edges between two nodes).
 
 ```python
 !pip install networkx==2.8.8
@@ -137,26 +134,26 @@ El diseño intuitivo y la amplia documentación hacen de NetworkX una herramient
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Crear un grafico
+# Create a graph
 G = nx.Graph()
 
-# Agregar nodos y aristas
+# Add nodes and edges
 G.add_edge(1, 2)
 G.add_edge(2, 3)
 G.add_edge(3, 4)
 
-# Dibujar el grafo
+# Draw the graph
 nx.draw(G, with_labels=True)
 plt.show()
 ```
 
-### Ejemplo 1:
+### Example 1:
 
-MG Auto tiene tres plantas: en Los Ángeles, Detroit y New Orleans; y dos centros principales de distribución en Denver y en Miami. Las capacidades de las tres plantas durante el próximo trimestre serán 1000, 1500 y 1200 autos. Las demandas trimestrales en los dos centros de distribución son 2300 y 1400 autos. El kilometraje entre las fábricas y los centros de distribución
+MG Auto has three plants: in Los Angeles, Detroit, and New Orleans; and two main distribution centers in Denver and Miami. The capacities of the three plants during the next quarter will be 1,000, 1,500, and 1,200 cars. Quarterly demand at the two distribution centers is 2,300 and 1,400 cars. The mileage between the factories and the distribution centers
 
-* La empresa transportista cobra 8 centavos por KM y por auto. El costo de transporte por auto, en las distintas rutas y redondeado hasta el $ más próximo
+* The shipping company charges 8 cents per mile per car. The transportation cost per car, on the different routes, is rounded up to the nearest dollar.
 
-TABLA 1
+TABLE 1
 
 |             | Denver | Mimami |
 | ----------- | ------ | ------ |
@@ -164,7 +161,7 @@ TABLA 1
 | Detroit     | 1250   | 1350   |
 | New Orleans | 1275   | 850    |
 
-TABLA 2
+TABLE 2
 
 |                | Denver(1) | Mimami(2) |
 | -------------- | --------- | --------- |
@@ -172,69 +169,69 @@ TABLA 2
 | Detroit(2)     | 100       | 108       |
 | New Orleans(3) | 102       | 68        |
 
-**Resolviendo:**
+**Solving:**
 
-**Variables de decisión:**
+**Decision variables:**
 
-* \\(x\_{ij}\\): Cantidad de autos a transportar desde la planta \\(i\\) hasta el centro de distribución \\(j\\).
+* \\(x\_{ij}\\): Number of cars to be transported from plant \\(i\\) to distribution center \\(j\\).
 
-**Función objetivo:**
+**Objective function:**
 
-* Minimizar el costo total de transporte, dado por:
+* Minimize the total transportation cost, given by:
 
 \\\[\text{Min } Z = 0.08 \sum\limits\_{i=1}^{3}\sum\limits\_{j=1}^{2}x\_{ij}d\_{ij}\\]
 
-* Donde \\(d\_{ij}\\) es la distancia en kilómetros entre la planta \\(i\\) y el centro de distribución \\(j\\), según la tabla 1.
+* Where \\(d\_{ij}\\) is the distance in kilometers between plant \\(i\\) and distribution center \\(j\\), according to Table 1.
 
-**Restricciones:**
+**Constraints:**
 
-* Capacidad de la planta: $\\(\sum\limits\_{j=1}^{2}x\_{ij} \leq c\_i ∀\ i = 1, 2, 3\\)$
-* Donde \\(c\_i\\) es la capacidad de la planta \\(i\\).
-* Demanda del centro de distribución: $\\(\sum\limits\_{i=1}^{3}x\_{ij} \geq d\_j\ ∀\ j = 1, 2\\)$
-* Donde \\(d\_j\\) es la demanda del centro de distribución \\(j\\), según el enunciado.
-* Restricciones de no negatividad: $\\(x\_{ij} \geq 0\ ∀\ i = 1, 2, 3\ y\ j = 1, 2\\)$
-* _Además, las variables de decisión deben ser enteras, ya que no se pueden transportar fracciones de autos._
+* Plant capacity: $\\(\sum\limits\_{j=1}^{2}x\_{ij} \leq c\_i ∀\ i = 1, 2, 3\\)$
+* Where \\(c\_i\\) is the capacity of plant \\(i\\).
+* Distribution center demand: $\\(\sum\limits\_{i=1}^{3}x\_{ij} \geq d\_j\ ∀\ j = 1, 2\\)$
+* Where \\(d\_j\\) is the demand of distribution center \\(j\\), according to the statement.
+* Non-negativity constraints: $\\(x\_{ij} \geq 0\ ∀\ i = 1, 2, 3\ and\ j = 1, 2\\)$
+* _Also, the decision variables must be integers, since fractions of cars cannot be transported._
 
-**Resolviendo con Python y la libreria PuLp:**[**#**](broken-reference)
+**Solving with Python and the PuLp library:**[**#**](broken-reference)
 
 ```python
 import pulp
 
-# Crear un problema de minimización
-problem = pulp.LpProblem("Transporte", pulp.LpMinimize)
+# Create a minimization problem
+problem = pulp.LpProblem("Transportation", pulp.LpMinimize)
 
-# Crear las variables de decisión
-x11 = pulp.LpVariable("Los Angeles a Denver", lowBound=0, cat='Integer')
-x12 = pulp.LpVariable("Los Angeles a Miami", lowBound=0, cat='Integer')
-x21 = pulp.LpVariable("Detroit a Denver", lowBound=0, cat='Integer')
-x22 = pulp.LpVariable("Detroit a Miami", lowBound=0, cat='Integer')
-x31 = pulp.LpVariable("New Orleans a Denver", lowBound=0, cat='Integer')
-x32 = pulp.LpVariable("New Orleans a Miami", lowBound=0, cat='Integer')
+# Create the decision variables
+x11 = pulp.LpVariable("Los Angeles to Denver", lowBound=0, cat='Integer')
+x12 = pulp.LpVariable("Los Angeles to Miami", lowBound=0, cat='Integer')
+x21 = pulp.LpVariable("Detroit to Denver", lowBound=0, cat='Integer')
+x22 = pulp.LpVariable("Detroit to Miami", lowBound=0, cat='Integer')
+x31 = pulp.LpVariable("New Orleans to Denver", lowBound=0, cat='Integer')
+x32 = pulp.LpVariable("New Orleans to Miami", lowBound=0, cat='Integer')
 
-# Definir la función objetivo
+# Define the objective function
 problem += 0.08 * (1000*x11 + 2690*x12 + 1250*x21 + 1350*x22 + 1275*x31 + 850*x32)
 
-# Definir las restricciones de oferta y demanda
-problem += x11 + x12 <= 2300, "Oferta Los Angeles"
-problem += x21 + x22 <= 1500, "Oferta Detroit"
-problem += x31 + x32 <= 2000, "Oferta New Orleans"
-problem += x11 + x21 + x31 >= 2300, "Demanda Denver"
-problem += x12 + x22 + x32 >= 1400, "Demanda Miami"
+# Define the supply and demand constraints
+problem += x11 + x12 <= 2300, "Supply "Angeles"
+problem += x21 + x22 <= 1500, "Detroit Offer"
+problem += x31 + x32 <= 2000, "New Orleans Offer"
+problem += x11 + x21 + x31 >= 2300, "Denver Lawsuit"
+problem += x12 + x22 + x32 >= 1400, "Miami Lawsuit"
 
-# Resolver el problema
+# Solve the problem
 problem.solve()
 
-# Imprimir el resultado
-print("Estado:", pulp.LpStatus[problem.status])
-print("Costo total de transporte: $", round(pulp.value(problem.objective), 2))
+# Print the result
+print("Status:", pulp.LpStatus[problem.status])
+print("Total transportation cost: $", round(pulp.value(problem.objective), 2))
 
-for variable in problem.variables():
-    print(variable.name, "=", variable.varValue)
+for variable in problem.variables(): 
+print(variable.name, "=", variable.varValue)
 ```
 
-#### Ejemplo 2:
+#### Example 2:
 
-En este modelo, tenemos tres orígenes (\\(O\_1\\), \\(O\_2\\) y \\(O\_3\\)) y cuatro destinos (\\(D\_1\\), \\(D\_2\\), \\(D\_3\\) y \\(D\_4\\)), y la tabla muestra los costos de transporte desde cada origen a cada destino. El objetivo es determinar la asignación óptima de los productos a los destinos, minimizando el costo total de transporte.
+In this model, we have three origins (\\(O\_1\\), \\(O\_2\\), and \\(O\_3\\)) and four destinations (\\(D\_1\\), \\(D\_2\\), \\(D\_3\\), and \\(D\_4\\)), and the table shows the transportation costs from each origin to each destination. The objective is to determine the optimal allocation of products to destinations, minimizing the total transportation cost.
 
 | ORIGEN     | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) | \\(D\_4\\) |
 | ---------- | ---------- | ---------- | ---------- | ---------- |
@@ -242,21 +239,21 @@ En este modelo, tenemos tres orígenes (\\(O\_1\\), \\(O\_2\\) y \\(O\_3\\)) y c
 | \\(O\_2\\) | 3          | 6          | 8          | 2          |
 | \\(O\_3\\) | 9          | 4          | 1          | 3          |
 
-**Resolviendo el modelo:**
+**Solving the model:**
 
-La función objetivo de este modelo se expresa como:
+The objective function of this model is expressed as:
 
-\begin{equation\*} \text{minimizar } Z = \sum\_{i=1}^{3}\sum\_{j=1}^{4}c\_{ij}x\_{ij} \end{equation\*}
+\begin{equation\*} \text{minimize} Z = \sum\_{i=1}^{3}\sum\_{j=1}^{4}c\_{ij}x\_{ij} \end{equation\*}
 
-Donde:
+Where:
 
-\\(Z\\): representa el costo total de transporte.
+\\(Z\\): represents the total transportation cost.
 
-\\(c\_{ij}\\): es el costo de transportar una unidad del origen \\(i\\) al destino \\(j\\).
+\\(c\_{ij}\\): is the cost of transporting a unit from origin \\(i\\) to destination \\(j\\).
 
-\\(x\_{ij}\\): es la cantidad de unidades transportadas del origen \\(i\\) al destino \\(j\\).
+\\(x\_{ij}\\): is the number of units transported from origin \\(i\\) to destination \\(j\\).
 
-Las restricciones de capacidad se expresan como:
+Capacity constraints are expressed as:
 
 ```markdown
 \begin{align*} \sum_{j=1}^{4} x_{1j} &\leq 60
@@ -264,9 +261,9 @@ Las restricciones de capacidad se expresan como:
 \sum_{j=1}^{4} x_{3j} &\leq 80 \end{align*}
 ```
 
-**Donde:**
+**Where:**
 
-La restricción \\(\sum\_{j=1}^{4} x\_{ij} \leq C\_i\\) indica que la cantidad total de productos que se envían desde el origen \\(i\\) no puede superar su capacidad máxima \\(C\_i\\). Las restricciones de demanda se expresan como:
+The constraint \\(\sum\_{j=1}^{4} x\_{ij} \leq C\_i\\) indicates that the total quantity of products shipped from source \\(i\\) cannot exceed its maximum capacity \\(C\_i\\). Demand constraints are expressed as:
 
 ```markdown
 \begin{align*} \sum_{i=1}^{3} x_{i1} &\geq 50
@@ -275,54 +272,54 @@ La restricción \\(\sum\_{j=1}^{4} x\_{ij} \leq C\_i\\) indica que la cantidad t
 \sum_{i=1}^{3} x_{i4} &\geq 30 \end{align*}
 ```
 
-**Donde:**
+**Where:**
 
-* La restricción \\(\sum\_{i=1}^{3} x\_{ij} \geq D\_j\\) indica que la cantidad total de productos que se envían al destino \\(j\\) debe ser al menos igual a su demanda \\(D\_j\\)
+* The constraint \\(\sum\_{i=1}^{3} x\_{ij} \geq D\_j\\) indicates that the total quantity of products shipped to destination \\(j\\) must be at least equal to its demand \\(D\_j\\)
 
 ```python
 import pulp
 ```
 
 ```python
-# Define el problema
+# Define the problem
 problem = pulp.LpProblem("Transportation Problem", pulp.LpMinimize)
 
-# Define las variables de decision
+# Defines the decision variables
 origins = ['O1', 'O2', 'O3']
 destinations = ['D1', 'D2', 'D3', 'D4']
 x = pulp.LpVariable.dicts('shipment', ((o, d) for o in origins for d in destinations), lowBound=0, cat='Integer')
 
-# Define los objetos de las funciones
-costs = {
-    ('O1', 'D1'): 4,
-    ('O1', 'D2'): 5,
-    ('O1', 'D3'): 2,
-    ('O1', 'D4'): 7,
-    ('O2', 'D1'): 3,
-    ('O2', 'D2'): 6,
-    ('O2', 'D3'): 8,
-    ('O2', 'D4'): 2,
-    ('O3', 'D1'): 9,
-    ('O3', 'D2'): 4,
-    ('O3', 'D3'): 1,
-    ('O3', 'D4'): 3
+# Defines the objects of the functions
+costs = { 
+('O1', 'D1'): 4, 
+('O1', 'D2'): 5, 
+('O1', 'D3'): 2, 
+('O1', 'D4'): 7, 
+('O2', 'D1'): 3, 
+('O2', 'D2'): 6, 
+('O2', 'D3'): 8, 
+('O2', 'D4'): 2, 
+('O3', 'D1'): 9, 
+('O3', 'D2'): 4, 
+('O3', 'D3'): 1, 
+('O3', 'D4'): 3
 }
 problem += pulp.lpSum([costs[o, d] * x[o, d] for o in origins for d in destinations])
 
-# Define las restricciones
-for o in origins:
-    problem += pulp.lpSum([x[o, d] for d in destinations]) == 1
-for d in destinations:
-    problem += pulp.lpSum([x[o, d] for o in origins]) == 1
+# Define the restrictions
+for or in origins: 
+problem += pulp.lpSum([x[o, d] for d in destinations]) == 1
+for d in destinations: 
+problem += pulp.lpSum([x[o, d] for o in origins]) == 1
 
-# resuelve el problema
+# solve the problem
 problem.solve()
 
-# imprime la solucion Optima
+# print the optimal solution
 print("Optimal solution:")
-for o in origins:
-    for d in destinations:
-        if x[o, d].value() > 0:
-            print(f"Ship {x[o, d].value()} from {o} to {d}")
+for or in origins: 
+for d in destinations: 
+if x[o, d].value() > 0: 
+print(f"Ship {x[o, d].value()} from {o} to {d}")
 print(f"Total cost: {pulp.value(problem.objective)}");
 ```
