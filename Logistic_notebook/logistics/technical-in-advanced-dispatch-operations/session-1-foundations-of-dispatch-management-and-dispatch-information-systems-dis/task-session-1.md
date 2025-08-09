@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Task Session 1
 
 ## Simulation demo:

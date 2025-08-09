@@ -118,7 +118,7 @@ Dispatch operations rely on a suite of interconnected technologies to manage the
 * **Transportation Management System (TMS):** A TMS focuses on the planning, execution, and optimization of transportation activities. It helps organizations manage freight rates, select carriers, track shipments, and optimize delivery routes. In dispatch, the TMS is essential for coordinating vehicle assignments, scheduling pickups and deliveries, and monitoring driver performance. It also facilitates communication between dispatchers, drivers, and customers.
 * **Enterprise Resource Planning (ERP):** An ERP system integrates various business functions, including finance, human resources, manufacturing, and supply chain management. While not solely focused on dispatch, an ERP system provides a centralized platform for managing data related to orders, inventory, and customer information. This integration enables better coordination between different departments and improves overall efficiency. For dispatch, the ERP system provides the foundational data for order processing, inventory availability, and customer delivery requirements.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ## The Role of Data in Dispatch <a href="#bh-5ei8vavsbrrljxo4wfqzf" id="bh-5ei8vavsbrrljxo4wfqzf"></a>
 
@@ -129,7 +129,7 @@ Data is the lifeblood of dispatch operations. Accurate and timely data is essent
 * **Vehicle Telematics:** Vehicle telematics data provides information about the location, speed, and status of vehicles in the fleet. This data is used to track shipments in real-time, monitor driver performance, and optimize delivery routes. Telematics data can also be used to improve safety and security by monitoring driver behavior and detecting potential problems.
 * **Customer Data:** Customer data includes information about the customer's address, contact information, delivery preferences, and order history. This data is used to personalize the delivery experience and improve customer satisfaction.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Data Structures for Information Exchange <a href="#bh-afwc20ehp8qs0cww7v9bp" id="bh-afwc20ehp8qs0cww7v9bp"></a>
 
@@ -139,7 +139,7 @@ To facilitate communication and data sharing between different systems, standard
 * **JSON (JavaScript Object Notation):** JSON is a lightweight data-interchange format that is easy to read and write. It is commonly used for web applications and APIs.
 * **CSV (Comma-Separated Values):** CSV is a simple text-based format for storing tabular data. It is commonly used for importing and exporting data between spreadsheets and databases.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Case Study: Inventory Data File Structure <a href="#bh-7jdata6vb1xnrezwq47tb" id="bh-7jdata6vb1xnrezwq47tb"></a>
 

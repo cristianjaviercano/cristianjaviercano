@@ -35,6 +35,8 @@
 * [Technical in Advanced Dispatch Operations](logistics/technical-in-advanced-dispatch-operations/README.md)
   * [Session 1: Foundations of Dispatch Management and Dispatch Information Systems (DIS)](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/README.md)
     * [Task Session 1](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/task-session-1.md)
+  * [Session 2: Order Reception and Processing - Prioritization and Batching](logistics/technical-in-advanced-dispatch-operations/session-2-order-reception-and-processing-prioritization-and-batching/README.md)
+    * [Task Session 2](logistics/technical-in-advanced-dispatch-operations/session-2-order-reception-and-processing-prioritization-and-batching/task-session-2.md)
 
 ## Discrete event Simulation
 
