@@ -22,7 +22,7 @@ A fulfillment center has just received the following five orders in a data file 
 | ORD-104  | D. Lopez      | PO Box 1122    | Big City   | 67890       | SKU-C | 1   | Authorized     |
 | ORD-105  | E. Perez      | 987 Elm Str.   | Nextown    | 44332       | SKU-D | 5   | Authorized     |
 
-Exportar a Hojas de cálculo
+Export to an excel file
 
 System Information:
 
@@ -62,7 +62,7 @@ Order Queue:
 | ORD-205  | Express         | 1x SKU-F @ (8,8)                   |
 | ORD-206  | Standard        | 1x SKU-C @ (4,4)                   |
 
-Exportar a Hojas de cálculo
+Export to an excel file
 
 **Assignment**
 
