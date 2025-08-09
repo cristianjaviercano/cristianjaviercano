@@ -34,7 +34,7 @@
   * [Unit five: supply chain models and methods](logistics/let-s-talk-about-logistics/unidad-cinco-supply-chain-models-and-methods.md)
 * [Technical in Advanced Dispatch Operations](logistics/technical-in-advanced-dispatch-operations/README.md)
   * [Session 1: Foundations of Dispatch Management and Dispatch Information Systems (DIS)](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/README.md)
-    * [Task one](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/task-one.md)
+    * [Task Session 1](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/task-session-1.md)
 
 ## Discrete event Simulation
 
