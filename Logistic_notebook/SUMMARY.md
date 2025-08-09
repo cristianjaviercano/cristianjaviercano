@@ -32,6 +32,9 @@
     * [Network Models](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/modelo-de-redes.md)
   * [Unit Four: Localization Models](logistics/let-s-talk-about-logistics/unidad-cuatro-modelos-de-localizacion.md)
   * [Unit five: supply chain models and methods](logistics/let-s-talk-about-logistics/unidad-cinco-supply-chain-models-and-methods.md)
+* [Technical in Advanced Dispatch Operations](logistics/technical-in-advanced-dispatch-operations/README.md)
+  * [Session 1: Foundations of Dispatch Management and Dispatch Information Systems (DIS)](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/README.md)
+    * [Task one](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/task-one.md)
 
 ## Discrete event Simulation
 

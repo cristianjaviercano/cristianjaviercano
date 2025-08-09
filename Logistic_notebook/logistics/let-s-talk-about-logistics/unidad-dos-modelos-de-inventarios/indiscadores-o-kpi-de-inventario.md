@@ -2,7 +2,7 @@
 icon: sign-post
 ---
 
-# Inventory Indicators or KPIs
+# KPI
 
 ## Inventory KPIs
 
@@ -44,8 +44,6 @@ When a company maintains a high level of service, it implies that it has an effi
 
 To achieve an optimal level of service, organizations must implement demand analysis, supply planning, and process optimization strategies. These actions ensure an accurate projection of market needs, avoiding both shortages and excess stock.
 
-
-
 ### 5. Consumption Rate
 
 The rate at which products are being consumed or sold is a crucial metric in inventory and business management. It is an invaluable tool for analyzing consumption patterns and market behavior. Understanding this consumption rate allows companies to anticipate replenishment needs, optimize inventory and logistics, and improve sales strategies.
@@ -58,7 +56,28 @@ The storage cost KPI is an essential metric in inventory management that involve
 
 This includes the cost related to the use of the physical space needed to store products, which varies depending on the size and location of the warehouse. It also covers the insurance required to protect stored goods against potential damage or loss. Another important aspect considered in this KPI is the risk of deterioration that products can suffer over time while in storage, which can lead to losses or reductions in their value. Considering these elements allows companies to optimize their storage processes, reduce associated costs, and improve their overall operational efficiency.
 
+#### Inventory Coverage KPI
+
+Inventory Coverage KPI assesses how long the current inventory will last based on historical consumption rates. This metric helps in understanding the efficiency of stock levels in meeting future demands. By analyzing inventory coverage, companies can prevent overstocking or stockouts, thus maintaining a balanced inventory and ensuring customer satisfaction.
+
+<img src="../../../.gitbook/assets/file.excalidraw (15).svg" alt="" class="gitbook-drawing">
+
 {% hint style="info" %}
 Please note that monitoring and interpreting these KPIs provides a clear view of inventory management efficiency, helps identify areas for improvement, and creates a solid foundation for strategic decisions. By adopting a data-driven approach, companies can optimize costs and better meet their customers' demands. - CRc-
 {% endhint %}
 
+#### Slow Movement KPI
+
+The Slow Movement KPI evaluates the turnover rate of inventory items that have low demand and remain in storage for extended periods. This metric helps identify products that are not selling as expected, allowing companies to reassess purchasing strategies, optimize storage space, and implement targeted sales promotions to boost turnover. By addressing slow-moving items, businesses can enhance inventory management and improve cash flow efficiency.
+
+| Sub Process | KPI                    | Description                                                                                                                                 |
+| ----------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Inbound     | Receiving Accuracy     | Measures the accuracy of quantities and conditions of received shipments to ensure they meet standards.                                     |
+| Inbound     | Dock to Stock Time     | Evaluates the time taken to move goods from receiving docks to inventory and affects stock availability.                                    |
+| Inbound     | Supplier Lead Time     | Monitors the time elapsed from placing an order with a supplier to receiving the goods, impacting production planning.                      |
+| Inventory   | Inventory Coverage     | Assesses how long current stock will last based on historical consumption rates to prevent stockouts and overstocks.                        |
+| Inventory   | Slow Movement          | Evaluates the turnover rate of low-demand inventory items, identifying products that require strategic decisions to improve sales.          |
+| Inventory   | Inventory Turnover     | Analyzes how often inventory is sold and replaced over a period, which indicates sales effectiveness and inventory management.              |
+| Outbound    | Order Fulfillment Rate | Measures the efficiency of fulfilling customer orders accurately and on time, which affects customer satisfaction.                          |
+| Outbound    | Perfect Order Rate     | Evaluates the percentage of orders delivered without any errors, such as inaccuracies in quantity, damages, or late deliveries.             |
+| Outbound    | Shipping Accuracy      | Assesses the correctness of shipment contents and delivery information, ensuring customers receive what they ordered correctly and on-time. |
