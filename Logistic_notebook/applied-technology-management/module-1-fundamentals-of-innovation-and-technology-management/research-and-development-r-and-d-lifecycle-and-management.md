@@ -38,5 +38,5 @@ The ultimate goal of R\&D is to bring innovations to market and make an impact. 
 {% endstep %}
 {% endstepper %}
 
-<img src="../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
 

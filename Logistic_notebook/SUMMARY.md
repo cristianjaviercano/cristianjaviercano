@@ -38,6 +38,8 @@
     * [Task Session 1](logistics/technical-in-advanced-dispatch-operations/session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/task-session-1.md)
   * [Session 2: Order Reception and Processing - Prioritization and Batching](logistics/technical-in-advanced-dispatch-operations/session-2-order-reception-and-processing-prioritization-and-batching/README.md)
     * [Task Session 2](logistics/technical-in-advanced-dispatch-operations/session-2-order-reception-and-processing-prioritization-and-batching/task-session-2.md)
+  * [Session 3: Warehouse Operations - Picking and Packing.](logistics/technical-in-advanced-dispatch-operations/session-3-warehouse-operations-picking-and-packing./README.md)
+    * [Task Session 3](logistics/technical-in-advanced-dispatch-operations/session-3-warehouse-operations-picking-and-packing./task-session-3.md)
 
 ## Discrete event Simulation
 
