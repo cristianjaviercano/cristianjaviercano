@@ -28,6 +28,12 @@ In order ti create the user interface and all the flow of the Integral solution,
 
 A user flow diagram with embedded wireframes is a visual representation that combines both the journey a user takes through an application and sketches or simplified versions of the screens they will encounter. This type of diagram is particularly beneficial for understanding the user experience design and ensuring every screen's purpose is clear.
 
+#### User Interface Flowchart (UI Flow) 
+
+{% hint style="warning" %}
+Theoretical Basis: A UI Flowchart is a visual model that represents the navigation path a user follows through the various pages or views of an application. Unlike a process flowchart (which models business logic), a UI Flow diagram focuses on the user experience (UX), showing how interfaces are connected and what actions (clicking buttons, filling out forms) trigger the transition from one screen to another. Its purpose is to define the information architecture and ensure logical and intuitive navigation (Nielsen & Budiu, 2012).
+{% endhint %}
+
 ### Steps to Create a User Flow Diagram with Embedded Wireframes:
 
 1. **Identify User Tasks:** Determine the primary tasks users need to accomplish within your application.
@@ -104,6 +110,85 @@ Similar to any inventory system, it includes three main processes and specific K
 
 <img src="../../.gitbook/assets/file.excalidraw (16).svg" alt="" class="gitbook-drawing">
 
-#### Translate it to a drwaing application like Draio.com
+#### Translate it to a drwaing application like Draio.com - UI flow
 
 <figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 9.10.10 a.m..png" alt=""><figcaption></figcaption></figure>
+
+#### The Three Core Transactional Flows:
+
+We will design the diagrams for the following fundamental retail operations:
+
+1. 📦 Goods Receipt (Purchase): The process of adding new stock to the inventory.
+2. 🚚 Dispatch (Sale): The process of removing stock from inventory due to a customer sale.
+3. 🗑️ Inventory Write-off: The process of removing stock for non-sale reasons (e.g., damaged, expired, or lost goods).
+
+### Entity relation diagram
+
+#### log in page:
+
+#### ## 🖥️ Flow: User Authentication (Log-in Page)
+
+you will learn how to design a complete and logical diagram for a user authentication page. This diagram will serve as a professional blueprint for developing the actual application, detailing the user interface, the logical processes, and the data structure required.
+
+Tool: Draw.io (now diagrams.net)
+
+Objective: To securely authenticate a user's identity before granting access to the main application and to provide a way for new users to register.
+
+This detailed diagram perfectly corresponds to the `login_user` and `register_user` functions and the `login_view` layout we have already developed in the Python code, confirming that our design process is aligned with the implementation.
+
+#### ## Part 1: Designing the User Interface (UI) Wireframe
+
+The first step is to create a visual mockup of what the user will see. This is called a wireframe.
+
+1. Create the Main Container:
+   * On the left-side panel, under the "General" shapes, select the Rectangle tool.
+   * Drag it onto the canvas and resize it to create a large box that will represent the entire login screen.
+   * Double-click the rectangle and title it "Retail Inventory System Login".
+2. Add Input Fields:
+   * Drag two smaller Rectangle shapes into your main container. These will be the input boxes.
+   * Use the Text tool to add labels above these boxes: "USER" and "PASSWORD".
+   * To show they are input fields, double-click each box and type "Line 1" or similar placeholder text.
+3. Add Action Buttons:
+   * From the "General" shapes, select the Button shape (a rounded rectangle).
+   * Create two buttons. Label one "Sign in" and the other "Sign up". Place them logically next to the input fields. You can also add a text label like "New around here?" to guide the user.
+4. Add a Status Display:
+   * Use the Text tool to add a label at the bottom of the container named "Status:". This is where error or success messages will appear.
+
+***
+
+#### ## Part 2: Modeling the Database
+
+Next, we need to define the structure of the data our application will interact with.
+
+1. Create the Database Shape:
+   * In the shape search bar, type "Cylinder" and select the database shape. This universally represents a database.
+   * Place it on your canvas and label it "BD User" (User Database).
+2. Define the Data Fields (Schema):
+   * Using the Text tool, list the required data fields inside or next to the cylinder shape. This defines what information we need to store for each user.
+     * `ID_user` (A unique identifier for each user)
+     * `User_Name`
+     * `Password`
+     * `Mail` (Email address)
+
+***
+
+#### ## Part 3: Charting the Application Logic
+
+This is the most critical part, where we map out the "thinking process" of our application using a flowchart.
+
+1. Map the "Sign in" (Authentication) Flow:
+   * Start with a Parallelogram shape (used for I/O or data entry) and label it "Check in data base". Draw a connector arrow from your "Sign in" button to this shape.
+   * Draw an arrow from "Check in data base" to a Diamond shape (used for decisions). Label the diamond "User in data base?".
+   * Create two branches from the diamond:
+     * "Yes" Branch: Draw an arrow to a Rectangle labeled "status: User registered". This represents a successful login. From here, an arrow should point to a process box showing that the main application screen will open.
+     * "No" Branch: Draw an arrow to a Rectangle labeled "status: User Not found". From this box, draw a connector back to the "Status:" label in your UI wireframe to show that an error message is displayed.
+2. Map the "Sign up" (Registration) Flow:
+   * Start with a Diamond shape labeled "New user?" and connect your "Sign up" button to it.
+   * Create a "Yes" branch leading to a Rectangle labeled "open new user information screen". This represents showing a form to the user.
+   * From there, an arrow should point to a Rectangle labeled "Storage Information".
+   * Finally, draw an arrow from "Storage Information" to a Parallelogram labeled "Write User and Password", which then points to your "BD User" database shape, indicating that the new data is saved.
+
+By completing these three parts, you will have a comprehensive and professional diagram that clearly communicates the visual design, data requirements, and logical flow of a user authentication system.
+
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 2.41.10 p.m..png" alt=""><figcaption></figcaption></figure>
+
