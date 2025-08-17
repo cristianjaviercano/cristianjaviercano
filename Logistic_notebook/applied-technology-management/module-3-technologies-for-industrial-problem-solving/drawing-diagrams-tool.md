@@ -122,11 +122,11 @@ We will design the diagrams for the following fundamental retail operations:
 2. 🚚 Dispatch (Sale): The process of removing stock from inventory due to a customer sale.
 3. 🗑️ Inventory Write-off: The process of removing stock for non-sale reasons (e.g., damaged, expired, or lost goods).
 
-### Entity relation diagram
+## Entity relation diagram
 
 #### log in page:
 
-#### ## 🖥️ Flow: User Authentication (Log-in Page)
+### 🖥️ Flow: User Authentication (Log-in Page)
 
 you will learn how to design a complete and logical diagram for a user authentication page. This diagram will serve as a professional blueprint for developing the actual application, detailing the user interface, the logical processes, and the data structure required.
 
@@ -136,7 +136,7 @@ Objective: To securely authenticate a user's identity before granting access to 
 
 This detailed diagram perfectly corresponds to the `login_user` and `register_user` functions and the `login_view` layout we have already developed in the Python code, confirming that our design process is aligned with the implementation.
 
-#### ## Part 1: Designing the User Interface (UI) Wireframe
+### Part 1: Designing the User Interface (UI) Wireframe
 
 The first step is to create a visual mockup of what the user will see. This is called a wireframe.
 
@@ -156,7 +156,7 @@ The first step is to create a visual mockup of what the user will see. This is c
 
 ***
 
-#### ## Part 2: Modeling the Database
+### Part 2: Modeling the Database
 
 Next, we need to define the structure of the data our application will interact with.
 
@@ -192,3 +192,63 @@ By completing these three parts, you will have a comprehensive and professional 
 
 <figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 2.41.10 p.m..png" alt=""><figcaption></figcaption></figure>
 
+***
+
+## To Select A system Action
+
+### How to Design an Application Landing Page
+
+To design a central dashboard that provides the user with a real-time overview of the most important Key Performance Indicators (KPIs) and serves as the main navigation hub to the system's core modules: Inbound, Outbound, and Inventory.
+
+#### Designing the User Interface (UI) Wireframe
+
+This screen is a combination of data display and navigation. We will use a two-column layout for a clean and organized look.
+
+1. **Create the Main Container:**
+   * Draw a large Rectangle to represent the entire page.
+   * Use the Text tool to add a header at the top. This should be dynamic, so label it "Welcome, \[User\_Name]!" and another text element for the date.
+2. **Design the Navigation Column:**
+   * Inside the main container, draw a narrower Rectangle on the left side to act as the navigation panel.
+   * Inside this panel, place three large Button shapes, stacked vertically.
+     * Label the first button "📦 Inbound".
+     * Label the second button "🚚 Outbound".
+     * Label the third button "📊 Inventory Management".
+3. **Design the KPI Display Column:**
+   * On the right side of the main container, create a wider Rectangle for the KPI dashboard.
+   * Use the Text tool to create a title for this section: "Key Performance Indicators (KPIs)".
+   * Add several smaller boxes to display individual KPIs. These are display-only fields. Label them clearly:
+     * Total Inventory Value: (Represents the total cost of all items in stock).
+     * Total Units in Stock: (The sum of all quantities).
+     * Products Below Reorder Point: (A critical metric for purchasing).
+     * Sales Value (Today): (Total revenue for the current day).
+
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 5.58.33 p.m..png" alt=""><figcaption></figcaption></figure>
+
+***
+
+### Inventory Data - Inventory Management
+
+According to your main flowchart, this module is accessed from the landing page and is focused on providing detailed information about the inventory. This is primarily a reporting and analysis screen rather than a transactional one.
+
+{% hint style="success" %}
+Here is the detailed guide for designing the "Inventory Data" module diagram in Drawio.com
+{% endhint %}
+
+> To design a screen that allows the user to view, search, and filter the complete inventory list. This provides a comprehensive look at stock levels, locations, and associated product details.
+
+### Part 1: Designing the User Interface (UI) Wireframe
+
+This screen needs controls for searching and a main area to display the data table.
+
+1. Create the Main Container and Title:
+   * Draw a large Rectangle for the module's screen.
+   * Add a title at the top using the Text tool: "📊 Inventory Management".
+2. Add Search and Filter Controls:
+   * At the top of the container, create a section for controls.
+   * Add a Text Input shape and label it "Search by Product Name...". This will be our search bar.
+   * Add a Dropdown shape and label it "Filter by Category (Estanteria)". This will allow users to narrow down the view to a specific shelf or category.
+   * Add a Button labeled "Apply Filters".
+3. Create the Data Display Area:
+   * The largest part of the screen will be for displaying the inventory table.
+   * Use the Table shape from the "General" library to create a representation of the data grid.
+   * Define the column headers in the table: `ProductID`, `NombreProducto`, `Estanteria`, `Cantidad`, `CostoCompra`, `PrecioVenta`.
