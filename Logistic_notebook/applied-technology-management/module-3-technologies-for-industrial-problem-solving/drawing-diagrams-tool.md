@@ -253,4 +253,6 @@ This screen needs controls for searching and a main area to display the data tab
    * Use the Table shape from the "General" library to create a representation of the data grid.
    * Define the column headers in the table: `ProductID`, `NombreProducto`, `Estanteria`, `Cantidad`, `CostoCompra`, `PrecioVenta`.
 
+<img src="../../.gitbook/assets/file.excalidraw (17).svg" alt="" class="gitbook-drawing">
+
 <figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 8.03.51 p.m..png" alt=""><figcaption></figcaption></figure>
