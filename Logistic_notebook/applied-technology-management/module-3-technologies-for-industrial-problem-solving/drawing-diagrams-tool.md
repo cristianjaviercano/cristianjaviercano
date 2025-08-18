@@ -255,4 +255,4 @@ This screen needs controls for searching and a main area to display the data tab
 
 <img src="../../.gitbook/assets/file.excalidraw (17).svg" alt="" class="gitbook-drawing">
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 8.03.51 p.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-18 a la(s) 9.11.03 a.m..png" alt=""><figcaption></figcaption></figure>
