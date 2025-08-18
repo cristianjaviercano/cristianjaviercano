@@ -240,15 +240,17 @@ Here is the detailed guide for designing the "Inventory Data" module diagram in 
 
 This screen needs controls for searching and a main area to display the data table.
 
-1. Create the Main Container and Title:
+1. **Create the Main Container and Title:**
    * Draw a large Rectangle for the module's screen.
    * Add a title at the top using the Text tool: "📊 Inventory Management".
-2. Add Search and Filter Controls:
+2. **Add Search and Filter Controls:**
    * At the top of the container, create a section for controls.
    * Add a Text Input shape and label it "Search by Product Name...". This will be our search bar.
    * Add a Dropdown shape and label it "Filter by Category (Estanteria)". This will allow users to narrow down the view to a specific shelf or category.
    * Add a Button labeled "Apply Filters".
-3. Create the Data Display Area:
+3. **Create the Data Display Area:**
    * The largest part of the screen will be for displaying the inventory table.
    * Use the Table shape from the "General" library to create a representation of the data grid.
    * Define the column headers in the table: `ProductID`, `NombreProducto`, `Estanteria`, `Cantidad`, `CostoCompra`, `PrecioVenta`.
+
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 8.03.51 p.m..png" alt=""><figcaption></figcaption></figure>
