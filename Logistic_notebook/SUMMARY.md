@@ -26,6 +26,7 @@
     * [ABC Inventory desitions](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
     * [KPI](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
     * [Quantity discount Model](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/quantity-discount-model.md)
+    * [EOQ Variants](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/eoq-variants.md)
   * [Unit Three: Transport Models](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
     * [Some Exercises](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
     * [Route Desing Using Python](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
