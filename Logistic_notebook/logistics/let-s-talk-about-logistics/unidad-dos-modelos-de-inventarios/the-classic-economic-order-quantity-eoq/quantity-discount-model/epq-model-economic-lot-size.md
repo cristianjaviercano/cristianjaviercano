@@ -103,3 +103,21 @@ $$
 
 * Using the EPQ formula: $$Q_{epq}$$ = 912.87.\
   Imax for this problem will be 548. Therefore, the storage capacity is 548.
+
+***
+
+An example of the Economic Production Quantity (EPQ) can be illustrated with a company that manufactures gadgets. Assume the following:
+
+* Annual demand for gadgets: 50,000 units
+* Production setup cost per batch: $25.00
+* Holding cost per unit per year: $5.00
+* Daily production rate: 500 units
+* Daily demand rate: 200 units
+
+To calculate the EPQ:
+
+$$
+Q_{epq} = \sqrt{\frac{2 \times 50,000 \times 25.00}{5.00 \times (1 - \frac{200}{500})}} = 912.87 \approx 913 \text{ units}
+$$
+
+This means the optimal production batch size is approximately 913 units, given the constraints of demand and production rates. This helps in minimizing the total production and inventory costs.
