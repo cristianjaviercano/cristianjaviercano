@@ -47,3 +47,7 @@ Exercise 5.1: Pharmaceutical Distributor A distributor of a common antibiotic fa
 Exercise 5.2: Auto Glass Importer An auto glass company imports windshields for a popular car model. The demand is constant at 20 windshields per day. However, the lead time from the international supplier is uncertain, with an average of 10 days and a standard deviation of 3 days. To maintain a 99% service level (Z = 2.33), how much safety stock should the company hold, and what is the reorder point?
 
 Exercise 5.3: Tech Component Supplier (Complex Scenario) A supplier of electronic components faces uncertainty in both demand and lead time. The average daily demand for a key component is 500 units with a standard deviation of 40 units. The lead time for receiving an order is, on average, 4 days with a standard deviation of 1 day. If the company aims for a 97% service level (Z = 1.88), calculate the required safety stock and the reorder point.
+
+***
+
+{% file src="../../../../.gitbook/assets/Taller uno_inventario.docx" %}
