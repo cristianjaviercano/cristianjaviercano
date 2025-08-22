@@ -1,4 +1,58 @@
-# Unit Three: Transportation Models
+# Unit Three: Transport Models
+
+With an underdeveloped transportation system, market size is limited to the areas immediately surrounding the production point.&#x20;
+
+Unless production costs are extremely low compared to those of a second production point (i.e., the difference in production costs offsets the transportation costs of serving the second market), there is likely to be little competition. However, with improvements in the transportation system, reduced costs for products in distant markets can be competitive with other products sold in the same markets.&#x20;
+
+In addition to fostering direct competition, low-cost, high-quality transportation also fosters an indirect form of competition by making goods available in a market that would normally be unable to afford the transportation cost. Sales may actually be increased by penetrating markets not normally available for certain products. Goods from a foreign region have a stabilizing effect on the prices of all similar goods in the market. (Ronald Ballou)
+
+***
+
+### Transport Costing
+
+The price (cost) of the transportation service for a consignee will simply be the liner rate for the movement of goods and any ancillary or terminal charges for additional services provided. In the case of contract service, the rate charged for the movement of goods between two points plus any additional charges, such as picking up the goods at the origin, delivery at the destination, insurance, or preparing the goods for shipment, will constitute the total cost of the service. When the consignee owns the service (for example, a fleet of trucks), the cost of the service will be an allocation of the relevant costs to a particular shipment. Relevant costs include items such as fuel, labor, maintenance, equipment depreciation, and administrative costs.
+
+***
+
+### SIMPLE SERVICE OPTIONS
+
+The simple service options for transportation include various modes of transport that cater to different needs:
+
+* **Rail**: Often used for transporting heavy goods over long distances. It is cost-effective and energy-efficient, suitable for bulk shipments.
+* **Truck**: Provides door-to-door service and is versatile. Ideal for short-haul and last-mile deliveries, offering flexibility in routes and schedules.
+* **Plane**: The fastest mode of transport, best for high-value or time-sensitive goods. Air transport ensures quick delivery over long distances but at a higher cost.
+* **Ship**: Suitable for international trade, particularly for bulky and non-perishable goods. Although slower than air, it is economical for large volumes.
+* **Pipelines**: Used for transporting liquids and gases over long distances. Pipelines offer a continuous flow and are cost-effective once established.
+
+### INTERMODAL SERVICES.
+
+### Flatbed Trailers
+
+Top-of-Flatbed Trailer (TOPC), or piggyback trailer, refers to the transport of trailers on railroad platforms, generally over longer distances than trucks. TOPC combines the convenience and flexibility of trucking with the long-haul economy of rail.
+
+### Standard Container Loading 
+
+Under a TOFC agreement, the entire trailer is transported on a railroad bed. However, the trailer can also be viewed in two forms: 1) as a container or box in which the cargo is packed; and 2) as the trailer chassis. In a truck-rail intermodal service, it is possible to transport only the container, thus saving the deadweight of the structure and wheels. This service is called container-on-bed (COFC).
+
+***
+
+### TRANSPORTATION COST CHARACTERISTICS
+
+The price that the logistics manager must pay for transportation services depends on the cost characteristics of each type of service. Because each service has different cost characteristics, under a given set of circumstances, there will be potential price advantages that cannot be effectively matched by other services.
+
+### Variable and Fixed Costs
+
+A transportation service incurs various costs, such as labor, fuel, maintenance, terminals, roads, administration, and others. The mix of costs can be arbitrarily divided into those that vary with services or volume (variable costs) and those that do not (fixed costs). Naturally, all costs are variable if a sufficiently long time and large enough volume are considered. However, for transportation pricing purposes, it is useful to consider costs that are constant during the carrier's "normal" operating volume as fixed. All other costs are treated as variable.
+
+***
+
+## Transport modeling
+
+<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+
+The network shown represents the problem. There are "m" origins and "n" destinations, each represented by a node. The arcs represent the routes connecting the origins to the destinations. The arc (i, j) connecting origin i to destination j carries two pieces of information,&#x20;
+
+the transportation cost per unit, cij, and the quantity transported, xij. The quantity supplied at origin i is ai, and the quantity demanded at destination j is bj. The objective of the model is to minimize the total transportation cost while satisfying the supply and demand constraints.
 
 ## Instructions for Using the PuLP Library
 
@@ -140,7 +194,7 @@ Integer variables can only take whole numeric values within a specific range.
 
 In this case, the variable type is specified with the "cat" attribute, which specifies the typology, in this case "integer".
 
-#### &#x20;Binary Variables
+#### Binary Variables
 
 Binary variables are a special case of integer variables, as they can only take the values 0 or 1. This type of variable is useful when modeling binary decisions (yes/no, true/false) in problems such as project selection or resource allocation, which are very common in transportation methods and advanced programming.
 
@@ -153,6 +207,7 @@ When modeling this type of variable, the decision it entails must be taken into 
 1. **lowBound:** Defines the variable's lower bound (the smallest value it can take). If not specified, the default is None (no lower bound).
 2. **upBound:** Defines the variable's upper bound (the largest value it can take). If not specified, the default is None (no upper bound).
 3. **cat:** This argument defines the variable's category (type):
+
 * _'Continuous':_ Continuous variables (default).
 * _'Integer':_ Variables that can only take integer values.
 * _'Binary':_ Binary variables (which only take the values 0 or 1).
@@ -173,9 +228,9 @@ Note the name of the variable that encloses the problem: “problem.”
 
 #### Let's add the system's constraints:
 
-`problem += x1 + x2 + x3 <= 2,`&#x20;
+`problem += x1 + x2 + x3 <= 2,`
 
-“Constraint 1” `problem += x1 + x2 >= 1`,&#x20;
+“Constraint 1” `problem += x1 + x2 >= 1`,
 
 “Restriction 2”
 
@@ -199,7 +254,7 @@ print(“Value of x1:”, x1.varValue) print(“Value of x2:”, x2.varValue) pr
 
 print(“Optimal value of the objective function:”, pulp.value(problem.objective))
 
-### Definition of the Transportation Model[#](broken-reference)
+### Definition of the Transportation Model[#](broken-reference/)
 
 Transportation is the backbone of logistics, enabling the flow of goods and services through the supply chain. Its efficiency directly impacts costs, customer satisfaction, and the competitiveness of companies.
 
@@ -215,7 +270,7 @@ A logistics model that has gained popularity is cross-docking, which seeks to mi
 2. Air Freight: Recommended for perishable or high-value products that require rapid delivery, such as flowers or electronic devices.
 3. Cross-docking: A distribution center receives products from different suppliers, consolidates them, and ships them immediately to customers, reducing storage costs and delivery times.
 
-### Key Decision Variables[#](broken-reference)
+### Key Decision Variables[#](broken-reference/)
 
 When evaluating transportation options, it is essential to consider the following variables:
 
@@ -254,7 +309,7 @@ Dummy elements are used when supply and demand are not balanced in the transport
 1. **Excess Supply:** If total supply is greater than total demand, a dummy destination is created. Transportation costs to this dummy destination are set to zero, as it does not represent a real destination.
 2. **Excess Demand:** If total demand is greater than total supply, a dummy origin is created. Transportation costs from this dummy origin are set to zero.
 
-#### Transportation Problem Example Using Pulp[#](broken-reference)
+#### Transportation Problem Example Using Pulp[#](broken-reference/)
 
 Imagine a transportation problem with two origins (O1 and O2) and three destinations (D1, D2, and D3). The supply at O1 is 100 units, and the demand at O2 is 150 units. The demand at D1 is 80 units, the demand at D2 is 100 units, and the demand at D3 is 70 units.
 
@@ -321,7 +376,7 @@ The values remaining in the fictitious elements in the solution to a transportat
 1. **Fictitious Destination:** If in the optimal solution there is a positive value on a route to the fictitious destination, it means there is excess supply at the corresponding origin. The value indicates the number of units that are not shipped to any real destination.
 2. **Fictitious Origin:** If in the optimal solution there is a positive value on a route from the fictitious origin, it means there is excess demand at the corresponding destination. The value indicates the number of demand units that cannot be satisfied with the available supply.
 
-### **Definition of the Transportation Model:**[#](broken-reference)
+### **Definition of the Transportation Model:**[#](broken-reference/)
 
 It involves finding a minimum-cost plan for transporting a good from multiple origins to multiple destinations. This model can be extended to solve numerous non-transportation applications within problems such as inventory control, cash flow, and resource allocation.
 
