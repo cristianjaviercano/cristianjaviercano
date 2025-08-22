@@ -54,6 +54,47 @@ The network shown represents the problem. There are "m" origins and "n" destinat
 
 the transportation cost per unit, cij, and the quantity transported, xij. The quantity supplied at origin i is ai, and the quantity demanded at destination j is bj. The objective of the model is to minimize the total transportation cost while satisfying the supply and demand constraints.
 
+Example (taha book - page 175)
+
+MG Auto has three plants in Los Angeles, Detroit, and New Orleans, and two major distribution centers in Denver and Miami. The quarterly capacities of the three plants are 1,000, 1,500, and 1,200 cars, and the demand of the two distribution centers during the same period is 2,300 and 1,400 cars. The distance in miles between the plants and distribution centers is shown in the table.
+
+|             | Miles graph data |       |
+| ----------- | ---------------- | ----- |
+|             | Denver           | Miami |
+| LA          | 1000             | 2690  |
+| Detroit     | 1250             | 1350  |
+| New Orleans | 1275             | 850   |
+
+The trucking company charges 8 cents per mile per car. shows the transportation costs per car on the different routes, rounded to the nearest dollar.
+
+|             | Cost Dat |       |
+| ----------- | -------- | ----- |
+|             | Denver   | Miami |
+| LA          | 80       | 215   |
+| Detroit     | 100      | 108   |
+| New Orleans | 102      | 68    |
+
+***
+
+$$
+\text{Minimizar z} =  Z_{min}= 80x_{11} + 215x_{12} + 100x_{21} + 108x_{22} + 102x_{31} + 68x_{32}
+$$
+
+Sa:
+
+$$
+x_{11} + x_{12} = 1000 (Los Ángeles)\\ 
+x_{21} + x_{22} = 1500 (Detroit)\\
++ x_{31} + x_{32} = 1200 (Nueva Orléans)\\
+x_{11} + x_{21} + x_{31} = 2300 (Denver)\\
+x_{12} + x_{22} + x_{32} = 1400 (Miami)\\
+x_{ij} \forall\ i= 1, 2, 3, j= 1, 2
+$$
+
+{% hint style="warning" %}
+**Balancing the transportation model**. The transportation table representation assumes that the model is balanced, that is, that total demand equals total supply. If the model is unbalanced, we can add a dummy origin or destination to restore balance.
+{% endhint %}
+
 ## Instructions for Using the PuLP Library
 
 The PuLP library is a powerful tool for linear programming in Python. Here we provide a step-by-step guide to using this library effectively.
