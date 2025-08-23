@@ -35,7 +35,7 @@ You have been provided with the following inventory data for a small set of prod
 
 ***
 
-create your own layot with your information  to work in class, acoording to this example.
+create your own layout with your information  to work in class, acoording to this example.
 
 {% file src="../../../.gitbook/assets/CEDI.xlsx" %}
 
