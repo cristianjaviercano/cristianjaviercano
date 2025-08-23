@@ -30,6 +30,8 @@ A warehouse is not a monolithic storage space but a system of interconnected zon
 The design of a warehouse layout is a classic problem in facility planning. The objective is to arrange departments or zones to minimize the total material handling cost, which is often a function of the distance traveled and the frequency of trips between zones (Tompkins et al., 2010). Poor flow can dramatically reduce the overall throughput capacity of the entire system.
 {% endhint %}
 
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-23 a la(s) 2.39.10 p.m..png" alt=""><figcaption></figcaption></figure>
+
 ***
 
 ### **Inventory Location Systems**
