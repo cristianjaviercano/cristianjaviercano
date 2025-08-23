@@ -32,3 +32,17 @@ You have been provided with the following inventory data for a small set of prod
    * Assume you have a single picking aisle with shelves at three vertical levels: Bottom (requires bending), Middle ("golden zone," waist-to-shoulder height), and Top (requires reaching). The aisle begins near the packing station.
    * Create a proposal that assigns each SKU to a general location (e.g., "Middle shelf, front of aisle," "Bottom shelf, back of aisle").
    * Justify your slotting decisions for the 'A' items and 'C' items, explaining how your plan reduces travel time and improves ergonomics for the pickers.
+
+***
+
+create your own layot with your information  to work in class, acoording to this example.
+
+{% file src="../../../.gitbook/assets/CEDI.xlsx" %}
+
+{% file src="../../../.gitbook/assets/databaseTst.xlsx" %}
+
+{% file src="../../../.gitbook/assets/flujouno.xml" %}
+
+for the Xml file please use Drawio.com to open it it is a free sogftware.
+
+Regadrs CRC!
