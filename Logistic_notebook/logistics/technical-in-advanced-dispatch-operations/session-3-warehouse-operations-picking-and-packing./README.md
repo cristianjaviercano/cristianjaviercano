@@ -86,3 +86,69 @@ Slotting is the strategic placement of inventory within the picking area to mini
 ***
 
 ## Competency 6: Picking Strategies and Optimization
+
+Order picking is the process of retrieving items from storage locations to fulfill customer orders. This competency analyzes the primary picking methodologies and the theoretical models used to optimize this critical function.
+
+**Analysis of Order Picking Methods**
+
+The choice of picking method is a strategic decision based on order profiles, facility layout, and available technology.
+
+* **Discrete Order Picking:** The most basic method where one picker fulfills one complete order at a time, traveling throughout the warehouse as needed.
+  * Pros: Simple, easy to manage, high accountability for order accuracy.
+  * Cons: Extremely high travel time per order line, making it inefficient for multi-line orders.
+* **Batch Picking** (or Cluster Picking): A single picker retrieves items for multiple orders simultaneously during one travel tour.
+  * Pros: Significantly reduces travel time per order line.
+  * Cons: Requires a consolidation and sorting step after picking; requires a WMS to generate batches.
+* **Zone Picking:** The warehouse is divided into several picking zones. Pickers are assigned to a specific zone and only pick the SKUs located there. Orders are passed between zones until they are complete (a method known as "pick and pass").
+  * Pros: Reduces travel distance as pickers remain in a compact area; enables specialization.
+  * Cons: Can lead to bottlenecks and congestion at zone hand-offs; balancing workload between zones is a complex challenge.
+* **Wave Picking:** A hybrid method where all orders for a specific time window (a "wave") are released to the floor at once. These orders are typically batched and picked by zone simultaneously. Completed items are then consolidated for each order.
+  * Pros: Enables high-throughput picking for a large volume of orders; coordinates picking with shipping schedules.
+  * Cons: The most complex method, requiring a sophisticated WMS for planning and control.
+
+**Theoretical Model: The Traveling Salesperson Problem (TSP)**
+
+Optimizing the pick path for a discrete or batch pick is a classic problem in operations research known as the Traveling Salesperson Problem (TSP).
+
+* The Problem given a set of "cities" (item locations) and the "distance" (travel time) between each pair, the TSP seeks to find the shortest possible route that visits each location exactly once and returns to the origin (the packing station).
+* Mathematical Formulation: Let C\_ij​ be the cost (distance) of traveling from location i to location j. Let xij​ be a binary variable that is 1 if the path from i to j is taken, and 0 otherwise. The objective is to:\
+
+
+$$
+Z_{min}= ∑C_{ij}​x_{ij}
+$$
+
+​\
+Subject to constraints ensuring each location is entered and exited exactly once, and preventing sub-tours.
+
+_Practical Application:_ The TSP is NP-hard, meaning that finding a guaranteed optimal solution becomes computationally intractable for even a moderate number of picks. Therefore, WMS systems do not solve the TSP exactly. Instead, they use heuristics—efficient algorithms that find very good, near-optimal solutions quickly. Common heuristics include the S-shape (or Serpentine) heuristic, where the picker travels up and down every aisle that contains a pick, and the Nearest Neighbor heuristic.
+
+**Technology in the Picking Process**
+
+Technology plays a vital role in executing picking strategies accurately and efficiently by reducing human error and improving productivity. 🤖
+
+* Pick-to-Light: Alphanumeric displays and buttons are installed at each pick location. The WMS illuminates the light at the correct location and displays the quantity to pick, guiding the operator directly.
+* Voice Picking: The WMS sends instructions to the picker through a headset. The picker confirms tasks (e.g., by reading a check digit) verbally, keeping their hands and eyes free to focus on the pick.
+* RF Scanning: Handheld radio-frequency devices guide pickers through a list of tasks and are used to scan location barcodes and item barcodes to confirm that the correct item and quantity are being picked.
+
+{% hint style="warning" %}
+These technologies are prime examples of applying human factors engineering. They reduce the picker's cognitive load (e.g., no need to read and interpret a paper list), which in turn reduces error rates and improves picking speed. The choice of technology should align with the chosen picking strategy and prod
+{% endhint %}
+
+#### TSP in Warehousing
+
+In the context of warehousing, the Traveling Salesman Problem (TSP) is applied to optimize the route of a picker who needs to retrieve items from various locations within a warehouse. The goal is to minimize the distance traveled, which directly impacts the time taken and the efficiency of the picking process.&#x20;
+
+Given that solving TSP exactly is computationally challenging for large sets of locations, heuristics are indispensable in warehouse management systems to generate practical solutions efficiently.
+
+#### Example of TSP in Warehousing
+
+Consider a warehouse with a picker assigned to collect items for an order from ten different locations. The TSP challenge here is to determine the shortest possible route that the picker should take to visit each of these ten locations and return to the starting point. By solving this problem, the warehouse can minimize the distance traveled, reduce picking time, and increase overall efficiency. Using heuristic algorithms, like nearest neighbor or genetic algorithms, can provide near-optimal solutions quickly, which is crucial for large warehouses with extensive item locations.
+
+#### TSP Solver in Excel
+
+To solve the TSP using Excel, you can leverage the Solver add-in, a powerful optimization tool. Here’s a brief guide to set it up:
+
+1. **Setup the Distance Matrix**: Create a matrix representing the distances between each pair of locations in your warehouse.
+
+This method allows warehouse managers to utilize existing tools for route optimization without requiring specialized software, making it accessible and cost-effective.
