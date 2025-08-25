@@ -50,7 +50,7 @@ Most modern operations use a hybrid approach. Fast-moving items (A-items) may be
 
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (2).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
 
 ***
 
@@ -69,7 +69,7 @@ ABC analysis is a method of inventory categorization that applies the Pareto pri
 _While classic ABC analysis uses consumption value,_ in a fulfillment context, it is often more powerful to classify items based on pick frequency or sales velocity. This directly aligns the classification with the labor-intensive picking process, ensuring that the most frequently touched items receive preferential treatment in slotting.
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1).svg" alt="" class="gitbook-drawing">
 
 ***
 

@@ -31,6 +31,8 @@
     * [ABC Inventory desitions](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/inventario-abc.md)
     * [KPI](logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/indiscadores-o-kpi-de-inventario.md)
   * [Unit Three: Transport Models](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/README.md)
+    * [Python Pulp Librarie for LP problems](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/python-pulp-librarie-for-lp-problems.md)
+    * [TSP problems](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/tsp-problems.md)
     * [Some Exercises](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/ejercicios-1.md)
     * [Route Desing Using Python](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/README.md)
       * [TSP problem](logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/ejercicios-2.md)
