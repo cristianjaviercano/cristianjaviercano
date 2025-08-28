@@ -27,11 +27,53 @@ Distance Matrix $$d_{ij}$$ - Cleaning Times in minutes: ('q' is assigned to proh
 | Black (3)  | 50        | 44         | q         | 22      |
 | Red (4)    | 45        | 40         | 20        | q       |
 
-Decision Variables: $x\_{ij} = 1$ if paint $j$ follows paint $i$, and $0$ otherwise. For example, $x\_{12} = 1$ if after White, cleaning is done for Yellow. Objective Function: Minimize total cleaning time: $$\text{Min } Z = 10x_{12} + 17x_{13} + 15x_{14} + 20x_{21} + 19x_{23} + 18x_{24} + 50x_{31} + 44x_{32} + 22x_{34} + 45x_{41} + 40x_{42} + 20x_{43}$$ Entry/Exit Constraints ($n = 4$ cities):
+Decision Variables: $$x_{ij} = 1$$ if paint $$j$$ follows paint $$i$$, and 0 otherwise.&#x20;
 
-1. Each city is entered exactly once: ◦ $x\_{21} + x\_{31} + x\_{41} = 1$ (to White) ◦ $x\_{12} + x\_{32} + x\_{42} = 1$ (to Yellow) ◦ $x\_{13} + x\_{23} + x\_{43} = 1$ (to Black) ◦ $x\_{14} + x\_{24} + x\_{34} = 1$ (to Red)
-2. Each city is exited exactly once: ◦ $x\_{12} + x\_{13} + x\_{14} = 1$ (from White) ◦ $x\_{21} + x\_{23} + x\_{24} = 1$ (from Yellow) ◦ $x\_{31} + x\_{32} + x\_{34} = 1$ (from Black) ◦ $x\_{41} + x\_{42} + x\_{43} = 1$ (from Red)
-3. Subtour Elimination Constraints (with $n=4$): For $n=4$, the general constraint is $u\_i - u\_j + 4 \cdot x\_{ij} \leq 3$. These constraints apply for $i, j \in {2, 3, 4}$ (cities Yellow, Black, Red), with $i \neq j$, excluding the origin city (City 1, White) from the variables $u\_i$ and $u\_j$. The possible pairs $(i,j)$ are: $(2,3)$, $(2,4)$, $(3,2)$, $(3,4)$, $(4,2)$, $(4,3)$.
-4. Some examples of these constraints would be: ◦ For $i=2$ (Yellow), $j=3$ (Black): $u\_2 - u\_3 + 4 \cdot x\_{23} \leq 3$ ◦ For $i=2$ (Yellow), $j=4$ (Red): $u\_2 - u\_4 + 4 \cdot x\_{24} \leq 3$ ◦ For $i=3$ (Black), $j=2$ (Yellow): $u\_3 - u\_2 + 4 \cdot x\_{32} \leq 3$ ◦ For $i=3$ (Black), $j=4$ (Red): $u\_3 - u\_4 + 4 \cdot x\_{34} \leq 3$ ◦ For $i=4$ (Red), $j=2$ (Yellow): $u\_4 - u\_2 + 4 \cdot x\_{42} \leq 3$ ◦ For $i=4$ (Red), $j=3$ (Black): $u\_4 - u\_3 + 4 \cdot x\_{43} \leq 3$
-5. These constraints ensure that no cycles are formed between a subset of the Yellow, Black, and Red cities.
-6. Binary Variables: $x\_{ij} \in {0, 1}$ for all $i, j$. The variables $u\_i$ are typically non-negative integers, with a possible range $1 \leq u\_i \leq n$. For small problems like this 4-city example, all possible optimal routes can be enumerated. In this case, the number of tours is $(n-1)! = (4-1)! = 3! = 6$ tours. Evaluating these six, the optimal solution is the W-Y-B-R-W (White-Yellow-Black-Red-White) tour with a total cleaning time of $10 + 19 + 22 + 45 = 96$ minutes.
+For example,&#x20;
+
+$$x_{12} = 1$$ if after White, cleaning is done for Yellow.&#x20;
+
+Objective Function: Minimize total cleaning time:&#x20;
+
+$$\text{Min } Z = 10x_{12} + 17x_{13} + 15x_{14} + 20x_{21} + 19x_{23} + 18x_{24} + 50x_{31} + 44x_{32} + 22x_{34} + 45x_{41} + 40x_{42} + 20x_{43}$$&#x20;
+
+Entry/Exit Constraints (n = 4 colors):
+
+1. Each color is entered exactly once:&#x20;
+   1. $$x_{21} + x_{31} + x_{41} = 1$$ (to White)
+   2. $$x_{12} + x_{32} + x_{42} = 1$$ (to Yellow)&#x20;
+   3. $$x_{13} + x_{23} + x_{43} = 1$$ (to Black)&#x20;
+   4. $$x_{14} + x_{24} + x_{34} = 1$$ (to Red)
+2. Each city is exited exactly once:&#x20;
+   1. $$x_{12} + x_{13} + x_{14} = 1$$ (from White)&#x20;
+   2. $$x_{21} + x_{23} + x_{24} = 1$$ (from Yellow)&#x20;
+   3. $$x_{31} + x_{32} + x_{34} = 1$$ (from Black)&#x20;
+   4. $$x_{41} + x_{42} + x_{43} = 1$$ (from Red)
+3.  Subtour Elimination Constraints (with n=4):&#x20;
+
+    1. For $$n=4$$, the general constraint is&#x20;
+
+    $$u_i - u_j + 4 \cdot x_{ij} \leq 3$$
+
+    1. These constraints apply for $$i, j \in {2, 3, 4}$$ (nodes Yellow, Black, Red), with $$i \neq j$$ excluding the origin city (City 1, White) from the variables $$u_i$$ and $$u_j$$ The possible pairs $$(i,j)$$ are: (2,3), (2,4), (3,2), (3,4), (4,2), (4,3).
+4. Some examples of these constraints would be:&#x20;
+   1. For i=2 (Yellow), j=3 (Black): $$u_2 - u_3 + 4 \cdot x_{23} \leq 3$$
+   2. For i=2 (Yellow), j=4 (Red): $$u_2 - u_4 + 4 \cdot x_{24} \leq 3$$
+   3. For i=3 (Black), j=2 (Yellow): $$u_3 - u_2 + 4 \cdot x_{32} \leq 3$$
+   4. For i=3 (Black), j=4 (Red):  $$u_3 - u_4 + 4 \cdot x_{34} \leq 3$$
+   5. For i=4 (Red), j=2 (Yellow): $$u_4 - u_2 + 4 \cdot x_{42} \leq 3$$
+   6. For i=4 (Red), j=3 (Black): $$u_4 - u_3 + 4 \cdot x_{43} \leq 3$$
+
+{% hint style="warning" %}
+These constraints ensure that no cycles are formed between a subset of the Yellow, Black, and Red cities.
+{% endhint %}
+
+#### Binary Variables:&#x20;
+
+$$x_{ij} \in {0, 1} \forall i, j.$$&#x20;
+
+The variables u\_i are typically non-negative integers, with a possible range $$1 \leq u_i \leq n$$.&#x20;
+
+For small problems like this 4-node example, all possible optimal routes can be enumerated. In this case, the number of tours is **(n-1)! = (4-1)! = 3! = 6** tours.&#x20;
+
+Evaluating these six, the optimal solution is the W-Y-B-R-W (White-Yellow-Black-Red-White) tour with a total cleaning time of 10 + 19 + 22 + 45 = 96 minutes.

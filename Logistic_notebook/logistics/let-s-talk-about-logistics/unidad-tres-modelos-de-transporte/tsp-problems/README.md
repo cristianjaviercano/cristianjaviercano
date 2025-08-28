@@ -174,3 +174,52 @@ In a warehouse setting, applying the Traveling Salesman Problem (TSP) can signif
 5. **Monitor and Adjust**: Continuously monitor the routes and adjust based on real-time data to adapt to changing warehouse conditions.
 
 By integrating TSP solutions for guiding forklifts, warehouses can achieve more streamlined and cost-effective logistics operations.
+
+***
+
+In the context of a DC or warehouse with forklift operations, the elements of the TSP are mapped as follows.
+
+### "Cities" (Nodes/Vertices):&#x20;
+
+_Represent the specific locations within the warehouse that must be visited. This can include:_
+
+1. Stock picking points for orders.
+2. Delivery points or packing stations.
+3. Storage or replenishment areas.
+4. The forklift's base or "depot," where it begins and ends its shift or a task.
+
+### "Distances" (Edges/Routes/Costs):&#x20;
+
+Represent the time or cost associated with direct travel between two locations within the warehouse.&#x20;
+
+These distances can be symmetric (the cost of going from A to B is equal to B to A) or asymmetric (different costs due to one-way aisles, congestion, or internal traffic).\
+
+
+### "Traveling Salesman" (Entity/Vehicle):&#x20;
+
+This is the forklift that performs the route, responsible for picking up and delivering materials.
+
+{% hint style="danger" %}
+The objective is to minimize the total travel time (or total cost, which may include fuel, maintenance, or operator time) for the forklift to complete all assigned tasks, visiting each required pick-up/delivery point once and returning to its base.\
+
+{% endhint %}
+
+#### Example of TSP in a CEDI with a Forklift 
+
+Consider a CEDI where a single forklift is responsible for fulfilling a large order that requires picking items from four different storage locations (L1, L2, L3, L4). The forklift starts its shift from its charging base (B) and must return to it after completing all picks. The goal is to find the most efficient route to minimize the total travel time.
+
+1.  Define the "Cities" (Nodes) &#x20;
+
+    1. B: Forklift Charging Base (Start and End Point)   &#x20;
+    2. L1: Picking Location 1   &#x20;
+    3. L2: Picking Location 2   &#x20;
+    4. L3: Picking Location 3   &#x20;
+    5. L4: Picking Location 4
+
+
+2.  Define the "Distances" (Travel Times in Minutes):&#x20;
+
+    1. The travel time between any two locations is measured in minutes. For simplicity, we assume symmetric travel times (e.g., time from B to L1 is the same as L1 to B)
+
+
+3. _Self-loops (e.g., B to B) are typically excluded or given a very high penalty, as the forklift must visit distinct locations._
