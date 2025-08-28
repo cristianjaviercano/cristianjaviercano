@@ -49,6 +49,8 @@
     * [Task Session 2](logistics/technical-in-advanced-dispatch-operations/session-2-order-reception-and-processing-prioritization-and-batching/task-session-2.md)
   * [Session 3: Warehouse Operations - Picking and Packing.](logistics/technical-in-advanced-dispatch-operations/session-3-warehouse-operations-picking-and-packing./README.md)
     * [Task Session 3](logistics/technical-in-advanced-dispatch-operations/session-3-warehouse-operations-picking-and-packing./task-session-3.md)
+  * [Session 4: Shipment Preparation](logistics/technical-in-advanced-dispatch-operations/session-4-shipment-preparation/README.md)
+    * [Task session 4](logistics/technical-in-advanced-dispatch-operations/session-4-shipment-preparation/task-session-4.md)
 
 ## Discrete event Simulation
 

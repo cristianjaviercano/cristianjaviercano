@@ -59,7 +59,7 @@ These are crucial and complex. Without them, the first two constraints might res
 A common way to implement these uses additional variables $$u_i$$ (sequence or flow variables) to ensure a single, continuous tour. One formulation is:&#x20;
 
 $$
-ui - uj + n * x_{ij} <= n - 1 \ for\  all\ i ≠ j,
+u_i - u_j + n * x_{ij} <= n - 1 \ for\  all\ i ≠ j,
 $$
 
 where `i` and `j` are not the origin city, and `n` is the total number of cities&#x20;
@@ -67,6 +67,10 @@ where `i` and `j` are not the origin city, and `n` is the total number of cities
 These ensure that if a path is taken from `i` to `j`, `j` must appear later in the sequence than `i` (except for the return to origin), preventing closed loops among a subset of cities \[.  &#x20;
 
 4\. Binary Variables: $$x_{ij}$$ must be 0 or 1.
+
+Assuming the Traveling Salesman Problem (TSP) formulation where additional variables ( u\_i ) are used to prevent sub-tours, an example of setting these variables could be:
+
+
 
 ### Applications and Examples of TSP 
 
