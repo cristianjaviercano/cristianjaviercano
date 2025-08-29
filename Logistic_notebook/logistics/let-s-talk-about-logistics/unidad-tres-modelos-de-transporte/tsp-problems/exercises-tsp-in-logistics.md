@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Exercises TSP in logistics
 
 {% file src="../../../../.gitbook/assets/CEDI.xlsx" %}
@@ -77,3 +73,9 @@ The variables u\_i are typically non-negative integers, with a possible range $$
 For small problems like this 4-node example, all possible optimal routes can be enumerated. In this case, the number of tours is **(n-1)! = (4-1)! = 3! = 6** tours.&#x20;
 
 Evaluating these six, the optimal solution is the W-Y-B-R-W (White-Yellow-Black-Red-White) tour with a total cleaning time of 10 + 19 + 22 + 45 = 96 minutes.
+
+***
+
+### Problem 2 CEDI
+
+Donwload the file [here](https://docs.google.com/document/d/1CKqM2KUIYtqgXxTRkCnF-pKacDv0o8u_DtXqiDEQ7uE/edit?usp=sharing)
