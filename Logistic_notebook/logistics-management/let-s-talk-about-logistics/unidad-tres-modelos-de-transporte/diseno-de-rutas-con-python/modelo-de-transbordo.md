@@ -1,4 +1,4 @@
-# Transshipment Model
+# Transshipment or Cross Docking Model
 
 #### Explanation of the Transshipment or Cross Docking Model
 
@@ -37,7 +37,8 @@ Demand at D_n
 - D_2 = 900
 - D_3 = 500
 ```
-Note that nodes \\(t\_n\ and \\ D\_n\\) function as input and output. These are called **Transshipment Nodes**
+
+Note that nodes \\(t\_n\ and \ D\_n\\) function as input and output. These are called **Transshipment Nodes**
 
 * Pure supply nodes are the issuers of units
 * Pure demand nodes are those that only receive units
@@ -52,18 +53,11 @@ With this buffer, this model transforms into an original transportation model (â
 
 Below is the response to the model using the traditional transportation model.
 
-| - | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) | |
-| ---------- | ---------- | ---------- | ---------- | ---------- | ---- |
-| \\(P\_1\\) | 3 | 4 | M | M | M | 1000 |
-| \\(P\_2\\) | 2 | 5 | M | M | M | 1200 |
-| \\(T\_1\\) | 0 | 7 | 8 | 6 | M | B |
-| \\(T\_2\\) | M | 0 | M | 4 | 9 | B |
-| \\(D\_1\\) | M | M | 0 | 5 | M | B |
-| \\(D\_2\\) | M | M | M | 0 | 3 | B |
+\| - | \\(T\_1\\) | \\(T\_2\\) | \\(D\_1\\) | \\(D\_2\\) | \\(D\_3\\) | | | ---------- | ---------- | ---------- | ---------- | ---------- | ---- | | \\(P\_1\\) | 3 | 4 | M | M | M | 1000 | | \\(P\_2\\) | 2 | 5 | M | M | M | 1200 | | \\(T\_1\\) | 0 | 7 | 8 | 6 | M | B | | \\(T\_2\\) | M | 0 | M | 4 | 9 | B | | \\(D\_1\\) | M | M | 0 | 5 | M | B | | \\(D\_2\\) | M | M | M | 0 | 3 | B |
 
 \*\*
 
-#### Crossdocking Exercises:[#](broken-reference)
+#### Crossdocking Exercises:[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
 
 ***
 
@@ -122,24 +116,24 @@ plt.show()
 
 Cost Matrix:
 
-| Nodes | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 |
+| Nodes | 1 | 2 | 3 | 4  | 5  | 6  | 7  | 8  |
 | ----- | - | - | - | -- | -- | -- | -- | -- |
-| 1 | - | - | - | 20 | - | - | - | |
-| 2 | - | - | - | 10 | 20 | 50 | - | - |
-| 3 | - | - | - | - | 15 | - | - | - |
-| 4 | - | - | - | - | 20 | 10 | 10 | - |
-| 5 | - | - | - | - | - | 30 | | 30 |
-| 6 | - | - | - | - | - | - | 50 | 20 |
-| 7 | - | - | - | - | - | - | - | - |
-| 8 | - | - | - | - | - | - | - | - |
+| 1     | - | - | - | 20 | -  | -  | -  |    |
+| 2     | - | - | - | 10 | 20 | 50 | -  | -  |
+| 3     | - | - | - | -  | 15 | -  | -  | -  |
+| 4     | - | - | - | -  | 20 | 10 | 10 | -  |
+| 5     | - | - | - | -  | -  | 30 |    | 30 |
+| 6     | - | - | - | -  | -  | -  | 50 | 20 |
+| 7     | - | - | - | -  | -  | -  | -  | -  |
+| 8     | - | - | - | -  | -  | -  | -  | -  |
 
 * Production costs:
 
-| | Production costs | |
-| - | -------------------- | ------ |
-| 1 | 400 | unit |
-| 2 | 450 | unit |
-| 3 | 470 | unit |
+|   | Production costs |      |
+| - | ---------------- | ---- |
+| 1 | 400              | unit |
+| 2 | 450              | unit |
+| 3 | 470              | unit |
 
 1. Based on the cost matrix, the shipping matrix must be created, that is, with costs only.
 
@@ -153,26 +147,26 @@ Cano.ltda is a growing company and has just signed alliances with different comp
 
 The corresponding distances between each of the actors are given in the following distance table:
 
-| | P\_1 | P\_2 | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 |
+|      | P\_1 | P\_2 | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| P\_1 | 0 | - | 3 | 4 | - | - | - |
-| P\_2 | - | 0 | 2 | 5 | - | - | - |
-| T\_1 | - | - | 0 | 7 | 8 | 6 | - |
-| T\_2 | - | - | - | 0 | - | 4 | 9 |
-| D\_1 | - | - | - | - | 0 | 5 | - |
-| D\_2 | - | - | - | - | - | 0 | 3 |
-| D\_3 | - | - | - | - | - | - | 0 |
+| P\_1 | 0    | -    | 3    | 4    | -    | -    | -    |
+| P\_2 | -    | 0    | 2    | 5    | -    | -    | -    |
+| T\_1 | -    | -    | 0    | 7    | 8    | 6    | -    |
+| T\_2 | -    | -    | -    | 0    | -    | 4    | 9    |
+| D\_1 | -    | -    | -    | -    | 0    | 5    | -    |
+| D\_2 | -    | -    | -    | -    | -    | 0    | 3    |
+| D\_3 | -    | -    | -    | -    | -    | -    | 0    |
 
-| Supply | qty |
-| ------ | ------- |
-| P\_1 | 1000 Units |
-| P\_2 | 1200 Units |
+| Supply | qty        |
+| ------ | ---------- |
+| P\_1   | 1000 Units |
+| P\_2   | 1200 Units |
 
-| Demand | qty |
-| ------- | ------ |
-| D\_1 | 800 Units |
-| D\_2 | 900 Units |
-| D\_3 | 500 Units |
+| Demand | qty       |
+| ------ | --------- |
+| D\_1   | 800 Units |
+| D\_2   | 900 Units |
+| D\_3   | 500 Units |
 
 1. We define the transshipment nodes T\_1 and T\_2
 2. We define the system's "Buffer" B\_n must be large enough to supply the process
@@ -183,12 +177,12 @@ $$
 
 3. We proceed to create the transshipment matrix
 
-| | T\_1 | T\_2 | D\_1 | D\_2 | D\_3 | Demand |
-| ------ | ---- | ---- | ------- | ------- | ---- | ------- |
-| P\_1 | 3 | 4 | M | M | M | 1000 |
-| P\_2 | 2 | 5 | M | M | M | 1200 |
-| T\_1 | 0 | 7 | 8 | 6 | M | B |
-| T\_2 | M | 0 | M | 4 | 9 | B |
-| D\_1 | M | M | 0 | 5 | M | B |
-| D\_2 | M | M | M | 0 | 3 | B |
-| Offer | B | B | 800+B | 900+B | 500 | - |
+|       | T\_1 | T\_2 | D\_1  | D\_2  | D\_3 | Demand |
+| ----- | ---- | ---- | ----- | ----- | ---- | ------ |
+| P\_1  | 3    | 4    | M     | M     | M    | 1000   |
+| P\_2  | 2    | 5    | M     | M     | M    | 1200   |
+| T\_1  | 0    | 7    | 8     | 6     | M    | B      |
+| T\_2  | M    | 0    | M     | 4     | 9    | B      |
+| D\_1  | M    | M    | 0     | 5     | M    | B      |
+| D\_2  | M    | M    | M     | 0     | 3    | B      |
+| Offer | B    | B    | 800+B | 900+B | 500  | -      |

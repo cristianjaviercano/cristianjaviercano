@@ -1,6 +1,4 @@
-
-
-# Focus on Customer Service:
+# How to calculate a CS parameter
 
 #### What is customer service in the context of logistics?
 
@@ -42,7 +40,7 @@ Differentiate yourself from the competition through exceptional service
 {% endtab %}
 {% endtabs %}
 
-### How is customer satisfaction measured in a company?[#](broken-reference)
+### How is customer satisfaction measured in a company?[#](../../../logistics/let-s-talk-about-logistics/customer-service-the-heart-of-the-logistics-management/broken-reference/)
 
 Methods for measuring customer satisfaction:
 

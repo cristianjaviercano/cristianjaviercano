@@ -1,10 +1,8 @@
-# Route Design with Python
+# Route Desing Using Python
 
 Linear programming is a mathematical technique used to optimize a linear objective, subject to linear constraints. In route design, it allows you to model and solve problems that seek to minimize costs or total travel time while respecting capacity and time constraints. This technique helps determine the best combination of decision variables such as routes to be taken, number of vehicles, and delivery sequence, ensuring that resources are used efficiently and effectively.
 
-{% hint style="info" %}
 Route optimization represents one of the most common challenges in logistics operations management. Mathematical models provide a systematic framework for addressing these problems, enabling more informed and efficient decision-making. Some of the most commonly used models are described below.
-{% hint %}
 
 **Programming Model for Solving Routing Problems**
 
@@ -29,6 +27,7 @@ Routing problems are common challenges in transportation and logistics optimizat
 3. **Delivery and Collection Routing Problems**: Involves not only the delivery of goods but also the collection of products or packaging for recycling.
 
 #### Programming Models Used
+
 Programming models for routing problems have a wide range of practical applications, including:
 
 * Route optimization in online shopping delivery services.
@@ -53,13 +52,13 @@ The objective can be:
 
 ***
 
-### ROUTE DESIGN USING PYTHON.[#](broken-reference)
+### ROUTE DESIGN USING PYTHON.[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
 
 There are numerous libraries and algorithms available that simplify the route design process in Python. These tools are used to optimize and plan efficient routes in various applications, such as vehicle fleet management, freight delivery, trip planning, and many others.
 
 Notable libraries include NetworkX, which provides data structures and algorithms for graph and network analysis. There is also GeoPandas, which extends Pandas' capabilities by allowing the handling and analysis of geospatial data. Another popular option is OSRM (Open Source Routing Machine), which offers a server and client library for generating routes using OpenStreetMap data.
 
-On the other hand, route optimization algorithms such as Dijkstra's algorithm, the A* (A-star) algorithm, and metaheuristic optimization algorithms can be used to find optimal routes based on various constraints and costs. These algorithms are essential for applications requiring high efficiency in route planning.
+On the other hand, route optimization algorithms such as Dijkstra's algorithm, the A\* (A-star) algorithm, and metaheuristic optimization algorithms can be used to find optimal routes based on various constraints and costs. These algorithms are essential for applications requiring high efficiency in route planning.
 
 {% hint style="info" %}
 The Python ecosystem offers a variety of tools and techniques that allow the problem of route design to be addressed efficiently and effectively, adapting to the specific needs of each application. By leveraging these libraries and algorithms, developers can create advanced solutions in the field of route planning and optimization.
@@ -110,7 +109,7 @@ print(v.name, "=", v.varValue)
 print("Total cost =", pulp.value(prob.objective))
 ```
 
-#### Network Analysis Using NetworkX[#](broken-reference)
+#### Network Analysis Using NetworkX[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
 
 **NetworkX** is a powerful and versatile Python library used for the creation, manipulation, and analysis of complex networks. Designed to facilitate the process of modeling graph structures, NetworkX finds applications in numerous fields such as network science, computational biology, engineering, social sciences, among others.
 
@@ -120,7 +119,7 @@ Another notable feature is its ability to calculate various centrality metrics, 
 
 NetworkX's intuitive design and extensive documentation make it ideal for both researchers and practitioners looking to efficiently perform complex network analysis. Additionally, its compatibility with other Python libraries, such as Pandas and Matplotlib, enables seamless integration into broader data science workflows.
 
-**Main Features:**[**#**](broken-reference)
+**Main Features:**[**#**](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
 
 1. Graph Creation and Manipulation: Supports various graph types (directed, undirected, multigraphs) and allows adding nodes and edges with attributes.
 2. Network Analysis: Provides a wide range of graph theory algorithms for performing structural analysis, such as calculating centralities (degree, betweenness, closeness), detecting connected components, shortest paths, community detection, etc.
@@ -192,7 +191,7 @@ TABLE 2
 * Non-negativity constraints: $\\(x\_{ij} \geq 0\ ∀\ i = 1, 2, 3\ and\ j = 1, 2\\)$
 * _Also, the decision variables must be integers, since fractions of cars cannot be transported._
 
-**Solving with Python and the PuLp library:**[**#**](broken-reference)
+**Solving with Python and the PuLp library:**[**#**](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
 
 ```python
 import pulp
