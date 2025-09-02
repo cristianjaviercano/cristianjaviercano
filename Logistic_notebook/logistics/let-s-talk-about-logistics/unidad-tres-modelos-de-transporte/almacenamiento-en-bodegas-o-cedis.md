@@ -1,4 +1,4 @@
-# Storage in Warehouses or Distribution Centers (CEDIS)
+# DIstribution Center (Cedis)
 
 A Distribution Center, commonly known as CEDIS, is a key infrastructure within logistics and supply chain management. These facilities are designed to streamline the movement and storage of goods, ensuring efficient distribution to the final customer.
 
@@ -84,7 +84,6 @@ We will formulate a linear optimization problem where we define key variables su
 
 We will develop the code to optimize the dispatch routes. We will use the scipy.optimize.linprog optimization function to minimize the total delivery time.
 
-
 ```python
 # Basic optimization example
 c = [...] # Costs associated with routes
@@ -100,6 +99,5 @@ Once we have the solution, we can analyze the results to identify possible impro
 #### Step 6: Model Validation
 
 Compare the optimized results with historical data to validate the effectiveness of the model. Adjust parameters if necessary to improve prediction accuracy.
-
 
 Let me know if you need this translation as a new file in your repository or further formatting!

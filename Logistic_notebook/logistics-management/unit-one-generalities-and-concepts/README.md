@@ -48,3 +48,78 @@ Successful SCM requires decisions related to the flow of information, products, 
 
 <img src="../../.gitbook/assets/file.excalidraw (22).svg" alt="" class="gitbook-drawing">
 
+### Key Directives (Drivers) of Supply Chain Performance
+
+Six key directives determine the performance of any supply chain, balancing responsiveness against efficiency:
+
+<details>
+
+<summary>Facilities</summary>
+
+The "where" of the supply chain, locations where inventory is transformed (manufacturing) or stored (warehousing). Decisions involve location, capacity, and market allocation
+
+</details>
+
+<details>
+
+<summary>Inventory</summary>
+
+The "what" is moved along the supply chain. It acts as a buffer against uncertainty and demand variability. Decisions involve stock levels (raw materials, work-in-process, finished goods), safety stock, and reorder quantities.
+
+</details>
+
+<details>
+
+<summary>Transportation</summary>
+
+The "how" inventory is moved. Involves balancing the cost of transport (efficiency) with the speed of delivery (responsiveness). Decisions include mode selection (rail, truck, air, ship, pipeline), network design, and routing.
+
+</details>
+
+<details>
+
+<summary>Information</summary>
+
+The foundation upon which managers make decisions across functions and companies. It enables visibility, analysis, and execution of actions to improve performance. Critical for forecasting, planning, and coordinating processes.
+
+</details>
+
+<details>
+
+<summary>Sourcing </summary>
+
+Decisions related to acquiring goods and services from suppliers. It involves supplier selection, contract design, and risk management.
+
+</details>
+
+<details>
+
+<summary>Pricing  </summary>
+
+How a company charges for goods and services, influencing customer demand and company profitability. Revenue management techniques aim to maximize profit by segmenting customers and differentiating prices.
+
+</details>
+
+***
+
+### Uncertainty and Risk Management
+
+\
+Uncertainty is a fundamental aspect of SCM, influencing demand, supply, prices, and exchange rates. Forecasts are always wrong and must include an expected value and a measure of error to plan for contingencies.\
+
+
+Risk management is crucial in SCM design and operations. Risks can be operational (supplier failures, quality issues, production interruptions, capacity fluctuations), financial (exchange rates, accounts receivable), or related to intellectual property and forecasting inaccuracies. Strategies include redundancy (e.g., safety stock, backup systems) and flexibility.
+
+***
+
+### Computational Intelligence (CI) and AI in SCM 
+
+CI methods, often nature-inspired metaheuristics (e.g., genetic algorithms, swarm intelligence, neural networks, fuzzy logic), are used to solve complex logistics and SCM problems without extensive problem-specific knowledge.\
+
+
+These methods are particularly useful for optimization and search problems in areas like transportation planning (vehicle routing), inventory management, and facility location.\
+
+
+{% hint style="warning" %}
+AI and Machine Learning are becoming increasingly important for coping with massive data collections (volume, velocity, variety, veracity) and performing classification and regression tasks in SCM. They are used for pattern recognition in performance reports and suggesting corrective actions
+{% endhint %}

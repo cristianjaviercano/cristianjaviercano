@@ -21,7 +21,7 @@ Inventory models are statistical models and mathematical equations that, when co
 
 There are types of models that cover inventories, from the simplest, such as the EOQ (economic order quantity) model, to the most complex, such as reorder point models and continuous inventory review models.
 
-### Google Collab and Inventory Models: [#](../../../logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/broken-reference/)
+### Google Collab and Inventory Models: [#](broken-reference/)
 
 To work with inventory models, what we must do is
 
@@ -31,7 +31,7 @@ To work with inventory models, what we must do is
 * numpy
 * mathplotlib
 
-### General Inventory Model [#](../../../logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/broken-reference/)
+### General Inventory Model [#](broken-reference/)
 
 The main questions that the inventory model aims to address are: When to order? How much to order? This leads us to evaluate all aspects of the inventory. According to the authors, we find the following equation that encompasses the general inventory model:
 
@@ -82,7 +82,7 @@ Where:
 * $$\sigma_d\$$ is the standard deviation of demand during the lead time.
 * L is the lead time.
 
-#### Words and nomenclatures[#](../../../logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/broken-reference/)
+#### Words and nomenclatures[#](broken-reference/)
 
 * D = Demand
 * $$t_0$$ = Order cycle time
@@ -123,7 +123,7 @@ $$
 L_e = L - nt_0\
 $$
 
-### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](../../../logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/broken-reference/)
+### ROQ, Lead Time, and Safety Stock in Deterministic Inventory Models.[#](broken-reference/)
 
 * The assumptions of the EoQ model are listed as follows:
 
@@ -546,7 +546,7 @@ plt.ylabel("Inventory Level")
 plt.show()
 ````
 
-### EPQ Model[#](../../../logistics/let-s-talk-about-logistics/unidad-dos-modelos-de-inventarios/broken-reference/)
+### EPQ Model[#](broken-reference/)
 
 The economic production quantity (EPQ) model (also known as the economic lot size (ELS) model) is used in manufacturing situations where inventory increases at a finite rate and depends on the production rate and the usage rate of the item under consideration. In addition to the variables (D, S, H, Q, and C) defined earlier, we define two more variables: p = production rate per day (daily production rate) and d = demand rate per day (daily demand rate). The values of p and d must be in the same time unit. For example, these values could be weekly rates instead of daily rates. However, daily rates are most common. Q in this case is the production quantity (rather than order quantity) to be made in one lot and S is the cost of setting up the machine to produce that one lot. Therefore, S is called the setup cost per set up (rather than order cost per order).
 

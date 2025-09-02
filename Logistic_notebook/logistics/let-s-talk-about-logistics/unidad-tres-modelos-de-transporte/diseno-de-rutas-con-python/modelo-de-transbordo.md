@@ -57,7 +57,7 @@ Below is the response to the model using the traditional transportation model.
 
 \*\*
 
-#### Crossdocking Exercises:[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
+#### Crossdocking Exercises:[#](broken-reference/)
 
 ***
 

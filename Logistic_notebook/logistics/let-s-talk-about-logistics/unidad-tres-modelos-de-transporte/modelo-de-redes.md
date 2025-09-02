@@ -1,6 +1,8 @@
-# Network Model
+# Network Models
 
-### Network Model
+## Network Model
+
+#### Network Model
 
 ***
 
@@ -12,7 +14,7 @@ $$
 
 For example:
 
-\\[\begin{split} N = \\{1,2,3,4,5\\} \\\ A = \\{(1,2),(1,3),(2,3),(2,5),(3,4),(3,5),(4,2),(4,5)\\} \end{split}\\]
+\\\[\begin{split} N = \\{1,2,3,4,5\\} \\\ A = \\{(1,2),(1,3),(2,3),(2,5),(3,4),(3,5),(4,2),(4,5)\\} \end{split}\\]
 
 ```python
 import networkx as nx
@@ -47,7 +49,7 @@ Exercises:
 ***
 
 1. Draw by hand and in Colab the following model:
-   
+
 $$
 N=\{1,2,3,4,5\} \\ A=\{(1,2),(2,5),(1,3),(3,4),(3,5),(5,1),(4,2)\}
 $$
@@ -55,8 +57,6 @@ $$
 $$
 N=\{1,2,3,4\} \\ A=\{(1,3),(1,2),(2,3),(2,4),(3,4)\}
 $$
-
-
 
 ```
   1.Determine:
@@ -77,27 +77,26 @@ $$
 2. Three products must be transported in a vehicle from the ABC store to Mrs. Pepita’s house to fulfill a delivery requested from the store, but the delivery person and their vehicle cannot repeat the same route.
 
 * Formulate the network model to design the vehicle's trips so that delivery to Mrs. Pepita’s house is ensured.
-  
+
 ***
 
-### Minimum Spanning Tree Algorithm
+#### Minimum Spanning Tree Algorithm
 
 ***
 
 The minimum spanning algorithm connects the nodes of a network, directly or indirectly, with the minimum possible length of the connecting branches. A possible use of this algorithm is in the design of distribution networks.
 
-The most economical system design will be the one that minimizes the total distance of the created paths.
-Another definition: A minimum spanning tree is a special type of tree that minimizes the lengths (or money) of the tree’s edges. An example is a cable company wanting to minimize the cost of connecting homes.
+The most economical system design will be the one that minimizes the total distance of the created paths. Another definition: A minimum spanning tree is a special type of tree that minimizes the lengths (or money) of the tree’s edges. An example is a cable company wanting to minimize the cost of connecting homes.
 
 Procedure:
 
-Let $$N=\{1,2,...n\}$$, en conjunto de  nodos en la Red.
+Let $$N=\{1,2,...n\}$$, en conjunto de nodos en la Red.
 
 $$
 C_k=Conjunto\ de\ nodos\ que\ se\ han\ Conectado\ en \ forma\ permanente\ en\ la\ iteracion\ K \\ \bar{C_k} = Conjunto\ de\ nodos\ que\ faltan\ por\ conectar.
 $$
 
-**Step Zero: The set:
+\*\*Step Zero: The set:
 
 $$
 C_0=𝛳\ y \\ \bar{C_0} =N
@@ -128,18 +127,15 @@ Use Prim’s and Kruskal’s algorithms and compare.
 
 ***
 
-#### Theoretical Model According to Prim’s Algorithm:
-
+**Theoretical Model According to Prim’s Algorithm:**
 
 Initialization: Select an arbitrary node as the root of the tree. Step-by-step construction:
 
 1. At each step, add the shortest edge that connects a node inside the tree with one outside the tree.
-
 2. Select the node closest to the current tree and add the edge connecting that node to the tree.
-
 3. Termination: Repeat step 2 until all nodes are included in the tree.
 
-#### Theoretical Model According to Kruskal’s Algorithm:
+**Theoretical Model According to Kruskal’s Algorithm:**
 
 Edge ordering: Sort all edges in non-decreasing order of weight. Step-by-step construction:
 
@@ -147,51 +143,27 @@ Edge ordering: Sort all edges in non-decreasing order of weight. Step-by-step co
 2. Add this edge to the minimum spanning tree.
 3. Termination: Repeat step 2 until (n-1) edges have been selected, where (n) is the number of nodes in the system.
 
-# We will use Prim's Algorithm
+## We will use Prim's Algorithm
+
 import numpy as np
 
-def prim_mst(distances):
-    num_nodes = len(distances)
-    # Initialize the MST and the visited nodes list
-    mst = []
-    visited = [False] * num_nodes
-    # Start from node 0
-    visited[0] = True
-    # Repeat until all nodes are visited
-    while len(mst) < num_nodes - 1:
-        # Find the shortest edge connecting a visited node to an unvisited node
-        min_distance = float('inf')
-        min_i, min_j = None, None
-        for i in range(num_nodes):
-            if visited[i]:
-                for j in range(num_nodes):
-                    if not visited[j] and distances[i][j] < min_distance:
-                        min_distance = distances[i][j]
-                        min_i, min_j = i, j
-        # Add the edge to the MST
-        mst.append((min_i, min_j))
-        visited[min_j] = True
-    return mst
+def prim\_mst(distances): num\_nodes = len(distances) # Initialize the MST and the visited nodes list mst = \[] visited = \[False] \* num\_nodes # Start from node 0 visited\[0] = True # Repeat until all nodes are visited while len(mst) < num\_nodes - 1: # Find the shortest edge connecting a visited node to an unvisited node min\_distance = float('inf') min\_i, min\_j = None, None for i in range(num\_nodes): if visited\[i]: for j in range(num\_nodes): if not visited\[j] and distances\[i]\[j] < min\_distance: min\_distance = distances\[i]\[j] min\_i, min\_j = i, j # Add the edge to the MST mst.append((min\_i, min\_j)) visited\[min\_j] = True return mst
 
-# Define the distance matrix
-distances = [
-    [0, 1, 4, 6, 2],
-    [1, 0, 2, float('inf'), 2],
-    [4, 2, 0, 5, 2],
-    [6, float('inf'), 5, 0, 4],
-    [2, 2, 2, 4, 0]
-]
+## Define the distance matrix
 
-# Letters corresponding to the nodes
-node_letters = ['A', 'B', 'C', 'D', 'E']
+distances = \[ \[0, 1, 4, 6, 2], \[1, 0, 2, float('inf'), 2], \[4, 2, 0, 5, 2], \[6, float('inf'), 5, 0, 4], \[2, 2, 2, 4, 0] ]
 
-# Run Prim's algorithm
-minimum_spanning_tree = prim_mst(distances)
+## Letters corresponding to the nodes
 
-# Print the resulting MST
-print("Minimum Spanning Tree:")
-for edge in minimum_spanning_tree:
-    print(f"Edge: {node_letters[edge[0]]} - {node_letters[edge[1]]}")```
+node\_letters = \['A', 'B', 'C', 'D', 'E']
+
+## Run Prim's algorithm
+
+minimum\_spanning\_tree = prim\_mst(distances)
+
+## Print the resulting MST
+
+print("Minimum Spanning Tree:") for edge in minimum\_spanning\_tree: print(f"Edge: {node\_letters\[edge\[0]]} - {node\_letters\[edge\[1]]}")\`\`\`
 
 ```python
 # Kruskal's Algorithm
@@ -277,12 +249,11 @@ Minimum spanning tree algorithms, such as Prim and Kruskal, have a wide range of
 7. Social Network Analysis: Identifying important connections and relationships in social and collaborative networks.
 8. Molecular Biology: Analyzing interactions between proteins in molecular biology and designing metabolic pathways.
 9. Natural Resource Exploration: Planning routes for exploration and extraction of natural resources, such as oil and minerals.
-10. Irrigation System Design: Planning irrigation systems for agriculture and gardening.
-Exercise one:
+10. Irrigation System Design: Planning irrigation systems for agriculture and gardening. Exercise one:
 
 The company ABC provides lighting service to five new populated areas through construction projects. The nodes are given by the following network:
 
-\[\begin{split} N=\{1,2,3,4,5\} \\ A=\{(1,2),(1,4),(2,3),(3,4),(1,3),(1,5),(3,6),(4,6),(2,5)\} \end{split}\]
+\[\begin{split} N={1,2,3,4,5} \ A={(1,2),(1,4),(2,3),(3,4),(1,3),(1,5),(3,6),(4,6),(2,5)} \end{split}]
 
 Values (x10 km)
 

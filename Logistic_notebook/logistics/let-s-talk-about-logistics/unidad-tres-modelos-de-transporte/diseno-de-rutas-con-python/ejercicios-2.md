@@ -30,7 +30,7 @@ Some methods to solve the traveling salesman problem include:
 
 * **Brute Force:** Evaluates all possible routes and selects the one with the shortest distance. This is practical for a small number of cities due to its factorial complexity.
 * **Approximate Algorithms:** Such as ant colony search, genetic algorithms, or simulated annealing, which offer solutions close to optimal in reasonable time for large numbers of cities.
-* **Dynamic Programming:** Uses the Held-Karp algorithm, which has a time complexity of 2^n * n^2, more efficient than brute force, though still exponential.
+* **Dynamic Programming:** Uses the Held-Karp algorithm, which has a time complexity of 2^n \* n^2, more efficient than brute force, though still exponential.
 
 #### Practical Exercise: Solving the Traveler Problem with PuLP
 
@@ -221,10 +221,9 @@ A store produces three different products. The products are sent to three wareho
 | Demand  | 300       | 400       | 400       | 200       | 400       |        |
 
 ```
-   1. Formulate the theoretical and algebraic linear programming model.
-    2. Formulate this problem as a transportation problem by constructing the appropriate parameter table.
-    3. Get an optimal solution for this problem.
-    4. Do the exercise in Colab and vary different values.
+
+1. Formulate the theoretical and algebraic linear programming model. 2. Formulate this problem as a transportation problem by constructing the appropriate parameter table. 3. Get an optimal solution for this problem. 4. Do the exercise in Colab and vary different values.
+
 ```
 
 7. Three cities are supplied with electricity from three power plants with capacities of 25, 40, and 30 megawatts (MW). The maximum demands in the three cities are estimated at 30, 35, and 25 MW. The price per MW supplied from each plant to each city is:
@@ -238,9 +237,11 @@ A store produces three different products. The products are sent to three wareho
 During August, there is a 20% increase in demand for each city, which can be met by purchasing electricity from another network, at a high rate of $1000 per MW. However, the network is not unlimited.
 
 ```
+
 1. Formulate the problem as a transportation model. In Colab using latex.
 2. Solve the problem with Colab and determine an optimal distribution plan for the power company.
 3. Determine the cost of additional electricity purchased by each of the three cities.
+
 ```
 
 8. The ABC Company has three baby product manufacturing plants that must be distributed to four distribution centers. Plants 1, 2, and 3 produce 12, 17, and 11 shipments per month, respectively. The shipping costs for each plant to each distribution center are:
@@ -255,9 +256,11 @@ During August, there is a 20% increase in demand for each city, which can be met
 How much should be shipped to each distribution center to minimize the total shipping cost?
 
 ```
+
 1. Formulate the problem as a transportation model by preparing the appropriate parameter table.
 2. Draw the network representation of this problem.
 3. Get an optimal solution.
+
 ```
 
 9. Tom wants to buy exactly 3 liters of homemade beer today and at least 4 liters tomorrow. Dick wants to sell a maximum of 5 liters in total at a price of $3.00 per liter today and $2.70 per liter tomorrow.
@@ -265,9 +268,9 @@ How much should be shipped to each distribution center to minimize the total shi
 Tom wants to know how much he should buy from each to minimize his cost and still meet the minimum requirements to satisfy his thirst.
 
 ```
-   1. Formulate the theoretical and algebraic linear programming model.
-    2. Formulate this problem as a transportation problem by constructing the appropriate parameter table.
-    3. Get an optimal solution for this problem. \
+
+1. Formulate the theoretical and algebraic linear programming model. 2. Formulate this problem as a transportation problem by constructing the appropriate parameter table. 3. Get an optimal solution for this problem. \\
+
 ```
 
 10. Versatech Corporation will produce three new products. At this time, five of its plants have excess production capacity. The respective unit manufacturing cost for the first product at each plant is: \\
@@ -338,9 +341,11 @@ Distance from plants to suppliers:
 3. Do this exercise in Google Colab and model your answer.
 
 ```
+
 1. Find the optimal model that minimizes system cost.
 2. Balance the system based on supply.
 3. Do this exercise in Google Colab.
+
 ```
 
 #### Exercise number 6 from the book "Hamdy Taha - Operations Research Chapter 5"
@@ -363,3 +368,4 @@ Three cities are supplied with electricity from three power plants with capaciti
 3. Determine the cost of electricity purchased by each of the cities.
 
 ***
+```

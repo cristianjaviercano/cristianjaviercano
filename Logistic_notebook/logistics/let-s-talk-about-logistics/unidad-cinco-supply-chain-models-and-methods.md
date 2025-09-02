@@ -1,15 +1,18 @@
-md_doc = """
-# Unit Five: Supply Chain Models and Methods
+# Unit five: supply chain models and methods
+
+md\_doc = """
+
+## Unit Five: Supply Chain Models and Methods
 
 This unit covers various models and methods for managing supply chains, focusing on maximizing efficiency, reducing costs, and mitigating risks. We will learn how these tools help us make better decisions and strengthen our competitive advantages.
 
-### Fundamental Concept
+#### Fundamental Concept
 
 > Imagine the supply chain as a river flowing from the source (raw material suppliers) to the sea (final customer); the product travels through various channels. A supply chain model allows us to map and optimize this flow, identifying the best routes and minimizing obstacles.
 
 **Decision making is based on information collected throughout the supply chain, allowing us to select the best model and tools for each case.**
 
-#### Types of Supply Chain Models
+**Types of Supply Chain Models**
 
 There are several types of models, each with its own characteristics and applications:
 
@@ -18,54 +21,49 @@ There are several types of models, each with its own characteristics and applica
 3. Fast Models: Prioritize delivery speed and responsiveness to customer needs.
 4. Custom-Configured Models: Designed specifically for a particular company or industry.
 
-#### Tools for Building Logistics Chains
+**Tools for Building Logistics Chains**
 
 1. Simulation Software:
-   - AnyLogic: Offers great flexibility for modeling complex systems, including supply chains. Enables creating 3D models and conducting detailed simulations.
+   * AnyLogic: Offers great flexibility for modeling complex systems, including supply chains. Enables creating 3D models and conducting detailed simulations.
 2. Spreadsheets:
-   - Excel: While more basic, it can be useful for building simple models and performing sensitivity analyses.
+   * Excel: While more basic, it can be useful for building simple models and performing sensitivity analyses.
 3. Programming Languages:
-   - Python: With libraries like Pyomo and SimPy, you can create custom and complex models.
+   * Python: With libraries like Pyomo and SimPy, you can create custom and complex models.
 4. Optimization Software:
-   - CPLEX: Used to solve mathematical optimization problems, such as minimizing costs or maximizing profits.
+   * CPLEX: Used to solve mathematical optimization problems, such as minimizing costs or maximizing profits.
 
 **Steps for Building a Supply Chain Model:**
 
 1. Defining the Problem:
-   - Identify the model’s objective (reduce costs, improve customer service, etc.).
-   - Define key variables (demand, inventory, delivery time, etc.).
-   - Set system boundaries and constraints.
-
+   * Identify the model’s objective (reduce costs, improve customer service, etc.).
+   * Define key variables (demand, inventory, delivery time, etc.).
+   * Set system boundaries and constraints.
 2. Data Collection:
-   - Obtain historical data on demand, costs, cycle times, etc.
-   - Verify data quality and consistency.
-
+   * Obtain historical data on demand, costs, cycle times, etc.
+   * Verify data quality and consistency.
 3. Model Design:
-   - Select the appropriate modeling tool.
-   - Define the model structure (components, relationships, flows).
-   - Implement the model’s equations and logic.
-
+   * Select the appropriate modeling tool.
+   * Define the model structure (components, relationships, flows).
+   * Implement the model’s equations and logic.
 4. Model Validation:
-   - Compare model results with historical data.
-   - Adjust the model if necessary.
-
+   * Compare model results with historical data.
+   * Adjust the model if necessary.
 5. Analysis and Simulation:
-   - Run different scenarios to evaluate the impact of decisions.
-   - Identify bottlenecks and areas for improvement.
-
+   * Run different scenarios to evaluate the impact of decisions.
+   * Identify bottlenecks and areas for improvement.
 6. Implementation:
-   - Communicate model results to decision-makers.
-   - Develop an implementation plan for recommended changes.
+   * Communicate model results to decision-makers.
+   * Develop an implementation plan for recommended changes.
 
-### Building a Supply Chain Using Python
+#### Building a Supply Chain Using Python
 
 We will use Python as a platform to measure a supply chain using the _simpy_ library.
 
-# Unit Six: Design and Measurement of the Logistics Chain
+## Unit Six: Design and Measurement of the Logistics Chain
 
 `Supply Chain Optimization Design and Management_ Advances and Intelligent Methods Premier Reference Source`
 
----
+***
 
 A wide range of methodologies have been used to solve this optimization problem. However, traditional mathematical methods have proven insufficient to address the complexity and uncertainty of modern supply chains. For this reason, advanced intelligent methods are currently used, such as:
 
@@ -77,7 +75,7 @@ A wide range of methodologies have been used to solve this optimization problem.
 6. Artificial Immune Systems
 7. DNA Computing
 
-### Definitions
+#### Definitions
 
 To clarify the basic concepts of supply chain management, it’s helpful to present the main functions of a simplified supply chain (Silva et al.):
 
@@ -85,28 +83,27 @@ To clarify the basic concepts of supply chain management, it’s helpful to pres
 2. **Supply System:** Consists of a network of different suppliers or manufacturers, each responsible for producing the requested product component for the logistics system.
 3. **Distribution System:** Delivers complete products to the corresponding customers, who can be described by their geographic location. A simple, realistic model for logistics distribution considers grouping customers by region.
 
-### Supply Chain Measurement Approach with Aggregate Production Planning
+#### Supply Chain Measurement Approach with Aggregate Production Planning
 
-*The literature on production planning and control is full of models and algorithms to find efficient plans for most types of industries. In this chapter, we focus on those designed for robust and efficient aggregate production planning.*
+_The literature on production planning and control is full of models and algorithms to find efficient plans for most types of industries. In this chapter, we focus on those designed for robust and efficient aggregate production planning._
 
 A particularly effective technique for obtaining robust and efficient production plans is based on the decomposition principle, also known as “divide and conquer.”
 
 To find the optimal plan over a time horizon, time itself is decomposed into two or more levels of granularity, forming a hierarchy:
 
-- At the aggregate level, a period may comprise a month or a quarter, and the aggregate production planning problem is to decide what to produce for a series of products or product families.
+* At the aggregate level, a period may comprise a month or a quarter, and the aggregate production planning problem is to decide what to produce for a series of products or product families.
 
 These production plans are especially useful for staffing decisions, including possible overtime the company should use in an aggregate period.
 
 We begin our discussion of aggregate production planning with the simplest possible example.
 
 1. Consider a monthly demand forecast $$d_i, \ i=1 ... N$$ for N periods, for an imaginary company that produces a single product. The problem is to build inventory to meet demand, considering:
-
-   - Maintenance
-   - Inventory
-   - Opportunity costs
-   - Risk of inventory obsolescence
-   - Risk of inventory damage due to natural disasters
-   - Other types
+   * Maintenance
+   * Inventory
+   * Opportunity costs
+   * Risk of inventory obsolescence
+   * Risk of inventory damage due to natural disasters
+   * Other types
 
 If capacity constraints are not considered, the optimal policy is to produce everything just-in-time (JIT), as there is enough capacity to meet demand when needed.
 
@@ -116,14 +113,15 @@ $$
 
 The decision variables x represent the production in each period, while h represent the inventory at the end of each period. Initially, we assume an initial accumulation of inventory.
 
-### Special Models
+#### Special Models
 
-#### Interactive EOQ Model
+**Interactive EOQ Model**
 
 ```python
 !pip install ipywidgets
 !pip install matplotlib
 ```
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -215,7 +213,7 @@ For S = 11.0, EOQ: 2.696799449852968
 For S = 12.0, EOQ: 2.581988897471611
 ```
 
-### Interactive POQ Model - Python
+#### Interactive POQ Model - Python
 
 ```
 import ipywidgets as widgets
@@ -260,7 +258,7 @@ widgets.interact(update_graph,
                  production_rate=production_rate_widget);
 ```
 
-### Random Route Assignment Model
+#### Random Route Assignment Model
 
 ```
 import random
@@ -312,6 +310,5 @@ Enter the number of nodes: 10
 ```
 
 """
-
 
 You can copy and paste this string directly into your Python script or notebook. If you want this pushed to your repository, just let me know!

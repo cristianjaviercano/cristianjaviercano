@@ -1,4 +1,4 @@
-# Unit Four: Location Models
+# Unit Four: Localization Models
 
 ### Definition of Location Models
 
@@ -110,8 +110,8 @@ The graphic plant location method is a technique used to select the optimal loca
 **Graphic Model**
 
 | City       | Fixed Costs (M) | Variable Costs |
-| ---------- | -------------- | -------------- |
-| New York   | 150,000,000    | 777,130        |
-| Washington | 230,000,000    | 798,090        |
-| Bogotá     | 180,000,000    | 573,000        |
-| Quito      | 130,000,000    | 630,270        |
+| ---------- | --------------- | -------------- |
+| New York   | 150,000,000     | 777,130        |
+| Washington | 230,000,000     | 798,090        |
+| Bogotá     | 180,000,000     | 573,000        |
+| Quito      | 130,000,000     | 630,270        |

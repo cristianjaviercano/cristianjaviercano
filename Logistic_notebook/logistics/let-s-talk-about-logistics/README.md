@@ -5,7 +5,7 @@ cover: >-
 coverY: 0
 ---
 
-# Let´s Talk about Logistics!
+# Unit two: Let´s Talk about Logistics in Engineering!
 
 ### ![](../../.gitbook/assets/CRCwh.png)
 

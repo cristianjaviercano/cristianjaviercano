@@ -52,7 +52,7 @@ The objective can be:
 
 ***
 
-### ROUTE DESIGN USING PYTHON.[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
+### ROUTE DESIGN USING PYTHON.[#](broken-reference/)
 
 There are numerous libraries and algorithms available that simplify the route design process in Python. These tools are used to optimize and plan efficient routes in various applications, such as vehicle fleet management, freight delivery, trip planning, and many others.
 
@@ -109,7 +109,7 @@ print(v.name, "=", v.varValue)
 print("Total cost =", pulp.value(prob.objective))
 ```
 
-#### Network Analysis Using NetworkX[#](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
+#### Network Analysis Using NetworkX[#](broken-reference/)
 
 **NetworkX** is a powerful and versatile Python library used for the creation, manipulation, and analysis of complex networks. Designed to facilitate the process of modeling graph structures, NetworkX finds applications in numerous fields such as network science, computational biology, engineering, social sciences, among others.
 
@@ -119,7 +119,7 @@ Another notable feature is its ability to calculate various centrality metrics, 
 
 NetworkX's intuitive design and extensive documentation make it ideal for both researchers and practitioners looking to efficiently perform complex network analysis. Additionally, its compatibility with other Python libraries, such as Pandas and Matplotlib, enables seamless integration into broader data science workflows.
 
-**Main Features:**[**#**](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
+**Main Features:**[**#**](broken-reference/)
 
 1. Graph Creation and Manipulation: Supports various graph types (directed, undirected, multigraphs) and allows adding nodes and edges with attributes.
 2. Network Analysis: Provides a wide range of graph theory algorithms for performing structural analysis, such as calculating centralities (degree, betweenness, closeness), detecting connected components, shortest paths, community detection, etc.
@@ -191,7 +191,7 @@ TABLE 2
 * Non-negativity constraints: $\\(x\_{ij} \geq 0\ ∀\ i = 1, 2, 3\ and\ j = 1, 2\\)$
 * _Also, the decision variables must be integers, since fractions of cars cannot be transported._
 
-**Solving with Python and the PuLp library:**[**#**](../../../../logistics/let-s-talk-about-logistics/unidad-tres-modelos-de-transporte/diseno-de-rutas-con-python/broken-reference/)
+**Solving with Python and the PuLp library:**[**#**](broken-reference/)
 
 ```python
 import pulp

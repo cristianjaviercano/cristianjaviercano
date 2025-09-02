@@ -40,7 +40,7 @@ Differentiate yourself from the competition through exceptional service
 {% endtab %}
 {% endtabs %}
 
-### How is customer satisfaction measured in a company?[#](../../../logistics/let-s-talk-about-logistics/customer-service-the-heart-of-the-logistics-management/broken-reference/)
+### How is customer satisfaction measured in a company?[#](broken-reference/)
 
 Methods for measuring customer satisfaction:
 

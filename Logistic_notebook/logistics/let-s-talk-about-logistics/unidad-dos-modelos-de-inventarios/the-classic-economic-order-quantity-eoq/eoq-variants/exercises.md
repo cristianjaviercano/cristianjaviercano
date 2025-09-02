@@ -50,4 +50,4 @@ Exercise 5.3: Tech Component Supplier (Complex Scenario) A supplier of electroni
 
 ***
 
-{% file src="../../../../.gitbook/assets/Taller uno_inventario.docx" %}
+{% file src="../../../../../.gitbook/assets/Taller uno_inventario.docx" %}

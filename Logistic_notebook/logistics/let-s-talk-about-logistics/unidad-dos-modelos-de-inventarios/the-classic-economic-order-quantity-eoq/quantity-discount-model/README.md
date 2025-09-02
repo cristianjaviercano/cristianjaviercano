@@ -2,7 +2,7 @@
 icon: sack-dollar
 ---
 
-# Quantity Discount Model
+# Quantity discount Model
 
 ### Quantity Discount Model in EOQ
 
@@ -46,7 +46,6 @@ Suppose you have the following information:
 * Holding cost per unit (H): $2
 * Price per unit without discount: $100
 * Quantity discount:
-
 * 100-199 units: $95 per unit
 * 200+ units: $90 per unit
 
@@ -60,7 +59,6 @@ $$
 * **100-199 units: ($95 per unit):**
 * Check if the EOQ falls within this range. We calculate total costs for various quantities and identify the minimum.
 * **200+ units: ($90 per unit):**
-
 * Recalculate the applicable EOQ and estimate total costs.
 
 Finally, select the order quantity that results in the lowest total cost, considering discounted prices.
