@@ -42,6 +42,8 @@ The choice of materials is critical to achieving the goals of protection and eff
 * Sealing (Tape): High-quality, pressure-sensitive plastic tape is essential to ensure the box remains securely closed during transit.
 * Cushioning: Materials like bubble wrap are used to wrap individual items for shock absorption.
 
+<figure><img src="https://media.licdn.com/dms/image/v2/C4E12AQFnnekggv07zQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1625608479041?e=1759968000&#x26;v=beta&#x26;t=5feHHEk4h5f9qfbsVdG_j9j3VUrVWbSphe485gvUkyg" alt=""><figcaption></figcaption></figure>
+
 ### Mathematical Model: Calculating Dimensional Weight
 
 Carriers charge for the space a package occupies on their vehicles, not just its actual weight. This concept is called Dimensional (DIM) Weight or volumetric weight. The billable weight is the greater of the actual weight and the DIM weight.
