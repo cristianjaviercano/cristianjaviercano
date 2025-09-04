@@ -44,6 +44,8 @@ The choice of materials is critical to achieving the goals of protection and eff
 
 <figure><img src="https://media.licdn.com/dms/image/v2/C4E12AQFnnekggv07zQ/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1625608479041?e=1759968000&#x26;v=beta&#x26;t=5feHHEk4h5f9qfbsVdG_j9j3VUrVWbSphe485gvUkyg" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="https://media.licdn.com/dms/image/v2/C4E12AQHGHwflDoIpNA/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1625682076759?e=1759968000&#x26;v=beta&#x26;t=DNJhXxOqNQT_A9j-eQL8cS7sM_tyUjHcyIkGi_bbt60" alt=""><figcaption></figcaption></figure>
+
 ### Mathematical Model: Calculating Dimensional Weight
 
 Carriers charge for the space a package occupies on their vehicles, not just its actual weight. This concept is called Dimensional (DIM) Weight or volumetric weight. The billable weight is the greater of the actual weight and the DIM weight.
