@@ -5,7 +5,7 @@ description: >-
   ensures product safety, cost-efficiency, and
 ---
 
-# Session 4: Shipment Preparation
+# Session 4: Shipment Preparation - Added Services -Labeling, Documentation, and Staging
 
 ***
 
@@ -106,6 +106,10 @@ Value-Added Services (VAS) can be performed at the packing station to enhance th
 
 ### Competency 8: Labeling, Documentation, and Staging 🏷️
 
+{% hint style="info" %}
+Labeling is an essential part of the logistics process, serving as a communication tool between different stages of the supply chain. It provides vital information about a product such as its contents, origin, destination, handling instructions, and more
+{% endhint %}
+
 Once a package is sealed, it must be correctly labeled, documented, and sorted for carrier pickup. Errors in this stage can lead to lost packages, delivery delays, and customer dissatisfaction.
 
 ### Objectives
@@ -131,6 +135,8 @@ The shipping label is the package's passport. It contains all the information th
 * MaxiCode (UPS): A specialized 2D barcode that is easily scannable on a fast-moving conveyor belt.
 
 <img src="../../../.gitbook/assets/file.excalidraw (20).svg" alt="" class="gitbook-drawing">
+
+<figure><img src="https://www.gs1.org/sites/default/files/htmlstandards/3473/images/image017.png" alt=""><figcaption></figcaption></figure>
 
 ## Improved: Anatomy of a Modern Shipping Label
 
@@ -184,6 +190,8 @@ This is the most complex and technologically significant part of the label, enab
 Exportar a Hojas de cálculo
 
 ***
+
+<figure><img src="https://qlmcambodia.com/wp-content/uploads/2020/06/2020_05-logistics-transport-labels-02-1.webp" alt=""><figcaption></figcaption></figure>
 
 #### Best Practices for Shipping Labels
 
