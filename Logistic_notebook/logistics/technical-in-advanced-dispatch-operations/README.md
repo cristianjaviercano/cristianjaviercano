@@ -67,7 +67,7 @@ Competency 8: Labeling, Documentation, and Staging
 
 <details>
 
-<summary><strong>Session 5: Transportation and Carrier Management</strong></summary>
+<summary><a href="../../logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-5-transportation-and-carrier-management.md"><strong>Session 5: Transportation and Carrier Management</strong></a></summary>
 
 Competency 9: Carrier Selection and Relations
 
@@ -77,7 +77,7 @@ Competency 10: Vehicle Loading and Route Planning
 
 <details>
 
-<summary><strong>Session 6: Execution and In-Transit Management</strong></summary>
+<summary><a href="../../logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-6-execution-and-in-transit-management.md"><strong>Session 6: Execution and In-Transit Management</strong></a></summary>
 
 Competency 11: The Dispatch Event and Manifesting
 
@@ -87,7 +87,7 @@ Competency 12: Shipment Tracking and Event Management
 
 <details>
 
-<summary><strong>Session 7: Post-Delivery and Continuous Improvement</strong></summary>
+<summary><a href="../../logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-7-post-delivery-and-continuous-improvement.md"><strong>Session 7: Post-Delivery and Continuous Improvement</strong></a></summary>
 
 Competency 13: Handling Returns (Reverse Logistics)
 
@@ -97,7 +97,7 @@ Competency 14: Data Collection for Performance Analysis
 
 <details>
 
-<summary>Session 8: Performance Management and Final Project</summary>
+<summary><a href="../../logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-8-performance-management-and-final-project.md">Session 8: Performance Management and Final Project</a></summary>
 
 Competency 15: Key Performance Indicators (KPIs) for Dispatch
 
