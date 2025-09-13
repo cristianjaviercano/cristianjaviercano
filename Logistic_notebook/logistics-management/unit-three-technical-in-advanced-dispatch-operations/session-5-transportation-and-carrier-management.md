@@ -235,3 +235,18 @@ The environment in which routing decisions are made can be broadly categorized a
 *   **Route Planning Principles**: Involves strategically organizing transport to **reduce costs and improve responsiveness** [15]. Network design options like **direct shipments, consolidation centers, and milk runs** are chosen based on shipment characteristics and strategic goals, often involving trade-offs between cost and speed [17, 19, 20, 23].
 *   **The Vehicle Routing Problem (VRP)**: A foundational **NP-hard optimization model** for efficient delivery routes, originating from the "Truck Dispatching Problem" [26-29]. Its core objective is to minimize total travel costs while satisfying customer demands and vehicle capacities within a network of depots and customers [28, 30, 33].
 *   **Static vs. Dynamic Routing**: Route planning can be **static** (pre-planned based on fixed data) or **dynamic** (adapting to real-time changes) [54, 57]. Dynamic routing, often a feature of **Rich VRPs**, is essential for modern "smart delivery systems" to respond to evolving conditions, leveraging advanced IT and machine learning to optimize routes in motion [59-61].
+
+---
+
+*   ## bibliography
+
+
+•  Chalkia, E., Grau, J.M.S., Bekiaris, E., Ayfandopoulou, G., Ferarini, C., & Mitsakis, E. (2016). Bus routing safety for the transportation of children to school. CONAT 2016 International Congress of Automotive and Transport Engineering, Brasov, Romania. También se hace referencia a otros trabajos de Chen, C., Zhang, D., Li, N., Zhou, Z.H. (2014) y Chen, J., Liu, Z., Zhu, S., Wang, W. (2015) en smart-delivery-systems-solving-complex-vehicle-routing-problems_compress.pdf, incluyendo la "Tabla 1.1 Literatura revisada sobre el problema de rutas de autobuses escolares según los objetivos".
+•  Chopra, S., & Meindl, P. (2008). Administracion de la cadena de suministro, Estrategia, Planeacion y Operacion (Tercera edición). Pearson Educación de México, S.A. de C.V.
+•  miguel. (n.d.). FT-GA-008 Guía de Aprendizaje Despachar La Mercancia Segun Normativa de Cargue y Solicitud de Pedido. Scribd.
+•  Marco, Elizabeth. (n.d.). Guía de Acondicionamiento y Embalaje. Exportemos.pe.
+•  SEAS, Estudios Superiores Abiertos S.A.U. (n.d.). Las principales funciones de un técnico en logística. Recuperado de https://www.seas.es/blog/logistica/las-principales-funciones-de-un-tecnico-en-logistica/
+•  Superintendencia de Transporte. (2022). Proceso Gestión Documental Procedimiento de Envío de Correspondencia Física.
+•  Nomadia. (n.d.). Selección y Preparación de Pedidos: Pasos y Optimización. Recuperado de https://nomadia.com/es/blog/seleccion-preparacion-pedidos/
+•  [Autor/Fuente no especificado en el fragmento]. (n.d.). estructura curso despacho_tecnicolabroal.
+•  Wallen, G. (2008). logistics-amp-supply-chain-management-fifth-edition-9781292083797-1292083794-9781292083810-1292083816-9781292083827-1292083824_compress.pdf. Pearson Education Limited.
