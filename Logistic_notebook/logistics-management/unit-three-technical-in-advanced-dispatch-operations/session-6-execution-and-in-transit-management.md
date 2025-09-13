@@ -106,8 +106,6 @@ Confirming the departure of a vehicle is a critical step that officially closes 
 # Competency 12: Shipment Tracking and Event Management
 
 ---
-
-## 1. Title
 # Competency 12: Shipment Tracking and Event Management
 
 ---
