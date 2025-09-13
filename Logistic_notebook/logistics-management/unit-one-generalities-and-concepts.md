@@ -16,7 +16,7 @@ Logistics and supply chain management play a crucial role in today's business wo
 
 Logistics is defined as the part of the supply chain process that plans, implements, and controls the efficient and effective flow and storage of goods and services, along with related information, from the point of origin to the point of consumption, to meet customer requirements
 
-<img src="../../.gitbook/assets/file.excalidraw (21).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (21).svg" alt="" class="gitbook-drawing">
 
 SCM is seen as the systematic and strategic coordination of traditional business functions and tactics across these functions within a company and among all participating companies in the supply chain, aiming to improve long-term performance for individual firms and the chain as a whole. Some experts distinguish between SCM and logistics, while others use the terms interchangeably, but for practical purposes, the sources often refer to integrated business logistics management and SCM interchangeably, focusing on managing product and service flows efficiently and effectively
 
@@ -46,7 +46,7 @@ Successful SCM requires decisions related to the flow of information, products, 
 * **Planning Phase:** Medium-term decisions (quarterly to annually) where the supply chain configuration is fixed, and the goal is to maximize the supply chain surplus within those constraints. This includes production plans, outsourcing, inventory policies, and marketing promotions, incorporating demand, exchange rate, and competition uncertainty.&#x20;
 * **Operational Phase:** Short-term decisions (weekly or daily) focused on managing incoming customer orders as effectively as possible, given the fixed configuration and defined planning policies. This involves allocating inventory or production to specific orders, scheduling deliveries, and generating picking lists.
 
-<img src="../../.gitbook/assets/file.excalidraw (22).svg" alt="" class="gitbook-drawing">
+<img src="../.gitbook/assets/file.excalidraw (22).svg" alt="" class="gitbook-drawing">
 
 ### Key Directives (Drivers) of Supply Chain Performance
 

@@ -16,8 +16,7 @@
 
 ## Logistics Management
 
-* [Unit one: Generalities and Concepts](logistics-management/unit-one-generalities-and-concepts/README.md)
-  * [Page 1](logistics-management/unit-one-generalities-and-concepts/page-1.md)
+* [Unit one: Generalities and Concepts](logistics-management/unit-one-generalities-and-concepts.md)
 * [Unit two: Let´s Talk about Logistics in Engineering!](logistics/let-s-talk-about-logistics/README.md)
   * [Logistics Notebook](logistics/let-s-talk-about-logistics/el-cuaderno-de-logistica.md)
   * [Unit Zero: Introduction to Logistics Systems](logistics/let-s-talk-about-logistics/unidad-cero-componentes-tipicos-de-la-logistica.md)
@@ -53,6 +52,10 @@
     * [Task Session 3](logistics/technical-in-advanced-dispatch-operations/session-3-warehouse-operations-picking-and-packing./task-session-3.md)
   * [Session 4: Shipment Preparation - Added Services -Labeling, Documentation, and Staging](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-4-shipment-preparation-added-services-labeling-documentation-and-staging/README.md)
     * [Task session 4](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-4-shipment-preparation-added-services-labeling-documentation-and-staging/task-session-4.md)
+  * [Session 5: Transportation and Carrier Management](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-5-transportation-and-carrier-management.md)
+  * [Session 6: Execution and In-Transit Management](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-6-execution-and-in-transit-management.md)
+  * [Session 7: Post-Delivery and Continuous Improvement](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-7-post-delivery-and-continuous-improvement.md)
+  * [Session 8: Performance Management and Final Project](logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-8-performance-management-and-final-project.md)
 
 ## Discrete event Simulation
 

@@ -27,7 +27,7 @@ Concepts such as queuing theory for order processing or optimization algorithms 
 
 <details>
 
-<summary>Session 1: Foundations of Dispatch Management</summary>
+<summary><a href="session-1-foundations-of-dispatch-management-and-dispatch-information-systems-dis/">Session 1: Foundations of Dispatch Management</a></summary>
 
 Competency 1: The Role of Dispatch in the Logistics Value Chain
 
@@ -37,7 +37,7 @@ Competency 2: Dispatch Information Systems (DIS)
 
 <details>
 
-<summary><strong>Session 2: Order Reception and Processing</strong></summary>
+<summary><a href="session-2-order-reception-and-processing-prioritization-and-batching/"><strong>Session 2: Order Reception and Processing</strong></a></summary>
 
 Competency 3: Order Ingestion and Validation
 
@@ -47,7 +47,7 @@ Competency 4: Order Prioritization and Batching
 
 <details>
 
-<summary><strong>Session 3: Warehouse Operations - Picking and Packing</strong></summary>
+<summary><a href="session-3-warehouse-operations-picking-and-packing./"><strong>Session 3: Warehouse Operations - Picking and Packing</strong></a></summary>
 
 Competency 5: Inventory and Warehouse Layout
 
@@ -57,7 +57,7 @@ Competency 6: Picking Strategies and Optimization
 
 <details>
 
-<summary><strong>Session 4: Shipment Preparation</strong></summary>
+<summary><a href="../../logistics-management/unit-three-technical-in-advanced-dispatch-operations/session-4-shipment-preparation-added-services-labeling-documentation-and-staging/"><strong>Session 4: Shipment Preparation</strong></a></summary>
 
 Competency 7: Packing and Value-Added Services
 
