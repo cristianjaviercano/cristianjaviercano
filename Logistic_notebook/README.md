@@ -25,7 +25,9 @@ Thank you for taking the time to explore this space. I hope you find it as enric
 
 I'll be waiting for you on my Instagram page to share information. You can follow me [Here](https://www.instagram.com/tu_usuario)
 
-
+```
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+```
 
 <figure><img src=".gitbook/assets/CRclogo2.png" alt="" width="188"><figcaption><p>Msc Cristian J cano M</p></figcaption></figure>
 
