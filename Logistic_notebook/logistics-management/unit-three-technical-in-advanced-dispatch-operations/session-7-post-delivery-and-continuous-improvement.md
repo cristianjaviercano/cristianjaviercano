@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Session 7: Post-Delivery and Continuous Improvement
 
 ## Session 7: Post-Delivery and Continuous Improvement

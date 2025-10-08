@@ -7,9 +7,87 @@ hidden: true
 icon: coin-blank
 ---
 
-# Discrete Event Simulation
+# Three Methods in Simulation modeling
 
-**Discrete-event simulation (DES)** is an approach used to model dynamic systems that evolve through a series of events occurring at discrete and irregular points in time.
+we mean a general framework for mapping a real-world system to its model. A method suggests a type of language, or "terms and conditions" for model building. To date, there exist three methods:
+
+1. System Dynamics
+2. Discrete Event Modeling
+3. Agent-Based Modeling
+
+The choice of method should be based on the system being modeled and the purpose of the modeling – though often it is most heavily influenced by the background or available tool set of the modeler.
+
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+
+## **System Dynamics**
+
+This Method was created at mid 1950´s by MIT professor Jay Forrester, whose original background was in science and enginnering, by encoraging the law of physics, particulary the electric circuits laws to investigate and explore the dynamis of economy enviroments, thes social.
+
+### it suggest:
+
+{% hint style="danger" %}
+System dynamics is a method of studying dynamic systems. It suggests that you should:
+{% endhint %}
+
+1. Take an endogenous point of view. Model the system as a causally closed structure that itself defines its behavior.
+2. Discover the feedback loops (circular causality) in the system. Feedback loops are the heart of system dynamics.
+3. Identify stocks (accumulations) and the flows that affect them. Stocks are the memory of the system, and sources of disequilibrium.
+4. See things from a certain perspective. Consider individual events and decisions as "surface phenomena that ride on an underlying tide of system structure and behavior.” Take a continuous view where events and decisions are blurred.
+
+We will start with identifying the key variables in our model, and will iteratively draw causal loop diagrams. In a causal loop diagram, variables are connected by arrows showing the causal influences among them, with important feedback loops explicitly identified. Causal loop diagrams are good for quickly capturing your hypotheses about the causes of the dynamics in the system, and communicating it to others (Sterman, 2000).&#x20;
+
+an example system like a selling company, one of the variables is obviously "sales"&#x20;
+
+1. people per hour byuing the items
+2. number of potencial clients
+3. size of the market&#x20;
+4. so on...
+
+¿what does determinate a sales rate?, consumers are sensitive to some sort of motivation?
+
+we can recognize variables thar are influenced or measured into the system, for example&#x20;
+
+* B: mouth to mouth Word for sales. this gues in function of the "happy" clientes
+
+&#x20;
+
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+Now We add some "Sales AD difussion" to our system in order to increase the sales rate:
+
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+Finally we can describe the system behavior acoording tho the dynamic of the influence of the enviroment that we are considering into the simulation system, so in this case our  Sytem dynamics model of sales of a product will be like.
+
+<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+
+now in this case we can provide new information, and also, mathematic notation to the simulation process, so we can start to measure the behavior and the relations betwen the system´s actors.
+
+$$
+Sales = \text{Sales From Adds} + \text{Sales From Mouth to mouth}
+$$
+
+$$
+\text{Sales From Ad} = \text{Potential clients}\ .\ \text{ad Effectiveness}
+$$
+
+$$
+ContactRate . \frac{PotentianClients}{Potencitial clients + Clients} . SalesFraction
+$$
+
+**Once we define the mathematical model and it behavior we are ready to simulate, but, if tye model need to be equalized, re parametrized or re-measure the model is always ready to be CALIBRATED**
+
+<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+
+#### **Abtraction level:**
+
+System dynamics suggests a very high abstraction level and is positioned as a strategic modeling methodology. In the models of social dynamics, epidemics, or consumer choice, individual people never appear as well as individual product items, jobs, or houses – they are aggregated into stocks (compartments) and sometimes segmented into gender, education, income level, etc. (You have probably noticed non-integer values such as 10.674 people or 0.24 cars in system dynamics models during runtime.) Similarly, individual events like a purchase decision, leaving a job, or recovery from a disease, are not considered – they are aggregated in flows.
+
+Although the language of system dynamics is very simple, if not primitive, compared to other methods, thinking in its terms and on its level of abstraction is a real art. System dynamics models are inevitably full of notions that do not have direct material or measurable equivalents in the real world – for example, morale, awareness, knowledge, and the impact of advertising. The choice of those notions, and drawing the corresponding feedback structures, is not, in many cases, as straightforward task as the design of a process flowchart or an agent behavior.
+
+## **Discrete-event simulation (DES)**&#x20;
+
+is an approach used to model dynamic systems that evolve through a series of events occurring at discrete and irregular points in time.
 
 {% hint style="success" %}
 Unlike a continuous process, changes in the system's state only occur at these specific moments when an event takes place, such as a customer's arrival or the completion of a service.

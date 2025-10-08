@@ -111,6 +111,14 @@ The simulation process involves more than just "running a program." It starts wi
 
 The development of a simulation model is as much an **art as it is a science**. It involves making crucial decisions about what to include and what to omit—a process guided by the study's objectives and the nature of the system being modeled.
 
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+In modern simulation modelig there are three methos, encoraging the abtraction levels.
+
+1. System dinamics that operates at High Abstraction Levels and it is used for STRATEGIC modeling
+2. Discrete Event Modeling: with the proces centric modeling feature, it support medium and low abstract level
+3. Agent - Based Modeling can vary from very detailed sistem from phisical objecte to high abstract where agents are competing for resources&#x20;
+
 <details>
 
 <summary>Abstraction of the Model</summary>
@@ -265,7 +273,15 @@ Summarizing the previous information, we can define that while simulation models
 | Dinamic               | Relevant     | Deterministic | Discrete        | Fixed production plan with scheduled arrivals       | (Can be analytical or simple SED)      |
 | Dinamic               | Relevant     | Stocástic     | Discrete        | Queuing system, faulty production line              | Discrete Event Simulation (DES)        |
 
-### Simulation in Operations Research studies
+***
+
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
+
+
+
+
+## Simulation in Operations Research studies
 
 Simulation plays the same role in many studies as IoT, but while IoT seeks optimization or finding a solution, simulation seeks to describe the environment or system in order to understand its behavior and predict or find those faults or elements that add value to timely decisions.
 

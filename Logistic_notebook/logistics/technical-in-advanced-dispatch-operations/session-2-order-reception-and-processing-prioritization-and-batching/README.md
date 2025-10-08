@@ -30,7 +30,7 @@ EDI plays a pivotal role in supply chain management, logistics, and finance. By 
 * **Strengthen trading partner relationships:** Reliable and efficient communication builds trust and facilitates collaboration.
 * **Increase visibility:** Real-time data exchange provides better insight into inventory levels, order status, and shipping information.
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
 
 While EDI requires an initial investment in software and integration, the long-term benefits in terms of cost savings, increased efficiency, and improved business processes make it an indispensable tool for many B2B interactions. It continues to be a cornerstone of e-commerce and inter-organizational communication in various industries, from retail and manufacturing to healthcare and transportation.
 
@@ -71,7 +71,7 @@ Data validation is the systematic process of ensuring that incoming order data i
 * **Inventory Availability:** Checking if there is sufficient on-hand stock to fulfill the order.
 * **Payment and Pricing:** Validating that the item prices are correct and that payment has been successfully authorized by the financial processor.
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 > **Researcher's Comment:** Failure to validate data at the point of entry does not resolve the underlying issue. It merely shifts the cost of correction to a later, more expensive point in the supply chain, such as handling a mis-picked item or managing a returned shipment due to an invalid address.
 
@@ -84,7 +84,7 @@ An exception is any order that fails one or more validation checks. A well-desig
 * **Automated Customer Communication:** For specific issues like an ambiguous address, the system can trigger an automated email or SMS to the customer, requesting clarification.
 * **Rejection and Notification:** For critical failures, such as payment failure or an order for a permanently discontinued item, the order can be automatically rejected and canceled, with a clear notification sent to the customer.
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="warning" %}
 _The objective is not to eliminate exceptions entirely but to manage their resolution efficiently. Establishing clear Service Level Agreements (SLAs) for the exception queue (e.g., "all exceptions must be addressed within 2 hours") is a critical performance metric._
@@ -107,7 +107,7 @@ Once customer orders have been successfully validated, a critical next step in w
   * **Geographic Destination:** In some cases, organizing by delivery route or region can reduce transportation costs and time.
   * **Product Type:** Orders containing specific product types (e.g., hazardous materials, temperature-sensitive items) might require specialized handling and therefore a different sequence.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Order Grouping (Batching):** This strategy involves combining multiple individual orders into larger batches for simultaneous processing. The primary goals of grouping are to:
   * **Optimize Picking Paths:** By grouping orders that share common items or are located in close proximity within the warehouse, pickers can reduce travel time and maximize efficiency. This often involves algorithms that calculate the shortest or most efficient routes.
@@ -116,7 +116,7 @@ Once customer orders have been successfully validated, a critical next step in w
   * **Improve Throughput:** By processing multiple orders concurrently, the overall throughput of the warehouse can be significantly increased.
   * **Facilitate Wave Picking:** Orders can be released in "waves," where each wave represents a specific set of orders to be fulfilled within a certain timeframe, often aligned with shipping schedules.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 The logic employed for both sequencing and grouping typically leverages sophisticated Warehouse Management Systems (WMS) or Enterprise Resource Planning (ERP) software. These systems use algorithms that consider various parameters, including real-time inventory levels, labor availability, equipment status, and transportation schedules, to make dynamic decisions that optimize warehouse operations. The ultimate aim is to minimize labor costs, reduce order cycle times, improve order accuracy, and enhance overall customer satisfaction by ensuring timely and efficient delivery.
 
@@ -129,7 +129,7 @@ Consider a logistics operation where a multitude of customer orders are received
 \
 
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 The application of queuing theory here allows for a detailed examination of several critical aspects:
 
@@ -141,7 +141,7 @@ The application of queuing theory here allows for a detailed examination of seve
 
 By applying queuing theory, logistics managers can:
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 * **Optimize Resource Allocation:** Determine the optimal number of pickers or picking stations needed to handle projected order volumes without excessive waiting times or idle resources.
 * **Identify Bottlenecks:** Pinpoint specific stages in the picking process that are causing delays and acting as constraints.
@@ -157,7 +157,7 @@ Ultimately, queuing theory provides a quantitative approach to understanding, pr
 * Last-In, First-Out (LIFO): The most recent orders are processed first. This discipline is rarely applicable in order fulfillment as it can lead to unacceptable delays for older orders.
 * Priority Queues: Each order is assigned a priority value based on business rules. The queue is then sorted by this priority level. Within the same priority level, FIFO is typically applied.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 > Researcher's Comment: While simple, a pure FIFO discipline is often suboptimal. It can result in a high-priority express order being delayed behind several standard, low-priority orders, thus jeopardizing its SLA. This makes priority queuing a practical necessity in most modern fulfillment operations.
 
