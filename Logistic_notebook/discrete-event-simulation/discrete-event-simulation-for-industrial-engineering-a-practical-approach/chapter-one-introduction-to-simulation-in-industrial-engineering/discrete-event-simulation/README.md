@@ -3,7 +3,6 @@ description: >-
   is a dynamic, typically stochastic, and computational modeling technique used
   to represent systems where changes in state occur only at specific, distinct
   points in time, known as events.
-hidden: true
 icon: coin-blank
 ---
 
@@ -17,7 +16,7 @@ we mean a general framework for mapping a real-world system to its model. A meth
 
 The choice of method should be based on the system being modeled and the purpose of the modeling – though often it is most heavily influenced by the background or available tool set of the modeler.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ## **System Dynamics**
 
@@ -51,15 +50,15 @@ we can recognize variables thar are influenced or measured into the system, for 
 
 &#x20;
 
-<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Now We add some "Sales AD difussion" to our system in order to increase the sales rate:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Finally we can describe the system behavior acoording tho the dynamic of the influence of the enviroment that we are considering into the simulation system, so in this case our  Sytem dynamics model of sales of a product will be like.
 
-<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 now in this case we can provide new information, and also, mathematic notation to the simulation process, so we can start to measure the behavior and the relations betwen the system´s actors.
 
@@ -77,7 +76,7 @@ $$
 
 **Once we define the mathematical model and it behavior we are ready to simulate, but, if tye model need to be equalized, re parametrized or re-measure the model is always ready to be CALIBRATED**
 
-<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 #### **Abtraction level:**
 
@@ -109,7 +108,7 @@ The operations include _delays_, _service_ by various _resources_, choosing the 
 
 The model is specified graphically as a process flowchart, where blocks represent operations (there are textual languages as well, but they are in the minority). The flowchart usually begins with "source" blocks that generate entities and inject them into the process, and ends with "sink" blocks that remove entities from the model.
 
-<figure><img src="../../../.gitbook/assets/Callcenter004.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Callcenter004.png" alt=""><figcaption></figcaption></figure>
 
 in **Anylogic the item that reffer to the system specify the behavior of the model,** the _entitites_ that are flowing  through the process flowchart are called. "Agents", and  some cases this ones have it´s own behavior.
 
@@ -177,9 +176,9 @@ The basic model is built using the Process-Centric Modeling (DCM) methodology, w
 2. recreates the layout
 3. generate the basic math model of the system.
 
-<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 The _mathematics behind_ discrete event simulation are based on discrete time. The model clock is advanced only when something significant happens in the model - namely, when an agent starts or finishes an operation. Any change in the model is associated with those events; continuous changes are approximated by instantaneous ones.
@@ -482,7 +481,7 @@ Here is the problem statement:
 
     forever. Immunity lasts from 30 to 70 days.
 
-<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
