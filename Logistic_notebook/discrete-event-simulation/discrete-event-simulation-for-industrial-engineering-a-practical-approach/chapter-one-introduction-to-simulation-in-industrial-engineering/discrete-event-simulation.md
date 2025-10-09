@@ -17,7 +17,7 @@ we mean a general framework for mapping a real-world system to its model. A meth
 
 The choice of method should be based on the system being modeled and the purpose of the modeling – though often it is most heavily influenced by the background or available tool set of the modeler.
 
-<figure><img src="../../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 ## **System Dynamics**
 
@@ -51,15 +51,15 @@ we can recognize variables thar are influenced or measured into the system, for 
 
 &#x20;
 
-<figure><img src="../../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 Now We add some "Sales AD difussion" to our system in order to increase the sales rate:
 
-<figure><img src="../../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
 Finally we can describe the system behavior acoording tho the dynamic of the influence of the enviroment that we are considering into the simulation system, so in this case our  Sytem dynamics model of sales of a product will be like.
 
-<figure><img src="../../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
 
 now in this case we can provide new information, and also, mathematic notation to the simulation process, so we can start to measure the behavior and the relations betwen the system´s actors.
 
@@ -77,7 +77,7 @@ $$
 
 **Once we define the mathematical model and it behavior we are ready to simulate, but, if tye model need to be equalized, re parametrized or re-measure the model is always ready to be CALIBRATED**
 
-<figure><img src="../../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 #### **Abtraction level:**
 
@@ -85,9 +85,11 @@ System dynamics suggests a very high abstraction level and is positioned as a st
 
 Although the language of system dynamics is very simple, if not primitive, compared to other methods, thinking in its terms and on its level of abstraction is a real art. System dynamics models are inevitably full of notions that do not have direct material or measurable equivalents in the real world – for example, morale, awareness, knowledge, and the impact of advertising. The choice of those notions, and drawing the corresponding feedback structures, is not, in many cases, as straightforward task as the design of a process flowchart or an agent behavior.
 
+***
+
 ## **Discrete-event simulation (DES)**&#x20;
 
-is an approach used to model dynamic systems that evolve through a series of events occurring at discrete and irregular points in time.
+It is an approach used to model dynamic systems that evolve through a series of events occurring at discrete and irregular points in time.
 
 {% hint style="success" %}
 Unlike a continuous process, changes in the system's state only occur at these specific moments when an event takes place, such as a customer's arrival or the completion of a service.
@@ -99,7 +101,93 @@ Discrete-event simulation models are often **stochastic**, meaning they include 
 
 On the other hand, in **continuous simulations**, changes in the system's state occur **continuously over time**. For example, imagine an airplane in flight as the system under observation, with its state defined by its position. This position varies along the trajectory throughout the entire observation period. Another example would be chemical processes or reactions where measurements like pressure or other variables must be continuously observed due to their change over time.
 
-### Exercise Number One: The Miami Casino Game
+{% hint style="info" %}
+almost as old as system dynamics. In October 1961, IBM engineer Geoffrey Gordon introduced the first version of GPSS (General Purpose Simulation System, originally Gordon's Programmable Simulation System), which is considered to be the first method of software implementation of discrete event modeling. These days, discrete event modeling is supported by a large number of software tools, including modern versions of GPSS itself.
+{% endhint %}
+
+The operations include _delays_, _service_ by various _resources_, choosing the process branch, splitting, combining, and some others. Since _entities_ compete for resources and can be delayed, _queues_ are present in virtually any discrete event model.&#x20;
+
+The model is specified graphically as a process flowchart, where blocks represent operations (there are textual languages as well, but they are in the minority). The flowchart usually begins with "source" blocks that generate entities and inject them into the process, and ends with "sink" blocks that remove entities from the model.
+
+<figure><img src="../../../.gitbook/assets/Callcenter004.png" alt=""><figcaption></figcaption></figure>
+
+in **Anylogic the item that reffer to the system specify the behavior of the model,** the _entitites_ that are flowing  through the process flowchart are called. "Agents", and  some cases this ones have it´s own behavior.
+
+<details>
+
+<summary>Agents:</summary>
+
+Represent Clients, patients, phone calls, documents, parts, products, pallets, computer transactions, vehicles, tasks, projects, ideas etc.
+
+</details>
+
+<details>
+
+<summary>Resources:</summary>
+
+Represent various Staff, doctors, operators, Workers, servers, CPU´s, Computer memory, equipment, and transport.
+
+service time, arrivals agent times, mostly are stochastic drawn from a probabilistic distribution, it meas that a model needs to be RUN for a certain time and number of replicas, in order to have a maningfull output.
+
+</details>
+
+<details>
+
+<summary>Output expected mostly:</summary>
+
+1. utilization of resources
+2. Time spent in the system
+3. waiting times
+4. Queue lengths
+5. System throughput
+6. Bottlenecks
+7. Cost of the agent procesing and structure
+
+</details>
+
+### Example modeling Bank Behavior
+
+The basic model is built using the Process-Centric Modeling (DCM) methodology, which uses a block flow diagram. The flow of customers (entities/agents) through the bank is typically represented by a sequence of Process Modeling Library (PML) blocks.
+
+### Model Info:
+
+1. On average, 45 clients per hour enter the bank.
+2. Having entered the bank, half of the clients go to the ATM, and the other half go straight to the cashiers.
+3. Usage of the ATM has a minimum duration of 1 minute, a maximum of 4 minutes, and a most likely duration of 2 minutes.
+4.  Service with a cashier takes a minimum of 3 minutes and a maximum of 20
+
+    minutes, with a most likely duration of 5 minutes.
+5.  After using the ATM, 30% of the clients go to the cashiers. The others exit the
+
+    bank.
+6.  There are 5 cashiers in the bank, and there is a single shared queue for all the
+
+    cashiers.
+7. After being served by a cashier, clients exit the bank.
+
+#### We need to find out the:
+
+1. Utilization of cashiers,
+2. Average queue lengths, both to the ATM and to the cashiers, and the
+3. Distribution of time spent by a customer in the bank.
+
+#### Steps to solve:
+
+1. describe the system and draw it in a sheet of paper.
+2. recreates the layout
+3. generate the basic math model of the system.
+
+<figure><img src="../../../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (16).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+The _mathematics behind_ discrete event simulation are based on discrete time. The model clock is advanced only when something significant happens in the model - namely, when an agent starts or finishes an operation. Any change in the model is associated with those events; continuous changes are approximated by instantaneous ones.
+{% endhint %}
+
+***
+
+### Exercise Number One: The Miami Casino Game (DES)
 
 Imagine you've won a competition: an all-expenses-paid trip to a five-star hotel in Miami, Florida, United States. At this hotel, there's a casino where you decide to gamble, but you're not interested in traditional games. So, you opt for a new one with the following rules:
 
@@ -323,3 +411,78 @@ It can also be calculated as $$W_q = W - \frac{1}{\mu}$$
 {% hint style="info" %}
 MINI TASK: Calculate each of the indices and draw your conclusions, also perform a Monte Carlo simulation and these metrics will become your indicators
 {% endhint %}
+
+***
+
+## Agent-based modeling (ABM)
+
+is a more recent modeling method than system dynamics or discrete event modeling. Until the early 2000s, agent-based modeling was pretty much an academic topic. The adoption of agent-based modeling by simulation practitioners started in 2002-2003.&#x20;
+
+It was triggered by:
+
+1. Desire to get a deeper insight into systems that are not well-captured by traditional modeling approaches;
+2. Advances in modeling technology coming from computer science, namely object-oriented modeling, UML, and statecharts.
+3. Rapid growth of the availability of CPU power and memory (agent-based models are more demanding of both, compared to system dynamics and discrete event models).
+
+***
+
+> You may not know how the system as a whole behaves, what are the key variables and dependencies between them, or simply don’t see that there is a process flow, but you may have some insight into how the objects in the system behave individually. Therefore, you can start building the model from the bottom up by identifying those objects (agents) and defining their behaviors.
+
+> Sometimes, you can connect the agents to each other and let them interact; other times, you can put them in an environment, which may have its own dynamics. The global behavior of the system then emerges out of many (tens, hundreds, thousands, even millions) concurrent individual behaviors.
+
+_**There are no standard languages for agent-based modeling.**_ The structure of an agent-based model is created using graphical editors or scripts, depending on the software. The behavior of agents is specified in many different ways. Frequently, the agent has a notion of state, and its actions and reactions depend on its state. In such cases, behavior is best defined with statecharts. Sometimes, behavior is defined in the form of rules executed upon special events.
+
+The simulation based on agents, known as Agent-Based Modeling (ABM), is the most recent major simulation method among the widely recognized simulation paradigms
+
+{% hint style="warning" %}
+This methodology studies the impact of active entities or subsystems, known as agents, within a system. ABM utilizes a bottom-up approach, meaning the model is built by first identifying these individual objects and defining their individual behaviors
+{% endhint %}
+
+**What an Agent Represents:**&#x20;
+
+An agent can be any object in the real system important for solving the problem, agents can represent:   &#x20;
+
+1. Human entities: a human, a group of people, animals, households, consumers, patients, or employees.   &#x20;
+2. Physical/Non-physical objects: vehicles, equipment, parts, products, projects, organizations, investment, or ideas.   &#x20;
+3. In the context of Discrete Event simulation (AnyLogic), the traditional _entities_ (or transactions) that flow through a process flowchart are actually considered agents.
+
+**Agent Behavior and Encapsulation:**&#x20;
+
+ABM is based on object-oriented modeling, allowing agents to encapsulate their attributes and behaviors within self-contained sub-models. Since there is no single place where the global behavior is defined, the focus is on defining the individual agent's dynamics
+
+1. Statecharts: Behavior is frequently defined with statecharts, which are visual constructs defining the internal states, reactions to external events, and corresponding state transitions of a particular agent
+2. Internal Dynamics: The internal workings of an agent can be modeled using other simulation methods, such as System Dynamics (stock and flow diagrams) or Discrete Event Modeling (process flowcharts)
+3. Communication: Agents can communicate with each other. They may react to external events by handling messages or function calls
+4. Coding: Agents often involve Java code, which is used to implement complex logic, inter-agent and agent-to-environment communication, or to coordinate different activities within the agent
+
+**Space and Connection:**&#x20;
+
+Agents may be connected to each other to establish relationships. They can live in an environment or space, or they may exist without one. When space is used, it is often continuous space, a geographical map (GIS space), or a facility floor plan
+
+### Agent-based epidemic Zombie model Example
+
+Here is the problem statement:
+
+1. Consider a population of 10,000 people. They live in an area of 10 by 10kilometers and are evenly spread throughout the area.
+2. A person in the area knows everybody who lives within 1 kilometer of himand does not know anybody else.
+3. 10 random people are initially infected, and everybody else is susceptible(none are immune).
+4. If an infectious person contacts a susceptible person, the latter gets infectedwith probability 0.1.
+5.  Having been infected, a person does not immediately become infectious.
+
+    There is a latent phase that lasts from 3 to 6 days. We will name people in the
+
+    latent phase exposed.
+6.  The illness duration after the latent phase (i.e. the duration of the infectious
+
+    phase) is uniformly distributed between 7 and 15 days.
+7.  During the infectious phase, a person on average contacts 5 people he knows
+
+    per day.
+8.  When the person recovers, he becomes immune to the disease, but not
+
+    forever. Immunity lasts from 30 to 70 days.
+
+<figure><img src="../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+

@@ -98,19 +98,19 @@ where λ is the average rate of event occurrence and e is the base of the natura
 
 </details>
 
-<img src="../../../.gitbook/assets/file.excalidraw (2) (1) (1) (1).svg" alt="Sistema de colas conceptual" class="gitbook-drawing">
+<img src="../../../../.gitbook/assets/file.excalidraw (2) (1) (1) (1).svg" alt="Sistema de colas conceptual" class="gitbook-drawing">
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 The M/G/K case is a complex solving scenario, and is virtualy imposible to capture thise detail in an **analithycal solution, in this case we use symiulation aproach.**
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 ## Queue Discipline
 
@@ -204,7 +204,7 @@ The theoretical benefit of multiple servers, compared to a single server with th
 {% endtab %}
 {% endtabs %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1) (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
+<img src="../../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1) (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
 
 ## Service Time Distributions
 
