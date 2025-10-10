@@ -122,7 +122,7 @@ When evaluating transportation options, it is essential to consider the followin
 * Capacity: Refers to the amount of cargo that the chosen mode can carry.
 * Reliability: Refers to the probability that the cargo will arrive at its destination on time and under the agreed conditions.
 
-<img src="../../../.gitbook/assets/file.excalidraw.svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="" class="gitbook-drawing">
 
 ### Graphical Representation of Transportation Models in Linear Programming
 
