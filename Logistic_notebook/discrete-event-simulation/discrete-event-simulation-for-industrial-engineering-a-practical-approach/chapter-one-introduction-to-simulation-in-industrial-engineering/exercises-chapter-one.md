@@ -83,3 +83,9 @@ $$
 2. For each possible value of the number of customers in the system, specify how many customers are in the queue, and how would you explain it to the hairdressers?
 3. Given that an average of 4 customers arrive per hour and are waiting for a cut, determine W and Wq. Describe the results in terms the hairdressers understand.
 4. Assuming both are equally fast in the hairdressing service, what is the expected duration of the cut?
+
+***
+
+### Anylogic first steps (Spanish version)
+
+{% embed url="https://docs.google.com/document/d/1NqyLE-bAdRGjH5VegEx2kxzpQ2EqRDaSvzoEDq3N1Ys/edit?usp=sharing" %}
