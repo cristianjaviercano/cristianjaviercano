@@ -3,7 +3,6 @@ description: >-
   understands that Queueing Theory is a fundamental analytical discipline within
   Operations Research. It provides a mathematical framework for analyzing
   systems where customers or items arrive.
-hidden: true
 icon: colon
 ---
 
