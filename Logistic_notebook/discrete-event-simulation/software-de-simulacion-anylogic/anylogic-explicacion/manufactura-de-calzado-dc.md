@@ -2,7 +2,7 @@
 icon: boot-heeled
 ---
 
-# DC Footwear Manufacturing
+# DC Shoe Handcrafting
 
 **1. Objectives**
 
@@ -26,6 +26,8 @@ Before modeling, it is crucial to define the system components based on the "Sho
 * **50%** are **Type 1** (fixed time).
 * **30%** are **Type 2** (uniform time).
 * **20%** are **Type 3** (normal time).
-* **End of Simulation**:&#x20;
+* **End of Simulation**:
 
 The model must stop after processing **100 pairs of shoes**, or one unit of responsible time.
+
+{% embed url="https://cloud.anylogic.com/model/6b72d628-dfef-4d0b-8e46-9167ff0aa3f7" %}

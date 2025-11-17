@@ -1,4 +1,4 @@
-# AnyLogic explained
+# Anylogic Examples
 
 Learning to use AnyLogic involves understanding both the theoretical foundations of simulation and the practical application of its modeling libraries. AnyLogic is a multi-method simulation software that enables engineers and researchers to create complex dynamic models of a wide variety of systems. Developed by The AnyLogic Company, co-founded by Andrei Borshchev, it has established itself as a leading tool for its ability to combine different simulation paradigms in a single environment (Borshchev, 2013).
 
@@ -25,7 +25,6 @@ Based on Mahdavi (n.d., pp. 138-139), the essential blocks are:
 * **ResourcePool**: Defines a set of resources (e.g., personnel, machinery) that can be used by entities.
 * **Sink**: Removes entities from the model once they have completed the process.
 
-  
 <figure><img src="../../../.gitbook/assets/flujomm1.png" alt=""><figcaption></figcaption></figure>
 
 ***
@@ -36,22 +35,25 @@ Following the methodology presented in Mahdavi (n.d., pp. 39-45), a basic model 
 
 1. **Create a new model**: In AnyLogic, start a new project, defining the time units (e.g., seconds).
 2. **Build the flowchart**:
+
 * Drag a **Source** block into the graphical editor. In its properties, define the `Arrival rate` (for example, 2 per second).
 * Drag a **Queue** block. AnyLogic will automatically connect it to the output port of the `Source` block. You can leave its capacity as infinite (`Maximum capacity`).
 * Drag a **Delay** block after the `Queue` block. In its properties, define the `Delay time`. This can be a constant value or a probability distribution, such as `triangular(0.5, 1, 1.5)` seconds. The `Delay` capacity (default 1) represents the number of servers.
 * Finally, drag a **Sink** block to end the flow.
+
 3. **Configure the experiment**:
+
 * In the experiment properties (`Simulation`), set a `Stop time`, for example, 3600 seconds (1 hour).
 * To ensure that each run produces different results (due to randomness), set the random number generator to `Random seed`.
+
 4. **Run and analyze**:
+
 * When running the model, you can observe the number of entities entering (`in`) and exiting (`out`) each block.
 * The `Queue` block will display the current length and average length (`Length (av)`) of the queue, allowing for an initial analysis of system performance.
 
 ***
 
->
->
-> #### **References**
+> **References**
 >
 > * Borshchev, A. (2013). _The Big Book of Simulation Modeling: Multimethod Modeling with AnyLogic 8_. AnyLogic North America.
 > * Mahdavi, A. (s.f.). _The Art of Process-Centric Modeling with AnyLogic_. Unpublished manuscript.
@@ -72,6 +74,10 @@ The list of Anylogic tools is online at the following link (https://anylogic.hel
 
 <summary>Anylogic Cloud Toolbar:<br></summary>
 
-List of Anylogic tools online ---> [Here] (https://anylogic.help/cloud/toolbar.html)
+List of Anylogic tools online ---> \[Here] (https://anylogic.help/cloud/toolbar.html)
 
 </details>
+
+## Examples Models
+
+<table data-view="cards"><thead><tr><th></th><th data-type="content-ref"></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td>Round point Traffic Model</td><td><a href="https://cloud.anylogic.com/model/8ec15dce-ada1-449a-ae1e-caae624f7881">https://cloud.anylogic.com/model/8ec15dce-ada1-449a-ae1e-caae624f7881</a></td><td><a href="../../../.gitbook/assets/Captura de pantalla 2025-11-17 a la(s) 10.08.14 a.m..png">Captura de pantalla 2025-11-17 a la(s) 10.08.14 a.m..png</a></td></tr><tr><td>Road Cross Model</td><td><a href="https://cloud.anylogic.com/model/e9b4aa43-d156-4291-b597-99d64b942e69">https://cloud.anylogic.com/model/e9b4aa43-d156-4291-b597-99d64b942e69</a></td><td><a href="../../../.gitbook/assets/Captura de pantalla 2025-11-17 a la(s) 10.10.18 a.m..png">Captura de pantalla 2025-11-17 a la(s) 10.10.18 a.m..png</a></td></tr><tr><td>Maintenance Model</td><td><a href="https://cloud.anylogic.com/model/68ec5281-f0dc-4958-9d0a-f515a90fdb43">https://cloud.anylogic.com/model/68ec5281-f0dc-4958-9d0a-f515a90fdb43</a></td><td><a href="../../../.gitbook/assets/Captura de pantalla 2025-11-17 a la(s) 10.12.16 a.m..png">Captura de pantalla 2025-11-17 a la(s) 10.12.16 a.m..png</a></td></tr></tbody></table>
