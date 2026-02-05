@@ -47,13 +47,11 @@ Effective SCM is crucial for businesses to thrive in today's competitive environ
 * Competitive Advantage: A well-managed supply chain can provide a significant competitive advantage by enabling businesses to respond quickly to changing market conditions and customer needs.
 * Risk Mitigation: SCM helps businesses identify and mitigate potential risks in the supply chain, such as disruptions in supply, natural disasters, and geopolitical instability.
 
-\
-
+<br>
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeooZyFO693523wEjKhCSqo1LG37ZfLyQWmN6IOyBJgB-aLq3d8oNdDnM_-05LWG8l-MfM-X_NLVgi_G6RDpt3Z3pr2AFZbj0usl_8IUCJair7cifeR3bhzPRxgJk1anILQW2iZ?key=auD8tqB3SHnxaimI5xWmgg" alt=""><figcaption></figcaption></figure>
 
-\
-
+<br>
 
 ## Key Processes in Supply Chain Management
 
@@ -68,13 +66,11 @@ Several key processes are essential for effective SCM:
 * Supplier Relationship Management (SRM): Building and maintaining strong relationships with suppliers to ensure a reliable supply of high-quality materials.
 * Customer Relationship Management (CRM): Managing customer interactions and building strong customer relationships to enhance customer satisfaction and loyalty.
 
-\
-
+<br>
 
 <figure><img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXe8nq7dYYECsy5c9FxJOVULvQ86SDjuznvSdh7pN2dGERo_uD8-w_pXgCpyqbMS-ERAwUSAotrTYQVy96chq4Z1Gu2dlSZ42pYWNbEapGQcl50uSo5LBzjNJ5rRrQVY3rCpnld83A?key=auD8tqB3SHnxaimI5xWmgg" alt=""><figcaption></figcaption></figure>
 
-\
-
+<br>
 
 ## Challenges in Supply Chain Management
 

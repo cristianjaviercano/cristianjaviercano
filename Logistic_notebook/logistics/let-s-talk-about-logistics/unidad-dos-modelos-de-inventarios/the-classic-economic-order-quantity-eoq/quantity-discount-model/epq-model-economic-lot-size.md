@@ -1,4 +1,4 @@
-# EPQ Model -  Economic lot size
+# EPQ Model - Economic lot size
 
 
 
@@ -90,8 +90,7 @@ Find the EPQ for the following problem and also identify the storage capacity re
 * number of working days = 250.
 * Demand per day for this question will be 50,000/250 = 200.
 
-It is assumed that demand occurs only during the _working days_, that is, 250 days in this case.\
-
+It is assumed that demand occurs only during the _working days_, that is, 250 days in this case.<br>
 
 $$
 Q_{epq}= \sqrt{\frac{2*50.000*25.00}{5.00 * (1- 200/250)}} =912.87

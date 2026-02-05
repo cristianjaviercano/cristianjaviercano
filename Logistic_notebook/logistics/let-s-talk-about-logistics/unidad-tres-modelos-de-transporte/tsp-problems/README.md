@@ -72,7 +72,7 @@ Assuming the Traveling Salesman Problem (TSP) formulation where additional varia
 
 
 
-### Applications and Examples of TSP 
+### Applications and Examples of TSP<br>
 
 The versatility of the TSP model allows it to represent various practical situations beyond just a "salesman" visiting "cities". Examples include:
 
@@ -192,19 +192,17 @@ _Represent the specific locations within the warehouse that must be visited. Thi
 
 Represent the time or cost associated with direct travel between two locations within the warehouse.&#x20;
 
-These distances can be symmetric (the cost of going from A to B is equal to B to A) or asymmetric (different costs due to one-way aisles, congestion, or internal traffic).\
-
+These distances can be symmetric (the cost of going from A to B is equal to B to A) or asymmetric (different costs due to one-way aisles, congestion, or internal traffic).<br>
 
 ### "Traveling Salesman" (Entity/Vehicle):&#x20;
 
 This is the forklift that performs the route, responsible for picking up and delivering materials.
 
 {% hint style="danger" %}
-The objective is to minimize the total travel time (or total cost, which may include fuel, maintenance, or operator time) for the forklift to complete all assigned tasks, visiting each required pick-up/delivery point once and returning to its base.\
-
+The objective is to minimize the total travel time (or total cost, which may include fuel, maintenance, or operator time) for the forklift to complete all assigned tasks, visiting each required pick-up/delivery point once and returning to its base.<br>
 {% endhint %}
 
-#### Example of TSP in a CEDI with a Forklift 
+#### Example of TSP in a CEDI with a Forklift<br>
 
 Consider a CEDI where a single forklift is responsible for fulfilling a large order that requires picking items from four different storage locations (L1, L2, L3, L4). The forklift starts its shift from its charging base (B) and must return to it after completing all picks. The goal is to find the most efficient route to minimize the total travel time.
 

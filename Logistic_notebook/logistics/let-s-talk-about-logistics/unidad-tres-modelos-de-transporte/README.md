@@ -30,7 +30,7 @@ The simple service options for transportation include various modes of transport
 
 Top-of-Flatbed Trailer (TOPC), or piggyback trailer, refers to the transport of trailers on railroad platforms, generally over longer distances than trucks. TOPC combines the convenience and flexibility of trucking with the long-haul economy of rail.
 
-### Standard Container Loading 
+### Standard Container Loading<br>
 
 Under a TOFC agreement, the entire trailer is transported on a railroad bed. However, the trailer can also be viewed in two forms: 1) as a container or box in which the cargo is packed; and 2) as the trailer chassis. In a truck-rail intermodal service, it is possible to transport only the container, thus saving the deadweight of the structure and wheels. This service is called container-on-bed (COFC).
 
@@ -122,7 +122,7 @@ When evaluating transportation options, it is essential to consider the followin
 * Capacity: Refers to the amount of cargo that the chosen mode can carry.
 * Reliability: Refers to the probability that the cargo will arrive at its destination on time and under the agreed conditions.
 
-<img src="../../../.gitbook/assets/file.excalidraw (1).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1).svg" alt="" class="gitbook-drawing">
 
 ### Graphical Representation of Transportation Models in Linear Programming
 

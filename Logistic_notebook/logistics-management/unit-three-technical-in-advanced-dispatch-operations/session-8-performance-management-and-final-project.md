@@ -16,14 +16,11 @@ Effective logistics management requires monitoring performance to ensure strateg
 This KPI measures the percentage of orders delivered to customers on the promised date and time. From the customer's perspective, this is one of the most critical elements of service, reflecting the reliability of the logistics system. Failures in this area, such as delayed deliveries, are among the most common customer complaints and a key factor in carrier selection.
 
 Calculation:\
-◦ Key Components:\
+◦ Key Components:<br>
 
+Orders Delivered On-Time: Shipments that arrive at the customer's destination within the agreed-upon time window (date and time).<br>
 
-Orders Delivered On-Time: Shipments that arrive at the customer's destination within the agreed-upon time window (date and time).\
-
-
-Total Number of Orders Shipped: The total shipments made during the measurement period.\
-
+Total Number of Orders Shipped: The total shipments made during the measurement period.<br>
 
 {% hint style="info" %}
 Strategic Importance: A high on-time delivery rate improves customer satisfaction and loyalty, which are crucial for retention and sales growth. It is fundamental for operations that rely on precise scheduling, such as Just-In-Time (JIT) systems
@@ -51,11 +48,9 @@ Strategic Importance: A high fill rate is essential to avoid lost sales, as out-
 
 ## Order Accuracy
 
-Definition: This indicator measures the percentage of orders that are processed, picked, and shipped without errors. Errors can include shipping the wrong product, incorrect quantity, damaged goods, or incorrect documentation. Accurate documentation is a key element of logistics customer service.\
+Definition: This indicator measures the percentage of orders that are processed, picked, and shipped without errors. Errors can include shipping the wrong product, incorrect quantity, damaged goods, or incorrect documentation. Accurate documentation is a key element of logistics customer service.<br>
 
-
-Calculation:\
-
+Calculation:<br>
 
 Key Components:\
 \- Orders without Errors: Those that perfectly match the original customer order in terms of product, quantity, condition, and documentation.\

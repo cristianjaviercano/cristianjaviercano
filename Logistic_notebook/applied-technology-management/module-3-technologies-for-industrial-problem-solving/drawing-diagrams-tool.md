@@ -28,7 +28,7 @@ In order ti create the user interface and all the flow of the Integral solution,
 
 A user flow diagram with embedded wireframes is a visual representation that combines both the journey a user takes through an application and sketches or simplified versions of the screens they will encounter. This type of diagram is particularly beneficial for understanding the user experience design and ensuring every screen's purpose is clear.
 
-#### User Interface Flowchart (UI Flow) 
+#### User Interface Flowchart (UI Flow)<br>
 
 {% hint style="warning" %}
 Theoretical Basis: A UI Flowchart is a visual model that represents the navigation path a user follows through the various pages or views of an application. Unlike a process flowchart (which models business logic), a UI Flow diagram focuses on the user experience (UX), showing how interfaces are connected and what actions (clicking buttons, filling out forms) trigger the transition from one screen to another. Its purpose is to define the information architecture and ensure logical and intuitive navigation (Nielsen & Budiu, 2012).

@@ -46,8 +46,7 @@ serves as a sophisticated software intermediary, facilitating seamless communica
 APIs offer greater flexibility and scalability than EDI, typically utilizing web-standard formats like JSON. This facilitates real-time data exchange, which is critical for accurate inventory visibility.
 {% endhint %}
 
-\
-
+<br>
 
 **Manual Entry**&#x20;
 
@@ -126,8 +125,7 @@ Queuing theory is the mathematical study of waiting lines. In a logistics contex
 
 Consider a logistics operation where a multitude of customer orders are received and validated. This pool of validated, yet unpicked, orders can be precisely conceptualized as a "queue" in the context of queuing theory. These orders are patiently "awaiting service" from the subsequent "picking process," which involves the physical retrieval of items from storage locations to fulfill the orders.
 
-\
-
+<br>
 
 <figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -197,4 +195,4 @@ Gross, D., Shortle, J. F., Thompson, J. M., & Harris, C. M. (2018). _Fundamental
 
 Lee, H. L., Padmanabhan, V., & Whang, S. (1997). The bullwhip effect in supply chains. _Sloan Management Review_, _38_(3), 93-102.
 
-Pompilio, F. P. (2018). _Warehouse management: A complete guide to improving efficiency and minimizing costs in the modern warehouse_. McGraw-Hill Education.\
+Pompilio, F. P. (2018). _Warehouse management: A complete guide to improving efficiency and minimizing costs in the modern warehouse_. McGraw-Hill Education.<br>

@@ -203,7 +203,7 @@ The theoretical benefit of multiple servers, compared to a single server with th
 {% endtab %}
 {% endtabs %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1) (1) (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1) (1) (1) (1) (1).svg" alt="Sistema de colas Basico" class="gitbook-drawing">
 
 ## Service Time Distributions
 
@@ -274,8 +274,7 @@ The **general distribution (G)** refers to a broad class of distributions that d
     * $$L =$$ the expected number of customers in the system = $$\sum_{n=0}^{\infty}nP_n$$.
     * $$L_q =$$ expected queue length, excluding customers in _service_ mode = $$\sum_{n = s}^{\infty}(n-s)P_n$$.
     * $$W =$$ the waiting time in the system, including service time for each customer $$W = E(W)$$.
-    * $$W_q =$$ the waiting time in the system, excluding service time for each customer $$W_q = E(W_q)$$\
-
+    * $$W_q =$$ the waiting time in the system, excluding service time for each customer $$W_q = E(W_q)$$<br>
 
 ### Role of the Exponential Distributionl
 

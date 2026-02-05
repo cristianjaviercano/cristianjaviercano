@@ -7,7 +7,7 @@ description: >-
 
 # EOQ Variants
 
-### Incoming Processes in a Warehouse or Inventory System 
+### Incoming Processes in a Warehouse or Inventory System<br>
 
 Facilities, such as warehouses and storage facilities, are the "where" of the supply chain, the points from or to which inventory is transported, and where it can be transformed or stored. In a warehousing system, there are two main functions: possession (storage) and materials handling. Materials handling encompasses activities such as loading and unloading, movement of products within the warehouse, and order picking.
 

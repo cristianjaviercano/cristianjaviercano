@@ -388,33 +388,23 @@ It is crucial for the industrial engineer to understand these characteristics in
 {% tab title="Benefits" %}
 
 
-1. Complex Systems Analysis: Allows the study of systems whose complexity (large number of variables, nonlinear interactions, stochastic behavior) precludes the use of pure analytical methods. Simulation is especially useful for complex queuing systems where mathematical formulas are limited or nonexistent.1\
-
-2. Safe and Economical Experimentation: Facilitates system experimentation without disrupting real operations, building expensive physical prototypes, or exposing the system to unnecessary risks. Radical changes or extreme conditions can be tested in a controlled virtual environment.1\
-
-3. Alternatives Evaluation ("What-if Analysis"): Allows the comparison of different operating policies, system designs, or investment scenarios before implementation. This helps make more informed decisions and select the most promising options.\
-
-4. Time Compression and Expansion: Long periods of operation (years) can be simulated in a matter of minutes or hours of computing time, or, conversely, short-duration events can be analyzed in great detail. Problem Identification and System Understanding: Helps identify bottlenecks, understand the interdependencies between system components, and visualize overall system dynamics. Building the model itself often leads to a better understanding of the system.\
-
-5. Incorporating Randomness and Uncertainty: Allows for modeling and analyzing the impact of variability inherent in real systems (random arrival times, variable service durations, equipment failures, demand fluctuations).\
-
-6. Communication and Visualization Tool: Simulation models, especially those with graphic animation capabilities, are excellent tools for communicating system operation and study results to different audiences, including management and operating personnel.\
-
+1. Complex Systems Analysis: Allows the study of systems whose complexity (large number of variables, nonlinear interactions, stochastic behavior) precludes the use of pure analytical methods. Simulation is especially useful for complex queuing systems where mathematical formulas are limited or nonexistent.1<br>
+2. Safe and Economical Experimentation: Facilitates system experimentation without disrupting real operations, building expensive physical prototypes, or exposing the system to unnecessary risks. Radical changes or extreme conditions can be tested in a controlled virtual environment.1<br>
+3. Alternatives Evaluation ("What-if Analysis"): Allows the comparison of different operating policies, system designs, or investment scenarios before implementation. This helps make more informed decisions and select the most promising options.<br>
+4. Time Compression and Expansion: Long periods of operation (years) can be simulated in a matter of minutes or hours of computing time, or, conversely, short-duration events can be analyzed in great detail. Problem Identification and System Understanding: Helps identify bottlenecks, understand the interdependencies between system components, and visualize overall system dynamics. Building the model itself often leads to a better understanding of the system.<br>
+5. Incorporating Randomness and Uncertainty: Allows for modeling and analyzing the impact of variability inherent in real systems (random arrival times, variable service durations, equipment failures, demand fluctuations).<br>
+6. Communication and Visualization Tool: Simulation models, especially those with graphic animation capabilities, are excellent tools for communicating system operation and study results to different audiences, including management and operating personnel.<br>
 7. Training: Simulators can be used as training tools for operators and decision-makers, allowing them to experience the consequences of their actions in a risk-free environment.
 {% endtab %}
 
 {% tab title="Disadvantages" %}
 
 
-1. Cost and Development Time: Developing a valid and detailed simulation model can be a lengthy and expensive process, requiring specialized personnel, software, and significant computational time. Simulation tends to be a relatively expensive process.1\
-
-2. Outputs as Statistical Estimates: Simulation, especially stochastic simulation, produces estimates of system behavior, not exact or optimal solutions (unless combined with optimization techniques). The results are subject to sampling error and require careful statistical analysis for interpretation.1\
-
+1. Cost and Development Time: Developing a valid and detailed simulation model can be a lengthy and expensive process, requiring specialized personnel, software, and significant computational time. Simulation tends to be a relatively expensive process.1<br>
+2. Outputs as Statistical Estimates: Simulation, especially stochastic simulation, produces estimates of system behavior, not exact or optimal solutions (unless combined with optimization techniques). The results are subject to sampling error and require careful statistical analysis for interpretation.1<br>
 3. Data Intensiveness: The validity of a simulation model depends largely on the quality of the input data used to define probability distributions and system parameters. The "garbage in, garbage out" (GIGO) principle fully applies. Collecting and analyzing this data can be challenging. Complexity in Interpreting&#x20;
-4. Results: Interpreting simulation output can be complex and requires a good understanding of statistical methods to avoid erroneous conclusions.\
-
-5. Risk of False Confidence: A simulation model, especially a visually appealing one, can generate a false sense of accuracy or validity if it has not been rigorously verified and validated.\
-
+4. Results: Interpreting simulation output can be complex and requires a good understanding of statistical methods to avoid erroneous conclusions.<br>
+5. Risk of False Confidence: A simulation model, especially a visually appealing one, can generate a false sense of accuracy or validity if it has not been rigorously verified and validated.<br>
 6. Model Specificity: A simulation model is typically specific to the system and objectives for which it was developed. Generalizing its results to other systems or significantly changing the objectives may require substantial revision or the construction of a new model.
 {% endtab %}
 {% endtabs %}
@@ -530,8 +520,7 @@ Finally, the entire study is documented, including the model, assumptions, input
 {% endstepper %}
 
 {% hint style="danger" %}
-It is essential to understand that verification and validation are not activities performed once and for all at the end of model development. They are continuous and iterative processes that must be carried out throughout the entire simulation study lifecycle.\
-
+It is essential to understand that verification and validation are not activities performed once and for all at the end of model development. They are continuous and iterative processes that must be carried out throughout the entire simulation study lifecycle.<br>
 
 _**A model that has not been adequately verified and validated lacks credibility, and decisions based on it can be erroneous and costly**_. The involvement of the client or real-system expert is vital throughout the entire process, especially in problem definition, conceptual formulation, and validation. -crc-
 {% endhint %}
@@ -546,52 +535,35 @@ Its ability to model the complexity, dynamics, and stochasticity of systems make
 
 {% tabs %}
 {% tab title="Manufacturing and Production Systems" %}
-* Plant Layout and Design: Evaluate different plant configurations, machinery placement, workstations, and storage areas to optimize material flows, minimize travel distances, reduce bottlenecks, and improve overall efficiency.\
-
-* Production and Assembly Line Analysis: Model production lines to analyze their capacity, identify bottlenecks (a core concept in the Theory of Constraints (TOC 1), determine the optimal size of intermediate buffers, and evaluate the impact of variability on process times and machine failure rates. General Motors, for example, used simulation to significantly increase the throughput of its plants.\
-
-* Production Scheduling and Sequencing: Test different priority rules and sequencing algorithms to minimize cycle times, reduce work in process (WIP), and improve delivery date adherence.1 Swift & Company applied simulation for shift-level scheduling and promise capacity management.\
-
-* Inventory Control (WIP and Raw Materials): Evaluate inventory control policies on the production floor, such as Kanban or CONWIP systems, and determine optimal inventory levels for raw materials and components.1 Samsung Electronics used simulation to reduce cycle times and inventories.\
-
-* Capacity Planning: Determine the requirements for machinery, personnel, and other resources to meet projected demand, and evaluate the impact of investments in new capacity.\
-
-* Material Handling Systems: Design and evaluate the efficiency of internal transportation systems such as automated guided vehicles (AGVs), conveyors, cranes, and robots, considering their speeds, capacities, and control logic.\
-
-* Reliability and Maintenance Modeling: Analyze the impact of equipment failures and maintenance policies (preventive, predictive, corrective) on line availability and total production.\
-
+* Plant Layout and Design: Evaluate different plant configurations, machinery placement, workstations, and storage areas to optimize material flows, minimize travel distances, reduce bottlenecks, and improve overall efficiency.<br>
+* Production and Assembly Line Analysis: Model production lines to analyze their capacity, identify bottlenecks (a core concept in the Theory of Constraints (TOC 1), determine the optimal size of intermediate buffers, and evaluate the impact of variability on process times and machine failure rates. General Motors, for example, used simulation to significantly increase the throughput of its plants.<br>
+* Production Scheduling and Sequencing: Test different priority rules and sequencing algorithms to minimize cycle times, reduce work in process (WIP), and improve delivery date adherence.1 Swift & Company applied simulation for shift-level scheduling and promise capacity management.<br>
+* Inventory Control (WIP and Raw Materials): Evaluate inventory control policies on the production floor, such as Kanban or CONWIP systems, and determine optimal inventory levels for raw materials and components.1 Samsung Electronics used simulation to reduce cycle times and inventories.<br>
+* Capacity Planning: Determine the requirements for machinery, personnel, and other resources to meet projected demand, and evaluate the impact of investments in new capacity.<br>
+* Material Handling Systems: Design and evaluate the efficiency of internal transportation systems such as automated guided vehicles (AGVs), conveyors, cranes, and robots, considering their speeds, capacities, and control logic.<br>
+* Reliability and Maintenance Modeling: Analyze the impact of equipment failures and maintenance policies (preventive, predictive, corrective) on line availability and total production.<br>
 * Lean/Just-in-Time (JIT) Systems Implementation: Simulate the transition to lean production systems to evaluate their benefits and challenges before full-scale implementation.
 {% endtab %}
 
 {% tab title="Logistics and Supply Chains" %}
-* Distribution Network Design: Optimize the location and number of warehouses and distribution centers, and define product flow routes to minimize total costs and improve service levels.\
-
-* Warehouse Management: Model a warehouse's internal operations (receiving, storage, picking, packing, shipping) to improve space utilization, optimize operator and equipment routes, and reduce order processing times.\
-
-* Transportation Route Optimization: Evaluate different routing strategies for vehicle fleets, considering factors such as transportation costs, delivery time windows, vehicle capacities, and travel time variability. Yellow Freight System improved its service and performance by interactively optimizing its transportation operations.\
-
-* Supply Chain Inventory Policies: Analyze the impact of different inventory policies (centralized vs. decentralized, security levels) on multiple links in the supply chain, considering demand variability and supplier lead times. IBM applied simulation to optimize its multi-echelon inventory system for service logistics, and Philips Electronics used it to synchronize its chain and mitigate the bullwhip effect.\
-
+* Distribution Network Design: Optimize the location and number of warehouses and distribution centers, and define product flow routes to minimize total costs and improve service levels.<br>
+* Warehouse Management: Model a warehouse's internal operations (receiving, storage, picking, packing, shipping) to improve space utilization, optimize operator and equipment routes, and reduce order processing times.<br>
+* Transportation Route Optimization: Evaluate different routing strategies for vehicle fleets, considering factors such as transportation costs, delivery time windows, vehicle capacities, and travel time variability. Yellow Freight System improved its service and performance by interactively optimizing its transportation operations.<br>
+* Supply Chain Inventory Policies: Analyze the impact of different inventory policies (centralized vs. decentralized, security levels) on multiple links in the supply chain, considering demand variability and supplier lead times. IBM applied simulation to optimize its multi-echelon inventory system for service logistics, and Philips Electronics used it to synchronize its chain and mitigate the bullwhip effect.<br>
 * Bullwhip Effect Analysis: Simulate how variations in end-consumer demand amplify up the supply chain, and test strategies to mitigate it. Supply Chain Collaboration and Synchronization: Evaluate the benefits of sharing information and coordinating decisions among different actors in the supply chain.
 {% endtab %}
 
 {% tab title="Service Systems" %}
-* Queuing Systems Analysis: Modeling and analyzing the performance of systems where customers (or jobs) wait for service, such as in banks, call centers, hospitals, airports, restaurants, and government offices. The objective is often to balance service costs with service quality (wait times).\
-
-  * AT\&T developed a simulation-based system to help its clients design call centers.\
-
-* Staffing Optimization: Determining the optimal number of servers (tellers, agents, doctors, nurses) at different times of the day or week to meet desired service levels at a reasonable cost.\
-
-  * Merrill Lynch used simulation for its pricing and service analysis.\
-
+* Queuing Systems Analysis: Modeling and analyzing the performance of systems where customers (or jobs) wait for service, such as in banks, call centers, hospitals, airports, restaurants, and government offices. The objective is often to balance service costs with service quality (wait times).<br>
+  * AT\&T developed a simulation-based system to help its clients design call centers.<br>
+* Staffing Optimization: Determining the optimal number of servers (tellers, agents, doctors, nurses) at different times of the day or week to meet desired service levels at a reasonable cost.<br>
+  * Merrill Lynch used simulation for its pricing and service analysis.<br>
 * Service Process Design and Redesign: Evaluating the impact of changes in process flows, task assignments, or the introduction of new technology on efficiency and customer experience.
 {% endtab %}
 
 {% tab title="Project management" %}
-* Project Duration and Cost Estimation: Model the duration and cost of project activities as random variables (using distributions such as Triangular or Beta in PERT) to obtain a distribution of the total project duration and cost.\
-
-* Critical Path and Sensitivity Analysis: Identify the most critical activities and analyze how variability in their durations affects the probability of meeting project deadlines.\
-
+* Project Duration and Cost Estimation: Model the duration and cost of project activities as random variables (using distributions such as Triangular or Beta in PERT) to obtain a distribution of the total project duration and cost.<br>
+* Critical Path and Sensitivity Analysis: Identify the most critical activities and analyze how variability in their durations affects the probability of meeting project deadlines.<br>
 * Project Risk Management: Evaluate the impact of potential risks (supplier delays, technical issues, lack of resources) and the effectiveness of contingency plans.
 {% endtab %}
 {% endtabs %}
@@ -606,14 +578,9 @@ the competitiveness of organizations. The key for the industrial engineer is to 
 
 Literature
 
-1. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.). Prentice Hall.\
-
-2. Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Education.\
-
-3. Leemis, L. M., & Park, S. K. (2006). Discrete-Event Simulation: A First Course. Prentice Hall.\
-
-4. Hillier, F. S., & Lieberman, G. J. (2010). Introduction to Operations Research (9th ed.). McGraw-Hill. (Chapters on simulation)\
-
-5. Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event Systems (2nd ed.). Springer.\
-
+1. Banks, J., Carson, J. S., II, Nelson, B. L., & Nicol, D. M. (2010). Discrete-Event System Simulation (5th ed.). Prentice Hall.<br>
+2. Law, A. M. (2015). Simulation Modeling and Analysis (5th ed.). McGraw-Hill Education.<br>
+3. Leemis, L. M., & Park, S. K. (2006). Discrete-Event Simulation: A First Course. Prentice Hall.<br>
+4. Hillier, F. S., & Lieberman, G. J. (2010). Introduction to Operations Research (9th ed.). McGraw-Hill. (Chapters on simulation)<br>
+5. Cassandras, C. G., & Lafortune, S. (2008). Introduction to Discrete Event Systems (2nd ed.). Springer.<br>
 6. Urquía Moraleda, A., & Martín Villalba, C. (2016). Simulation and modeling methods. UNED.

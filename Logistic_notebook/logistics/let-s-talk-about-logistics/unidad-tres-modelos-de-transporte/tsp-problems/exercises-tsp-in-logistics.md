@@ -6,7 +6,7 @@
 
 Consider the problem of a paint manufacturing company, Rainbow, that produces batches of white (W), yellow (Y), black (B), and red (R) paint. The production facilities must be cleaned between batches of different colors. The goal is to determine the sequence of colors that minimizes the total cleaning time.
 
-### Nodes 
+### Nodes<br>
 
 * &#x20;W = White&#x20;
 * &#x20;Y = Yellow&#x20;

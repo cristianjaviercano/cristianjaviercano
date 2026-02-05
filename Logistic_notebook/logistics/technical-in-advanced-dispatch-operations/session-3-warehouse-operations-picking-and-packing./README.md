@@ -46,8 +46,7 @@ The method used to assign inventory to storage locations has significant implica
 * Cons: It is entirely dependent on a robust Warehouse Management System (WMS) to track the location of every item. Losing the WMS means losing the inventory.
 
 {% hint style="success" %}
-Most modern operations use a hybrid approach. Fast-moving items (A-items) may be given dedicated locations in a forward-pick area for efficiency, while slower-moving items (B and C-items) are stored randomly in a bulk area to maximize space utilization.\
-
+Most modern operations use a hybrid approach. Fast-moving items (A-items) may be given dedicated locations in a forward-pick area for efficiency, while slower-moving items (B and C-items) are stored randomly in a bulk area to maximize space utilization.<br>
 {% endhint %}
 
 <img src="../../../.gitbook/assets/file.excalidraw (2) (1).svg" alt="" class="gitbook-drawing">
@@ -69,7 +68,7 @@ ABC analysis is a method of inventory categorization that applies the Pareto pri
 _While classic ABC analysis uses consumption value,_ in a fulfillment context, it is often more powerful to classify items based on pick frequency or sales velocity. This directly aligns the classification with the labor-intensive picking process, ensuring that the most frequently touched items receive preferential treatment in slotting.
 {% endhint %}
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1) (1) (1) (1).svg" alt="" class="gitbook-drawing">
 
 ***
 
@@ -113,8 +112,7 @@ The choice of picking method is a strategic decision based on order profiles, fa
 Optimizing the pick path for a discrete or batch pick is a classic problem in operations research known as the Traveling Salesperson Problem (TSP).
 
 * The Problem given a set of "cities" (item locations) and the "distance" (travel time) between each pair, the TSP seeks to find the shortest possible route that visits each location exactly once and returns to the origin (the packing station).
-* Mathematical Formulation: Let C\_ij​ be the cost (distance) of traveling from location i to location j. Let xij​ be a binary variable that is 1 if the path from i to j is taken, and 0 otherwise. The objective is to:\
-
+* Mathematical Formulation: Let C\_ij​ be the cost (distance) of traveling from location i to location j. Let xij​ be a binary variable that is 1 if the path from i to j is taken, and 0 otherwise. The objective is to:<br>
 
 $$
 Z_{min}= ∑C_{ij}​x_{ij}

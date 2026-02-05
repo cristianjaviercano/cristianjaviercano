@@ -11,15 +11,14 @@ Perishable food supply chains, for example, seek to ensure product quality, whic
 
 ***
 
-### EOQ and Perishability: Challenges and Considerations 
+### EOQ and Perishability: Challenges and Considerations<br>
 
 Applying EOQ to perishable products is more complex because obsolescence or spoilage becomes a very significant inventory holding cost. A product with a short life cycle, such as six months, can have an effective obsolescence cost of 200%, which drastically impacts the optimal lot size decision.
 
 \
 For perishable products, the inventory model often leans toward a single-period or "newsvendor" model, especially for seasonal or trendy items, where there is a single opportunity to place an order with little or no possibility of reordering or returning stock if demand is forecasted incorrectly. The key decision here is balancing the cost of surpluses (S) and the cost of shortages (S).
 
-* &#x20;_**The cost of surplus (Ca)**_ is the loss per unsold unit at the end of the season, including the original cost of the unit and storage and disposal costs.\
-
+* &#x20;_**The cost of surplus (Ca)**_ is the loss per unsold unit at the end of the season, including the original cost of the unit and storage and disposal costs.<br>
 * _**The cost of shortages (Cu)**_ is the margin lost per lost sale due to a lack of inventory, including the margin on current and future sales if the customer does not return.
 
 \
