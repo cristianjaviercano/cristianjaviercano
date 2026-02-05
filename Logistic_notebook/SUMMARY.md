@@ -83,6 +83,12 @@
     * [DC Bakery](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
     * [DC Shoe Handcrafting](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
 
+***
+
+* [Project Planning, Evaluation, and Software Management Guidelines](project-planning-evaluation-and-software-management-guidelines/README.md)
+  * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/README.md)
+    * [Task Module One](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/task-module-one.md)
+
 ## Book Store
 
 * [Book Shelf](book-store/estanteria-de-libros.md)
