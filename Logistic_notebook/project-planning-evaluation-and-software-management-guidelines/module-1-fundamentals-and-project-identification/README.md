@@ -10,6 +10,8 @@ The lifecycle of an investment project consists of four distinct stages, designe
 
 #### 1.1 Pre-Investment Stage
 
+<img src="../../.gitbook/assets/file.excalidraw (23).svg" alt="" class="gitbook-drawing">
+
 This is the planning phase where the primary objective is to evaluate the convenience of the investment before committing significant resources. \[cite\_start]It is subdivided into levels of increasing depth and precision:
 
 1. **Idea:** The preliminary identification of an unsatisfied need, a market failure, or a potential business opportunity.
