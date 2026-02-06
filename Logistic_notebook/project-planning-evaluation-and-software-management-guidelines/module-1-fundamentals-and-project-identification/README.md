@@ -83,7 +83,23 @@ This tool organizes causes and effects into a visual hierarchy.
 
 > Validation: Logic must be verified: Roots provoke the trunk, and the trunk provokes the branches.
 
-### Introduction to the Investment Project Lifecycle
+#### Step 2: The Objectives Tree (The Proposal)
+
+Once the Problem Tree is validated, it is transformed into positive situations to create the Objectives Tree.
+
+| Element in Problem Tree (Negative) | Transformation to Objectives Tree (Positive) | Function in Project (MGA/LFA)                                                             |
+| ---------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Central Problem                    | General Objective / Purpose                  | The central hypothesis of the project; what is expected to be achieved upon completion.   |
+| Causes (Roots)                     | Means / Specific Objectives                  | Direct causes become the means or components the project must deliver.                    |
+| Effects (Crown)                    | Ends                                         | Represent the long-term impact or the project's contribution to higher development goals. |
+
+#### Step 3: Analysis of Alternatives
+
+Distinct options for executing the project emerge from the Objectives Tree (specifically from the "means" at the bottom). Concrete actions must be identified to operationalize these means. These actions are then filtered to configure the optimal alternative that is technically, legally, and financially viable, using statistic measurements.
+
+***
+
+## Introduction to the Investment Project Lifecycle
 
 Economic efficiency demands the generation of maximum profitability in productive investments across all economic sectors. To achieve this, a project must not be viewed as an isolated event, but as a continuous process—a **lifecycle**—that spans from the initial conception of an idea to the final termination of the operation.
 

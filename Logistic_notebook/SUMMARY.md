@@ -88,7 +88,10 @@
 
 * [Project Planning, Evaluation, and Software Management Guidelines](project-planning-evaluation-and-software-management-guidelines/README.md)
   * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/README.md)
-    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop.md)
+    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop/README.md)
+      * [Diagnostic Test](https://cristianjaviercano.github.io/projecttext1/)
+  * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
+    * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
 
 ## Book Store
 
