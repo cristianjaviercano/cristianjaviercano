@@ -88,7 +88,7 @@
 
 * [Project Planning, Evaluation, and Software Management Guidelines](project-planning-evaluation-and-software-management-guidelines/README.md)
   * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/README.md)
-    * [Task Module One](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/task-module-one.md)
+    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop.md)
 
 ## Book Store
 

@@ -1,6 +1,89 @@
 # Module 1: Fundamentals & Project Identification
 
-### 1. Introduction to the Investment Project Lifecycle
+## Methodological Approaches to Problem Definition
+
+In the realm of project formulation, the initial definition of the problem is the cornerstone of success. Different methodologies offer distinct nuances on what constitutes a "problem" and how it should be treated. Below, we explore the three primary perspectives used in engineering and management.
+
+### Methodological Perspectives
+
+{% tabs %}
+{% tab title="PMI" %}
+
+
+For the PMI, problem identification is intrinsically linked to Scope Management and Quality Management, as well as the development of the Business Case.
+
+* Definition: A problem is defined as the deviation between a real situation and a desired situation. It is an obstacle or difficulty that invites resolution to achieve a goal.
+* The Business Case: Projects typically initiate with a _Business Case_, which documents the business need and the existing gap (the problem) to justify the investment.
+* Requirements Management: A common cause of failure is poor requirements definition at the onset. The PMI suggests that approximately 47% of failed projects are due to poor requirements management regarding the original problem.
+* Root Cause Analysis: The focus is not merely on treating symptoms but on investigating the true origin of the problem to eliminate it permanently.
+{% endtab %}
+
+{% tab title="The Logical Framework Approach (LFA / MML)" %}
+The Logical Framework is a conceptualization and design tool that centers the entire project around solving a central problem.
+
+* Image of Reality: Problem analysis is used to create a comprehensive vision of the existing negative situation.
+* Syntax of the Problem: A "golden rule" in LFA is that a problem is not the absence of a solution, but an existing negative state.
+  * _Incorrect:_ "Lack of a hospital" (absence of solution).
+  * _Correct:_ "High morbidity rates" (real problem).
+* Consensus: It relies heavily on stakeholder analysis to ensure the identified problem is relevant to the beneficiaries
+{% endtab %}
+
+{% tab title="The MGA Perspective (General Adjusted Methodology)" %}
+The MGA (Metodología General Ajustada), primarily used for public investment in Colombia, adopts Logical Framework principles but standardizes them into a sequential flow.
+
+* Identification Module: This is the mandatory first step. One must identify a negative situation affecting a specific population group within a determined geographic space.
+* Strict Causality: The MGA requires validating vertical logic: _"If causes exist, the problem presents itself; if the problem exists, effects are generated"_.
+* Link to Solution: The direct causes identified in the MGA are mandatorily transformed into the project's specific objectives.
+{% endtab %}
+{% endtabs %}
+
+### Tools for Problem Identification and Analysis
+
+To diagnose problems effectively, we utilize a mix of qualitative and quantitative tools.
+
+{% tabs %}
+{% tab title="Cause-Effect Diagram (Ishikawa or Fishbone)" %}
+A fundamental visual tool referenced in both PMI and Quality contexts.
+
+* Function: It serves to identify, explore, and visualize all possible causes related to a specific problem to discover its root cause.
+* Structure: The problem is placed at the "head" of the fish, and causes are distributed along the major spines, often categorized by the 6Ms: Materials, Methods, Manpower, Machinery, Measurement, and Mother Nature (Environment).
+{% endtab %}
+
+{% tab title="Pareto Analysis (80/20 Rule)" %}
+* unction: Helps prioritize problems or causes based on the premise that 80% of problems stem from 20% of causes.
+* Usage: It allows the project manager to focus efforts on the "vital few" rather than the "trivial many"
+{% endtab %}
+
+{% tab title="Brainstorming" %}
+A group technique to generate a broad list of potential problems or causes before filtering and structuring them. It is essential in the identification phase of MGA and LFA to involve experts and the community
+{% endtab %}
+
+{% tab title="SWOT Analysis (FODA)" %}
+Analyzes Strengths, Weaknesses, Opportunities, and Threats. It helps position the project by understanding internal capabilities and the external environment.
+{% endtab %}
+
+{% tab title="The 5 Whys (Root Cause Analysis)" %}
+Consists of asking "Why?" repeatedly (usually 5 times) until reaching the fundamental cause of a problem, avoiding superficial symptoms.
+{% endtab %}
+{% endtabs %}
+
+***
+
+## Construction of Problem and Objective Trees
+
+This is the core technique in LFA and MGA for structuring project logic.
+
+#### Step 1: The Problem Tree (The Diagnosis)
+
+This tool organizes causes and effects into a visual hierarchy.
+
+1. The Trunk (Central Problem): A single central problem is defined. If multiple exist, they must be prioritized or separated into different trees.
+2. The Roots (Causes): Located below the problem. Divided into direct causes (immediately generating the problem) and indirect causes (generating the direct causes).
+3. The Crown (Effects): Located above the problem. These are the consequences if the problem remains unresolved, divided into direct and indirect effects.
+
+> Validation: Logic must be verified: Roots provoke the trunk, and the trunk provokes the branches.
+
+### Introduction to the Investment Project Lifecycle
 
 Economic efficiency demands the generation of maximum profitability in productive investments across all economic sectors. To achieve this, a project must not be viewed as an isolated event, but as a continuous process—a **lifecycle**—that spans from the initial conception of an idea to the final termination of the operation.
 
@@ -21,7 +104,7 @@ This is the planning phase where the primary objective is to evaluate the conven
 
 #### 1.2 Investment Stage
 
-Once the project is deemed viable, this stage involves the execution of the physical and financial implementation. \[cite\_start]It includes final engineering designs, infrastructure construction, equipment procurement, and installation.
+Once the project is deemed viable, this stage involves the execution of the physical and financial implementation. It includes final engineering designs, infrastructure construction, equipment procurement, and installation.
 
 #### 1.3 Operation Stage
 

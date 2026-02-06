@@ -29,12 +29,14 @@ Unlike traditional management courses, this module integrates **scientific rigor
 
 By the end of this module, you will be able to:
 
-1. **Identify Opportunities:** Analyze market failures and business opportunities to generate viable investment alternatives\[cite: 29].
-2. **Structure Projects:** Develop comprehensive Market, Technical, Administrative, Legal, and Financial studies\[cite: 31].
-3. **Evaluate Viability:** Determine financial feasibility using rigorous indicators such as NPV (Net Present Value) and IRR (Internal Rate of Return)\[cite: 30].
-4. **Manage Strategy:** Understand the project lifecycle and apply strategic management principles during execution\[cite: 28].
+1. **Identify Opportunities:** Analyze market failures and business opportunities to generate viable investment alternatives.
+2. **Structure Projects:** Develop comprehensive Market, Technical, Administrative, Legal, and Financial studies.
+3. **Evaluate Viability:** Determine financial feasibility using rigorous indicators such as NPV (Net Present Value) and IRR (Internal Rate of Return).
+4. **Manage Strategy:** Understand the project lifecycle and apply strategic management principles during execution.
 
 ***
+
+<figure><img src="../.gitbook/assets/ProjectvisualOne.png" alt=""><figcaption></figcaption></figure>
 
 ### 🗺️ Course Roadmap & Schedule
 
@@ -49,7 +51,7 @@ The course is structured into **6 synchronous sessions** and complementary virtu
 | **05**  | Mar 06 (Fri) | **V. Financial Evaluation**           | CAPEX/OPEX, Cash Flows, & Financial Indicators (VPN, TIR).          |
 | **06**  | Mar 07 (Sat) | **VI. Project Management**            | PMBOK Standards, Project Charter, & Final Pitch.                    |
 
-\[cite\_start]_Note: Class hours are Fridays 6:00 PM - 10:00 PM and Saturdays 8:00 AM - 5:00 PM\[cite: 160]._
+> _Note: Class hours are Fridays 6:00 PM - 10:00 PM and Saturdays 8:00 AM - 5:00 PM._
 
 ***
 
@@ -81,6 +83,17 @@ The evaluation follows the program's regulations:
 * **40%** - Final Evaluation (Comprehensive Project Defense).
 
 ***
+
+#### 📚Bibliography&#x20;
+
+* Departamento Nacional de Planeación (DNP). (2015). _Manual conceptual de la Metodología General Ajustada (MGA)_. Dirección de Inversiones y Finanzas Públicas.
+* Lledó, P., & Rivarola, G. (2007). _Gestión de proyectos_. Pearson Education.
+* Minciencias. (2023). _Documento de tipología de proyectos de carácter científico, tecnológico o de innovación (Versión 7)_. Ministerio de Ciencia, Tecnología e Innovación
+* Miranda Miranda, J. J. (s.f.). _Gestión de Proyectos: Identificación, formulación, evaluación financiera-económica-social ambiental_ (4a ed.). MM Editores
+* Moreno Monsalve, N. A., Sánchez Ayala, L. M., & Velosa García, J. D. (2016). _Introducción a la gerencia de proyectos: conceptos y aplicación_. Universidad EAN.
+* Ortegón, E., Pacheco, J. F., & Prieto, A. (2005). _Metodología del marco lógico para la planificación, el seguimiento y la evaluación de proyectos y programas_. CEPAL - ILPES.
+* Vivallo, A. G. (s.f.). _Formulación y evaluación de proyectos: Manual para estudiantes_.\
+  <br>
 
 #### 🚀 Ready to start?
 
