@@ -92,8 +92,10 @@ The evaluation follows the program's regulations:
 * Miranda Miranda, J. J. (s.f.). _Gestión de Proyectos: Identificación, formulación, evaluación financiera-económica-social ambiental_ (4a ed.). MM Editores
 * Moreno Monsalve, N. A., Sánchez Ayala, L. M., & Velosa García, J. D. (2016). _Introducción a la gerencia de proyectos: conceptos y aplicación_. Universidad EAN.
 * Ortegón, E., Pacheco, J. F., & Prieto, A. (2005). _Metodología del marco lógico para la planificación, el seguimiento y la evaluación de proyectos y programas_. CEPAL - ILPES.
-* Vivallo, A. G. (s.f.). _Formulación y evaluación de proyectos: Manual para estudiantes_.\
-  <br>
+*   Vivallo, A. G. (s.f.). _Formulación y evaluación de proyectos: Manual para estudiantes_.\
+    <br>
+
+    <figure><img src="../.gitbook/assets/ACO imagen.png" alt="" width="188"><figcaption><p>chat with AI<br><a href="https://notebooklm.google.com/notebook/3869de40-f856-4778-a30e-f07dca010c69">Cr Project AI</a></p></figcaption></figure>
 
 #### 🚀 Ready to start?
 
