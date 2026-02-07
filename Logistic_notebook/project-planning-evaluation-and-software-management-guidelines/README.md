@@ -97,6 +97,10 @@ The evaluation follows the program's regulations:
 
     <figure><img src="../.gitbook/assets/ACO imagen.png" alt="" width="188"><figcaption><p>chat with AI<br><a href="https://notebooklm.google.com/notebook/3869de40-f856-4778-a30e-f07dca010c69">Cr Project AI</a></p></figcaption></figure>
 
+
+
+{% file src="../.gitbook/assets/Gestion de proyectos_Maestria USB.pdf" %}
+
 #### 🚀 Ready to start?
 
 Please navigate to **Module 1** in the sidebar to begin with the Project Lifecycle fundamentals.
