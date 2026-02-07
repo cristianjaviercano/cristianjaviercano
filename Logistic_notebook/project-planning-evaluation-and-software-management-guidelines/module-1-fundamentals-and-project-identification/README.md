@@ -124,25 +124,25 @@ Once the project is deemed viable, this stage involves the execution of the phys
 
 #### 1.3 Operation Stage
 
-This is the productive phase where the project generates the designed goods or services. \[cite\_start]During this stage, the projected cash flows (operational revenues and expenditures) are realized.
+This is the productive phase where the project generates the designed goods or services. During this stage, the projected cash flows (operational revenues and expenditures) are realized.
 
 #### 1.4 Termination Stage
 
-\[cite\_start]The conclusion of the project's useful life, involving the liquidation of assets or the final closure of the operation.
+The conclusion of the project's useful life, involving the liquidation of assets or the final closure of the operation.
 
 ***
 
 ### 2. Problem Identification & Diagnosis
 
-A successful project formulation depends entirely on a correct identification of the problem. \[cite\_start]If the problem is poorly defined, the solution (the project) will be inefficient, regardless of how well it is managed later.
+A successful project formulation depends entirely on a correct identification of the problem. If the problem is poorly defined, the solution (the project) will be inefficient, regardless of how well it is managed later.
 
 #### 2.1 Analysis of Market Failures
 
-\[cite\_start]Investment opportunities often arise from analyzing **market failures** or **consumer dissatisfaction**\[cite: 40]. The rigorous identification process requires moving from a perceived symptom to a root cause.
+Investment opportunities often arise from analyzing **market failures** or **consumer dissatisfaction**. The rigorous identification process requires moving from a perceived symptom to a root cause.
 
 #### 2.2 The Problem Tree (Causal Analysis)
 
-\[cite\_start]The Problem Tree is a methodological tool used to map the causal relationships of a negative situation.
+The Problem Tree is a methodological tool used to map the causal relationships of a negative situation.
 
 * **The Trunk (Central Problem):** The core negative situation affecting a specific population.
 * **The Roots (Causes):** The underlying reasons creating the problem.
