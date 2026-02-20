@@ -92,6 +92,7 @@
       * [Diagnostic Test](https://cristianjaviercano.github.io/projecttext1/)
   * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
     * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
+  * [Module 3: Pre-feasibility and Market Study](project-planning-evaluation-and-software-management-guidelines/module-3-pre-feasibility-and-market-study.md)
 
 ## Book Store
 
