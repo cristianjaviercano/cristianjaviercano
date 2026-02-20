@@ -135,7 +135,7 @@ While pre-feasibility is an **integral phase** of evaluation within the project 
 
 Below, each concept and its differences are detailed:
 
-### 1. Pre-feasibility (An integral evaluation phase)
+### 1. Pre-feasibility as an integral evaluation phase.
 
 Pre-feasibility is one of the phases of the pre-investment stage (located between the "profile" phase and the "feasibility" phase). Its main characteristics are:
 
@@ -143,7 +143,7 @@ Pre-feasibility is one of the phases of the pre-investment stage (located betwee
 * **Decision objective:** Its purpose is to evaluate different project alternatives or variants to discard those that are not viable. At the end of this phase, a decision must be made: abandon the idea, postpone it, or select the best alternative to move to a deeper study (feasibility) or final design.
 * **Uncertainty:** It seeks to reduce initial uncertainty by proposing approximations to investments, costs, and revenues to apply profitability criteria.
 
-### 2. Market Analysis or Study (An information component)
+### 2. Market Analysis or Study, An information component
 
 The market study is a specific technical research conducted to obtain and process information about the environment surrounding the company or project. Its characteristics are:
 
@@ -250,6 +250,6 @@ In the end, the accumulation of all these randomly generated scenarios yields a 
 * **To forecast Profitability (Costs):** In a model to predict the Net Present Value (NPV), experts determine that there is no data on the future behavior of "variable costs". They estimate that in the optimistic scenario it will be $10, most likely $12, and in the pessimistic $16. The triangular distribution processes these three numbers over thousands of combinations to observe how this fluctuating cost affects final profitability.
 * **To forecast Schedule Risks (Times):** When planning a schedule, the director estimates that a task called "Market study" will ideally take 20 days, most likely 30 days, but in the worst case 60 days. Entering this triangular distribution for multiple tasks, Monte Carlo will simulate all combined delays and tell exactly what the real probability is that the entire project will be delayed.
 
-{% hint style="info" %}
-_(Comparative Note: It is common to confuse this with the PERT method, since PERT also requires the same three time scenarios —optimistic, probable, and pessimistic—. However, PERT traditionally adjusts these three points using a different statistical distribution called the Beta distribution (which has a curved bell shape), instead of the straight lines of the triangular model)._
+{% hint style="info" icon="square-exclamation" %}
+_Comparative Note: It is common to confuse this with the PERT method, since PERT also requires the same three time scenarios —optimistic, probable, and pessimistic—. However, PERT traditionally adjusts these three points using a different statistical distribution called the Beta distribution (which has a curved bell shape), instead of the straight lines of the triangular model._
 {% endhint %}
