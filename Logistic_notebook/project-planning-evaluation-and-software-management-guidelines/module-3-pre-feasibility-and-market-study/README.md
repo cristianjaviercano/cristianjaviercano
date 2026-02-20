@@ -123,7 +123,7 @@ plt.show()
 ```
 {% endcode %}
 
-<figure><img src="../.gitbook/assets/Captura de pantalla 2026-02-20 a la(s) 5.36.46 a.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Captura de pantalla 2026-02-20 a la(s) 5.36.46 a.m..png" alt=""><figcaption></figcaption></figure>
 
 ***
 
