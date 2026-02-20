@@ -86,14 +86,17 @@
 
 ***
 
-* [Project Planning, Evaluation, and Software Management Guidelines](project-planning-evaluation-and-software-management-guidelines/README.md)
-  * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/README.md)
-    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-management-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop/README.md)
+* [Project Planning, Evaluation, and Software Operative Guidelines](project-planning-evaluation-and-software-operative-guidelines/README.md)
+  * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/README.md)
+    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop/README.md)
       * [Diagnostic Test](https://cristianjaviercano.github.io/projecttext1/)
-  * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
-    * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-management-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
-  * [Module 3: Pre-feasibility and Market Study](project-planning-evaluation-and-software-management-guidelines/module-3-pre-feasibility-and-market-study/README.md)
-    * [Montecarlo Exercises](project-planning-evaluation-and-software-management-guidelines/module-3-pre-feasibility-and-market-study/montecarlo-exercises.md)
+  * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
+    * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
+  * [Module 3: Pre-feasibility and Market Study](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/README.md)
+    * [Montecarlo Exercises](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/montecarlo-exercises.md)
+  * [Module 4: Technical, Administrative, and Legal Studies](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/README.md)
+    * [exercises\_module4](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/exercises_module4.md)
+  * [Module 5: Financial Study and Cash Flows](project-planning-evaluation-and-software-operative-guidelines/module-5-financial-study-and-cash-flows.md)
 
 ## Book Store
 
