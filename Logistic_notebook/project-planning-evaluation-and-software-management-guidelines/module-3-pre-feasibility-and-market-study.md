@@ -123,7 +123,7 @@ plt.show()
 ```
 {% endcode %}
 
-_This external code block faithfully reproduces the logic described in your documents on how to randomly iterate variables (as @Risk or Crystal Ball do) to obtain probability ranges for sales._
+<figure><img src="../.gitbook/assets/Captura de pantalla 2026-02-20 a la(s) 5.36.46 a.m..png" alt=""><figcaption></figcaption></figure>
 
 ***
 
