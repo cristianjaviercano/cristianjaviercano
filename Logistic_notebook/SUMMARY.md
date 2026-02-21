@@ -92,6 +92,7 @@
       * [Diagnostic Test](https://cristianjaviercano.github.io/projecttext1/)
   * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
     * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
+    * [step by step in PM](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/step-by-step-in-pm.md)
   * [Module 3: Pre-feasibility and Market Study](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/README.md)
     * [Montecarlo Exercises](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/montecarlo-exercises.md)
   * [Module 4: Technical, Administrative, and Legal Studies](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/README.md)
