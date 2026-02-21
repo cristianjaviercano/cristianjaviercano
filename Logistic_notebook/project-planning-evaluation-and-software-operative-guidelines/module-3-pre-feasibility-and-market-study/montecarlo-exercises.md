@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Montecarlo Exercises
 
 {% hint style="info" %}
