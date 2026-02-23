@@ -8,8 +8,8 @@ This guide provides the formal structure for academic and research projects with
 
 ### Front Matter
 
-* **Title**: 15–17 words maximum, concise, without abbreviations\[cite: 1937, 1938, 1939].
-* **Authors**: Full names and institutional affiliation\[cite: 121, 1980, 1981].
+* **Title**: 15–17 words maximum, concise, without abbreviations
+* **Authors**: Full names and institutional affiliation
 * **Abstract**: Maximum 250 words summarizing problem, objectives, methodology, and expected results.
 
 ***
