@@ -3,9 +3,10 @@ description: >-
   This introduction is designed to provide you with a comprehensive overview of
   Project Planning and Design, integrating fundamental management concepts,
   engineering tools, and structured methodologies
+icon: water-arrow-up
 ---
 
-# Project Planning, Evaluation, and Software Management Guidelines
+# Project Planning, Evaluation, and Software Operative Guidelines
 
 ## Welcome to Project Formulation & Evaluation
 
