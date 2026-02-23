@@ -98,6 +98,7 @@
   * [Module 4: Technical, Administrative, and Legal Studies](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/README.md)
     * [exercises\_module4](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/exercises_module4.md)
   * [Module 5: Financial Study and Cash Flows](project-planning-evaluation-and-software-operative-guidelines/module-5-financial-study-and-cash-flows.md)
+  * [Project Implementation Guide: Engineering & Innovation (UPB - Minciencias)](project-planning-evaluation-and-software-operative-guidelines/project-implementation-guide-engineering-and-innovation-upb-minciencias.md)
 
 ## Book Store
 
