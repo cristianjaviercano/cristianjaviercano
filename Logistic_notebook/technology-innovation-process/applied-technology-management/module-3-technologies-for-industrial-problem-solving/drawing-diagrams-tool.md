@@ -12,7 +12,7 @@ icon: pen-ruler
 4. Use the drag-and-drop interface to add shapes, connectors, and labels.
 5. Save or export your diagram in various formats like PNG, PDF, or SVG.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 8.13.17 a.m..png" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 8.13.17 a.m..png" alt="" width="375"><figcaption></figcaption></figure>
 
 ***
 
@@ -108,11 +108,11 @@ Similar to any inventory system, it includes three main processes and specific K
 
 #### First step: creates a general flow of the aplication using a whiteboard or a paper.
 
-<img src="../../.gitbook/assets/file.excalidraw (16).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (16).svg" alt="" class="gitbook-drawing">
 
 #### Translate it to a drwaing application like Draio.com - UI flow
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 9.10.10 a.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 9.10.10 a.m..png" alt=""><figcaption></figcaption></figure>
 
 #### The Three Core Transactional Flows:
 
@@ -190,7 +190,7 @@ This is the most critical part, where we map out the "thinking process" of our a
 
 By completing these three parts, you will have a comprehensive and professional diagram that clearly communicates the visual design, data requirements, and logical flow of a user authentication system.
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 2.41.10 p.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 2.41.10 p.m..png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -222,7 +222,7 @@ This screen is a combination of data display and navigation. We will use a two-c
      * Products Below Reorder Point: (A critical metric for purchasing).
      * Sales Value (Today): (Total revenue for the current day).
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 5.58.33 p.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-17 a la(s) 5.58.33 p.m..png" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -253,6 +253,6 @@ This screen needs controls for searching and a main area to display the data tab
    * Use the Table shape from the "General" library to create a representation of the data grid.
    * Define the column headers in the table: `ProductID`, `NombreProducto`, `Estanteria`, `Cantidad`, `CostoCompra`, `PrecioVenta`.
 
-<img src="../../.gitbook/assets/file.excalidraw (17).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (17).svg" alt="" class="gitbook-drawing">
 
-<figure><img src="../../.gitbook/assets/Captura de pantalla 2025-08-18 a la(s) 9.11.03 a.m..png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Captura de pantalla 2025-08-18 a la(s) 9.11.03 a.m..png" alt=""><figcaption></figcaption></figure>

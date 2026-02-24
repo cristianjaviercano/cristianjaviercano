@@ -17,7 +17,7 @@ The core principles underpinning the open innovation model include:
 * Knowledge Sharing
 * Inbound and Outbound Innovation
 
-<figure><img src="../../.gitbook/assets/The core principles underpinning the open innovation model include_ - visual selection.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/The core principles underpinning the open innovation model include_ - visual selection.png" alt=""><figcaption></figcaption></figure>
 
 ## Technology Management: Strategies, Tools, and Models
 

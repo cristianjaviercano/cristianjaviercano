@@ -37,7 +37,7 @@ By the end of this module, you will be able to:
 
 ***
 
-<figure><img src="../.gitbook/assets/ProjectvisualOne.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/ProjectvisualOne.png" alt=""><figcaption></figcaption></figure>
 
 ### 🗺️ Course Roadmap & Schedule
 
@@ -96,11 +96,11 @@ The evaluation follows the program's regulations:
 *   Vivallo, A. G. (s.f.). _Formulación y evaluación de proyectos: Manual para estudiantes_.\
     <br>
 
-    <figure><img src="../.gitbook/assets/ACO imagen.png" alt="" width="188"><figcaption><p>chat with AI<br><a href="https://notebooklm.google.com/notebook/3869de40-f856-4778-a30e-f07dca010c69">Cr Project AI</a></p></figcaption></figure>
+    <figure><img src="../../.gitbook/assets/ACO imagen.png" alt="" width="188"><figcaption><p>chat with AI<br><a href="https://notebooklm.google.com/notebook/3869de40-f856-4778-a30e-f07dca010c69">Cr Project AI</a></p></figcaption></figure>
 
 
 
-{% file src="../.gitbook/assets/Gestion de proyectos_Maestria USB.pdf" %}
+{% file src="../../.gitbook/assets/Gestion de proyectos_Maestria USB.pdf" %}
 
 #### 🚀 Ready to start?
 

@@ -78,7 +78,7 @@ _Parietal Lobe:_ The parietal lobe is involved in spatial reasoning, attention, 
 
 _Default Mode Network (DMN):_ The DMN is a network of brain regions that is active when we are not focused on external tasks, such as during mind-wandering and daydreaming. Surprisingly, the DMN is thought to play a crucial role in creativity and innovation by allowing us to make spontaneous connections between ideas and generate novel insights.
 
-<figure><img src="../../.gitbook/assets/How Innovation Works in the Human Brain - visual selection.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/How Innovation Works in the Human Brain - visual selection.png" alt=""><figcaption></figcaption></figure>
 
 ## Cognitive Mechanisms Underlying Innovation <a href="#bh-djrkc2rqo4ywfhhozygag" id="bh-djrkc2rqo4ywfhhozygag"></a>
 

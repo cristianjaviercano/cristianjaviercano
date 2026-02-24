@@ -1,18 +1,22 @@
 # Table of contents
 
 * [Cristian´s Bookshelf](README.md)
-* [Applied Technology Management](applied-technology-management/README.md)
-  * [Module 1: Fundamentals of Innovation and Technology Management](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/README.md)
-    * [Technology Definition and development.](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/technology-definition-and-development..md)
-    * [Core Concepts and Types of Innovation](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/core-concepts-and-types-of-innovation.md)
-    * [The Innovation Process: From Ideation to Implementation](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/the-innovation-process-from-ideation-to-implementation.md)
-    * [Research and Development (R\&D) Lifecycle and Management](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/research-and-development-r-and-d-lifecycle-and-management.md)
-    * [Open Innovation: Leveraging External Ecosystems](applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/open-innovation-leveraging-external-ecosystems.md)
-  * [Module 2: Innovation Project Management (PMI Approach)](applied-technology-management/module-2-innovation-project-management-pmi-approach.md)
-  * [Module 3: Technologies for Industrial Problem Solving](applied-technology-management/module-3-technologies-for-industrial-problem-solving.md)
-    * [Gradio Tool to Create Solutions](applied-technology-management/module-3-technologies-for-industrial-problem-solving/gradio-tool-to-create-solutions.md)
-    * [Drawing Diagrams tool](applied-technology-management/module-3-technologies-for-industrial-problem-solving/drawing-diagrams-tool.md)
-  * [Module 4: Application and Evaluation of Technology Projects](applied-technology-management/module-4-application-and-evaluation-of-technology-projects.md)
+
+## Technology Innovation Process
+
+* [Applied Technology Management - Course Introduction](technology-innovation-process/applied-technology-management/README.md)
+  * [Course Time Line](technology-innovation-process/applied-technology-management/course-time-line.md)
+  * [Module 1: Fundamentals of Innovation and Technology Management](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/README.md)
+    * [Technology Definition and development.](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/technology-definition-and-development..md)
+    * [Core Concepts and Types of Innovation](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/core-concepts-and-types-of-innovation.md)
+    * [The Innovation Process: From Ideation to Implementation](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/the-innovation-process-from-ideation-to-implementation.md)
+    * [Research and Development (R\&D) Lifecycle and Management](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/research-and-development-r-and-d-lifecycle-and-management.md)
+    * [Open Innovation: Leveraging External Ecosystems](technology-innovation-process/applied-technology-management/module-1-fundamentals-of-innovation-and-technology-management/open-innovation-leveraging-external-ecosystems.md)
+  * [Module 2: Innovation Project Management (PMI Approach)](technology-innovation-process/applied-technology-management/module-2-innovation-project-management-pmi-approach.md)
+  * [Module 3: Technologies for Industrial Problem Solving](technology-innovation-process/applied-technology-management/module-3-technologies-for-industrial-problem-solving/README.md)
+    * [Gradio Tool to Create Solutions](technology-innovation-process/applied-technology-management/module-3-technologies-for-industrial-problem-solving/gradio-tool-to-create-solutions.md)
+    * [Drawing Diagrams tool](technology-innovation-process/applied-technology-management/module-3-technologies-for-industrial-problem-solving/drawing-diagrams-tool.md)
+  * [Module 4: Application and Evaluation of Technology Projects](technology-innovation-process/applied-technology-management/module-4-application-and-evaluation-of-technology-projects.md)
   * [Course Presentation](https://cristianjaviercano.github.io/technology_presentation/)
 
 ## Logistics Management
@@ -84,21 +88,21 @@
     * [DC Bakery](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/tienda-de-pasteles-dc.md)
     * [DC Shoe Handcrafting](discrete-event-simulation/software-de-simulacion-anylogic/anylogic-explicacion/manufactura-de-calzado-dc.md)
 
-***
+## Project Management Course
 
-* [Project Planning, Evaluation, and Software Operative Guidelines](project-planning-evaluation-and-software-operative-guidelines/README.md)
-  * [Module 1: Fundamentals & Project Identification](project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/README.md)
-    * [Session 1 Activity: Diagnostic Workshop](project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop/README.md)
+* [Project Planning, Evaluation, and Software Operative Guidelines](project-management-course/project-planning-evaluation-and-software-operative-guidelines/README.md)
+  * [Module 1: Fundamentals & Project Identification](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/README.md)
+    * [Session 1 Activity: Diagnostic Workshop](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-1-fundamentals-and-project-identification/session-1-activity-diagnostic-workshop/README.md)
       * [Diagnostic Test](https://cristianjaviercano.github.io/projecttext1/)
-  * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
-    * [Session 2 Activity: Drafting & Strategy](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
-    * [step by step in PM](project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/step-by-step-in-pm.md)
-  * [Module 3: Pre-feasibility and Market Study](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/README.md)
-    * [Montecarlo Exercises](project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/montecarlo-exercises.md)
-  * [Module 4: Technical, Administrative, and Legal Studies](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/README.md)
-    * [exercises\_module4](project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/exercises_module4.md)
-  * [Module 5: Financial Study and Cash Flows](project-planning-evaluation-and-software-operative-guidelines/module-5-financial-study-and-cash-flows.md)
-  * [Project Implementation Guide: Engineering & Innovation (UPB - Minciencias)](project-planning-evaluation-and-software-operative-guidelines/project-implementation-guide-engineering-and-innovation-upb-minciencias.md)
+  * [Module 2: R\&D+i Typologies, Intellectual Property, and Scientific Writing](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/README.md)
+    * [Session 2 Activity: Drafting & Strategy](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/session-2-activity-drafting-and-strategy.md)
+    * [step by step in PM](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-2-r-and-d+i-typologies-intellectual-property-and-scientific-writing/step-by-step-in-pm.md)
+  * [Module 3: Pre-feasibility and Market Study](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/README.md)
+    * [Montecarlo Exercises](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-3-pre-feasibility-and-market-study/montecarlo-exercises.md)
+  * [Module 4: Technical, Administrative, and Legal Studies](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/README.md)
+    * [exercises\_module4](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-4-technical-administrative-and-legal-studies/exercises_module4.md)
+  * [Module 5: Financial Study and Cash Flows](project-management-course/project-planning-evaluation-and-software-operative-guidelines/module-5-financial-study-and-cash-flows.md)
+  * [Project Implementation Guide: Engineering & Innovation (UPB - Minciencias)](project-management-course/project-planning-evaluation-and-software-operative-guidelines/project-implementation-guide-engineering-and-innovation-upb-minciencias.md)
 
 ## Book Store
 
