@@ -1,4 +1,4 @@
-# 08\_Week\_8\_Value\_Engineering
+# 08 Value Engineering
 
 {% hint style="info" %}
 Session Objectives
@@ -19,10 +19,9 @@ Value Engineering is a systematic method to improve the "value" of goods or prod
 * **Value = Function / Cost**
 * You can increase Value by improving the Function or reducing the Cost.
 
-```mermaid
-math
-  Value = \frac{Function}{Cost}
-```
+$$
+Value = \frac{Function}{Cost}
+$$
 
 ```mermaid
 flowchart TD
