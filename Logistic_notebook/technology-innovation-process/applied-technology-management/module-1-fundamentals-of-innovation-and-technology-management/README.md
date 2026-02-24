@@ -1,8 +1,8 @@
 ---
-icon: '1'
+icon: grid-4
 ---
 
-# Module 1: Fundamentals of Innovation and Technology Management
+# Fundamentals of Innovation and Technology Management tools
 
 
 
